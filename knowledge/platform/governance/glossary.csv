@@ -1,0 +1,21 @@
+term_id,term,business_definition
+GOV-001,Governance,Enterprise oversight of AI
+GOV-002,Policy,Business rule governing behavior
+GOV-003,Control,Mechanism enforcing governance
+GOV-004,Compliance,Conformance with regulations
+GOV-005,Risk,Potential negative business impact
+GOV-006,Approval,Human or automated authorization
+GOV-007,Governance Decision,Decision made under policy
+GOV-008,Exception,Approved deviation from policy
+GOV-009,Regulation,External regulatory requirement
+GOV-010,Framework,Governance methodology
+GOV-011,Authority,Entity authorized to approve
+GOV-012,Risk Assessment,Evaluation of business risk
+GOV-013,Control Effectiveness,Performance of governance controls
+GOV-014,Policy Rule,Atomic governance rule
+GOV-015,Decision Trace,History of governance decisions
+GOV-016,Responsible AI,Ethical AI governance
+GOV-017,Human Approval,Manual governance review
+GOV-018,Governance Metric,Governance KPI
+GOV-019,Compliance Evidence,Evidence supporting compliance
+GOV-020,Governance Domain,Governed business area

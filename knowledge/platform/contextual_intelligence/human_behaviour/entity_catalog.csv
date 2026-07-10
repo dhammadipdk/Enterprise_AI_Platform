@@ -1,0 +1,21 @@
+entity_name,entity_type,description
+DrivingObservation,Observation,Observed driving characteristics
+SpeedObservation,Observation,Observed speeding behaviour
+AccelerationObservation,Observation,Observed acceleration behaviour
+BrakingObservation,Observation,Observed braking behaviour
+CorneringObservation,Observation,Observed cornering behaviour
+SteeringObservation,Observation,Observed steering behaviour
+DistractionObservation,Observation,Observed distraction events
+FatigueObservation,Observation,Observed fatigue indicators
+ComplianceObservation,Observation,Observed traffic compliance
+DriverProfileObservation,Observation,Observed behavioural profile
+DriverRiskScore,DerivedIntelligence,Overall driver risk score
+DrivingSafetyIndex,DerivedIntelligence,Overall driving safety
+AggressiveDrivingIndex,DerivedIntelligence,Aggressive driving indicator
+ComplianceScore,DerivedIntelligence,Traffic compliance score
+EcoDrivingScore,DerivedIntelligence,Fuel-efficient driving score
+DriverTrustScore,DerivedIntelligence,Overall driver trustworthiness
+FatigueRiskScore,DerivedIntelligence,Fatigue risk assessment
+DistractionRiskScore,DerivedIntelligence,Distraction risk assessment
+DriverRecommendation,Recommendation,Driving improvement recommendation
+HumanBehaviorRelationship,Relationship,Causal relationships involving driver behaviour

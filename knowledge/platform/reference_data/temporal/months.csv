@@ -1,0 +1,13 @@
+reference_id,code,name,month_number,quarter,days,status,effective_date,expiry_date,source_authority,remarks
+REF-MONTH-000001,JAN,January,1,Q1,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000002,FEB,February,2,Q1,28/29,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000003,MAR,March,3,Q1,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000004,APR,April,4,Q2,30,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000005,MAY,May,5,Q2,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000006,JUN,June,6,Q2,30,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000007,JUL,July,7,Q3,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000008,AUG,August,8,Q3,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000009,SEP,September,9,Q3,30,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000010,OCT,October,10,Q4,31,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000011,NOV,November,11,Q4,30,Active,2026-01-01,,Gregorian Calendar,
+REF-MONTH-000012,DEC,December,12,Q4,31,Active,2026-01-01,,Gregorian Calendar,

@@ -1,0 +1,11 @@
+policy_id,policy_name,requested_capability,selection_priority,primary_constraint,fallback_policy,evaluation_required,governance_validation,description,status
+POLICY-000001,Reasoning Policy,Reasoning,Highest Quality,Quality,Fallback Reasoning,TRUE,TRUE,Select best reasoning model,Active
+POLICY-000002,RAG Policy,Retrieval,Lowest Latency,Latency,Fallback Retrieval,TRUE,TRUE,RAG retrieval model selection,Active
+POLICY-000003,Embedding Policy,Embedding,Lowest Cost,Cost,Fallback Embedding,FALSE,FALSE,Embedding model routing,Active
+POLICY-000004,Vision Policy,Vision,Highest Accuracy,Accuracy,Fallback Vision,TRUE,TRUE,Vision model routing,Active
+POLICY-000005,Speech Policy,Speech,Lowest Latency,Latency,Fallback Speech,TRUE,TRUE,Speech routing policy,Active
+POLICY-000006,Recommendation Policy,Recommendation,Balanced,Business KPI,Fallback Recommendation,TRUE,TRUE,Recommendation routing,Active
+POLICY-000007,Fraud Policy,Fraud Detection,Highest Accuracy,Accuracy,None,TRUE,TRUE,Fraud model routing,Active
+POLICY-000008,Planning Policy,Planning,Reasoning,Quality,Fallback Planner,TRUE,TRUE,Planning model selection,Active
+POLICY-000009,Evaluation Policy,Evaluation,Evaluation Score,Quality,None,FALSE,FALSE,Evaluation model routing,Active
+POLICY-000010,Dynamic Routing Policy,All Capabilities,Adaptive,Runtime Conditions,Automatic,TRUE,TRUE,Adaptive model router,Active

@@ -1,0 +1,11 @@
+importance_id,importance_level,score_range,business_priority,retention_policy,retrieval_priority,summarization_allowed,deletion_allowed,description,status
+MIMP-000001,Critical,90-100,Critical,Permanent,Immediate,FALSE,FALSE,Enterprise critical memory,Active
+MIMP-000002,Very High,80-89,High,Long Term,Very High,FALSE,FALSE,Important reasoning and business memory,Active
+MIMP-000003,High,70-79,High,Long Term,High,TRUE,FALSE,Important operational memory,Active
+MIMP-000004,Medium,50-69,Medium,Medium Term,Medium,TRUE,TRUE,Useful contextual memory,Active
+MIMP-000005,Low,30-49,Low,Short Term,Low,TRUE,TRUE,Temporary information,Active
+MIMP-000006,Transient,0-29,None,Immediate Cleanup,Very Low,TRUE,TRUE,Temporary working memory,Active
+MIMP-000007,Legal Hold,100,Critical,Indefinite,Critical,FALSE,FALSE,Legal or audit memory,Active
+MIMP-000008,Learning Memory,75-95,High,Permanent,High,TRUE,FALSE,Useful for continual learning,Active
+MIMP-000009,Experimental,40-60,Low,Short Term,Low,TRUE,TRUE,Experimental knowledge,Active
+MIMP-000010,Archived,10-30,None,Archive Only,None,TRUE,FALSE,Historical archive,Active

@@ -1,0 +1,16 @@
+constraint_id,constraint_name,constraint_category,applicable_entity,constraint_expression,constraint_type,severity,enforcement_stage,error_message,business_justification,status
+CONST-000001,Unique Customer ID,Identity,Customer,customer_id MUST be unique,Uniqueness,Critical,Creation,Duplicate customer identifier,Prevent duplicate customer records,Active
+CONST-000002,Policy Holder Required,Ownership,Policy,Policy MUST have >=1 Customer,Existence,Critical,Validation,Policy holder missing,Every policy requires an owner,Active
+CONST-000003,Vehicle Covered,Coverage,Vehicle,Vehicle MUST belong to >=1 Policy,Existence,High,Validation,Vehicle is uninsured,Prevent orphan vehicle records,Active
+CONST-000004,Claim Requires Policy,Claims,Claim,Claim MUST reference Policy,Referential,Critical,Creation,Missing policy reference,Claims require insurance coverage,Active
+CONST-000005,Claim Date Validation,Temporal,Claim,Claim Date >= Policy Start Date,Temporal,High,Validation,Invalid claim date,Claim cannot precede policy,Active
+CONST-000006,Fraud Score Range,Fraud,Fraud Case,0<=FraudScore<=100,Range,Medium,Inference,Invalid fraud score,Maintain scoring consistency,Active
+CONST-000007,Confidence Range,Reasoning,Decision,0<=Confidence<=1,Range,Medium,Inference,Invalid confidence score,Probability constraint,Active
+CONST-000008,Recommendation Priority,Recommendation,Recommendation,Priority IN {Critical,High,Medium,Low},Enumeration,Medium,Generation,Invalid priority,Controlled vocabulary,Active
+CONST-000009,Observation Timestamp,Context,Observation,Timestamp NOT NULL,Existence,High,Collection,Timestamp required,Temporal reasoning support,Active
+CONST-000010,Decision Trace,Reasoning,Decision,Decision MUST have reasoning trace,Governance,Critical,Execution,Missing reasoning trace,Explainable AI requirement,Active
+CONST-000011,Coverage Limit Positive,Coverage,Coverage,CoverageLimit>0,Range,Medium,Validation,Invalid coverage amount,Financial consistency,Active
+CONST-000012,Premium Positive,Policy,Policy,Premium>0,Range,Medium,Validation,Premium must be positive,Financial integrity,Active
+CONST-000013,Driver License Required,Driver,Driver,LicenseStatus=Valid,Business Rule,High,Assignment,Driver license invalid,Legal requirement,Active
+CONST-000014,Repair Requires Claim,Repair,Repair,Repair MUST reference Claim,Referential,Medium,Creation,Repair orphan detected,Repair follows claim,Active
+CONST-000015,Recommendation Requires Decision,Recommendation,Recommendation,Recommendation MUST reference Decision,Referential,Critical,Generation,Decision missing,Decision precedes recommendation,Active

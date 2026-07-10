@@ -1,0 +1,16 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-CLM-000001,CLAIM,CLM-000001,REC-CLM-000001,Assign SIU Investigation,"Multiple fraud indicators;Reporting delay","Witness inconsistency","The claim exhibits several fraud risk indicators requiring detailed investigation.",0.98,XAI Engine
+EXP-CLM-000002,CLAIM,CLM-000002,REC-CLM-000002,Fast-track Settlement,"Complete documentation;Low complexity","High customer score","The claim qualifies for accelerated settlement due to low operational risk.",0.96,XAI Engine
+EXP-CLM-000003,CLAIM,CLM-000003,REC-CLM-000003,Increase Reserve,"High repair estimate","Severe vehicle damage","Reserve is expected to be insufficient for projected settlement.",0.95,XAI Engine
+EXP-CLM-000004,CLAIM,CLM-000004,REC-CLM-000004,Approve OEM Repair,"Premium vehicle","OEM parts required","OEM repair ensures quality and preserves warranty.",0.94,XAI Engine
+EXP-CLM-000005,CLAIM,CLM-000005,REC-CLM-000005,Request Documents,"Incomplete submissions","Missing invoice","Additional documents are required before settlement.",0.95,XAI Engine
+EXP-CLM-000006,CLAIM,CLM-000006,REC-CLM-000006,Manual Fraud Review,"Fraud score above threshold","Document anomalies","Manual validation is recommended before approval.",0.97,XAI Engine
+EXP-CLM-000007,CLAIM,CLM-000007,REC-CLM-000007,Initiate Recovery,"Third-party liability","High recovery potential","Recovery action is financially beneficial.",0.93,XAI Engine
+EXP-CLM-000008,CLAIM,CLM-000008,REC-CLM-000008,Notify Customer,"Long processing duration","Pending assessment","Customer communication will improve experience.",0.91,XAI Engine
+EXP-CLM-000009,CLAIM,CLM-000009,REC-CLM-000009,Escalate Approval,"Reserve exceeded","Manager approval required","Higher approval authority is required.",0.94,XAI Engine
+EXP-CLM-000010,CLAIM,CLM-000010,REC-CLM-000010,Legal Review,"Potential liability dispute","Third-party disagreement","Legal review reduces future litigation risk.",0.92,XAI Engine
+EXP-CLM-000011,CLAIM,CLM-000011,REC-CLM-000011,Process Through STP,"Low complexity","Complete documentation","Claim qualifies for automated settlement.",0.91,XAI Engine
+EXP-CLM-000012,CLAIM,CLM-000012,REC-CLM-000012,Reserve Review,"Estimate variance","Repair cost uncertainty","Reserve should be reassessed.",0.92,XAI Engine
+EXP-CLM-000013,CLAIM,CLM-000013,REC-CLM-000013,Secondary Inspection,"AI confidence moderate","Repair estimate variance","Additional inspection improves decision confidence.",0.93,XAI Engine
+EXP-CLM-000014,CLAIM,CLM-000014,REC-CLM-000014,Assign Relationship Manager,"High-value customer","Repeated interactions","Dedicated support improves customer retention.",0.90,XAI Engine
+EXP-CLM-000015,CLAIM,CLM-000015,REC-CLM-000015,Post-Claim Review,"Claim completed","Operational learning","Post-claim analysis helps improve future claim handling.",0.91,XAI Engine

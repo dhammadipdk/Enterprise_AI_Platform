@@ -1,0 +1,11 @@
+incident_id,incident_name,incident_category,severity,affected_component,detection_source,incident_commander,sla_target,root_cause_required,postmortem_required,description,status
+INC-000001,Knowledge Service Outage,Knowledge,Critical,Knowledge Layer,Alert Engine,Knowledge Lead,1 Hour,TRUE,TRUE,Knowledge service unavailable,Open
+INC-000002,Memory Service Failure,Memory,Critical,Memory Layer,Health Checks,Platform Lead,30 Minutes,TRUE,TRUE,Memory unavailable,Open
+INC-000003,Planning Engine Failure,Planning,High,Planning Engine,Alert Engine,Planning Lead,2 Hours,TRUE,TRUE,Planning unavailable,Open
+INC-000004,Workflow Execution Failure,Execution,Critical,Execution Engine,Execution Monitor,Operations Lead,1 Hour,TRUE,TRUE,Workflow failures detected,Open
+INC-000005,Agent Platform Failure,Agents,Critical,Agent Platform,Runtime Monitor,AI Platform Lead,1 Hour,TRUE,TRUE,Agent platform degraded,Open
+INC-000006,Recommendation Degradation,Business,Medium,Recommendation Engine,Evaluation Engine,Business Lead,8 Hours,TRUE,FALSE,Recommendation quality degraded,Open
+INC-000007,Governance Violation,Governance,Critical,Governance Platform,Governance Engine,Governance Board,Immediate,TRUE,TRUE,Governance breach,Open
+INC-000008,Security Incident,Security,Critical,Security Platform,Security Engine,CISO,Immediate,TRUE,TRUE,Security incident detected,Open
+INC-000009,Enterprise Platform Degradation,Infrastructure,Critical,Enterprise Platform,System Monitor,SRE Lead,30 Minutes,TRUE,TRUE,Enterprise platform degradation,Open
+INC-000010,Cross-System Failure,Enterprise,Critical,Entire Platform,Composite Monitoring,Executive Incident Manager,Immediate,TRUE,TRUE,Multiple platform failures,Open

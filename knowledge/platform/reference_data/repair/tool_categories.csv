@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-TOOL-000001,HAND_TOOLS,Hand Tools,General mechanical hand tools,Active,2026-01-01,,Industry,
+REF-TOOL-000002,DIAGNOSTIC,Diagnostic Equipment,Vehicle diagnostic scanners and analyzers,Active,2026-01-01,,Industry,
+REF-TOOL-000003,PAINT_EQUIPMENT,Paint Equipment,Painting and refinishing equipment,Active,2026-01-01,,Industry,
+REF-TOOL-000004,LIFTING,Lifting Equipment,Vehicle lifts jacks and hoists,Active,2026-01-01,,Industry,
+REF-TOOL-000005,CALIBRATION,Calibration Equipment,ADAS calibration tools,Active,2026-01-01,,Industry,
+REF-TOOL-000006,WELDING,Welding Equipment,Welding and fabrication tools,Active,2026-01-01,,Industry,

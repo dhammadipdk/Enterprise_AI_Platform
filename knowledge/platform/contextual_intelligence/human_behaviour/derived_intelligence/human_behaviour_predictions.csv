@@ -1,0 +1,11 @@
+prediction_id,prediction_type,subject_type,subject_code,subject_name,predicted_attribute,predicted_value,prediction_unit,prediction_horizon,prediction_probability,confidence_score,derived_from,model_id,prediction_timestamp,valid_until,status,remarks
+PRED-HUM-000001,Claim,DRIVER,DRV-000001,Driver-000001,Expected Claim Probability,0.08,Probability,1 Year,0.93,0.95,Multiple Observations,MODEL-HUM-PRED-001,2026-07-01,2027-07-01,Active,
+PRED-HUM-000002,Risk,DRIVER,DRV-000002,Driver-000002,Aggressive Driving Escalation,0.72,Probability,90 Days,0.91,0.93,Driving History,MODEL-HUM-PRED-001,2026-07-01,2026-10-01,Active,
+PRED-HUM-000003,Fatigue,DRIVER,DRV-000003,Driver-000003,Fatigue Event Probability,0.41,Probability,30 Days,0.90,0.92,Fatigue History,MODEL-HUM-PRED-002,2026-07-01,2026-08-01,Active,
+PRED-HUM-000004,Compliance,DRIVER,DRV-000004,Driver-000004,Traffic Violation Probability,0.23,Probability,180 Days,0.89,0.91,Compliance History,MODEL-HUM-PRED-002,2026-07-01,2027-01-01,Active,
+PRED-HUM-000005,Behavior,DRIVER,DRV-000005,Driver-000005,Driver Improvement Score,9,Score Increase,6 Months,0.88,0.90,Behavior Trends,MODEL-HUM-PRED-003,2026-07-01,2027-01-01,Active,
+PRED-HUM-000006,Trust,DRIVER,DRV-000006,Driver-000006,Driver Trust Score Forecast,91,Score,1 Year,0.92,0.94,Historical Profile,MODEL-HUM-PRED-003,2026-07-01,2027-07-01,Active,
+PRED-HUM-000007,Usage,DRIVER,DRV-000007,Driver-000007,Night Driving Exposure,46,%,90 Days,0.89,0.91,Usage History,MODEL-HUM-PRED-004,2026-07-01,2026-10-01,Active,
+PRED-HUM-000008,Risk,DRIVER,DRV-000008,Driver-000008,Insurance Risk Forecast,58,Score,1 Year,0.91,0.93,Multiple Observations,MODEL-HUM-PRED-004,2026-07-01,2027-07-01,Active,
+PRED-HUM-000009,Behavior,DRIVER,DRV-000009,Driver-000009,Eco Driving Improvement,6,Score Increase,6 Months,0.87,0.89,Driving Trends,MODEL-HUM-PRED-005,2026-07-01,2027-01-01,Active,
+PRED-HUM-000010,Safety,DRIVER,DRV-000010,Driver-000010,Driving Safety Score Forecast,88,Score,1 Year,0.93,0.95,Historical Safety,MODEL-HUM-PRED-005,2026-07-01,2027-07-01,Active,

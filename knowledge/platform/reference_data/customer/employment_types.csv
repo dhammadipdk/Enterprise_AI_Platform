@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-EMP-000001,FULL_TIME,Full-Time,Full-time employment,Active,2026-01-01,,Enterprise,
+REF-EMP-000002,PART_TIME,Part-Time,Part-time employment,Active,2026-01-01,,Enterprise,
+REF-EMP-000003,CONTRACT,Contract,Fixed-term contract employment,Active,2026-01-01,,Enterprise,
+REF-EMP-000004,TEMPORARY,Temporary,Temporary employment,Active,2026-01-01,,Enterprise,
+REF-EMP-000005,SELF_EMPLOYED,Self-Employed,Independent professional or business owner,Active,2026-01-01,,Enterprise,
+REF-EMP-000006,RETIRED,Retired,No longer employed,Active,2026-01-01,,Enterprise,

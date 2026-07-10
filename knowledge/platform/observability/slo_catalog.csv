@@ -1,0 +1,11 @@
+slo_id,slo_name,related_sla,service_objective,error_budget,measurement_window,owner,monitoring_dashboard,description,status
+SLO-000001,Knowledge Availability,SLA-000001,99.9%,0.1%,30 Days,Knowledge Office,Knowledge Dashboard,Knowledge objective,Active
+SLO-000002,Memory Latency,SLA-000002,<50 ms,5 ms,30 Days,Platform Team,Infrastructure Dashboard,Memory objective,Active
+SLO-000003,Planning Response,SLA-000003,<500 ms,50 ms,30 Days,Planning Team,Planning Dashboard,Planning objective,Active
+SLO-000004,Workflow Reliability,SLA-000004,99%,1%,30 Days,Operations Team,Execution Dashboard,Workflow objective,Active
+SLO-000005,Agent Availability,SLA-000005,99.5%,0.5%,30 Days,AI Platform Team,Agent Dashboard,Agent objective,Active
+SLO-000006,Recommendation Quality,SLA-000006,95%,5%,30 Days,Business Team,Recommendation Dashboard,Recommendation objective,Active
+SLO-000007,Governance Compliance,SLA-000007,100%,0%,30 Days,Governance Board,Governance Dashboard,Governance objective,Active
+SLO-000008,Evaluation Coverage,SLA-000008,100%,0%,30 Days,Evaluation Team,Evaluation Dashboard,Evaluation objective,Active
+SLO-000009,Security Response,SLA-000009,<15 Minutes,5 Minutes,30 Days,Security Team,Security Dashboard,Security objective,Active
+SLO-000010,Enterprise Reliability,SLA-000010,99.95%,0.05%,30 Days,Executive Board,Executive Dashboard,Enterprise objective,Active

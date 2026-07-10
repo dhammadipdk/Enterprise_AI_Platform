@@ -1,0 +1,21 @@
+term_id,term,business_definition
+WF-001,Workflow,Enterprise business process
+WF-002,Execution Graph,Directed graph of execution
+WF-003,Node,Atomic workflow activity
+WF-004,Edge,Transition between nodes
+WF-005,Transition,Conditional movement
+WF-006,Human Task,Manual approval activity
+WF-007,Workflow Policy,Execution constraints
+WF-008,Recovery,Failure recovery
+WF-009,Checkpoint,Persisted workflow state
+WF-010,Saga,Distributed transaction workflow
+WF-011,Compensation,Undo failed workflow
+WF-012,Execution Profile,Workflow runtime configuration
+WF-013,Workflow Context,Runtime business context
+WF-014,Workflow Registry,Workflow repository
+WF-015,Workflow Version,Immutable workflow definition
+WF-016,Workflow Monitoring,Execution telemetry
+WF-017,Optimization,Workflow improvement
+WF-018,Parallel Execution,Concurrent nodes
+WF-019,Fan-Out,Branch execution
+WF-020,Fan-In,Merge execution

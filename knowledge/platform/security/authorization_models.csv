@@ -1,0 +1,11 @@
+authorization_model_id,authorization_model,model_type,best_use_case,supports_hierarchy,supports_attributes,supports_conditions,description,status
+AUTHZ-000001,RBAC,Role Based Access Control,Enterprise Applications,TRUE,FALSE,FALSE,Role-based authorization,Active
+AUTHZ-000002,ABAC,Attribute Based Access Control,Fine-grained Authorization,TRUE,TRUE,TRUE,Attribute-driven authorization,Active
+AUTHZ-000003,PBAC,Policy Based Access Control,Governance,TRUE,TRUE,TRUE,Policy-driven authorization,Active
+AUTHZ-000004,ReBAC,Relationship Based Access Control,Knowledge Graph,TRUE,TRUE,TRUE,Relationship-based authorization,Active
+AUTHZ-000005,Capability Based Access Control,Capability,Agents,FALSE,FALSE,TRUE,Capability tokens,Active
+AUTHZ-000006,Context Aware Access,Dynamic,Zero Trust,TRUE,TRUE,TRUE,Context-sensitive authorization,Active
+AUTHZ-000007,Risk Adaptive Access,Risk,High Risk Operations,TRUE,TRUE,TRUE,Risk-aware authorization,Active
+AUTHZ-000008,Time Based Access,Temporal,Temporary Privileges,FALSE,FALSE,TRUE,Time-limited access,Active
+AUTHZ-000009,Resource Based Access,Resource,Object Storage,FALSE,FALSE,TRUE,Resource-specific authorization,Active
+AUTHZ-000010,Hybrid Authorization,Enterprise,Enterprise AI Platform,TRUE,TRUE,TRUE,Combination of multiple authorization models,Active

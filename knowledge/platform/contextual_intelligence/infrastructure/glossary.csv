@@ -1,0 +1,21 @@
+term_id,term,business_definition
+INF-001,Road Surface,Physical condition of the road surface
+INF-002,Road Quality,Overall quality assessment of a roadway
+INF-003,Road Geometry,Physical layout including curves and gradients
+INF-004,Intersection,Road junction where multiple roads meet
+INF-005,Traffic Signal,Signalized traffic control device
+INF-006,Street Lighting,Road illumination infrastructure
+INF-007,Parking Facility,Location designated for vehicle parking
+INF-008,Parking Security,Security level of a parking area
+INF-009,CCTV Coverage,Availability of surveillance cameras
+INF-010,Fuel Station,Fuel dispensing facility
+INF-011,EV Charging Station,Electric vehicle charging facility
+INF-012,Emergency Response,Accessibility of emergency services
+INF-013,Road Maintenance,Condition resulting from maintenance activities
+INF-014,Bridge,Road bridge infrastructure
+INF-015,Tunnel,Underground road passage
+INF-016,Flyover,Grade-separated road structure
+INF-017,Toll Road,Road requiring toll payment
+INF-018,Road Hazard,Infrastructure condition increasing accident risk
+INF-019,Infrastructure Reliability,Overall reliability of built infrastructure
+INF-020,Accessibility,Ease of reaching services through infrastructure

@@ -1,0 +1,11 @@
+context_id,context_name,context_scope,context_source,lifecycle_stage,shared_between_agents,persisted,description,status
+CTX-000001,Working Execution Context,Execution,Memory,Runtime,TRUE,FALSE,Current execution state,Active
+CTX-000002,Reasoning Context,Reasoning,Reasoning Engine,Inference,TRUE,TRUE,Reasoning inputs,Active
+CTX-000003,Graph Context,Knowledge Graph,Knowledge Graph,Retrieval,TRUE,FALSE,Retrieved graph neighborhood,Active
+CTX-000004,Semantic Context,Memory,Vector DB,Retrieval,TRUE,FALSE,Semantic retrieval context,Active
+CTX-000005,Business Context,Business,Knowledge Layer,Planning,TRUE,TRUE,Business information,Active
+CTX-000006,User Context,Customer,Customer Profile,Runtime,FALSE,TRUE,Customer-specific runtime context,Active
+CTX-000007,Agent Context,Agent,Agent Platform,Execution,TRUE,FALSE,Agent execution context,Active
+CTX-000008,Workflow Context,Workflow,Execution Engine,Execution,TRUE,TRUE,Workflow metadata,Active
+CTX-000009,System Context,System,Infrastructure,Runtime,FALSE,FALSE,System runtime information,Active
+CTX-000010,Enterprise Context,Enterprise,Hybrid,Planning,TRUE,TRUE,Unified enterprise execution context,Active

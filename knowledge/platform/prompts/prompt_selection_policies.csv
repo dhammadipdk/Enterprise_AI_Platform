@@ -1,0 +1,11 @@
+policy_id,policy_name,requested_capability,selection_priority,primary_constraint,fallback_policy,context_sensitive,dynamic_selection,description,status
+PPOL-000001,General Assistant Policy,General Assistant,Quality,Business Context,Fallback Assistant,TRUE,TRUE,General enterprise assistant selection,Active
+PPOL-000002,RAG Policy,Knowledge Retrieval,Grounding,Knowledge Availability,Fallback RAG,TRUE,TRUE,RAG prompt selection,Active
+PPOL-000003,Planning Policy,Planning,Reasoning,Workflow Complexity,Fallback Planner,TRUE,TRUE,Planning prompt routing,Active
+PPOL-000004,Fraud Policy,Fraud Investigation,Accuracy,Risk Level,Fallback Fraud Prompt,TRUE,TRUE,Fraud prompt routing,Active
+PPOL-000005,Claims Policy,Claims Processing,Business Rules,Claim Type,Fallback Claims Prompt,TRUE,TRUE,Claims prompt routing,Active
+PPOL-000006,Executive Policy,Decision Support,Quality,Executive Context,Fallback Executive,TRUE,TRUE,Executive prompt routing,Active
+PPOL-000007,Compliance Policy,Compliance,Regulations,Jurisdiction,Fallback Compliance,TRUE,TRUE,Compliance routing,Active
+PPOL-000008,Evaluation Policy,Evaluation,Evaluation Quality,None,Fallback Evaluation,FALSE,TRUE,Evaluation prompt routing,Active
+PPOL-000009,Research Policy,Research,Reasoning,Research Context,Fallback Research,TRUE,TRUE,Research routing,Active
+PPOL-000010,Adaptive Prompt Router,All Capabilities,Runtime Optimization,Execution Context,Automatic,TRUE,TRUE,Dynamic enterprise prompt routing,Active

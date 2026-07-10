@@ -1,0 +1,16 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-WTH-000001,WEATHER,CITY,MUM,Mumbai,Rainfall,Annual Rainfall,mm,2450,2026-07-01T00:00:00Z,Mumbai,Annual,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000002,WEATHER,CITY,MUM,Mumbai,Humidity,Relative Humidity,%,88,2026-07-01T00:00:00Z,Mumbai,Monsoon,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000003,WEATHER,CITY,MUM,Mumbai,Temperature,Average Temperature,°C,30.2,2026-07-01T00:00:00Z,Mumbai,Monsoon,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000004,WEATHER,CITY,DEL,Delhi,Temperature,Maximum Temperature,°C,45.8,2026-06-15T00:00:00Z,Delhi,Summer,Government,IMD,Station,0.98,0.97,v1.0,Heatwave
+OBS-WTH-000005,WEATHER,CITY,DEL,Delhi,AQI,Air Quality Index,AQI,328,2026-11-15T00:00:00Z,Delhi,Winter,Government,CPCB,Monitoring Station,0.98,0.96,v1.0,
+OBS-WTH-000006,WEATHER,CITY,CHE,Chennai,Rainfall,Annual Rainfall,mm,1420,2026-07-01T00:00:00Z,Chennai,Annual,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000007,WEATHER,CITY,CHE,Chennai,Wind Speed,Average Wind Speed,km/h,24,2026-10-20T00:00:00Z,Chennai,Cyclone Season,Government,IMD,Station,0.98,0.97,v1.0,
+OBS-WTH-000008,WEATHER,CITY,KOL,Kolkata,Humidity,Relative Humidity,%,84,2026-08-01T00:00:00Z,Kolkata,Monsoon,Government,IMD,Station,0.98,0.97,v1.0,
+OBS-WTH-000009,WEATHER,CITY,BLR,Bengaluru,Temperature,Average Temperature,°C,24.5,2026-07-01T00:00:00Z,Bengaluru,Annual,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000010,WEATHER,CITY,PUN,Pune,Rainfall,Annual Rainfall,mm,722,2026-07-01T00:00:00Z,Pune,Annual,Government,IMD,Station,0.98,0.97,v1.0,
+OBS-WTH-000011,WEATHER,CITY,JAI,Jaipur,Temperature,Maximum Temperature,°C,46.3,2026-05-25T00:00:00Z,Jaipur,Summer,Government,IMD,Station,0.98,0.97,v1.0,
+OBS-WTH-000012,WEATHER,CITY,SHI,Shimla,Temperature,Minimum Temperature,°C,2.4,2026-01-10T00:00:00Z,Shimla,Winter,Government,IMD,Station,0.98,0.98,v1.0,
+OBS-WTH-000013,WEATHER,CITY,GUW,Guwahati,Rainfall,Annual Rainfall,mm,2180,2026-07-01T00:00:00Z,Guwahati,Annual,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000014,WEATHER,CITY,GOA,Panaji,Humidity,Relative Humidity,%,90,2026-07-01T00:00:00Z,Goa,Monsoon,Government,IMD,Station,0.99,0.98,v1.0,
+OBS-WTH-000015,WEATHER,CITY,AHM,Ahmedabad,Temperature,Maximum Temperature,°C,43.2,2026-05-28T00:00:00Z,Ahmedabad,Summer,Government,IMD,Station,0.98,0.97,v1.0,

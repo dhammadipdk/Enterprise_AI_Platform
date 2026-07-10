@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DOCCAT-000001,IDENTITY,Identity Documents,Customer identity documents,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000002,ADDRESS,Address Proof,Residential address proof,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000003,VEHICLE,Vehicle Documents,Vehicle ownership and compliance documents,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000004,INSURANCE,Insurance Documents,Insurance policy related documents,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000005,CLAIMS,Claim Documents,Documents supporting insurance claims,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000006,FINANCIAL,Financial Documents,Banking and payment documents,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000007,LEGAL,Legal Documents,Police and court related documents,Active,2026-01-01,,Enterprise,
+REF-DOCCAT-000008,MULTIMEDIA,Multimedia Evidence,Images videos and audio evidence,Active,2026-01-01,,Enterprise,

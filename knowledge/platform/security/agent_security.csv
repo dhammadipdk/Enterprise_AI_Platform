@@ -1,0 +1,11 @@
+agent_security_id,control_name,protected_agent,security_objective,identity_required,capability_validation,sandbox_required,audit_required,description,status
+AGSEC-000001,Agent Authentication,All Agents,Verify Agent Identity,TRUE,TRUE,FALSE,TRUE,Authenticate every agent,Active
+AGSEC-000002,Capability Validation,Worker Agents,Least Privilege,TRUE,TRUE,FALSE,TRUE,Validate agent capabilities,Active
+AGSEC-000003,Agent Sandboxing,Execution Agents,Execution Isolation,TRUE,TRUE,TRUE,TRUE,Run agents inside isolated environments,Active
+AGSEC-000004,Agent Communication Security,Multi-Agent Platform,Secure Messaging,TRUE,TRUE,FALSE,TRUE,Secure inter-agent communication,Active
+AGSEC-000005,Tool Invocation Validation,Tool Agents,Safe Tool Usage,TRUE,TRUE,FALSE,TRUE,Validate tool execution permissions,Active
+AGSEC-000006,Cross-Agent Trust,Coordinator Agents,Trust Validation,TRUE,TRUE,FALSE,TRUE,Validate trusted agents only,Active
+AGSEC-000007,Agent Resource Quotas,All Agents,Prevent Abuse,TRUE,FALSE,FALSE,TRUE,Limit compute and API usage,Active
+AGSEC-000008,Agent Lifecycle Governance,Agent Registry,Governance,TRUE,FALSE,FALSE,TRUE,Secure agent lifecycle,Active
+AGSEC-000009,Autonomous Decision Review,Decision Agents,Human Oversight,TRUE,TRUE,FALSE,TRUE,Review high-risk autonomous decisions,Active
+AGSEC-000010,Agent Termination Control,Runtime Agents,Emergency Shutdown,TRUE,FALSE,FALSE,TRUE,Terminate compromised agents,Active

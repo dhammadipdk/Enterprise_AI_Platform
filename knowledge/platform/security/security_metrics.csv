@@ -1,0 +1,11 @@
+security_metric_id,metric_name,metric_category,measurement_unit,target_value,measurement_frequency,business_owner,executive_visible,description,status
+SECMET-000001,Authentication Success Rate,Identity,Percentage,99.9,Daily,Identity Team,FALSE,Successful authentication attempts,Active
+SECMET-000002,MFA Adoption Rate,Identity,Percentage,100,Weekly,Identity Team,FALSE,Users protected by MFA,Active
+SECMET-000003,Authorization Decision Latency,Authorization,Milliseconds,<50,Daily,Platform Team,FALSE,Authorization evaluation latency,Active
+SECMET-000004,Secrets Rotation Compliance,Secrets,Percentage,100,Monthly,Security Team,TRUE,Secrets rotated according to policy,Active
+SECMET-000005,Encryption Coverage,Encryption,Percentage,100,Monthly,Security Team,TRUE,Protected enterprise assets,Active
+SECMET-000006,Security Incident MTTR,Operations,Hours,<4,Weekly,Security Operations,TRUE,Mean time to resolve incidents,Active
+SECMET-000007,Critical Vulnerability Count,Vulnerability,Count,0,Daily,Security Team,TRUE,Outstanding critical vulnerabilities,Active
+SECMET-000008,AI Security Compliance,AI Security,Percentage,100,Monthly,AI Governance Board,TRUE,Compliance with AI security controls,Active
+SECMET-000009,Prompt Injection Detection Rate,AI Security,Percentage,99,Weekly,AI Platform Team,FALSE,Prompt attack detection effectiveness,Active
+SECMET-000010,Enterprise Security Index,Enterprise,Score (0-100),95,Monthly,CISO,TRUE,Overall enterprise security posture,Active

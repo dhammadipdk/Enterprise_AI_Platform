@@ -1,0 +1,11 @@
+hallucination_rule_id,rule_name,detection_method,evidence_required,severity,response_action,automatic_detection,human_review_required,description,status
+HALL-000001,Unsupported Claim,Evidence Matching,TRUE,Critical,Reject Response,TRUE,TRUE,Statement unsupported by enterprise knowledge,Active
+HALL-000002,Fabricated Entity,Knowledge Graph Lookup,TRUE,Critical,Reject Response,TRUE,TRUE,Entity not present in enterprise graph,Active
+HALL-000003,Fabricated Regulation,Regulatory Validation,TRUE,Critical,Escalate,TRUE,TRUE,Invalid regulatory reference,Active
+HALL-000004,Unsupported Recommendation,Policy Validation,TRUE,High,Regenerate,TRUE,FALSE,Recommendation lacks evidence,Active
+HALL-000005,Incorrect Numerical Value,Ground Truth Validation,TRUE,High,Correct Response,TRUE,FALSE,Incorrect business values,Active
+HALL-000006,Conflicting Statement,Knowledge Consistency,TRUE,Medium,Review,TRUE,FALSE,Contradicts enterprise knowledge,Active
+HALL-000007,Temporal Hallucination,Temporal Validation,TRUE,Medium,Correct Response,TRUE,FALSE,Uses outdated information,Active
+HALL-000008,Causal Hallucination,Reasoning Validation,TRUE,High,Escalate,TRUE,TRUE,Incorrect causal explanation,Active
+HALL-000009,Multi-hop Hallucination,Graph Verification,TRUE,High,Review,TRUE,TRUE,Incorrect relationship inference,Active
+HALL-000010,Composite Hallucination,Hybrid Validation,TRUE,Critical,Reject Response,TRUE,TRUE,Multiple hallucination types detected,Active

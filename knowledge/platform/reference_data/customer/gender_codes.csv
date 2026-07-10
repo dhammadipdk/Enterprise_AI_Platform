@@ -1,0 +1,5 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-GENDER-000001,MALE,Male,Male gender,Active,2026-01-01,,Enterprise,
+REF-GENDER-000002,FEMALE,Female,Female gender,Active,2026-01-01,,Enterprise,
+REF-GENDER-000003,OTHER,Other,Gender identity other than male or female,Active,2026-01-01,,Enterprise,
+REF-GENDER-000004,UNSPECIFIED,Prefer Not to Specify,Gender intentionally not disclosed,Active,2026-01-01,,Enterprise,

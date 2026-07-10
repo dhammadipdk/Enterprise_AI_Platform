@@ -1,0 +1,11 @@
+protocol_id,protocol_name,communication_pattern,message_format,synchronous,reliable_delivery,priority_levels,supports_broadcast,supports_multicast,description,status
+COMM-000001,Direct Request-Response,Point-to-Point,JSON,TRUE,TRUE,TRUE,FALSE,FALSE,Direct agent communication,Active
+COMM-000002,Publish-Subscribe,Event Driven,Event,TRUE,TRUE,TRUE,TRUE,TRUE,Publish events to subscribers,Active
+COMM-000003,Broadcast,One-to-Many,JSON,FALSE,TRUE,TRUE,TRUE,FALSE,Broadcast enterprise events,Active
+COMM-000004,Task Assignment,Supervisor-Worker,Task Object,TRUE,TRUE,TRUE,FALSE,FALSE,Assign work to worker agents,Active
+COMM-000005,Workflow Events,Workflow,Execution Event,FALSE,TRUE,TRUE,TRUE,TRUE,Execution event communication,Active
+COMM-000006,Reasoning Exchange,Collaborative,Reasoning Object,TRUE,TRUE,FALSE,FALSE,FALSE,Exchange reasoning traces,Active
+COMM-000007,Knowledge Sharing,Knowledge,Knowledge Object,FALSE,TRUE,FALSE,TRUE,TRUE,Share enterprise knowledge,Active
+COMM-000008,Consensus Voting,Distributed,Vote Object,TRUE,TRUE,TRUE,FALSE,TRUE,Consensus protocol,Active
+COMM-000009,Human Interaction,Human,Approval Request,TRUE,TRUE,TRUE,FALSE,FALSE,Human-agent communication,Active
+COMM-000010,System Notification,System,System Event,FALSE,TRUE,TRUE,TRUE,TRUE,Platform notifications,Active

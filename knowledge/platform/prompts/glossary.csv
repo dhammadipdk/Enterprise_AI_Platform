@@ -1,0 +1,21 @@
+term_id,term,business_definition
+PROMPT-001,Prompt,Instruction sent to an AI model
+PROMPT-002,System Prompt,Highest priority instruction
+PROMPT-003,User Prompt,User supplied instruction
+PROMPT-004,Template,Reusable prompt structure
+PROMPT-005,Variable,Dynamic placeholder
+PROMPT-006,Grounding,Injecting enterprise knowledge
+PROMPT-007,Guardrail,Constraint preventing unsafe behavior
+PROMPT-008,Prompt Chain,Sequence of prompts
+PROMPT-009,Context,Supporting information
+PROMPT-010,Few-shot Example,Example based prompting
+PROMPT-011,Evaluation,Prompt quality assessment
+PROMPT-012,Optimization,Prompt improvement
+PROMPT-013,Version,Immutable prompt revision
+PROMPT-014,Routing,Selecting appropriate prompt
+PROMPT-015,Lifecycle,Prompt operational stages
+PROMPT-016,Prompt Profile,Execution configuration
+PROMPT-017,Prompt Registry,Enterprise prompt repository
+PROMPT-018,Prompt Security,Protection against misuse
+PROMPT-019,Ground Truth,Expected reference output
+PROMPT-020,Prompt Policy,Enterprise prompt governance

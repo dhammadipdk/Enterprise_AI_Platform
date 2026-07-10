@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_governed,is_execution_edge,is_monitored,description,status
+WFREL-000001,WorkflowRegistry,CONTAINS,WorkflowVersion,Registry,1:N,FALSE,TRUE,FALSE,FALSE,Registry stores workflow versions,Active
+WFREL-000002,WorkflowVersion,USES,WorkflowExecutionGraph,Execution,1:1,TRUE,FALSE,TRUE,FALSE,Workflow uses execution graph,Active
+WFREL-000003,WorkflowExecutionGraph,CONTAINS,WorkflowNode,Graph,1:N,TRUE,FALSE,TRUE,FALSE,Graphs contain nodes,Active
+WFREL-000004,WorkflowNode,CONNECTED_BY,WorkflowEdge,Graph,N:N,TRUE,FALSE,TRUE,FALSE,Nodes connected through edges,Active
+WFREL-000005,WorkflowEdge,CONTROLLED_BY,WorkflowTransition,Routing,N:1,TRUE,FALSE,TRUE,FALSE,Transitions control routing,Active
+WFREL-000006,WorkflowNode,USES,WorkflowContext,Runtime,N:N,TRUE,FALSE,TRUE,FALSE,Nodes consume workflow context,Active
+WFREL-000007,WorkflowNode,EXECUTES,PromptExecutionGraph,AI Runtime,N:N,TRUE,FALSE,TRUE,FALSE,Workflow invokes prompt execution,Active
+WFREL-000008,WorkflowNode,ROUTES_TO,ModelSelectionPolicy,Models,N:N,TRUE,TRUE,TRUE,FALSE,Workflow selects model capability,Active
+WFREL-000009,WorkflowNode,INVOKES,Agent,Agents,N:N,TRUE,FALSE,TRUE,FALSE,Workflow invokes agents,Active
+WFREL-000010,WorkflowNode,PROTECTED_BY,WorkflowPolicy,Governance,N:N,TRUE,TRUE,TRUE,FALSE,Execution governed by policies,Active
+WFREL-000011,WorkflowExecutionGraph,MONITORED_BY,WorkflowMonitoring,Observability,N:N,TRUE,FALSE,TRUE,TRUE,Workflow execution monitored,Active
+WFREL-000012,WorkflowRecovery,RECOVERS,WorkflowExecutionGraph,Reliability,N:N,TRUE,FALSE,TRUE,FALSE,Recovery restores execution,Active

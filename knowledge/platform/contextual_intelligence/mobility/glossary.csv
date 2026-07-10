@@ -1,0 +1,21 @@
+term_id,term,business_definition
+MOB-001,Traffic Flow,Movement rate of vehicles through a road network
+MOB-002,Traffic Congestion,Reduction in traffic speed caused by demand exceeding road capacity
+MOB-003,Vehicle Density,Number of vehicles occupying a road segment
+MOB-004,Average Speed,Average travel speed over a route
+MOB-005,Travel Time,Time required to complete a journey
+MOB-006,Trip Distance,Distance travelled during a trip
+MOB-007,Peak Hour,Period with highest traffic demand
+MOB-008,Commute Pattern,Recurring travel behaviour between locations
+MOB-009,Travel Exposure,Amount of exposure to road risk through travel
+MOB-010,Route Reliability,Consistency of travel conditions on a route
+MOB-011,Trip Frequency,Number of trips within a defined period
+MOB-012,Parking Duration,Length of time a vehicle remains parked
+MOB-013,Idle Time,Time spent stationary while the engine is running
+MOB-014,Road Utilization,Extent to which road capacity is used
+MOB-015,Mobility Risk,Overall transportation-related insurance risk
+MOB-016,Travel Delay,Additional travel time caused by congestion or incidents
+MOB-017,Travel Corridor,Frequently used transportation route
+MOB-018,Journey Efficiency,Efficiency of completing a journey
+MOB-019,Mobility Pattern,Observed transportation behaviour over time
+MOB-020,Route Exposure,Risk accumulated along a travel route

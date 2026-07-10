@@ -1,0 +1,21 @@
+term_id,term,business_definition
+ONTO-001,Ontology,Formal representation of enterprise knowledge
+ONTO-002,Entity,A business object represented in the ontology
+ONTO-003,Class,Abstract category of entities
+ONTO-004,Instance,Concrete realization of a class
+ONTO-005,Relationship,Semantic connection between entities
+ONTO-006,Object Property,Relationship connecting two entities
+ONTO-007,Data Property,Attribute describing an entity
+ONTO-008,Inheritance,Parent-child semantic hierarchy
+ONTO-009,Constraint,Rule restricting valid ontology states
+ONTO-010,Semantic Class,Business meaning assigned to an entity
+ONTO-011,Domain,Source class of a relationship
+ONTO-012,Range,Target class of a relationship
+ONTO-013,Ontology Alignment,Mapping between different semantic models
+ONTO-014,Knowledge Graph,Graph implementation of ontology
+ONTO-015,Semantic Reasoning,Inference using ontology semantics
+ONTO-016,Taxonomy,Hierarchical classification of concepts
+ONTO-017,Concept,Abstract business meaning
+ONTO-018,Semantic Identity,Unique meaning of an entity
+ONTO-019,Enterprise Vocabulary,Standard business terminology
+ONTO-020,Ontology Module,Logical subdivision of ontology

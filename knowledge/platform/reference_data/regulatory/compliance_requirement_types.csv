@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-COMP-000001,MANDATORY,Mandatory Compliance,Compliance required by law,Active,2026-01-01,,Enterprise,
+REF-COMP-000002,REGULATORY,Regulatory Compliance,Required by regulator,Active,2026-01-01,,Enterprise,
+REF-COMP-000003,CONTRACTUAL,Contractual Compliance,Required by contractual agreement,Active,2026-01-01,,Enterprise,
+REF-COMP-000004,INTERNAL,Internal Compliance,Internal organizational policy,Active,2026-01-01,,Enterprise,
+REF-COMP-000005,OPTIONAL,Optional Compliance,Recommended but not mandatory,Active,2026-01-01,,Enterprise,

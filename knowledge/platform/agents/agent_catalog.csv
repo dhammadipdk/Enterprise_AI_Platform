@@ -1,0 +1,11 @@
+agent_id,agent_name,agent_category,primary_role,planner_enabled,memory_enabled,execution_enabled,reasoning_enabled,multi_agent,description,status
+AG-000001,Recommendation Agent,Business,Recommendation,TRUE,TRUE,TRUE,TRUE,TRUE,Generates customer recommendations,Active
+AG-000002,Fraud Agent,Risk,Fraud Investigation,TRUE,TRUE,TRUE,TRUE,TRUE,Investigates fraud,Active
+AG-000003,Claims Agent,Operations,Claim Processing,TRUE,TRUE,TRUE,TRUE,TRUE,Handles claims,Active
+AG-000004,Planning Agent,Cognitive,Planning,TRUE,TRUE,FALSE,TRUE,TRUE,Creates enterprise plans,Active
+AG-000005,Execution Agent,Cognitive,Execution,FALSE,TRUE,TRUE,FALSE,TRUE,Executes enterprise workflows,Active
+AG-000006,Reasoning Agent,Cognitive,Reasoning,FALSE,TRUE,FALSE,TRUE,TRUE,Produces enterprise reasoning,Active
+AG-000007,Knowledge Agent,Knowledge,Knowledge Management,FALSE,TRUE,FALSE,FALSE,TRUE,Enterprise knowledge management,Active
+AG-000008,Memory Agent,Infrastructure,Memory Management,FALSE,TRUE,FALSE,FALSE,TRUE,Maintains enterprise memory,Active
+AG-000009,Coordinator Agent,Supervisor,Coordination,TRUE,TRUE,TRUE,TRUE,TRUE,Coordinates multiple agents,Active
+AG-000010,Learning Agent,Learning,Learning,FALSE,TRUE,FALSE,TRUE,TRUE,Continuous learning,Active

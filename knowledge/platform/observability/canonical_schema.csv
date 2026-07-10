@@ -1,0 +1,12 @@
+field_name,data_type,required,description
+observation_id,String,TRUE,Unique observation identifier
+component_name,String,TRUE,Platform component
+event_type,String,TRUE,Telemetry event type
+severity,String,FALSE,Operational severity
+trace_id,String,FALSE,Distributed trace identifier
+span_id,String,FALSE,Operation identifier
+timestamp,Datetime,TRUE,Observation timestamp
+duration_ms,Integer,FALSE,Execution duration
+status,String,TRUE,Runtime status
+source,String,TRUE,Telemetry producer
+metadata,JSON,FALSE,Additional runtime metadata

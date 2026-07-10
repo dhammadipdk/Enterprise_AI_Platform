@@ -1,0 +1,11 @@
+monitor_id,monitor_name,metric_category,collection_frequency,alert_threshold,dashboard,automatic_action,description,status
+WMON-000001,Execution Latency,Performance,Real Time,>30 Seconds,Workflow Dashboard,Alert,Workflow latency,Active
+WMON-000002,Workflow Success,Reliability,Real Time,<99%,Operations Dashboard,Investigate,Execution success rate,Active
+WMON-000003,Node Failures,Reliability,Real Time,>5/hour,Execution Dashboard,Retry,Node failures,Active
+WMON-000004,Queue Depth,Infrastructure,Real Time,>1000,Infrastructure Dashboard,Scale Out,Workflow queues,Active
+WMON-000005,Agent Utilization,Agents,Real Time,>90%,Agent Dashboard,Scale Agents,Agent workload,Active
+WMON-000006,Execution Cost,Financial,Daily,Budget Exceeded,Cost Dashboard,Notify,Workflow cost,Active
+WMON-000007,Human Approval Delay,Business,Hourly,>24 Hours,Business Dashboard,Escalate,Approval delays,Active
+WMON-000008,Checkpoint Health,Reliability,Real Time,Checkpoint Failures,Recovery Dashboard,Recover,Checkpoint monitoring,Active
+WMON-000009,Recovery Success,Reliability,Hourly,<95%,Recovery Dashboard,Investigate,Recovery effectiveness,Active
+WMON-000010,Enterprise Workflow Health,Composite,Hourly,<95,Executive Dashboard,Executive Alert,Overall workflow health,Active

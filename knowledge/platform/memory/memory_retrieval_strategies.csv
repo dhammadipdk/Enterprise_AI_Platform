@@ -1,0 +1,11 @@
+strategy_id,strategy_name,retrieval_type,primary_memory,secondary_memory,ranking_strategy,reranking,graph_expansion,vector_search,max_results,description,status
+MRET-000001,Working Memory First,Priority,Working Memory,Semantic Memory,Recency,TRUE,FALSE,FALSE,20,Current reasoning context,Active
+MRET-000002,Semantic Retrieval,Semantic,Semantic Memory,Knowledge Graph,Embedding Similarity,TRUE,TRUE,TRUE,50,Enterprise semantic retrieval,Active
+MRET-000003,Graph Traversal,Graph,Knowledge Graph,Semantic Memory,Traversal Score,FALSE,TRUE,FALSE,100,Graph neighborhood search,Active
+MRET-000004,Hybrid Retrieval,Hybrid,Semantic Memory,Knowledge Graph,Hybrid Score,TRUE,TRUE,TRUE,50,Graph + Vector retrieval,Active
+MRET-000005,Conversation Context,Conversation,Conversation Memory,Working Memory,Recency,FALSE,FALSE,TRUE,30,Conversation continuity,Active
+MRET-000006,Reasoning Recall,Reasoning,Reasoning Memory,Episodic Memory,Confidence Score,TRUE,FALSE,TRUE,20,Retrieve reasoning traces,Active
+MRET-000007,Customer360 Retrieval,Business,Customer Memory,Policy Memory,Business Priority,TRUE,TRUE,TRUE,40,Complete customer context,Active
+MRET-000008,Fraud Investigation,Risk,Fraud Memory,Claim Memory,Risk Score,TRUE,TRUE,TRUE,100,Fraud analysis retrieval,Active
+MRET-000009,Enterprise Search,Enterprise,All Memories,Knowledge Graph,Composite Score,TRUE,TRUE,TRUE,100,Enterprise-wide retrieval,Active
+MRET-000010,Agent Shared Retrieval,Agents,Agent Memory,Enterprise Memory,Importance Score,TRUE,TRUE,TRUE,30,Cross-agent memory sharing,Active

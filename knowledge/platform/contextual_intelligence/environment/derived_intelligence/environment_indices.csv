@@ -1,0 +1,13 @@
+intelligence_id,intelligence_type,subject_type,subject_code,subject_name,attribute,score,level,confidence_score,derived_from,model_id,valid_from,valid_to,status,remarks
+INT-IDX-000001,INDEX,CITY,MUM,Mumbai,Climate Severity Index,89,High,0.96,Multiple Observations,MODEL-ENV-IDX-001,2026-01-01,2026-12-31,Active,
+INT-IDX-000002,INDEX,CITY,MUM,Mumbai,Environmental Exposure Index,91,Very High,0.96,Multiple Observations,MODEL-ENV-IDX-002,2026-01-01,2026-12-31,Active,
+INT-IDX-000003,INDEX,CITY,CHE,Chennai,Climate Severity Index,86,High,0.95,Multiple Observations,MODEL-ENV-IDX-001,2026-01-01,2026-12-31,Active,
+INT-IDX-000004,INDEX,CITY,DEL,Delhi,Weather Stability Index,42,Low,0.91,Multiple Observations,MODEL-ENV-IDX-003,2026-01-01,2026-12-31,Active,
+INT-IDX-000005,INDEX,CITY,DEL,Delhi,Urban Heat Index,88,High,0.95,OBS-ENV-000008,MODEL-ENV-IDX-004,2026-01-01,2026-12-31,Active,
+INT-IDX-000006,INDEX,CITY,GOA,Panaji,Coastal Exposure Index,93,Very High,0.97,OBS-ENV-000002;OBS-ENV-000007,MODEL-ENV-IDX-005,2026-01-01,2026-12-31,Active,
+INT-IDX-000007,INDEX,CITY,SHI,Shimla,Terrain Hazard Index,81,High,0.94,OBS-ENV-000005,MODEL-ENV-IDX-006,2026-01-01,2026-12-31,Active,
+INT-IDX-000008,INDEX,CITY,GUW,Guwahati,Flood Exposure Index,94,Very High,0.97,Multiple Observations,MODEL-ENV-IDX-007,2026-01-01,2026-12-31,Active,
+INT-IDX-000009,INDEX,CITY,PUN,Pune,Environmental Resilience Index,74,Medium,0.91,Multiple Observations,MODEL-ENV-IDX-008,2026-01-01,2026-12-31,Active,
+INT-IDX-000010,INDEX,CITY,KOL,Kolkata,Seasonal Volatility Index,79,High,0.93,Multiple Observations,MODEL-ENV-IDX-009,2026-01-01,2026-12-31,Active,
+INT-IDX-000011,INDEX,CITY,AHM,Ahmedabad,Climate Severity Index,69,Medium,0.90,Multiple Observations,MODEL-ENV-IDX-001,2026-01-01,2026-12-31,Active,
+INT-IDX-000012,INDEX,CITY,JAI,Jaipur,Water Scarcity Index,84,High,0.94,Multiple Observations,MODEL-ENV-IDX-010,2026-01-01,2026-12-31,Active,

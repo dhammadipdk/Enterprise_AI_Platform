@@ -1,0 +1,11 @@
+propagation_id,input_confidence_sources,propagation_strategy,aggregation_formula,minimum_required_confidence,maximum_output_confidence,uncertainty_handling,decision_threshold,reasoning_notes,status
+CONF-000001,Single Evidence,Direct Copy,Identity,0.50,1.00,None,0.70,Single source reasoning.,Active
+CONF-000002,Multiple Independent Evidence,Weighted Average,WeightedMean,0.60,0.99,Variance Adjustment,0.75,Independent evidence aggregation.,Active
+CONF-000003,Dependent Evidence,Bayesian,Bayesian Update,0.60,0.99,Bayesian Posterior,0.80,Dependent observations.,Active
+CONF-000004,Knowledge Graph Traversal,Path Confidence,Multiplicative,0.65,0.98,Edge Weight Adjustment,0.75,Graph reasoning.,Active
+CONF-000005,Rule Chain,Minimum Rule,Minimum Confidence,0.70,0.95,Weakest Link,0.80,Sequential rule execution.,Active
+CONF-000006,Hybrid AI,Weighted Ensemble,Ensemble Average,0.60,0.99,Model Calibration,0.80,Multiple AI models.,Active
+CONF-000007,LLM Reasoning,Confidence Calibration,Calibrated Score,0.55,0.95,Prompt Calibration,0.75,LLM-assisted reasoning.,Active
+CONF-000008,GraphRAG Retrieval,Retrieval Confidence,Retrieval Score,0.60,0.98,Retrieval Ranking,0.78,Graph evidence retrieval.,Active
+CONF-000009,Human + AI Consensus,Consensus Rule,Consensus Average,0.70,1.00,Human Override,0.85,Human-in-loop reasoning.,Active
+CONF-000010,Enterprise Decision,Hierarchical Aggregation,Hierarchical Weighted,0.80,0.99,Confidence Propagation,0.90,Final business decision.,Active

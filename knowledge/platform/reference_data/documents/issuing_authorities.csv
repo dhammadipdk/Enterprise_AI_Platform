@@ -1,0 +1,13 @@
+reference_id,organization_code,organization_name,organization_type,website,status,effective_date,expiry_date,source_authority,remarks
+REF-AUTH-000001,UIDAI,Unique Identification Authority of India,Government Authority,https://uidai.gov.in,Active,2009-01-28,,Government of India,
+REF-AUTH-000002,ITD,Income Tax Department,Government Authority,https://incometax.gov.in,Active,1961-04-01,,Government of India,
+REF-AUTH-000003,MORTH,Ministry of Road Transport and Highways,Government Ministry,https://morth.nic.in,Active,1985-01-01,,Government of India,
+REF-AUTH-000004,INDIA_POST,India Post,Government Postal Service,https://www.indiapost.gov.in,Active,1854-10-01,,Government of India,
+REF-AUTH-000005,POLICE,Police Department,Law Enforcement Agency,,Active,1950-01-26,,State Government,
+REF-AUTH-000006,HOSPITAL,Registered Hospital,Healthcare Organization,,Active,2026-01-01,,State Government,
+REF-AUTH-000007,INSURER,Insurance Company,Insurance Organization,,Active,2026-01-01,,IRDAI,
+REF-AUTH-000008,SURVEYOR,Licensed Surveyor,Insurance Surveyor,,Active,2026-01-01,,IRDAI,
+REF-AUTH-000009,WORKSHOP,Authorized Workshop,Vehicle Repair Organization,,Active,2026-01-01,,OEM/Insurance,
+REF-AUTH-000010,BANK,Scheduled Bank,Banking Institution,,Active,2026-01-01,,Reserve Bank of India,
+REF-AUTH-000011,PASSPORT_AUTH,Passport Office,Passport Issuing Authority,https://passportindia.gov.in,Active,1967-01-01,,Government of India,
+REF-AUTH-000012,ECI,Election Commission of India,Constitutional Authority,https://eci.gov.in,Active,1950-01-25,,Government of India,

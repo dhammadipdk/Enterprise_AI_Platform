@@ -1,0 +1,11 @@
+reasoning_eval_id,evaluation_dimension,evaluation_metric,ground_truth_required,trace_required,confidence_required,pass_threshold,business_use,description,status
+REASON-000001,Logical Consistency,Consistency Score,TRUE,TRUE,TRUE,95,Reasoning Validation,Logical consistency evaluation,Active
+REASON-000002,Causal Reasoning,Causal Accuracy,TRUE,TRUE,TRUE,94,Risk Analysis,Cause-effect correctness,Active
+REASON-000003,Multi-hop Reasoning,Reasoning Depth,TRUE,TRUE,TRUE,93,Knowledge Reasoning,Graph reasoning quality,Active
+REASON-000004,Policy Reasoning,Compliance Accuracy,TRUE,TRUE,TRUE,98,Governance,Policy reasoning correctness,Active
+REASON-000005,Recommendation Reasoning,Recommendation Quality,TRUE,TRUE,TRUE,95,Recommendation AI,Reasoning behind recommendation,Active
+REASON-000006,Fraud Reasoning,Fraud Detection Accuracy,TRUE,TRUE,TRUE,96,Fraud Detection,Fraud reasoning evaluation,Active
+REASON-000007,Counterfactual Reasoning,Alternative Quality,TRUE,TRUE,TRUE,90,Decision Support,Counterfactual analysis,Active
+REASON-000008,Chain-of-Thought Validation,Trace Agreement,TRUE,TRUE,TRUE,95,Explainability,Reasoning trace validation,Active
+REASON-000009,Confidence Calibration,Calibration Error,TRUE,FALSE,TRUE,94,AI Reliability,Confidence evaluation,Active
+REASON-000010,Overall Reasoning Score,Composite Score,FALSE,TRUE,TRUE,95,Enterprise AI,Composite reasoning quality,Active

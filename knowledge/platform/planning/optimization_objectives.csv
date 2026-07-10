@@ -1,0 +1,11 @@
+objective_id,objective_name,optimization_category,target_metric,optimization_direction,business_priority,multi_objective,description,status
+OPT-000001,Minimize Execution Time,Performance,Execution Time,Minimize,Critical,TRUE,Reduce execution latency,Active
+OPT-000002,Minimize Cost,Financial,Execution Cost,Minimize,High,TRUE,Reduce operational cost,Active
+OPT-000003,Maximize Recommendation Quality,Quality,Recommendation Score,Maximize,Critical,TRUE,Improve recommendation quality,Active
+OPT-000004,Maximize Customer Satisfaction,Business,Satisfaction Score,Maximize,Critical,TRUE,Customer-centric planning,Active
+OPT-000005,Minimize Risk,Risk,Risk Score,Minimize,Critical,TRUE,Reduce operational risk,Active
+OPT-000006,Maximize Resource Utilization,Resource,Utilization,Maximize,Medium,TRUE,Efficient resource usage,Active
+OPT-000007,Maximize Explainability,Governance,Explanation Score,Maximize,High,FALSE,Explainable planning,Active
+OPT-000008,Minimize Agent Communication,Agents,Communication Cost,Minimize,Medium,TRUE,Reduce coordination overhead,Active
+OPT-000009,Maximize Knowledge Reuse,Knowledge,Reuse Score,Maximize,Medium,FALSE,Reuse enterprise knowledge,Active
+OPT-000010,Balanced Optimization,Hybrid,Composite Score,Hybrid,Critical,TRUE,Overall enterprise optimization,Active

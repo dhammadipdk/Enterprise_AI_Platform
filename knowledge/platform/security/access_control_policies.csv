@@ -1,0 +1,11 @@
+policy_id,policy_name,authorization_model,protected_resource,evaluation_order,deny_by_default,continuous_validation,description,status
+ACP-000001,Customer Data Access,RBAC,Customer Profiles,1,TRUE,TRUE,Protect customer data,Active
+ACP-000002,Knowledge Publishing Policy,PBAC,Knowledge Repository,2,TRUE,TRUE,Knowledge publication control,Active
+ACP-000003,Agent Capability Policy,Capability Based Access Control,Agent Platform,3,TRUE,TRUE,Limit agent capabilities,Active
+ACP-000004,Model Deployment Policy,ABAC,Model Registry,4,TRUE,TRUE,Model deployment security,Active
+ACP-000005,Secrets Access Policy,RBAC,Secrets Vault,5,TRUE,TRUE,Secrets management access,Active
+ACP-000006,Workflow Execution Policy,Context Aware Access,Workflow Engine,6,TRUE,TRUE,Workflow authorization,Active
+ACP-000007,API Invocation Policy,Risk Adaptive Access,API Gateway,7,TRUE,TRUE,Secure API access,Active
+ACP-000008,Memory Access Policy,ABAC,Memory Store,8,TRUE,TRUE,Memory protection,Active
+ACP-000009,Audit Access Policy,RBAC,Audit Repository,9,TRUE,TRUE,Audit log access,Active
+ACP-000010,Enterprise Zero Trust Policy,Hybrid Authorization,Entire Platform,10,TRUE,TRUE,Enterprise-wide zero trust enforcement,Active

@@ -1,0 +1,11 @@
+audit_security_id,audit_control,audited_component,audit_scope,immutable_storage,retention_period,compliance_mapping,business_owner,description,status
+AUDSEC-000001,Authentication Audit,Identity Platform,Authentication Events,TRUE,7 Years,ISO 27001,Security Team,Audit authentication events,Active
+AUDSEC-000002,Authorization Audit,Authorization Engine,Permission Decisions,TRUE,7 Years,ISO 27001,Security Team,Audit authorization decisions,Active
+AUDSEC-000003,Data Access Audit,Enterprise Data,Data Access Events,TRUE,7 Years,DPDP,Data Office,Audit sensitive data access,Active
+AUDSEC-000004,Agent Audit,Agent Platform,Agent Actions,TRUE,7 Years,Internal Policy,AI Platform Team,Audit agent activities,Active
+AUDSEC-000005,Prompt Audit,Prompt Platform,Prompt Execution,TRUE,5 Years,Responsible AI,AI Governance Board,Audit prompt execution,Active
+AUDSEC-000006,Model Audit,Model Platform,Model Invocation,TRUE,5 Years,ISO 42001,MLOps Team,Audit model usage,Active
+AUDSEC-000007,Memory Audit,Memory Layer,Memory Operations,TRUE,7 Years,Internal Policy,Platform Team,Audit memory operations,Active
+AUDSEC-000008,Governance Audit,Governance Platform,Governance Decisions,TRUE,10 Years,Internal Governance,Governance Board,Audit governance actions,Active
+AUDSEC-000009,Security Audit,Security Platform,Security Events,TRUE,10 Years,ISO 27001,Security Team,Audit security operations,Active
+AUDSEC-000010,Enterprise Audit,Entire Platform,End-to-End Activity,TRUE,10 Years,Enterprise Policy,Executive Board,Enterprise audit coverage,Active

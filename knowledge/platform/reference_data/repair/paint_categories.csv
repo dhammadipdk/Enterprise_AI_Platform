@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PAINT-000001,SOLID,Solid Paint,Non-metallic paint finish,Active,2026-01-01,,Industry,
+REF-PAINT-000002,METALLIC,Metallic Paint,Metallic finish paint,Active,2026-01-01,,Industry,
+REF-PAINT-000003,PEARL,Pearl Paint,Pearlescent finish,Active,2026-01-01,,Industry,
+REF-PAINT-000004,MATTE,Matte Paint,Matte finish coating,Active,2026-01-01,,Industry,
+REF-PAINT-000005,CLEAR_COAT,Clear Coat,Protective clear coating,Active,2026-01-01,,Industry,

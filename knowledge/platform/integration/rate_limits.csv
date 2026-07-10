@@ -1,0 +1,11 @@
+rate_limit_id,policy_name,applies_to,scope,request_limit,time_window,burst_limit,throttling_strategy,description,status
+RL-000001,Gateway Rate Limit,API Gateway,Per Client,1000,1 Minute,100,Token Bucket,Gateway protection,Active
+RL-000002,Knowledge API Limit,Knowledge API,Per User,300,1 Minute,50,Token Bucket,Knowledge API protection,Active
+RL-000003,Memory API Limit,Memory API,Per User,500,1 Minute,100,Sliding Window,Memory API protection,Active
+RL-000004,Planning API Limit,Planning API,Per User,100,1 Minute,20,Token Bucket,Planning API protection,Active
+RL-000005,Recommendation API Limit,Recommendation API,Per Customer,60,1 Minute,10,Leaky Bucket,Recommendation protection,Active
+RL-000006,Agent Invocation Limit,Agent Platform,Per Agent,500,1 Minute,100,Sliding Window,Prevent runaway agents,Active
+RL-000007,Model Inference Limit,Model Platform,Per Tenant,1000,1 Minute,200,Token Bucket,Inference protection,Active
+RL-000008,Webhook Limit,Webhook Platform,Per Endpoint,300,1 Minute,50,Fixed Window,Webhook protection,Active
+RL-000009,External Connector Limit,External Systems,Per Connector,200,1 Minute,30,Adaptive,Prevent external API abuse,Active
+RL-000010,Telemetry Limit,Observability,Per Service,5000,1 Minute,1000,None,Telemetry ingestion control,Active

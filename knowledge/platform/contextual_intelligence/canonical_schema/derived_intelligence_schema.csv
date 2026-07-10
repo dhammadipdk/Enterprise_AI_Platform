@@ -1,0 +1,16 @@
+field_name,data_type,required,description,example
+intelligence_id,string,Yes,Unique intelligence identifier,INT-000001
+intelligence_type,string,Yes,Category of intelligence,RISK
+subject_type,string,Yes,Target entity type,CITY
+subject_code,string,Yes,Target entity code,MUMBAI
+subject_name,string,Yes,Target entity name,Mumbai
+attribute,string,Yes,Evaluated attribute,Flood Risk
+score,float,Yes,Normalized score (0–100),92.5
+level,string,Yes,Categorical level,Very High
+confidence_score,float,Yes,Confidence in intelligence,0.95
+derived_from,string,Yes,Observation IDs or dataset references,OBS-000001;OBS-000018
+model_id,string,Yes,Inference model used,MODEL-RISK-001
+valid_from,date,Yes,Validity start,2026-07-01
+valid_to,date,No,Validity end,2027-06-30
+status,string,Yes,Current lifecycle status,Active
+remarks,string,No,Additional comments,

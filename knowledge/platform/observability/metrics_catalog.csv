@@ -1,0 +1,11 @@
+metric_id,metric_name,metric_category,measurement_unit,aggregation,target_value,alert_enabled,description,status
+MET-000001,Request Latency,Performance,Milliseconds,P95,<2000,TRUE,Overall request latency,Active
+MET-000002,Knowledge Latency,Knowledge,Milliseconds,Average,<100,TRUE,Knowledge retrieval latency,Active
+MET-000003,Memory Latency,Memory,Milliseconds,Average,<50,FALSE,Memory latency,Active
+MET-000004,Planning Latency,Planning,Milliseconds,P95,<500,TRUE,Planning performance,Active
+MET-000005,Execution Latency,Execution,Milliseconds,P95,<700,TRUE,Workflow latency,Active
+MET-000006,Agent Success Rate,Agents,Percentage,Average,>97,TRUE,Agent execution success,Active
+MET-000007,Recommendation Accuracy,Business,Percentage,Average,>90,TRUE,Recommendation quality,Active
+MET-000008,System Availability,Infrastructure,Percentage,Monthly,99.9,TRUE,System uptime,Active
+MET-000009,Trace Completion Rate,Tracing,Percentage,Average,100,TRUE,Distributed tracing completeness,Active
+MET-000010,Telemetry Volume,Infrastructure,Events/sec,Average,Observe,FALSE,Telemetry throughput,Active

@@ -1,0 +1,23 @@
+entity_name,entity_type,description
+PolicyObservation,Observation,Observed insurance policy behavior
+PremiumObservation,Observation,Observed premium payment activity
+RenewalObservation,Observation,Observed renewal events
+PaymentObservation,Observation,Observed payment behavior
+CoverageObservation,Observation,Observed policy coverage characteristics
+EndorsementObservation,Observation,Observed policy endorsements
+AddOnObservation,Observation,Observed add-on purchases
+ServicingObservation,Observation,Observed policy servicing activities
+EngagementObservation,Observation,Observed customer engagement with policy
+ClaimUtilizationObservation,Observation,Observed policy claim utilization
+PolicyHealthScore,DerivedIntelligence,Overall insurance policy quality score
+RenewalProbability,DerivedIntelligence,Predicted renewal likelihood
+RetentionScore,DerivedIntelligence,Predicted customer retention
+LapseRiskScore,DerivedIntelligence,Predicted lapse probability
+CoverageAdequacyIndex,DerivedIntelligence,Coverage sufficiency assessment
+PaymentReliabilityIndex,DerivedIntelligence,Premium payment consistency
+CustomerLoyaltyScore,DerivedIntelligence,Overall customer loyalty indicator
+CrossSellOpportunity,DerivedIntelligence,Potential for additional product sales
+UpsellOpportunity,DerivedIntelligence,Potential for coverage upgrades
+ProductEngagementScore,DerivedIntelligence,Policy engagement indicator
+PolicyRecommendation,Recommendation,Recommended policy action
+InsuranceBehaviorRelationship,Relationship,Causal relationship between policy events

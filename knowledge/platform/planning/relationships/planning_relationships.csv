@@ -1,0 +1,21 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,business_meaning,cardinality,bidirectional,is_temporal,is_reasoning_edge,is_execution_edge,priority,description,status
+PREL-000001,Goal,DECOMPOSES_TO,Objective,Planning,Goal decomposes into measurable objectives,1:N,FALSE,FALSE,TRUE,FALSE,Critical,Strategic decomposition,Active
+PREL-000002,Objective,DECOMPOSES_TO,Task,Planning,Objective produces executable tasks,1:N,FALSE,FALSE,TRUE,FALSE,Critical,Objective decomposition,Active
+PREL-000003,Task,DEPENDS_ON,Task,Dependency,Task dependency graph,N:N,FALSE,TRUE,FALSE,FALSE,Critical,Task ordering,Active
+PREL-000004,Task,USES,ResourceProfile,Resource,Task consumes enterprise resources,N:N,FALSE,TRUE,FALSE,TRUE,High,Resource allocation,Active
+PREL-000005,Task,VALIDATED_BY,PlanningConstraint,Governance,Task validated against constraints,N:N,FALSE,FALSE,FALSE,FALSE,Critical,Constraint validation,Active
+PREL-000006,Task,FOLLOWS,PlanningPolicy,Governance,Task governed by planning policy,N:N,FALSE,FALSE,FALSE,FALSE,High,Policy enforcement,Active
+PREL-000007,PlannerTemplate,GENERATES,ExecutionPlan,Planning,Planner creates executable workflow,1:N,FALSE,FALSE,FALSE,TRUE,Critical,Plan generation,Active
+PREL-000008,ExecutionPlan,OPTIMIZED_BY,OptimizationObjective,Optimization,Execution optimized by objectives,N:N,FALSE,FALSE,TRUE,FALSE,High,Optimization relationship,Active
+PREL-000009,ExecutionPlan,MEASURED_BY,PlanningMetric,Analytics,Plan evaluated using planning metrics,N:N,FALSE,TRUE,FALSE,FALSE,Medium,Performance evaluation,Active
+PREL-000010,PlanningStrategy,PRODUCES,ExecutionPlan,Planning,Strategy generates execution plans,1:N,FALSE,FALSE,FALSE,FALSE,High,Planning strategy mapping,Active
+PREL-000011,PlanningStrategy,USES,DecompositionPattern,Planning,Planning strategy selects decomposition,N:N,FALSE,FALSE,FALSE,FALSE,Medium,Task decomposition,Active
+PREL-000012,Goal,SELECTS,PlanningStrategy,Planning,Goal determines planning strategy,N:N,FALSE,FALSE,FALSE,FALSE,Medium,Goal-strategy alignment,Active
+PREL-000013,ExecutionPlan,ALLOCATES,ResourceProfile,Resource,Execution allocates resources,N:N,FALSE,TRUE,FALSE,TRUE,High,Resource scheduling,Active
+PREL-000014,ExecutionPlan,TRIGGERS,ExecutionEngine,Execution,Completed plan initiates execution,1:1,FALSE,TRUE,FALSE,TRUE,Critical,Execution handoff,Active
+PREL-000015,ExecutionPlan,UPDATES,EnterpriseMemory,Learning,Execution outcome updates memory,N:N,FALSE,TRUE,TRUE,FALSE,High,Learning feedback,Active
+PREL-000016,EnterpriseMemory,SUPPORTS,PlanningStrategy,Knowledge,Memory improves planning,N:N,TRUE,TRUE,TRUE,FALSE,Medium,Knowledge reuse,Active
+PREL-000017,KnowledgeGraph,SUPPORTS,ExecutionPlan,Knowledge,Graph provides planning context,N:N,TRUE,TRUE,TRUE,FALSE,Medium,Graph-assisted planning,Active
+PREL-000018,ReasoningEngine,GENERATES,PlanningDecision,Reasoning,Reasoning produces planning decisions,1:N,FALSE,FALSE,TRUE,FALSE,Critical,Reasoning integration,Active
+PREL-000019,PlanningDecision,SELECTS,ExecutionPlan,Decision,Decision selects best execution plan,1:N,FALSE,FALSE,TRUE,FALSE,Critical,Decision support,Active
+PREL-000020,ExecutionResult,CREATES,EpisodicMemory,Learning,Execution becomes experience,1:N,FALSE,TRUE,TRUE,FALSE,Medium,Continuous learning,Active

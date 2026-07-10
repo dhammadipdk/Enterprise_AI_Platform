@@ -1,0 +1,21 @@
+term_id,term,business_definition
+PLAN-001,Goal,Desired enterprise outcome
+PLAN-002,Objective,Specific measurable outcome
+PLAN-003,Task,Small executable unit
+PLAN-004,Plan,Collection of ordered tasks
+PLAN-005,Planner,System generating plans
+PLAN-006,Constraint,Condition limiting planning
+PLAN-007,Dependency,Relationship between tasks
+PLAN-008,Optimization,Objective for improving plans
+PLAN-009,Resource,Entity required to execute task
+PLAN-010,Execution Plan,Ordered workflow
+PLAN-011,Milestone,Important planning checkpoint
+PLAN-012,Replanning,Generating updated plans
+PLAN-013,Task Graph,Graph of dependent tasks
+PLAN-014,Planning Horizon,Time window for planning
+PLAN-015,Planning Policy,Governance rule for planning
+PLAN-016,Planning Strategy,Algorithm used to build plans
+PLAN-017,Critical Path,Longest dependency chain
+PLAN-018,Planning Cost,Estimated execution effort
+PLAN-019,Planning Risk,Risk associated with a plan
+PLAN-020,Planning Confidence,Confidence in generated plan

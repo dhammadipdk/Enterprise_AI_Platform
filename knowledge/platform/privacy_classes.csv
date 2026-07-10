@@ -1,0 +1,6 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+PC-000001,Public,Information with no privacy restrictions.,Privacy,1,Active,1.0.0,,
+PC-000002,Internal,Information intended for internal platform use.,Privacy,2,Active,1.0.0,,
+PC-000003,Personal,Personally identifiable information.,Privacy,3,Active,1.0.0,,
+PC-000004,Sensitive Personal,Sensitive personal information requiring enhanced protection.,Privacy,4,Active,1.0.0,,
+PC-000005,Confidential,Business confidential information.,Privacy,5,Active,1.0.0,,

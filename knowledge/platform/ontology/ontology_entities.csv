@@ -1,0 +1,21 @@
+ontology_entity_id,entity_name,entity_category,parent_entity,business_definition,knowledge_domain,semantic_type,is_abstract,is_core_entity,lifecycle_managed,description,status
+ONTO-ENT-000001,Person,Actor,,Represents a human participant in the insurance ecosystem,Enterprise,Class,TRUE,TRUE,TRUE,Abstract superclass for all people,Active
+ONTO-ENT-000002,Customer,Actor,Person,Individual or organization purchasing insurance,Customer,Class,FALSE,TRUE,TRUE,Policyholder or insured party,Active
+ONTO-ENT-000003,Driver,Actor,Person,Individual operating a vehicle,Driver,Class,FALSE,TRUE,TRUE,Licensed vehicle operator,Active
+ONTO-ENT-000004,Surveyor,Actor,Person,Professional evaluating losses,Claims,Class,FALSE,FALSE,TRUE,Insurance surveyor,Active
+ONTO-ENT-000005,Claim,Business Object,,Insurance loss request,Claims,Class,FALSE,TRUE,TRUE,Represents reported loss,Active
+ONTO-ENT-000006,Policy,Business Object,,Insurance contract,Policy,Class,FALSE,TRUE,TRUE,Insurance agreement,Active
+ONTO-ENT-000007,Coverage,Business Object,,Insurance protection offered,Coverage,Class,FALSE,TRUE,TRUE,Coverage component,Active
+ONTO-ENT-000008,Vehicle,Asset,,Insured automobile,Vehicle,Class,FALSE,TRUE,TRUE,Motor vehicle asset,Active
+ONTO-ENT-000009,Repair,Business Process,,Vehicle repair workflow,Repair,Class,FALSE,FALSE,TRUE,Repair process,Active
+ONTO-ENT-000010,Fraud Case,Risk Object,,Fraud investigation case,Fraud,Class,FALSE,FALSE,TRUE,Fraud investigation entity,Active
+ONTO-ENT-000011,Recommendation,Decision Object,,AI generated recommendation,Recommendation,Class,FALSE,TRUE,TRUE,Decision support object,Active
+ONTO-ENT-000012,Observation,Context Object,,Observed contextual fact,Contextual Intelligence,Class,FALSE,TRUE,FALSE,Atomic contextual observation,Active
+ONTO-ENT-000013,Derived Intelligence,Context Object,,Computed contextual insight,Contextual Intelligence,Class,FALSE,TRUE,FALSE,Derived contextual metric,Active
+ONTO-ENT-000014,Evidence,Reasoning Object,,Supporting reasoning evidence,Reasoning,Class,FALSE,TRUE,FALSE,Evidence node,Active
+ONTO-ENT-000015,Hypothesis,Reasoning Object,,Intermediate inferred conclusion,Reasoning,Class,FALSE,FALSE,FALSE,Inference node,Active
+ONTO-ENT-000016,Decision,Decision Object,,Business decision,Reasoning,Class,FALSE,TRUE,TRUE,Final enterprise decision,Active
+ONTO-ENT-000017,Business Rule,Knowledge Object,,Enterprise rule,Reasoning,Class,FALSE,TRUE,TRUE,Decision constraint,Active
+ONTO-ENT-000018,Environment Context,Context Object,,Environmental context,Environment,Class,FALSE,FALSE,FALSE,Weather and surroundings,Active
+ONTO-ENT-000019,Vehicle Behaviour Context,Context Object,,Vehicle behavior profile,Vehicle Behaviour,Class,FALSE,FALSE,FALSE,Driving dynamics,Active
+ONTO-ENT-000020,Human Behaviour Context,Context Object,,Human behavior profile,Human Behaviour,Class,FALSE,FALSE,FALSE,Behavioral observations,Active

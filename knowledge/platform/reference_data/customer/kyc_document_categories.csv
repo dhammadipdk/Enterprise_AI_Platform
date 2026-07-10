@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-KYC-000001,IDENTITY_PROOF,Identity Proof,Documents establishing customer identity,Active,2026-01-01,,RBI,
+REF-KYC-000002,ADDRESS_PROOF,Address Proof,Documents establishing residential address,Active,2026-01-01,,RBI,
+REF-KYC-000003,AGE_PROOF,Age Proof,Documents establishing date of birth,Active,2026-01-01,,RBI,
+REF-KYC-000004,INCOME_PROOF,Income Proof,Documents supporting declared income,Active,2026-01-01,,RBI,
+REF-KYC-000005,BANK_ACCOUNT_PROOF,Bank Account Proof,Documents verifying bank account ownership,Active,2026-01-01,,RBI,
+REF-KYC-000006,TAX_IDENTIFIER,Tax Identifier,Government-issued tax identification documents,Active,2026-01-01,,Income Tax Department,

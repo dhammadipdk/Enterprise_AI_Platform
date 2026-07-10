@@ -1,0 +1,16 @@
+capability_id,capability_name,capability_category,input_type,output_type,memory_required,planning_required,execution_required,reasoning_required,tool_required,reusable,description,status
+CAP-000001,Knowledge Retrieval,Knowledge,Query,Knowledge Context,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Retrieve enterprise knowledge,Active
+CAP-000002,Graph Traversal,Knowledge,Graph Query,Subgraph,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Traverse knowledge graph,Active
+CAP-000003,Semantic Search,Knowledge,Embedding Query,Semantic Context,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Vector similarity retrieval,Active
+CAP-000004,Reasoning,AI,Context,Decision,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,Enterprise reasoning,Active
+CAP-000005,Planning,Planning,Goal,Execution Plan,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,Generate execution plans,Active
+CAP-000006,Execution,Execution,Execution Plan,Business Outcome,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Execute workflows,Active
+CAP-000007,Recommendation Generation,Business,Customer Context,Recommendations,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,Generate recommendations,Active
+CAP-000008,Fraud Investigation,Risk,Claim Context,Fraud Assessment,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,Fraud investigation,Active
+CAP-000009,Business Rule Validation,Governance,Recommendation,Validation,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Validate enterprise policies,Active
+CAP-000010,Learning,Learning,Execution Outcome,Updated Memory,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,Continual learning,Active
+CAP-000011,Memory Management,Infrastructure,Memory Objects,Updated Memory,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Maintain enterprise memory,Active
+CAP-000012,Tool Invocation,Infrastructure,Capability Request,Tool Result,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Invoke enterprise tools,Active
+CAP-000013,Agent Coordination,Agents,Agent Tasks,Coordinated Plan,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,Coordinate multiple agents,Active
+CAP-000014,Human Interaction,Communication,Decision,Approval,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,Human-in-the-loop interaction,Active
+CAP-000015,Monitoring & Audit,Governance,Execution Trace,Audit Report,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Execution monitoring and auditing,Active

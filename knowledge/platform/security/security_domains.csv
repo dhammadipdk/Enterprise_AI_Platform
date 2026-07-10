@@ -1,0 +1,11 @@
+domain_id,domain_name,business_scope,criticality,primary_owner,authentication_required,authorization_required,encryption_required,description,status
+SDOM-000001,Identity Security,Identity,Critical,Identity Team,TRUE,TRUE,FALSE,Enterprise identity security,Active
+SDOM-000002,Data Security,Enterprise Data,Critical,Security Team,TRUE,TRUE,TRUE,Enterprise data protection,Active
+SDOM-000003,API Security,Integration,Critical,Platform Team,TRUE,TRUE,TRUE,API protection,Active
+SDOM-000004,AI Security,Enterprise AI,Critical,AI Governance Board,TRUE,TRUE,FALSE,AI-specific security controls,Active
+SDOM-000005,Agent Security,Agents,Critical,AI Platform Team,TRUE,TRUE,FALSE,Autonomous agent security,Active
+SDOM-000006,Model Security,Models,High,MLOps Team,TRUE,TRUE,FALSE,Model protection,Active
+SDOM-000007,Prompt Security,LLM Platform,High,AI Platform Team,FALSE,TRUE,FALSE,Prompt protection,Active
+SDOM-000008,Memory Security,Memory,Critical,Platform Team,TRUE,TRUE,TRUE,Memory protection,Active
+SDOM-000009,Infrastructure Security,Platform,Critical,Infrastructure Team,TRUE,TRUE,TRUE,Infrastructure security,Active
+SDOM-000010,Enterprise Security,Enterprise,Critical,CISO,TRUE,TRUE,TRUE,Enterprise-wide security governance,Active

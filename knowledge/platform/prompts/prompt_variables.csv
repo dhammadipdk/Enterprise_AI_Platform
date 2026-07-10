@@ -1,0 +1,11 @@
+variable_id,variable_name,data_type,required,default_value,sensitive,source,max_length,description,status
+VAR-000001,user_query,String,TRUE,None,FALSE,User Input,10000,Original user request,Active
+VAR-000002,conversation_history,Array,FALSE,None,TRUE,Memory,500000,Conversation history,Active
+VAR-000003,retrieved_documents,Array,FALSE,None,FALSE,RAG,1000000,Retrieved enterprise knowledge,Active
+VAR-000004,user_profile,Object,FALSE,None,TRUE,Customer Profile,50000,Customer information,Active
+VAR-000005,business_context,Object,FALSE,None,FALSE,Workflow,50000,Business context,Active
+VAR-000006,current_date,Date,TRUE,System,FALSE,System,20,Current date,Active
+VAR-000007,language,String,FALSE,en,FALSE,User Preferences,10,Language selection,Active
+VAR-000008,system_constraints,Object,FALSE,None,FALSE,Governance,20000,Enterprise policies,Active
+VAR-000009,response_format,String,FALSE,markdown,FALSE,System,100,Desired output format,Active
+VAR-000010,execution_trace,String,FALSE,None,FALSE,Execution Engine,1000,Runtime trace identifier,Active

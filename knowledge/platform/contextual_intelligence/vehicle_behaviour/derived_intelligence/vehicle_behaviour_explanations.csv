@@ -1,0 +1,5 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-VEH-000001,VEHICLE,VH-000001,REC-VEH-000001,Schedule Preventive Service,"High annual mileage;Engine load","Vehicle age","Vehicle exceeded expected usage profile, increasing preventive maintenance priority.",0.97,XAI Engine
+EXP-VEH-000002,VEHICLE,VH-000002,PRED-VEH-000002,Replace Battery,"Battery health 61%;Age","Frequent cold starts","Battery degradation indicates elevated failure probability within 90 days.",0.96,XAI Engine
+EXP-VEH-000003,VEHICLE,VH-000003,REC-VEH-000003,Replace Brake Pads,"Brake thickness below threshold","High braking frequency","Brake wear exceeds safety threshold requiring immediate replacement.",0.98,XAI Engine
+EXP-VEH-000004,VEHICLE,VH-000006,REC-VEH-000006,Recommend RSA,"Breakdown probability 37%","Long-distance usage","Vehicle usage profile indicates elevated roadside breakdown exposure.",0.95,XAI Engine

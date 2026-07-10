@@ -1,0 +1,11 @@
+network_id,network_zone,trust_level,allowed_communication,ingress_control,egress_control,encryption_required,description,status
+NET-000001,Public Edge,Low,API Gateway Only,WAF,Restricted,TRUE,Internet-facing zone,Active
+NET-000002,Application Zone,Medium,Internal Services,Firewall,Restricted,TRUE,Application services network,Active
+NET-000003,AI Services Zone,High,Approved Services Only,Firewall,Restricted,TRUE,AI platform network,Active
+NET-000004,Data Zone,Critical,Authorized Components,Firewall,Restricted,TRUE,Enterprise data network,Active
+NET-000005,Security Zone,Critical,Security Services Only,Firewall,None,TRUE,Security infrastructure,Active
+NET-000006,Management Zone,Critical,Administrators Only,VPN,None,TRUE,Administrative access,Active
+NET-000007,Monitoring Zone,High,Telemetry Services,Firewall,Restricted,TRUE,Observability network,Active
+NET-000008,Partner Zone,Medium,Federated Access Only,Gateway,Restricted,TRUE,Partner connectivity,Active
+NET-000009,Development Zone,Low,Development Services,Firewall,Restricted,FALSE,Development environment,Active
+NET-000010,Disaster Recovery Zone,Critical,Recovery Services,Firewall,Restricted,TRUE,Disaster recovery network,Active

@@ -1,0 +1,11 @@
+version_id,model_id,version_number,release_type,release_date,is_default,is_backward_compatible,approval_status,description,status
+VER-000001,MOD-000001,v1.0,Major,2026-01-15,TRUE,TRUE,Approved,Initial production release,Active
+VER-000002,MOD-000001,v1.1,Minor,2026-03-10,FALSE,TRUE,Approved,Performance improvements,Active
+VER-000003,MOD-000002,v1.0,Major,2026-02-01,TRUE,TRUE,Approved,Embedding model release,Active
+VER-000004,MOD-000003,v1.0,Major,2026-02-10,TRUE,TRUE,Approved,Reranker production release,Active
+VER-000005,MOD-000004,v1.0,Major,2026-03-15,TRUE,TRUE,Approved,Vision model release,Active
+VER-000006,MOD-000005,v1.0,Major,2026-03-20,TRUE,TRUE,Approved,OCR model release,Active
+VER-000007,MOD-000006,v1.0,Major,2026-04-01,TRUE,TRUE,Approved,Speech model release,Active
+VER-000008,MOD-000007,v2.0,Major,2026-04-15,TRUE,FALSE,Approved,Recommendation engine upgrade,Active
+VER-000009,MOD-000008,v2.1,Minor,2026-05-01,TRUE,TRUE,Approved,Fraud model enhancement,Active
+VER-000010,MOD-000010,v0.1,Experimental,2026-06-01,FALSE,FALSE,Pending,Research release,Experimental

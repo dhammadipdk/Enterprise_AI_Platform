@@ -1,0 +1,13 @@
+field_name,data_type,required,description
+evaluation_id,String,TRUE,Unique evaluation identifier
+evaluation_type,String,TRUE,Evaluation category
+target_component,String,TRUE,Component under evaluation
+benchmark_name,String,FALSE,Benchmark used
+metric_name,String,TRUE,Evaluation metric
+metric_value,Float,TRUE,Measured value
+expected_value,Float,FALSE,Target value
+confidence_score,Float,FALSE,Evaluation confidence
+threshold_status,String,TRUE,Pass/Fail
+execution_timestamp,Datetime,TRUE,Evaluation time
+evaluator,String,FALSE,Evaluation engine
+status,String,TRUE,Lifecycle state

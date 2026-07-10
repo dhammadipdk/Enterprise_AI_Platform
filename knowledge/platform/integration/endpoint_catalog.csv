@@ -1,0 +1,11 @@
+endpoint_id,endpoint_path,http_method,api_name,authentication,rate_limited,idempotent,description,status
+ENDPOINT-000001,/knowledge/search,POST,Knowledge API,OAuth2,TRUE,TRUE,Semantic knowledge search,Active
+ENDPOINT-000002,/memory/store,POST,Memory API,mTLS,TRUE,FALSE,Store enterprise memory,Active
+ENDPOINT-000003,/memory/retrieve,POST,Memory API,mTLS,TRUE,TRUE,Retrieve enterprise memory,Active
+ENDPOINT-000004,/planning/create,POST,Planning API,mTLS,TRUE,FALSE,Generate execution plans,Active
+ENDPOINT-000005,/execution/run,POST,Execution API,mTLS,TRUE,FALSE,Execute workflows,Active
+ENDPOINT-000006,/agents/invoke,POST,Agent API,mTLS,TRUE,FALSE,Invoke AI agent,Active
+ENDPOINT-000007,/recommendations/generate,POST,Recommendation API,OAuth2,TRUE,FALSE,Generate recommendations,Active
+ENDPOINT-000008,/governance/validate,POST,Governance API,mTLS,TRUE,TRUE,Policy validation,Active
+ENDPOINT-000009,/telemetry/publish,POST,Observability API,mTLS,FALSE,FALSE,Publish telemetry,Active
+ENDPOINT-000010,/security/authorize,POST,Security API,mTLS,TRUE,TRUE,Authorization evaluation,Active

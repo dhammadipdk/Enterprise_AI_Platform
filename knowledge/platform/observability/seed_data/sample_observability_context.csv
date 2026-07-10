@@ -1,0 +1,11 @@
+context_id,stage,component,input,observability_action,output,next_stage,business_context
+OBSCTX-000001,API Request,API Gateway,Customer Request,Generate Trace ID,Trace Created,Knowledge Retrieval,New customer interaction
+OBSCTX-000002,Knowledge Retrieval,Knowledge Layer,Customer Query,Emit Telemetry Event,Knowledge Retrieval Metrics,Memory Access,Knowledge successfully retrieved
+OBSCTX-000003,Memory Access,Memory Layer,Knowledge Context,Record Memory Span,Memory Statistics,Planning,Memory context loaded
+OBSCTX-000004,Planning,Planning Engine,Enterprise Context,Generate Planning Metrics,Planning Trace,Execution,Execution plan created
+OBSCTX-000005,Execution,Execution Engine,Workflow Plan,Record Execution Statistics,Execution Metrics,Agent Coordination,Workflow executed
+OBSCTX-000006,Agent Coordination,Agent Platform,Execution Results,Emit Agent Telemetry,Agent Metrics,Recommendation,Agents completed tasks
+OBSCTX-000007,Recommendation,Recommendation Engine,Business Context,Generate Recommendation Metrics,Business KPIs,Governance,Recommendation delivered
+OBSCTX-000008,Governance,Governance Platform,Recommendation,Validate Policies,Governance Logs,Evaluation,Governance checks completed
+OBSCTX-000009,Evaluation,Evaluation Platform,Execution Outcome,Evaluate AI Performance,Evaluation Dashboard,Monitoring,Quality evaluated
+OBSCTX-000010,Monitoring,Observability Platform,Platform Metrics,Update Dashboards,Executive Visibility,None,Complete operational visibility achieved

@@ -1,0 +1,11 @@
+prediction_id,prediction_type,subject_type,subject_code,subject_name,predicted_attribute,predicted_value,prediction_unit,prediction_horizon,prediction_probability,confidence_score,derived_from,model_id,prediction_timestamp,valid_until,status,remarks
+PRED-VEH-000001,RUL,VEHICLE,VH-000001,Vehicle-000001,Remaining Useful Life,7.2,years,Current,0.96,0.97,Multiple Observations,MODEL-VEH-PRED-001,2026-07-01,2027-01-01,Active,
+PRED-VEH-000002,Failure,VEHICLE,VH-000002,Vehicle-000002,Battery Failure Probability,0.24,Probability,90 Days,0.91,0.92,OBS-VEH3-000002,MODEL-VEH-PRED-001,2026-07-01,2026-10-01,Active,
+PRED-VEH-000003,Failure,VEHICLE,VH-000003,Vehicle-000003,Brake Replacement Due,8200,km,Future,0.89,0.91,OBS-VEH3-000005,MODEL-VEH-PRED-002,2026-07-01,2027-01-01,Active,
+PRED-VEH-000004,Maintenance,VEHICLE,VH-000004,Vehicle-000004,Next Service Date,2026-10-15,date,Future,0.95,0.96,Service History,MODEL-VEH-PRED-002,2026-07-01,2026-10-15,Active,
+PRED-VEH-000005,Failure,VEHICLE,VH-000005,Vehicle-000005,Tyre Replacement Due,12600,km,Future,0.92,0.93,Tyre Observations,MODEL-VEH-PRED-003,2026-07-01,2027-01-01,Active,
+PRED-VEH-000006,Risk,VEHICLE,VH-000006,Vehicle-000006,Expected Breakdown Probability,0.37,Probability,180 Days,0.90,0.91,Multiple Observations,MODEL-VEH-PRED-003,2026-07-01,2027-01-01,Active,
+PRED-VEH-000007,Usage,VEHICLE,VH-000007,Vehicle-000007,Annual Mileage Forecast,26800,km,1 Year,0.93,0.94,Usage History,MODEL-VEH-PRED-004,2026-07-01,2027-07-01,Active,
+PRED-VEH-000008,Efficiency,VEHICLE,VH-000008,Vehicle-000008,Fuel Efficiency Forecast,17.2,km/l,90 Days,0.89,0.90,Driving History,MODEL-VEH-PRED-004,2026-07-01,2026-10-01,Active,
+PRED-VEH-000009,Reliability,VEHICLE,VH-000009,Vehicle-000009,Powertrain Reliability,0.84,Score,180 Days,0.91,0.92,Engine Observations,MODEL-VEH-PRED-005,2026-07-01,2027-01-01,Active,
+PRED-VEH-000010,Claim,VEHICLE,VH-000010,Vehicle-000010,Mechanical Claim Probability,0.16,Probability,1 Year,0.88,0.90,Risk Scores,MODEL-CLAIM-PRED-001,2026-07-01,2027-07-01,Active,

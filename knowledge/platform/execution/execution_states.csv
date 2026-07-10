@@ -1,0 +1,11 @@
+state_id,state_name,state_category,is_terminal,allows_retry,allows_resume,allows_rollback,description,status
+ESTATE-001,Created,Initialization,FALSE,FALSE,TRUE,FALSE,Workflow created,Active
+ESTATE-002,Queued,Scheduling,FALSE,FALSE,TRUE,FALSE,Waiting execution,Active
+ESTATE-003,Running,Execution,FALSE,TRUE,TRUE,TRUE,Currently executing,Active
+ESTATE-004,Waiting Approval,Human,FALSE,FALSE,TRUE,FALSE,Awaiting approval,Active
+ESTATE-005,Paused,Execution,FALSE,FALSE,TRUE,FALSE,Execution paused,Active
+ESTATE-006,Retrying,Recovery,FALSE,TRUE,TRUE,TRUE,Retry in progress,Active
+ESTATE-007,Rolling Back,Recovery,FALSE,FALSE,FALSE,TRUE,Rollback executing,Active
+ESTATE-008,Compensating,Recovery,FALSE,FALSE,FALSE,FALSE,Compensation running,Active
+ESTATE-009,Completed,Terminal,TRUE,FALSE,FALSE,FALSE,Execution completed,Active
+ESTATE-010,Failed,Terminal,TRUE,TRUE,FALSE,TRUE,Execution failed,Active

@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-SEV-000001,MINOR,Minor,Minor cosmetic damage with no functional impact,Active,2026-01-01,,Industry,
+REF-SEV-000002,MODERATE,Moderate,Repairable damage affecting one or more components,Active,2026-01-01,,Industry,
+REF-SEV-000003,MAJOR,Major,Extensive damage requiring major repairs,Active,2026-01-01,,Industry,
+REF-SEV-000004,CRITICAL,Critical,Severe structural or safety-critical damage,Active,2026-01-01,,Industry,
+REF-SEV-000005,TOTAL_LOSS,Total Loss,Vehicle economically or physically beyond repair,Active,2026-01-01,,Industry,

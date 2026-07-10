@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_audit_edge,is_risk_edge,is_policy_edge,description,status
+GREL-000001,GovernanceDomain,HAS,GovernancePolicy,Governance,1:N,FALSE,FALSE,FALSE,TRUE,Domains own governance policies,Active
+GREL-000002,GovernancePolicy,CONTAINS,PolicyRule,Policy,1:N,FALSE,FALSE,FALSE,TRUE,Policies consist of rules,Active
+GREL-000003,PolicyRule,ENFORCED_BY,GovernanceControl,Control,N:N,TRUE,FALSE,FALSE,TRUE,Rules enforced by controls,Active
+GREL-000004,GovernancePolicy,MAPPED_TO,ComplianceFramework,Compliance,N:N,FALSE,FALSE,TRUE,TRUE,Policies satisfy compliance frameworks,Active
+GREL-000005,ComplianceFramework,REFERENCES,RegulatoryMapping,Compliance,1:N,FALSE,FALSE,TRUE,FALSE,Frameworks map to regulations,Active
+GREL-000006,GovernanceDecision,ASSESSED_BY,RiskAssessment,Risk,N:1,TRUE,FALSE,TRUE,FALSE,Decisions require risk assessment,Active
+GREL-000007,RiskAssessment,MITIGATED_BY,GovernanceControl,Risk,N:N,TRUE,FALSE,TRUE,FALSE,Risks mitigated through controls,Active
+GREL-000008,GovernanceDecision,APPROVED_BY,ApprovalAuthority,Approval,N:1,TRUE,TRUE,FALSE,FALSE,Authorities approve decisions,Active
+GREL-000009,ApprovalWorkflow,USES,ApprovalLevel,Approval,N:1,TRUE,FALSE,FALSE,FALSE,Workflow uses approval levels,Active
+GREL-000010,GovernanceException,OVERRIDES,GovernancePolicy,Exception,N:N,TRUE,TRUE,TRUE,TRUE,Approved exceptions override policies,Active
+GREL-000011,GovernanceControl,MEASURED_BY,ControlEffectiveness,Monitoring,1:N,TRUE,FALSE,FALSE,FALSE,Control effectiveness measurement,Active
+GREL-000012,GovernanceMetric,SUMMARIZES,EnterpriseGovernance,Reporting,N:1,FALSE,TRUE,FALSE,FALSE,Executive governance reporting,Active

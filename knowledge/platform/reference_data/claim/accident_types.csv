@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-ACC-000001,REAR_END,Rear-end Collision,Vehicle hit from behind,Active,2026-01-01,,Industry,
+REF-ACC-000002,HEAD_ON,Head-on Collision,Frontal collision,Active,2026-01-01,,Industry,
+REF-ACC-000003,SIDE_IMPACT,Side Impact,T-bone or side collision,Active,2026-01-01,,Industry,
+REF-ACC-000004,ROLLOVER,Rollover,Vehicle overturned,Active,2026-01-01,,Industry,
+REF-ACC-000005,SINGLE_VEHICLE,Single Vehicle Accident,No other vehicle involved,Active,2026-01-01,,Industry,
+REF-ACC-000006,PARKED_VEHICLE,Parked Vehicle Impact,Damage while parked,Active,2026-01-01,,Industry,
+REF-ACC-000007,ANIMAL_COLLISION,Animal Collision,Impact with animal,Active,2026-01-01,,Industry,
+REF-ACC-000008,HIT_AND_RUN,Hit and Run,Other vehicle unidentified,Active,2026-01-01,,Industry,
+REF-ACC-000009,FLOOD_DAMAGE,Flood Damage,Vehicle damaged by flooding,Active,2026-01-01,,Industry,
+REF-ACC-000010,FIRE_INCIDENT,Fire Incident,Vehicle fire event,Active,2026-01-01,,Industry,

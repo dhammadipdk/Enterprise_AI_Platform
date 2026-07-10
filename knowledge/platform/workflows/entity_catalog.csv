@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Workflow,Business Process,Enterprise workflow
+WorkflowTemplate,Template,Reusable workflow
+WorkflowVersion,Version,Workflow version
+WorkflowExecutionGraph,Graph,Directed execution graph
+WorkflowNode,Node,Workflow activity
+WorkflowEdge,Edge,Graph connection
+WorkflowTransition,Decision,Conditional routing
+WorkflowContext,Context,Runtime information
+WorkflowPolicy,Governance,Execution policy
+WorkflowRecovery,Reliability,Failure recovery
+WorkflowMonitoring,Observability,Execution monitoring
+WorkflowLifecycle,Lifecycle,Workflow lifecycle
+WorkflowProfile,Execution,Runtime profile
+HumanTask,Approval,Manual activity
+Checkpoint,Recovery,Persisted execution state

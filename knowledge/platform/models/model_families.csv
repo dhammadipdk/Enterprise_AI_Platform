@@ -1,0 +1,11 @@
+family_id,family_name,model_class,supports_tool_calling,supports_multimodal,supports_streaming,supports_function_calling,best_use_case,description,status
+FAM-000001,Foundation LLM,Language,TRUE,TRUE,TRUE,TRUE,General AI,General reasoning models,Active
+FAM-000002,Embedding Models,Embedding,FALSE,FALSE,FALSE,FALSE,Semantic Search,Embedding generation,Active
+FAM-000003,Rerankers,Ranking,FALSE,FALSE,FALSE,FALSE,RAG,Reranking retrievals,Active
+FAM-000004,Vision Models,Vision,FALSE,TRUE,FALSE,FALSE,Computer Vision,Image understanding,Active
+FAM-000005,Speech Models,Speech,FALSE,FALSE,TRUE,FALSE,Speech AI,Speech recognition,Active
+FAM-000006,Recommendation Models,Prediction,FALSE,FALSE,FALSE,FALSE,Recommendation,Business recommendations,Active
+FAM-000007,Fraud Models,Prediction,FALSE,FALSE,FALSE,FALSE,Fraud,Fraud detection models,Active
+FAM-000008,Evaluation Models,Evaluation,FALSE,FALSE,FALSE,FALSE,Evaluation,Quality assessment,Active
+FAM-000009,Planning Models,Reasoning,TRUE,FALSE,TRUE,TRUE,Planning,Task planning models,Active
+FAM-000010,Experimental Models,Research,TRUE,TRUE,TRUE,TRUE,Research,Experimental AI models,Active

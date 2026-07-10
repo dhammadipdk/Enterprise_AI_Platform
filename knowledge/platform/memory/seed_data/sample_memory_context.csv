@@ -1,0 +1,11 @@
+memory_id,memory_type,memory_source,related_entity,memory_content,importance,retrieval_strategy,current_state
+MEM-000001,Working Memory,Conversation,Customer,"User is asking for motor insurance recommendations.",High,Working Memory First,Active
+MEM-000002,Semantic Memory,Knowledge Repository,Policy,"Comprehensive policy covers own damage and third-party liability.",Critical,Semantic Retrieval,Active
+MEM-000003,Graph Memory,Knowledge Graph,Customer,"Customer owns Policy POL2001 and Vehicle VEH3001.",Critical,Graph Traversal,Active
+MEM-000004,Episodic Memory,Claims System,Claim,"Previous claim settled in 2024.",Medium,Customer360 Retrieval,Archived
+MEM-000005,Reasoning Memory,Reasoning Engine,Decision,"Coverage gap detected during recommendation reasoning.",High,Reasoning Recall,Active
+MEM-000006,Conversation Memory,Assistant,Conversation,"Customer asked about add-on covers.",Medium,Conversation Context,Active
+MEM-000007,Observation Memory,Telematics,Vehicle,"Harsh braking frequency increased this week.",Medium,Hybrid Retrieval,Active
+MEM-000008,Fraud Memory,Fraud Engine,Fraud Case,"Fraud score reached 91 during investigation.",Critical,Fraud Investigation,Legal Hold
+MEM-000009,Execution Memory,Workflow Engine,Recommendation,"Recommendation executed and policy quote generated.",High,Enterprise Search,Completed
+MEM-000010,Agent Memory,Recommendation Agent,Enterprise,"Recommendation agent shared customer risk summary with pricing agent.",High,Agent Shared Retrieval,Active

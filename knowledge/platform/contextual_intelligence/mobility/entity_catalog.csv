@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+TrafficObservation,Observation,Observed traffic conditions
+CongestionObservation,Observation,Observed congestion levels
+SpeedObservation,Observation,Observed average speed
+TripObservation,Observation,Observed trip characteristics
+RouteObservation,Observation,Observed route information
+TravelPatternObservation,Observation,Observed mobility behaviour
+ParkingObservation,Observation,Observed parking duration
+TravelExposureObservation,Observation,Observed travel exposure
+TrafficRiskScore,DerivedIntelligence,Computed traffic-related risk
+CongestionIndex,DerivedIntelligence,Computed congestion score
+TravelExposureIndex,DerivedIntelligence,Computed exposure score
+PeakHourRiskScore,DerivedIntelligence,Computed peak-hour risk
+TripEfficiencyIndex,DerivedIntelligence,Computed trip efficiency
+RouteReliabilityIndex,DerivedIntelligence,Computed route reliability
+MobilityRelationship,Relationship,Causal mobility relationships

@@ -1,0 +1,11 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-HUM-000001,DRIVER,DRV-000001,REC-HUM-000001,Complete Defensive Driving Course,"Frequent harsh braking;High speeding","Low following distance","Driver exhibits aggressive driving patterns that significantly increase accident probability.",0.98,XAI Engine
+EXP-HUM-000002,DRIVER,DRV-000002,PRED-HUM-000002,Reduce Speeding,"Multiple speed limit violations","High average speed","Recent driving history indicates increasing aggressive driving behaviour.",0.97,XAI Engine
+EXP-HUM-000003,DRIVER,DRV-000003,REC-HUM-000003,Take Regular Breaks,"Fatigue score;Long driving sessions","Night driving","Fatigue indicators exceed operational safety thresholds.",0.96,XAI Engine
+EXP-HUM-000004,DRIVER,DRV-000004,REC-HUM-000004,Avoid Mobile Phone Usage,"Distraction duration","ADAS warnings","Driver attention loss significantly increases collision probability.",0.97,XAI Engine
+EXP-HUM-000005,DRIVER,DRV-000005,REC-HUM-000005,Enroll in Usage-Based Insurance,"Consistent safe driving","High compliance","Driver demonstrates low-risk behaviour suitable for telematics-based pricing.",0.95,XAI Engine
+EXP-HUM-000006,DRIVER,DRV-000006,REC-HUM-000006,Improve Eco Driving,"High acceleration variability","Fuel consumption","Driving behaviour reduces operational efficiency.",0.94,XAI Engine
+EXP-HUM-000007,DRIVER,DRV-000007,REC-HUM-000007,Increase Following Distance,"Unsafe following time","Late braking","Current headway increases rear-end collision risk.",0.95,XAI Engine
+EXP-HUM-000008,DRIVER,DRV-000008,REC-HUM-000008,Improve Compliance,"Repeated lane departures","Traffic violations","Traffic rule compliance below fleet benchmark.",0.95,XAI Engine
+EXP-HUM-000009,DRIVER,DRV-000009,REC-HUM-000009,Reduce Night Driving,"High night exposure","Fatigue trend","Night driving contributes disproportionately to overall risk.",0.94,XAI Engine
+EXP-HUM-000010,DRIVER,DRV-000010,REC-HUM-000010,Driver Coaching,"Variable driving consistency","Moderate aggressive events","Behavioural coaching is expected to improve long-term safety.",0.93,XAI Engine

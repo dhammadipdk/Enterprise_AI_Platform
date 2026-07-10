@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-LSTATUS-000001,VALID,Valid,Licence currently valid,Active,2026-01-01,,MoRTH,
+REF-LSTATUS-000002,EXPIRED,Expired,Licence validity expired,Active,2026-01-01,,MoRTH,
+REF-LSTATUS-000003,SUSPENDED,Suspended,Licence temporarily suspended,Active,2026-01-01,,MoRTH,
+REF-LSTATUS-000004,CANCELLED,Cancelled,Licence permanently cancelled,Active,2026-01-01,,MoRTH,
+REF-LSTATUS-000005,REVOKED,Revoked,Licence revoked by authority,Active,2026-01-01,,MoRTH,
+REF-LSTATUS-000006,PENDING_RENEWAL,Pending Renewal,Renewal process underway,Active,2026-01-01,,MoRTH,

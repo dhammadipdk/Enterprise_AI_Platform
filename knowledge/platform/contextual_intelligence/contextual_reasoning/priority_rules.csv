@@ -1,0 +1,11 @@
+priority_rule_id,priority_name,priority_level,applies_to,condition,precedence_order,tie_breaking_strategy,business_owner,description,status
+PRIOR-000001,Critical Fraud,Critical,Fraud,FraudRisk>=95,1,Fraud First,SIU,Prevent fraudulent payout before all other actions.,Active
+PRIOR-000002,Regulatory Compliance,Critical,Compliance,ComplianceViolation=True,2,Regulatory Override,Compliance,Compliance requirements override operational optimization.,Active
+PRIOR-000003,Customer Safety,Critical,Environment,LifeThreateningCondition=True,3,Safety First,Risk,Protect human life before financial objectives.,Active
+PRIOR-000004,Claim Processing,High,Claims,HighSeverityClaim=True,4,Severity Based,Claims,Prioritize severe claims.,Active
+PRIOR-000005,Operational SLA,High,Operations,SLABreachRisk=True,5,SLA Priority,Operations,Protect service-level agreements.,Active
+PRIOR-000006,Customer Experience,Medium,Customer,VIPCustomer=True,6,Customer Value,Customer Success,Improve customer satisfaction.,Active
+PRIOR-000007,Financial Optimization,Medium,Finance,HighFinancialImpact=True,7,ROI Based,Finance,Optimize financial outcome.,Active
+PRIOR-000008,Automation Preference,Medium,Recommendation,Confidence>=0.95,8,Automation First,AI Platform,Prefer automated execution.,Active
+PRIOR-000009,Human Review,Medium,Recommendation,Confidence<0.70,9,Human Override,Operations,Escalate uncertain decisions.,Active
+PRIOR-000010,Business Optimization,Low,Enterprise,Default,10,Weighted Ranking,Enterprise AI,Optimize enterprise performance.,Active

@@ -1,0 +1,11 @@
+provider_id,provider_name,provider_category,deployment_mode,supports_hosted,supports_self_hosted,supports_fine_tuning,supports_streaming,business_owner,description,status
+PROVIDER-000001,Enterprise Hosted Provider,Cloud AI,Remote,TRUE,FALSE,TRUE,TRUE,AI Platform Team,Managed cloud AI provider,Active
+PROVIDER-000002,Enterprise Self Hosted,On-Premise,Local,FALSE,TRUE,TRUE,TRUE,Infrastructure Team,Self-hosted enterprise models,Active
+PROVIDER-000003,Hybrid AI Provider,Hybrid,Hybrid,TRUE,TRUE,TRUE,TRUE,Platform Team,Supports cloud and local inference,Active
+PROVIDER-000004,Research Provider,Research,Sandbox,FALSE,TRUE,TRUE,FALSE,Research Team,Experimental models,Active
+PROVIDER-000005,Vision Provider,Vision,Remote,TRUE,FALSE,FALSE,FALSE,Vision Team,Computer vision services,Active
+PROVIDER-000006,Speech Provider,Speech,Remote,TRUE,FALSE,FALSE,TRUE,Speech Team,Speech AI services,Active
+PROVIDER-000007,Embedding Provider,Embedding,Hybrid,TRUE,TRUE,FALSE,FALSE,RAG Team,Embedding generation provider,Active
+PROVIDER-000008,Reranker Provider,Ranking,Hybrid,TRUE,TRUE,FALSE,FALSE,RAG Team,Document reranking provider,Active
+PROVIDER-000009,Evaluation Provider,Evaluation,Local,FALSE,TRUE,FALSE,FALSE,Evaluation Team,Evaluation services,Active
+PROVIDER-000010,Enterprise Model Hub,Registry,Hybrid,TRUE,TRUE,TRUE,TRUE,Platform Team,Central enterprise model registry,Active

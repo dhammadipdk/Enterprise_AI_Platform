@@ -1,0 +1,8 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-INCOME-000001,LT_3L,Below ₹3 Lakh,Annual income below ₹3 lakh,Active,2026-01-01,,Enterprise,
+REF-INCOME-000002,3L_5L,₹3–5 Lakh,Annual income between ₹3 and ₹5 lakh,Active,2026-01-01,,Enterprise,
+REF-INCOME-000003,5L_10L,₹5–10 Lakh,Annual income between ₹5 and ₹10 lakh,Active,2026-01-01,,Enterprise,
+REF-INCOME-000004,10L_25L,₹10–25 Lakh,Annual income between ₹10 and ₹25 lakh,Active,2026-01-01,,Enterprise,
+REF-INCOME-000005,25L_50L,₹25–50 Lakh,Annual income between ₹25 and ₹50 lakh,Active,2026-01-01,,Enterprise,
+REF-INCOME-000006,50L_1CR,₹50 Lakh–₹1 Crore,Annual income between ₹50 lakh and ₹1 crore,Active,2026-01-01,,Enterprise,
+REF-INCOME-000007,GT_1CR,Above ₹1 Crore,Annual income above ₹1 crore,Active,2026-01-01,,Enterprise,

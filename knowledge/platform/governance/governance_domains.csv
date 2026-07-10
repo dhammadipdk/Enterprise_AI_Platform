@@ -1,0 +1,11 @@
+domain_id,domain_name,business_scope,criticality,primary_owner,requires_human_approval,regulatory_impact,description,status
+GDOM-000001,Knowledge Governance,Knowledge,Critical,Knowledge Office,FALSE,High,Knowledge lifecycle governance,Active
+GDOM-000002,Memory Governance,Memory,High,AI Platform,FALSE,Medium,Memory governance,Active
+GDOM-000003,Planning Governance,Planning,Critical,AI Operations,TRUE,High,Planning governance,Active
+GDOM-000004,Execution Governance,Execution,Critical,Operations Team,TRUE,High,Workflow governance,Active
+GDOM-000005,Agent Governance,Agents,Critical,AI Governance Board,TRUE,High,Agent oversight,Active
+GDOM-000006,Recommendation Governance,Business,Critical,Business Owners,TRUE,High,Recommendation governance,Active
+GDOM-000007,Security Governance,Security,Critical,Security Team,TRUE,Critical,Security governance,Active
+GDOM-000008,Data Governance,Enterprise,Critical,Data Office,TRUE,Critical,Enterprise data governance,Active
+GDOM-000009,Model Governance,AI,Critical,ML Platform,TRUE,High,Model lifecycle governance,Active
+GDOM-000010,Enterprise Governance,Enterprise,Critical,Executive Board,TRUE,Critical,Overall enterprise AI governance,Active

@@ -1,0 +1,11 @@
+model_id,model_name,model_category,provider,deployment_type,primary_use_case,default_endpoint,lifecycle_stage,description,status
+MOD-000001,Enterprise Foundation Model,Foundation,Provider Agnostic,Remote,General Reasoning,foundation-prod,Production,Primary enterprise reasoning model,Active
+MOD-000002,Enterprise Embedding Model,Embedding,Provider Agnostic,Remote,Vector Embeddings,embedding-prod,Production,Embedding generation,Active
+MOD-000003,Enterprise Reranker,Reranker,Provider Agnostic,Remote,RAG Ranking,reranker-prod,Production,Retrieval reranking,Active
+MOD-000004,Enterprise Vision Model,Vision,Provider Agnostic,Remote,Image Understanding,vision-prod,Production,Vision inference,Active
+MOD-000005,Enterprise OCR Model,Vision,Provider Agnostic,Remote,Document OCR,ocr-prod,Production,OCR processing,Active
+MOD-000006,Enterprise Speech Model,Speech,Provider Agnostic,Remote,Speech Processing,speech-prod,Production,Speech recognition,Active
+MOD-000007,Enterprise Recommendation Model,Prediction,Internal,Local,Recommendations,recommendation-prod,Production,Recommendation engine,Active
+MOD-000008,Enterprise Fraud Model,Prediction,Internal,Local,Fraud Detection,fraud-prod,Production,Fraud analysis,Active
+MOD-000009,Enterprise Evaluation Model,Evaluation,Internal,Local,Quality Evaluation,evaluation-prod,Production,Model evaluation,Active
+MOD-000010,Experimental Model,Research,Internal,Sandbox,Research,sandbox,None,Research experimentation,Active

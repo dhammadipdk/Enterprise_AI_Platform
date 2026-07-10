@@ -1,0 +1,10 @@
+field_name,data_type,required,description
+workflow_id,String,TRUE,Workflow identifier
+workflow_name,String,TRUE,Workflow name
+workflow_type,String,TRUE,Business workflow type
+version,String,TRUE,Workflow version
+owner,String,TRUE,Business owner
+execution_graph,String,TRUE,Execution graph
+status,String,TRUE,Lifecycle state
+approval_status,String,FALSE,Approval state
+metadata,JSON,FALSE,Additional metadata

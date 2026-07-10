@@ -1,0 +1,11 @@
+sla_id,sla_name,target_service,sla_metric,target_value,measurement_period,business_owner,penalty_if_breached,description,status
+SLA-000001,Knowledge SLA,Knowledge Layer,Availability,99.9%,Monthly,Knowledge Office,Service Review,Knowledge availability SLA,Active
+SLA-000002,Memory SLA,Memory Layer,Latency,<50 ms,Monthly,Platform Team,Performance Review,Memory latency SLA,Active
+SLA-000003,Planning SLA,Planning Engine,Latency,<500 ms,Monthly,Planning Team,SLA Review,Planning response SLA,Active
+SLA-000004,Execution SLA,Execution Engine,Workflow Success,99%,Monthly,Operations Team,Operational Review,Workflow reliability SLA,Active
+SLA-000005,Agent SLA,Agent Platform,Availability,99.5%,Monthly,AI Platform Team,Platform Review,Agent availability SLA,Active
+SLA-000006,Recommendation SLA,Recommendation Engine,Accuracy,95%,Monthly,Business Team,Business Review,Recommendation quality SLA,Active
+SLA-000007,Governance SLA,Governance Platform,Compliance,100%,Monthly,Governance Board,Compliance Review,Governance SLA,Active
+SLA-000008,Evaluation SLA,Evaluation Platform,Completion Rate,100%,Monthly,Evaluation Team,Evaluation Review,Evaluation execution SLA,Active
+SLA-000009,Security SLA,Security Platform,Incident Response,<15 Minutes,Monthly,Security Team,Security Review,Security response SLA,Active
+SLA-000010,Enterprise SLA,Enterprise Platform,Overall Availability,99.95%,Monthly,Executive Board,Executive Review,Enterprise platform SLA,Active

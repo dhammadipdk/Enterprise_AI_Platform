@@ -1,0 +1,95 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-VEH-000001,Vehicle,A motor vehicle that may be owned, operated and insured through the InsureAI platform.,Vehicle,Identity,Core,Stable,,,Automobile,Tata Nexon,Business,Root business concept.
+GLOSS-VEH-000002,Vehicle Identifier,A unique business identifier assigned to a vehicle.,Vehicle,Identity,Core,Stable,Vehicle,,Vehicle ID,VEH-100001,Platform,Primary business identifier.
+GLOSS-VEH-000003,Vehicle Type,Classification of the vehicle based on its intended use.,Vehicle,Classification,Core,Stable,Vehicle,,Vehicle Category,Private Car,Business,References Vehicle Category Master.
+GLOSS-VEH-000004,Vehicle Status,Current operational status of the vehicle within the platform.,Vehicle,Operational,Derived,Dynamic,Vehicle,Vehicle Lifecycle Stage,,Active,Derived,Computed business status.
+GLOSS-VEH-000005,Vehicle Lifecycle Stage,Current stage of the vehicle within its business lifecycle.,Vehicle,Operational,Derived,Dynamic,Vehicle,Registration Date,,Insured,Derived,Supports workflow.
+GLOSS-VEH-000006,Vehicle Registration Date,Date on which the vehicle was onboarded into the platform.,Vehicle,Identity,Core,Stable,Vehicle,,Platform Registration Date,2026-07-01,Platform,Platform registration.
+GLOSS-VEH-000007,Vehicle Age,Current age of the vehicle.,Vehicle,Derived,Derived,Computed,Vehicle,Manufacturing Year,,4 Years,Derived,Computed automatically.
+GLOSS-VEH-000008,Vehicle Segment,Market segment of the vehicle.,Vehicle,Classification,Reference,Stable,Vehicle,,Segment,SUV,Business,References Vehicle Segment Master.
+GLOSS-VEH-000009,Vehicle Class,Regulatory classification of the vehicle.,Vehicle,Classification,Reference,Stable,Vehicle,,Class,LMV,Regulatory,Supports underwriting.
+GLOSS-VEH-000010,Vehicle Verification Status,Current verification status of the vehicle.,Vehicle,Operational,Derived,Dynamic,Vehicle,Registration Verification,,Verified,Derived,Compliance indicator.
+GLOSS-VEH-000011,Vehicle Registration,Official registration details assigned by the transport authority.,Vehicle,Identity,Core,Stable,Vehicle,,Registration Certificate,MH12AB1234,Regulatory,Parent concept.
+GLOSS-VEH-000012,Registration Number,Official vehicle registration number assigned by the registering authority.,Vehicle,Identity,Core,Stable,Vehicle Registration,,Registration Plate,MH12AB1234,Regulatory,Primary registration identifier.
+GLOSS-VEH-000013,Vehicle Identification Number,Globally unique vehicle identification number assigned by the manufacturer.,Vehicle,Identity,Core,Stable,Vehicle Registration,,VIN,MA1XXXXXXXXXXXXXX,Manufacturer,ISO 3779 compliant.
+GLOSS-VEH-000014,Engine Number,Manufacturer-issued engine identification number.,Vehicle,Identity,Core,Stable,Vehicle Registration,,Engine ID,ENG123456789,Manufacturer,Supports identification.
+GLOSS-VEH-000015,Chassis Number,Manufacturer-issued chassis identification number.,Vehicle,Identity,Core,Stable,Vehicle Registration,,Frame Number,CHS123456789,Manufacturer,Supports identification.
+GLOSS-VEH-000016,Registration Authority,Regional Transport Office responsible for vehicle registration.,Vehicle,Reference,Core,Stable,Vehicle Registration,,RTO,Pune RTO,Regulatory,References RTO Master.
+GLOSS-VEH-000017,Registration State,State in which the vehicle is registered.,Vehicle,Reference,Core,Stable,Vehicle Registration,,Registered State,Maharashtra,Regulatory,References State Master.
+GLOSS-VEH-000018,Registration Validity,Validity status of the vehicle registration.,Vehicle,Derived,Derived,Computed,Vehicle Registration,Registration Expiry Date,,Valid,Derived,Computed automatically.
+GLOSS-VEH-000019,Registration Expiry Date,Date on which the registration expires.,Vehicle,Identity,Core,Dynamic,Vehicle Registration,,Registration Expiry,2036-03-10,Regulatory,Regulatory compliance.
+GLOSS-VEH-000020,Registration Verification,Verification status of the vehicle registration.,Vehicle,Regulatory,Derived,Dynamic,Vehicle Registration,,Registration Verified,Verified,Derived,Supports compliance.
+GLOSS-VEH-000021,Hypothecation Status,Indicates whether the vehicle is under loan or lease hypothecation.,Vehicle,Financial,User Provided,Dynamic,Vehicle Registration,,Loan Status,Yes,Business,Ownership information.
+GLOSS-VEH-000022,Hypothecation Institution,Financial institution holding the hypothecation.,Vehicle,Financial,User Provided,Dynamic,Vehicle Registration,,Financer,HDFC Bank,Business,Optional.
+GLOSS-VEH-000023,Vehicle Ownership,Represents ownership information associated with the vehicle.,Vehicle,Identity,Core,Dynamic,Vehicle,,Ownership,Owned,Business,Parent concept.
+GLOSS-VEH-000024,Owner Type,Classification of the registered owner.,Vehicle,Classification,User Provided,Stable,Vehicle Ownership,,Owner Category,Individual,Business,Supports underwriting.
+GLOSS-VEH-000025,Ownership Type,Represents the legal ownership model of the vehicle.,Vehicle,Classification,User Provided,Stable,Vehicle Ownership,,Ownership,Owned,Business,References Ownership Type Master.
+GLOSS-VEH-000026,Ownership Start Date,Date on which ownership began.,Vehicle,Identity,Core,Stable,Vehicle Ownership,,Purchase Date,2023-05-12,Business,Ownership lifecycle.
+GLOSS-VEH-000027,Ownership Duration,Length of time the current owner has owned the vehicle.,Vehicle,Derived,Derived,Computed,Vehicle Ownership,Ownership Start Date,,3 Years,Derived,Computed automatically.
+GLOSS-VEH-000028,Number of Previous Owners,Number of previous registered owners.,Vehicle,Profile,User Provided,Dynamic,Vehicle Ownership,,Previous Owners,1,Business,Used for valuation.
+GLOSS-VEH-000029,Ownership Transfer History,Historical ownership transfer records.,Vehicle,Operational,Reference,Dynamic,Vehicle Ownership,,Transfer History,One Transfer,Government,Historical record.
+GLOSS-VEH-000030,Primary Owner Verification,Verification status of the registered owner.,Vehicle,Regulatory,Derived,Dynamic,Vehicle Ownership,Owner Identity,,Verified,Derived,Supports compliance.
+GLOSS-VEH-000031,Vehicle Manufacturer,Company that manufactured the vehicle.,Vehicle,Reference,Core,Stable,Vehicle,,Manufacturer,Tata Motors,Business,References Vehicle Manufacturer Master.
+GLOSS-VEH-000032,Vehicle Brand,Commercial brand under which the vehicle is marketed.,Vehicle,Reference,Core,Stable,Vehicle Manufacturer,,Brand,Tata,Business,Marketing brand.
+GLOSS-VEH-000033,Vehicle Model,Commercial model designation of the vehicle.,Vehicle,Reference,Core,Stable,Vehicle,,Model,Nexon,Business,References Vehicle Model Master.
+GLOSS-VEH-000034,Vehicle Variant,Specific variant of the vehicle model.,Vehicle,Reference,Core,Stable,Vehicle Model,,Variant,Nexon XZ+,Business,References Vehicle Variant Master.
+GLOSS-VEH-000035,Manufacturing Year,Calendar year in which the vehicle was manufactured.,Vehicle,Identity,Core,Stable,Vehicle,,Year of Manufacture,2022,Manufacturer,Supports valuation.
+GLOSS-VEH-000036,Model Year,Commercial model year assigned by the manufacturer.,Vehicle,Identity,Core,Stable,Vehicle,,Model Year,2023,Manufacturer,May differ from manufacturing year.
+GLOSS-VEH-000037,Manufacturing Country,Country where the vehicle was manufactured.,Vehicle,Reference,Core,Stable,Vehicle,,Country,India,Manufacturer,References Country Master.
+GLOSS-VEH-000038,Manufacturer Warranty,Manufacturer-provided warranty associated with the vehicle.,Vehicle,Operational,Core,Dynamic,Vehicle,,Warranty,3 Years,Manufacturer,Supports claims.
+GLOSS-VEH-000039,Warranty Expiry Date,Date on which manufacturer warranty expires.,Vehicle,Operational,Core,Dynamic,Vehicle,,Warranty Expiry,2026-05-12,Manufacturer,Computed from purchase.
+GLOSS-VEH-000040,Recall Status,Represents whether the vehicle is affected by any manufacturer recall.,Vehicle,Operational,Reference,Dynamic,Vehicle,,Recall,No Recall,Manufacturer,Supports safety.
+GLOSS-VEH-000041,Vehicle Specification,Represents the technical characteristics and engineering specifications of the vehicle.,Vehicle,Profile,Core,Stable,Vehicle,,Technical Specifications,Tata Nexon Specification,Business,Parent business concept.
+GLOSS-VEH-000042,Fuel Type,Primary fuel used by the vehicle.,Vehicle,Classification,Core,Stable,Vehicle Specification,,Fuel,Petrol,Business,References Fuel Type Master.
+GLOSS-VEH-000043,Transmission Type,Transmission mechanism used by the vehicle.,Vehicle,Classification,Core,Stable,Vehicle Specification,,Transmission,Automatic,Business,References Transmission Type Master.
+GLOSS-VEH-000044,Body Type,Physical body style of the vehicle.,Vehicle,Classification,Core,Stable,Vehicle Specification,,Body Style,SUV,Business,References Body Type Master.
+GLOSS-VEH-000045,Drive Configuration,Wheel drive configuration of the vehicle.,Vehicle,Classification,Core,Stable,Vehicle Specification,,Drive Type,FWD,Business,References Drive Configuration Master.
+GLOSS-VEH-000046,Engine Capacity,Engine displacement measured in cubic centimeters.,Vehicle,Specification,Core,Stable,Vehicle Specification,,Engine CC,1498 cc,Manufacturer,Technical specification.
+GLOSS-VEH-000047,Engine Power,Maximum engine output produced by the vehicle.,Vehicle,Specification,Core,Stable,Vehicle Specification,,Horsepower,118 HP,Manufacturer,Technical specification.
+GLOSS-VEH-000048,Torque,Maximum engine torque produced by the vehicle.,Vehicle,Specification,Core,Stable,Vehicle Specification,,Torque,170 Nm,Manufacturer,Technical specification.
+GLOSS-VEH-000049,Seating Capacity,Maximum number of occupants permitted in the vehicle.,Vehicle,Specification,Core,Stable,Vehicle Specification,,Seats,5,Manufacturer,Vehicle specification.
+GLOSS-VEH-000050,Cargo Capacity,Maximum luggage carrying capacity of the vehicle.,Vehicle,Specification,Core,Stable,Vehicle Specification,,Boot Space,382 L,Manufacturer,Vehicle specification.
+GLOSS-VEH-000051,Gross Vehicle Weight,Maximum permissible vehicle weight including passengers and cargo.,Vehicle,Specification,Core,Stable,Vehicle Specification,,GVW,1650 kg,Manufacturer,Regulatory specification.
+GLOSS-VEH-000052,Emission Standard,Applicable emission standard satisfied by the vehicle.,Vehicle,Classification,Core,Stable,Vehicle Specification,,Emission Norm,BS6,Regulatory,References Emission Standard Master.
+GLOSS-VEH-000053,Vehicle Color,Primary exterior color of the vehicle.,Vehicle,Classification,User Provided,Dynamic,Vehicle Specification,,Color,White,Business,References Vehicle Color Master.
+GLOSS-VEH-000054,Vehicle Usage,Represents how the vehicle is used by its owner.,Vehicle,Operational,Core,Dynamic,Vehicle,,Vehicle Utilization,Daily Personal Use,Business,Parent business concept.
+GLOSS-VEH-000055,Usage Category,Primary purpose for which the vehicle is used.,Vehicle,Classification,User Provided,Dynamic,Vehicle Usage,,Usage Type,Personal,Business,Supports underwriting.
+GLOSS-VEH-000056,Annual Mileage,Estimated annual distance travelled by the vehicle.,Vehicle,Operational,User Provided,Dynamic,Vehicle Usage,,Annual Distance,12000 km,Business,Risk indicator.
+GLOSS-VEH-000057,Average Daily Usage,Estimated average daily driving distance.,Vehicle,Operational,Derived,Computed,Vehicle Usage,Annual Mileage,,33 km/day,Derived,Computed metric.
+GLOSS-VEH-000058,Parking Type,Typical parking environment for the vehicle.,Vehicle,Operational,User Provided,Dynamic,Vehicle Usage,,Parking,Covered Garage,Business,Risk indicator.
+GLOSS-VEH-000059,Primary Operating Region,Primary geographic region in which the vehicle operates.,Vehicle,Reference,User Provided,Dynamic,Vehicle Usage,,Operating Area,Pune,Business,Supports regional pricing.
+GLOSS-VEH-000060,Urban Usage Percentage,Percentage of usage occurring in urban areas.,Vehicle,Operational,User Provided,Dynamic,Vehicle Usage,,Urban Usage,80%,Business,Exposure metric.
+GLOSS-VEH-000061,Highway Usage Percentage,Percentage of usage occurring on highways.,Vehicle,Operational,User Provided,Dynamic,Vehicle Usage,,Highway Usage,20%,Business,Exposure metric.
+GLOSS-VEH-000062,Commercial Usage Indicator,Indicates whether the vehicle is used commercially.,Vehicle,Classification,User Provided,Dynamic,Vehicle Usage,,Commercial Use,False,Business,Supports underwriting.
+GLOSS-VEH-000063,Usage Risk Level,Overall risk associated with the vehicle's usage pattern.,Vehicle,Risk,Derived,Computed,Vehicle Usage,Annual Mileage;Operating Region,,Moderate,Derived,Supports premium calculation.
+GLOSS-VEH-000074,Vehicle Compliance,Represents the regulatory compliance status of the vehicle.,Vehicle,Regulatory,Core,Dynamic,Vehicle,,Compliance,Compliant,Regulatory,Parent business concept.
+GLOSS-VEH-000075,Pollution Under Control Certificate,Represents the Pollution Under Control (PUC) certification of the vehicle.,Vehicle,Regulatory,Core,Dynamic,Vehicle Compliance,,PUC Certificate,Valid PUC,Regulatory,Supports legal compliance.
+GLOSS-VEH-000076,PUC Expiry Date,Date on which the PUC certificate expires.,Vehicle,Regulatory,Core,Dynamic,Pollution Under Control Certificate,,PUC Expiry,2026-10-15,Regulatory,Compliance requirement.
+GLOSS-VEH-000077,Fitness Certificate Status,Represents the validity of the vehicle fitness certificate where applicable.,Vehicle,Regulatory,Core,Dynamic,Vehicle Compliance,,Fitness Certificate,Valid,Regulatory,Applicable where required.
+GLOSS-VEH-000078,Road Tax Status,Represents whether applicable road taxes have been paid.,Vehicle,Regulatory,Derived,Dynamic,Vehicle Compliance,Road Tax Payment,,Paid,Derived,Supports compliance.
+GLOSS-VEH-000079,Road Tax Expiry Date,Date until which road tax remains valid.,Vehicle,Regulatory,Core,Dynamic,Vehicle Compliance,,Road Tax Validity,2032-05-12,Regulatory,Government record.
+GLOSS-VEH-000080,Registration Verification Status,Represents whether vehicle registration has been verified.,Vehicle,Regulatory,Derived,Dynamic,Vehicle Compliance,Registration Verification,,Verified,Derived,Compliance indicator.
+GLOSS-VEH-000081,Compliance Score,A composite score representing overall regulatory compliance.,Vehicle,Risk,AI Generated,Computed,Vehicle Compliance,Registration Verification Status;Road Tax Status;PUC Expiry Date,,98,AI,Supports underwriting.
+GLOSS-VEH-000082,Compliance Status,Overall regulatory compliance classification of the vehicle.,Vehicle,Regulatory,Derived,Computed,Vehicle Compliance,Compliance Score,,Compliant,Derived,Business summary.
+GLOSS-VEH-000083,Compliance Review Date,Date on which compliance was last evaluated.,Vehicle,Operational,Core,Dynamic,Vehicle Compliance,,Review Date,2026-07-01,Platform,Supports auditing.
+GLOSS-VEH-000084,Vehicle Condition,Represents the physical and operational condition of the vehicle.,Vehicle,Operational,Core,Dynamic,Vehicle,,Vehicle Health,Good,Business,Parent business concept.
+GLOSS-VEH-000085,Exterior Condition,Assessment of the external physical condition of the vehicle.,Vehicle,Operational,User Provided,Dynamic,Vehicle Condition,,Body Condition,Good,Business,Supports inspection.
+GLOSS-VEH-000086,Interior Condition,Assessment of the internal physical condition of the vehicle.,Vehicle,Operational,User Provided,Dynamic,Vehicle Condition,,Cabin Condition,Excellent,Business,Supports valuation.
+GLOSS-VEH-000087,Mechanical Condition,Assessment of the mechanical health of the vehicle.,Vehicle,Operational,Reference,Dynamic,Vehicle Condition,,Mechanical Health,Good,Inspection,Supports underwriting.
+GLOSS-VEH-000088,Odometer Reading,Current recorded odometer value of the vehicle.,Vehicle,Operational,User Provided,Dynamic,Vehicle Condition,,Mileage Reading,48215 km,Business,Supports valuation.
+GLOSS-VEH-000089,Modification Status,Indicates whether the vehicle has been structurally or mechanically modified.,Vehicle,Operational,User Provided,Dynamic,Vehicle Condition,,Modified Vehicle,False,Business,Supports underwriting.
+GLOSS-VEH-000090,Overall Vehicle Condition,Overall assessment of the vehicle's physical state.,Vehicle,Operational,Derived,Computed,Vehicle Condition,Exterior Condition;Interior Condition;Mechanical Condition,,Good,Derived,Business summary.
+GLOSS-VEH-000091,Vehicle Assessment,Business assessment summarizing the overall insurance profile of the vehicle.,Vehicle,Operational,AI Generated,Computed,Vehicle,,Vehicle Evaluation,Preferred Vehicle,AI,Parent business concept.
+GLOSS-VEH-000092,Vehicle Risk Score,Composite insurance risk score assigned to the vehicle.,Vehicle,Risk,AI Generated,Computed,Vehicle Assessment,Vehicle Usage;Vehicle Condition;Vehicle Compliance,,68,AI,Primary underwriting input.
+GLOSS-VEH-000093,Theft Risk Score,Predicted likelihood of vehicle theft.,Vehicle,Risk,AI Generated,Computed,Vehicle Assessment,Operating Region;Vehicle Model,,22,AI,Supports pricing.
+GLOSS-VEH-000094,Accident Risk Score,Predicted likelihood of future accidents involving the vehicle.,Vehicle,Risk,AI Generated,Computed,Vehicle Assessment,Vehicle Usage;Vehicle Age,,41,AI,Supports underwriting.
+GLOSS-VEH-000095,Fraud Risk Score,Predicted likelihood of fraudulent activity involving the vehicle.,Vehicle,Risk,AI Generated,Computed,Vehicle Assessment,Ownership History,,8,AI,Supports fraud detection.
+GLOSS-VEH-000096,Vehicle Trust Score,Composite trust score assigned to the vehicle.,Vehicle,Risk,AI Generated,Computed,Vehicle Assessment,Compliance Score,,96,AI,Supports recommendations.
+GLOSS-VEH-000097,Risk Category,Categorized insurance risk associated with the vehicle.,Vehicle,Classification,Derived,Computed,Vehicle Assessment,Vehicle Risk Score,,Low Risk,Derived,Supports underwriting.
+GLOSS-VEH-000098,Premium Impact,Represents the effect of vehicle characteristics on insurance premium.,Vehicle,Financial,Derived,Computed,Vehicle Assessment,Vehicle Risk Score,,Reduced Premium,Derived,Recommendation input.
+GLOSS-VEH-000099,Recommendation Readiness,Represents whether sufficient information exists to generate reliable insurance recommendations.,Vehicle,Operational,Derived,Computed,Vehicle Assessment,Vehicle Compliance;Vehicle Valuation,,Ready,Derived,AI workflow trigger.
+GLOSS-VEH-000100,Assessment Date,Date on which the latest vehicle assessment was generated.,Vehicle,Operational,Core,Dynamic,Vehicle Assessment,,Assessment Timestamp,2026-07-01,Platform,Assessment metadata.
+GLOSS-VEH-000101,Assessment Version,Version of the assessment methodology used to generate the vehicle assessment.,Vehicle,Operational,Core,Stable,Vehicle Assessment,,Assessment Model,1.0.0,Platform,Supports reproducibility.
+GLOSS-VEH-000102,Assessment Remarks,Additional remarks associated with the vehicle assessment.,Vehicle,Operational,Core,Dynamic,Vehicle Assessment,,Assessment Notes,Low-risk private vehicle,Platform,Human-readable summary.
+
+

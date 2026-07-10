@@ -1,0 +1,11 @@
+control_id,control_name,control_category,control_type,applies_to,automation_level,preventive_detective,control_frequency,description,status
+CTRL-000001,Grounding Validation,Responsible AI,Validation,LLM Responses,Fully Automatic,Preventive,Realtime,Prevent unsupported responses,Active
+CTRL-000002,Policy Compliance Check,Governance,Validation,Execution Plans,Fully Automatic,Preventive,Realtime,Validate policy compliance,Active
+CTRL-000003,Risk Assessment,Risk,Assessment,Recommendations,Semi Automatic,Preventive,Per Decision,Assess business risk,Active
+CTRL-000004,Human Approval Gate,Operations,Approval,High Risk Actions,Manual,Preventive,Per Request,Human governance gate,Active
+CTRL-000005,Audit Logging,Compliance,Monitoring,All Decisions,Fully Automatic,Detective,Realtime,Record governance trace,Active
+CTRL-000006,Bias Detection,Responsible AI,Validation,Recommendations,Fully Automatic,Detective,Realtime,Detect recommendation bias,Active
+CTRL-000007,Access Validation,Security,Access Control,Customer Data,Fully Automatic,Preventive,Realtime,Validate permissions,Active
+CTRL-000008,Model Registry Check,Model Governance,Validation,AI Models,Fully Automatic,Preventive,Deployment,Verify approved models,Active
+CTRL-000009,Knowledge Validation,Knowledge,Validation,Knowledge Assets,Semi Automatic,Preventive,Publication,Validate knowledge quality,Active
+CTRL-000010,Continuous Monitoring,Enterprise,Monitoring,Entire Platform,Fully Automatic,Detective,Continuous,Enterprise governance monitoring,Active

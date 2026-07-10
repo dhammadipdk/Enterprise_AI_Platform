@@ -1,0 +1,11 @@
+policy_id,policy_name,policy_scope,trigger_condition,policy_action,enforcement_level,override_allowed,description,status
+PPOL-000001,Always Validate Rules,Planning,Plan Generated,Validate Business Rules,Critical,FALSE,Every plan must pass business validation,Active
+PPOL-000002,Prefer Existing Knowledge,Retrieval,Knowledge Retrieval,Reuse Enterprise Memory,High,TRUE,Reuse enterprise knowledge first,Active
+PPOL-000003,Explain Every Decision,Reasoning,Decision Generated,Generate Explanation,High,FALSE,Explainable AI policy,Active
+PPOL-000004,Optimize Critical Tasks,Scheduling,Critical Priority,Optimize Critical Path,Critical,TRUE,Critical tasks first,Active
+PPOL-000005,Use Human Approval,Governance,High Risk,Manual Review,Critical,FALSE,Human-in-the-loop policy,Active
+PPOL-000006,Enable Replanning,Planning,Execution Failure,Generate New Plan,Medium,TRUE,Adaptive replanning,Active
+PPOL-000007,Persist Learning,Learning,Execution Complete,Update Memory,Medium,FALSE,Continual learning policy,Active
+PPOL-000008,Reuse Successful Plans,Planning,Similar Goal,Template Matching,Medium,TRUE,Planning reuse policy,Active
+PPOL-000009,Balance Cost and Quality,Optimization,Plan Search,Multi-objective Optimization,Medium,TRUE,Balanced optimization,Active
+PPOL-000010,Enterprise Governance,Enterprise,All Plans,Compliance Validation,Critical,FALSE,Enterprise-wide governance,Active

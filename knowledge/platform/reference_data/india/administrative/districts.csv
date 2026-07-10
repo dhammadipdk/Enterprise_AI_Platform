@@ -1,0 +1,11 @@
+reference_id,code,name,parent_code,parent_name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DIST-000001,MH-MUM,Mumbai,MH,Maharashtra,District in Maharashtra,Active,1950-01-26,,Government of Maharashtra,
+REF-DIST-000002,MH-PUN,Pune,MH,Maharashtra,District in Maharashtra,Active,1950-01-26,,Government of Maharashtra,
+REF-DIST-000003,KA-BLR,Bengaluru Urban,KA,Karnataka,District in Karnataka,Active,1956-11-01,,Government of Karnataka,
+REF-DIST-000004,DL-CEN,Central Delhi,DL,Delhi,District in NCT of Delhi,Active,1997-01-01,,Government of NCT Delhi,
+REF-DIST-000005,TN-CHE,Chennai,TN,Tamil Nadu,District in Tamil Nadu,Active,1950-01-26,,Government of Tamil Nadu,
+REF-DIST-000006,GJ-AHD,Ahmedabad,GJ,Gujarat,District in Gujarat,Active,1960-05-01,,Government of Gujarat,
+REF-DIST-000007,WB-KOL,Kolkata,WB,West Bengal,District in West Bengal,Active,1950-01-26,,Government of West Bengal,
+REF-DIST-000008,TG-HYD,Hyderabad,TG,Telangana,District in Telangana,Active,2014-06-02,,Government of Telangana,
+REF-DIST-000009,UP-LKO,Lucknow,UP,Uttar Pradesh,District in Uttar Pradesh,Active,1950-01-26,,Government of Uttar Pradesh,
+REF-DIST-000010,RJ-JPR,Jaipur,RJ,Rajasthan,District in Rajasthan,Active,1956-11-01,,Government of Rajasthan,

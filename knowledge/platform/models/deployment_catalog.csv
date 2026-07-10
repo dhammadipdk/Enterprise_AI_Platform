@@ -1,0 +1,11 @@
+deployment_id,deployment_name,deployment_type,infrastructure,autoscaling,high_availability,gpu_required,multi_region,description,status
+DEPLOY-000001,Foundation Production,Production,Kubernetes,TRUE,TRUE,TRUE,TRUE,Production LLM deployment,Active
+DEPLOY-000002,Embedding Production,Production,Kubernetes,TRUE,TRUE,TRUE,FALSE,Embedding deployment,Active
+DEPLOY-000003,Reranker Production,Production,Kubernetes,TRUE,TRUE,TRUE,FALSE,Reranker deployment,Active
+DEPLOY-000004,Vision Production,Production,Kubernetes,TRUE,TRUE,TRUE,TRUE,Vision deployment,Active
+DEPLOY-000005,Speech Production,Production,Kubernetes,TRUE,TRUE,TRUE,TRUE,Speech deployment,Active
+DEPLOY-000006,Recommendation Deployment,Production,Kubernetes,TRUE,TRUE,FALSE,FALSE,Business recommendation model,Active
+DEPLOY-000007,Fraud Deployment,Production,Kubernetes,TRUE,TRUE,FALSE,FALSE,Fraud detection deployment,Active
+DEPLOY-000008,Evaluation Deployment,Internal,Kubernetes,FALSE,TRUE,FALSE,FALSE,Evaluation service deployment,Active
+DEPLOY-000009,Sandbox Deployment,Research,Docker,FALSE,FALSE,Optional,FALSE,Research environment,Active
+DEPLOY-000010,Disaster Recovery Deployment,Backup,Kubernetes,FALSE,TRUE,TRUE,TRUE,Disaster recovery deployment,Active

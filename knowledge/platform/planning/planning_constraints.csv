@@ -1,0 +1,11 @@
+constraint_id,constraint_name,constraint_type,applies_to,severity,validation_stage,automatic_resolution,description,status
+PCON-000001,Business Rules,Business,All Plans,Critical,Planning,FALSE,Enterprise business rules,Active
+PCON-000002,Legal Compliance,Regulatory,Claims,Critical,Planning,FALSE,Regulatory compliance,Active
+PCON-000003,Budget Limit,Financial,Execution Plan,High,Planning,TRUE,Execution budget limit,Active
+PCON-000004,Execution Deadline,Temporal,Execution Plan,Critical,Scheduling,TRUE,Time deadline,Active
+PCON-000005,Resource Availability,Resource,Tasks,High,Scheduling,TRUE,Available resources,Active
+PCON-000006,Agent Capability,Agent,Agent Tasks,Critical,Assignment,FALSE,Agent skill matching,Active
+PCON-000007,Data Availability,Knowledge,Retrieval Tasks,Medium,Planning,TRUE,Required knowledge availability,Active
+PCON-000008,Risk Threshold,Risk,Risk Plans,Critical,Optimization,TRUE,Maximum acceptable risk,Active
+PCON-000009,Privacy Policy,Security,Customer Tasks,Critical,Execution,FALSE,Privacy compliance,Active
+PCON-000010,Memory Budget,System,Planning Engine,Medium,Execution,TRUE,Planning memory consumption,Active

@@ -1,0 +1,107 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-CLM-000001,Claim,Represents a formal request submitted by a policyholder for compensation following an insured event.,Claims,Identity,Core,Dynamic,,,Insurance Claim,Motor Damage Claim,Business,Root business concept.
+GLOSS-CLM-000002,Claim Identifier,Unique business identifier assigned to the claim.,Claims,Identity,Core,Stable,Claim,,Claim ID,CLM-100001,Platform,Primary identifier.
+GLOSS-CLM-000003,Claim Number,Official claim number assigned by the insurer.,Claims,Identity,Core,Stable,Claim,,Claim No.,CLM2026001234,Insurance Company,Customer-facing identifier.
+GLOSS-CLM-000004,Claim Status,Current operational status of the claim.,Claims,Operational,Derived,Dynamic,Claim,Claim Lifecycle Stage,,Open,Derived,Workflow status.
+GLOSS-CLM-000005,Claim Type,Classification of the submitted claim.,Claims,Classification,Core,Stable,Claim,,Claim Type,Own Damage,Business,References Claim Type Master.
+GLOSS-CLM-000006,Claim Category,Business classification of the claim.,Claims,Classification,Core,Stable,Claim,,Category,Motor Damage,Business,Supports analytics.
+GLOSS-CLM-000007,Claim Registration Date,Date on which the claim was registered.,Claims,Operational,Core,Stable,Claim,,Registration Date,2026-08-12,Business,Operational timestamp.
+GLOSS-CLM-000008,Claim Priority,Business priority assigned to the claim.,Claims,Classification,Derived,Computed,Claim,Severity Assessment,,High,Derived,Workflow prioritization.
+GLOSS-CLM-000009,Claim Source,Channel through which the claim was initiated.,Claims,Operational,Core,Stable,Claim,,Source,Mobile App,Business,Supports analytics.
+GLOSS-CLM-000010,Claim Summary,Simplified explanation of the claim.,Claims,Derived,Derived,Computed,Claim,Claim Type,,Own damage claim for front bumper collision.,Derived,Supports AI explanation.
+GLOSS-CLM-000011,Claim Notification,Represents the First Notice of Loss (FNOL) submitted by the policyholder.,Claims,Operational,Core,Dynamic,Claim,,FNOL,Claim Report,Business,Parent business concept.
+GLOSS-CLM-000012,Notification Timestamp,Timestamp when FNOL was received.,Claims,Operational,Core,Stable,Claim Notification,,Notification Time,2026-08-12T09:32:00,Business,Audit.
+GLOSS-CLM-000013,Notification Channel,Channel used for reporting the loss.,Claims,Classification,Core,Stable,Claim Notification,,Channel,Mobile App,Business,References Channel Master.
+GLOSS-CLM-000014,Reporter Type,Classification of person reporting the claim.,Claims,Classification,Core,Stable,Claim Notification,,Reporter,Policyholder,Business,Supports workflow.
+GLOSS-000015,Initial Incident Description,Initial description of the reported incident.,Claims,Identity,Core,Dynamic,Claim Notification,,Incident Description,Vehicle hit divider.,Business,Customer-provided.
+GLOSS-CLM-000016,Emergency Assistance Requested,Indicates whether emergency support was requested.,Claims,Operational,Core,Dynamic,Claim Notification,,Emergency Support,True,Business,Service workflow.
+GLOSS-CLM-000017,Police Report Available,Indicates whether a police report exists.,Claims,Operational,Core,Dynamic,Claim Notification,,FIR Available,True,Business,Legal requirement.
+GLOSS-CLM-000018,Towing Requested,Indicates whether towing assistance was requested.,Claims,Operational,Core,Dynamic,Claim Notification,,Towing,False,Business,Roadside support.
+GLOSS-CLM-000019,Notification Completeness,Represents completeness of submitted FNOL information.,Claims,Assessment,Derived,Computed,Claim Notification,Document Verification,,Complete,Derived,Quality metric.
+GLOSS-CLM-000020,Notification Summary,Simplified explanation of the FNOL.,Claims,Derived,Derived,Computed,Claim Notification,Initial Incident Description,,Collision reported via mobile app.,Derived,AI explanation.
+GLOSS-CLM-000021,Loss Event,Represents the insured incident giving rise to the claim.,Claims,Identity,Core,Stable,Claim,,Insured Event,Road Accident,Business,Parent business concept.
+GLOSS-CLM-000022,Loss Event Type,Classification of the insured event.,Claims,Classification,Core,Stable,Loss Event,,Event Type,Collision,Business,References Loss Event Master.
+GLOSS-CLM-000023,Loss Date,Date on which the insured event occurred.,Claims,Operational,Core,Stable,Loss Event,,Incident Date,2026-08-11,Business,Primary event date.
+GLOSS-CLM-000024,Loss Time,Time of occurrence of the insured event.,Claims,Operational,Core,Stable,Loss Event,,Incident Time,18:45,Business,Operational metadata.
+GLOSS-CLM-000025,Loss Location,Location where the insured event occurred.,Claims,Reference,Core,Stable,Loss Event,,Location,Pune,Business,Supports analytics.
+GLOSS-CLM-000026,Weather Condition,Weather conditions during the event.,Claims,Reference,Core,Stable,Loss Event,,Weather,Rain,Business,Risk factor.
+GLOSS-CLM-000027,Road Condition,Road condition during the event.,Claims,Reference,Core,Stable,Loss Event,,Road Condition,Wet,Business,Supports liability.
+GLOSS-CLM-000028,Third Party Involved,Indicates involvement of another party.,Claims,Operational,Core,Dynamic,Loss Event,,Third Party,True,Business,Liability assessment.
+GLOSS-CLM-000029,Injury Reported,Indicates whether injuries occurred.,Claims,Operational,Core,Dynamic,Loss Event,,Injury,False,Business,Severity indicator.
+GLOSS-CLM-000030,Loss Event Summary,Simplified explanation of the insured event.,Claims,Derived,Derived,Computed,Loss Event,Loss Event Type,,Rear-end collision during rainfall.,Derived,AI explanation.
+GLOSS-CLM-000031,Damage Assessment,Represents technical assessment of insured damages.,Claims,Operational,Core,Dynamic,Claim,,Damage Inspection,Vehicle Damage,Business,Parent business concept.
+GLOSS-CLM-000032,Damage Category,Classification of damage.,Claims,Classification,Core,Stable,Damage Assessment,,Damage Type,Body Damage,Business,References Damage Type Master.
+GLOSS-CLM-000033,Damaged Component,Vehicle component affected by the loss.,Claims,Reference,Core,Stable,Damage Assessment,,Component,Front Bumper,Business,Supports repair.
+GLOSS-CLM-000034,Damage Severity,Business severity assigned to the damage.,Claims,Assessment,Derived,Computed,Damage Assessment,Inspection,,Moderate,Derived,Supports workflow.
+GLOSS-CLM-000035,Estimated Repair Cost,Estimated repair cost before survey approval.,Claims,Financial,Core,Dynamic,Damage Assessment,,Repair Estimate,₹45000,Business,Preliminary estimate.
+GLOSS-CLM-000036,Repair Feasibility,Represents whether repair is technically feasible.,Claims,Assessment,Derived,Computed,Damage Assessment,Inspection,,Repairable,Derived,Supports settlement.
+GLOSS-CLM-000037,Total Loss Indicator,Indicates whether the vehicle is considered a total loss.,Claims,Assessment,Derived,Computed,Damage Assessment,Damage Severity,,False,Derived,Settlement decision.
+GLOSS-CLM-000038,Inspection Status,Current inspection workflow status.,Claims,Operational,Derived,Dynamic,Damage Assessment,Inspection Workflow,,Completed,Derived,Workflow.
+GLOSS-CLM-000039,Inspection Summary,Simplified explanation of inspection findings.,Claims,Derived,Derived,Computed,Damage Assessment,Damage Category,,Front bumper and bonnet damaged.,Derived,AI explanation.
+GLOSS-CLM-000040,Damage Assessment Summary,Overall explanation of assessed damages.,Claims,Derived,Derived,Computed,Damage Assessment,Inspection Summary,,Moderate repairable frontal damage.,Derived,Customer explanation.
+GLOSS-CLM-000041,Coverage Validation,Represents verification that the reported loss is covered under the issued policy.,Claims,Operational,Core,Dynamic,Claim,,Coverage Check,Covered,Business,Parent business concept.
+GLOSS-CLM-000042,Coverage Validation Status,Current status of coverage validation.,Claims,Operational,Derived,Computed,Coverage Validation,Coverage Rules,,Validated,Derived,Supports claim workflow.
+GLOSS-CLM-000043,Applicable Coverage,Canonical coverage applicable to the reported damage.,Claims,Reference,Core,Stable,Coverage Validation,,Coverage,Own Damage,Coverage,Foreign reference.
+GLOSS-CLM-000044,Coverage Decision,Decision indicating whether the loss is payable.,Claims,Operational,Derived,Computed,Coverage Validation,Coverage Rules,,Covered,Derived,Business decision.
+GLOSS-CLM-000045,Coverage Rejection Reason,Business reason explaining why coverage was denied.,Claims,Operational,Core,Dynamic,Coverage Validation,,Reason,Driving under influence,Business,Supports explainability.
+GLOSS-CLM-000046,Policy Validation,Represents validation of policy status during claim processing.,Claims,Operational,Derived,Computed,Coverage Validation,Policy Status,,Valid,Derived,Supports eligibility.
+GLOSS-CLM-000047,Coverage Limit Verification,Verification that claim amount is within policy limits.,Claims,Operational,Derived,Computed,Coverage Validation,Coverage Limits,,Within Limit,Derived,Financial validation.
+GLOSS-CLM-000048,Deductible Verification,Verification of applicable deductible.,Claims,Financial,Derived,Computed,Coverage Validation,Deductible Rules,,Applicable,Derived,Settlement support.
+GLOSS-CLM-000049,Coverage Validation Summary,Simplified explanation of coverage validation.,Claims,Derived,Derived,Computed,Coverage Validation,Coverage Decision,,Damage covered under Own Damage coverage.,Derived,AI explanation.
+GLOSS-CLM-000050,Coverage Validation Confidence,Confidence associated with automated coverage validation.,Claims,Assessment,AI Generated,Computed,Coverage Validation,Validation Engine,,98%,AI,Supports automation.
+
+GLOSS-CLM-000051,Survey Assessment,Represents assessment performed by an authorized surveyor.,Claims,Operational,Core,Dynamic,Claim,,Survey,Approved,Business,Parent business concept.
+GLOSS-CLM-000052,Survey Identifier,Unique identifier assigned to the survey.,Claims,Identity,Core,Stable,Survey Assessment,,Survey ID,SRV-100001,Platform,Primary identifier.
+GLOSS-CLM-000053,Surveyor Identifier,Reference to the assigned surveyor.,Claims,Reference,Core,Stable,Survey Assessment,,Surveyor,SUR-100001,Business,Foreign reference.
+GLOSS-CLM-000054,Survey Date,Date on which vehicle inspection occurred.,Claims,Operational,Core,Stable,Survey Assessment,,Inspection Date,2026-08-13,Business,Operational timestamp.
+GLOSS-CLM-000055,Survey Findings,Technical findings recorded during inspection.,Claims,Identity,Core,Dynamic,Survey Assessment,,Findings,Front bumper replacement required.,Business,Inspection notes.
+GLOSS-CLM-000056,Approved Repair Estimate,Repair estimate approved by the surveyor.,Claims,Financial,Derived,Computed,Survey Assessment,Repair Estimate,,₹42,500,Derived,Settlement input.
+GLOSS-CLM-000057,Survey Recommendation,Recommendation issued by the surveyor.,Claims,Operational,Core,Dynamic,Survey Assessment,,Recommendation,Approve Repair,Business,Business decision.
+GLOSS-CLM-000058,Survey Status,Current survey workflow status.,Claims,Operational,Derived,Dynamic,Survey Assessment,Survey Workflow,,Completed,Derived,Workflow.
+GLOSS-CLM-000059,Survey Summary,Simplified explanation of survey findings.,Claims,Derived,Derived,Computed,Survey Assessment,Survey Findings,,Moderate frontal damage confirmed.,Derived,AI explanation.
+GLOSS-CLM-000060,Survey Confidence,Confidence associated with survey assessment.,Claims,Assessment,AI Generated,Computed,Survey Assessment,Assessment Engine,,96%,AI,Decision support.
+
+GLOSS-CLM-000061,Claim Settlement,Represents financial settlement of an approved insurance claim.,Claims,Financial,Core,Dynamic,Claim,,Settlement,Approved,Business,Parent business concept.
+GLOSS-CLM-000062,Settlement Identifier,Unique identifier assigned to settlement.,Claims,Identity,Core,Stable,Claim Settlement,,Settlement ID,SET-100001,Platform,Primary identifier.
+GLOSS-CLM-000063,Approved Claim Amount,Amount approved by the insurer.,Claims,Financial,Derived,Computed,Claim Settlement,Survey Assessment,,₹40,000,Derived,Settlement amount.
+GLOSS-CLM-000064,Deductible Amount,Amount payable by the insured.,Claims,Financial,Derived,Computed,Claim Settlement,Deductible Rules,,₹1,000,Derived,Financial adjustment.
+GLOSS-CLM-000065,Depreciation Amount,Depreciation deducted from settlement.,Claims,Financial,Derived,Computed,Claim Settlement,Depreciation Rules,,₹2,500,Derived,Financial adjustment.
+GLOSS-CLM-000066,Net Payable Amount,Final amount payable to the claimant.,Claims,Financial,Derived,Computed,Claim Settlement,Settlement Calculation,,₹36,500,Derived,Customer payment.
+GLOSS-CLM-000067,Settlement Mode,Mode through which settlement is completed.,Claims,Classification,Core,Stable,Claim Settlement,,Payment Mode,Bank Transfer,Business,Operational.
+GLOSS-CLM-000068,Settlement Status,Current settlement workflow status.,Claims,Operational,Derived,Dynamic,Claim Settlement,Settlement Workflow,,Completed,Derived,Workflow.
+GLOSS-CLM-000069,Settlement Date,Date on which settlement was completed.,Claims,Operational,Core,Stable,Claim Settlement,,Settlement Date,2026-08-18,Business,Operational timestamp.
+GLOSS-CLM-000070,Settlement Summary,Simplified explanation of settlement outcome.,Claims,Derived,Derived,Computed,Claim Settlement,Net Payable Amount,,₹36,500 transferred successfully.,Derived,Customer explanation.
+
+GLOSS-CLM-000071,Recovery & Salvage,Represents recoveries and salvage associated with a settled claim.,Claims,Operational,Core,Dynamic,Claim,,Recovery,Salvage,Business,Parent business concept.
+GLOSS-CLM-000072,Recovery Indicator,Indicates whether recovery action is applicable.,Claims,Operational,Derived,Computed,Recovery & Salvage,Liability Assessment,,False,Derived,Operational.
+GLOSS-CLM-000073,Recovery Amount,Amount recoverable from third parties.,Claims,Financial,Derived,Computed,Recovery & Salvage,Recovery Rules,,₹0,Derived,Financial recovery.
+GLOSS-CLM-000074,Salvage Indicator,Indicates whether salvage exists.,Claims,Operational,Derived,Computed,Recovery & Salvage,Damage Assessment,,False,Derived,Operational.
+GLOSS-CLM-000075,Salvage Value,Estimated value of recoverable salvage.,Claims,Financial,Derived,Computed,Recovery & Salvage,Valuation Engine,,₹0,Derived,Asset valuation.
+GLOSS-CLM-000076,Subrogation Indicator,Indicates whether subrogation applies.,Claims,Operational,Derived,Computed,Recovery & Salvage,Liability Rules,,False,Derived,Legal process.
+GLOSS-CLM-000077,Recovery Status,Current recovery workflow status.,Claims,Operational,Derived,Dynamic,Recovery & Salvage,Recovery Workflow,,Closed,Derived,Workflow.
+GLOSS-CLM-000078,Salvage Status,Current salvage processing status.,Claims,Operational,Derived,Dynamic,Recovery & Salvage,Salvage Workflow,,Not Applicable,Derived,Workflow.
+GLOSS-CLM-000079,Recovery Summary,Simplified explanation of recovery activities.,Claims,Derived,Derived,Computed,Recovery & Salvage,Recovery Indicator,,No recovery required.,Derived,AI explanation.
+GLOSS-CLM-000080,Recovery Outcome,Final business outcome of recovery activities.,Claims,Derived,Derived,Computed,Recovery & Salvage,Recovery Status,,Closed without recovery.,Derived,Operational summary.
+
+GLOSS-CLM-000081,Claim Lifecycle,Represents the operational lifecycle of the insurance claim.,Claims,Operational,Core,Dynamic,Claim,,Lifecycle,Open,Business,Parent business concept.
+GLOSS-CLM-000082,Lifecycle Stage,Current lifecycle stage of the claim.,Claims,Operational,Derived,Dynamic,Claim Lifecycle,Workflow,,Assessment,Derived,Workflow.
+GLOSS-CLM-000083,Assignment Status,Assignment status of claim handler.,Claims,Operational,Derived,Dynamic,Claim Lifecycle,Assignment Workflow,,Assigned,Derived,Operations.
+GLOSS-CLM-000084,Escalation Status,Indicates whether claim has been escalated.,Claims,Operational,Derived,Dynamic,Claim Lifecycle,Escalation Workflow,,False,Derived,Workflow.
+GLOSS-CLM-000085,Closure Status,Indicates whether claim is closed.,Claims,Operational,Derived,Dynamic,Claim Lifecycle,Settlement,,False,Derived,Workflow.
+GLOSS-CLM-000086,Closure Date,Date of final claim closure.,Claims,Operational,Core,Dynamic,Claim Lifecycle,,Closure Date,2026-08-20,Business,Audit.
+GLOSS-CLM-000087,Turnaround Time,Total processing time for the claim.,Claims,Assessment,Derived,Computed,Claim Lifecycle,Registration Date;Closure Date,,8 Days,Derived,KPI.
+GLOSS-CLM-000088,SLA Compliance,Indicates whether claim processing met SLA targets.,Claims,Assessment,Derived,Computed,Claim Lifecycle,Turnaround Time,,Compliant,Derived,Performance.
+GLOSS-CLM-000089,Lifecycle Summary,Simplified explanation of claim lifecycle.,Claims,Derived,Derived,Computed,Claim Lifecycle,Lifecycle Stage,,Claim settled successfully.,Derived,AI explanation.
+GLOSS-CLM-000090,Claim Timeline,Chronological summary of important claim events.,Claims,Derived,Derived,Computed,Claim Lifecycle,Workflow Events,,FNOL → Survey → Settlement → Closure.,Derived,Customer timeline.
+
+GLOSS-CLM-000091,Fraud Assessment,Represents fraud analysis associated with the claim.,Claims,Risk,AI Generated,Computed,Claim,,Fraud Detection,Low Risk,AI,Parent business concept.
+GLOSS-CLM-000092,Fraud Risk Score,Composite fraud risk score.,Claims,Risk,AI Generated,Computed,Fraud Assessment,Fraud Engine,,8.5,AI,Primary fraud metric.
+GLOSS-CLM-000093,Fraud Risk Level,Classification of fraud risk.,Claims,Risk,AI Generated,Computed,Fraud Assessment,Fraud Risk Score,,Low,AI,Supports investigation.
+GLOSS-CLM-000094,Investigation Required,Indicates whether fraud investigation is recommended.,Claims,Operational,AI Generated,Computed,Fraud Assessment,Fraud Engine,,False,AI,Decision support.
+GLOSS-CLM-000095,Fraud Indicators,Collection of fraud indicators identified during processing.,Claims,Risk,AI Generated,Computed,Fraud Assessment,Analytics,,None,AI,Supports investigators.
+GLOSS-CLM-000096,Claim Assessment,Overall business and AI assessment of the claim.,Claims,Assessment,AI Generated,Computed,Claim,,Claim Intelligence,Approved,AI,Parent business concept.
+GLOSS-CLM-000097,Claim Confidence,Confidence associated with the overall claim assessment.,Claims,Assessment,AI Generated,Computed,Claim Assessment,Assessment Engine,,97%,AI,Supports automation.
+GLOSS-CLM-000098,Recommendation Summary,Natural-language explanation supporting the claim decision.,Claims,Derived,AI Generated,Computed,Claim Assessment,Recommendation Engine,,Approve claim based on verified coverage and survey.,AI,Explainable AI.
+GLOSS-CLM-000099,Assessment Version,Version of the claim assessment methodology.,Claims,Operational,Core,Stable,Claim Assessment,,Assessment Version,1.0.0,Platform,Reproducibility.
+GLOSS-CLM-000100,Assessment Summary,Overall explanation of claim processing outcome.,Claims,Derived,Derived,Computed,Claim Assessment,Claim Assessment,,Valid covered claim settled successfully.,Derived,Executive summary.
+

@@ -1,0 +1,14 @@
+field_name,data_type,required,description,example
+trace_id,string,Yes,Unique trace identifier,TRACE-000001
+recommendation_id,string,Yes,Associated recommendation,REC-000001
+subject_type,string,Yes,Target entity type,CUSTOMER
+subject_code,string,Yes,Target entity code,CUST-10021
+observation_ids,string,Yes,Supporting observations,OBS-000001;OBS-000045
+intelligence_ids,string,Yes,Derived intelligence used,INT-000001;INT-000006
+relationship_ids,string,No,Context relationships applied,REL-000001;REL-000010
+model_ids,string,Yes,Models used,MODEL-RISK-001
+decision_summary,string,Yes,Human-readable reasoning,Flood exposure is high; recommend Engine Protect add-on.
+decision_score,float,Yes,Recommendation score,94.3
+confidence_score,float,Yes,Overall confidence,0.93
+generated_timestamp,datetime,Yes,Decision generation time,2026-07-01T14:30:00Z
+remarks,string,No,Additional notes,

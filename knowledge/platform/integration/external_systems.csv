@@ -1,0 +1,11 @@
+external_system_id,system_name,system_category,integration_type,communication_protocol,authentication_method,business_owner,criticality,description,status
+EXT-000001,Core Insurance Platform,Insurance System,REST API,HTTPS,OAuth2,Insurance Operations,Critical,Primary policy administration system,Active
+EXT-000002,CRM Platform,Customer Management,REST API,HTTPS,OAuth2,Customer Success,High,Customer relationship management,Active
+EXT-000003,Identity Provider,Identity,Federation,OIDC,SAML,Security Team,Critical,Enterprise identity provider,Active
+EXT-000004,Payment Gateway,Financial,REST API,HTTPS,mTLS,Finance Team,Critical,Premium payment processing,Active
+EXT-000005,SMS Gateway,Notification,REST API,HTTPS,API Key,Operations,Medium,SMS notification provider,Active
+EXT-000006,Email Platform,Notification,SMTP,SMTP,TLS,Operations,Medium,Email notification platform,Active
+EXT-000007,Object Storage,Cloud Storage,S3 API,HTTPS,Access Key,Platform Team,High,Document storage platform,Active
+EXT-000008,Document OCR Service,AI Service,REST API,HTTPS,OAuth2,Claims Team,Medium,OCR document processing,Active
+EXT-000009,Government Verification Service,Regulatory,REST API,HTTPS,mTLS,Compliance,Critical,KYC verification services,Active
+EXT-000010,Analytics Platform,Business Intelligence,Streaming,Kafka,mTLS,Analytics Team,High,Enterprise analytics platform,Active

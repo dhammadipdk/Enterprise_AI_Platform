@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CHANNEL-000001,DIRECT,Direct,Policy sold directly by insurer,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000002,AGENT,Individual Agent,Licensed insurance agent,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000003,BROKER,Insurance Broker,Licensed insurance broker,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000004,BANCASSURANCE,Bancassurance,Bank acting as insurance distributor,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000005,POSP,POSP,Point of Sales Person,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000006,WEB_AGGREGATOR,Web Aggregator,Licensed insurance web aggregator,Active,2026-01-01,,IRDAI,
+REF-CHANNEL-000007,OEM,Vehicle Dealer/OEM,Insurance sold through vehicle manufacturer or dealer,Active,2026-01-01,,Industry,
+REF-CHANNEL-000008,MARKETPLACE,Digital Marketplace,Third-party digital marketplace,Active,2026-01-01,,Industry,

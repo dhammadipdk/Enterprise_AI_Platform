@@ -1,0 +1,11 @@
+context_id,context_name,context_source,priority,max_tokens,dynamic_refresh,cacheable,description,status
+CTX-000001,System Context,System Configuration,1,2000,FALSE,TRUE,Platform configuration,Active
+CTX-000002,Conversation Context,Memory,2,8000,TRUE,FALSE,Conversation memory,Active
+CTX-000003,Enterprise Knowledge,RAG,3,32000,TRUE,TRUE,Retrieved enterprise knowledge,Active
+CTX-000004,Customer Context,Customer Profile,4,4000,TRUE,FALSE,Customer profile information,Active
+CTX-000005,Business Workflow,Workflow Engine,5,4000,TRUE,FALSE,Workflow execution context,Active
+CTX-000006,Governance Context,Governance Platform,6,2000,TRUE,TRUE,Governance policies,Active
+CTX-000007,Security Context,Security Platform,7,2000,TRUE,FALSE,Security restrictions,Active
+CTX-000008,Execution Context,Execution Engine,8,4000,TRUE,FALSE,Runtime execution state,Active
+CTX-000009,Planning Context,Planning Engine,9,6000,TRUE,FALSE,Planning information,Active
+CTX-000010,Evaluation Context,Evaluation Platform,10,4000,TRUE,TRUE,Evaluation history,Active

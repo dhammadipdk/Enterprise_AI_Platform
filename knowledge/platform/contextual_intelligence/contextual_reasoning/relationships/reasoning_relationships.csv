@@ -1,0 +1,21 @@
+relationship_id,source_entity,relationship,target_entity,relationship_type,relationship_strength,confidence_score,description,status
+REL-REASON-000001,Observation,PRODUCES,Evidence,Causal,0.99,0.99,Observations generate evidence.,Active
+REL-REASON-000002,Evidence,SUPPORTS,Hypothesis,Inference,0.97,0.98,Evidence supports intermediate hypotheses.,Active
+REL-REASON-000003,Hypothesis,GENERATES,Decision,Inference,0.96,0.97,Hypotheses become business decisions.,Active
+REL-REASON-000004,Decision,GENERATES,Recommendation,Causal,0.99,0.99,Decisions produce recommendations.,Active
+REL-REASON-000005,Recommendation,PRODUCES,Business Outcome,Causal,0.95,0.96,Recommendations influence business outcomes.,Active
+REL-REASON-000006,Causal Rule,SUPPORTS,Reasoning Rule,Dependency,0.94,0.95,Causal rules strengthen reasoning.,Active
+REL-REASON-000007,Aggregation Rule,COMBINES,Evidence,Aggregation,0.96,0.97,Aggregates multiple evidence sources.,Active
+REL-REASON-000008,Priority Rule,RANKS,Recommendations,Priority,0.95,0.96,Prioritizes competing recommendations.,Active
+REL-REASON-000009,Conflict Resolution Rule,RESOLVES,Decision Conflict,Resolution,0.97,0.98,Handles contradictory recommendations.,Active
+REL-REASON-000010,Confidence Propagation,UPDATES,Decision Confidence,Inference,0.96,0.97,Propagates confidence through reasoning chain.,Active
+REL-REASON-000011,Explanation Template,EXPLAINS,Recommendation,Explanation,0.98,0.99,Provides explainability.,Active
+REL-REASON-000012,Recommendation Policy,GOVERNS,Recommendation,Governance,0.99,0.99,Policies control recommendation execution.,Active
+REL-REASON-000013,Decision Strategy,OPTIMIZES,Business Objective,Optimization,0.94,0.95,Optimizes enterprise objectives.,Active
+REL-REASON-000014,Reasoning Pattern,IMPLEMENTS,Inference Process,Execution,0.95,0.96,Pattern defines reasoning workflow.,Active
+REL-REASON-000015,Knowledge Graph,ENRICHES,Reasoning Context,Knowledge,0.93,0.95,Graph provides contextual knowledge.,Active
+REL-REASON-000016,GraphRAG Retrieval,PROVIDES,Evidence,Retrieval,0.94,0.95,Retrieval supplies reasoning evidence.,Active
+REL-REASON-000017,LLM,ASSISTS,Reasoning Engine,Hybrid,0.91,0.92,LLM assists contextual reasoning.,Active
+REL-REASON-000018,Human Expert,OVERRIDES,AI Decision,Governance,1.00,1.00,Human decisions override AI.,Active
+REL-REASON-000019,Business Rule,CONSTRAINS,Decision,Constraint,0.96,0.97,Business rules constrain reasoning.,Active
+REL-REASON-000020,Reasoning Engine,GENERATES,Decision Trace,Traceability,0.99,0.99,Produces full reasoning trace.,Active

@@ -1,0 +1,11 @@
+optimization_id,optimization_strategy,optimization_goal,optimization_trigger,automatic,evaluation_required,max_iterations,description,status
+WOPT-000001,Parallelization,Reduce Runtime,Independent Nodes,TRUE,FALSE,Unlimited,Execute parallel branches,Active
+WOPT-000002,Context Reduction,Reduce Tokens,Large Context,TRUE,FALSE,5,Reduce workflow context size,Active
+WOPT-000003,Model Optimization,Reduce Cost,High Inference Cost,TRUE,TRUE,5,Select cheaper models,Active
+WOPT-000004,Prompt Optimization,Improve Accuracy,Low Evaluation Score,TRUE,TRUE,10,Improve prompt execution,Active
+WOPT-000005,Agent Redistribution,Balance Load,High Agent Utilization,TRUE,FALSE,Unlimited,Redistribute agent workload,Active
+WOPT-000006,Workflow Caching,Reduce Latency,Repeated Execution,TRUE,FALSE,Unlimited,Reuse workflow outputs,Active
+WOPT-000007,Adaptive Scheduling,Improve Throughput,Queue Congestion,TRUE,FALSE,Unlimited,Optimize scheduling,Active
+WOPT-000008,Resource Scaling,Improve Capacity,High Utilization,TRUE,FALSE,Unlimited,Scale compute resources,Active
+WOPT-000009,A/B Workflow Testing,Improve Business KPIs,New Workflow Version,FALSE,TRUE,Unlimited,Compare workflow variants,Active
+WOPT-000010,Self Optimization,Continuous Improvement,Periodic Analysis,TRUE,TRUE,Unlimited,Automatically improve workflow execution,Experimental

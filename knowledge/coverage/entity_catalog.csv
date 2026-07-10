@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-COV-000001,Coverage,Represents a canonical insurance protection that defines standardized protection against specific insured risks.,Aggregate Root,,GLOSS-COV-000001,Coverage Identifier,Stable,Coverage,Root aggregate of the Coverage domain.
+ENT-COV-000002,Coverage Benefit,Represents one or more business benefits delivered by a canonical coverage.,Entity,Coverage,GLOSS-COV-000011,,Stable,Coverage,Defines customer-facing protection.
+ENT-COV-000003,Coverage Limit,Represents financial limits governing protection provided by a coverage.,Entity,Coverage,GLOSS-COV-000021,,Dynamic,Coverage,Supports claims and underwriting.
+ENT-COV-000004,Coverage Condition,Represents business conditions that must be satisfied before a coverage becomes applicable.,Entity,Coverage,GLOSS-COV-000031,,Dynamic,Coverage,Supports claims validation.
+ENT-COV-000005,Coverage Eligibility,Represents business rules determining whether a coverage may be applied.,Entity,Coverage,GLOSS-COV-000051,,Dynamic,Coverage,Supports underwriting and recommendation.
+ENT-COV-000006,Coverage Exclusion,Represents situations under which a coverage does not provide protection.,Entity,Coverage,GLOSS-COV-000061,,Stable,Coverage,Defines contractual exclusions.
+ENT-COV-000007,Coverage Deductible,Represents the financial responsibility retained by the insured before coverage applies.,Entity,Coverage,GLOSS-COV-000071,,Dynamic,Coverage,Supports pricing and claims.
+ENT-COV-000008,Coverage Lifecycle,Represents lifecycle, governance and operational management of canonical coverages.,Entity,Coverage,GLOSS-COV-000079,,Dynamic,Coverage,Supports versioning and governance.
+ENT-COV-000009,Coverage Assessment,Represents AI-generated assessment, recommendation intelligence and explainability for canonical coverages.,Entity,Coverage,GLOSS-COV-000088,,Computed,Coverage,Contains derived business knowledge.
+ENT-COV-000010,Coverage Relationship,Represents semantic relationships between canonical coverages including dependencies, compatibility and bundles.,Entity,Coverage,GLOSS-COV-000098,,Stable,Coverage,Supports ontology and recommendation reasoning.

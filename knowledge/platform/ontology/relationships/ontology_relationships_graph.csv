@@ -1,0 +1,21 @@
+relationship_id,source_node,relationship,target_node,graph_layer,relationship_role,multiplicity,inferable,description,status
+GRAPH-REL-000001,Customer,OWNS,Policy,Business,Ownership,1:N,TRUE,Customer owns one or more policies,Active
+GRAPH-REL-000002,Policy,COVERS,Vehicle,Business,Coverage,1:N,TRUE,Policy covers vehicle,Active
+GRAPH-REL-000003,Policy,PROVIDES,Coverage,Business,Coverage,1:N,TRUE,Policy provides coverages,Active
+GRAPH-REL-000004,Customer,FILES,Claim,Business,Process,1:N,TRUE,Customer files claim,Active
+GRAPH-REL-000005,Claim,INITIATES,Repair,Business,Workflow,1:1,TRUE,Claim initiates repair,Active
+GRAPH-REL-000006,Claim,MAY_TRIGGER,Fraud Case,Risk,Investigation,1:0..1,TRUE,Claim may create fraud investigation,Active
+GRAPH-REL-000007,Fraud Case,GENERATES,Recommendation,Decision,Recommendation,1:N,TRUE,Investigation produces recommendations,Active
+GRAPH-REL-000008,Observation,SUPPORTS,Evidence,Reasoning,Evidence,N:N,TRUE,Observation supports evidence,Active
+GRAPH-REL-000009,Evidence,SUPPORTS,Hypothesis,Reasoning,Inference,N:N,TRUE,Evidence forms hypotheses,Active
+GRAPH-REL-000010,Hypothesis,GENERATES,Decision,Reasoning,Decision,N:N,TRUE,Hypothesis generates decisions,Active
+GRAPH-REL-000011,Decision,GENERATES,Recommendation,Decision,Recommendation,1:N,TRUE,Decision produces recommendation,Active
+GRAPH-REL-000012,Recommendation,IMPACTS,Customer,Business,Outcome,N:N,TRUE,Recommendation impacts customer,Active
+GRAPH-REL-000013,Observation,BELONGS_TO,Environment Context,Context,Containment,N:1,TRUE,Observation belongs to environment,Active
+GRAPH-REL-000014,Observation,BELONGS_TO,Vehicle Behaviour Context,Context,Containment,N:1,TRUE,Observation belongs to vehicle behaviour,Active
+GRAPH-REL-000015,Observation,BELONGS_TO,Human Behaviour Context,Context,Containment,N:1,TRUE,Observation belongs to human behaviour,Active
+GRAPH-REL-000016,Derived Intelligence,DERIVED_FROM,Observation,Analytics,Derivation,N:N,TRUE,Derived intelligence computed from observations,Active
+GRAPH-REL-000017,Business Rule,CONSTRAINS,Decision,Governance,Constraint,N:N,TRUE,Business rules constrain decisions,Active
+GRAPH-REL-000018,Decision,FOLLOWS,Reasoning Pattern,Reasoning,Execution,N:1,TRUE,Decision follows reasoning strategy,Active
+GRAPH-REL-000019,Ontology Entity,BECOMES,Knowledge Graph Node,Implementation,Transformation,1:1,FALSE,Ontology entity transformed into graph node,Active
+GRAPH-REL-000020,Ontology Relationship,BECOMES,Knowledge Graph Edge,Implementation,Transformation,1:1,FALSE,Ontology relationship transformed into graph edge,Active

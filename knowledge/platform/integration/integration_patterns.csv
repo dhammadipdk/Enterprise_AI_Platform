@@ -1,0 +1,11 @@
+pattern_id,pattern_name,communication_style,best_use_case,reliability,ordering_guarantee,description,status
+PATTERN-000001,Request Response,Synchronous,Simple APIs,High,None,Classic REST communication,Active
+PATTERN-000002,Publish Subscribe,Asynchronous,Events,High,Per Topic,Event-driven architecture,Active
+PATTERN-000003,Event Sourcing,Asynchronous,Audit Systems,Very High,Global,Store immutable events,Active
+PATTERN-000004,CQRS,Hybrid,Read Write Separation,High,None,Separate command and query paths,Active
+PATTERN-000005,Saga Pattern,Distributed,Distributed Transactions,Very High,Workflow,Distributed transaction management,Active
+PATTERN-000006,Outbox Pattern,Reliable Messaging,Microservices,Very High,None,Prevent lost messages,Active
+PATTERN-000007,Fan-out Messaging,Asynchronous,Broadcast Events,High,None,One-to-many event delivery,Active
+PATTERN-000008,Pipeline Processing,Streaming,AI Pipelines,High,Sequential,Pipeline execution,Active
+PATTERN-000009,Orchestration,Workflow,Business Workflows,High,Workflow,Central orchestration,Active
+PATTERN-000010,Choreography,Event Driven,Autonomous Services,High,None,Decentralized collaboration,Active

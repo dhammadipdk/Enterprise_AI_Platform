@@ -1,0 +1,11 @@
+recommendation_id,recommendation_type,subject_type,subject_code,subject_name,recommendation,priority,expected_benefit,confidence_score,generated_from,rule_or_model,recommendation_timestamp,status,remarks
+REC-VEH-000001,Maintenance,VEHICLE,VH-000001,Vehicle-000001,Schedule Preventive Service,High,Reduce breakdown probability,0.97,Risk Score,RULE-MAINT-001,2026-07-01,Active,
+REC-VEH-000002,Battery,VEHICLE,VH-000002,Vehicle-000002,Replace Battery Within 30 Days,High,Avoid roadside failure,0.96,Prediction,MODEL-VEH-PRED-001,2026-07-01,Active,
+REC-VEH-000003,Brake,VEHICLE,VH-000003,Vehicle-000003,Replace Brake Pads,Critical,Improve braking safety,0.98,Brake Health,RULE-BRAKE-001,2026-07-01,Active,
+REC-VEH-000004,Tyre,VEHICLE,VH-000004,Vehicle-000004,Rotate Tyres,Medium,Increase tyre life,0.92,Tyre Wear,RULE-TYRE-001,2026-07-01,Active,
+REC-VEH-000005,Fuel,VEHICLE,VH-000005,Vehicle-000005,Perform Fuel System Inspection,Medium,Improve fuel efficiency,0.91,Fuel Index,RULE-FUEL-001,2026-07-01,Active,
+REC-VEH-000006,Insurance,VEHICLE,VH-000006,Vehicle-000006,Recommend Roadside Assistance Add-on,High,Reduce customer downtime,0.95,Breakdown Prediction,RULE-INS-001,2026-07-01,Active,
+REC-VEH-000007,Insurance,VEHICLE,VH-000007,Vehicle-000007,Recommend Engine Protect Cover,High,Reduce repair expenses,0.94,Risk Model,RULE-INS-002,2026-07-01,Active,
+REC-VEH-000008,Maintenance,VEHICLE,VH-000008,Vehicle-000008,Inspect Cooling System,Medium,Prevent overheating,0.91,Engine Health,RULE-ENG-001,2026-07-01,Active,
+REC-VEH-000009,Usage,VEHICLE,VH-000009,Vehicle-000009,Reduce Prolonged Idling,Low,Improve fuel economy,0.89,Usage Analysis,RULE-USAGE-001,2026-07-01,Active,
+REC-VEH-000010,Inspection,VEHICLE,VH-000010,Vehicle-000010,Complete Full Mechanical Inspection,High,Reduce future maintenance cost,0.95,Combined Intelligence,MODEL-VEH-REC-001,2026-07-01,Active,

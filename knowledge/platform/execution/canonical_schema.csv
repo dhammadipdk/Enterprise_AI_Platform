@@ -1,0 +1,16 @@
+field_name,data_type,required,description
+execution_id,String,TRUE,Execution identifier
+workflow_id,String,TRUE,Workflow identifier
+plan_id,String,TRUE,Planning identifier
+current_state,String,TRUE,Execution state
+execution_context,String,FALSE,Runtime context
+owner_agent,String,FALSE,Responsible agent
+priority,String,TRUE,Execution priority
+retry_count,Integer,FALSE,Retry attempts
+checkpoint_id,String,FALSE,Checkpoint
+rollback_policy,String,FALSE,Rollback strategy
+started_at,Datetime,TRUE,Execution start
+completed_at,Datetime,FALSE,Completion time
+execution_duration,Integer,FALSE,Duration
+success_flag,Boolean,TRUE,Execution success
+status,String,TRUE,Lifecycle status

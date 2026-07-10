@@ -1,0 +1,16 @@
+evaluation_context_id,evaluation_stage,component,input,action,output,next_component,business_context
+EVALCTX-000001,Knowledge Validation,Knowledge Layer,Knowledge Repository,Run Knowledge Benchmark,Knowledge Accuracy Score,Retrieval Engine,Enterprise knowledge validated
+EVALCTX-000002,Retrieval Validation,Retrieval Engine,Customer Query,Evaluate Retrieval Quality,Recall@10 Score,Reasoning Engine,Retriever quality measured
+EVALCTX-000003,Grounding Validation,Grounding Engine,Retrieved Evidence,Validate Grounding,Grounding Score,Reasoning Engine,Evidence verified
+EVALCTX-000004,Reasoning Evaluation,Reasoning Engine,Grounded Context,Evaluate Reasoning,Reasoning Accuracy,Planning Engine,Reasoning validated
+EVALCTX-000005,Planning Evaluation,Planning Engine,Execution Plan,Measure Planning Quality,Planning Index,Execution Engine,Plan quality evaluated
+EVALCTX-000006,Execution Evaluation,Execution Engine,Workflow Execution,Measure Execution Success,Execution Reliability,Agent Platform,Execution evaluated
+EVALCTX-000007,Agent Evaluation,Agent Platform,Agent Collaboration,Measure Agent Performance,Agent Quality Index,Recommendation Engine,Agents benchmarked
+EVALCTX-000008,Recommendation Evaluation,Recommendation Engine,Customer Recommendation,Measure Recommendation Quality,Recommendation Score,Business KPI,Recommendation evaluated
+EVALCTX-000009,Business Measurement,Business KPI,Operational Results,Measure Business Impact,Enterprise KPI Dashboard,Continuous Learning,Business impact calculated
+EVALCTX-000010,Learning Trigger,Continuous Learning,Evaluation Results,Generate Improvement Actions,Learning Recommendations,Knowledge Layer,Feedback loop initiated
+EVALCTX-000011,Knowledge Update,Knowledge Layer,Learning Recommendations,Update Enterprise Knowledge,Improved Knowledge Base,Memory Layer,Knowledge improved
+EVALCTX-000012,Memory Optimization,Memory Layer,Updated Knowledge,Optimize Memory Structures,Improved Memory,Planning Engine,Memory optimized
+EVALCTX-000013,Planner Improvement,Planning Engine,Updated Memory,Refine Planning Strategy,Improved Planning Templates,Execution Engine,Planning improved
+EVALCTX-000014,Agent Improvement,Agent Platform,Execution Feedback,Update Agent Capabilities,Improved Agent Registry,Enterprise Scorecard,Agents improved
+EVALCTX-000015,Enterprise Review,Enterprise Scorecard,All Evaluation Results,Publish Enterprise AI Scorecard,Executive Dashboard,None,Continuous enterprise AI governance

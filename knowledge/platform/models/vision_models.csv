@@ -1,0 +1,11 @@
+vision_model_id,model_name,vision_task,input_modalities,supports_ocr,supports_detection,supports_segmentation,max_image_resolution,description,status
+VISION-000001,Enterprise Vision Model,Image Understanding,Image,FALSE,TRUE,FALSE,4096x4096,General image understanding,Active
+VISION-000002,OCR Vision Model,OCR,Image,TRUE,FALSE,FALSE,8192x8192,Enterprise OCR processing,Active
+VISION-000003,Document AI,Document Parsing,Image + PDF,TRUE,TRUE,FALSE,8192x8192,Document understanding,Active
+VISION-000004,Object Detection Model,Object Detection,Image,FALSE,TRUE,FALSE,4096x4096,Object detection,Active
+VISION-000005,Image Classification Model,Classification,Image,FALSE,FALSE,FALSE,4096x4096,Image classification,Active
+VISION-000006,Damage Assessment Model,Damage Detection,Vehicle Images,TRUE,TRUE,TRUE,8192x8192,Insurance damage assessment,Active
+VISION-000007,Identity Verification Model,Face Verification,Face Images,TRUE,TRUE,FALSE,4096x4096,Identity verification,Active
+VISION-000008,Fraud Detection Vision,Image Analysis,Documents,FALSE,TRUE,FALSE,4096x4096,Visual fraud detection,Active
+VISION-000009,Diagram Understanding,Diagram Analysis,Image,FALSE,FALSE,FALSE,8192x8192,Engineering diagrams,Active
+VISION-000010,Experimental Vision Model,Research,Image + Video,TRUE,TRUE,TRUE,16384x16384,Experimental vision AI,Active

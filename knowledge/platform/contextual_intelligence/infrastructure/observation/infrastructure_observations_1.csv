@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-INF1-000001,ROAD,CITY,MUM,Mumbai,Road Type,Road Classification,Category,Urban Arterial,2026-01-01T00:00:00Z,Mumbai,Static,Government,MoRTH,GIS,0.99,0.99,v1.0,
+OBS-INF1-000002,ROAD,CITY,MUM,Mumbai,Road Surface,Surface Type,Category,Bituminous,2026-01-01T00:00:00Z,Mumbai,Static,Government,NHAI,Survey,0.98,0.98,v1.0,
+OBS-INF1-000003,ROAD,CITY,DEL,Delhi,Lane Count,Number of Lanes,count,6,2026-01-01T00:00:00Z,Delhi,Static,Government,NHAI,GIS,0.98,0.98,v1.0,
+OBS-INF1-000004,ROAD,CITY,CHE,Chennai,Road Width,Average Width,m,18,2026-01-01T00:00:00Z,Chennai,Static,Government,MoRTH,GIS,0.97,0.97,v1.0,
+OBS-INF1-000005,ROAD,CITY,PUN,Pune,Median Presence,Median Availability,Boolean,Yes,2026-01-01T00:00:00Z,Pune,Static,Government,MoRTH,Survey,0.97,0.97,v1.0,
+OBS-INF1-000006,ROAD,CITY,BLR,Bengaluru,Pothole Density,Potholes per km,count/km,12,2026-07-01T00:00:00Z,Bengaluru,Monsoon,Enterprise,Road Survey,Inspection,0.94,0.93,v1.0,
+OBS-INF1-000007,ROAD,CITY,SHI,Shimla,Road Gradient,Average Gradient,%,14,2026-01-01T00:00:00Z,Shimla,Static,GIS,Survey of India,GIS,0.99,0.99,v1.0,
+OBS-INF1-000008,ROAD,CITY,GOA,Panaji,Curve Density,Curves per km,count/km,18,2026-01-01T00:00:00Z,Goa,Static,GIS,OpenStreetMap,GIS,0.97,0.97,v1.0,
+OBS-INF1-000009,ROAD,CITY,AHM,Ahmedabad,Road Age,Average Age,years,11,2026-01-01T00:00:00Z,Ahmedabad,Static,Government,MoRTH,Records,0.96,0.96,v1.0,
+OBS-INF1-000010,ROAD,CITY,JAI,Jaipur,Shoulder Width,Average Shoulder,m,1.8,2026-01-01T00:00:00Z,Jaipur,Static,Government,NHAI,Survey,0.96,0.96,v1.0,
+OBS-INF1-000011,ROAD,CITY,KOL,Kolkata,Road Surface,Surface Condition,Category,Fair,2026-01-01T00:00:00Z,Kolkata,Static,Enterprise,Road Audit,Inspection,0.95,0.95,v1.0,
+OBS-INF1-000012,ROAD,CITY,GUW,Guwahati,Road Type,Road Classification,Category,Hilly Road,2026-01-01T00:00:00Z,Guwahati,Static,Government,MoRTH,GIS,0.98,0.98,v1.0,

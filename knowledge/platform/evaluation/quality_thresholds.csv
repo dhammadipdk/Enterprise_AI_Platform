@@ -1,0 +1,11 @@
+threshold_id,threshold_name,target_component,metric_name,minimum_value,warning_value,critical_value,evaluation_action,business_impact,description,status
+QTH-000001,Knowledge Accuracy Threshold,Knowledge Layer,Accuracy,95,92,90,Reject Update,Critical,Minimum acceptable knowledge accuracy,Active
+QTH-000002,Retrieval Recall Threshold,Retrieval Engine,Recall@10,90,85,80,Retrain Retriever,High,Minimum retrieval recall,Active
+QTH-000003,Grounding Threshold,Grounding Engine,Grounding Score,98,96,94,Reject Response,Critical,Grounding quality threshold,Active
+QTH-000004,Hallucination Threshold,LLM Platform,Hallucination Rate,2,4,5,Escalate,Critical,Maximum hallucination rate,Active
+QTH-000005,Reasoning Threshold,Reasoning Engine,Reasoning Accuracy,95,92,90,Review Reasoning,Critical,Reasoning quality threshold,Active
+QTH-000006,Planning Threshold,Planning Engine,Plan Success Rate,95,90,85,Generate Alternative Plan,High,Planning quality threshold,Active
+QTH-000007,Execution Threshold,Execution Engine,Workflow Success Rate,98,95,92,Retry Workflow,Critical,Execution reliability threshold,Active
+QTH-000008,Agent Threshold,Agent Platform,Task Success Rate,97,94,90,Disable Agent,High,Agent quality threshold,Active
+QTH-000009,Recommendation Threshold,Recommendation Engine,Acceptance Rate,75,65,55,Retrain Model,Medium,Recommendation effectiveness threshold,Active
+QTH-000010,Enterprise Threshold,Enterprise Platform,Enterprise Quality Index,95,92,90,Governance Review,Critical,Overall enterprise AI quality threshold,Active

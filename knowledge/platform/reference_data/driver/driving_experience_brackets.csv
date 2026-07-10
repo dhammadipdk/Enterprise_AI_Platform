@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-EXP-000001,LT_1,Less than 1 Year,Driving experience below one year,Active,2026-01-01,,Enterprise,
+REF-EXP-000002,Y1_3,1–3 Years,Driving experience between one and three years,Active,2026-01-01,,Enterprise,
+REF-EXP-000003,Y3_5,3–5 Years,Driving experience between three and five years,Active,2026-01-01,,Enterprise,
+REF-EXP-000004,Y5_10,5–10 Years,Driving experience between five and ten years,Active,2026-01-01,,Enterprise,
+REF-EXP-000005,Y10_20,10–20 Years,Driving experience between ten and twenty years,Active,2026-01-01,,Enterprise,
+REF-EXP-000006,GT_20,More than 20 Years,Driving experience exceeding twenty years,Active,2026-01-01,,Enterprise,

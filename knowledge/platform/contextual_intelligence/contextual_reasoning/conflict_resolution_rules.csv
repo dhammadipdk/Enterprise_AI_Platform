@@ -1,0 +1,11 @@
+conflict_rule_id,conflict_type,conflicting_entities,resolution_strategy,priority_source,confidence_strategy,human_override_allowed,description,status
+CONFLICT-000001,Fraud_vs_Claims,"Fraud Recommendation,Claim Recommendation",Fraud Wins,Priority Rules,Maximum Confidence,Yes,Fraud prevention overrides settlement.,Active
+CONFLICT-000002,Compliance_vs_Business,"Compliance,Business Optimization",Compliance Wins,Regulatory Rules,Rule Confidence,No,Compliance cannot be violated.,Active
+CONFLICT-000003,Human_vs_AI,"Human Decision,AI Recommendation",Human Wins,Human Decision,N/A,No,Human authority overrides AI.,Active
+CONFLICT-000004,Model_vs_Model,"AI Model A,AI Model B",Ensemble Voting,Confidence Score,Weighted Average,Yes,Use ensemble reasoning.,Active
+CONFLICT-000005,Recommendation_vs_Policy,"Recommendation,Business Policy",Policy Wins,Policy Repository,Rule Confidence,No,Business policy has higher authority.,Active
+CONFLICT-000006,Customer_vs_Fraud,"Customer Experience,Fraud Prevention",Fraud Wins,Fraud Rules,Risk Confidence,Yes,Security before convenience.,Active
+CONFLICT-000007,Cost_vs_Safety,"Financial Cost,Safety",Safety Wins,Safety Policy,Rule Confidence,No,Safety is non-negotiable.,Active
+CONFLICT-000008,Multiple_High_Priority,"Multiple Critical Recommendations",Weighted Ranking,Priority Rules,Combined Confidence,Yes,Rank by business impact.,Active
+CONFLICT-000009,Temporal_Conflict,"Old Evidence,New Evidence",Newest Wins,Timestamp,Latest Confidence,Yes,Prefer recent information.,Active
+CONFLICT-000010,Evidence_Conflict,"Contradictory Evidence",Collect More Evidence,Evidence Quality,Evidence Weight,Yes,Insufficient confidence for decision.,Active

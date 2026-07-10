@@ -1,0 +1,11 @@
+message_id,message_name,message_type,serialization,producer,consumer,persistent,description,status
+MSG-000001,KnowledgeRequest,Command,JSON,Gateway API,Knowledge API,FALSE,Knowledge lookup request,Active
+MSG-000002,KnowledgeResponse,Response,JSON,Knowledge API,Gateway API,FALSE,Knowledge lookup response,Active
+MSG-000003,PlanRequest,Command,Protobuf,Execution Engine,Planning Engine,FALSE,Planning request,Active
+MSG-000004,PlanResponse,Response,Protobuf,Planning Engine,Execution Engine,FALSE,Generated execution plan,Active
+MSG-000005,AgentTask,Command,Protobuf,Coordinator Agent,Worker Agent,TRUE,Agent task assignment,Active
+MSG-000006,WorkflowCompleted,Event,JSON,Execution Engine,Observability,TRUE,Workflow completion event,Active
+MSG-000007,RecommendationGenerated,Event,JSON,Recommendation Engine,Business Applications,TRUE,Recommendation generated,Active
+MSG-000008,GovernanceDecision,Event,JSON,Governance Engine,Execution Engine,TRUE,Governance decision,Active
+MSG-000009,SecurityAlert,Event,JSON,Security Platform,Observability,TRUE,Security notification,Active
+MSG-000010,TelemetryEvent,Event,JSON,All Components,Observability,TRUE,Telemetry message,Active

@@ -1,0 +1,21 @@
+term_id,term,business_definition
+OBS-001,Observability,Complete visibility into AI platform behavior
+OBS-002,Telemetry,Operational runtime measurements
+OBS-003,Trace,Complete execution journey
+OBS-004,Span,Single operation inside a trace
+OBS-005,Metric,Numerical measurement
+OBS-006,Log,Runtime event record
+OBS-007,Alert,Notification triggered by conditions
+OBS-008,SLA,Service Level Agreement
+OBS-009,SLO,Service Level Objective
+OBS-010,KPI,Business performance indicator
+OBS-011,Incident,Operational failure
+OBS-012,Health Check,Runtime status validation
+OBS-013,Dashboard,Operational visualization
+OBS-014,Telemetry Source,Component emitting telemetry
+OBS-015,Runtime Statistics,Execution performance data
+OBS-016,Anomaly,Unexpected platform behavior
+OBS-017,Latency,Execution delay
+OBS-018,Availability,System uptime
+OBS-019,Error Budget,Allowed operational failures
+OBS-020,Distributed Trace,End-to-end workflow trace

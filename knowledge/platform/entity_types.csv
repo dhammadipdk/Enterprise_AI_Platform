@@ -1,0 +1,5 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+ET-000001,Aggregate Root,Primary business entity that acts as the root of an aggregate.,Core,1,Active,1.0.0,,Owns aggregate lifecycle.
+ET-000002,Entity,Business object with independent identity and lifecycle.,Core,2,Active,1.0.0,,Standard entity.
+ET-000003,Weak Entity,Business object dependent on another entity for identification.,Core,3,Active,1.0.0,,Exists only with parent entity.
+ET-000004,Reference Entity,Master data entity shared across multiple domains.,Reference,4,Active,1.0.0,,Represents enterprise reference data.

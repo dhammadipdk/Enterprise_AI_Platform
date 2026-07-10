@@ -1,0 +1,11 @@
+artifact_id,model_id,artifact_type,storage_location,file_format,artifact_size,checksum_verified,immutable_storage,description,status
+ART-000001,MOD-000001,Model Weights,Enterprise Model Registry,safetensors,45 GB,TRUE,TRUE,Foundation model weights,Available
+ART-000002,MOD-000002,Embedding Weights,Enterprise Registry,onnx,1.2 GB,TRUE,TRUE,Embedding model artifact,Available
+ART-000003,MOD-000003,Reranker Weights,Enterprise Registry,onnx,850 MB,TRUE,TRUE,Reranker artifact,Available
+ART-000004,MOD-000004,Vision Weights,Enterprise Registry,safetensors,8 GB,TRUE,TRUE,Vision model artifact,Available
+ART-000005,MOD-000005,OCR Weights,Enterprise Registry,onnx,3 GB,TRUE,TRUE,OCR artifact,Available
+ART-000006,MOD-000006,Speech Weights,Enterprise Registry,safetensors,12 GB,TRUE,TRUE,Speech model artifact,Available
+ART-000007,MOD-000007,Recommendation Model,Model Registry,pickle,250 MB,TRUE,TRUE,Recommendation model artifact,Available
+ART-000008,MOD-000008,Fraud Model,Model Registry,onnx,350 MB,TRUE,TRUE,Fraud detection artifact,Available
+ART-000009,MOD-000009,Evaluation Model,Model Registry,onnx,500 MB,TRUE,TRUE,Evaluation model artifact,Available
+ART-000010,MOD-000010,Research Artifact,Research Storage,safetensors,60 GB,FALSE,FALSE,Experimental model artifact,Experimental

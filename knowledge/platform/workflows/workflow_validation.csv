@@ -1,0 +1,11 @@
+validation_id,validation_name,validation_type,execution_stage,automatic,severity,blocking,description,status
+WVAL-000001,Graph Validation,Structure,Design Time,TRUE,Critical,TRUE,Validate execution graph,Active
+WVAL-000002,Cycle Detection,Graph Analysis,Compilation,TRUE,Critical,TRUE,Detect illegal cycles,Active
+WVAL-000003,Node Validation,Execution,Compilation,TRUE,High,TRUE,Validate workflow nodes,Active
+WVAL-000004,Edge Validation,Execution,Compilation,TRUE,High,TRUE,Validate workflow edges,Active
+WVAL-000005,Transition Validation,Routing,Compilation,TRUE,High,TRUE,Validate transitions,Active
+WVAL-000006,Policy Validation,Governance,Pre-Execution,TRUE,Critical,TRUE,Validate policies,Active
+WVAL-000007,Security Validation,Security,Pre-Execution,TRUE,Critical,TRUE,Validate permissions,Active
+WVAL-000008,Resource Validation,Infrastructure,Scheduling,TRUE,Medium,FALSE,Check resources,Active
+WVAL-000009,Checkpoint Validation,Reliability,Compilation,TRUE,Medium,FALSE,Validate checkpoints,Active
+WVAL-000010,Execution Simulation,Simulation,Pre-Deployment,TRUE,Low,FALSE,Simulate workflow execution,Active

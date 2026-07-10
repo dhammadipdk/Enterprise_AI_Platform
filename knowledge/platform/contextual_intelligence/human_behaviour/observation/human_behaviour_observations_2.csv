@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-HUM2-000001,ATTENTION,DRIVER,DRV-000001,Driver-000001,Mobile Phone Usage,Events,count/day,3,2026-07-01T00:00:00Z,Mumbai,Daily,DMS,Camera,Vision,0.96,0.95,v1.0,
+OBS-HUM2-000002,ATTENTION,DRIVER,DRV-000002,Driver-000002,Driver Distraction,Duration,sec/hour,41,2026-07-01T00:00:00Z,Pune,Daily,DMS,Camera,Vision,0.96,0.95,v1.0,
+OBS-HUM2-000003,ATTENTION,DRIVER,DRV-000003,Driver-000003,Eye Closure Duration,Duration,ms,310,2026-07-01T00:00:00Z,Delhi,Daily,DMS,IR Camera,Vision,0.97,0.96,v1.0,
+OBS-HUM2-000004,ATTENTION,DRIVER,DRV-000004,Driver-000004,Fatigue Score,Score,index,71,2026-07-01T00:00:00Z,Bengaluru,Daily,DMS,AI Model,Vision,0.97,0.96,v1.0,
+OBS-HUM2-000005,ATTENTION,DRIVER,DRV-000005,Driver-000005,Seat Belt Usage,Compliance,%,98,2026-07-01T00:00:00Z,Chennai,Daily,Camera,ADAS,Vision,0.99,0.99,v1.0,
+OBS-HUM2-000006,ATTENTION,DRIVER,DRV-000006,Driver-000006,Mirror Check Frequency,Checks,count/hour,32,2026-07-01T00:00:00Z,Ahmedabad,Daily,DMS,Vision,Vision,0.95,0.94,v1.0,
+OBS-HUM2-000007,ATTENTION,DRIVER,DRV-000007,Driver-000007,Lane Keeping Quality,Score,index,92,2026-07-01T00:00:00Z,Jaipur,Daily,ADAS,Lane Camera,Vision,0.98,0.97,v1.0,
+OBS-HUM2-000008,ATTENTION,DRIVER,DRV-000008,Driver-000008,ADAS Warnings,Warnings,count/day,1,2026-07-01T00:00:00Z,Kolkata,Daily,ADAS,Vehicle ECU,CAN,0.98,0.97,v1.0,
+OBS-HUM2-000009,ATTENTION,DRIVER,DRV-000009,Driver-000009,Driver Attention Score,Score,index,86,2026-07-01T00:00:00Z,NH48,Daily,DMS,AI Model,Vision,0.98,0.97,v1.0,
+OBS-HUM2-000010,ATTENTION,DRIVER,DRV-000010,Driver-000010,Traffic Rule Compliance,Compliance,%,94,2026-07-01T00:00:00Z,Hyderabad,Monthly,Telematics,Analytics,Analytics,0.97,0.96,v1.0,
+OBS-HUM2-000011,ATTENTION,DRIVER,DRV-000011,Driver-000011,Seat Belt Usage,Compliance,%,100,2026-07-01T00:00:00Z,Goa,Daily,Camera,ADAS,Vision,0.99,0.99,v1.0,
+OBS-HUM2-000012,ATTENTION,DRIVER,DRV-000012,Driver-000012,Fatigue Events,Events,count/week,2,2026-07-01T00:00:00Z,Surat,Weekly,DMS,AI Model,Vision,0.96,0.95,v1.0,

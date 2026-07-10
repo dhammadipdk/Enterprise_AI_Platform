@@ -1,0 +1,11 @@
+field_name,data_type,required,description
+prompt_id,String,TRUE,Unique prompt identifier
+prompt_name,String,TRUE,Prompt name
+prompt_type,String,TRUE,Prompt category
+template_id,String,FALSE,Associated template
+version,String,TRUE,Prompt version
+owner,String,TRUE,Responsible owner
+status,String,TRUE,Lifecycle state
+created_date,Date,TRUE,Creation timestamp
+approved_by,String,FALSE,Approval authority
+metadata,JSON,FALSE,Additional metadata

@@ -1,0 +1,11 @@
+authentication_id,authentication_method,authentication_type,mfa_supported,passwordless,phishing_resistant,recommended_for,description,status
+AUTH-000001,Username Password,Knowledge,FALSE,FALSE,FALSE,Legacy Users,Traditional username/password login,Active
+AUTH-000002,OAuth 2.0,Federated,TRUE,FALSE,TRUE,Applications,OAuth authentication,Active
+AUTH-000003,OpenID Connect,Federated,TRUE,FALSE,TRUE,Enterprise Users,OIDC authentication,Active
+AUTH-000004,SAML 2.0,Federated,TRUE,FALSE,TRUE,Enterprise SSO,Enterprise single sign-on,Active
+AUTH-000005,Passkeys,FIDO2,TRUE,TRUE,TRUE,Employees,Passwordless authentication,Active
+AUTH-000006,Hardware Security Key,FIDO2,TRUE,TRUE,TRUE,Administrators,Hardware-based authentication,Active
+AUTH-000007,Certificate Authentication,PKI,FALSE,TRUE,TRUE,Services,Mutual TLS authentication,Active
+AUTH-000008,API Key,Machine,FALSE,FALSE,FALSE,External APIs,API authentication,Active
+AUTH-000009,JWT Token,Token,FALSE,TRUE,FALSE,Microservices,JWT bearer authentication,Active
+AUTH-000010,mTLS,Certificate,FALSE,TRUE,TRUE,Internal Services,Mutual TLS authentication,Active

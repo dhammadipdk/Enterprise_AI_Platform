@@ -1,0 +1,16 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-FRD-000001,CASE,CASE-000001,REC-FRD-000001,Assign SIU,"Multiple fraud indicators;Network linkage","High claim value","The combined evidence strongly suggests organized fraudulent activity requiring SIU investigation.",0.99,XAI Engine
+EXP-FRD-000002,CASE,CASE-000002,REC-FRD-000002,Verify Identity,"Identity mismatch","Device inconsistency","Additional identity verification is recommended due to inconsistent identity evidence.",0.96,XAI Engine
+EXP-FRD-000003,CASE,CASE-000003,REC-FRD-000003,Verify Documents,"OCR anomalies","Signature mismatch","Submitted documents contain inconsistencies that require manual verification.",0.95,XAI Engine
+EXP-FRD-000004,CASE,CASE-000004,REC-FRD-000004,Reassess Estimate,"Repair estimate outlier","Historical repair cost","The repair estimate is significantly higher than expected for comparable claims.",0.94,XAI Engine
+EXP-FRD-000005,CASE,CASE-000005,REC-FRD-000005,Collect Evidence,"Limited supporting evidence","Low confidence","Additional evidence is needed before claim adjudication.",0.93,XAI Engine
+EXP-FRD-000006,CASE,CASE-000006,REC-FRD-000006,Analyze Network,"Shared entities","Fraud ring indicators","Entity graph analysis indicates potential organized fraud.",0.98,XAI Engine
+EXP-FRD-000007,CASE,CASE-000007,REC-FRD-000007,Legal Review,"Evidence supports fraud","Potential prosecution","Legal review is recommended based on investigation findings.",0.92,XAI Engine
+EXP-FRD-000008,CASE,CASE-000008,REC-FRD-000008,Freeze Payment,"High fraud probability","Pending investigation","Payment should be suspended until the investigation concludes.",0.97,XAI Engine
+EXP-FRD-000009,CASE,CASE-000009,REC-FRD-000009,Recovery Action,"Confirmed fraudulent payment","Recoverable assets identified","Recovery proceedings are expected to reduce financial loss.",0.92,XAI Engine
+EXP-FRD-000010,CASE,CASE-000010,REC-FRD-000010,Interview Customer,"Behavioral inconsistencies","Timeline mismatch","Customer clarification may resolve observed inconsistencies.",0.91,XAI Engine
+EXP-FRD-000011,CASE,CASE-000011,REC-FRD-000011,Senior Investigator,"High case complexity","Multiple linked entities","The complexity exceeds the threshold for standard investigation.",0.94,XAI Engine
+EXP-FRD-000012,CASE,CASE-000012,REC-FRD-000012,Advanced Models,"Moderate fraud indicators","Insufficient confidence","Additional AI models are recommended to improve confidence.",0.92,XAI Engine
+EXP-FRD-000013,CASE,CASE-000013,REC-FRD-000013,Internal Audit,"Internal activity pattern","Process anomalies","An internal audit is recommended to rule out insider involvement.",0.91,XAI Engine
+EXP-FRD-000014,CASE,CASE-000014,REC-FRD-000014,Monitor Related Claims,"Shared entities","Historical patterns","Monitoring related claims may reveal additional fraudulent activity.",0.90,XAI Engine
+EXP-FRD-000015,CASE,CASE-000015,REC-FRD-000015,Prepare Closure Report,"Investigation completed","Knowledge capture","Documenting the investigation improves future fraud detection.",0.89,XAI Engine

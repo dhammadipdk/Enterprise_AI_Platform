@@ -1,0 +1,11 @@
+context_id,context_name,context_scope,source,max_size,dynamic_update,persisted,description,status
+WCTX-000001,Workflow Context,Workflow,Execution Engine,1 MB,TRUE,TRUE,Workflow execution state,Active
+WCTX-000002,Business Context,Business,Business Applications,512 KB,TRUE,TRUE,Business metadata,Active
+WCTX-000003,Knowledge Context,RAG,Knowledge Layer,5 MB,TRUE,FALSE,Retrieved knowledge,Active
+WCTX-000004,Memory Context,Memory,Memory Layer,2 MB,TRUE,TRUE,Conversation memory,Active
+WCTX-000005,Planning Context,Planning,Planning Engine,1 MB,TRUE,FALSE,Execution planning context,Active
+WCTX-000006,Agent Context,Agents,Agent Platform,2 MB,TRUE,FALSE,Agent collaboration state,Active
+WCTX-000007,Governance Context,Governance,Governance Platform,512 KB,TRUE,FALSE,Governance metadata,Active
+WCTX-000008,Security Context,Security,Security Platform,512 KB,TRUE,FALSE,Security metadata,Active
+WCTX-000009,Execution Metrics,Observability,Telemetry,1 MB,TRUE,TRUE,Execution telemetry,Active
+WCTX-000010,Evaluation Context,Evaluation,Evaluation Platform,1 MB,TRUE,TRUE,Evaluation history,Active

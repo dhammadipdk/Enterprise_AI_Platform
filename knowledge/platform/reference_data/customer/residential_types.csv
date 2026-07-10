@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-RES-000001,OWNED,Owned Residence,Residential property owned by the customer,Active,2026-01-01,,Enterprise,
+REF-RES-000002,RENTED,Rented Residence,Residential property occupied under a rental agreement,Active,2026-01-01,,Enterprise,
+REF-RES-000003,LEASED,Leased Residence,Residential property occupied under a lease agreement,Active,2026-01-01,,Enterprise,
+REF-RES-000004,FAMILY_OWNED,Family-owned Residence,Residence owned by an immediate family member,Active,2026-01-01,,Enterprise,
+REF-RES-000005,COMPANY_PROVIDED,Company-provided Residence,Housing provided by employer,Active,2026-01-01,,Enterprise,
+REF-RES-000006,GOVERNMENT_QUARTERS,Government Quarters,Government allotted residence,Active,2026-01-01,,Enterprise,
+REF-RES-000007,HOSTEL,Hostel,Hostel or dormitory accommodation,Active,2026-01-01,,Enterprise,
+REF-RES-000008,OTHER,Other,Any residential arrangement not covered elsewhere,Active,2026-01-01,,Enterprise,

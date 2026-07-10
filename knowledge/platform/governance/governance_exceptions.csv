@@ -1,0 +1,11 @@
+exception_id,exception_name,exception_category,trigger_condition,approval_required,maximum_duration,compensating_control,risk_level,review_required,description,status
+GEX-000001,Grounding Exception,Responsible AI,Trusted Internal Testing,TRUE,24 Hours,Manual Review,Medium,TRUE,Temporary grounding bypass for testing,Active
+GEX-000002,Emergency Workflow Override,Operations,Critical Incident,TRUE,12 Hours,Executive Approval,Critical,TRUE,Emergency workflow override,Active
+GEX-000003,Policy Waiver,Governance,Business Justification,TRUE,30 Days,Governance Monitoring,High,TRUE,Temporary policy waiver,Active
+GEX-000004,Model Exception,Model Governance,Experimental Deployment,TRUE,14 Days,Enhanced Monitoring,Medium,TRUE,Experimental model approval,Active
+GEX-000005,Knowledge Exception,Knowledge,Urgent Publication,TRUE,48 Hours,Post Publication Review,Low,TRUE,Urgent knowledge release,Active
+GEX-000006,Access Exception,Security,Break Glass Access,TRUE,4 Hours,Security Audit,Critical,TRUE,Emergency privileged access,Active
+GEX-000007,Approval Bypass,Operations,System Failure,TRUE,2 Hours,Executive Notification,Critical,TRUE,Approval system unavailable,Active
+GEX-000008,Compliance Exception,Compliance,Regulatory Clarification Pending,TRUE,60 Days,Legal Review,Medium,TRUE,Temporary compliance exemption,Active
+GEX-000009,Risk Acceptance,Risk,Executive Risk Acceptance,TRUE,90 Days,Risk Monitoring,High,TRUE,Accepted business risk,Active
+GEX-000010,Enterprise Exception,Enterprise,Executive Decision,TRUE,180 Days,Quarterly Review,Critical,TRUE,Enterprise-wide governance exception,Active

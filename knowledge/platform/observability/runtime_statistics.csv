@@ -1,0 +1,11 @@
+runtime_stat_id,statistic_name,measurement_scope,aggregation_method,measurement_interval,retention_period,business_use,description,status
+STAT-000001,Average End-to-End Latency,Enterprise,P95,1 Minute,365 Days,Performance Monitoring,Overall request latency,Active
+STAT-000002,Knowledge Retrieval Time,Knowledge,Average,30 Seconds,180 Days,Knowledge Optimization,Knowledge lookup performance,Active
+STAT-000003,Memory Access Time,Memory,Average,30 Seconds,180 Days,Memory Optimization,Memory response time,Active
+STAT-000004,Planning Duration,Planning,P95,1 Minute,180 Days,Planning Analytics,Planning execution duration,Active
+STAT-000005,Workflow Runtime,Execution,P95,1 Minute,365 Days,Workflow Optimization,Workflow runtime statistics,Active
+STAT-000006,Agent Utilization,Agents,Average,1 Minute,365 Days,Capacity Planning,Agent utilization percentage,Active
+STAT-000007,LLM Token Consumption,Models,Sum,5 Minutes,365 Days,Cost Management,LLM token usage statistics,Active
+STAT-000008,Recommendation Throughput,Business,Average,1 Minute,365 Days,Business Analytics,Recommendations generated per minute,Active
+STAT-000009,Governance Decision Volume,Governance,Sum,5 Minutes,365 Days,Governance Analytics,Governance decisions processed,Active
+STAT-000010,Enterprise AI Throughput,Enterprise,Average,1 Minute,365 Days,Executive Analytics,Overall enterprise AI throughput,Active

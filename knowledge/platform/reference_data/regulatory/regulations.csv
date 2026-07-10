@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-REG-000001,MOTOR_INSURANCE_REGS,Motor Insurance Regulations,IRDAI motor insurance regulations,Active,2026-01-01,,IRDAI,
+REF-REG-000002,KYC_REGS,KYC Regulations,Know Your Customer regulations,Active,2026-01-01,,RBI,
+REF-REG-000003,AML_REGS,Anti-Money Laundering Regulations,AML compliance regulations,Active,2026-01-01,,Government of India,
+REF-REG-000004,DATA_PRIVACY_REGS,Data Privacy Regulations,Personal data protection compliance,Active,2026-01-01,,Government of India,
+REF-REG-000005,DIGITAL_SIGNATURE_REGS,Digital Signature Regulations,Electronic authentication regulations,Active,2026-01-01,,CCA,

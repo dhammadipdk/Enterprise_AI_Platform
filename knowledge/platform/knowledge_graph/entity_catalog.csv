@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+GraphNode,Node,Enterprise graph vertex
+GraphEdge,Edge,Enterprise graph relationship
+NodeType,Schema,Node definition
+EdgeType,Schema,Edge definition
+GraphConstraint,Constraint,Graph validation rule
+GraphIndex,Index,Performance index
+TraversalPattern,Pattern,Reusable graph traversal
+CypherTemplate,Query,Cypher query template
+GraphProjection,Projection,Filtered graph
+GraphView,View,Logical graph representation
+GraphAlgorithm,Algorithm,Graph analytics algorithm
+EmbeddingStrategy,Embedding,Graph embedding method
+KnowledgeSubgraph,Subgraph,Logical graph partition
+GraphVersion,Version,Knowledge graph version
+EnterpriseGraph,Graph,Complete enterprise graph

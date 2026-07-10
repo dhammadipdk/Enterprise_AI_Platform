@@ -1,0 +1,30 @@
+scenario_id,scenario_name,business_context,key_observations,derived_intelligence,recommendations,expected_business_impact
+SCN-REC-000001,Fast Track Claim,"Low-risk claim","Low fraud risk;Complete documents","Decision Confidence=98","Fast-track settlement","Reduced settlement time"
+
+SCN-REC-000002,SIU Assignment,"High fraud claim","Fraud score=94;Network linkage","Fraud Priority=Critical","Assign SIU","Prevent fraud payout"
+
+SCN-REC-000003,Coverage Upgrade,"Coverage gap identified","Low coverage adequacy","Coverage Recommendation=High","Offer coverage enhancement","Reduced future underinsurance"
+
+SCN-REC-000004,Customer Retention,"High-value customer","High CLV;Renewal due","Retention Score=92","Offer renewal discount","Improved retention"
+
+SCN-REC-000005,Preventive Maintenance,"Vehicle health declining","Vehicle Health=68","Maintenance Priority=High","Schedule preventive maintenance","Reduced future claims"
+
+SCN-REC-000006,Preferred Garage Routing,"Repair initiated","Preferred network available","Repair Efficiency=95","Assign preferred garage","Lower repair cost"
+
+SCN-REC-000007,Reserve Adjustment,"Major accident","High severity;Repair uncertainty","Reserve Confidence=91","Increase reserve","Improved reserve adequacy"
+
+SCN-REC-000008,Compliance Review,"Exceptional policy case","Regulatory rule triggered","Compliance Alert=High","Manual compliance review","Reduced regulatory risk"
+
+SCN-REC-000009,Customer Outreach,"Declining satisfaction","Low CSAT;Complaint history","Customer Risk=Medium","Schedule proactive customer call","Improved customer experience"
+
+SCN-REC-000010,Operational Escalation,"Large claim backlog","High workload","Operations Alert=Critical","Allocate additional adjusters","Reduced backlog"
+
+SCN-REC-000011,Automation Decision,"Routine low-risk case","High AI confidence","Automation Suitability=96","Execute automatically","Reduced operational cost"
+
+SCN-REC-000012,Weather Advisory,"Extreme rainfall forecast","Weather Severity=92","Risk Alert=High","Notify policyholders","Reduced accident exposure"
+
+SCN-REC-000013,Safe Driving Program,"Aggressive driver","Driving Risk=82","Behavior Recommendation=High","Enroll in safe driving program","Lower future accident frequency"
+
+SCN-REC-000014,Payment Freeze,"Critical fraud investigation","Payment pending;Fraud confirmed","Fraud Risk=97","Freeze payment","Prevent financial loss"
+
+SCN-REC-000015,Enterprise Decision Optimization,"Cross-domain intelligence","Claims;Fraud;Customer;Operations","Decision Intelligence=99","Execute integrated recommendation plan","Maximized enterprise value"

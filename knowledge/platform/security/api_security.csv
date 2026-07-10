@@ -1,0 +1,11 @@
+api_security_id,api_name,authentication_method,authorization_model,rate_limiting,mTLS_required,input_validation,output_filtering,description,status
+APISEC-000001,Knowledge API,OAuth 2.0,RBAC,TRUE,FALSE,TRUE,TRUE,Knowledge service API security,Active
+APISEC-000002,Memory API,JWT Token,ABAC,TRUE,TRUE,TRUE,TRUE,Memory service API security,Active
+APISEC-000003,Planning API,JWT Token,PBAC,TRUE,TRUE,TRUE,TRUE,Planning API security,Active
+APISEC-000004,Execution API,mTLS,PBAC,TRUE,TRUE,TRUE,TRUE,Execution API security,Active
+APISEC-000005,Agent API,mTLS,Capability Based Access Control,TRUE,TRUE,TRUE,TRUE,Agent communication security,Active
+APISEC-000006,Recommendation API,OAuth 2.0,RBAC,TRUE,FALSE,TRUE,TRUE,Recommendation API security,Active
+APISEC-000007,Governance API,mTLS,PBAC,TRUE,TRUE,TRUE,TRUE,Governance service API security,Active
+APISEC-000008,Evaluation API,JWT Token,ABAC,TRUE,TRUE,TRUE,TRUE,Evaluation API security,Active
+APISEC-000009,Observability API,mTLS,RBAC,TRUE,TRUE,TRUE,FALSE,Telemetry API security,Active
+APISEC-000010,External Gateway API,OAuth 2.0,Hybrid Authorization,TRUE,FALSE,TRUE,TRUE,Enterprise API gateway security,Active

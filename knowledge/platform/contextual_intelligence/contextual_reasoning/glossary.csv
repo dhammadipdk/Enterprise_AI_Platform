@@ -1,0 +1,26 @@
+term_id,term,business_definition
+REASON-001,Contextual Reasoning,Process of combining contextual evidence to produce decisions
+REASON-002,Reasoning Rule,Formal rule used to derive conclusions from evidence
+REASON-003,Causal Rule,Relationship describing cause-and-effect between concepts
+REASON-004,Aggregation Rule,Rule for combining multiple intelligence signals
+REASON-005,Conflict Resolution,Process for resolving contradictory evidence
+REASON-006,Confidence Propagation,Method for propagating confidence through reasoning chains
+REASON-007,Decision Strategy,High-level policy governing decision generation
+REASON-008,Recommendation Policy,Business policy controlling recommendation execution
+REASON-009,Evidence Chain,Ordered sequence of supporting evidence
+REASON-010,Decision Trace,Traceable record describing reasoning steps
+REASON-011,Reasoning Pattern,Reusable reasoning methodology
+REASON-012,Business Constraint,Operational or regulatory condition affecting reasoning
+REASON-013,Priority Rule,Rule determining precedence among competing actions
+REASON-014,Evidence Weight,Relative importance assigned to evidence
+REASON-015,Hypothesis,Intermediate inferred conclusion during reasoning
+REASON-016,Decision Confidence,Confidence assigned to final decision
+REASON-017,Decision Priority,Business urgency associated with a decision
+REASON-018,Explainability,Ability to justify reasoning outcomes
+REASON-019,Counterfactual Reasoning,Reasoning about alternative scenarios
+REASON-020,Temporal Reasoning,Reasoning across time-dependent observations
+REASON-021,Graph Reasoning,Reasoning performed using graph relationships
+REASON-022,Hybrid Reasoning,Combination of symbolic and AI reasoning
+REASON-023,Evidence Fusion,Combining evidence from multiple heterogeneous sources
+REASON-024,Reasoning Context,Complete contextual state used during decision making
+REASON-025,Reasoning Engine,System responsible for orchestrating contextual reasoning

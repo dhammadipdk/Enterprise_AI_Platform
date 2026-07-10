@@ -1,0 +1,21 @@
+edge_type_id,relationship_label,source_node,target_node,relationship_category,direction,is_temporal,has_properties,inferable,description,status
+EDGE-000001,OWNS,Customer,Policy,Ownership,Directed,TRUE,TRUE,TRUE,Customer owns policy,Active
+EDGE-000002,COVERS,Policy,Vehicle,Coverage,Directed,TRUE,TRUE,TRUE,Policy covers vehicle,Active
+EDGE-000003,PROVIDES,Policy,Coverage,Coverage,Directed,FALSE,TRUE,TRUE,Policy provides coverage,Active
+EDGE-000004,FILES,Customer,Claim,Business Process,Directed,TRUE,TRUE,TRUE,Customer files claim,Active
+EDGE-000005,INVOLVES,Claim,Vehicle,Claims,Directed,TRUE,TRUE,TRUE,Claim involves vehicle,Active
+EDGE-000006,INITIATES,Claim,Repair,Workflow,Directed,TRUE,TRUE,TRUE,Claim initiates repair,Active
+EDGE-000007,ASSIGNED_TO,Repair,Garage,Workflow,Directed,TRUE,TRUE,FALSE,Repair assigned to garage,Active
+EDGE-000008,INSPECTED_BY,Claim,Surveyor,Workflow,Directed,TRUE,TRUE,FALSE,Claim inspected by surveyor,Active
+EDGE-000009,MAY_TRIGGER,Claim,FraudCase,Risk,Directed,TRUE,TRUE,TRUE,Claim may trigger fraud case,Active
+EDGE-000010,GENERATES,FraudCase,Recommendation,Decision,Directed,TRUE,TRUE,TRUE,Fraud generates recommendation,Active
+EDGE-000011,SUPPORTS,Observation,Evidence,Reasoning,Directed,TRUE,TRUE,TRUE,Observation supports evidence,Active
+EDGE-000012,SUPPORTS,Evidence,Hypothesis,Reasoning,Directed,TRUE,TRUE,TRUE,Evidence supports hypothesis,Active
+EDGE-000013,GENERATES,Hypothesis,Decision,Reasoning,Directed,TRUE,TRUE,TRUE,Hypothesis generates decision,Active
+EDGE-000014,GENERATES,Decision,Recommendation,Decision,Directed,TRUE,TRUE,TRUE,Decision generates recommendation,Active
+EDGE-000015,CONSTRAINS,BusinessRule,Decision,Governance,Directed,FALSE,TRUE,TRUE,Business rule constrains decision,Active
+EDGE-000016,BELONGS_TO,Observation,EnvironmentContext,Context,Directed,TRUE,FALSE,TRUE,Observation belongs to environment,Active
+EDGE-000017,DERIVED_FROM,DerivedIntelligence,Observation,Analytics,Directed,TRUE,TRUE,TRUE,Derived intelligence from observations,Active
+EDGE-000018,HAS_DRIVER,Vehicle,Driver,Assignment,Directed,TRUE,TRUE,FALSE,Vehicle assigned to driver,Active
+EDGE-000019,HAS_PAYMENT,Claim,Payment,Finance,Directed,TRUE,TRUE,FALSE,Claim linked with payment,Active
+EDGE-000020,AFFECTS,Recommendation,Customer,Outcome,Directed,TRUE,TRUE,TRUE,Recommendation affects customer,Active

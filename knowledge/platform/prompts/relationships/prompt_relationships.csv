@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_governed,is_compilation_edge,is_execution_edge,description,status
+PREL-000001,PromptRegistry,CONTAINS,PromptTemplate,Registry,1:N,FALSE,TRUE,FALSE,FALSE,Registry stores templates,Active
+PREL-000002,PromptTemplate,HAS,PromptVersion,Versioning,1:N,FALSE,TRUE,FALSE,FALSE,Templates have versions,Active
+PREL-000003,PromptVersion,USES,PromptVariable,Compilation,N:N,TRUE,FALSE,TRUE,FALSE,Prompt versions consume variables,Active
+PREL-000004,PromptVersion,USES,PromptContext,Compilation,N:N,TRUE,FALSE,TRUE,FALSE,Prompt versions use contexts,Active
+PREL-000005,PromptVersion,USES,PromptGrounding,Compilation,N:N,TRUE,TRUE,TRUE,FALSE,Prompt grounding injected during compilation,Active
+PREL-000006,PromptVersion,PROTECTED_BY,PromptGuardrail,Security,N:N,TRUE,TRUE,TRUE,TRUE,Guardrails secure prompts,Active
+PREL-000007,PromptVersion,VALIDATED_BY,PromptValidation,Validation,N:N,TRUE,TRUE,TRUE,FALSE,Validation before execution,Active
+PREL-000008,PromptProfile,EXECUTES,PromptExecutionGraph,Execution,N:N,TRUE,FALSE,FALSE,TRUE,Execution profile drives graph execution,Active
+PREL-000009,PromptSelectionPolicy,SELECTS,PromptVersion,Routing,N:N,TRUE,TRUE,FALSE,TRUE,Prompt router selects prompt versions,Active
+PREL-000010,PromptVersion,EVALUATED_BY,PromptEvaluation,Evaluation,N:N,TRUE,FALSE,FALSE,TRUE,Prompt quality evaluation,Active
+PREL-000011,PromptVersion,MONITORED_BY,PromptMonitoring,Monitoring,N:N,TRUE,FALSE,FALSE,TRUE,Runtime monitoring,Active
+PREL-000012,PromptOptimization,IMPROVES,PromptVersion,Optimization,N:N,FALSE,TRUE,FALSE,FALSE,Optimization improves prompts,Active

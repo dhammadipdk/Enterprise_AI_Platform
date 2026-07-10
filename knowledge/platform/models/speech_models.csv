@@ -1,0 +1,11 @@
+speech_model_id,model_name,speech_task,input_type,output_type,supports_streaming,supports_multilingual,max_audio_duration,description,status
+SPEECH-000001,Enterprise ASR,Speech Recognition,Audio,Text,TRUE,TRUE,4 Hours,Speech-to-text model,Active
+SPEECH-000002,Enterprise TTS,Speech Synthesis,Text,Audio,TRUE,TRUE,Unlimited,Text-to-speech model,Active
+SPEECH-000003,Speaker Identification,Speaker Recognition,Audio,Identity,FALSE,TRUE,2 Hours,Speaker recognition model,Active
+SPEECH-000004,Emotion Recognition,Emotion Analysis,Audio,Emotion,FALSE,TRUE,1 Hour,Speech emotion detection,Active
+SPEECH-000005,Language Identification,Language Detection,Audio,Language,FALSE,TRUE,2 Hours,Language identification,Active
+SPEECH-000006,Speech Translation,Translation,Audio,Translated Text,TRUE,TRUE,2 Hours,Speech translation model,Active
+SPEECH-000007,Keyword Spotting,Wake Word Detection,Audio,Keyword,TRUE,TRUE,Continuous,Keyword spotting,Active
+SPEECH-000008,Meeting Summarization,Meeting AI,Audio,Summary,FALSE,TRUE,8 Hours,Meeting summarization,Active
+SPEECH-000009,Call Analytics,Conversation Intelligence,Audio,Insights,FALSE,TRUE,8 Hours,Enterprise call analytics,Active
+SPEECH-000010,Experimental Speech Model,Research,Audio,Multi Output,TRUE,TRUE,Unlimited,Experimental speech AI,Active

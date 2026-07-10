@@ -1,0 +1,11 @@
+chain_id,chain_name,execution_order,stage_count,primary_use_case,parallel_execution,failure_strategy,description,status
+CHAIN-000001,RAG Pipeline,Retrieve→Ground→Generate→Evaluate,4,Knowledge Assistant,FALSE,Abort,RAG reasoning pipeline,Active
+CHAIN-000002,Claims Investigation,Retrieve→Reason→Validate→Recommend,4,Claims Processing,FALSE,Human Review,Claims workflow,Active
+CHAIN-000003,Fraud Investigation,Evidence→Reason→Risk→Decision,4,Fraud Analysis,FALSE,Escalate,Fraud investigation pipeline,Active
+CHAIN-000004,Planning Pipeline,Understand→Plan→Validate→Execute,4,Task Planning,FALSE,Retry,Planning workflow,Active
+CHAIN-000005,Executive Decision,Analyze→Summarize→Evaluate→Recommend,4,Executive Support,FALSE,Human Approval,Decision support workflow,Active
+CHAIN-000006,Compliance Review,Retrieve→Validate→Explain→Approve,4,Compliance,FALSE,Reject,Compliance workflow,Active
+CHAIN-000007,Recommendation Pipeline,Profile→Retrieve→Rank→Recommend,4,Recommendations,FALSE,Fallback,Recommendation workflow,Active
+CHAIN-000008,Document Intelligence,OCR→Extract→Reason→Summarize,4,Document AI,FALSE,Retry,Document understanding,Active
+CHAIN-000009,Agent Collaboration,Coordinator→Worker→Review→Merge,4,Multi-Agent,TRUE,Coordinator Retry,Agent collaboration chain,Active
+CHAIN-000010,Research Workflow,Retrieve→Hypothesize→Analyze→Report,4,Research,FALSE,Continue,Research reasoning workflow,Active

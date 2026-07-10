@@ -1,0 +1,11 @@
+reference_id,code,name,parent_code,parent_name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PIN-000001,400001,Mumbai GPO,MUM,Mumbai,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000002,411001,Pune GPO,PUN,Pune,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000003,560001,Bengaluru GPO,BLR,Bengaluru,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000004,110001,New Delhi GPO,DEL,New Delhi,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000005,600001,Chennai GPO,CHE,Chennai,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000006,380001,Ahmedabad GPO,AHD,Ahmedabad,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000007,700001,Kolkata GPO,KOL,Kolkata,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000008,500001,Hyderabad GPO,HYD,Hyderabad,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000009,226001,Lucknow GPO,LKO,Lucknow,General Post Office PIN,Active,1972-08-15,,India Post,
+REF-PIN-000010,302001,Jaipur GPO,JAI,Jaipur,General Post Office PIN,Active,1972-08-15,,India Post,

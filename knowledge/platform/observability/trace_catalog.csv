@@ -1,0 +1,11 @@
+trace_id,trace_name,trace_scope,entry_component,exit_component,distributed_trace,contains_business_context,contains_user_context,description,status
+TRACE-000001,Customer Recommendation Trace,Enterprise,API Gateway,Recommendation Engine,TRUE,TRUE,TRUE,End-to-end recommendation flow,Active
+TRACE-000002,Claim Processing Trace,Enterprise,API Gateway,Claims Engine,TRUE,TRUE,TRUE,Claims processing trace,Active
+TRACE-000003,Fraud Investigation Trace,Enterprise,API Gateway,Fraud Engine,TRUE,TRUE,TRUE,Fraud investigation lifecycle,Active
+TRACE-000004,Knowledge Retrieval Trace,Knowledge,Retriever,Knowledge Graph,TRUE,FALSE,FALSE,Knowledge retrieval trace,Active
+TRACE-000005,Planning Trace,Planning,Planning Engine,Execution Engine,TRUE,FALSE,FALSE,Planning lifecycle,Active
+TRACE-000006,Execution Trace,Execution,Execution Engine,Workflow Engine,TRUE,FALSE,FALSE,Execution lifecycle,Active
+TRACE-000007,Agent Collaboration Trace,Agents,Coordinator Agent,Worker Agents,TRUE,TRUE,FALSE,Multi-agent execution trace,Active
+TRACE-000008,Governance Trace,Governance,Governance Engine,Audit Store,TRUE,FALSE,FALSE,Governance trace,Active
+TRACE-000009,Evaluation Trace,Evaluation,Evaluation Engine,Dashboard,TRUE,FALSE,FALSE,Evaluation lifecycle,Active
+TRACE-000010,Platform Trace,Infrastructure,System,System,TRUE,FALSE,FALSE,Platform runtime trace,Active

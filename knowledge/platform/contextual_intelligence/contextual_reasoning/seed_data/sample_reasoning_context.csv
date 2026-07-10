@@ -1,0 +1,16 @@
+scenario_id,scenario_name,input_context,evidence_chain,reasoning_pattern,decision_strategy,generated_decision,recommendation,business_outcome
+SCN-REASON-000001,Fast Track Claim,"Low fraud;Low severity;Verified documents","Observations→Evidence→Decision",Rule Based,Risk Minimization,Approve Claim,Fast-track Settlement,Reduced settlement time
+SCN-REASON-000002,High Fraud Claim,"Fraud score=97;Network linkage","Evidence→Hypothesis→Decision",Causal,Fraud First,Potential Fraud,Assign SIU,Prevent fraud loss
+SCN-REASON-000003,Coverage Gap,"Coverage inadequate","Evidence→Recommendation",Rule Based,Customer First,Coverage Insufficient,Coverage Upgrade,Improved customer protection
+SCN-REASON-000004,Vehicle Maintenance,"Vehicle health=62","Evidence→Decision",Rule Based,Risk Minimization,Maintenance Needed,Schedule Maintenance,Reduced future failures
+SCN-REASON-000005,Safe Driving,"Aggressive driving detected","Behavior→Evidence→Decision",Hybrid,Customer First,Driver Coaching,Safe Driving Advisory,Reduced accident probability
+SCN-REASON-000006,Reserve Increase,"Repair estimate > reserve","Financial Evidence→Decision",Rule Based,Financial Optimization,Increase Reserve,Reserve Adjustment,Improved financial accuracy
+SCN-REASON-000007,Compliance Exception,"Compliance score=78","Rule→Decision",Rule Based,Regulatory Compliance,Compliance Review,Manual Approval,Regulatory compliance
+SCN-REASON-000008,Human Override,"AI confidence=0.62","AI→Human Review→Decision",Hybrid,Human First,Escalate Review,Manual Decision,Higher governance
+SCN-REASON-000009,Automatic Decision,"Confidence=0.98","Evidence→Confidence→Execution",Hybrid,AI First,Automatic Execution,Execute Recommendation,Faster processing
+SCN-REASON-000010,Weather Risk,"Heavy rain;Poor visibility","Environment→Risk→Decision",Causal,Risk Minimization,Travel Warning,Issue Alert,Reduced accidents
+SCN-REASON-000011,Repair Routing,"Preferred garage available","Evidence→Optimization",Rule Based,Operational Excellence,Garage Selection,Assign Preferred Garage,Lower repair cost
+SCN-REASON-000012,VIP Customer,"High CLV;Renewal risk","Customer→Prediction→Decision",Predictive,Customer First,Retention Action,Retention Offer,Higher retention
+SCN-REASON-000013,Operational Overload,"SLA breach risk","Operations→Optimization",Aggregation,Operational Excellence,Allocate Resources,Senior Adjuster Assignment,Improved SLA
+SCN-REASON-000014,Enterprise Recommendation,"Claims+Fraud+Customer+Environment","Multi-domain reasoning chain",Hybrid,Enterprise Balanced,Enterprise Decision,Integrated Recommendation,Optimized enterprise outcome
+SCN-REASON-000015,GraphRAG Decision,"Graph neighborhood;Historical cases;Current observations","Retrieval→Evidence→Reasoning→Decision",Graph Reasoning,Enterprise Balanced,Context-Aware Decision,Explainable Recommendation,Grounded AI decision

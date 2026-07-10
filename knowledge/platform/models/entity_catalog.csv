@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+FoundationModel,AI Model,General language model
+EmbeddingModel,AI Model,Embedding generator
+RerankerModel,AI Model,Ranking model
+VisionModel,AI Model,Computer vision model
+SpeechModel,AI Model,Speech processing model
+MultimodalModel,AI Model,Multimodal reasoning model
+EvaluationModel,AI Model,Evaluation model
+FineTunedModel,AI Model,Domain adapted model
+InferenceEndpoint,Deployment,Inference endpoint
+Provider,Vendor,Model provider
+ModelArtifact,Artifact,Stored model artifact
+DeploymentProfile,Deployment,Deployment configuration
+LifecycleStage,Lifecycle,Operational stage
+RoutingPolicy,Governance,Model routing policy
+InferenceProfile,Execution,Inference configuration

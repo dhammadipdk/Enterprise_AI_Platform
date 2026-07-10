@@ -1,0 +1,30 @@
+scenario_id,scenario_name,driver_profile,key_observations,derived_intelligence,predictions,recommendations,expected_business_impact
+SCN-HUM-000001,Safe Daily Commuter,"Office Employee","Few harsh braking events;High compliance","Safety Index=94","Low claim probability","Standard Premium","Low insurance risk"
+
+SCN-HUM-000002,Aggressive Urban Driver,"Young Professional","Frequent speeding;Rapid acceleration","Aggressive Driving Index=86","Claim probability increase","Driver Coaching","Higher premium"
+
+SCN-HUM-000003,Long Distance Driver,"Sales Executive","Long highway sessions;Night driving","Fatigue Risk=73","Fatigue event likely","Rest Break Recommendation","Reduced accident risk"
+
+SCN-HUM-000004,Ride Hailing Driver,"Commercial Driver","High trip count;Urban congestion","Usage Intensity High","Brake wear increase","Usage-Based Insurance","Commercial risk profile"
+
+SCN-HUM-000005,Senior Citizen Driver,"Retired","Low mileage;Slow reaction","Reaction Risk Moderate","Low exposure","Defensive Driving Refresh","Stable premium"
+
+SCN-HUM-000006,Weekend Traveler,"Personal Vehicle","Mostly highway driving","Driver Trust Score=90","Low claim frequency","Maintain driving habits","Preferred customer"
+
+SCN-HUM-000007,Delivery Driver,"Logistics Fleet","Frequent stop-go driving","Aggressive Driving Medium","Brake replacement sooner","Driver Coaching","Fleet optimization"
+
+SCN-HUM-000008,Distracted Driver,"Frequent Phone User","High distraction duration","Distraction Risk=82","Collision probability increase","Phone-free driving recommendation","Higher risk"
+
+SCN-HUM-000009,Eco Driver,"Environment Conscious","Smooth acceleration;Low fuel consumption","Eco Driving Score=94","Vehicle life extension","Usage-Based Insurance","Lower operating cost"
+
+SCN-HUM-000010,Night Shift Worker,"Healthcare Professional","High night driving ratio","Fatigue Risk=78","Fatigue events likely","Driving schedule optimization","Reduced accident risk"
+
+SCN-HUM-000011,Fleet Safe Driver,"Corporate Fleet","Excellent compliance;Consistent driving","Driver Quality=96","Low future claims","Preferred Driver Program","Fleet discount"
+
+SCN-HUM-000012,New Driver,"Recently Licensed","Variable driving consistency","Trust Score=71","Skill improvement expected","Driving Assistance Program","Progressive premium adjustment"
+
+SCN-HUM-000013,Mountain Route Driver,"Hill Transport","Sharp cornering;Steep roads","Cornering Risk High","Brake wear increase","Mountain driving training","Reduced maintenance"
+
+SCN-HUM-000014,Luxury Vehicle Owner,"Premium Customer","Very smooth driving","Safety Index=98","Minimal claim probability","Premium loyalty benefits","High customer retention"
+
+SCN-HUM-000015,Commercial Bus Driver,"Passenger Transport","Long shifts;Heavy traffic","Fatigue and exposure elevated","Higher operational risk","Fatigue management program","Reduced severe claims"

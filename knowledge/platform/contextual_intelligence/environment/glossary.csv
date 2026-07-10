@@ -1,0 +1,21 @@
+term_id,term,business_definition
+ENV-001,Rainfall,Measured precipitation
+ENV-002,Flood,Overflow of water affecting land
+ENV-003,Waterlogging,Standing water on roads
+ENV-004,Humidity,Atmospheric moisture
+ENV-005,Temperature,Ambient air temperature
+ENV-006,Heatwave,Extended period of excessive heat
+ENV-007,Coldwave,Extended period of low temperature
+ENV-008,Cyclone,Tropical storm system
+ENV-009,Hailstorm,Frozen precipitation event
+ENV-010,Fog,Reduced visibility caused by suspended droplets
+ENV-011,Visibility,Distance clearly visible
+ENV-012,Wind Speed,Measured wind velocity
+ENV-013,Air Quality,Atmospheric pollution level
+ENV-014,Landslide,Movement of earth or rock
+ENV-015,Earthquake,Ground shaking event
+ENV-016,Coastal Exposure,Exposure to coastal environmental conditions
+ENV-017,Environmental Hazard,Natural condition increasing insurance risk
+ENV-018,Climate Pattern,Long-term environmental behaviour
+ENV-019,Weather Observation,Measured weather condition
+ENV-020,Environmental Risk,Derived environmental intelligence

@@ -1,0 +1,11 @@
+strategy_id,strategy_name,coordination_model,leader_required,parallel_execution,dynamic_replanning,fault_tolerant,description,status
+COORD-000001,Centralized Coordination,Supervisor,TRUE,TRUE,TRUE,TRUE,Supervisor manages all workers,Active
+COORD-000002,Hierarchical Coordination,Hierarchy,TRUE,TRUE,TRUE,TRUE,Hierarchical enterprise coordination,Active
+COORD-000003,Peer-to-Peer,Distributed,FALSE,TRUE,TRUE,TRUE,Collaborative peer coordination,Active
+COORD-000004,Swarm Coordination,Swarm,FALSE,TRUE,TRUE,TRUE,Large-scale distributed coordination,Active
+COORD-000005,Pipeline Coordination,Sequential,TRUE,FALSE,FALSE,TRUE,Pipeline execution,Active
+COORD-000006,Market-Based Coordination,Auction,FALSE,TRUE,TRUE,TRUE,Agents bid for work,Active
+COORD-000007,Consensus Coordination,Consensus,FALSE,FALSE,TRUE,TRUE,Consensus-driven execution,Active
+COORD-000008,Event-Driven Coordination,Reactive,FALSE,TRUE,TRUE,TRUE,Event-based orchestration,Active
+COORD-000009,Hybrid Coordination,Hybrid,TRUE,TRUE,TRUE,TRUE,Enterprise hybrid coordination,Active
+COORD-000010,Adaptive Coordination,Adaptive,Dynamic,TRUE,TRUE,TRUE,Adaptive runtime coordination,Active

@@ -1,0 +1,11 @@
+pattern_id,pattern_name,participating_agents,workflow_style,communication_protocol,coordination_strategy,best_use_case,description,status
+COLLAB-000001,Supervisor-Worker,1:N,Hierarchical,Task Assignment,Centralized Coordination,Enterprise workflows,Supervisor delegates to workers,Active
+COLLAB-000002,Planner-Executor,2,Sequential,Direct Request-Response,Pipeline Coordination,Workflow execution,Planner hands work to executor,Active
+COLLAB-000003,Reasoner-Recommender,2,Collaborative,Reasoning Exchange,Peer-to-Peer,Recommendation generation,Reasoner assists recommender,Active
+COLLAB-000004,Retriever-Reasoner,2,Sequential,Knowledge Sharing,Pipeline Coordination,GraphRAG workflows,Retriever supplies context,Active
+COLLAB-000005,Fraud Investigation Team,3+,Collaborative,Publish-Subscribe,Hierarchical Coordination,Fraud analysis,Fraud specialists collaborate,Active
+COLLAB-000006,Claims Processing Team,3+,Pipeline,Workflow Events,Pipeline Coordination,Claim settlement,Claims workflow collaboration,Active
+COLLAB-000007,Enterprise Decision Board,Multiple,Consensus,Consensus Voting,Consensus Coordination,Critical decisions,Consensus decision making,Active
+COLLAB-000008,Learning Loop,Multiple,Feedback,System Notification,Event-Driven Coordination,Continual learning,Execution improves memory,Active
+COLLAB-000009,Incident Response Team,Multiple,Reactive,Broadcast,Adaptive Coordination,System failures,Emergency coordination,Active
+COLLAB-000010,Enterprise AI Orchestra,All Agents,Hybrid,Publish-Subscribe,Hybrid Coordination,Enterprise AI platform,Complete multi-agent orchestration,Active

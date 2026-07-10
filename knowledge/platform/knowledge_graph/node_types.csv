@@ -1,0 +1,26 @@
+node_type_id,node_label,node_category,ontology_class,primary_identifier,business_domain,is_master_node,is_contextual_node,is_temporal,description,status
+NODE-000001,Customer,Actor,Customer,customer_id,Customer,TRUE,FALSE,TRUE,Insurance customer node,Active
+NODE-000002,Driver,Actor,Driver,driver_id,Driver,TRUE,FALSE,TRUE,Licensed driver node,Active
+NODE-000003,Vehicle,Asset,Vehicle,vehicle_id,Vehicle,TRUE,FALSE,TRUE,Vehicle asset node,Active
+NODE-000004,Policy,Contract,Policy,policy_number,Policy,TRUE,FALSE,TRUE,Insurance policy node,Active
+NODE-000005,Coverage,Insurance,Coverage,coverage_id,Coverage,FALSE,FALSE,FALSE,Coverage component node,Active
+NODE-000006,Claim,Business Object,Claim,claim_number,Claims,TRUE,FALSE,TRUE,Insurance claim node,Active
+NODE-000007,Repair,Business Process,Repair,repair_id,Repair,FALSE,FALSE,TRUE,Repair workflow node,Active
+NODE-000008,FraudCase,Risk Object,Fraud Case,fraud_case_id,Fraud,FALSE,TRUE,TRUE,Fraud investigation node,Active
+NODE-000009,Recommendation,Decision,Recommendation,recommendation_id,Recommendation,FALSE,TRUE,TRUE,Recommendation node,Active
+NODE-000010,Observation,Context,Observation,observation_id,Contextual Intelligence,FALSE,TRUE,TRUE,Observation node,Active
+NODE-000011,DerivedIntelligence,Analytics,Derived Intelligence,intelligence_id,Contextual Intelligence,FALSE,TRUE,TRUE,Derived intelligence node,Active
+NODE-000012,Evidence,Reasoning,Evidence,evidence_id,Reasoning,FALSE,TRUE,TRUE,Reasoning evidence node,Active
+NODE-000013,Hypothesis,Reasoning,Hypothesis,hypothesis_id,Reasoning,FALSE,TRUE,TRUE,Reasoning hypothesis node,Active
+NODE-000014,Decision,Decision,Decision,decision_id,Reasoning,FALSE,TRUE,TRUE,Decision node,Active
+NODE-000015,BusinessRule,Knowledge,Business Rule,rule_id,Reasoning,TRUE,FALSE,FALSE,Enterprise business rule node,Active
+NODE-000016,EnvironmentContext,Context,Environment Context,environment_context_id,Environment,FALSE,TRUE,TRUE,Environment context node,Active
+NODE-000017,VehicleBehaviourContext,Context,Vehicle Behaviour Context,vehicle_context_id,Vehicle Behaviour,FALSE,TRUE,TRUE,Vehicle behaviour context node,Active
+NODE-000018,HumanBehaviourContext,Context,Human Behaviour Context,human_context_id,Human Behaviour,FALSE,TRUE,TRUE,Human behaviour context node,Active
+NODE-000019,Organization,Enterprise,Organization,organization_id,Enterprise,TRUE,FALSE,FALSE,Insurance organization node,Active
+NODE-000020,Garage,Partner,Repair,garage_id,Repair,TRUE,FALSE,FALSE,Authorized repair workshop,Active
+NODE-000021,Surveyor,Actor,Surveyor,surveyor_id,Claims,TRUE,FALSE,FALSE,Insurance surveyor,Active
+NODE-000022,Payment,Financial,Payment,payment_id,Finance,FALSE,FALSE,TRUE,Claim payment node,Active
+NODE-000023,WeatherEvent,Environment,Weather Event,weather_event_id,Environment,FALSE,TRUE,TRUE,Weather event node,Active
+NODE-000024,RoadSegment,Infrastructure,Road Segment,road_segment_id,Infrastructure,TRUE,FALSE,TRUE,Road infrastructure node,Active
+NODE-000025,KnowledgeDocument,Knowledge,Document,document_id,Knowledge,TRUE,FALSE,FALSE,Knowledge repository document,Active

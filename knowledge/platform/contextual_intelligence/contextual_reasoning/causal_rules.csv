@@ -1,0 +1,16 @@
+causal_rule_id,cause_entity,cause_attribute,effect_entity,effect_attribute,relationship_type,causal_strength,evidence_level,confidence_score,time_lag,applicable_domains,reasoning_notes,status
+CAUSE-000001,Heavy Rain,Weather Severity,Road,Surface Friction,Causes,0.96,High,0.98,Immediate,Environment,"Rain reduces road friction.",Active
+CAUSE-000002,Road Surface,Road Friction,Vehicle,Stopping Distance,Causes,0.95,High,0.97,Immediate,Vehicle Behaviour,"Reduced grip increases braking distance.",Active
+CAUSE-000003,Stopping Distance,Increase,Accident,Collision Probability,Causes,0.93,High,0.96,Immediate,Claims,"Longer stopping distance increases crash probability.",Active
+CAUSE-000004,Aggressive Driving,Driving Score,Accident,Accident Probability,Causes,0.94,High,0.97,Immediate,Human Behaviour,"Aggressive drivers are statistically riskier.",Active
+CAUSE-000005,Vehicle Health,Mechanical Failure,Accident,Accident Probability,Causes,0.91,Medium,0.93,Immediate,Vehicle Behaviour,,Active
+CAUSE-000006,Night Driving,Visibility,Driver,Reaction Time,Causes,0.89,Medium,0.91,Immediate,Environment,,Active
+CAUSE-000007,Fraud Indicators,Fraud Score,Recommendation,SIU Assignment,Causes,0.98,High,0.99,None,Fraud,,Active
+CAUSE-000008,High Claim Severity,Reserve Requirement,Finance,Reserve Increase,Causes,0.95,High,0.97,None,Claims,,Active
+CAUSE-000009,Coverage Gap,Coverage Adequacy,Recommendation,Coverage Upgrade,Causes,0.90,Medium,0.92,None,Insurance,,Active
+CAUSE-000010,Customer Loyalty,Lifetime Value,Recommendation,Retention Offer,Causes,0.88,Medium,0.90,None,Customer,,Active
+CAUSE-000011,Repeated Claims,Claim Frequency,Fraud,Fraud Suspicion,Causes,0.92,High,0.95,None,Fraud,,Active
+CAUSE-000012,Poor Road Infrastructure,Road Hazard,Vehicle Damage,Damage Severity,Causes,0.87,Medium,0.89,Immediate,Infrastructure,,Active
+CAUSE-000013,Traffic Congestion,Travel Delay,Claim Processing,SLA Risk,Causes,0.81,Medium,0.86,Hours,Operations,,Active
+CAUSE-000014,Repair Delay,Repair Duration,Customer,Satisfaction,Causes,0.89,Medium,0.91,Days,Repair,,Active
+CAUSE-000015,Recommendation Acceptance,Business Action,Enterprise,Business Outcome,Causes,0.96,High,0.98,Days,Recommendation,,Active

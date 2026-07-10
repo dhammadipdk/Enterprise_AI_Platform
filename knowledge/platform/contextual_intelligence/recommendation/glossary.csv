@@ -1,0 +1,26 @@
+term_id,term,business_definition
+REC-001,Recommendation,System-generated actionable business decision
+REC-002,Next Best Action,Most appropriate action given current context
+REC-003,Recommendation Confidence,Estimated confidence in recommendation quality
+REC-004,Recommendation Priority,Business urgency assigned to recommendation
+REC-005,Business Impact,Expected organizational outcome of recommendation
+REC-006,Decision Context,Combined contextual information supporting a decision
+REC-007,Decision Confidence,Confidence associated with a generated decision
+REC-008,Recommendation Ranking,Relative ordering of candidate recommendations
+REC-009,Recommendation Explanation,Human-readable justification of recommendation
+REC-010,Action Cost,Estimated operational cost of executing recommendation
+REC-011,Expected Benefit,Projected value from recommendation
+REC-012,Risk Mitigation,Reduction of business risk through action
+REC-013,Operational Recommendation,Recommendation affecting operational workflow
+REC-014,Customer Recommendation,Recommendation directed toward customer engagement
+REC-015,Claim Recommendation,Recommendation related to claim lifecycle
+REC-016,Fraud Recommendation,Recommendation related to fraud investigation
+REC-017,Policy Recommendation,Recommendation affecting policy lifecycle
+REC-018,Coverage Recommendation,Recommendation related to insurance coverage
+REC-019,Recommendation Lifecycle,Stages through which recommendations evolve
+REC-020,Decision Trace,Audit trail describing recommendation generation
+REC-021,Business Rule,Business policy contributing to recommendation
+REC-022,Model Recommendation,Recommendation produced by AI models
+REC-023,Human Override,Manual modification of AI recommendation
+REC-024,Recommendation Feedback,Outcome feedback used for continuous learning
+REC-025,Recommendation Effectiveness,Measured effectiveness after execution

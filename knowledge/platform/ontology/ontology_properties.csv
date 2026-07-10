@@ -1,0 +1,21 @@
+property_id,property_name,property_type,applicable_entity,data_type,required,multi_valued,description,status
+PROP-000001,entity_id,Identifier,All,String,TRUE,FALSE,Unique ontology identifier,Active
+PROP-000002,name,Attribute,All,String,TRUE,FALSE,Business name,Active
+PROP-000003,description,Attribute,All,String,FALSE,FALSE,Business description,Active
+PROP-000004,status,State,All,String,TRUE,FALSE,Lifecycle status,Active
+PROP-000005,created_at,Metadata,All,Datetime,TRUE,FALSE,Creation timestamp,Active
+PROP-000006,updated_at,Metadata,All,Datetime,FALSE,FALSE,Last modification timestamp,Active
+PROP-000007,confidence_score,Metric,Evidence,Float,FALSE,FALSE,Confidence value,Active
+PROP-000008,risk_score,Metric,Derived Intelligence,Float,FALSE,FALSE,Calculated risk score,Active
+PROP-000009,priority,Decision,Recommendation,String,FALSE,FALSE,Recommendation priority,Active
+PROP-000010,severity,Metric,Claim,String,FALSE,FALSE,Claim severity level,Active
+PROP-000011,coverage_limit,Financial,Coverage,Decimal,FALSE,FALSE,Coverage amount,Active
+PROP-000012,premium_amount,Financial,Policy,Decimal,FALSE,FALSE,Premium amount,Active
+PROP-000013,vehicle_health,Metric,Vehicle,Float,FALSE,FALSE,Vehicle health index,Active
+PROP-000014,fraud_score,Metric,Fraud Case,Float,FALSE,FALSE,Fraud probability score,Active
+PROP-000015,decision_confidence,Decision,Decision,Float,FALSE,FALSE,Decision confidence,Active
+PROP-000016,reasoning_trace,Trace,Decision,String,FALSE,FALSE,Reasoning execution trace,Active
+PROP-000017,business_owner,Governance,Business Rule,String,FALSE,FALSE,Responsible owner,Active
+PROP-000018,lifecycle_state,Lifecycle,All,String,FALSE,FALSE,Current lifecycle state,Active
+PROP-000019,semantic_class,Semantic,All,String,FALSE,FALSE,Ontology semantic classification,Active
+PROP-000020,knowledge_domain,Semantic,All,String,FALSE,FALSE,Associated business domain,Active

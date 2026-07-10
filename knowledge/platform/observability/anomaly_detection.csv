@@ -1,0 +1,11 @@
+anomaly_id,anomaly_name,detection_scope,detection_method,baseline_source,confidence_threshold,response_action,business_impact,description,status
+ANOM-000001,Latency Spike,Performance,Statistical Detection,Historical Metrics,0.95,Generate Alert,Medium,Unexpected latency increase,Active
+ANOM-000002,Traffic Spike,Infrastructure,Time Series Forecasting,Traffic History,0.90,Scale Infrastructure,High,Unexpected workload increase,Active
+ANOM-000003,Knowledge Drift,Knowledge,Embedding Comparison,Knowledge Repository,0.92,Notify Knowledge Team,Medium,Knowledge distribution shift,Active
+ANOM-000004,Recommendation Drift,Business,Distribution Analysis,Recommendation History,0.94,Run Evaluation,High,Recommendation behavior changed,Active
+ANOM-000005,Model Drift,Models,Model Monitoring,Evaluation Results,0.95,Retrain Candidate,High,Model degradation,Active
+ANOM-000006,Agent Behavior Drift,Agents,Behavior Analytics,Agent History,0.93,Review Agent,Medium,Unexpected agent behavior,Active
+ANOM-000007,Security Anomaly,Security,Threat Detection,Security Logs,0.98,Escalate,Critical,Potential attack detected,Active
+ANOM-000008,Workflow Pattern Change,Execution,Sequence Mining,Workflow History,0.90,Investigate,Medium,Workflow behavior deviation,Active
+ANOM-000009,Customer Behavior Shift,Business,Behavior Analytics,Customer Profiles,0.91,Business Review,Medium,Customer behavior change,Active
+ANOM-000010,Enterprise Platform Drift,Enterprise,Composite Analysis,Platform Metrics,0.95,Governance Review,Critical,Enterprise-wide anomaly,Active

@@ -1,0 +1,11 @@
+rule_id,alert_id,evaluation_metric,comparison_operator,threshold_value,evaluation_window,suppression_period,escalation_policy,description,status
+ARULE-000001,ALERT-000001,Knowledge Latency,>,1000 ms,5 Minutes,10 Minutes,Knowledge Team,Knowledge retrieval latency threshold,Active
+ARULE-000002,ALERT-000002,Memory Availability,<,99.5%,5 Minutes,5 Minutes,Platform Team,Memory availability threshold,Active
+ARULE-000003,ALERT-000003,Planning Latency,>,3000 ms,5 Minutes,10 Minutes,Planning Team,Planning SLA exceeded,Active
+ARULE-000004,ALERT-000004,Workflow Success Rate,<,98%,15 Minutes,10 Minutes,Operations Team,Workflow failure threshold,Active
+ARULE-000005,ALERT-000005,Agent Health,<,95%,5 Minutes,5 Minutes,AI Platform Team,Agent health degradation,Active
+ARULE-000006,ALERT-000006,Recommendation Accuracy,<,90%,1 Hour,30 Minutes,Business Team,Recommendation quality threshold,Active
+ARULE-000007,ALERT-000007,Governance Compliance,<,100%,Immediate,None,Governance Board,Governance violation rule,Active
+ARULE-000008,ALERT-000008,Security Severity,>=,Critical,Immediate,None,Security Operations,Critical security events,Active
+ARULE-000009,ALERT-000009,Model Drift Score,>,5%,1 Day,12 Hours,MLOps Team,Model drift threshold,Active
+ARULE-000010,ALERT-000010,System Availability,<,99.9%,1 Minute,None,SRE Team,Platform uptime threshold,Active

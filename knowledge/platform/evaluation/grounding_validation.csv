@@ -1,0 +1,11 @@
+grounding_id,validation_name,evidence_source,validation_strategy,minimum_evidence_items,citation_required,confidence_threshold,failure_action,description,status
+GRND-000001,Knowledge Grounding,Knowledge Base,Exact Match,1,TRUE,0.95,Reject Response,Ground against enterprise knowledge,Active
+GRND-000002,Knowledge Graph Grounding,Knowledge Graph,Graph Traversal,2,TRUE,0.96,Review,Ground using graph relationships,Active
+GRND-000003,Policy Grounding,Policy Repository,Policy Lookup,1,TRUE,0.98,Reject Response,Ground recommendations in policy,Active
+GRND-000004,Regulatory Grounding,Regulatory Knowledge,Compliance Validation,1,TRUE,0.99,Escalate,Ground regulatory statements,Active
+GRND-000005,Claim Grounding,Claims Repository,Historical Comparison,2,TRUE,0.95,Review,Ground claim decisions,Active
+GRND-000006,Recommendation Grounding,Recommendation History,Similarity Search,3,TRUE,0.94,Regenerate,Ground recommendations,Active
+GRND-000007,Reasoning Grounding,Reasoning Trace,Evidence Chain,2,TRUE,0.95,Review,Ground reasoning chain,Active
+GRND-000008,Workflow Grounding,Execution Logs,Execution Trace,1,FALSE,0.93,Retry Workflow,Ground execution decisions,Active
+GRND-000009,Agent Grounding,Agent Memory,Memory Validation,2,FALSE,0.94,Replan,Ground agent decisions,Active
+GRND-000010,Enterprise Grounding,Hybrid Sources,Multi-source Validation,3,TRUE,0.97,Reject Response,Enterprise-wide grounding validation,Active

@@ -1,0 +1,11 @@
+security_control_id,control_name,protected_component,authentication_required,authorization_required,encryption_required,signature_validation,description,status
+INTSEC-000001,API Authentication,REST APIs,TRUE,TRUE,TRUE,FALSE,Secure API access,Active
+INTSEC-000002,Service Authentication,gRPC Services,TRUE,TRUE,TRUE,FALSE,Mutual service authentication,Active
+INTSEC-000003,Webhook Validation,Webhooks,TRUE,TRUE,TRUE,TRUE,Webhook signature verification,Active
+INTSEC-000004,Message Encryption,Message Broker,FALSE,FALSE,TRUE,FALSE,Encrypted messaging,Active
+INTSEC-000005,Connector Security,External Connectors,TRUE,TRUE,TRUE,FALSE,Secure connectors,Active
+INTSEC-000006,Streaming Protection,Kafka Streams,TRUE,TRUE,TRUE,FALSE,Protected event streaming,Active
+INTSEC-000007,Queue Protection,Queues,TRUE,TRUE,TRUE,FALSE,Secure queue operations,Active
+INTSEC-000008,Gateway Security,API Gateway,TRUE,TRUE,TRUE,FALSE,Gateway security policies,Active
+INTSEC-000009,MCP Security,MCP Services,TRUE,TRUE,TRUE,TRUE,Secure MCP communication,Active
+INTSEC-000010,Enterprise Zero Trust,Entire Integration Layer,TRUE,TRUE,TRUE,TRUE,Zero trust integration model,Active

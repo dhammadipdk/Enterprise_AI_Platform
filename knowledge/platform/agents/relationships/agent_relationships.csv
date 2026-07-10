@@ -1,0 +1,16 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_learning_edge,is_security_edge,is_governance_edge,description,status
+AREL-000001,Agent,HAS,Role,Identity,N:1,FALSE,FALSE,FALSE,TRUE,Agent assigned business role,Active
+AREL-000002,Agent,HAS,Capability,Capability,N:N,TRUE,FALSE,FALSE,FALSE,Agent possesses capability,Active
+AREL-000003,Capability,USES,Tool,Execution,N:N,TRUE,FALSE,FALSE,FALSE,Capability invokes tools,Active
+AREL-000004,Agent,USES,MemoryProfile,Memory,1:1,TRUE,TRUE,FALSE,FALSE,Agent memory configuration,Active
+AREL-000005,Agent,FOLLOWS,CommunicationProtocol,Communication,N:N,TRUE,FALSE,FALSE,FALSE,Agent communication protocol,Active
+AREL-000006,Agent,DELEGATES_TO,Agent,Delegation,N:N,TRUE,FALSE,FALSE,TRUE,Task delegation,Active
+AREL-000007,CoordinatorAgent,COORDINATES,WorkerAgent,Coordination,1:N,TRUE,FALSE,FALSE,FALSE,Coordinator manages workers,Active
+AREL-000008,PlanningAgent,HANDS_PLAN_TO,ExecutionAgent,Execution,1:N,TRUE,FALSE,FALSE,FALSE,Planning to execution handoff,Active
+AREL-000009,ExecutionAgent,UPDATES,EnterpriseMemory,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Execution updates memory,Active
+AREL-000010,LearningAgent,IMPROVES,Agent,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves agents,Active
+AREL-000011,Agent,MEASURED_BY,AgentMetric,Monitoring,N:N,TRUE,FALSE,FALSE,FALSE,Agent performance metrics,Active
+AREL-000012,Agent,GOVERNED_BY,AgentSecurity,Security,N:1,TRUE,FALSE,TRUE,TRUE,Security policy assignment,Active
+AREL-000013,Agent,FOLLOWS,Lifecycle,Runtime,1:1,TRUE,FALSE,FALSE,FALSE,Runtime lifecycle management,Active
+AREL-000014,Agent,COLLABORATES_WITH,Agent,Collaboration,N:N,TRUE,FALSE,FALSE,FALSE,Peer collaboration,Active
+AREL-000015,Agent,REPORTS_TO,CoordinatorAgent,Governance,N:1,TRUE,FALSE,FALSE,TRUE,Supervisor hierarchy,Active

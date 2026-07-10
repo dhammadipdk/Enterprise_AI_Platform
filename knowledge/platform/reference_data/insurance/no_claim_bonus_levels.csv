@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-NCB-000001,NCB_0,0%,No accumulated no-claim bonus,Active,2026-01-01,,IRDAI,
+REF-NCB-000002,NCB_20,20%,First eligible NCB level,Active,2026-01-01,,IRDAI,
+REF-NCB-000003,NCB_25,25%,Second eligible NCB level,Active,2026-01-01,,IRDAI,
+REF-NCB-000004,NCB_35,35%,Third eligible NCB level,Active,2026-01-01,,IRDAI,
+REF-NCB-000005,NCB_45,45%,Fourth eligible NCB level,Active,2026-01-01,,IRDAI,
+REF-NCB-000006,NCB_50,50%,Maximum standard NCB level,Active,2026-01-01,,IRDAI,

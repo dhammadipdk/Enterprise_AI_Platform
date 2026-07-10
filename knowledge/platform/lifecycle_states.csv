@@ -1,0 +1,5 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+LC-000001,Stable,Rarely changes after creation.,Lifecycle,1,Active,1.0.0,,
+LC-000002,Dynamic,May change during business lifecycle.,Lifecycle,2,Active,1.0.0,,
+LC-000003,Computed,Derived automatically from other information.,Lifecycle,3,Active,1.0.0,,
+LC-000004,Historical,Retained for historical reference.,Lifecycle,4,Active,1.0.0,,

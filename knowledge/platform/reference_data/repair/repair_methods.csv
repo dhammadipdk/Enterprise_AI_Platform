@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-METHOD-000001,REPAIR,Repair,Repair existing component,Active,2026-01-01,,Industry,
+REF-METHOD-000002,REPLACE,Replace,Replace damaged component,Active,2026-01-01,,Industry,
+REF-METHOD-000003,RESTORE,Restore,Restore component to original condition,Active,2026-01-01,,Industry,
+REF-METHOD-000004,RECONDITION,Recondition,Recondition worn component,Active,2026-01-01,,Industry,
+REF-METHOD-000005,REFINISH,Refinish,Paint or cosmetic refinishing,Active,2026-01-01,,Industry,
+REF-METHOD-000006,CALIBRATE,Calibrate,Electronic system calibration,Active,2026-01-01,,Industry,
+REF-METHOD-000007,CLEAN,Clean,Clean or flush affected systems,Active,2026-01-01,,Industry,
+REF-METHOD-000008,INSPECT,Inspect,Inspection without repair,Active,2026-01-01,,Industry,

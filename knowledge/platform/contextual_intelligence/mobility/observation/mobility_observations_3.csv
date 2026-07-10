@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-MOB3-000001,MOBILITY,CITY,MUM,Mumbai,Public Transport Share,Modal Share,%,56,2026-07-01T00:00:00Z,Mumbai,Annual,Government,MoHUA,Survey,0.96,0.95,v1.0,
+OBS-MOB3-000002,MOBILITY,CITY,DEL,Delhi,Ride Sharing Density,Rides/day,count,128000,2026-07-01T00:00:00Z,Delhi,Daily,Enterprise,Aggregated Platform Data,Analytics,0.95,0.94,v1.0,
+OBS-MOB3-000003,MOBILITY,CITY,BLR,Bengaluru,Fleet Vehicle Density,Vehicles,count,24500,2026-07-01T00:00:00Z,Bengaluru,Daily,Enterprise,Fleet Registry,Analytics,0.95,0.94,v1.0,
+OBS-MOB3-000004,MOBILITY,CITY,CHE,Chennai,Commercial Vehicle Ratio,Commercial Vehicles,%,21,2026-07-01T00:00:00Z,Chennai,Annual,Government,Transport Dept,Statistics,0.95,0.94,v1.0,
+OBS-MOB3-000005,MOBILITY,CITY,KOL,Kolkata,Freight Traffic,Heavy Vehicles/day,count,18500,2026-07-01T00:00:00Z,Kolkata,Daily,FASTag,NHAI,Aggregated,0.96,0.95,v1.0,
+OBS-MOB3-000006,MOBILITY,CITY,PUN,Pune,Highway Utilization,Road Utilization,%,82,2026-07-01T00:00:00Z,Pune,Daily,NHAI,FASTag,Aggregated,0.96,0.95,v1.0,
+OBS-MOB3-000007,MOBILITY,CITY,GOA,Panaji,Tourist Vehicle Share,Vehicle Share,%,44,2026-07-01T00:00:00Z,Goa,Seasonal,Tourism Board,Analytics,Survey,0.93,0.92,v1.0,
+OBS-MOB3-000008,MOBILITY,CITY,AHM,Ahmedabad,EV Mobility Share,EV Share,%,14,2026-07-01T00:00:00Z,Ahmedabad,Annual,Government,Vahan,Statistics,0.95,0.94,v1.0,
+OBS-MOB3-000009,MOBILITY,STATE,KA,Karnataka,Toll Utilization,Toll Transactions,million/month,18.6,2026-07-01T00:00:00Z,Karnataka,Monthly,NHAI,FASTag,Aggregated,0.97,0.96,v1.0,
+OBS-MOB3-000010,MOBILITY,ROAD_SEGMENT,NH48,NH-48,Freight Utilization,Heavy Vehicle Share,%,34,2026-07-01T00:00:00Z,NH-48,Daily,NHAI,FASTag,Aggregated,0.97,0.96,v1.0,
+OBS-MOB3-000011,MOBILITY,DISTRICT,PUNE,Pune District,Daily Fleet Trips,Trips/day,count,86500,2026-07-01T00:00:00Z,Pune District,Daily,Enterprise,Fleet GPS,Analytics,0.95,0.94,v1.0,
+OBS-MOB3-000012,MOBILITY,CITY,SHI,Shimla,Tourist Mobility Share,Trips,%,52,2026-07-01T00:00:00Z,Shimla,Seasonal,Tourism Board,Analytics,Survey,0.93,0.92,v1.0,

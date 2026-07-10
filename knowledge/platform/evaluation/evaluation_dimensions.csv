@@ -1,0 +1,11 @@
+dimension_id,dimension_name,evaluation_scope,business_importance,measurement_frequency,primary_metric,description,status
+DIM-000001,Knowledge Quality,Knowledge,Critical,Daily,Knowledge Accuracy,Enterprise knowledge correctness,Active
+DIM-000002,Memory Quality,Memory,High,Daily,Memory Recall,Memory effectiveness,Active
+DIM-000003,Retrieval Quality,Retrieval,Critical,Realtime,Recall@K,Knowledge retrieval quality,Active
+DIM-000004,Reasoning Quality,Reasoning,Critical,Realtime,Reasoning Accuracy,AI reasoning correctness,Active
+DIM-000005,Planning Quality,Planning,High,Realtime,Plan Success Rate,Planning effectiveness,Active
+DIM-000006,Execution Quality,Execution,Critical,Realtime,Workflow Success,Execution reliability,Active
+DIM-000007,Agent Quality,Agents,Critical,Realtime,Task Success Rate,Agent effectiveness,Active
+DIM-000008,Recommendation Quality,Business,Critical,Daily,Recommendation Acceptance,Business recommendation quality,Active
+DIM-000009,Governance Quality,Compliance,High,Daily,Policy Compliance,Governance adherence,Active
+DIM-000010,Business Value,Enterprise,Critical,Monthly,Business ROI,Enterprise impact,Active

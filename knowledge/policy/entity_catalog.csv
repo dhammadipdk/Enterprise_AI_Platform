@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-POL-000001,Policy,Represents an issued insurance contract between an insurer and a policyholder.,Aggregate Root,,GLOSS-POL-000001,Policy Number,Dynamic,Policy,Root aggregate of the Policy domain.
+ENT-POL-000002,Policy Holder,Represents the customer legally owning the policy.,Entity,Policy,GLOSS-POL-000011,,Dynamic,Policy,References Customer aggregate.
+ENT-POL-000003,Policy Vehicle,Represents the insured vehicle associated with the policy.,Entity,Policy,GLOSS-POL-000021,,Dynamic,Policy,References Vehicle aggregate.
+ENT-POL-000004,Policy Driver,Represents the declared or insured driver associated with the policy.,Entity,Policy,GLOSS-POL-000031,,Dynamic,Policy,References Driver aggregate.
+ENT-POL-000005,Selected Coverage,Represents canonical coverages purchased under the issued policy.,Entity,Policy,GLOSS-POL-000041,,Dynamic,Policy,References Coverage aggregate.
+ENT-POL-000006,Policy Premium,Represents financial information and premium calculations for the policy.,Entity,Policy,GLOSS-POL-000051,,Dynamic,Policy,Supports billing and servicing.
+ENT-POL-000007,Endorsement,Represents modifications applied to an issued policy after issuance.,Entity,Policy,GLOSS-POL-000061,,Dynamic,Policy,Maintains policy history.
+ENT-POL-000008,Renewal,Represents renewal transactions associated with the policy.,Entity,Policy,GLOSS-POL-000071,,Dynamic,Policy,Supports policy continuity.
+ENT-POL-000009,Policy Lifecycle,Represents operational lifecycle and governance of the issued policy.,Entity,Policy,GLOSS-POL-000081,,Dynamic,Policy,Supports workflow management.
+ENT-POL-000010,Policy Assessment,Represents AI-generated assessment, explainability and operational intelligence associated with the policy.,Entity,Policy,GLOSS-POL-000091,,Computed,Policy,Contains derived business knowledge.

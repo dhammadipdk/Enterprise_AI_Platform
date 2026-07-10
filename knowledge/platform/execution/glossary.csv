@@ -1,0 +1,21 @@
+term_id,term,business_definition
+EXEC-001,Execution,Runtime realization of a plan
+EXEC-002,Workflow,Ordered execution process
+EXEC-003,Execution Task,Runtime task
+EXEC-004,Execution Step,Atomic runtime operation
+EXEC-005,Checkpoint,Saved execution state
+EXEC-006,Rollback,Undo execution
+EXEC-007,Compensation,Business recovery action
+EXEC-008,Retry,Repeat failed execution
+EXEC-009,Execution Context,Runtime state
+EXEC-010,Execution Event,Runtime event
+EXEC-011,Execution Audit,Audit trail
+EXEC-012,Execution State,Current lifecycle state
+EXEC-013,Tool,External capability
+EXEC-014,Tool Invocation,Execution of tool
+EXEC-015,Execution Policy,Execution governance
+EXEC-016,Execution Metrics,Runtime KPIs
+EXEC-017,Recovery,Failure handling
+EXEC-018,Workflow Instance,Running workflow
+EXEC-019,Human Approval,Manual execution gate
+EXEC-020,Execution Trace,Runtime history

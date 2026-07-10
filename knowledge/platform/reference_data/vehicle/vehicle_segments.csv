@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-VSEG-000001,A,A Segment,Entry level hatchback,Active,2026-01-01,,Industry,
+REF-VSEG-000002,B,B Segment,Compact hatchback/sedan,Active,2026-01-01,,Industry,
+REF-VSEG-000003,C,C Segment,Mid-size vehicles,Active,2026-01-01,,Industry,
+REF-VSEG-000004,D,D Segment,Executive vehicles,Active,2026-01-01,,Industry,
+REF-VSEG-000005,E,E Segment,Luxury vehicles,Active,2026-01-01,,Industry,
+REF-VSEG-000006,F,F Segment,Premium luxury vehicles,Active,2026-01-01,,Industry,
+REF-VSEG-000007,COMPACT_SUV,Compact SUV,Compact crossover SUVs,Active,2026-01-01,,Industry,
+REF-VSEG-000008,MID_SUV,Mid-size SUV,Mid-size SUVs,Active,2026-01-01,,Industry,
+REF-VSEG-000009,FULL_SIZE_SUV,Full-size SUV,Large SUVs,Active,2026-01-01,,Industry,
+REF-VSEG-000010,MPV,MPV,Multi-purpose vehicles,Active,2026-01-01,,Industry,

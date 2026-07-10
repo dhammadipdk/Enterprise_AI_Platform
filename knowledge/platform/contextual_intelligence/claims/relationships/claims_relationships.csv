@@ -1,0 +1,48 @@
+relationship_id,source_context,relationship_type,target_context,relationship_strength,relationship_nature,evidence_level,confidence_score,model_reference,remarks
+REL-CLM-000001,Claim Reporting Delay,INCREASES,Fraud Risk,0.96,Causal,High,0.97,MODEL-CLM-001,
+REL-CLM-000002,Multiple Fraud Indicators,INCREASES,Investigation Requirement,0.98,Causal,High,0.98,MODEL-CLM-002,
+REL-CLM-000003,Investigation Requirement,INCREASES,Claim Processing Time,0.94,Causal,High,0.95,MODEL-CLM-003,
+REL-CLM-000004,Claim Processing Time,DECREASES,Customer Satisfaction,0.93,Causal,High,0.94,MODEL-CLM-004,
+REL-CLM-000005,Customer Satisfaction,INCREASES,Renewal Probability,0.91,Correlational,Medium,0.92,MODEL-CLM-005,
+
+REL-CLM-000006,Damage Severity,INCREASES,Repair Cost,0.98,Causal,High,0.98,MODEL-CLM-006,
+REL-CLM-000007,Repair Cost,INCREASES,Reserve Amount,0.96,Causal,High,0.97,MODEL-CLM-007,
+REL-CLM-000008,Reserve Amount,INFLUENCES,Settlement Amount,0.92,Causal,High,0.93,MODEL-CLM-008,
+REL-CLM-000009,Settlement Amount,DECREASES,Reserve Balance,0.95,Causal,High,0.96,MODEL-CLM-009,
+REL-CLM-000010,Reserve Accuracy,DECREASES,Financial Leakage,0.91,Causal,High,0.92,MODEL-CLM-010,
+
+REL-CLM-000011,Document Completeness,DECREASES,Investigation Time,0.92,Causal,High,0.93,MODEL-CLM-011,
+REL-CLM-000012,Photo Evidence Quality,INCREASES,Damage Assessment Confidence,0.95,Causal,High,0.96,MODEL-CLM-012,
+REL-CLM-000013,Video Evidence,INCREASES,Claim Validation Confidence,0.94,Causal,High,0.95,MODEL-CLM-013,
+REL-CLM-000014,Witness Statement,INCREASES,Evidence Strength,0.90,Correlational,Medium,0.91,MODEL-CLM-014,
+REL-CLM-000015,Police FIR,INCREASES,Legal Confidence,0.94,Causal,High,0.95,MODEL-CLM-015,
+
+REL-CLM-000016,Surveyor Experience,INCREASES,Assessment Accuracy,0.95,Causal,High,0.96,MODEL-CLM-016,
+REL-CLM-000017,Assessment Accuracy,DECREASES,Claim Leakage,0.91,Causal,High,0.92,MODEL-CLM-017,
+REL-CLM-000018,OEM Repair,INCREASES,Repair Quality,0.92,Correlational,Medium,0.93,MODEL-CLM-018,
+REL-CLM-000019,Repair Quality,DECREASES,Repeat Claims,0.88,Correlational,Medium,0.89,MODEL-CLM-019,
+REL-CLM-000020,Repair Delay,DECREASES,Customer Satisfaction,0.91,Causal,High,0.92,MODEL-CLM-020,
+
+REL-CLM-000021,Third Party Liability,INCREASES,Recovery Opportunity,0.95,Causal,High,0.96,MODEL-CLM-021,
+REL-CLM-000022,Recovery Opportunity,INCREASES,Recovery Amount,0.94,Causal,High,0.95,MODEL-CLM-022,
+REL-CLM-000023,Recovery Amount,DECREASES,Net Claim Cost,0.96,Causal,High,0.97,MODEL-CLM-023,
+REL-CLM-000024,Salvage Value,DECREASES,Net Claim Cost,0.93,Causal,High,0.94,MODEL-CLM-024,
+REL-CLM-000025,Subrogation Success,INCREASES,Recovery Amount,0.94,Causal,High,0.95,MODEL-CLM-025,
+
+REL-CLM-000026,Litigation,INCREASES,Claim Processing Time,0.96,Causal,High,0.97,MODEL-CLM-026,
+REL-CLM-000027,Litigation,INCREASES,Operational Cost,0.94,Causal,High,0.95,MODEL-CLM-027,
+REL-CLM-000028,Operational Cost,DECREASES,Claim Profitability,0.91,Causal,High,0.92,MODEL-CLM-028,
+REL-CLM-000029,Fraud Detection,DECREASES,Fraud Losses,0.95,Causal,High,0.96,MODEL-CLM-029,
+REL-CLM-000030,AI Damage Assessment,DECREASES,Assessment Time,0.90,Causal,High,0.91,MODEL-CLM-030,
+
+REL-CLM-000031,AI Damage Assessment,INCREASES,Assessment Consistency,0.91,Correlational,Medium,0.92,MODEL-CLM-031,
+REL-CLM-000032,Claim Complexity,INCREASES,Manual Review Requirement,0.95,Causal,High,0.96,MODEL-CLM-032,
+REL-CLM-000033,Manual Review,INCREASES,Decision Quality,0.89,Correlational,Medium,0.90,MODEL-CLM-033,
+REL-CLM-000034,Claim Health Index,INCREASES,Straight Through Processing Eligibility,0.92,Causal,High,0.93,MODEL-CLM-034,
+REL-CLM-000035,Straight Through Processing,DECREASES,Settlement Time,0.95,Causal,High,0.96,MODEL-CLM-035,
+
+REL-CLM-000036,High Customer Satisfaction,INCREASES,Brand Trust,0.91,Correlational,Medium,0.92,MODEL-CLM-036,
+REL-CLM-000037,Brand Trust,INCREASES,Customer Retention,0.92,Correlational,Medium,0.93,MODEL-CLM-037,
+REL-CLM-000038,Customer Retention,INCREASES,Lifetime Value,0.94,Causal,High,0.95,MODEL-CLM-038,
+REL-CLM-000039,Claim Leakage,DECREASES,Insurer Profitability,0.96,Causal,High,0.97,MODEL-CLM-039,
+REL-CLM-000040,Efficient Claim Handling,INCREASES,Overall Business Performance,0.94,Causal,High,0.95,MODEL-CLM-040,

@@ -1,0 +1,16 @@
+planning_context_id,planning_stage,entity_type,entity_id,related_entity,action,current_state,next_state,business_context
+PLANCTX-000001,Goal Definition,Goal,GOAL-000006,None,Create Goal,Defined,Objective Generation,Customer requests policy recommendation
+PLANCTX-000002,Objective Generation,Objective,OBJ-1001,GOAL-000006,Generate Objectives,Defined,Task Decomposition,Recommend best policy with highest coverage
+PLANCTX-000003,Task Planning,Task,TASK-000001,OBJ-1001,Retrieve Customer Context,Pending,Executing,Load customer profile
+PLANCTX-000004,Task Planning,Task,TASK-000002,TASK-000001,Retrieve Knowledge Graph,Pending,Executing,Load enterprise graph
+PLANCTX-000005,Task Planning,Task,TASK-000003,TASK-000002,Retrieve Semantic Memory,Pending,Executing,Retrieve policy knowledge
+PLANCTX-000006,Context Building,Task,TASK-000004,TASK-000003,Merge Context,Pending,Executing,Build unified enterprise context
+PLANCTX-000007,Reasoning,Task,TASK-000005,TASK-000004,Perform Risk Assessment,Pending,Executing,Assess customer risk
+PLANCTX-000008,Reasoning,PlanningDecision,DEC-1001,TASK-000005,Select Recommendation Strategy,Generated,Recommendation Generation,Determine recommendation path
+PLANCTX-000009,Recommendation,Task,TASK-000006,DEC-1001,Generate Recommendation,Pending,Executing,Produce policy recommendation
+PLANCTX-000010,Governance,Task,TASK-000007,TASK-000006,Validate Business Rules,Pending,Executing,Ensure compliance
+PLANCTX-000011,Explainability,Task,TASK-000008,TASK-000007,Generate Explanation,Pending,Executing,Explain recommendation
+PLANCTX-000012,Approval,Task,TASK-000009,TASK-000007,Human Approval,Optional,Approved,Manual review if required
+PLANCTX-000013,Execution,ExecutionPlan,PLAN-000007,TASK-000009,Execute Recommendation,Executing,Completed,Deliver recommendation
+PLANCTX-000014,Learning,EnterpriseMemory,MEM-1001,PLAN-000007,Store Planning Experience,Pending,Stored,Update enterprise memory
+PLANCTX-000015,Continuous Improvement,PlanningMetric,PMET-000003,PLAN-000007,Evaluate Plan Quality,Completed,Archived,Capture planning performance

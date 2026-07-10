@@ -1,0 +1,10 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-FUEL-000001,PETROL,Petrol,Gasoline fuel,Active,2026-01-01,,MoRTH,
+REF-FUEL-000002,DIESEL,Diesel,Compression ignition fuel,Active,2026-01-01,,MoRTH,
+REF-FUEL-000003,CNG,CNG,Compressed Natural Gas,Active,2026-01-01,,MoRTH,
+REF-FUEL-000004,LPG,LPG,Liquefied Petroleum Gas,Active,2026-01-01,,MoRTH,
+REF-FUEL-000005,ELECTRIC,Electric,Battery electric vehicle,Active,2026-01-01,,MoRTH,
+REF-FUEL-000006,HYBRID,Hybrid,Hybrid electric vehicle,Active,2026-01-01,,MoRTH,
+REF-FUEL-000007,PLUGIN_HYBRID,Plug-in Hybrid,Plug-in hybrid electric vehicle,Active,2026-01-01,,MoRTH,
+REF-FUEL-000008,HYDROGEN,Hydrogen,Hydrogen fuel-cell vehicle,Active,2026-01-01,,MoRTH,
+REF-FUEL-000009,FLEX_FUEL,Flex Fuel,Supports multiple compatible fuels,Active,2026-01-01,,MoRTH,

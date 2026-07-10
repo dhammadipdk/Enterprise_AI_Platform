@@ -1,0 +1,11 @@
+event_bus_id,event_bus_name,implementation,message_ordering,exactly_once_delivery,dead_letter_queue,schema_validation,multi_region,description,status
+BUS-000001,Enterprise Event Bus,Apache Kafka,Per Topic,FALSE,TRUE,TRUE,TRUE,Primary enterprise event backbone,Active
+BUS-000002,Critical Events Bus,Apache Kafka,Global,TRUE,TRUE,TRUE,TRUE,Critical governance and security events,Active
+BUS-000003,Telemetry Bus,Apache Kafka,None,FALSE,TRUE,TRUE,TRUE,Telemetry streaming backbone,Active
+BUS-000004,Agent Event Bus,NATS,None,FALSE,TRUE,TRUE,FALSE,Low-latency agent messaging,Active
+BUS-000005,Workflow Event Bus,RabbitMQ,Queue,FALSE,TRUE,TRUE,FALSE,Workflow execution events,Active
+BUS-000006,Notification Bus,RabbitMQ,None,FALSE,TRUE,FALSE,FALSE,Notification delivery,Active
+BUS-000007,Audit Bus,Apache Kafka,Global,TRUE,TRUE,TRUE,TRUE,Immutable audit event stream,Active
+BUS-000008,Security Bus,Apache Kafka,Global,TRUE,TRUE,TRUE,TRUE,Security monitoring events,Active
+BUS-000009,Integration Bus,Apache Camel,None,FALSE,TRUE,TRUE,FALSE,Enterprise system integrations,Active
+BUS-000010,Development Bus,Redis Streams,None,FALSE,FALSE,FALSE,FALSE,Development and testing event bus,Active

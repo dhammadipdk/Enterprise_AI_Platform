@@ -1,0 +1,11 @@
+workflow_id,workflow_name,approval_scope,trigger_condition,approval_level,parallel_approval,timeout_hours,escalation_policy,final_decision_authority,description,status
+APWF-000001,High Risk Recommendation,Recommendation,Risk Score >= High,Level 3,FALSE,24,Escalate to Governance Board,Business Owner,Approve high-risk recommendations,Active
+APWF-000002,Claim Settlement Approval,Claims,Settlement > Threshold,Level 2,FALSE,12,Escalate to Claims Manager,Claims Manager,Large claim approval,Active
+APWF-000003,Fraud Investigation Approval,Fraud,Fraud Confidence > 0.90,Level 3,TRUE,24,Escalate to Fraud Head,Fraud Investigation Head,Fraud case approval,Active
+APWF-000004,Knowledge Update Approval,Knowledge,Knowledge Modified,Level 2,FALSE,48,Knowledge Governance Review,Knowledge Owner,Knowledge publication approval,Active
+APWF-000005,Planning Override Approval,Planning,Policy Override Requested,Level 3,FALSE,12,Governance Escalation,AI Governance Board,Planning override approval,Active
+APWF-000006,Execution Rollback Approval,Execution,Rollback Requested,Level 2,FALSE,6,Operations Escalation,Operations Lead,Rollback authorization,Active
+APWF-000007,Agent Registration Approval,Agents,New Agent Created,Level 2,FALSE,24,AI Platform Review,Platform Administrator,Approve new agent,Active
+APWF-000008,Model Deployment Approval,Models,Production Deployment,Level 3,TRUE,48,MLOps Review,MLOps Lead,Approve production models,Active
+APWF-000009,Policy Exception Approval,Governance,Exception Requested,Level 4,TRUE,72,Executive Review,Chief Compliance Officer,Policy exception approval,Active
+APWF-000010,Enterprise Governance Review,Enterprise,Critical Governance Decision,Level 5,TRUE,120,Executive Board,Executive Board,Enterprise governance approval,Active

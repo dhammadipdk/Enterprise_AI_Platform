@@ -1,0 +1,11 @@
+approval_level_id,level_name,authority_scope,risk_limit,max_financial_limit,human_required,multi_approval_required,description,status
+APPLEVEL-000001,Level 1,Operational,Low,50000,TRUE,FALSE,Routine operational approvals,Active
+APPLEVEL-000002,Level 2,Managerial,Medium,500000,TRUE,FALSE,Department approvals,Active
+APPLEVEL-000003,Level 3,Governance,High,5000000,TRUE,TRUE,Governance board approval,Active
+APPLEVEL-000004,Level 4,Compliance,Critical,10000000,TRUE,TRUE,Compliance authority approval,Active
+APPLEVEL-000005,Level 5,Executive,Enterprise,Unlimited,TRUE,TRUE,Executive board approval,Active
+APPLEVEL-000006,Automatic Approval,System,None,10000,FALSE,FALSE,Automatic approval,Active
+APPLEVEL-000007,Emergency Approval,Emergency,Critical,Unlimited,TRUE,TRUE,Break-glass approval,Active
+APPLEVEL-000008,Regional Approval,Regional,Medium,1000000,TRUE,FALSE,Regional authority,Active
+APPLEVEL-000009,Domain Approval,Business Domain,Medium,2500000,TRUE,FALSE,Domain expert approval,Active
+APPLEVEL-000010,AI Governance Approval,AI,Critical,Unlimited,TRUE,TRUE,Responsible AI governance approval,Active

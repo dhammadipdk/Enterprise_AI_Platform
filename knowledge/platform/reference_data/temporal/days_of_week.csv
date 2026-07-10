@@ -1,0 +1,8 @@
+reference_id,code,name,iso_day_number,is_weekend,status,effective_date,expiry_date,source_authority,remarks
+REF-DAY-000001,MON,Monday,1,No,Active,2026-01-01,,ISO 8601,
+REF-DAY-000002,TUE,Tuesday,2,No,Active,2026-01-01,,ISO 8601,
+REF-DAY-000003,WED,Wednesday,3,No,Active,2026-01-01,,ISO 8601,
+REF-DAY-000004,THU,Thursday,4,No,Active,2026-01-01,,ISO 8601,
+REF-DAY-000005,FRI,Friday,5,No,Active,2026-01-01,,ISO 8601,
+REF-DAY-000006,SAT,Saturday,6,Yes,Active,2026-01-01,,ISO 8601,
+REF-DAY-000007,SUN,Sunday,7,Yes,Active,2026-01-01,,ISO 8601,

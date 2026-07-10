@@ -1,0 +1,16 @@
+algorithm_id,algorithm_name,algorithm_family,input_graph,output_metric,time_complexity,enterprise_use_case,supported_platforms,description,status
+ALG-000001,PageRank,Centrality,Directed Graph,Influence Score,O(E),Important customers,"Neo4j,GDS",Find influential entities,Active
+ALG-000002,Betweenness,Centrality,Directed Graph,Bridge Score,O(VE),Fraud bridges,"Neo4j,GDS",Bridge node detection,Active
+ALG-000003,Closeness,Centrality,Connected Graph,Distance Score,O(VE),Operational optimization,"Neo4j,GDS",Distance centrality,Active
+ALG-000004,Louvain,Community,Undirected Graph,Communities,O(E logV),Customer segmentation,"Neo4j,GDS",Community detection,Active
+ALG-000005,Label Propagation,Community,Undirected Graph,Labels,O(E),Fraud rings,"Neo4j,GDS",Fast clustering,Active
+ALG-000006,Connected Components,Connectivity,Graph,Components,O(V+E),Disconnected graphs,"Neo4j,GDS",Connectivity analysis,Active
+ALG-000007,Shortest Path,Path,Weighted Graph,Optimal Path,O(E logV),Claim dependency,"Neo4j,GDS",Shortest route,Active
+ALG-000008,Node Similarity,Similarity,Graph,Similarity Score,O(V²),Recommendation,"Neo4j,GDS",Node similarity search,Active
+ALG-000009,Triangle Count,Topology,Graph,Triangle Count,O(E^1.5),Fraud detection,"Neo4j,GDS",Triangle discovery,Active
+ALG-000010,KNN,Similarity,Embedding Graph,Nearest Nodes,O(NlogN),Customer recommendation,"Neo4j,GDS",Nearest neighbor search,Active
+ALG-000011,Personalized PageRank,Centrality,Directed Graph,Personalized Score,O(E),Personalized recommendation,"Neo4j,GDS",Localized PageRank,Active
+ALG-000012,BFS,Traversal,Graph,Traversal Tree,O(V+E),Graph navigation,"All",Breadth-first traversal,Active
+ALG-000013,DFS,Traversal,Graph,Traversal Tree,O(V+E),Reasoning paths,"All",Depth-first traversal,Active
+ALG-000014,A*,Path,Weighted Graph,Optimal Route,O(E),Navigation,"Neo4j",Heuristic search,Active
+ALG-000015,Minimum Spanning Tree,Optimization,Weighted Graph,Tree,O(ElogV),Infrastructure optimization,"Neo4j,GDS",Network optimization,Active

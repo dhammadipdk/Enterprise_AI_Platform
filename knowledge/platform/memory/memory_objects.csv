@@ -1,0 +1,16 @@
+memory_object_id,memory_name,memory_type,memory_category,business_owner,storage_backend,graph_enabled,vector_enabled,temporal,description,status
+MEMOBJ-000001,Customer Profile Memory,Semantic,Customer,Customer AI,Knowledge Graph,TRUE,TRUE,TRUE,Persistent customer knowledge,Active
+MEMOBJ-000002,Policy Memory,Semantic,Insurance,Policy AI,Knowledge Graph,TRUE,TRUE,TRUE,Policy information,Active
+MEMOBJ-000003,Claim Memory,Episodic,Claims,Claims AI,Knowledge Graph,TRUE,TRUE,TRUE,Claim history,Active
+MEMOBJ-000004,Fraud Memory,Episodic,Fraud,Fraud AI,Knowledge Graph,TRUE,TRUE,TRUE,Fraud investigation history,Active
+MEMOBJ-000005,Conversation Memory,Conversation,LLM,Assistant,Vector Store,FALSE,TRUE,TRUE,Dialogue history,Active
+MEMOBJ-000006,Reasoning Memory,Reasoning,AI,Reasoning Engine,Document DB,TRUE,TRUE,TRUE,Reasoning traces,Active
+MEMOBJ-000007,Execution Memory,Execution,Workflow,Planner,Document DB,FALSE,FALSE,TRUE,Execution history,Active
+MEMOBJ-000008,Observation Memory,Working,Context,Context Engine,Time Series DB,FALSE,FALSE,TRUE,Current observations,Active
+MEMOBJ-000009,Recommendation Memory,Business,Recommendation,Recommendation AI,Graph DB,TRUE,TRUE,TRUE,Past recommendations,Active
+MEMOBJ-000010,Enterprise Memory,Semantic,Enterprise,Enterprise AI,Hybrid,TRUE,TRUE,TRUE,Enterprise-wide knowledge,Active
+MEMOBJ-000011,Graph Memory,Semantic,Knowledge Graph,Graph Engine,Graph DB,TRUE,FALSE,FALSE,Knowledge graph storage,Active
+MEMOBJ-000012,Embedding Memory,Vector,Embeddings,Retrieval Engine,Vector DB,FALSE,TRUE,FALSE,Embedding repository,Active
+MEMOBJ-000013,Document Memory,Semantic,Knowledge,Knowledge Team,Document Store,FALSE,TRUE,FALSE,Enterprise documents,Active
+MEMOBJ-000014,Context Memory,Working,Context,Context Engine,Redis,FALSE,FALSE,TRUE,Short-lived contextual information,Active
+MEMOBJ-000015,Agent Shared Memory,Semantic,Agents,Agent Platform,Hybrid,TRUE,TRUE,TRUE,Shared cross-agent memory,Active

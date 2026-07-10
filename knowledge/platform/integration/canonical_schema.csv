@@ -1,0 +1,11 @@
+field_name,data_type,required,description
+integration_id,String,TRUE,Unique integration identifier
+component_name,String,TRUE,Owning component
+integration_type,String,TRUE,Integration category
+protocol,String,TRUE,Communication protocol
+authentication,String,FALSE,Authentication mechanism
+endpoint,String,FALSE,Target endpoint
+version,String,TRUE,Interface version
+owner,String,TRUE,Responsible owner
+status,String,TRUE,Lifecycle state
+metadata,JSON,FALSE,Additional metadata

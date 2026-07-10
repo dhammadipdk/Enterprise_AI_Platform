@@ -1,0 +1,31 @@
+entity_name,entity_type,parent_entity,description,primary_purpose
+Observation,Knowledge Object,,Represents a directly measured or collected fact,Foundation of contextual knowledge
+DerivedIntelligence,Knowledge Object,,Represents intelligence inferred from one or more observations,Decision support
+Evidence,Knowledge Object,,Supporting information validating an intelligence value,Explainability
+EvidenceSource,Reference,,Origin of evidence or observation,Traceability
+SubjectEntity,Reference,,Business entity receiving contextual intelligence,Context target
+ContextAttribute,Metadata,,Characteristic being measured or inferred,Semantic description
+Metric,Measurement,,Quantitative measurement associated with observations,Measurement
+MetricUnit,Measurement,,Standard unit used by a metric,Measurement consistency
+Indicator,Measurement,,Business indicator derived from one or more metrics,Business monitoring
+RiskScore,Assessment,,Normalized numerical estimate of contextual risk,Risk quantification
+RiskLevel,Assessment,RiskScore,Categorical interpretation of a risk score,Human interpretation
+ConfidenceScore,Assessment,,Estimated confidence of an intelligence value,Reliability estimation
+SeverityLevel,Assessment,,Expected magnitude of business impact,Impact assessment
+LikelihoodScore,Assessment,,Estimated probability of occurrence,Probability estimation
+ExposureScore,Assessment,,Degree of exposure to contextual conditions,Exposure analysis
+VulnerabilityScore,Assessment,,Susceptibility to adverse outcomes,Vulnerability analysis
+ResilienceScore,Assessment,,Ability to recover from adverse conditions,Resilience assessment
+ObservationModel,Model,,Model describing how observations are collected,Data acquisition
+InferenceModel,Model,,Model producing derived intelligence,Knowledge generation
+ScoringModel,Model,,Model calculating normalized business scores,Scoring
+ContextRelationship,Relationship,,Directed relationship between contextual concepts,Causal reasoning
+Dependency,Relationship,ContextRelationship,Represents dependency between contextual entities,Knowledge propagation
+DecisionTrigger,Decision,,Condition that activates downstream business logic,Decision automation
+RecommendationTrigger,Decision,DecisionTrigger,Condition triggering recommendations,Recommendation engine
+GeographicContext,Context,,Spatial applicability of intelligence,Spatial reasoning
+TemporalContext,Context,,Temporal applicability of intelligence,Temporal reasoning
+ContextGraph,Knowledge Graph,,Graph connecting contextual entities,System reasoning
+DecisionTrace,Knowledge Graph,,Traceable reasoning path leading to a decision,Explainability
+EvidenceChain,Knowledge Graph,,Ordered chain of evidence supporting intelligence,Auditability
+KnowledgeVersion,Metadata,,Version information for contextual intelligence,Governance

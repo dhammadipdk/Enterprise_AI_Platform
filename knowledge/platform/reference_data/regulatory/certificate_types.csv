@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CERT-000001,DRIVING_LICENSE,Driving Licence,Driving authorization certificate,Active,2026-01-01,,MoRTH,
+REF-CERT-000002,REGISTRATION_CERTIFICATE,Vehicle Registration Certificate,Vehicle ownership certificate,Active,2026-01-01,,MoRTH,
+REF-CERT-000003,PUC_CERTIFICATE,Pollution Under Control Certificate,Emission compliance certificate,Active,2026-01-01,,MoRTH,
+REF-CERT-000004,INSURANCE_CERTIFICATE,Insurance Certificate,Evidence of insurance coverage,Active,2026-01-01,,IRDAI,
+REF-CERT-000005,FITNESS_CERTIFICATE,Fitness Certificate,Commercial vehicle fitness certificate,Active,2026-01-01,,MoRTH,
+REF-CERT-000006,PERMIT,Transport Permit,Commercial transport permit,Active,2026-01-01,,MoRTH,

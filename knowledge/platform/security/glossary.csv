@@ -1,0 +1,21 @@
+term_id,term,business_definition
+SEC-001,Identity,Digital identity of a user, service or agent
+SEC-002,Authentication,Verification of identity
+SEC-003,Authorization,Permission to perform an action
+SEC-004,Role,Collection of permissions
+SEC-005,Permission,Allowed operation on a resource
+SEC-006,Access Control,Mechanism for enforcing permissions
+SEC-007,Secret,Sensitive credential or token
+SEC-008,Encryption,Protection of data using cryptography
+SEC-009,Key Management,Lifecycle management of encryption keys
+SEC-010,Zero Trust,Security model requiring continuous verification
+SEC-011,Least Privilege,Grant only minimum required permissions
+SEC-012,Data Classification,Sensitivity level of enterprise data
+SEC-013,Threat,Potential security attack
+SEC-014,Vulnerability,Weakness exploitable by attackers
+SEC-015,Security Incident,Confirmed security event
+SEC-016,Prompt Security,Protection against prompt injection and leakage
+SEC-017,Model Security,Protection of AI models
+SEC-018,Agent Security,Security controls for autonomous agents
+SEC-019,Privacy Control,Mechanism protecting personal information
+SEC-020,Audit Security,Security audit trail

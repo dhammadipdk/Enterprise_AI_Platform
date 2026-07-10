@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+MemoryObject,Persistent Entity,Single stored memory
+MemoryType,Reference,Category of memory
+MemorySource,Reference,Origin of memory
+MemoryEmbedding,Vector,Embedding representation
+MemoryIndex,Index,Memory lookup index
+MemoryLifecycle,Lifecycle,Memory state transitions
+MemoryPolicy,Governance,Memory governance rule
+MemoryImportance,Analytics,Importance score
+MemoryRetention,Governance,Retention strategy
+MemoryRetriever,Process,Memory retrieval logic
+MemorySummary,Derived,Object summarizing memories
+AgentMemory,Context,Agent-specific memory
+ConversationMemory,Context,Dialogue history
+ReasoningMemory,Context,Reasoning history
+ExecutionMemory,Context,Workflow history

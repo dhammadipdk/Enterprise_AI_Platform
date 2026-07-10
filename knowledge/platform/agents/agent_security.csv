@@ -1,0 +1,11 @@
+security_policy_id,security_policy,security_scope,authentication_required,authorization_model,data_access_level,cross_agent_access,audit_required,human_override,description,status
+ASEC-000001,Enterprise Default,All Agents,TRUE,RBAC,Standard,TRUE,TRUE,TRUE,Default enterprise security policy,Active
+ASEC-000002,Knowledge Agent Policy,Knowledge,TRUE,RBAC,Read Only,TRUE,TRUE,FALSE,Knowledge access policy,Active
+ASEC-000003,Recommendation Agent Policy,Recommendation,TRUE,ABAC,Customer Scoped,TRUE,TRUE,TRUE,Recommendation security,Active
+ASEC-000004,Fraud Investigation Policy,Fraud,TRUE,ABAC,Restricted,FALSE,TRUE,TRUE,Restricted fraud access,Active
+ASEC-000005,Memory Manager Policy,Memory,TRUE,RBAC,Full Memory,FALSE,TRUE,FALSE,Memory administration,Active
+ASEC-000006,Planning Agent Policy,Planning,TRUE,RBAC,Planning Data,TRUE,TRUE,FALSE,Planning access control,Active
+ASEC-000007,Execution Agent Policy,Execution,TRUE,RBAC,Execution Data,TRUE,TRUE,FALSE,Workflow execution permissions,Active
+ASEC-000008,Coordinator Policy,Coordination,TRUE,RBAC,Enterprise,FALSE,TRUE,TRUE,Coordinator security policy,Active
+ASEC-000009,Learning Agent Policy,Learning,TRUE,RBAC,Learning Data,TRUE,TRUE,FALSE,Learning security model,Active
+ASEC-000010,Emergency Override Policy,Enterprise,TRUE,Emergency,All Resources,FALSE,TRUE,TRUE,Break-glass enterprise access,Active

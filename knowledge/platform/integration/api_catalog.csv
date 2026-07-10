@@ -1,0 +1,11 @@
+api_id,api_name,api_category,api_style,primary_consumer,authentication,version,lifecycle_state,description,status
+API-000001,Knowledge API,Internal,REST,Knowledge Layer,OAuth2,v1,Production,Knowledge retrieval services,Active
+API-000002,Memory API,Internal,gRPC,Memory Layer,mTLS,v1,Production,Memory management services,Active
+API-000003,Planning API,Internal,gRPC,Planning Engine,mTLS,v1,Production,Planning services,Active
+API-000004,Execution API,Internal,gRPC,Execution Engine,mTLS,v1,Production,Workflow execution services,Active
+API-000005,Agent API,Internal,gRPC,Agent Platform,mTLS,v1,Production,Multi-agent communication,Active
+API-000006,Recommendation API,External,REST,Business Applications,OAuth2,v1,Production,Recommendation services,Active
+API-000007,Governance API,Internal,REST,Governance Platform,mTLS,v1,Production,Governance services,Active
+API-000008,Observability API,Internal,REST,Monitoring Platform,mTLS,v1,Production,Telemetry collection,Active
+API-000009,Security API,Internal,REST,Security Platform,mTLS,v1,Production,Identity and authorization services,Active
+API-000010,Gateway API,External,REST,Enterprise Clients,OAuth2,v1,Production,Enterprise entry point,Active

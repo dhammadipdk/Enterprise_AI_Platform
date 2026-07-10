@@ -1,0 +1,11 @@
+prompt_security_id,control_name,protected_against,input_validation,output_validation,prompt_versioning,prompt_signing,approval_required,description,status
+PROMPTSEC-000001,System Prompt Protection,Prompt Leakage,TRUE,TRUE,TRUE,TRUE,TRUE,Protect system prompts,Active
+PROMPTSEC-000002,Prompt Injection Detection,Injection,TRUE,TRUE,FALSE,FALSE,FALSE,Detect malicious prompts,Active
+PROMPTSEC-000003,Jailbreak Protection,Jailbreak,TRUE,TRUE,FALSE,FALSE,FALSE,Prevent jailbreak attacks,Active
+PROMPTSEC-000004,Prompt Template Governance,Template Integrity,TRUE,FALSE,TRUE,TRUE,TRUE,Govern prompt templates,Active
+PROMPTSEC-000005,Context Sanitization,Context Leakage,TRUE,FALSE,FALSE,FALSE,FALSE,Sanitize retrieved context,Active
+PROMPTSEC-000006,Sensitive Data Removal,PII Leakage,TRUE,TRUE,FALSE,FALSE,FALSE,Remove sensitive information,Active
+PROMPTSEC-000007,Prompt Audit,Auditability,FALSE,TRUE,TRUE,FALSE,TRUE,Audit prompt execution,Active
+PROMPTSEC-000008,Output Safety Filter,Harmful Content,FALSE,TRUE,FALSE,FALSE,FALSE,Filter unsafe outputs,Active
+PROMPTSEC-000009,Prompt Integrity,Unauthorized Changes,TRUE,FALSE,TRUE,TRUE,TRUE,Verify prompt integrity,Active
+PROMPTSEC-000010,Prompt Lifecycle Management,Governance,FALSE,FALSE,TRUE,FALSE,TRUE,Manage prompt lifecycle,Active

@@ -1,0 +1,11 @@
+index_id,index_name,index_category,index_target,index_strategy,primary_key,secondary_keys,supports_vector_search,supports_graph_search,refresh_policy,status
+MEMIDX-000001,Customer Index,Semantic,Customer,BTree,customer_id,name,TRUE,TRUE,Realtime,Active
+MEMIDX-000002,Policy Index,Semantic,Policy,BTree,policy_number,customer_id,TRUE,TRUE,Realtime,Active
+MEMIDX-000003,Claim Index,Semantic,Claim,BTree,claim_number,policy_number,TRUE,TRUE,Realtime,Active
+MEMIDX-000004,Fraud Index,Risk,Fraud Case,BTree,fraud_case_id,fraud_score,TRUE,TRUE,Realtime,Active
+MEMIDX-000005,Conversation Index,Conversation,Conversation,Vector,conversation_id,timestamp,TRUE,FALSE,Realtime,Active
+MEMIDX-000006,Reasoning Index,Reasoning,Decision Trace,Hybrid,decision_id,confidence,TRUE,TRUE,Realtime,Active
+MEMIDX-000007,Observation Index,Context,Observation,Time Series,observation_id,timestamp,FALSE,FALSE,Realtime,Active
+MEMIDX-000008,Graph Index,Knowledge Graph,Graph Node,Native,node_id,node_label,FALSE,TRUE,Realtime,Active
+MEMIDX-000009,Document Index,Knowledge,Document,Vector,document_id,title,TRUE,FALSE,Batch,Active
+MEMIDX-000010,Enterprise Memory Index,Enterprise,All,Hybrid,memory_id,memory_type,TRUE,TRUE,Realtime,Active

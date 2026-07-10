@@ -1,0 +1,11 @@
+lifecycle_id,lifecycle_state,previous_state,next_states,entry_condition,exit_condition,automatic_transition,business_meaning,status
+MLIFE-000001,Created,None,Validated,Memory Created,Validation Complete,TRUE,Initial memory creation,Active
+MLIFE-000002,Validated,Created,Indexed,Schema Valid,Indexed,TRUE,Validated memory,Active
+MLIFE-000003,Indexed,Validated,Active,Indexed Successfully,Accessed,TRUE,Searchable memory,Active
+MLIFE-000004,Active,Indexed,Summarized|Archived,Frequently Accessed,Retention Trigger,FALSE,Operational memory,Active
+MLIFE-000005,Summarized,Active,Archived,Summarization Complete,Retention Expired,FALSE,Compressed memory,Active
+MLIFE-000006,Archived,Summarized,Restored|Deleted,Retention Period,Restoration,FALSE,Archived memory,Active
+MLIFE-000007,Restored,Archived,Active,Access Requested,Usage Complete,TRUE,Recovered memory,Active
+MLIFE-000008,Expired,Active,Deleted,Retention Expired,Deletion Approved,TRUE,Expired memory,Active
+MLIFE-000009,Deleted,Expired,None,Deletion Completed,None,FALSE,Permanently removed,Active
+MLIFE-000010,Legal Hold,Any,Legal Hold,Compliance Requirement,Released,FALSE,Protected memory,Active

@@ -1,0 +1,16 @@
+event_id,event_name,event_category,trigger_entity,event_source,event_output,event_type,business_impact,consumed_by,status
+EVENT-000001,Customer Registered,Customer,Customer,CRM,Customer Profile,Business Event,Medium,Knowledge Graph,Active
+EVENT-000002,Policy Issued,Insurance,Policy,Policy Engine,Active Policy,Business Event,High,Recommendation Engine,Active
+EVENT-000003,Policy Renewed,Insurance,Policy,Policy Engine,Renewed Policy,Business Event,Medium,Customer Intelligence,Active
+EVENT-000004,Claim Submitted,Claims,Claim,Claims Portal,Claim Record,Business Event,High,Claims Intelligence,Active
+EVENT-000005,Survey Completed,Claims,Surveyor,Survey System,Survey Report,Business Event,Medium,Claims Analytics,Active
+EVENT-000006,Repair Started,Repair,Repair,Garage ERP,Repair Job,Business Event,Medium,Repair Intelligence,Active
+EVENT-000007,Repair Completed,Repair,Repair,Garage ERP,Repair Outcome,Business Event,Medium,Recommendation Engine,Active
+EVENT-000008,Fraud Alert,Fraud,Fraud Case,Fraud Engine,Fraud Investigation,AI Event,Critical,SIU,Active
+EVENT-000009,Recommendation Generated,Recommendation,Recommendation,Recommendation Engine,Business Recommendation,AI Event,High,Business Applications,Active
+EVENT-000010,Decision Approved,Reasoning,Decision,Decision Engine,Approved Decision,Workflow Event,High,Execution Layer,Active
+EVENT-000011,Decision Rejected,Reasoning,Decision,Decision Engine,Rejected Decision,Workflow Event,Medium,Audit System,Active
+EVENT-000012,Weather Alert,Environment,Environment Context,Weather API,Risk Alert,External Event,Medium,Environment Intelligence,Active
+EVENT-000013,Vehicle Diagnostic,Vehicle,Vehicle,Telematics,Vehicle Observation,IoT Event,Medium,Vehicle Intelligence,Active
+EVENT-000014,Driving Event,Human Behaviour,Driver,Telematics,Driving Observation,IoT Event,Medium,Behavior Analytics,Active
+EVENT-000015,Enterprise Recommendation Executed,Enterprise,Recommendation,Execution Engine,Business Outcome,Execution Event,Critical,Executive Dashboard,Active

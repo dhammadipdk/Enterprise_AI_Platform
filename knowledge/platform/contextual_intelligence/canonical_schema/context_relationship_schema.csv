@@ -1,0 +1,11 @@
+field_name,data_type,required,description,example
+relationship_id,string,Yes,Unique relationship identifier,REL-000001
+source_context,string,Yes,Origin context,High Rainfall
+relationship_type,string,Yes,Relationship type,INCREASES
+target_context,string,Yes,Target context,Flood Risk
+relationship_strength,float,Yes,Normalized strength (0–1),0.91
+relationship_nature,string,Yes,Causal/Correlational,Causal
+evidence_level,string,Yes,Strength of supporting evidence,High
+confidence_score,float,Yes,Confidence in relationship,0.95
+model_reference,string,No,Supporting model or publication,RISK-MODEL-01
+remarks,string,No,Additional notes,

@@ -1,0 +1,20 @@
+field_name,data_type,required,description,example
+observation_id,string,Yes,Unique observation identifier,OBS-000001
+observation_type,string,Yes,Category of observation,WEATHER
+subject_type,string,Yes,Type of entity observed,CITY
+subject_code,string,Yes,Reference code of subject,MUMBAI
+subject_name,string,Yes,Human-readable subject name,Mumbai
+attribute,string,Yes,Observed attribute,Rainfall
+metric,string,Yes,Measured metric,Annual Rainfall
+metric_unit,string,Yes,Measurement unit,mm
+observed_value,number/string,Yes,Observed value,2750
+observation_timestamp,datetime,Yes,Time of observation,2026-07-01T00:00:00Z
+geographic_scope,string,No,Applicable geography,Mumbai
+temporal_scope,string,No,Applicable period,Annual
+source_type,string,Yes,Origin type,Government Dataset
+source_name,string,Yes,Origin name,IMD
+collection_method,string,No,How observation was collected,API
+quality_score,float,No,Quality assessment (0–1),0.98
+confidence_score,float,Yes,Confidence in observation (0–1),0.97
+version,string,Yes,Schema/data version,v1.0
+remarks,string,No,Additional notes,

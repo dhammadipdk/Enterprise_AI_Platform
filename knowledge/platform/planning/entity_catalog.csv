@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Goal,Planning Entity,Enterprise objective
+Objective,Planning Entity,Measurable goal
+Task,Planning Entity,Atomic execution step
+ExecutionPlan,Planning Entity,Complete workflow
+PlanningStrategy,Reference,Planning algorithm
+PlanningConstraint,Governance,Constraint definition
+PlanningPolicy,Governance,Planning governance
+PlanningMetric,Analytics,Planning quality metric
+PlannerTemplate,Template,Reusable plan
+ResourceProfile,Resource,Available execution resources
+TaskDependency,Relationship,Task ordering
+OptimizationObjective,Optimization,Optimization target
+PlanningSession,Context,Single planning process
+PlanningDecision,Decision,Planner decision
+PlanningState,Lifecycle,Planning lifecycle

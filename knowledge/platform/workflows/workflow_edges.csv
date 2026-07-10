@@ -1,0 +1,11 @@
+edge_id,source_node,target_node,edge_type,execution_condition,priority,default_path,description,status
+EDGE-000001,NODE-000001,NODE-000002,Sequential,Always,1,TRUE,Start retrieval,Active
+EDGE-000002,NODE-000002,NODE-000003,Sequential,Knowledge Retrieved,1,TRUE,Memory resolution,Active
+EDGE-000003,NODE-000003,NODE-000004,Sequential,Memory Ready,1,TRUE,Compile prompt,Active
+EDGE-000004,NODE-000004,NODE-000005,Sequential,Prompt Ready,1,TRUE,Model routing,Active
+EDGE-000005,NODE-000005,NODE-000006,Sequential,Model Selected,1,TRUE,Run inference,Active
+EDGE-000006,NODE-000006,NODE-000007,Sequential,Response Generated,1,TRUE,Evaluate response,Active
+EDGE-000007,NODE-000007,NODE-000008,Conditional,Score > Threshold,1,TRUE,Governance review,Active
+EDGE-000008,NODE-000008,NODE-000009,Sequential,Approved,1,TRUE,Deliver response,Active
+EDGE-000009,NODE-000007,NODE-000004,Loop,Evaluation Failed,2,FALSE,Prompt refinement loop,Active
+EDGE-000010,NODE-000009,NODE-000010,Sequential,Delivered,1,TRUE,Persist memory,Active

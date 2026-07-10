@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Identity,Security,Enterprise identity
+Role,Authorization,Security role
+Permission,Authorization,Access permission
+SecurityPolicy,Policy,Enterprise security policy
+Secret,Credential,Managed secret
+EncryptionKey,Cryptography,Encryption key
+SecurityIncident,Incident,Security event
+Threat,Risk,Security threat
+Vulnerability,Risk,Security weakness
+PrivacyControl,Compliance,Privacy safeguard
+AISecurityControl,AI Security,Protection for AI systems
+AgentSecurityProfile,AI Security,Security profile for an agent
+ModelSecurityProfile,AI Security,Security profile for a model
+PromptSecurityPolicy,AI Security,Prompt protection policy
+AccessControlPolicy,Authorization,Resource access policy

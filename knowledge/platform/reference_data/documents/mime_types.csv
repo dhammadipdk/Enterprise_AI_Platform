@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-MIME-000001,application/pdf,PDF,Portable Document Format,Active,2026-01-01,,IANA,
+REF-MIME-000002,image/jpeg,JPEG,Joint Photographic Experts Group image,Active,2026-01-01,,IANA,
+REF-MIME-000003,image/png,PNG,Portable Network Graphics image,Active,2026-01-01,,IANA,
+REF-MIME-000004,image/tiff,TIFF,Tagged Image File Format,Active,2026-01-01,,IANA,
+REF-MIME-000005,application/json,JSON,JavaScript Object Notation,Active,2026-01-01,,IANA,
+REF-MIME-000006,text/plain,Plain Text,Text document,Active,2026-01-01,,IANA,
+REF-MIME-000007,application/xml,XML,Extensible Markup Language,Active,2026-01-01,,IANA,
+REF-MIME-000008,video/mp4,MP4,Video recording,Active,2026-01-01,,IANA,
+REF-MIME-000009,audio/mpeg,MP3,Audio recording,Active,2026-01-01,,IANA,
+REF-MIME-000010,application/zip,ZIP,Compressed archive,Active,2026-01-01,,IANA,mim

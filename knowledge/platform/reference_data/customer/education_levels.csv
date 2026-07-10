@@ -1,0 +1,10 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-EDU-000001,NO_FORMAL_EDUCATION,No Formal Education,No formal schooling completed,Active,2026-01-01,,Enterprise,
+REF-EDU-000002,PRIMARY,Primary Education,Primary school completed,Active,2026-01-01,,Enterprise,
+REF-EDU-000003,SECONDARY,Secondary Education,Secondary school completed,Active,2026-01-01,,Enterprise,
+REF-EDU-000004,HIGHER_SECONDARY,Higher Secondary,Completed higher secondary education,Active,2026-01-01,,Enterprise,
+REF-EDU-000005,DIPLOMA,Diploma,Technical diploma or equivalent,Active,2026-01-01,,Enterprise,
+REF-EDU-000006,BACHELORS,Bachelor's Degree,Undergraduate degree,Active,2026-01-01,,Enterprise,
+REF-EDU-000007,MASTERS,Master's Degree,Postgraduate degree,Active,2026-01-01,,Enterprise,
+REF-EDU-000008,DOCTORATE,Doctorate,Doctoral degree or equivalent,Active,2026-01-01,,Enterprise,
+REF-EDU-000009,PROFESSIONAL,Professional Qualification,Recognized professional certification,Active,2026-01-01,,Enterprise,

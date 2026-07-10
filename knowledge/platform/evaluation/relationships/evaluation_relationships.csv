@@ -1,0 +1,21 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_feedback_loop,is_business_metric,is_governance_edge,description,status
+EVALREL-000001,EvaluationDimension,MEASURED_BY,EvaluationMetric,Measurement,1:N,TRUE,FALSE,FALSE,FALSE,Dimensions are evaluated using metrics,Active
+EVALREL-000002,Benchmark,USES,EvaluationDataset,Benchmarking,N:N,FALSE,FALSE,FALSE,FALSE,Benchmarks consume datasets,Active
+EVALREL-000003,EvaluationRun,EXECUTES,Benchmark,Execution,N:1,TRUE,FALSE,FALSE,FALSE,Evaluation runs execute benchmarks,Active
+EVALREL-000004,EvaluationRun,GENERATES,EvaluationMetric,Measurement,1:N,TRUE,FALSE,FALSE,FALSE,Evaluation produces metrics,Active
+EVALREL-000005,EvaluationMetric,VALIDATED_BY,QualityThreshold,Validation,N:1,TRUE,FALSE,FALSE,TRUE,Metrics compared against thresholds,Active
+EVALREL-000006,GroundingValidation,SUPPORTS,ReasoningEvaluation,Validation,N:N,TRUE,FALSE,FALSE,FALSE,Grounding validates reasoning,Active
+EVALREL-000007,HallucinationDetection,SUPPORTS,GroundingValidation,Validation,N:N,TRUE,FALSE,FALSE,FALSE,Hallucination detection depends on grounding,Active
+EVALREL-000008,RetrievalEvaluation,SUPPORTS,ReasoningEvaluation,Dependency,N:N,TRUE,FALSE,FALSE,FALSE,Retrieval quality affects reasoning,Active
+EVALREL-000009,ReasoningEvaluation,SUPPORTS,PlanningEvaluation,Dependency,N:N,TRUE,FALSE,FALSE,FALSE,Reasoning quality affects planning,Active
+EVALREL-000010,PlanningEvaluation,SUPPORTS,ExecutionEvaluation,Dependency,N:N,TRUE,FALSE,FALSE,FALSE,Planning quality affects execution,Active
+EVALREL-000011,ExecutionEvaluation,SUPPORTS,AgentEvaluation,Dependency,N:N,TRUE,FALSE,FALSE,FALSE,Execution quality affects agents,Active
+EVALREL-000012,AgentEvaluation,SUPPORTS,RecommendationEvaluation,Dependency,N:N,TRUE,FALSE,FALSE,FALSE,Agent quality affects recommendations,Active
+EVALREL-000013,RecommendationEvaluation,IMPACTS,BusinessKPI,Business,N:N,TRUE,FALSE,TRUE,FALSE,Recommendations influence business KPIs,Active
+EVALREL-000014,BusinessKPI,TRIGGERS,ContinuousLearning,Feedback,N:N,TRUE,TRUE,TRUE,FALSE,Business outcomes drive learning,Active
+EVALREL-000015,ContinuousLearning,IMPROVES,KnowledgeLayer,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves enterprise knowledge,Active
+EVALREL-000016,ContinuousLearning,IMPROVES,MemoryLayer,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves memory,Active
+EVALREL-000017,ContinuousLearning,IMPROVES,PlanningEngine,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves planning,Active
+EVALREL-000018,ContinuousLearning,IMPROVES,ExecutionEngine,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves execution,Active
+EVALREL-000019,ContinuousLearning,IMPROVES,AgentPlatform,Learning,N:N,TRUE,TRUE,FALSE,FALSE,Learning improves agents,Active
+EVALREL-000020,EnterpriseScorecard,SUMMARIZES,EnterpriseAIPlatform,Governance,1:1,FALSE,FALSE,TRUE,TRUE,Enterprise AI quality summary,Active

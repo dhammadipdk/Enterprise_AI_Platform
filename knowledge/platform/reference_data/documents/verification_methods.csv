@@ -1,0 +1,8 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-VMETHOD-000001,OCR,OCR,Optical Character Recognition,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000002,MANUAL,Manual Review,Human verification process,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000003,DIGITAL_SIGNATURE,Digital Signature Validation,Verify cryptographic signature,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000004,QR_CODE,QR Code Validation,Validate embedded QR code,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000005,GOVERNMENT_API,Government API,Verification through government service,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000006,FACE_MATCH,Face Match,Biometric face verification,Active,2026-01-01,,Enterprise,
+REF-VMETHOD-000007,DOCUMENT_FORENSICS,Document Forensics,AI-based tampering detection,Active,2026-01-01,,Enterprise,

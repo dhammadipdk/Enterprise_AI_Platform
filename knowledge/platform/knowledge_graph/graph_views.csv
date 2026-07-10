@@ -1,0 +1,11 @@
+view_id,view_name,business_owner,included_entities,primary_use_case,security_level,description,status
+VIEW-000001,Customer 360,Customer Team,"Customer,Policy,Claim,Recommendation",Complete customer profile,Restricted,Unified customer view,Active
+VIEW-000002,Claim 360,Claims Team,"Claim,Vehicle,Repair,FraudCase",Claims processing,Restricted,Complete claim lifecycle,Active
+VIEW-000003,Vehicle 360,Fleet Team,"Vehicle,Driver,Repair",Vehicle lifecycle,Restricted,Vehicle intelligence view,Active
+VIEW-000004,Fraud Dashboard,SIU,"FraudCase,Claim,Customer",Fraud investigation,Highly Restricted,Fraud-centric graph,Active
+VIEW-000005,Policy Explorer,Insurance,"Policy,Coverage,Customer",Policy management,Restricted,Policy relationships,Active
+VIEW-000006,Recommendation Hub,AI Team,"Decision,Recommendation",Decision support,Restricted,AI recommendations,Active
+VIEW-000007,Knowledge Explorer,Knowledge Team,"KnowledgeDocument,BusinessRule",Knowledge navigation,Internal,Knowledge graph browser,Active
+VIEW-000008,Executive View,Management,All,Executive insights,Executive,Enterprise overview,Active
+VIEW-000009,Risk View,Risk Team,"Customer,Vehicle,EnvironmentContext",Risk assessment,Restricted,Risk propagation analysis,Active
+VIEW-000010,GraphRAG View,AI Platform,All,Semantic retrieval,Internal,Optimized retrieval graph,Active

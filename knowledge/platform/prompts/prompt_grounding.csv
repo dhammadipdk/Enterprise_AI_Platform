@@ -1,0 +1,11 @@
+grounding_id,grounding_name,knowledge_source,retrieval_strategy,max_documents,citation_required,dynamic_refresh,priority,description,status
+GROUND-000001,Enterprise Knowledge,RAG,Semantic Search,10,TRUE,TRUE,1,Enterprise knowledge grounding,Active
+GROUND-000002,Conversation Memory,Memory Layer,Memory Retrieval,20,FALSE,TRUE,2,Conversation grounding,Active
+GROUND-000003,Business Policies,Governance Layer,Policy Retrieval,10,TRUE,TRUE,3,Governance grounding,Active
+GROUND-000004,Customer Profile,Customer Repository,Profile Lookup,5,FALSE,TRUE,4,Customer grounding,Active
+GROUND-000005,Workflow State,Execution Engine,Workflow Context,5,FALSE,TRUE,5,Workflow grounding,Active
+GROUND-000006,Planning Context,Planning Engine,Plan Retrieval,5,FALSE,TRUE,6,Planning grounding,Active
+GROUND-000007,Agent Memory,Agent Platform,Agent Memory Lookup,10,FALSE,TRUE,7,Agent-specific grounding,Active
+GROUND-000008,Security Policies,Security Platform,Policy Retrieval,10,TRUE,TRUE,8,Security grounding,Active
+GROUND-000009,External Knowledge,External Connectors,Federated Search,5,TRUE,TRUE,9,External enterprise knowledge,Active
+GROUND-000010,Evaluation History,Evaluation Platform,Evaluation Lookup,5,FALSE,TRUE,10,Historical evaluation grounding,Active

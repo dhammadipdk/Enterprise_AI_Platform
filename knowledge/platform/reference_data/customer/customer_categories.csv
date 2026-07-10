@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CUSTCAT-000001,INDIVIDUAL,Individual,Private individual customer,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000002,SOLE_PROPRIETOR,Sole Proprietor,Individual operating a sole proprietorship,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000003,PARTNERSHIP,Partnership Firm,Registered partnership business,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000004,PRIVATE_COMPANY,Private Company,Private limited company,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000005,PUBLIC_COMPANY,Public Company,Public limited company,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000006,GOVERNMENT,Government Organization,Government department or agency,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000007,NGO,NGO/Trust,Non-governmental organization or trust,Active,2026-01-01,,Enterprise,
+REF-CUSTCAT-000008,FLEET_OWNER,Fleet Owner,Customer owning multiple insured vehicles,Active,2026-01-01,,Enterprise,

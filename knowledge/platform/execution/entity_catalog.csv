@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Workflow,Execution,Runtime workflow
+WorkflowInstance,Execution,Running workflow
+ExecutionTask,Execution,Runtime task
+ExecutionStep,Execution,Atomic operation
+ExecutionContext,Context,Runtime context
+ExecutionCheckpoint,Recovery,Checkpoint
+RetryPolicy,Governance,Retry rule
+RollbackPolicy,Governance,Rollback strategy
+CompensationAction,Recovery,Business compensation
+ExecutionEvent,Event,Execution event
+ExecutionAudit,Audit,Audit record
+Tool,Capability,Executable tool
+ToolInvocation,Execution,Tool execution
+ExecutionMetric,Analytics,Execution KPI
+ExecutionState,Lifecycle,Execution lifecycle

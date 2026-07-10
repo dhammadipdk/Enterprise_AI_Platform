@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-OCC-000001,SALARIED,Salaried Employee,Employee working for an organization,Active,2026-01-01,,Enterprise,
+REF-OCC-000002,SELF_EMPLOYED,Self Employed,Independent business or professional,Active,2026-01-01,,Enterprise,
+REF-OCC-000003,BUSINESS_OWNER,Business Owner,Owner or partner of a business,Active,2026-01-01,,Enterprise,
+REF-OCC-000004,GOVERNMENT_EMPLOYEE,Government Employee,Employee of a government organization,Active,2026-01-01,,Enterprise,
+REF-OCC-000005,RETIRED,Retired,Retired individual,Active,2026-01-01,,Enterprise,
+REF-OCC-000006,STUDENT,Student,Currently enrolled student,Active,2026-01-01,,Enterprise,
+REF-OCC-000007,HOMEMAKER,Homemaker,Primary occupation is homemaking,Active,2026-01-01,,Enterprise,
+REF-OCC-000008,FARMER,Farmer,Agriculture-based occupation,Active,2026-01-01,,Enterprise,
+REF-OCC-000009,FREELANCER,Freelancer,Independent contract worker,Active,2026-01-01,,Enterprise,
+REF-OCC-000010,UNEMPLOYED,Unemployed,Currently unemployed,Active,2026-01-01,,Enterprise,

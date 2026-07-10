@@ -1,0 +1,11 @@
+template_id,template_name,template_type,supports_variables,supports_grounding,supports_few_shot,max_context_tokens,primary_use_case,description,status
+TEMP-000001,General Assistant,System Template,TRUE,TRUE,TRUE,128000,Enterprise Assistant,General reasoning template,Active
+TEMP-000002,RAG Template,RAG Template,TRUE,TRUE,TRUE,64000,Knowledge Retrieval,RAG optimized template,Active
+TEMP-000003,Claims Processing Template,Domain Template,TRUE,TRUE,TRUE,64000,Claims AI,Claims reasoning template,Active
+TEMP-000004,Fraud Investigation Template,Domain Template,TRUE,TRUE,TRUE,128000,Fraud Analysis,Fraud analysis template,Active
+TEMP-000005,Planning Template,Planner Template,TRUE,TRUE,FALSE,128000,Planning,Task planning template,Active
+TEMP-000006,Evaluation Template,Judge Template,TRUE,TRUE,FALSE,64000,Evaluation,LLM-as-judge template,Active
+TEMP-000007,Executive Decision Template,Business Template,TRUE,TRUE,TRUE,128000,Executive Support,Executive reasoning template,Active
+TEMP-000008,Compliance Template,Regulatory Template,TRUE,TRUE,TRUE,128000,Compliance,Compliance template,Active
+TEMP-000009,Agent Task Template,Agent Template,TRUE,FALSE,FALSE,32000,Agent Communication,Agent instruction template,Active
+TEMP-000010,Research Template,Research Template,TRUE,TRUE,TRUE,256000,Research,Research reasoning template,Active

@@ -1,0 +1,10 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-VEH-000001,Vehicle,Represents a motor vehicle that is owned, operated and insured through the InsureAI platform.,Aggregate Root,,GLOSS-VEH-000001,Vehicle Identifier,Stable,Vehicle,Root aggregate of the Vehicle domain.
+ENT-VEH-000002,Vehicle Identity,Represents the fundamental identity information used to uniquely identify a vehicle.,Entity,Vehicle,GLOSS-VEH-000002,Vehicle Identifier,Stable,Vehicle,Contains immutable identification attributes.
+ENT-VEH-000003,Vehicle Registration,Represents government registration and legal registration information of a vehicle.,Entity,Vehicle,GLOSS-VEH-000011,Registration Number,Dynamic,Vehicle,Contains registration lifecycle information.
+ENT-VEH-000004,Vehicle Specification,Represents the manufacturer's technical and engineering specifications of a vehicle.,Entity,Vehicle,GLOSS-VEH-000041,,Stable,Vehicle,Supports underwriting and product matching.
+ENT-VEH-000005,Vehicle Ownership,Represents ownership and ownership history associated with a vehicle.,Entity,Vehicle,GLOSS-VEH-000023,,Dynamic,Vehicle,Supports valuation and claims.
+ENT-VEH-000006,Vehicle Usage,Represents operational usage characteristics of a vehicle.,Entity,Vehicle,GLOSS-VEH-000054,,Dynamic,Vehicle,Supports exposure and premium calculation.
+ENT-VEH-000007,Vehicle Valuation,Represents financial valuation and depreciation information of a vehicle.,Entity,Vehicle,GLOSS-VEH-000064,,Dynamic,Vehicle,Supports underwriting and claims.
+ENT-VEH-000008,Vehicle Compliance,Represents regulatory compliance and legal operating status of a vehicle.,Entity,Vehicle,GLOSS-VEH-000074,,Dynamic,Vehicle,Supports regulatory compliance.
+ENT-VEH-000009,Vehicle Assessment,Represents derived business assessments, AI predictions and vehicle risk scores.,Entity,Vehicle,GLOSS-VEH-000091,,Computed,Vehicle,Contains AI-generated business knowledge.

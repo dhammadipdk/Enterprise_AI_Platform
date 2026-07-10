@@ -1,0 +1,11 @@
+ai_security_control_id,control_name,protected_component,security_objective,detection_method,response_action,automatic_enforcement,description,status
+AISEC-000001,Prompt Injection Detection,LLM Platform,Prevent Prompt Injection,Input Analysis,Reject Prompt,TRUE,Detect prompt injection attacks,Active
+AISEC-000002,Output Validation,LLM Platform,Prevent Unsafe Output,Response Validation,Block Response,TRUE,Validate generated responses,Active
+AISEC-000003,Grounding Enforcement,RAG Engine,Prevent Hallucination,Evidence Validation,Reject Response,TRUE,Require grounded responses,Active
+AISEC-000004,Tool Permission Validation,Tool Calling,Least Privilege,Capability Check,Deny Invocation,TRUE,Validate tool permissions,Active
+AISEC-000005,Agent Isolation,Agent Platform,Limit Agent Scope,Runtime Sandbox,Terminate Session,TRUE,Isolate autonomous agents,Active
+AISEC-000006,Model Invocation Control,Model Layer,Restrict Model Access,Authorization Engine,Deny Request,TRUE,Protect model access,Active
+AISEC-000007,Embedding Protection,Vector Database,Protect Embeddings,Access Control,Deny Access,TRUE,Protect vector database,Active
+AISEC-000008,Memory Access Validation,Memory Layer,Protect Enterprise Memory,Policy Validation,Deny Request,TRUE,Protect memory operations,Active
+AISEC-000009,Inference Rate Limiting,Inference API,Prevent Abuse,Rate Limiter,Throttle Request,TRUE,Limit inference requests,Active
+AISEC-000010,Agent Communication Validation,Multi-Agent Platform,Secure Coordination,Message Validation,Reject Message,TRUE,Secure inter-agent communication,Active

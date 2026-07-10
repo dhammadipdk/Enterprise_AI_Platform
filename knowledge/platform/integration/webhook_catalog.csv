@@ -1,0 +1,11 @@
+webhook_id,webhook_name,event_source,target_system,http_method,retry_enabled,signature_validation,delivery_guarantee,description,status
+WEBHOOK-000001,Claim Created Webhook,Claims,CRM,POST,TRUE,TRUE,At Least Once,Notify claim creation,Active
+WEBHOOK-000002,Recommendation Generated,Recommendation,Business Portal,POST,TRUE,TRUE,At Least Once,Send recommendation event,Active
+WEBHOOK-000003,Payment Completed,Billing,Core Insurance Platform,POST,TRUE,TRUE,At Least Once,Payment completion notification,Active
+WEBHOOK-000004,Workflow Completed,Execution,Monitoring Platform,POST,TRUE,TRUE,At Least Once,Workflow completion notification,Active
+WEBHOOK-000005,Agent Finished,Agent Platform,Coordinator,POST,TRUE,TRUE,At Least Once,Agent completion callback,Active
+WEBHOOK-000006,Security Alert,Security,SOC,POST,TRUE,TRUE,Exactly Once,Security notification,Active
+WEBHOOK-000007,Governance Decision,Governance,Compliance Platform,POST,TRUE,TRUE,At Least Once,Governance notification,Active
+WEBHOOK-000008,Model Evaluation,Evaluation,MLOps Platform,POST,TRUE,TRUE,At Least Once,Evaluation results callback,Active
+WEBHOOK-000009,Telemetry Alert,Observability,Alert Manager,POST,TRUE,TRUE,At Least Once,Operational alerts,Active
+WEBHOOK-000010,System Health,Infrastructure,Operations Portal,POST,TRUE,TRUE,At Least Once,Health notification,Active

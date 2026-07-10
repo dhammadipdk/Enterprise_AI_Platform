@@ -1,0 +1,11 @@
+scenario_id,step,acting_agent,input,action,output,next_agent,business_context
+SCEN-000001,1,Coordinator Agent,Customer Recommendation Request,Analyze Request,Task Graph,Planning Agent,New recommendation request received
+SCEN-000002,2,Planning Agent,Task Graph,Generate Execution Plan,Execution Plan,Knowledge Agent,Planning complete
+SCEN-000003,3,Knowledge Agent,Execution Plan,Retrieve Enterprise Knowledge,Knowledge Context,Memory Agent,Enterprise knowledge collected
+SCEN-000004,4,Memory Agent,Knowledge Context,Build Unified Context,Enterprise Context,Reasoning Agent,Memory assembled
+SCEN-000005,5,Reasoning Agent,Enterprise Context,Perform Reasoning,Decision Context,Recommendation Agent,Reasoning completed
+SCEN-000006,6,Recommendation Agent,Decision Context,Generate Recommendation,Recommendation Package,Execution Agent,Recommendation generated
+SCEN-000007,7,Execution Agent,Recommendation Package,Execute Business Workflow,Execution Result,Learning Agent,Recommendation delivered
+SCEN-000008,8,Learning Agent,Execution Result,Update Enterprise Memory,Learning Record,Coordinator Agent,Learning completed
+SCEN-000009,9,Coordinator Agent,Learning Record,Evaluate Workflow,Performance Report,None,Workflow completed successfully
+SCEN-000010,10,System,Performance Report,Persist Metrics,Updated Platform State,None,Continuous improvement cycle completed

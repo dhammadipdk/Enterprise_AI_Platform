@@ -1,0 +1,11 @@
+classification_id,classification_name,sensitivity_level,contains_pii,encryption_required,masking_required,sharing_allowed,retention_policy,description,status
+CLASS-000001,Public,Low,FALSE,FALSE,FALSE,TRUE,Unlimited,Publicly shareable information,Active
+CLASS-000002,Internal,Medium,FALSE,TRUE,FALSE,Internal Only,7 Years,Internal business information,Active
+CLASS-000003,Confidential,High,TRUE,TRUE,TRUE,Restricted,7 Years,Confidential enterprise information,Active
+CLASS-000004,Highly Confidential,Critical,TRUE,TRUE,TRUE,Need to Know,10 Years,Highly sensitive business information,Active
+CLASS-000005,Restricted,Critical,TRUE,TRUE,TRUE,Authorized Only,10 Years,Restricted enterprise assets,Active
+CLASS-000006,Regulated,Critical,TRUE,TRUE,TRUE,Compliance Controlled,As Required,Regulated information,Active
+CLASS-000007,Security Sensitive,Critical,FALSE,TRUE,FALSE,Security Team Only,10 Years,Security assets,Active
+CLASS-000008,AI Internal,High,FALSE,TRUE,FALSE,AI Platform Only,5 Years,AI platform artifacts,Active
+CLASS-000009,Audit Evidence,Critical,FALSE,TRUE,FALSE,Compliance Only,10 Years,Audit evidence,Active
+CLASS-000010,Secrets,Critical,FALSE,TRUE,FALSE,Security Only,Until Rotation,Passwords keys and secrets,Active

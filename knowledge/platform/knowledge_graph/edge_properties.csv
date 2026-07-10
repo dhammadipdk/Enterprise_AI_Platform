@@ -1,0 +1,21 @@
+property_id,relationship_label,property_name,data_type,required,description
+EPROP-000001,OWNS,effective_date,Date,FALSE,Ownership effective date
+EPROP-000002,OWNS,ownership_status,String,FALSE,Ownership status
+EPROP-000003,COVERS,start_date,Date,TRUE,Coverage start date
+EPROP-000004,COVERS,end_date,Date,FALSE,Coverage end date
+EPROP-000005,FILES,filed_timestamp,Datetime,TRUE,Claim filing time
+EPROP-000006,FILES,channel,String,FALSE,Filing channel
+EPROP-000007,INVOLVES,damage_percentage,Float,FALSE,Estimated damage
+EPROP-000008,ASSIGNED_TO,assignment_date,Datetime,FALSE,Assignment timestamp
+EPROP-000009,INSPECTED_BY,inspection_date,Datetime,FALSE,Survey completion date
+EPROP-000010,MAY_TRIGGER,trigger_score,Float,FALSE,Fraud trigger score
+EPROP-000011,GENERATES,generation_timestamp,Datetime,FALSE,Generation timestamp
+EPROP-000012,SUPPORTS,evidence_weight,Float,FALSE,Evidence contribution
+EPROP-000013,DERIVED_FROM,aggregation_method,String,FALSE,Aggregation method
+EPROP-000014,CONSTRAINS,constraint_priority,Integer,FALSE,Constraint priority
+EPROP-000015,HAS_DRIVER,assignment_type,String,FALSE,Primary or secondary driver
+EPROP-000016,HAS_PAYMENT,payment_status,String,FALSE,Payment status
+EPROP-000017,AFFECTS,impact_level,String,FALSE,Impact severity
+EPROP-000018,BELONGS_TO,context_weight,Float,FALSE,Context relevance
+EPROP-000019,GENERATES,confidence,Float,FALSE,Generation confidence
+EPROP-000020,SUPPORTS,reasoning_strength,Float,FALSE,Reasoning strength

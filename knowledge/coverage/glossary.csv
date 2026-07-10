@@ -1,0 +1,107 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-COV-000001,Coverage,A standardized insurance protection that compensates for defined insured risks.,Coverage,Identity,Core,Stable,,,Insurance Protection,Own Damage,Business,Root business concept.
+GLOSS-COV-000002,Coverage Identifier,A unique business identifier assigned to a coverage.,Coverage,Identity,Core,Stable,Coverage,,Coverage ID,COV-100001,Platform,Primary business identifier.
+GLOSS-COV-000003,Coverage Name,Official business name of the coverage.,Coverage,Identity,Core,Stable,Coverage,,Coverage Title,Own Damage,Business,Displayed to customers.
+GLOSS-COV-000004,Coverage Category,Classification of the coverage according to its protection objective.,Coverage,Classification,Core,Stable,Coverage,,Coverage Category,Vehicle Damage,Business,References Coverage Category Master.
+GLOSS-COV-000005,Coverage Type,Business classification of the coverage.,Coverage,Classification,Core,Stable,Coverage,,Coverage Type,Base Coverage,Business,Examples include Base and Add-on.
+GLOSS-COV-000006,Coverage Status,Current operational status of the coverage.,Coverage,Operational,Derived,Dynamic,Coverage,Coverage Lifecycle Stage,,Active,Derived,Platform status.
+GLOSS-COV-000007,Coverage Lifecycle Stage,Current lifecycle stage of the coverage.,Coverage,Operational,Derived,Dynamic,Coverage,Launch Date,,Available,Derived,Supports governance.
+GLOSS-COV-000008,Coverage Version,Current version of the canonical coverage definition.,Coverage,Identity,Core,Stable,Coverage,,Coverage Version,1.0.0,Platform,Supports versioning.
+GLOSS-COV-000009,Coverage Description,Business description explaining the protection provided.,Coverage,Identity,Core,Dynamic,Coverage,,Description,Covers accidental vehicle damage.,Business,Customer-facing.
+GLOSS-COV-000010,Coverage Summary,Short business summary of the coverage.,Coverage,Derived,Derived,Computed,Coverage,Coverage Description,,Summary,Protection against accidental damage.,Derived,Supports AI explanations.
+GLOSS-COV-000011,Coverage Benefit,Represents a benefit delivered by the coverage.,Coverage,Identity,Core,Stable,Coverage,,Benefit,Vehicle Repair,Business,Parent business concept.
+GLOSS-COV-000012,Benefit Name,Official name of the benefit.,Coverage,Identity,Core,Stable,Coverage Benefit,,Benefit Name,Accidental Damage Repair,Business,Customer-facing.
+GLOSS-COV-000013,Benefit Description,Detailed explanation of the benefit.,Coverage,Identity,Core,Stable,Coverage Benefit,,Benefit Description,Repairs accidental damage.,Business,Supports explanation.
+GLOSS-COV-000014,Financial Benefit,Monetary compensation offered under the benefit.,Coverage,Financial,Core,Stable,Coverage Benefit,,Financial Compensation,Repair Cost Covered,Business,Financial benefit.
+GLOSS-COV-000015,Service Benefit,Non-financial assistance offered by the benefit.,Coverage,Operational,Core,Stable,Coverage Benefit,,Service,Roadside Assistance,Business,Service benefit.
+GLOSS-COV-000016,Benefit Trigger,Business event activating the benefit.,Coverage,Operational,Core,Stable,Coverage Benefit,,Trigger,Accident,Business,Claim condition.
+GLOSS-COV-000017,Benefit Recipient,Party receiving the benefit.,Coverage,Reference,Core,Stable,Coverage Benefit,,Beneficiary,Policyholder,Business,Usually insured.
+GLOSS-COV-000018,Benefit Priority,Business priority of the benefit.,Coverage,Classification,Derived,Computed,Coverage Benefit,Benefit Category,,Primary,Derived,Supports explanation.
+GLOSS-COV-000019,Benefit Availability,Availability status of the benefit.,Coverage,Operational,Derived,Computed,Coverage Benefit,Coverage Status,,Available,Derived,Platform status.
+GLOSS-COV-000020,Benefit Summary,Short explanation of the benefit.,Coverage,Derived,Derived,Computed,Coverage Benefit,Benefit Description,,Vehicle repair after accident.,Derived,Supports AI explanation.
+GLOSS-COV-000021,Coverage Limit,Maximum protection available under a coverage.,Coverage,Financial,Core,Stable,Coverage,,Limit,₹1000000,Business,Parent concept.
+GLOSS-COV-000022,Limit Type,Classification of the coverage limit.,Coverage,Classification,Core,Stable,Coverage Limit,,Limit Type,Financial,Business,References Limit Type Master.
+GLOSS-COV-000023,Maximum Claim Amount,Highest payable amount under the coverage.,Coverage,Financial,Core,Stable,Coverage Limit,,Maximum Payout,₹1000000,Business,Claim cap.
+GLOSS-COV-000024,Aggregate Limit,Maximum cumulative payout during the policy period.,Coverage,Financial,Core,Stable,Coverage Limit,,Annual Limit,₹1500000,Business,Aggregate protection.
+GLOSS-COV-000025,Per Event Limit,Maximum payout per insured event.,Coverage,Financial,Core,Stable,Coverage Limit,,Per Claim Limit,₹500000,Business,Claim limit.
+GLOSS-COV-000026,Sub-limit,Specific lower limit applicable to selected benefits.,Coverage,Financial,Core,Stable,Coverage Limit,,Sub Limit,₹25000,Business,Benefit-specific.
+GLOSS-COV-000027,Unlimited Coverage,Indicates whether financial protection has no upper limit.,Coverage,Financial,Core,Stable,Coverage Limit,,Unlimited,False,Business,Special products.
+GLOSS-COV-000028,Limit Applicability,Business condition defining when limits apply.,Coverage,Operational,Core,Stable,Coverage Limit,,Applicability,Own Damage Claims,Business,Business rule.
+GLOSS-COV-000029,Remaining Coverage Limit,Remaining unused protection available.,Coverage,Financial,Derived,Computed,Coverage Limit,Claim Payments,,₹700000,Derived,Dynamic.
+GLOSS-COV-000030,Limit Summary,Simplified explanation of coverage limits.,Coverage,Derived,Derived,Computed,Coverage Limit,Maximum Claim Amount,,Up to ₹10 lakh coverage.,Derived,AI explanation.
+GLOSS-COV-000031,Coverage Condition,Represents business conditions required for coverage applicability.,Coverage,Operational,Core,Stable,Coverage,,Condition,Valid Driving Licence,Business,Parent concept.
+GLOSS-COV-000032,Condition Type,Classification of the condition.,Coverage,Classification,Core,Stable,Coverage Condition,,Condition Category,Eligibility,Business,References Condition Type Master.
+GLOSS-COV-000033,Condition Description,Business description of the condition.,Coverage,Identity,Core,Stable,Coverage Condition,,Condition,Vehicle must be roadworthy.,Business,Customer explanation.
+GLOSS-COV-000034,Mandatory Condition,Condition that must always be satisfied.,Coverage,Operational,Core,Stable,Coverage Condition,,Mandatory,True,Business,Business rule.
+GLOSS-COV-000035,Optional Condition,Condition applicable only under selected circumstances.,Coverage,Operational,Core,Stable,Coverage Condition,,Optional,False,Business,Conditional rule.
+GLOSS-COV-000036,Condition Verification,Verification status of the condition.,Coverage,Operational,Derived,Computed,Coverage Condition,Supporting Documents,,Verified,Derived,Supports claims.
+GLOSS-COV-000037,Condition Failure,Represents violation of a required condition.,Coverage,Operational,Derived,Computed,Coverage Condition,Condition Verification,,False,Derived,Claim evaluation.
+GLOSS-COV-000038,Condition Severity,Business importance of the condition.,Coverage,Classification,Derived,Computed,Coverage Condition,Condition Type,,High,Derived,Supports decision making.
+GLOSS-COV-000039,Condition Enforcement,Indicates whether the condition is actively enforced.,Coverage,Operational,Core,Stable,Coverage Condition,,Enforced,True,Business,Business rule.
+GLOSS-COV-000040,Condition Summary,Simplified explanation of applicable conditions.,Coverage,Derived,Derived,Computed,Coverage Condition,Condition Description,,Valid licence required.,Derived,AI explanation.
+GLOSS-COV-000041,Coverage Applicability,Defines where and when a coverage may be applied.,Coverage,Operational,Core,Stable,Coverage,,Applicability,Private Cars,Business,Parent concept.
+GLOSS-COV-000042,Applicable Vehicle Category,Vehicle categories eligible for the coverage.,Coverage,Classification,Core,Stable,Coverage Applicability,,Vehicle Category,Private Car,Business,References Vehicle Category Master.
+GLOSS-COV-000043,Applicable Driver Category,Driver categories eligible for the coverage.,Coverage,Classification,Core,Stable,Coverage Applicability,,Driver Category,Private Driver,Business,References Driver Category Master.
+GLOSS-COV-000044,Applicable Customer Segment,Customer segments for which the coverage is intended.,Coverage,Classification,Core,Stable,Coverage Applicability,,Customer Segment,Individual,Business,Supports recommendation.
+GLOSS-COV-000045,Applicable Geographic Region,Geographic regions where the coverage is valid.,Coverage,Reference,Core,Stable,Coverage Applicability,,Region,India,Business,Supports territorial applicability.
+GLOSS-COV-000046,Applicable Usage Type,Vehicle usage types supported by the coverage.,Coverage,Classification,Core,Stable,Coverage Applicability,,Usage,Private Use,Business,Supports underwriting.
+GLOSS-COV-000047,Applicable Policy Type,Policy types that may include this coverage.,Coverage,Classification,Core,Stable,Coverage Applicability,,Policy Type,Comprehensive,Business,References Policy Type Master.
+GLOSS-COV-000048,Coverage Availability,Indicates whether the coverage is currently available for sale.,Coverage,Operational,Derived,Computed,Coverage Applicability,Coverage Lifecycle Stage,,Available,Derived,Supports product catalog.
+GLOSS-COV-000049,Coverage Activation Rule,Business rule governing activation of the coverage.,Coverage,Operational,Core,Stable,Coverage Applicability,,Activation Rule,Policy Issuance,Business,Business workflow.
+GLOSS-COV-000050,Coverage Expiration Rule,Business rule governing expiration of the coverage.,Coverage,Operational,Core,Stable,Coverage Applicability,,Expiration Rule,Policy Expiry,Business,Business workflow.
+GLOSS-COV-000051,Coverage Eligibility,Represents the business rules determining whether a coverage may be applied.,Coverage,Operational,Core,Stable,Coverage,,Eligibility,Eligible,Business,Parent business concept.
+GLOSS-COV-000052,Eligibility Rule,Business rule defining eligibility for the coverage.,Coverage,Operational,Core,Stable,Coverage Eligibility,,Rule,Vehicle Age <= 10 Years,Business,Business rule.
+GLOSS-COV-000053,Minimum Vehicle Age,Minimum vehicle age required for the coverage.,Coverage,Operational,Core,Stable,Coverage Eligibility,,Minimum Age,0 Years,Business,Eligibility criterion.
+GLOSS-COV-000054,Maximum Vehicle Age,Maximum vehicle age permitted for the coverage.,Coverage,Operational,Core,Stable,Coverage Eligibility,,Maximum Age,10 Years,Business,Eligibility criterion.
+GLOSS-COV-000055,Minimum Driver Age,Minimum driver age required for the coverage.,Coverage,Operational,Core,Stable,Coverage Eligibility,,Minimum Driver Age,18 Years,Business,Eligibility criterion.
+GLOSS-COV-000056,Maximum Driver Age,Maximum driver age permitted for the coverage.,Coverage,Operational,Core,Stable,Coverage Eligibility,,Maximum Driver Age,80 Years,Business,Eligibility criterion.
+GLOSS-COV-000057,Eligibility Verification,Represents whether eligibility has been verified.,Coverage,Operational,Derived,Computed,Coverage Eligibility,Eligibility Rule,,Verified,Derived,Supports underwriting.
+GLOSS-COV-000058,Eligibility Decision,Final decision regarding coverage eligibility.,Coverage,Operational,Derived,Computed,Coverage Eligibility,Eligibility Verification,,Eligible,Derived,Business decision.
+GLOSS-COV-000059,Eligibility Reason,Business explanation supporting the eligibility decision.,Coverage,Derived,Derived,Computed,Coverage Eligibility,Eligibility Decision,,Vehicle satisfies eligibility rules.,Derived,Supports explainability.
+GLOSS-COV-000060,Eligibility Summary,Simplified explanation of the eligibility requirements.,Coverage,Derived,Derived,Computed,Coverage Eligibility,Eligibility Rule,,Applicable for vehicles up to 10 years old.,Derived,AI explanation.
+GLOSS-COV-000061,Coverage Exclusion,Represents situations where a coverage does not provide protection.,Coverage,Operational,Core,Stable,Coverage,,Exclusion,Drunk Driving,Business,Parent business concept.
+GLOSS-COV-000062,Exclusion Name,Official name of the exclusion.,Coverage,Identity,Core,Stable,Coverage Exclusion,,Exclusion,Driving Under Influence,Business,Customer-facing.
+GLOSS-COV-000063,Exclusion Category,Classification of the exclusion.,Coverage,Classification,Core,Stable,Coverage Exclusion,,Category,Driver Behaviour,Business,References Exclusion Category Master.
+GLOSS-COV-000064,Exclusion Description,Business description explaining the exclusion.,Coverage,Identity,Core,Stable,Coverage Exclusion,,Description,Claims while intoxicated are not covered.,Business,Supports explanation.
+GLOSS-COV-000065,Mandatory Exclusion,Exclusion required by regulation.,Coverage,Regulatory,Core,Stable,Coverage Exclusion,,Mandatory,True,Regulatory,Required by law.
+GLOSS-COV-000066,Optional Exclusion,Insurer-specific exclusion that extends beyond regulatory requirements.,Coverage,Operational,Core,Stable,Coverage Exclusion,,Optional,False,Business,Product differentiation.
+GLOSS-COV-000067,Exclusion Trigger,Business event activating the exclusion.,Coverage,Operational,Core,Stable,Coverage Exclusion,,Trigger,Illegal Racing,Business,Claim evaluation.
+GLOSS-COV-000068,Exclusion Severity,Business importance assigned to the exclusion.,Coverage,Classification,Derived,Computed,Coverage Exclusion,Exclusion Category,,High,Derived,Supports ranking.
+GLOSS-COV-000069,Exclusion Verification,Represents verification of exclusion applicability.,Coverage,Operational,Derived,Computed,Coverage Exclusion,Claim Evidence,,Verified,Derived,Supports claim assessment.
+GLOSS-COV-000070,Exclusion Summary,Simplified explanation of the exclusion.,Coverage,Derived,Derived,Computed,Coverage Exclusion,Exclusion Description,,Claims while intoxicated are excluded.,Derived,Supports AI explanations.
+GLOSS-COV-000071,Coverage Deductible,Represents the financial responsibility retained by the insured before coverage applies.,Coverage,Financial,Core,Stable,Coverage,,Deductible,₹1000,Business,Parent business concept.
+GLOSS-COV-000072,Deductible Type,Classification of deductible applied to the coverage.,Coverage,Classification,Core,Stable,Coverage Deductible,,Type,Compulsory,Business,References Deductible Type Master.
+GLOSS-COV-000073,Compulsory Deductible,Mandatory deductible applied to covered claims.,Coverage,Financial,Core,Stable,Coverage Deductible,,Compulsory Excess,₹1000,Regulatory,Required deductible.
+GLOSS-COV-000074,Voluntary Deductible,Optional deductible selected to reduce premium.,Coverage,Financial,User Provided,Dynamic,Coverage Deductible,,Voluntary Excess,₹5000,Business,Customer-selected.
+GLOSS-COV-000075,Total Deductible,Combined deductible applicable to the coverage.,Coverage,Financial,Derived,Computed,Coverage Deductible,Compulsory Deductible;Voluntary Deductible,,₹6000,Derived,Computed amount.
+GLOSS-COV-000076,Deductible Applicability,Defines when the deductible is applied.,Coverage,Operational,Core,Stable,Coverage Deductible,,Applicability,Own Damage Claims,Business,Business rule.
+GLOSS-COV-000077,Deductible Waiver,Represents whether deductible waiver benefits are supported.,Coverage,Operational,Core,Stable,Coverage Deductible,,Waiver,Available,Business,Optional benefit.
+GLOSS-COV-000078,Deductible Summary,Simplified explanation of deductible rules.,Coverage,Derived,Derived,Computed,Coverage Deductible,Deductible Type;Total Deductible,,Standard deductible applies.,Derived,Supports AI explanation.
+GLOSS-COV-000079,Coverage Lifecycle,Represents the operational lifecycle of a coverage definition.,Coverage,Operational,Core,Dynamic,Coverage,,Lifecycle,Active,Business,Parent business concept.
+GLOSS-COV-000080,Launch Date,Date on which the coverage became available for use.,Coverage,Operational,Core,Stable,Coverage Lifecycle,,Launch Date,2025-04-01,Business,Coverage release.
+GLOSS-COV-000081,Availability Status,Indicates whether the coverage is currently available.,Coverage,Operational,Derived,Computed,Coverage Lifecycle,Coverage Status,,Available,Derived,Supports catalog visibility.
+GLOSS-COV-000082,Coverage Revision,Revision identifier of the canonical coverage definition.,Coverage,Operational,Core,Dynamic,Coverage Lifecycle,,Revision,v1.1,Business,Version tracking.
+GLOSS-COV-000083,Retirement Date,Date on which the coverage is withdrawn from future products.,Coverage,Operational,Core,Dynamic,Coverage Lifecycle,,Retirement Date,2032-03-31,Business,Future lifecycle event.
+GLOSS-COV-000084,Lifecycle Status,Current lifecycle classification of the coverage.,Coverage,Operational,Derived,Computed,Coverage Lifecycle,Launch Date;Retirement Date,,Active,Derived,Operational status.
+GLOSS-COV-000085,Replacement Coverage,Coverage intended to replace the current coverage after retirement.,Coverage,Reference,Core,Dynamic,Coverage Lifecycle,,Replacement,Enhanced Own Damage,Business,Supports migration.
+GLOSS-COV-000086,Backward Compatibility,Indicates whether older policy versions may continue using this coverage.,Coverage,Operational,Core,Stable,Coverage Lifecycle,,Compatibility,Supported,Business,Supports legacy policies.
+GLOSS-COV-000087,Coverage Deprecation Reason,Business reason for retiring or replacing the coverage.,Coverage,Operational,Core,Dynamic,Coverage Lifecycle,,Deprecation Reason,Regulatory Revision,Business,Governance.
+GLOSS-COV-000098,Coverage Relationship,Represents a business relationship between two canonical coverages.,Coverage,Reference,Core,Stable,Coverage,,Relationship,Depends On,Business,Parent business concept.
+GLOSS-COV-000099,Compatible Coverage,Coverage that can coexist with another coverage.,Coverage,Reference,Core,Stable,Coverage Relationship,,Compatible Coverage,Roadside Assistance,Business,Supports product design.
+GLOSS-COV-000100,Dependent Coverage,Coverage requiring another coverage before activation.,Coverage,Reference,Core,Stable,Coverage Relationship,,Dependency,Own Damage,Business,Business dependency.
+GLOSS-COV-000101,Mutually Exclusive Coverage,Coverage that cannot coexist with another coverage.,Coverage,Reference,Core,Stable,Coverage Relationship,,Mutual Exclusion,Standard Depreciation,Business,Prevents invalid combinations.
+GLOSS-COV-000102,Complementary Coverage,Coverage that increases the value of another coverage.,Coverage,Reference,Core,Stable,Coverage Relationship,,Complement,Engine Protect,Business,Supports recommendations.
+GLOSS-COV-000103,Coverage Bundle,Reusable collection of related canonical coverages.,Coverage,Reference,Core,Stable,Coverage Relationship,,Bundle,Premium Protection Pack,Business,Reusable business object.
+GLOSS-COV-000104,Bundle Recommendation,AI-generated recommendation for combining multiple coverages.,Coverage,Derived,AI Generated,Computed,Coverage Relationship,Recommendation Engine,,Recommended Bundle,AI,Supports bundling.
+GLOSS-COV-000105,Preferred Customer Segment,Customer segment most suited for the coverage.,Coverage,Classification,AI Generated,Computed,Coverage Assessment,Recommendation Engine,,Urban Families,AI,Recommendation insight.
+GLOSS-COV-000106,Preferred Vehicle Segment,Vehicle segment for which the coverage is optimized.,Coverage,Classification,AI Generated,Computed,Coverage Assessment,Recommendation Engine,,Compact SUV,AI,Recommendation insight.
+GLOSS-COV-000107,Preferred Driver Segment,Driver segment best matched to the coverage.,Coverage,Classification,AI Generated,Computed,Coverage Assessment,Recommendation Engine,,Experienced Driver,AI,Recommendation insight.
+GLOSS-COV-000108,Alternative Coverage,Canonical coverage recommended if the current coverage is unsuitable.,Coverage,Reference,AI Generated,Computed,Coverage Assessment,Recommendation Engine,,Third Party Liability,AI,Recommendation alternative.
+GLOSS-COV-000109,Recommendation Summary,Natural-language explanation describing why the coverage is recommended.,Coverage,Derived,AI Generated,Computed,Coverage Assessment,Coverage Recommendation Score;Coverage Suitability Score,,Recommended due to high value and strong suitability.,AI,Customer-facing explanation.
+GLOSS-COV-000110,Assessment Date,Date on which the latest coverage assessment was generated.,Coverage,Operational,Core,Dynamic,Coverage Assessment,,Assessment Timestamp,2026-07-01,Platform,Assessment metadata.
+GLOSS-COV-000111,Assessment Version,Version of the assessment methodology used.,Coverage,Operational,Core,Stable,Coverage Assessment,,Assessment Model,1.0.0,Platform,Supports reproducibility.
+GLOSS-COV-000112,Assessment Remarks,Additional remarks associated with the latest assessment.,Coverage,Operational,Core,Dynamic,Coverage Assessment,,Assessment Notes,Highly recommended for urban private vehicles.,Platform,Human-readable summary.
+GLOSS-COV-000113,Explainability Summary,Structured explanation of the factors influencing the recommendation.,Coverage,Derived,AI Generated,Computed,Coverage Assessment,Recommendation Engine,,High benefit-to-cost ratio with broad applicability.,AI,Supports Explainable AI.
+GLOSS-COV-000114,Last Assessment Timestamp,Timestamp representing the latest successful assessment execution.,Coverage,Operational,Derived,Computed,Coverage Assessment,Assessment Pipeline,,2026-07-01T10:30:00,Platform,Operational metadata.
+GLOSS-COV-000115,Knowledge Source,Primary knowledge source used to define the canonical coverage.,Coverage,Reference,Core,Stable,Coverage,,Knowledge Source,IRDAI Motor Guidelines,Business,Supports traceability.
+

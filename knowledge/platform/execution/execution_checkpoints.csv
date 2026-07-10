@@ -1,0 +1,9 @@
+checkpoint_id,checkpoint_name,checkpoint_type,trigger_condition,saved_state,resume_supported,rollback_supported,automatic,description,status
+CHK-000001,Context Loaded,State,Memory Retrieved,Execution Context,TRUE,TRUE,TRUE,Initial runtime context,Active
+CHK-000002,Knowledge Retrieved,Data,Graph Retrieved,Knowledge Snapshot,TRUE,TRUE,TRUE,Knowledge retrieval checkpoint,Active
+CHK-000003,Reasoning Completed,Decision,Reasoning Success,Decision State,TRUE,TRUE,TRUE,Reasoning checkpoint,Active
+CHK-000004,Recommendation Generated,Business,Recommendation Ready,Recommendation State,TRUE,TRUE,FALSE,Recommendation checkpoint,Active
+CHK-000005,Validation Completed,Governance,Rules Passed,Validated State,TRUE,TRUE,TRUE,Validation checkpoint,Active
+CHK-000006,Human Approved,Approval,Manual Approval,Approved State,TRUE,FALSE,FALSE,Human approval checkpoint,Active
+CHK-000007,Execution Completed,Execution,Workflow Success,Completed State,FALSE,FALSE,TRUE,Execution finished,Active
+CHK-000008,Audit Completed,Audit,Audit Saved,Audit State,FALSE,FALSE,TRUE,Audit persistence,Active

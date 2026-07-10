@@ -1,0 +1,11 @@
+retry_policy_id,policy_name,applies_to,retry_strategy,max_attempts,initial_delay_ms,backoff_strategy,max_delay_ms,retryable_errors,description,status
+RETRY-000001,API Retry Policy,REST APIs,Exponential Backoff,3,500,Exponential,5000,5XX;Timeout,Retry failed REST API calls,Active
+RETRY-000002,gRPC Retry Policy,gRPC Services,Exponential Backoff,3,200,Exponential,3000,Unavailable;DeadlineExceeded,Retry internal service calls,Active
+RETRY-000003,Webhook Retry Policy,Webhook Delivery,Exponential Backoff,5,1000,Exponential,30000,Network Errors;HTTP 5XX,Retry webhook delivery,Active
+RETRY-000004,Queue Processing Retry,RabbitMQ,Fixed Delay,5,1000,Fixed,1000,Consumer Failure,Retry queue processing,Active
+RETRY-000005,Kafka Consumer Retry,Kafka Consumers,Exponential Backoff,5,500,Exponential,10000,Consumer Failure,Retry Kafka consumers,Active
+RETRY-000006,Database Retry,Database Connectors,Exponential Backoff,3,500,Exponential,5000,Connection Failure,Retry transient database errors,Active
+RETRY-000007,External API Retry,External Systems,Exponential Backoff,5,1000,Exponential,60000,HTTP 429;5XX,Retry external integrations,Active
+RETRY-000008,Model Inference Retry,Model Platform,Linear,2,300,Linear,1000,Inference Timeout,Retry inference requests,Active
+RETRY-000009,Agent Invocation Retry,Agent Platform,Exponential Backoff,3,500,Exponential,5000,Agent Busy;Timeout,Retry agent invocation,Active
+RETRY-000010,Global Retry Policy,Entire Platform,Adaptive,3,500,Adaptive,30000,Transient Errors,Enterprise retry policy,Active

@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-TRAIN-000001,DEFENSIVE_DRIVING,Defensive Driving,Certified defensive driving course,Active,2026-01-01,,Recognized Training Institute,
+REF-TRAIN-000002,ADVANCED_DRIVING,Advanced Driving,Advanced vehicle handling certification,Active,2026-01-01,,Recognized Training Institute,
+REF-TRAIN-000003,HAZMAT,Hazardous Materials,Training for hazardous goods transportation,Active,2026-01-01,,MoRTH,
+REF-TRAIN-000004,FIRST_AID,First Aid,Basic first aid certification,Active,2026-01-01,,Recognized Authority,
+REF-TRAIN-000005,EV_SAFETY,Electric Vehicle Safety,Electric vehicle safety and handling training,Active,2026-01-01,,OEM/Training Institute,
+REF-TRAIN-000006,FLEET_SAFETY,Fleet Safety,Fleet operator safety programme,Active,2026-01-01,,Fleet Operator,

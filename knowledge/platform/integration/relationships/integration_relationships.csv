@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_event_driven,is_synchronous,is_asynchronous,description,status
+INTREL-000001,API,EXPOSES,Endpoint,API,1:N,TRUE,FALSE,TRUE,FALSE,APIs expose endpoints,Active
+INTREL-000002,Endpoint,USES,Protocol,Communication,N:1,TRUE,FALSE,TRUE,FALSE,Endpoints communicate through protocols,Active
+INTREL-000003,Service,PUBLISHES,Event,Messaging,1:N,TRUE,TRUE,FALSE,TRUE,Services publish events,Active
+INTREL-000004,Event,TRAVELS_THROUGH,EventBus,Messaging,N:1,TRUE,TRUE,FALSE,TRUE,Events flow through event buses,Active
+INTREL-000005,Connector,CONNECTS_TO,ExternalSystem,Integration,N:1,TRUE,FALSE,TRUE,TRUE,Connectors integrate external systems,Active
+INTREL-000006,Queue,DELIVERS,Message,Messaging,1:N,TRUE,TRUE,FALSE,TRUE,Queues deliver messages,Active
+INTREL-000007,StreamingChannel,STREAMS,Event,Streaming,1:N,TRUE,TRUE,FALSE,TRUE,Streams transport events,Active
+INTREL-000008,RetryPolicy,PROTECTS,API,Reliability,N:N,TRUE,FALSE,TRUE,FALSE,Retry policies improve reliability,Active
+INTREL-000009,CircuitBreaker,PROTECTS,Service,Reliability,N:N,TRUE,FALSE,TRUE,FALSE,Circuit breakers isolate failures,Active
+INTREL-000010,RateLimit,PROTECTS,API,Traffic,N:N,TRUE,FALSE,TRUE,FALSE,Rate limits protect APIs,Active
+INTREL-000011,IntegrationSecurity,SECURES,Connector,Security,N:N,TRUE,FALSE,TRUE,TRUE,Security protects integrations,Active
+INTREL-000012,IntegrationMonitoring,MONITORS,Service,Observability,N:N,TRUE,FALSE,TRUE,TRUE,Monitoring observes integrations,Active

@@ -1,0 +1,11 @@
+alert_id,alert_name,alert_category,severity,target_component,trigger_source,notification_channel,auto_remediation,description,status
+ALERT-000001,Knowledge Retrieval Failure,Knowledge,High,Knowledge Layer,Telemetry Events,Email|Slack,TRUE,Knowledge retrieval unsuccessful,Active
+ALERT-000002,Memory Failure,Memory,Critical,Memory Layer,Health Checks,PagerDuty,TRUE,Memory service unavailable,Active
+ALERT-000003,Planning Timeout,Planning,High,Planning Engine,Metrics Engine,Slack,TRUE,Planning exceeded SLA,Active
+ALERT-000004,Workflow Failure,Execution,Critical,Execution Engine,Workflow Runtime,PagerDuty,TRUE,Workflow execution failed,Active
+ALERT-000005,Agent Failure,Agents,Critical,Agent Platform,Agent Runtime,PagerDuty,TRUE,Agent unavailable,Active
+ALERT-000006,Recommendation Quality Drop,Business,Medium,Recommendation Engine,Evaluation Engine,Email,FALSE,Recommendation quality degraded,Active
+ALERT-000007,Governance Violation,Governance,Critical,Governance Platform,Governance Engine,PagerDuty,FALSE,Governance policy violated,Active
+ALERT-000008,Security Incident,Security,Critical,Security Platform,Security Engine,PagerDuty,FALSE,Security violation detected,Active
+ALERT-000009,Model Drift,AI,High,Model Platform,Evaluation Engine,Slack,FALSE,Model quality degraded,Active
+ALERT-000010,Platform Availability,Infrastructure,Critical,Platform,System Monitor,PagerDuty,TRUE,Platform unavailable,Active

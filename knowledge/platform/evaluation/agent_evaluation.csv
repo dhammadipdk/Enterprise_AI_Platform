@@ -1,0 +1,11 @@
+agent_eval_id,evaluation_dimension,evaluation_metric,evaluation_method,target_threshold,warning_threshold,critical_threshold,business_use,description,status
+AGENTEVAL-000001,Task Success,Task Completion Rate,Task Monitoring,97,94,90,Agent Performance,Successful task completion,Active
+AGENTEVAL-000002,Delegation Accuracy,Delegation Success,Workflow Analysis,95,92,88,Coordination,Correct delegation decisions,Active
+AGENTEVAL-000003,Collaboration Efficiency,Coordination Score,Multi-Agent Benchmark,95,92,90,Enterprise AI,Agent collaboration quality,Active
+AGENTEVAL-000004,Reasoning Quality,Reasoning Accuracy,Ground Truth Validation,95,92,90,Cognitive Quality,Reasoning correctness,Active
+AGENTEVAL-000005,Tool Utilization,Tool Success Rate,Execution Monitoring,98,95,92,Infrastructure,Tool usage quality,Active
+AGENTEVAL-000006,Memory Utilization,Knowledge Reuse,Memory Analytics,90,85,80,Knowledge Management,Effective memory usage,Active
+AGENTEVAL-000007,Communication Quality,Protocol Success,Protocol Analysis,98,95,92,Communication,Communication reliability,Active
+AGENTEVAL-000008,Autonomy Level,Human Intervention Rate,Operational Analytics,90,85,80,Automation,Agent autonomy,Active
+AGENTEVAL-000009,Security Compliance,Policy Compliance,Security Audit,100,99,98,Governance,Security compliance,Active
+AGENTEVAL-000010,Composite Agent Index,Agent Quality Index,Composite Evaluation,96,94,92,Enterprise KPI,Overall agent quality,Active

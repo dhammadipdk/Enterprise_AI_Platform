@@ -1,0 +1,11 @@
+monitoring_id,monitor_name,metric_category,collection_frequency,alert_threshold,dashboard_name,automatic_action,business_owner,description,status
+PMON-000001,Prompt Latency,Performance,Real Time,>2000 ms,Prompt Operations,Alert,AI Platform Team,Monitor prompt execution latency,Active
+PMON-000002,Prompt Success Rate,Reliability,Real Time,<99%,Prompt Dashboard,Investigate,Operations Team,Monitor successful executions,Active
+PMON-000003,Grounding Coverage,RAG,Hourly,<90%,Knowledge Dashboard,Rebuild Index,Knowledge Office,Monitor RAG grounding quality,Active
+PMON-000004,Guardrail Violations,Security,Real Time,>5/hour,Security Dashboard,Escalate,Security Team,Monitor security violations,Active
+PMON-000005,Prompt Cost,Cost,Daily,Budget Exceeded,Cost Dashboard,Notify,Finance Team,Monitor inference spending,Active
+PMON-000006,Evaluation Score,Quality,Hourly,<90,Evaluation Dashboard,Rollback Prompt,Evaluation Team,Monitor prompt quality,Active
+PMON-000007,Context Utilization,Performance,Hourly,>90%,Runtime Dashboard,Optimize Context,Platform Team,Monitor context usage,Active
+PMON-000008,Compilation Failures,Reliability,Real Time,>2%,Compiler Dashboard,Investigate,Platform Team,Monitor compiler failures,Active
+PMON-000009,Injection Attempts,Security,Real Time,>10/hour,SOC Dashboard,Block Source,Security Team,Monitor prompt attacks,Active
+PMON-000010,Enterprise Prompt Health,Composite,Hourly,<95,Executive Dashboard,Notify Executive,CIO,Overall prompt platform health,Active

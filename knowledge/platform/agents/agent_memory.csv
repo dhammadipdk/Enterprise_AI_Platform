@@ -1,0 +1,11 @@
+memory_profile_id,agent_id,working_memory,semantic_memory,episodic_memory,graph_memory,vector_memory,conversation_memory,shared_memory,max_memory_window,description,status
+AMEM-000001,AG-000001,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,32000,Recommendation memory profile,Active
+AMEM-000002,AG-000002,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,64000,Fraud investigation memory,Active
+AMEM-000003,AG-000003,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,24000,Claims processing memory,Active
+AMEM-000004,AG-000004,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,24000,Planning memory profile,Active
+AMEM-000005,AG-000005,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,16000,Execution runtime memory,Active
+AMEM-000006,AG-000006,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,48000,Reasoning memory profile,Active
+AMEM-000007,AG-000007,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,32000,Knowledge management memory,Active
+AMEM-000008,AG-000008,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,64000,Enterprise memory manager,Active
+AMEM-000009,AG-000009,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,128000,Coordinator global memory profile,Active
+AMEM-000010,AG-000010,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,48000,Learning memory profile,Active

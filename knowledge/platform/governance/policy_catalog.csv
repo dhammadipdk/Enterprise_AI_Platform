@@ -1,0 +1,11 @@
+policy_catalog_id,policy_name,policy_type,policy_scope,policy_owner,enforcement_level,applies_to,version,review_cycle,description,status
+PCAT-000001,Enterprise AI Governance,Enterprise,Global,AI Governance Board,Strict,All AI Systems,1.0,Quarterly,Master AI governance policy,Active
+PCAT-000002,Knowledge Quality Policy,Knowledge,Knowledge Layer,Knowledge Office,Strict,Knowledge Assets,1.0,Monthly,Knowledge quality governance,Active
+PCAT-000003,Grounding Policy,Responsible AI,Reasoning Layer,AI Governance Board,Strict,LLM Responses,1.0,Monthly,Mandatory grounding policy,Active
+PCAT-000004,Human Approval Policy,Operational,Execution Layer,Operations Board,Conditional,High Risk Actions,1.0,Quarterly,Human approval workflow,Active
+PCAT-000005,Privacy Policy,Security,Enterprise,CISO,Strict,Customer Data,2.1,Quarterly,Customer privacy governance,Active
+PCAT-000006,Fairness Policy,Responsible AI,Recommendation Layer,Responsible AI Committee,Strict,Recommendations,1.0,Quarterly,Fair recommendation policy,Active
+PCAT-000007,Audit Policy,Compliance,Enterprise,Compliance Office,Strict,All Decisions,3.0,Yearly,Complete auditability,Active
+PCAT-000008,Risk Management Policy,Risk,Enterprise,Risk Office,Adaptive,Enterprise AI,2.0,Monthly,Risk-based governance,Active
+PCAT-000009,Model Lifecycle Policy,Model Governance,ML Platform,MLOps Team,Strict,AI Models,1.0,Quarterly,Model lifecycle governance,Active
+PCAT-000010,Continuous Improvement Policy,Governance,Enterprise,AI Governance Board,Continuous,Entire Platform,1.0,Continuous,Platform improvement governance,Active

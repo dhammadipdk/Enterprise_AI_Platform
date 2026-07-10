@@ -1,0 +1,11 @@
+lifecycle_id,lifecycle_stage,entry_criteria,exit_criteria,approval_required,deployment_allowed,monitoring_required,rollback_supported,description,status
+LIFE-000001,Research,Research Proposal,Prototype,FALSE,FALSE,FALSE,FALSE,Initial experimentation,Active
+LIFE-000002,Prototype,Working Model,Validation,TRUE,FALSE,TRUE,TRUE,Prototype validation,Active
+LIFE-000003,Validation,Evaluation Passed,Staging,TRUE,FALSE,TRUE,TRUE,Quality validation,Active
+LIFE-000004,Staging,Deployment Approval,Production,TRUE,TRUE,TRUE,TRUE,Pre-production validation,Active
+LIFE-000005,Production,Release Approval,Maintenance,TRUE,TRUE,TRUE,TRUE,Production serving,Active
+LIFE-000006,Maintenance,Production Issues,Retirement,FALSE,TRUE,TRUE,TRUE,Ongoing maintenance,Active
+LIFE-000007,Deprecated,Replacement Available,Archived,TRUE,FALSE,TRUE,TRUE,Deprecated model,Active
+LIFE-000008,Archived,Retention Complete,None,FALSE,FALSE,FALSE,FALSE,Archived model,Active
+LIFE-000009,Rolled Back,Deployment Failure,Validation,TRUE,FALSE,TRUE,TRUE,Rollback state,Active
+LIFE-000010,Retired,Business Decision,None,TRUE,FALSE,FALSE,FALSE,Retired model,Active

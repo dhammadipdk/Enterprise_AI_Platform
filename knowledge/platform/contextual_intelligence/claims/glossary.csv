@@ -1,0 +1,26 @@
+term_id,term,business_definition
+CLM-001,Claim,A formal request for insurance compensation
+CLM-002,FNOL,First Notice of Loss submitted to the insurer
+CLM-003,Claim Registration,Creation of a new insurance claim
+CLM-004,Claim Severity,Estimated financial impact of a claim
+CLM-005,Claim Frequency,Number of claims filed within a period
+CLM-006,Reserve Estimate,Estimated amount reserved for settlement
+CLM-007,Surveyor Assessment,Inspection performed by an authorized surveyor
+CLM-008,Damage Assessment,Evaluation of physical damage
+CLM-009,Repair Estimate,Estimated repair cost
+CLM-010,Claim Investigation,Process of validating claim authenticity
+CLM-011,Liability Assessment,Determination of legal responsibility
+CLM-012,Settlement Amount,Final approved claim payout
+CLM-013,Settlement Recommendation,AI or rule-based payout recommendation
+CLM-014,Settlement Ratio,Approved amount divided by claimed amount
+CLM-015,Claim Closure,Formal completion of claim processing
+CLM-016,Claim Reopening,Previously closed claim reopened
+CLM-017,Claim Recovery,Recovery from third parties or salvage
+CLM-018,Subrogation,Recovery of insurer losses from liable third parties
+CLM-019,Salvage,Residual value recovered after loss
+CLM-020,Claim Leakage,Avoidable financial loss during claims processing
+CLM-021,Litigation,Legal dispute arising from claim settlement
+CLM-022,Arbitration,Alternative dispute resolution process
+CLM-023,Ombudsman Complaint,Regulatory complaint regarding claim decision
+CLM-024,Claim Turnaround Time,Time taken to process a claim
+CLM-025,Straight Through Processing (STP),Claim processed without manual intervention

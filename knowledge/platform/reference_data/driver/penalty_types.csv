@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PEN-000001,WARNING,Warning,Official warning issued,Active,2026-01-01,,Motor Vehicles Act,
+REF-PEN-000002,MONETARY_FINE,Monetary Fine,Fine imposed under applicable law,Active,2026-01-01,,Motor Vehicles Act,
+REF-PEN-000003,LICENSE_SUSPENSION,Licence Suspension,Temporary suspension of driving licence,Active,2026-01-01,,Motor Vehicles Act,
+REF-PEN-000004,LICENSE_REVOCATION,Licence Revocation,Permanent cancellation of driving licence,Active,2026-01-01,,Motor Vehicles Act,
+REF-PEN-000005,VEHICLE_IMPOUND,Vehicle Impoundment,Vehicle seized by enforcement authority,Active,2026-01-01,,Motor Vehicles Act,
+REF-PEN-000006,COURT_PROSECUTION,Court Prosecution,Case referred for judicial proceedings,Active,2026-01-01,,Motor Vehicles Act,

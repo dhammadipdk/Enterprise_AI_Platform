@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DAMAGE-000001,ENGINE,Engine Damage,Damage to engine assembly,Active,2026-01-01,,Industry,
+REF-DAMAGE-000002,TRANSMISSION,Transmission Damage,Damage to gearbox or transmission,Active,2026-01-01,,Industry,
+REF-DAMAGE-000003,BODY,Body Damage,Body panel damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000004,GLASS,Glass Damage,Windshield or window damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000005,ELECTRICAL,Electrical Damage,Electrical system damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000006,SUSPENSION,Suspension Damage,Suspension system damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000007,TYRE,Tyre Damage,Tyre or wheel damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000008,INTERIOR,Interior Damage,Interior cabin damage,Active,2026-01-01,,Industry,
+REF-DAMAGE-000009,TOTAL_LOSS,Total Loss,Vehicle beyond economical repair,Active,2026-01-01,,Industry,
+REF-DAMAGE-000010,WATER_INGRESS,Water Ingress,Damage due to water entering vehicle systems,Active,2026-01-01,,Industry,

@@ -1,0 +1,11 @@
+evaluation_model_id,model_name,evaluation_type,evaluates,score_type,supports_llm_judge,supports_human_feedback,description,status
+EVAL-000001,Enterprise Response Evaluator,Quality,LLM Responses,0-100,TRUE,TRUE,General response quality evaluation,Active
+EVAL-000002,RAG Evaluator,RAG,Retrieval Pipeline,0-100,TRUE,TRUE,RAG quality evaluation,Active
+EVAL-000003,Hallucination Detector,Factuality,Generated Responses,Risk Score,TRUE,FALSE,Hallucination detection,Active
+EVAL-000004,Toxicity Evaluator,Safety,Generated Responses,Risk Score,TRUE,TRUE,Content safety evaluation,Active
+EVAL-000005,Bias Evaluator,Fairness,Generated Responses,Compliance Score,TRUE,TRUE,Bias evaluation,Active
+EVAL-000006,Recommendation Evaluator,Business,Recommendations,Accuracy Score,FALSE,TRUE,Recommendation quality evaluation,Active
+EVAL-000007,Fraud Model Evaluator,Prediction,Fraud Models,ROC-AUC,FALSE,TRUE,Fraud model evaluation,Active
+EVAL-000008,Latency Evaluator,Performance,Inference Services,Milliseconds,FALSE,FALSE,Performance benchmarking,Active
+EVAL-000009,Cost Evaluator,Efficiency,Model Usage,Cost per Request,FALSE,FALSE,Cost optimization evaluation,Active
+EVAL-000010,Enterprise AI Scorecard,Composite,Entire Platform,Composite Score,TRUE,TRUE,Overall AI quality score,Active

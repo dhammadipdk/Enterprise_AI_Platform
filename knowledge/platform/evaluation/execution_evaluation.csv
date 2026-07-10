@@ -1,0 +1,11 @@
+execution_eval_id,evaluation_dimension,evaluation_metric,evaluation_method,target_threshold,warning_threshold,critical_threshold,business_use,description,status
+EXECEVAL-000001,Workflow Success,Execution Success Rate,Workflow Monitoring,99,97,95,Reliability,Successful workflow executions,Active
+EXECEVAL-000002,SLA Compliance,SLA Achievement,Production Monitoring,98,95,92,Operations,SLA compliance,Active
+EXECEVAL-000003,Retry Effectiveness,Retry Success Rate,Recovery Analysis,95,90,85,Reliability,Recovery after retry,Active
+EXECEVAL-000004,Rollback Success,Rollback Recovery Rate,Failure Simulation,95,90,85,Recovery,Rollback effectiveness,Active
+EXECEVAL-000005,Checkpoint Recovery,Recovery Time,Recovery Benchmark,3000,5000,8000,Availability,Checkpoint restoration speed,Active
+EXECEVAL-000006,Tool Reliability,Tool Success Rate,Invocation Analysis,98,95,92,Infrastructure,Tool execution quality,Active
+EXECEVAL-000007,Execution Cost,Cost per Workflow,Financial Analysis,Optimize,Optimize,Optimize,Cost Management,Operational efficiency,Active
+EXECEVAL-000008,Audit Completeness,Audit Coverage,Compliance Audit,100,99,98,Governance,Audit completeness,Active
+EXECEVAL-000009,Learning Capture,Memory Update Success,Learning Validation,98,95,92,Learning,Execution learning quality,Active
+EXECEVAL-000010,Composite Execution Index,Execution Quality Index,Composite Evaluation,97,95,92,Enterprise KPI,Overall execution quality,Active

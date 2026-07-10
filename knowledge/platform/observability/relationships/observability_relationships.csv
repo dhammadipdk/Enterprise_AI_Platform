@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_monitoring_edge,is_alerting_edge,is_trace_edge,description,status
+OBSREL-000001,TelemetrySource,GENERATES,TelemetryEvent,Telemetry,1:N,TRUE,FALSE,FALSE,FALSE,Telemetry sources emit events,Active
+OBSREL-000002,TelemetryEvent,RECORDED_AS,LogEntry,Logging,1:N,TRUE,FALSE,FALSE,FALSE,Events generate logs,Active
+OBSREL-000003,TelemetryEvent,BELONGS_TO,Trace,Tracing,N:1,TRUE,FALSE,FALSE,TRUE,Events belong to distributed traces,Active
+OBSREL-000004,Trace,CONTAINS,Span,Tracing,1:N,TRUE,FALSE,FALSE,TRUE,Traces contain spans,Active
+OBSREL-000005,Span,GENERATES,Metric,Metrics,1:N,TRUE,TRUE,FALSE,FALSE,Spans produce runtime metrics,Active
+OBSREL-000006,Metric,VALIDATED_BY,SLA,Governance,N:N,TRUE,TRUE,FALSE,FALSE,Metrics evaluated against SLAs,Active
+OBSREL-000007,SLA,IMPLEMENTED_BY,SLO,Governance,1:N,FALSE,TRUE,FALSE,FALSE,SLOs operationalize SLAs,Active
+OBSREL-000008,Metric,TRIGGERS,Alert,Alerting,N:N,TRUE,TRUE,TRUE,FALSE,Metrics trigger alerts,Active
+OBSREL-000009,Alert,ESCALATES_TO,Incident,Incident,N:1,TRUE,TRUE,TRUE,FALSE,Alerts escalate into incidents,Active
+OBSREL-000010,Incident,AFFECTS,HealthCheck,Operations,N:N,TRUE,TRUE,FALSE,FALSE,Incidents affect health status,Active
+OBSREL-000011,HealthCheck,DISPLAYED_ON,Dashboard,Visualization,N:N,TRUE,TRUE,FALSE,FALSE,Health displayed on dashboards,Active
+OBSREL-000012,RuntimeStatistic,SUMMARIZES,EnterprisePlatform,Analytics,N:1,FALSE,TRUE,FALSE,FALSE,Runtime statistics summarize platform performance,Active

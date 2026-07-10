@@ -1,0 +1,8 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-ACT-000001,MVA_1988,Motor Vehicles Act 1988,Primary legislation governing motor vehicles,Active,1988-07-01,,Government of India,
+REF-ACT-000002,MV_AMEND_2019,Motor Vehicles (Amendment) Act 2019,Amendments to Motor Vehicles Act,Active,2019-09-01,,Government of India,
+REF-ACT-000003,INSURANCE_ACT_1938,Insurance Act 1938,Insurance legislation,Active,1938-01-01,,Government of India,
+REF-ACT-000004,IRD_ACT_1999,IRDA Act 1999,Insurance Regulatory and Development Authority Act,Active,1999-04-19,,Government of India,
+REF-ACT-000005,IT_ACT_2000,Information Technology Act 2000,Electronic records and digital signatures,Active,2000-10-17,,Government of India,
+REF-ACT-000006,GST_ACT_2017,Goods and Services Tax Act,GST legislation,Active,2017-07-01,,Government of India,
+REF-ACT-000007,DPDP_2023,Digital Personal Data Protection Act 2023,Personal data protection legislation,Active,2023-08-11,,Government of India,

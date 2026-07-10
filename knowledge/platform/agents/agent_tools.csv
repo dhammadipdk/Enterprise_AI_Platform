@@ -1,0 +1,12 @@
+binding_id,agent_id,tool_id,capability_id,access_level,is_default,max_concurrent_invocations,fallback_tool,permission_scope,description,status
+ATOOL-000001,AG-000001,TOOL-000004,CAP-000007,Full,TRUE,10,Reasoning Engine,Recommendation,Recommendation generation tool,Active
+ATOOL-000002,AG-000002,TOOL-000003,CAP-000008,Full,TRUE,6,Knowledge Graph,Fraud,Fraud reasoning tool,Active
+ATOOL-000003,AG-000003,TOOL-000006,CAP-000006,Full,TRUE,12,None,Execution,Workflow execution tool,Active
+ATOOL-000004,AG-000004,TOOL-000003,CAP-000005,Full,TRUE,20,None,Planning,Planning support tool,Active
+ATOOL-000005,AG-000005,TOOL-000006,CAP-000006,Full,TRUE,25,None,Execution,Execution engine binding,Active
+ATOOL-000006,AG-000006,TOOL-000003,CAP-000004,Full,TRUE,20,None,Reasoning,Reasoning engine binding,Active
+ATOOL-000007,AG-000007,TOOL-000001,CAP-000001,Full,TRUE,30,Vector Database,Knowledge,Knowledge graph access,Active
+ATOOL-000008,AG-000007,TOOL-000002,CAP-000003,Full,FALSE,30,Knowledge Graph,Knowledge,Semantic search tool,Active
+ATOOL-000009,AG-000008,TOOL-000007,CAP-000011,Full,TRUE,30,None,Memory,Enterprise memory service,Active
+ATOOL-000010,AG-000009,TOOL-000006,CAP-000013,Full,TRUE,50,None,Coordination,Agent orchestration tool,Active
+ATOOL-000011,AG-000010,TOOL-000007,CAP-000010,Full,TRUE,20,None,Learning,Memory update service,Active

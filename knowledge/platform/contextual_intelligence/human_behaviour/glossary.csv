@@ -1,0 +1,21 @@
+term_id,term,business_definition
+HUM-001,Driving Style,Overall manner in which a person operates a vehicle
+HUM-002,Aggressive Driving,Driving characterized by harsh acceleration braking and steering
+HUM-003,Defensive Driving,Driving style focused on hazard anticipation and safety
+HUM-004,Driver Fatigue,Reduction in driving performance due to tiredness
+HUM-005,Driver Distraction,Loss of attention while driving
+HUM-006,Mobile Phone Usage,Use of handheld or hands-free devices during driving
+HUM-007,Harsh Braking,Sudden braking above predefined threshold
+HUM-008,Rapid Acceleration,Sudden acceleration event
+HUM-009,Sharp Cornering,Cornering with excessive lateral acceleration
+HUM-010,Speeding,Driving above posted speed limits
+HUM-011,Lane Discipline,Consistency in maintaining lane position
+HUM-012,Traffic Rule Compliance,Adherence to traffic regulations
+HUM-013,Driving Consistency,Stability of driving behaviour over time
+HUM-014,Night Driving,Driving performed during nighttime
+HUM-015,Risk Taking Behaviour,Willingness to perform unsafe maneuvers
+HUM-016,Eco Driving,Fuel-efficient and environmentally conscious driving
+HUM-017,Driver Trust Score,Composite indicator of driver reliability
+HUM-018,Safety Score,Composite indicator of driving safety
+HUM-019,Reaction Time,Time required to respond to driving events
+HUM-020,Driver Profile,Behavioral characterization of a driver

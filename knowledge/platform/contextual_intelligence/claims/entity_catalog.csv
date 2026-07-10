@@ -1,0 +1,21 @@
+entity_name,entity_type,description
+ClaimObservation,Observation,Observed claim information
+FNOLObservation,Observation,Observed first notice of loss
+DamageObservation,Observation,Observed vehicle or property damage
+SurveyObservation,Observation,Surveyor inspection results
+RepairObservation,Observation,Observed repair activities
+InvestigationObservation,Observation,Observed claim investigation
+SettlementObservation,Observation,Observed settlement activities
+ReserveObservation,Observation,Observed reserve estimation
+RecoveryObservation,Observation,Observed recovery process
+LitigationObservation,Observation,Observed legal proceedings
+ClaimRiskScore,DerivedIntelligence,Overall claim risk score
+ClaimSeverityIndex,DerivedIntelligence,Estimated claim severity
+ClaimComplexityIndex,DerivedIntelligence,Overall claim complexity
+ReserveRecommendation,DerivedIntelligence,Recommended reserve amount
+SettlementRecommendation,Recommendation,Recommended settlement decision
+FraudSuspicionScore,DerivedIntelligence,Suspected fraud likelihood
+ClaimHealthIndex,DerivedIntelligence,Overall operational quality of claim
+ClaimProcessingScore,DerivedIntelligence,Operational processing efficiency
+ClaimExplanation,Explanation,AI explanation for claim decision
+ClaimRelationship,Relationship,Causal relationship between claim entities

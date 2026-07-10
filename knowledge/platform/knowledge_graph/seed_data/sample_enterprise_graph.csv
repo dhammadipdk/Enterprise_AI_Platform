@@ -1,0 +1,36 @@
+instance_id,node_label,node_identifier,relationship,target_identifier,scenario,graph_layer,business_meaning
+GRAPH-000001,Customer,CUST1001,OWNS,POL2001,Motor Accident,Knowledge,Customer owns insurance policy
+GRAPH-000002,Policy,POL2001,COVERS,VEH3001,Motor Accident,Knowledge,Policy covers vehicle
+GRAPH-000003,Policy,POL2001,PROVIDES,COV4001,Motor Accident,Knowledge,Policy provides comprehensive coverage
+GRAPH-000004,Vehicle,VEH3001,HAS_DRIVER,DRV5001,Motor Accident,Knowledge,Vehicle assigned to driver
+GRAPH-000005,Driver,DRV5001,GENERATES,OBS6001,Motor Accident,Context,Driver generates driving observations
+GRAPH-000006,WeatherEvent,WEA7001,AFFECTS,ROAD8001,Motor Accident,Context,Heavy rain impacts road
+GRAPH-000007,RoadSegment,ROAD8001,AFFECTS,VEH3001,Motor Accident,Context,Road condition affects vehicle
+GRAPH-000008,Vehicle,VEH3001,GENERATES,OBS6002,Motor Accident,Context,Vehicle telematics observation
+GRAPH-000009,Observation,OBS6001,SUPPORTS,EVID9001,Motor Accident,Reasoning,Driving observation supports evidence
+GRAPH-000010,Observation,OBS6002,SUPPORTS,EVID9001,Motor Accident,Reasoning,Vehicle observation supports evidence
+GRAPH-000011,Evidence,EVID9001,SUPPORTS,HYP10001,Motor Accident,Reasoning,Evidence forms hypothesis
+GRAPH-000012,Hypothesis,HYP10001,GENERATES,DEC11001,Motor Accident,Reasoning,Hypothesis generates decision
+GRAPH-000013,BusinessRule,RULE12001,CONSTRAINS,DEC11001,Motor Accident,Reasoning,Business rule constrains decision
+GRAPH-000014,Decision,DEC11001,GENERATES,REC13001,Motor Accident,Reasoning,Decision creates recommendation
+GRAPH-000015,Recommendation,REC13001,AFFECTS,CLAIM14001,Motor Accident,Decision,Recommendation affects claim
+GRAPH-000016,Customer,CUST1001,FILES,CLAIM14001,Motor Accident,Knowledge,Customer files claim
+GRAPH-000017,Claim,CLAIM14001,INVOLVES,VEH3001,Motor Accident,Knowledge,Claim references vehicle
+GRAPH-000018,Claim,CLAIM14001,INITIATES,REP15001,Motor Accident,Knowledge,Repair initiated
+GRAPH-000019,Repair,REP15001,ASSIGNED_TO,GAR16001,Motor Accident,Knowledge,Garage assigned
+GRAPH-000020,Garage,GAR16001,EMPLOYS,SUR17001,Motor Accident,Knowledge,Garage employs surveyor
+GRAPH-000021,Surveyor,SUR17001,INSPECTS,CLAIM14001,Motor Accident,Knowledge,Surveyor inspects claim
+GRAPH-000022,Claim,CLAIM14001,MAY_TRIGGER,FRA18001,Motor Accident,Risk,Fraud suspicion
+GRAPH-000023,FraudCase,FRA18001,GENERATES,REC13002,Motor Accident,Reasoning,SIU recommendation
+GRAPH-000024,Recommendation,REC13002,AFFECTS,CUST1001,Motor Accident,Decision,Customer investigation
+GRAPH-000025,KnowledgeDocument,DOC19001,SUPPORTS,RULE12001,Motor Accident,Knowledge,IRDAI guideline supports rule
+GRAPH-000026,EnvironmentContext,CTX20001,CONTAINS,OBS6002,Motor Accident,Context,Environment context
+GRAPH-000027,VehicleBehaviourContext,CTX21001,CONTAINS,OBS6001,Motor Accident,Context,Vehicle behaviour context
+GRAPH-000028,HumanBehaviourContext,CTX22001,CONTAINS,OBS6001,Motor Accident,Context,Human behaviour context
+GRAPH-000029,DerivedIntelligence,INT23001,DERIVED_FROM,OBS6001,Motor Accident,Analytics,Driving risk score
+GRAPH-000030,DerivedIntelligence,INT23002,DERIVED_FROM,OBS6002,Motor Accident,Analytics,Vehicle health score
+GRAPH-000031,DerivedIntelligence,INT23003,GENERATES,RISK24001,Motor Accident,Analytics,Fraud risk computation
+GRAPH-000032,RiskAssessment,RISK24001,INFLUENCES,REC13001,Motor Accident,Decision,Risk affects recommendation
+GRAPH-000033,Recommendation,REC13001,EXECUTES,PAY25001,Motor Accident,Execution,Claim settlement
+GRAPH-000034,Payment,PAY25001,BELONGS_TO,CLAIM14001,Motor Accident,Finance,Claim payment
+GRAPH-000035,EnterpriseGraph,GRAPH001,CONTAINS,CUST1001,Motor Accident,Graph,Enterprise graph root

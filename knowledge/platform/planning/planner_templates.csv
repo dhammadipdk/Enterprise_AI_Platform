@@ -1,0 +1,11 @@
+template_id,template_name,planning_strategy,goal_type,input_requirements,generated_outputs,supports_replanning,multi_agent,max_task_depth,description,status
+PTEMP-000001,Customer Recommendation Plan,Goal-Oriented,Customer Recommendation,Customer Profile;Policy Catalog,Recommendation Plan,TRUE,FALSE,4,Generate customer recommendation workflow,Active
+PTEMP-000002,Claim Settlement Plan,Sequential,Claim Settlement,Claim;Policy;Survey Report,Settlement Workflow,TRUE,FALSE,6,Claims processing workflow,Active
+PTEMP-000003,Fraud Investigation Plan,Risk-Aware,Fraud Investigation,Claim;Fraud Signals;Evidence,Investigation Workflow,TRUE,TRUE,8,Fraud investigation planning,Active
+PTEMP-000004,Risk Assessment Plan,Graph,Risk Assessment,Customer;Vehicle;Environment,Risk Assessment Workflow,TRUE,FALSE,5,Risk computation workflow,Active
+PTEMP-000005,Knowledge Retrieval Plan,Graph,Knowledge Retrieval,User Query,Retrieval Workflow,TRUE,FALSE,4,Enterprise retrieval workflow,Active
+PTEMP-000006,Multi-Agent Coordination Plan,Collaborative,Agent Coordination,Goal;Agent Capabilities,Coordination Workflow,TRUE,TRUE,10,Distributed planning,Active
+PTEMP-000007,Policy Recommendation Plan,LLM-Assisted,Policy Recommendation,Customer Context,Recommendation Workflow,TRUE,FALSE,5,Policy recommendation planning,Active
+PTEMP-000008,Compliance Review Plan,Constraint,Enterprise Optimization,Enterprise Context,Compliance Workflow,FALSE,TRUE,6,Compliance planning,Active
+PTEMP-000009,Customer Onboarding Plan,Sequential,Enterprise Optimization,Customer Documents,Onboarding Workflow,FALSE,FALSE,6,Customer onboarding workflow,Active
+PTEMP-000010,Adaptive Planning Template,Reactive,Enterprise Optimization,Dynamic Context,Adaptive Plan,TRUE,TRUE,12,Dynamic replanning template,Active

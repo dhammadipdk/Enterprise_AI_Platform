@@ -1,0 +1,16 @@
+semantic_id,concept_name,semantic_category,business_meaning,formal_definition,related_concepts,reasoning_importance,graph_importance,llm_importance,status
+SEM-000001,Customer,Core Entity,Insurance consumer,Entity purchasing insurance,"Policy,Claim,Recommendation",Critical,Critical,Critical,Active
+SEM-000002,Policy,Core Entity,Insurance contract,Agreement defining coverage,"Coverage,Customer,Premium",Critical,Critical,High,Active
+SEM-000003,Claim,Core Entity,Loss request,Request for indemnification,"Policy,Survey,Repair",Critical,Critical,Critical,Active
+SEM-000004,Coverage,Core Entity,Risk protection,Protection provided under policy,"Policy,Risk",High,High,Medium,Active
+SEM-000005,Fraud,Risk Concept,Intentional deception,Attempt to obtain illegal benefit,"Claim,Recommendation",Critical,Critical,Critical,Active
+SEM-000006,Observation,Context Concept,Observed enterprise fact,Atomic contextual evidence,"Derived Intelligence",Critical,High,High,Active
+SEM-000007,Derived Intelligence,Context Concept,Computed insight,Analytical interpretation of observations,"Observation,Decision",Critical,Critical,Critical,Active
+SEM-000008,Evidence,Reasoning Concept,Supporting information,Validated reasoning input,"Observation,Hypothesis",Critical,Critical,Critical,Active
+SEM-000009,Hypothesis,Reasoning Concept,Intermediate inference,Possible explanation supported by evidence,"Evidence,Decision",Critical,Critical,Critical,Active
+SEM-000010,Decision,Reasoning Concept,Business choice,Selection among alternatives,"Recommendation",Critical,Critical,Critical,Active
+SEM-000011,Recommendation,Decision Concept,Suggested action,Action proposed by reasoning engine,"Decision",Critical,Critical,Critical,Active
+SEM-000012,Business Rule,Knowledge Concept,Enterprise constraint,Rule governing enterprise behavior,"Decision",High,Medium,Medium,Active
+SEM-000013,Knowledge Graph,Knowledge Concept,Semantic graph,Graph representation of enterprise knowledge,"Ontology",Critical,Critical,High,Active
+SEM-000014,GraphRAG,AI Concept,Graph-enhanced retrieval,Semantic retrieval over enterprise graph,"Knowledge Graph,LLM",Critical,Critical,Critical,Active
+SEM-000015,Agent,AI Concept,Autonomous reasoning unit,AI system capable of planning and execution,"Reasoning,GraphRAG",Critical,High,Critical,Active

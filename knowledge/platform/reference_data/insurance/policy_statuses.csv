@@ -1,0 +1,8 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PSTATUS-000001,DRAFT,Draft,Policy proposal created but not issued,Active,2026-01-01,,Industry,
+REF-PSTATUS-000002,ACTIVE,Active,Policy currently in force,Active,2026-01-01,,Industry,
+REF-PSTATUS-000003,LAPSED,Lapsed,Policy expired without renewal,Active,2026-01-01,,Industry,
+REF-PSTATUS-000004,CANCELLED,Cancelled,Policy cancelled before expiry,Active,2026-01-01,,Industry,
+REF-PSTATUS-000005,EXPIRED,Expired,Policy reached natural expiry,Active,2026-01-01,,Industry,
+REF-PSTATUS-000006,RENEWED,Renewed,Policy renewed into a new term,Active,2026-01-01,,Industry,
+REF-PSTATUS-000007,SUSPENDED,Suspended,Policy temporarily suspended,Active,2026-01-01,,Industry,

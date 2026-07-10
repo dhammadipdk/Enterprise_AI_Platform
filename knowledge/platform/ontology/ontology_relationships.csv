@@ -1,0 +1,21 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,bidirectional,inferable,description,status
+ONTO-REL-000001,Customer,OWNS,Policy,Ownership,1:N,TRUE,TRUE,Customer owns policies,Active
+ONTO-REL-000002,Policy,COVERS,Vehicle,Coverage,1:N,FALSE,TRUE,Policy covers vehicle,Active
+ONTO-REL-000003,Policy,PROVIDES,Coverage,Coverage,1:N,FALSE,TRUE,Policy defines coverage,Active
+ONTO-REL-000004,Customer,FILES,Claim,Business Process,1:N,FALSE,TRUE,Customer files claim,Active
+ONTO-REL-000005,Claim,INVOLVES,Vehicle,Business Process,N:N,TRUE,TRUE,Claim references vehicle,Active
+ONTO-REL-000006,Claim,INITIATES,Repair,Workflow,1:1,FALSE,TRUE,Claim triggers repair,Active
+ONTO-REL-000007,Claim,MAY_TRIGGER,Fraud Case,Risk,1:0..1,FALSE,TRUE,Claim may generate fraud case,Active
+ONTO-REL-000008,Fraud Case,GENERATES,Recommendation,Decision,1:N,FALSE,TRUE,Fraud produces recommendation,Active
+ONTO-REL-000009,Observation,SUPPORTS,Evidence,Reasoning,N:N,FALSE,TRUE,Observation becomes evidence,Active
+ONTO-REL-000010,Evidence,SUPPORTS,Hypothesis,Reasoning,N:N,FALSE,TRUE,Evidence supports hypothesis,Active
+ONTO-REL-000011,Hypothesis,GENERATES,Decision,Reasoning,N:N,FALSE,TRUE,Hypothesis generates decision,Active
+ONTO-REL-000012,Decision,PRODUCES,Recommendation,Decision,1:N,FALSE,TRUE,Decision generates recommendation,Active
+ONTO-REL-000013,Recommendation,AFFECTS,Customer,Outcome,N:N,FALSE,TRUE,Recommendation impacts customer,Active
+ONTO-REL-000014,Observation,BELONGS_TO,Environment Context,Context,N:1,FALSE,TRUE,Observation belongs to context,Active
+ONTO-REL-000015,Derived Intelligence,DERIVED_FROM,Observation,Analytics,N:N,FALSE,TRUE,Derived intelligence computed from observations,Active
+ONTO-REL-000016,Business Rule,CONSTRAINS,Decision,Governance,N:N,FALSE,TRUE,Rules constrain decisions,Active
+ONTO-REL-000017,Recommendation,FOLLOWS,Decision,Execution,N:1,FALSE,TRUE,Recommendation follows decision,Active
+ONTO-REL-000018,Policy,HAS_HOLDER,Customer,Ownership,N:1,FALSE,TRUE,Policy holder relationship,Active
+ONTO-REL-000019,Vehicle,HAS_DRIVER,Driver,Assignment,N:N,FALSE,TRUE,Vehicle assigned to driver,Active
+ONTO-REL-000020,Customer,GENERATES,Observation,Context,N:N,FALSE,TRUE,Customer activity creates observations,Active

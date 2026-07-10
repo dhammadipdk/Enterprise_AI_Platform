@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CLAIMTYPE-000001,OWN_DAMAGE,Own Damage Claim,Claim for damage to insured vehicle,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000002,THIRD_PARTY,Third Party Claim,Claim involving third-party liability,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000003,THEFT,Theft Claim,Claim due to vehicle theft,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000004,TOTAL_LOSS,Total Loss Claim,Vehicle declared actual or constructive total loss,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000005,FIRE,Fire Damage Claim,Damage caused by fire or explosion,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000006,NATURAL_CALAMITY,Natural Calamity Claim,Flood cyclone earthquake and similar events,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000007,PERSONAL_ACCIDENT,Personal Accident Claim,Owner-driver or occupant injury claim,Active,2026-01-01,,IRDAI,
+REF-CLAIMTYPE-000008,WINDSHIELD,Glass/Windshield Claim,Claim for glass or windshield damage,Active,2026-01-01,,Industry,

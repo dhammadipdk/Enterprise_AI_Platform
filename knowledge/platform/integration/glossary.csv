@@ -1,0 +1,21 @@
+term_id,term,business_definition
+INT-001,API,Application Programming Interface
+INT-002,Endpoint,Network address exposing functionality
+INT-003,Event,Business occurrence communicated asynchronously
+INT-004,Message,Structured communication payload
+INT-005,Connector,Adapter to external systems
+INT-006,Webhook,HTTP callback triggered by events
+INT-007,Queue,Reliable message storage
+INT-008,Streaming,Continuous event processing
+INT-009,Protocol,Communication standard
+INT-010,Service Registry,Repository of discoverable services
+INT-011,Circuit Breaker,Failure protection mechanism
+INT-012,Retry Policy,Automatic retry configuration
+INT-013,Rate Limit,Traffic control policy
+INT-014,Integration Pattern,Reusable communication architecture
+INT-015,Event Bus,Enterprise event backbone
+INT-016,Message Broker,Infrastructure routing messages
+INT-017,Service Discovery,Automatic service lookup
+INT-018,Request Correlation,Tracing related requests
+INT-019,Dead Letter Queue,Failed message repository
+INT-020,Integration Gateway,Central communication gateway

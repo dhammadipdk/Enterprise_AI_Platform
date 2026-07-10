@@ -1,0 +1,11 @@
+control_id,control_name,effectiveness_metric,target_effectiveness,current_effectiveness,last_tested,test_frequency,improvement_action,description,status
+CTRLTEST-000001,Grounding Validation,Grounding Accuracy,99,98.8,2026-01-10,Monthly,Improve retrieval quality,Grounding effectiveness,Active
+CTRLTEST-000002,Policy Compliance,Compliance Rate,100,99.7,2026-01-10,Monthly,Strengthen validation rules,Policy compliance effectiveness,Active
+CTRLTEST-000003,Human Approval Gate,Approval Accuracy,98,97.5,2026-01-10,Quarterly,Refine approval workflow,Approval effectiveness,Active
+CTRLTEST-000004,Risk Assessment,Risk Detection Rate,96,95.2,2026-01-10,Monthly,Enhance risk models,Risk assessment effectiveness,Active
+CTRLTEST-000005,Audit Logging,Audit Coverage,100,100,2026-01-10,Monthly,None,Audit completeness,Active
+CTRLTEST-000006,Bias Detection,Fairness Detection Rate,95,94.4,2026-01-10,Monthly,Improve fairness monitoring,Bias detection effectiveness,Active
+CTRLTEST-000007,Knowledge Validation,Knowledge Accuracy,98,97.9,2026-01-10,Monthly,Improve review process,Knowledge governance effectiveness,Active
+CTRLTEST-000008,Model Registry Validation,Approved Model Usage,100,100,2026-01-10,Monthly,None,Model governance effectiveness,Active
+CTRLTEST-000009,Access Control,Unauthorized Access Prevention,100,99.9,2026-01-10,Monthly,Strengthen IAM policies,Security effectiveness,Active
+CTRLTEST-000010,Continuous Monitoring,Incident Detection Rate,97,96.8,2026-01-10,Weekly,Improve monitoring rules,Platform monitoring effectiveness,Active

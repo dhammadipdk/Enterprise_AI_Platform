@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-REPAIR-000001,MECHANICAL,Mechanical Repair,Engine and mechanical systems repair,Active,2026-01-01,,Industry,
+REF-REPAIR-000002,BODYSHOP,Body Shop Repair,Body panels and structural repair,Active,2026-01-01,,Industry,
+REF-REPAIR-000003,PAINT,Paint Work,Painting and refinishing,Active,2026-01-01,,Industry,
+REF-REPAIR-000004,ELECTRICAL,Electrical Repair,Electrical and wiring repairs,Active,2026-01-01,,Industry,
+REF-REPAIR-000005,GLASS,Glass Replacement,Glass repair and replacement,Active,2026-01-01,,Industry,
+REF-REPAIR-000006,TYRE,Tyre & Wheel,Tyre and wheel replacement,Active,2026-01-01,,Industry,
+REF-REPAIR-000007,SUSPENSION,Suspension Repair,Suspension and steering repairs,Active,2026-01-01,,Industry,
+REF-REPAIR-000008,DIAGNOSTICS,Diagnostics,Inspection and diagnostics,Active,2026-01-01,,Industry,

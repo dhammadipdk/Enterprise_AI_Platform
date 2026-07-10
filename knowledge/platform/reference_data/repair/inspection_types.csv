@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-INSP-000001,PRE_REPAIR,Pre-repair Inspection,Inspection before repair authorization,Active,2026-01-01,,Industry,
+REF-INSP-000002,POST_REPAIR,Post-repair Inspection,Inspection after repair completion,Active,2026-01-01,,Industry,
+REF-INSP-000003,DAMAGE_ASSESSMENT,Damage Assessment,Detailed assessment of vehicle damage,Active,2026-01-01,,Industry,
+REF-INSP-000004,QUALITY_AUDIT,Quality Audit,Quality assurance inspection,Active,2026-01-01,,Industry,
+REF-INSP-000005,SAFETY_INSPECTION,Safety Inspection,Safety-critical inspection,Active,2026-01-01,,Industry,
+REF-INSP-000006,REMOTE_INSPECTION,Remote Inspection,Photo/video based inspection,Active,2026-01-01,,Industry,

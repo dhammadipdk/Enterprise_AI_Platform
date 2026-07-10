@@ -1,0 +1,11 @@
+domain_id,domain_name,primary_scope,synchronous,asynchronous,enterprise_critical,description,status
+INTDOM-000001,API Integration,REST APIs,TRUE,FALSE,TRUE,REST-based integrations,Active
+INTDOM-000002,Messaging Integration,Message Broker,FALSE,TRUE,TRUE,Enterprise messaging,Active
+INTDOM-000003,Streaming Integration,Streaming,FALSE,TRUE,TRUE,Real-time streams,Active
+INTDOM-000004,Webhook Integration,Callbacks,TRUE,FALSE,FALSE,Webhook communication,Active
+INTDOM-000005,Database Integration,Data Access,TRUE,FALSE,TRUE,Database connectivity,Active
+INTDOM-000006,Cloud Integration,Cloud Services,TRUE,TRUE,TRUE,Cloud provider integrations,Active
+INTDOM-000007,Agent Integration,Agent Platform,TRUE,TRUE,TRUE,Multi-agent communication,Active
+INTDOM-000008,Tool Integration,Tool Calling,TRUE,TRUE,TRUE,AI tool connectivity,Active
+INTDOM-000009,External Enterprise Integration,SaaS Systems,TRUE,TRUE,TRUE,Third-party enterprise systems,Active
+INTDOM-000010,Platform Integration,Internal Services,TRUE,TRUE,TRUE,Internal microservice communication,Active

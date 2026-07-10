@@ -1,0 +1,6 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+AI-000001,Critical,Essential for AI reasoning and recommendation.,Importance,1,Active,1.0.0,,
+AI-000002,High,Strong influence on AI outputs.,Importance,2,Active,1.0.0,,
+AI-000003,Medium,Useful but not essential.,Importance,3,Active,1.0.0,,
+AI-000004,Low,Minimal influence on AI outputs.,Importance,4,Active,1.0.0,,
+AI-000005,None,No direct AI relevance.,Importance,5,Active,1.0.0,,

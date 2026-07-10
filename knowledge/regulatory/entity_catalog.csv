@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-REG-000001,Regulation,Represents an authoritative insurance regulation governing business operations.,Aggregate Root,,GLOSS-REG-000001,Regulation Identifier,Dynamic,Regulatory,Root aggregate.
+ENT-REG-000002,Regulatory Authority,Represents an authority responsible for issuing regulations.,Entity,Regulation,GLOSS-REG-000011,,Stable,Regulatory,Issuing organization.
+ENT-REG-000003,Legal Reference,Represents legal acts, statutes and clauses supporting regulations.,Entity,Regulation,GLOSS-REG-000021,,Stable,Regulatory,Legal foundation.
+ENT-REG-000004,Circular,Represents regulatory circulars, notifications and advisories.,Entity,Regulation,GLOSS-REG-000031,,Dynamic,Regulatory,Operational updates.
+ENT-REG-000005,Business Rule,Represents executable insurance business rules derived from regulations.,Entity,Regulation,GLOSS-REG-000041,,Dynamic,Regulatory,Rule engine knowledge.
+ENT-REG-000006,Compliance Requirement,Represents mandatory compliance obligations.,Entity,Regulation,GLOSS-REG-000051,,Dynamic,Regulatory,Compliance management.
+ENT-REG-000007,Rule Version,Represents version history of regulatory rules.,Entity,Regulation,GLOSS-REG-000061,,Dynamic,Regulatory,Version control.
+ENT-REG-000008,Regulatory Lifecycle,Represents lifecycle and publication state of regulations.,Entity,Regulation,GLOSS-REG-000071,,Dynamic,Regulatory,Workflow management.
+ENT-REG-000009,Rule Interpretation,Represents structured interpretation of regulations for business reasoning.,Entity,Regulation,GLOSS-REG-000079,,Computed,Regulatory,Knowledge representation.
+ENT-REG-000010,Regulatory Assessment,Represents AI-generated quality assessment of regulatory knowledge.,Entity,Regulation,GLOSS-REG-000087,,Computed,Regulatory,Knowledge intelligence.

@@ -1,0 +1,13 @@
+intelligence_id,intelligence_type,subject_type,subject_code,subject_name,attribute,score,level,confidence_score,derived_from,model_id,valid_from,valid_to,status,remarks
+INT-MOB-IDX-000001,INDEX,CITY,MUM,Mumbai,Congestion Index,89,High,0.97,OBS-MOB1-000001;OBS-MOB1-000002,MODEL-MOB-IDX-001,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000002,INDEX,CITY,DEL,Delhi,Travel Exposure Index,86,High,0.95,Multiple Observations,MODEL-MOB-IDX-001,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000003,INDEX,CITY,BLR,Bengaluru,Journey Efficiency Index,52,Medium,0.91,OBS-MOB2-000004,MODEL-MOB-IDX-002,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000004,INDEX,CITY,CHE,Chennai,Route Reliability Index,79,High,0.93,OBS-MOB2-000005,MODEL-MOB-IDX-002,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000005,INDEX,CITY,PUN,Pune,Mobility Stability Index,72,Medium,0.91,Multiple Observations,MODEL-MOB-IDX-003,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000006,INDEX,CITY,KOL,Kolkata,Corridor Performance Index,68,Medium,0.90,OBS-MOB1-000005,MODEL-MOB-IDX-003,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000007,INDEX,CITY,GOA,Panaji,Tourism Mobility Index,83,High,0.94,OBS-MOB3-000007,MODEL-MOB-IDX-004,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000008,INDEX,CITY,SHI,Shimla,Hill Mobility Index,76,High,0.92,OBS-MOB2-000009,MODEL-MOB-IDX-004,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000009,INDEX,STATE,KA,Karnataka,Network Speed Index,74,Medium,0.91,OBS-MOB3-000009,MODEL-MOB-IDX-005,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000010,INDEX,ROAD_SEGMENT,NH48,NH-48,Highway Performance Index,87,High,0.95,OBS-MOB1-000011,MODEL-MOB-IDX-005,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000011,INDEX,DISTRICT,PUNE,Pune District,Fleet Mobility Index,79,High,0.93,OBS-MOB3-000011,MODEL-MOB-IDX-006,2026-07-01,2026-12-31,Active,
+INT-MOB-IDX-000012,INDEX,CITY,MUM,Mumbai,Average Network Speed Index,64,Medium,0.91,Multiple Observations,MODEL-MOB-IDX-006,2026-07-01,2026-12-31,Active,

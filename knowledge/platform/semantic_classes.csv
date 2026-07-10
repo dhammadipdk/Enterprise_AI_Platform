@@ -1,0 +1,7 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+SC-000001,Core,Primary business fact.,Semantic,1,Active,1.0.0,,
+SC-000002,Reference,Obtained from master/reference data.,Semantic,2,Active,1.0.0,,
+SC-000003,User Provided,Provided directly by customer or user.,Semantic,3,Active,1.0.0,,
+SC-000004,Regulatory,Defined by external regulatory authorities.,Semantic,4,Active,1.0.0,,
+SC-000005,Derived,Computed from other business facts.,Semantic,5,Active,1.0.0,,
+SC-000006,AI Generated,Produced by analytical or AI models.,Semantic,6,Active,1.0.0,,

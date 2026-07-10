@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-ADDON-000001,ZERO_DEP,Zero Depreciation,No depreciation deduction during claims,Active,2026-01-01,,Industry,
+REF-ADDON-000002,ENGINE_PROTECT,Engine Protect,Covers hydrostatic lock and engine ingress damage,Active,2026-01-01,,Industry,
+REF-ADDON-000003,CONSUMABLES,Consumables Cover,Covers nuts, bolts, engine oil and consumables,Active,2026-01-01,,Industry,
+REF-ADDON-000004,RETURN_TO_INVOICE,Return to Invoice,Pays invoice value on total loss,Active,2026-01-01,,Industry,
+REF-ADDON-000005,ROADSIDE_ASSISTANCE,Roadside Assistance,Emergency roadside support,Active,2026-01-01,,Industry,
+REF-ADDON-000006,NCB_PROTECT,NCB Protection,Protects accumulated no-claim bonus,Active,2026-01-01,,Industry,
+REF-ADDON-000007,KEY_REPLACEMENT,Key Replacement,Covers replacement of lost or damaged keys,Active,2026-01-01,,Industry,
+REF-ADDON-000008,TYRE_PROTECT,Tyre Protect,Covers tyre and tube damage,Active,2026-01-01,,Industry,
+REF-ADDON-000009,DAILY_ALLOWANCE,Daily Allowance,Pays daily transport allowance during repairs,Active,2026-01-01,,Industry,
+REF-ADDON-000010,LOSS_OF_PERSONAL_BELONGINGS,Personal Belongings Cover,Covers belongings inside vehicle,Active,2026-01-01,,Industry,

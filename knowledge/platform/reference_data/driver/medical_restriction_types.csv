@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-MED-000001,CORRECTIVE_LENSES,Corrective Lenses,Driver must wear prescribed corrective lenses,Active,2026-01-01,,MoRTH,
+REF-MED-000002,HEARING_AID,Hearing Aid,Driver must use prescribed hearing aid if applicable,Active,2026-01-01,,MoRTH,
+REF-MED-000003,DAYLIGHT_ONLY,Daylight Driving Only,Driving restricted to daylight hours,Active,2026-01-01,,Licensing Authority,
+REF-MED-000004,VEHICLE_ADAPTATION,Vehicle Adaptation Required,Vehicle must have approved adaptive controls,Active,2026-01-01,,Licensing Authority,
+REF-MED-000005,PERIODIC_MEDICAL,Periodic Medical Review,Periodic medical fitness certification required,Active,2026-01-01,,Licensing Authority,
+REF-MED-000006,NONE,None,No medical restrictions recorded,Active,2026-01-01,,Licensing Authority,

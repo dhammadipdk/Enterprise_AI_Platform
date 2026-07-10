@@ -1,0 +1,6 @@
+reference_id,code,name,rate_percent,description,status,effective_date,expiry_date,source_authority,remarks
+REF-GST-000001,GST_0,0%,0,Zero-rated or exempt supplies,Active,2026-01-01,,GST Council,
+REF-GST-000002,GST_5,5%,5,Reduced GST slab,Active,2026-01-01,,GST Council,
+REF-GST-000003,GST_12,12%,12,Standard GST slab,Active,2026-01-01,,GST Council,
+REF-GST-000004,GST_18,18%,18,Standard GST slab applicable to many insurance services,Active,2026-01-01,,GST Council,
+REF-GST-000005,GST_28,28%,28,Highest standard GST slab,Active,2026-01-01,,GST Council,

@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-LTYPE-000001,LEARNER,Learner Licence,Temporary learner licence,Active,2026-01-01,,MoRTH,
+REF-LTYPE-000002,PERMANENT,Permanent Licence,Standard permanent driving licence,Active,2026-01-01,,MoRTH,
+REF-LTYPE-000003,COMMERCIAL,Commercial Licence,Commercial driving licence,Active,2026-01-01,,MoRTH,
+REF-LTYPE-000004,INTERNATIONAL,International Driving Permit,International driving authorization,Active,2026-01-01,,MoRTH,
+REF-LTYPE-000005,DUPLICATE,Duplicate Licence,Replacement licence,Active,2026-01-01,,MoRTH,
+REF-LTYPE-000006,SMART_CARD,Smart Card Licence,Chip-enabled licence,Active,2026-01-01,,MoRTH,

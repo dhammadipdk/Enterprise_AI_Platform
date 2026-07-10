@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-VCAT-000001,TWO_WHEELER,Two Wheeler,Motorcycle and scooter category,Active,2026-01-01,,MoRTH,
+REF-VCAT-000002,THREE_WHEELER,Three Wheeler,Passenger or goods three wheeler,Active,2026-01-01,,MoRTH,
+REF-VCAT-000003,PASSENGER_CAR,Passenger Car,Private passenger motor car,Active,2026-01-01,,MoRTH,
+REF-VCAT-000004,SUV,Sport Utility Vehicle,SUV category,Active,2026-01-01,,MoRTH,
+REF-VCAT-000005,MUV,Multi Utility Vehicle,MUV category,Active,2026-01-01,,MoRTH,
+REF-VCAT-000006,LCV,Light Commercial Vehicle,Commercial vehicle up to specified GVW,Active,2026-01-01,,MoRTH,
+REF-VCAT-000007,HCV,Heavy Commercial Vehicle,Heavy commercial transport vehicle,Active,2026-01-01,,MoRTH,
+REF-VCAT-000008,BUS,Bus,Passenger transport bus,Active,2026-01-01,,MoRTH,
+REF-VCAT-000009,TRACTOR,Tractor,Agricultural tractor,Active,2026-01-01,,MoRTH,
+REF-VCAT-000010,TRAILER,Trailer,Towed vehicle,Active,2026-01-01,,MoRTH,

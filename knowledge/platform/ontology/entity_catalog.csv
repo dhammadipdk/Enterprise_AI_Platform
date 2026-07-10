@@ -1,0 +1,17 @@
+entity_name,entity_type,description
+OntologyEntity,Semantic Entity,Enterprise concept
+OntologyRelationship,Semantic Relationship,Meaningful relationship between entities
+OntologyProperty,Semantic Property,Attribute describing ontology entities
+OntologyConstraint,Constraint,Business restriction
+OntologyHierarchy,Hierarchy,Inheritance structure
+OntologyState,Lifecycle State,Valid semantic state
+OntologyEvent,Business Event,Ontology event definition
+OntologySemantic,Semantic Definition,Business meaning
+OntologyAlignment,Semantic Mapping,Alignment between ontologies
+OntologyModule,Module,Logical ontology package
+EnterpriseConcept,Concept,Core business abstraction
+BusinessObject,Object,Enterprise business object
+BusinessActor,Actor,Entity performing actions
+BusinessProcess,Process,Enterprise process
+BusinessCapability,Capability,Enterprise capability
+EnterpriseRelationship,Relationship,Relationship between enterprise concepts

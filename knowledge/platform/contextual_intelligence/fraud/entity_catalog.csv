@@ -1,0 +1,18 @@
+entity_name,entity_type,description
+FraudObservation,Observation,Observed fraud-related evidence
+BehavioralAnomalyObservation,Observation,Observed abnormal customer or driver behavior
+DocumentObservation,Observation,Observed document inconsistencies
+IdentityObservation,Observation,Observed identity verification results
+NetworkObservation,Observation,Observed relationships among entities
+RepairObservation,Observation,Observed repair anomalies
+FraudRiskScore,DerivedIntelligence,Overall fraud likelihood
+FraudSuspicionIndex,DerivedIntelligence,Composite fraud indicator
+FraudRingProbability,DerivedIntelligence,Likelihood of organized fraud
+SIUPriorityScore,DerivedIntelligence,Priority assigned to investigation
+FalsePositiveProbability,DerivedIntelligence,Estimated probability of incorrect fraud detection
+FraudAlert,DerivedIntelligence,Operational fraud notification
+FraudPrediction,Prediction,Predicted fraud-related outcome
+FraudRecommendation,Recommendation,Recommended fraud action
+FraudExplanation,Explanation,Explainable AI reasoning for fraud decision
+FraudRelationship,Relationship,Relationship among fraud entities
+FraudCaseContext,SeedData,Representative fraud investigation scenario

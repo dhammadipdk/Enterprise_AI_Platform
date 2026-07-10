@@ -1,0 +1,48 @@
+relationship_id,source_context,relationship_type,target_context,relationship_strength,relationship_nature,evidence_level,confidence_score,model_reference,remarks
+REL-FRD-000001,Identity Mismatch,INCREASES,Identity Fraud Risk,0.97,Causal,High,0.98,MODEL-FRD-001,
+REL-FRD-000002,Behavioral Anomaly,INCREASES,Fraud Suspicion Index,0.94,Causal,High,0.96,MODEL-FRD-002,
+REL-FRD-000003,High Login Velocity,INCREASES,Identity Fraud Risk,0.89,Correlational,Medium,0.91,MODEL-FRD-003,
+REL-FRD-000004,Device Fingerprint Mismatch,INCREASES,Fraud Risk,0.95,Causal,High,0.97,MODEL-FRD-004,
+REL-FRD-000005,Geolocation Mismatch,INCREASES,Fraud Risk,0.93,Causal,High,0.95,MODEL-FRD-005,
+
+REL-FRD-000006,Claim Reporting Delay,INCREASES,Fraud Probability,0.92,Causal,High,0.94,MODEL-FRD-006,
+REL-FRD-000007,Duplicate Claims,INCREASES,Fraud Suspicion Index,0.98,Causal,High,0.99,MODEL-FRD-007,
+REL-FRD-000008,Claim Inflation,INCREASES,Financial Exposure,0.96,Causal,High,0.98,MODEL-FRD-008,
+REL-FRD-000009,Repair Estimate Outlier,INCREASES,Repair Fraud Risk,0.93,Causal,High,0.95,MODEL-FRD-009,
+REL-FRD-000010,Invoice Manipulation,INCREASES,Document Fraud Risk,0.94,Causal,High,0.96,MODEL-FRD-010,
+
+REL-FRD-000011,OCR Confidence,DECREASES,Document Fraud Risk,0.90,Correlational,Medium,0.91,MODEL-FRD-011,
+REL-FRD-000012,Image Tampering Score,INCREASES,Fraud Probability,0.95,Causal,High,0.97,MODEL-FRD-012,
+REL-FRD-000013,Video Tampering Score,INCREASES,Fraud Probability,0.95,Causal,High,0.97,MODEL-FRD-013,
+REL-FRD-000014,Evidence Consistency,DECREASES,Fraud Risk,0.93,Causal,High,0.95,MODEL-FRD-014,
+REL-FRD-000015,Witness Consistency,DECREASES,Investigation Priority,0.88,Correlational,Medium,0.90,MODEL-FRD-015,
+
+REL-FRD-000016,Shared Phone Number,INCREASES,Fraud Ring Probability,0.95,Causal,High,0.97,MODEL-FRD-016,
+REL-FRD-000017,Shared Address,INCREASES,Collusion Risk,0.92,Causal,High,0.94,MODEL-FRD-017,
+REL-FRD-000018,Shared Bank Account,INCREASES,Fraud Ring Probability,0.98,Causal,High,0.99,MODEL-FRD-018,
+REL-FRD-000019,Shared Garage,INCREASES,Repair Fraud Risk,0.91,Correlational,Medium,0.93,MODEL-FRD-019,
+REL-FRD-000020,Shared Surveyor,INCREASES,Collusion Risk,0.90,Correlational,Medium,0.92,MODEL-FRD-020,
+
+REL-FRD-000021,Shared Device,INCREASES,Synthetic Identity Risk,0.94,Causal,High,0.96,MODEL-FRD-021,
+REL-FRD-000022,Shared IP Address,INCREASES,Network Fraud Risk,0.91,Correlational,Medium,0.93,MODEL-FRD-022,
+REL-FRD-000023,Social Network Similarity,INCREASES,Fraud Ring Probability,0.90,Correlational,Medium,0.92,MODEL-FRD-023,
+REL-FRD-000024,Fraud Ring Probability,INCREASES,SIU Priority,0.97,Causal,High,0.98,MODEL-FRD-024,
+REL-FRD-000025,SIU Priority,INCREASES,Investigation Resource Allocation,0.92,Causal,High,0.94,MODEL-FRD-025,
+
+REL-FRD-000026,Investigation Confidence,DECREASES,False Positive Probability,0.94,Causal,High,0.96,MODEL-FRD-026,
+REL-FRD-000027,Evidence Strength,INCREASES,Legal Success Probability,0.93,Causal,High,0.95,MODEL-FRD-027,
+REL-FRD-000028,Legal Action,INCREASES,Recovery Probability,0.91,Causal,High,0.93,MODEL-FRD-028,
+REL-FRD-000029,Recovery Amount,DECREASES,Financial Loss,0.95,Causal,High,0.97,MODEL-FRD-029,
+REL-FRD-000030,Confirmed Fraud,INCREASES,Fraud Database Confidence,0.96,Causal,High,0.98,MODEL-FRD-030,
+
+REL-FRD-000031,Historical Fraud Cases,INCREASES,Repeat Offender Risk,0.94,Causal,High,0.96,MODEL-FRD-031,
+REL-FRD-000032,Repeat Offender Risk,INCREASES,Fraud Probability,0.93,Causal,High,0.95,MODEL-FRD-032,
+REL-FRD-000033,Policy Abuse,INCREASES,Financial Exposure,0.89,Correlational,Medium,0.91,MODEL-FRD-033,
+REL-FRD-000034,Payment Anomaly,INCREASES,Payment Fraud Risk,0.91,Causal,High,0.93,MODEL-FRD-034,
+REL-FRD-000035,High Fraud Risk,INCREASES,Manual Review Requirement,0.97,Causal,High,0.98,MODEL-FRD-035,
+
+REL-FRD-000036,Manual Review,INCREASES,Decision Confidence,0.89,Correlational,Medium,0.90,MODEL-FRD-036,
+REL-FRD-000037,AI Fraud Detection,DECREASES,Investigation Time,0.90,Causal,High,0.92,MODEL-FRD-037,
+REL-FRD-000038,Explainable AI,INCREASES,Investigator Trust,0.91,Correlational,Medium,0.93,MODEL-FRD-038,
+REL-FRD-000039,False Positive Rate,DECREASES,Operational Efficiency,0.92,Causal,High,0.94,MODEL-FRD-039,
+REL-FRD-000040,Effective Fraud Detection,INCREASES,Business Profitability,0.95,Causal,High,0.97,MODEL-FRD-040,

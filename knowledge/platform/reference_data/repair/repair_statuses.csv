@@ -1,0 +1,8 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-RSTATUS-000001,ESTIMATED,Estimated,Repair estimate prepared,Active,2026-01-01,,Industry,
+REF-RSTATUS-000002,APPROVED,Approved,Repair approved,Active,2026-01-01,,Industry,
+REF-RSTATUS-000003,PARTS_ORDERED,Parts Ordered,Replacement parts ordered,Active,2026-01-01,,Industry,
+REF-RSTATUS-000004,IN_PROGRESS,In Progress,Repair work underway,Active,2026-01-01,,Industry,
+REF-RSTATUS-000005,QUALITY_CHECK,Quality Check,Repair quality inspection,Active,2026-01-01,,Industry,
+REF-RSTATUS-000006,COMPLETED,Completed,Repair completed,Active,2026-01-01,,Industry,
+REF-RSTATUS-000007,DELIVERED,Delivered,Vehicle returned to customer,Active,2026-01-01,,Industry,

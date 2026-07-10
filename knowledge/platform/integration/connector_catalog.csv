@@ -1,0 +1,11 @@
+connector_id,connector_name,connector_category,target_system,communication_protocol,authentication_method,bidirectional,supported_operations,description,status
+CONN-000001,PostgreSQL Connector,Database,PostgreSQL,JDBC,mTLS,TRUE,CRUD,PostgreSQL integration,Active
+CONN-000002,MongoDB Connector,Database,MongoDB,Native Driver,mTLS,TRUE,CRUD,Document database connector,Active
+CONN-000003,Neo4j Connector,Knowledge Graph,Neo4j,Bolt,mTLS,TRUE,CRUD,Knowledge graph integration,Active
+CONN-000004,Vector Database Connector,AI,Milvus,gRPC,mTLS,TRUE,Search;Insert,Vector database connector,Active
+CONN-000005,Kafka Connector,Messaging,Apache Kafka,Kafka Protocol,mTLS,TRUE,Publish;Subscribe,Event streaming connector,Active
+CONN-000006,OpenAI Connector,LLM,OpenAI HTTPS API,HTTPS,API Key,FALSE,Inference,OpenAI integration,Active
+CONN-000007,Ollama Connector,LLM,Ollama,HTTP,None,FALSE,Inference,Local model connector,Active
+CONN-000008,SMTP Connector,Notification,Email Server,SMTP,TLS,FALSE,Send,Email integration,Active
+CONN-000009,Slack Connector,Collaboration,Slack,HTTPS,OAuth2,FALSE,Notify,Slack integration,Active
+CONN-000010,MCP Connector,AI Tools,MCP Server,MCP,mTLS,TRUE,Discover;Invoke,Model Context Protocol connector,Active

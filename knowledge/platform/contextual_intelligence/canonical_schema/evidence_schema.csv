@@ -1,0 +1,11 @@
+field_name,data_type,required,description,example
+evidence_id,string,Yes,Unique evidence identifier,EVD-000001
+intelligence_id,string,Yes,Associated intelligence,INT-000001
+observation_id,string,No,Supporting observation,OBS-000001
+evidence_type,string,Yes,Type of evidence,Dataset
+source_name,string,Yes,Evidence source,IMD
+source_reference,string,No,External reference or URL,IMD-2025-RAIN
+weight,float,Yes,Contribution weight (0–1),0.42
+confidence_score,float,Yes,Confidence in evidence,0.97
+priority,integer,No,Evidence priority,1
+remarks,string,No,Additional notes,

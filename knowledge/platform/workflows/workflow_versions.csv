@@ -1,0 +1,11 @@
+version_id,workflow_id,version_number,release_type,is_default,approval_status,backward_compatible,deployment_stage,release_date,description,status
+WFVER-000001,WFLOW-000001,v1.0,Major,TRUE,Approved,TRUE,Production,2026-01-10,Enterprise Assistant initial release,Active
+WFVER-000002,WFLOW-000002,v1.0,Major,TRUE,Approved,TRUE,Production,2026-01-15,RAG workflow release,Active
+WFVER-000003,WFLOW-000003,v1.0,Major,TRUE,Approved,TRUE,Production,2026-02-01,Claims workflow release,Active
+WFVER-000004,WFLOW-000004,v1.0,Major,TRUE,Approved,TRUE,Production,2026-02-10,Fraud workflow release,Active
+WFVER-000005,WFLOW-000005,v1.0,Major,TRUE,Approved,TRUE,Production,2026-02-20,Recommendation workflow release,Active
+WFVER-000006,WFLOW-000006,v1.0,Major,TRUE,Approved,TRUE,Production,2026-03-01,Planning workflow release,Active
+WFVER-000007,WFLOW-000007,v1.0,Major,TRUE,Approved,TRUE,Production,2026-03-10,Agent collaboration workflow,Active
+WFVER-000008,WFLOW-000008,v1.0,Major,TRUE,Approved,TRUE,Production,2026-03-15,Document AI workflow,Active
+WFVER-000009,WFLOW-000009,v1.0,Major,TRUE,Approved,TRUE,Production,2026-03-20,Executive workflow,Active
+WFVER-000010,WFLOW-000010,v0.1,Experimental,FALSE,Pending,FALSE,Research,2026-04-01,Research workflow,Experimental

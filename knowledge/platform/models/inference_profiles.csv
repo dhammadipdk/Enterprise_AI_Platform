@@ -1,0 +1,11 @@
+profile_id,profile_name,optimization_goal,max_latency_ms,max_tokens,temperature,top_p,streaming_enabled,fallback_allowed,description,status
+PROFILE-000001,Fast Inference,Low Latency,500,2048,0.2,0.9,TRUE,TRUE,Optimized for speed,Active
+PROFILE-000002,Balanced,General Purpose,1500,8192,0.5,0.95,TRUE,TRUE,Balanced performance profile,Active
+PROFILE-000003,Reasoning,Complex Tasks,5000,32768,0.2,0.95,TRUE,TRUE,Deep reasoning profile,Active
+PROFILE-000004,RAG Retrieval,Retrieval,1000,8192,0.1,0.9,FALSE,TRUE,RAG optimized profile,Active
+PROFILE-000005,Embedding Generation,Embedding,500,8192,0.0,1.0,FALSE,FALSE,Embedding profile,Active
+PROFILE-000006,Vision Analysis,Vision,3000,32768,0.2,0.95,FALSE,TRUE,Vision inference profile,Active
+PROFILE-000007,Speech Recognition,Speech,2000,65536,0.0,1.0,TRUE,TRUE,Speech processing profile,Active
+PROFILE-000008,Recommendation,Business,1000,4096,0.1,0.9,FALSE,TRUE,Recommendation generation profile,Active
+PROFILE-000009,Fraud Detection,Prediction,1000,4096,0.0,1.0,FALSE,FALSE,Fraud scoring profile,Active
+PROFILE-000010,Evaluation,Assessment,2000,8192,0.0,1.0,FALSE,FALSE,Model evaluation profile,Active

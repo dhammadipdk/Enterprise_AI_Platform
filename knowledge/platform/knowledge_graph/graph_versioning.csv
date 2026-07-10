@@ -1,0 +1,11 @@
+version_id,graph_version,schema_version,ontology_version,reasoning_version,effective_date,change_type,backward_compatible,migration_required,approved_by,status
+GV-000001,1.0.0,1.0,1.0,1.0,2026-01-01,Initial Release,TRUE,FALSE,Architecture Board,Released
+GV-000002,1.1.0,1.1,1.0,1.0,2026-03-01,New Node Types,TRUE,FALSE,Architecture Board,Planned
+GV-000003,1.2.0,1.2,1.1,1.1,2026-06-01,New Relationships,TRUE,FALSE,Architecture Board,Planned
+GV-000004,2.0.0,2.0,2.0,2.0,2027-01-01,Major Semantic Update,FALSE,TRUE,Enterprise Governance,Future
+GV-000005,2.1.0,2.1,2.0,2.0,2027-04-01,GraphRAG Integration,TRUE,FALSE,Enterprise Governance,Future
+GV-000006,2.2.0,2.2,2.1,2.1,2027-07-01,Agent Layer Integration,TRUE,FALSE,Enterprise Governance,Future
+GV-000007,3.0.0,3.0,3.0,3.0,2028-01-01,Multi-Tenant Graph,FALSE,TRUE,Enterprise Governance,Vision
+GV-000008,3.1.0,3.1,3.0,3.0,2028-06-01,Federated Knowledge Graph,TRUE,FALSE,Enterprise Governance,Vision
+GV-000009,4.0.0,4.0,4.0,4.0,2029-01-01,Autonomous Enterprise Graph,FALSE,TRUE,Enterprise Governance,Roadmap
+GV-000010,5.0.0,5.0,5.0,5.0,2030-01-01,Self-Evolving Knowledge Graph,FALSE,TRUE,Enterprise Governance,Concept

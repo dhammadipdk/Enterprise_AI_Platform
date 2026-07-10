@@ -1,0 +1,9 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-DRVR-000001,Driver,Represents an individual authorized to operate one or more insured vehicles and serves as the aggregate root for all driver-related business information.,Aggregate Root,,GLOSS-DRVR-000001,Driver Identifier,Stable,Driver,Root aggregate of the Driver domain.
+ENT-DRVR-000002,Driver Identity,Represents the official identity information used to uniquely identify a driver.,Entity,Driver,GLOSS-DRVR-000002,Driver Identifier,Stable,Driver,Contains core identity and relationship information.
+ENT-DRVR-000003,Driving Licence,Represents the government-issued driving licence and its legal characteristics.,Entity,Driver,GLOSS-DRVR-000011,Driving Licence Number,Dynamic,Driver,Contains licence information and regulatory compliance.
+ENT-DRVR-000004,Driver Profile,Represents demographic, educational, occupational and driving characteristics of the driver.,Entity,Driver,GLOSS-DRVR-000023,,Dynamic,Driver,Supports underwriting and risk profiling.
+ENT-DRVR-000005,Driving History,Represents historical driving records including accidents, violations and insurance claims.,Entity,Driver,GLOSS-DRVR-000043,,Dynamic,Driver,Supports underwriting, pricing and claims.
+ENT-DRVR-000006,Driver Eligibility,Represents regulatory verification, compliance and eligibility information associated with a driver.,Entity,Driver,GLOSS-DRVR-000053,,Dynamic,Driver,Supports onboarding and insurance eligibility.
+ENT-DRVR-000007,Driver Assessment,Represents derived business assessments, AI predictions, driver scores and recommendation readiness.,Entity,Driver,GLOSS-DRVR-000061,,Computed,Driver,Contains computed analytics and AI-generated knowledge.
+

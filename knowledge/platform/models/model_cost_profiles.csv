@@ -1,0 +1,11 @@
+cost_profile_id,profile_name,optimization_goal,cost_tier,max_cost_per_1k_tokens,max_latency_ms,gpu_class,preferred_deployment,auto_fallback,description,status
+COST-000001,Ultra Low Cost,Cost Optimization,Low,0.01,3000,CPU,Local,TRUE,Lowest possible inference cost,Active
+COST-000002,Balanced Production,Balanced,Medium,0.05,1500,Mid GPU,Hybrid,TRUE,Production balanced profile,Active
+COST-000003,Premium Reasoning,Quality,High,0.20,5000,High GPU,Remote,TRUE,Best reasoning quality,Active
+COST-000004,Realtime Assistant,Latency,Medium,0.04,500,High GPU,Local,FALSE,Realtime assistant profile,Active
+COST-000005,RAG Search,Retrieval,Low,0.02,1000,CPU,Hybrid,TRUE,RAG optimized profile,Active
+COST-000006,Vision Analysis,Vision,High,0.15,3000,High GPU,Remote,TRUE,Vision workload profile,Active
+COST-000007,Speech Processing,Speech,Medium,0.06,1500,GPU,Hybrid,TRUE,Speech processing profile,Active
+COST-000008,Background Batch,Batch,Very Low,0.005,30000,CPU Cluster,Local,FALSE,Offline batch execution,Active
+COST-000009,Research Profile,Research,Unlimited,Unlimited,None,Any,Sandbox,FALSE,Research workloads,Active
+COST-000010,Disaster Recovery Profile,Failover,Medium,0.05,4000,Available,Secondary Region,TRUE,Emergency inference profile,Active

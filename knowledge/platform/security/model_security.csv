@@ -1,0 +1,11 @@
+model_security_id,model_name,deployment_type,model_access,model_signing,integrity_validation,drift_monitoring,rollback_supported,description,status
+MODELSEC-000001,Foundation LLM,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Production foundation model security,Active
+MODELSEC-000002,Embedding Model,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Embedding model protection,Active
+MODELSEC-000003,Reranker Model,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Reranker security controls,Active
+MODELSEC-000004,Recommendation Model,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Recommendation model security,Active
+MODELSEC-000005,Fraud Detection Model,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Fraud model protection,Active
+MODELSEC-000006,Claim Prediction Model,Production,Restricted,TRUE,TRUE,TRUE,TRUE,Claim prediction security,Active
+MODELSEC-000007,Planning Model,Internal,Restricted,TRUE,TRUE,FALSE,TRUE,Planning model protection,Active
+MODELSEC-000008,Evaluation Model,Internal,Restricted,TRUE,TRUE,FALSE,TRUE,Evaluation model security,Active
+MODELSEC-000009,Experimental Model,Research,Limited,TRUE,FALSE,TRUE,TRUE,Experimental model governance,Active
+MODELSEC-000010,Archived Model,Archive,Read Only,TRUE,TRUE,FALSE,FALSE,Archived model protection,Active

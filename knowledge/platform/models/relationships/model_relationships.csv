@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_governed,is_deployment_edge,is_inference_edge,description,status
+MODELREL-000001,ModelRegistry,CONTAINS,FoundationModel,Registry,1:N,FALSE,TRUE,FALSE,FALSE,Registry manages foundation models,Active
+MODELREL-000002,FoundationModel,HAS,ModelVersion,Versioning,1:N,TRUE,TRUE,FALSE,FALSE,Models have versions,Active
+MODELREL-000003,FoundationModel,DEPLOYED_AS,DeploymentProfile,Deployment,N:N,TRUE,TRUE,TRUE,FALSE,Models deployed through profiles,Active
+MODELREL-000004,DeploymentProfile,EXPOSES,InferenceEndpoint,Deployment,1:N,TRUE,FALSE,TRUE,TRUE,Deployments expose inference endpoints,Active
+MODELREL-000005,InferenceEndpoint,EXECUTES,InferenceProfile,Inference,N:N,TRUE,FALSE,FALSE,TRUE,Endpoints execute inference profiles,Active
+MODELREL-000006,InferenceProfile,SELECTS,ModelSelectionPolicy,Routing,N:1,TRUE,TRUE,FALSE,TRUE,Inference uses routing policies,Active
+MODELREL-000007,ModelSelectionPolicy,ROUTES_TO,FoundationModel,Routing,N:N,TRUE,TRUE,FALSE,TRUE,Policies select models,Active
+MODELREL-000008,FoundationModel,MONITORED_BY,ModelMonitoring,Monitoring,N:N,TRUE,FALSE,FALSE,TRUE,Monitoring observes models,Active
+MODELREL-000009,FoundationModel,HAS,CostProfile,Optimization,N:1,TRUE,FALSE,FALSE,FALSE,Models use cost profiles,Active
+MODELREL-000010,FineTunedModel,DERIVED_FROM,FoundationModel,Lineage,N:1,FALSE,TRUE,FALSE,FALSE,Fine-tuned models originate from foundation models,Active
+MODELREL-000011,ModelArtifact,BELONGS_TO,ModelVersion,Artifacts,N:1,FALSE,TRUE,FALSE,FALSE,Artifacts belong to versions,Active
+MODELREL-000012,Provider,HOSTS,DeploymentProfile,Infrastructure,N:N,TRUE,FALSE,TRUE,FALSE,Providers host deployments,Active

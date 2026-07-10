@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-APPROVAL-000001,PENDING,Pending,Awaiting approval,Active,2026-01-01,,Enterprise,
+REF-APPROVAL-000002,APPROVED,Approved,Approval granted,Active,2026-01-01,,Enterprise,
+REF-APPROVAL-000003,CONDITIONALLY_APPROVED,Conditionally Approved,Approved subject to conditions,Active,2026-01-01,,Enterprise,
+REF-APPROVAL-000004,REJECTED,Rejected,Approval denied,Active,2026-01-01,,Enterprise,
+REF-APPROVAL-000005,REVOKED,Revoked,Previously granted approval revoked,Active,2026-01-01,,Enterprise,

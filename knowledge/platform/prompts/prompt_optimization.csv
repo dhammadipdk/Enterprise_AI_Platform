@@ -1,0 +1,11 @@
+optimization_id,optimization_strategy,optimization_goal,optimization_trigger,automatic,max_iterations,evaluation_required,description,status
+POPT-000001,Prompt Compression,Reduce Tokens,High Cost,TRUE,3,TRUE,Reduce unnecessary tokens,Active
+POPT-000002,Few-shot Optimization,Increase Accuracy,Low Evaluation Score,TRUE,5,TRUE,Optimize examples,Active
+POPT-000003,Grounding Optimization,Improve RAG,Poor Grounding,TRUE,5,TRUE,Improve retrieved context,Active
+POPT-000004,Instruction Refinement,Improve Reasoning,Low Accuracy,FALSE,10,TRUE,Improve instructions,Active
+POPT-000005,Variable Optimization,Reduce Prompt Size,Large Context,TRUE,3,FALSE,Optimize variable usage,Active
+POPT-000006,Template Simplification,Reduce Latency,High Latency,FALSE,5,TRUE,Simplify templates,Active
+POPT-000007,Context Ranking,Improve Context,Context Overflow,TRUE,5,FALSE,Rank context blocks,Active
+POPT-000008,Prompt A/B Testing,Compare Versions,New Release,FALSE,Unlimited,TRUE,A/B prompt experiments,Active
+POPT-000009,Automatic Prompt Evolution,Continuous Improvement,Weekly Review,TRUE,Unlimited,TRUE,Evolve prompts over time,Experimental
+POPT-000010,Human Optimization,Expert Review,Business Feedback,FALSE,Unlimited,TRUE,Manual prompt engineering,Active

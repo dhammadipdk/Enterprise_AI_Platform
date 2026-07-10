@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-EXT-000001,PDF,.pdf,Portable Document Format,Active,2026-01-01,,Enterprise,
+REF-EXT-000002,JPG,.jpg,JPEG Image,Active,2026-01-01,,Enterprise,
+REF-EXT-000003,JPEG,.jpeg,JPEG Image,Active,2026-01-01,,Enterprise,
+REF-EXT-000004,PNG,.png,PNG Image,Active,2026-01-01,,Enterprise,
+REF-EXT-000005,TIFF,.tiff,TIFF Image,Active,2026-01-01,,Enterprise,
+REF-EXT-000006,JSON,.json,JSON Document,Active,2026-01-01,,Enterprise,
+REF-EXT-000007,XML,.xml,XML Document,Active,2026-01-01,,Enterprise,
+REF-EXT-000008,TXT,.txt,Plain Text,Active,2026-01-01,,Enterprise,
+REF-EXT-000009,MP4,.mp4,Video File,Active,2026-01-01,,Enterprise,
+REF-EXT-000010,ZIP,.zip,Compressed Archive,Active,2026-01-01,,Enterprise,

@@ -1,0 +1,21 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+VP-000001,Required,The value must be provided.,Business,1,Active,1.0.0,,
+VP-000002,Conditional Required,The value is mandatory only when specified business conditions are satisfied.,Business,2,Active,1.0.0,,
+VP-000003,Unique,The value must be unique within its scope.,Business,3,Active,1.0.0,,
+VP-000004,Immutable,The value cannot be modified after creation.,Business,4,Active,1.0.0,,
+VP-000005,Positive Number,Numeric value must be greater than zero.,Numeric,5,Active,1.0.0,,
+VP-000006,Non-negative Number,Numeric value must be zero or greater.,Numeric,6,Active,1.0.0,,
+VP-000007,Percentage Range,Numeric value must lie between 0 and 100.,Numeric,7,Active,1.0.0,,
+VP-000008,Minimum Value,Numeric value must satisfy a defined lower bound.,Numeric,8,Active,1.0.0,,
+VP-000009,Maximum Value,Numeric value must satisfy a defined upper bound.,Numeric,9,Active,1.0.0,,
+VP-000010,Value Range,Numeric value must lie within a specified interval.,Numeric,10,Active,1.0.0,,
+VP-000011,ISO Date,Value must follow ISO-8601 date format.,Format,11,Active,1.0.0,,
+VP-000012,ISO DateTime,Value must follow ISO-8601 date-time format.,Format,12,Active,1.0.0,,
+VP-000013,Valid Email,Value must conform to a valid email format.,Format,13,Active,1.0.0,,
+VP-000014,Indian Mobile Number,Value must conform to a valid Indian mobile number format.,Format,14,Active,1.0.0,,
+VP-000015,PAN Format,Value must conform to a valid Permanent Account Number format.,Format,15,Active,1.0.0,,
+VP-000016,Aadhaar Format,Value must conform to a valid Aadhaar number format.,Format,16,Active,1.0.0,,
+VP-000017,VIN Format,Value must conform to ISO 3779 Vehicle Identification Number format.,Format,17,Active,1.0.0,,
+VP-000018,Vehicle Registration Format,Value must conform to the Indian vehicle registration number format.,Format,18,Active,1.0.0,,
+VP-000019,Reference Integrity,Value must exist within the referenced master catalog.,Referential,19,Active,1.0.0,,Supports foreign-key style validation.
+VP-000020,Domain Constraint,Value must satisfy domain-specific business rules.,Business,20,Active,1.0.0,,Used when validation cannot be expressed by a simple pattern.

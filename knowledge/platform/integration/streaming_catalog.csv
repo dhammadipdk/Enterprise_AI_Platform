@@ -1,0 +1,11 @@
+stream_id,stream_name,stream_platform,stream_type,producer,primary_consumers,partitioning_strategy,retention_period,description,status
+STREAM-000001,Knowledge Stream,Kafka,Event Stream,Knowledge Layer,Memory;Analytics,Knowledge ID,7 Days,Knowledge events,Active
+STREAM-000002,Memory Stream,Kafka,Event Stream,Memory Layer,Planning,Session ID,7 Days,Memory events,Active
+STREAM-000003,Planning Stream,Kafka,Event Stream,Planning Engine,Execution,Workflow ID,7 Days,Planning events,Active
+STREAM-000004,Execution Stream,Kafka,Event Stream,Execution Engine,Observability,Workflow ID,30 Days,Execution monitoring,Active
+STREAM-000005,Agent Stream,NATS,Event Stream,Agent Platform,Coordinator,Agent ID,3 Days,Agent communication,Active
+STREAM-000006,Recommendation Stream,Kafka,Business Stream,Recommendation Engine,Analytics,Customer ID,30 Days,Recommendation analytics,Active
+STREAM-000007,Security Stream,Kafka,Security Stream,Security Platform,SOC,Severity,90 Days,Security monitoring,Active
+STREAM-000008,Telemetry Stream,Kafka,Telemetry,All Services,Observability,Component,30 Days,Telemetry aggregation,Active
+STREAM-000009,Audit Stream,Kafka,Audit,Governance,Compliance,Audit ID,365 Days,Audit events,Active
+STREAM-000010,Model Stream,Kafka,Inference Stream,Model Platform,Evaluation,Model ID,14 Days,Inference monitoring,Active

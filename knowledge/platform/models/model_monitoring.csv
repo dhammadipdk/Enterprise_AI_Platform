@@ -1,0 +1,11 @@
+monitoring_id,monitor_name,metric_category,collection_frequency,alert_threshold,business_owner,dashboard_name,automatic_actions,description,status
+MONMODEL-000001,Inference Latency,Performance,Real Time,>2000 ms,AI Platform Team,Model Dashboard,Scale Up,Monitor inference latency,Active
+MONMODEL-000002,Token Throughput,Performance,Real Time,<100 TPS,Platform Team,Performance Dashboard,Scale Up,Monitor throughput,Active
+MONMODEL-000003,Availability,Reliability,Real Time,<99.9%,Operations Team,Operations Dashboard,Failover,Model uptime monitoring,Active
+MONMODEL-000004,Hallucination Rate,Quality,Hourly,>5%,Evaluation Team,Quality Dashboard,Flag Model,Monitor hallucinations,Active
+MONMODEL-000005,Grounding Accuracy,RAG,Hourly,<95%,Knowledge Team,RAG Dashboard,Investigate,Grounding quality monitoring,Active
+MONMODEL-000006,Inference Cost,Cost,Daily,>$1000/day,Finance Team,Cost Dashboard,Notify,Track inference spending,Active
+MONMODEL-000007,GPU Utilization,Infrastructure,Real Time,>90%,Infrastructure Team,GPU Dashboard,Scale Cluster,Monitor GPU usage,Active
+MONMODEL-000008,Failure Rate,Reliability,Real Time,>2%,Platform Team,Reliability Dashboard,Restart Service,Monitor inference failures,Active
+MONMODEL-000009,Safety Violations,Safety,Hourly,>1%,AI Governance Board,Safety Dashboard,Escalate,Monitor unsafe outputs,Active
+MONMODEL-000010,Model Drift,Quality,Daily,>3%,MLOps Team,Model Health Dashboard,Retrain Candidate,Detect model drift,Active

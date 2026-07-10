@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-ENV-000001,ENVIRONMENT,CITY,MUM,Mumbai,Elevation,Mean Elevation,m,14,2026-01-01T00:00:00Z,Mumbai,Static,Government,Survey of India,GIS,0.99,0.99,v1.0,
+OBS-ENV-000002,ENVIRONMENT,CITY,MUM,Mumbai,Distance to Coast,Coastal Distance,km,0.8,2026-01-01T00:00:00Z,Mumbai,Static,GIS,OpenStreetMap,GIS,0.98,0.98,v1.0,
+OBS-ENV-000003,ENVIRONMENT,CITY,CHE,Chennai,Distance to Coast,Coastal Distance,km,1.2,2026-01-01T00:00:00Z,Chennai,Static,GIS,OpenStreetMap,GIS,0.98,0.98,v1.0,
+OBS-ENV-000004,ENVIRONMENT,CITY,DEL,Delhi,Elevation,Mean Elevation,m,216,2026-01-01T00:00:00Z,Delhi,Static,Government,Survey of India,GIS,0.99,0.99,v1.0,
+OBS-ENV-000005,ENVIRONMENT,CITY,SHI,Shimla,Terrain Slope,Average Slope,%,38,2026-01-01T00:00:00Z,Shimla,Static,GIS,Survey of India,GIS,0.99,0.99,v1.0,
+OBS-ENV-000006,ENVIRONMENT,CITY,GUW,Guwahati,Distance to River,Nearest River Distance,km,0.6,2026-01-01T00:00:00Z,Guwahati,Static,GIS,OpenStreetMap,GIS,0.98,0.98,v1.0,
+OBS-ENV-000007,ENVIRONMENT,CITY,GOA,Panaji,Green Cover,Vegetation Cover,%,52,2026-01-01T00:00:00Z,Goa,Static,Satellite,ISRO,Remote Sensing,0.98,0.97,v1.0,
+OBS-ENV-000008,ENVIRONMENT,CITY,DEL,Delhi,Urban Heat Index,UHI Score,index,8.1,2026-01-01T00:00:00Z,Delhi,Annual,Satellite,ISRO,Remote Sensing,0.97,0.97,v1.0,
+OBS-ENV-000009,ENVIRONMENT,CITY,MUM,Mumbai,Waterlogging Susceptibility,Susceptibility Index,index,91,2026-01-01T00:00:00Z,Mumbai,Static,Enterprise,Claims Analytics,Derived GIS,0.96,0.95,v1.0,
+OBS-ENV-000010,ENVIRONMENT,CITY,JAI,Jaipur,Soil Type,Dominant Soil,Category,Sandy,2026-01-01T00:00:00Z,Jaipur,Static,Government,NBSS&LUP,Survey,0.97,0.97,v1.0,
+OBS-ENV-000011,ENVIRONMENT,CITY,PUN,Pune,Drainage Density,Drainage Density,km/km²,2.8,2026-01-01T00:00:00Z,Pune,Static,GIS,Survey of India,GIS,0.97,0.97,v1.0,
+OBS-ENV-000012,ENVIRONMENT,CITY,KOL,Kolkata,Groundwater Level,Groundwater Depth,m,5.4,2026-01-01T00:00:00Z,Kolkata,Annual,Government,CGWB,Survey,0.97,0.97,v1.0,

@@ -1,0 +1,11 @@
+security_incident_id,incident_name,incident_category,severity,affected_component,detection_source,incident_owner,response_playbook,regulatory_notification_required,root_cause_analysis_required,description,status
+SECINC-000001,Prompt Injection Attempt,AI Security,High,LLM Platform,Prompt Security Engine,AI Security Team,AI Prompt Response,FALSE,TRUE,Attempted prompt injection detected,Open
+SECINC-000002,Unauthorized Data Access,Data Security,Critical,Customer Repository,Access Monitoring,Security Operations,Data Breach Response,TRUE,TRUE,Unauthorized customer data access,Open
+SECINC-000003,Credential Compromise,Identity,Critical,Identity Platform,Identity Monitoring,Security Operations,Credential Rotation,TRUE,TRUE,Compromised authentication credentials,Open
+SECINC-000004,Secrets Exposure,Secrets,Critical,Secrets Vault,Secrets Scanner,Platform Security,Secrets Revocation,FALSE,TRUE,Secrets exposed outside vault,Open
+SECINC-000005,Agent Compromise,AI Security,Critical,Agent Platform,Agent Monitoring,AI Platform Team,Agent Isolation,FALSE,TRUE,Compromised autonomous agent,Open
+SECINC-000006,Model Integrity Failure,Model Security,High,Model Registry,Integrity Validation,MLOps Team,Model Rollback,FALSE,TRUE,Model integrity verification failed,Open
+SECINC-000007,API Abuse,API Security,Medium,API Gateway,API Monitoring,Platform Team,Rate Limiting,FALSE,FALSE,Abnormal API request volume detected,Open
+SECINC-000008,Memory Leakage,Memory Security,High,Memory Layer,Memory Monitoring,Platform Team,Memory Isolation,FALSE,TRUE,Sensitive enterprise memory exposed,Open
+SECINC-000009,Privilege Escalation,Authorization,Critical,Authorization Engine,Authorization Audit,Security Operations,Access Revocation,TRUE,TRUE,Unauthorized privilege escalation,Open
+SECINC-000010,Enterprise Security Breach,Enterprise,Critical,Entire Platform,Security Operations Center,CISO,Enterprise Incident Response,TRUE,TRUE,Major enterprise-wide security incident,Open

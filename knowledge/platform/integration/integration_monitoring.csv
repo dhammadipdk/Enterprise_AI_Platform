@@ -1,0 +1,11 @@
+monitoring_id,monitor_name,monitored_component,primary_metric,alert_threshold,dashboard,trace_enabled,business_owner,description,status
+MON-000001,API Health,Gateway API,Availability,<99.9%,Operations Dashboard,TRUE,Platform Team,API availability monitoring,Active
+MON-000002,Queue Monitoring,RabbitMQ,Queue Depth,>1000 Messages,Messaging Dashboard,TRUE,Platform Team,Queue health,Active
+MON-000003,Kafka Monitoring,Kafka Cluster,Consumer Lag,>5000 Events,Streaming Dashboard,TRUE,Platform Team,Kafka monitoring,Active
+MON-000004,Connector Monitoring,External Connectors,Success Rate,<95%,Integration Dashboard,TRUE,Integration Team,Connector health,Active
+MON-000005,Webhook Monitoring,Webhook Delivery,Delivery Success,<98%,Webhook Dashboard,TRUE,Platform Team,Webhook delivery health,Active
+MON-000006,Service Discovery,Registry,Healthy Services,<95%,Infrastructure Dashboard,TRUE,Platform Team,Service registry monitoring,Active
+MON-000007,MCP Monitoring,MCP Platform,Invocation Success,<99%,AI Dashboard,TRUE,AI Platform Team,MCP monitoring,Active
+MON-000008,Streaming Health,Streaming Platform,Throughput,<Expected,Streaming Dashboard,TRUE,Platform Team,Streaming performance,Active
+MON-000009,Retry Monitoring,Retry Engine,Retry Count,>500/day,Reliability Dashboard,TRUE,Operations Team,Retry analysis,Active
+MON-000010,Integration Health,Entire Platform,Health Score,<95,Executive Dashboard,TRUE,Executive Board,Overall integration health,Active

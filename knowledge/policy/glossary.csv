@@ -1,0 +1,122 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-POL-000001,Policy,Represents an issued insurance contract between an insurer and a policyholder.,Policy,Identity,Core,Dynamic,,,Insurance Contract,Motor Policy,Business,Root business concept.
+GLOSS-POL-000002,Policy Identifier,Unique business identifier assigned to the policy.,Policy,Identity,Core,Stable,Policy,,Policy ID,POL-100001,Platform,Primary business identifier.
+GLOSS-POL-000003,Policy Number,Official policy number issued by the insurer.,Policy,Identity,Core,Stable,Policy,,Policy No.,2311000001234,Insurance Company,Customer-facing identifier.
+GLOSS-POL-000004,Policy Status,Current operational status of the policy.,Policy,Operational,Derived,Dynamic,Policy,Policy Lifecycle Stage,,Active,Derived,Platform status.
+GLOSS-POL-000005,Policy Type,Classification of the issued policy.,Policy,Classification,Core,Stable,Policy,,Policy Type,Comprehensive,Business,References Policy Type Master.
+GLOSS-POL-000006,Policy Effective Date,Date on which insurance coverage begins.,Policy,Operational,Core,Stable,Policy,,Effective Date,2026-07-01,Business,Contract start.
+GLOSS-POL-000007,Policy Expiry Date,Date on which insurance coverage expires.,Policy,Operational,Core,Stable,Policy,,Expiry Date,2027-06-30,Business,Contract end.
+GLOSS-POL-000008,Policy Duration,Duration for which the policy remains valid.,Policy,Operational,Derived,Computed,Policy,Policy Effective Date;Policy Expiry Date,,365 Days,Derived,Computed duration.
+GLOSS-POL-000009,Policy Version,Version of the issued policy after endorsements.,Policy,Identity,Core,Dynamic,Policy,,Version,1.0,Business,Supports endorsements.
+GLOSS-POL-000010,Policy Summary,Simplified business summary of the issued policy.,Policy,Derived,Derived,Computed,Policy,Policy Type,,Comprehensive private car insurance.,Derived,Supports AI explanation.
+GLOSS-POL-000011,Policy Holder,Represents the legal owner of the insurance policy.,Policy,Identity,Core,Stable,Policy,,Insured Person,Customer,Business,Parent business concept.
+GLOSS-POL-000012,Policy Holder Identifier,Reference to the canonical customer.,Policy,Reference,Core,Stable,Policy Holder,,Customer ID,CUST-100001,Customer,Foreign reference.
+GLOSS-POL-000013,Policy Holder Name,Full legal name of the policyholder.,Policy,Reference,Core,Dynamic,Policy Holder,,Insured Name,Rahul Sharma,Customer,Reference copy.
+GLOSS-POL-000014,Policy Holder Type,Classification of the policyholder.,Policy,Classification,Core,Stable,Policy Holder,,Customer Type,Individual,Business,Individual/Corporate.
+GLOSS-POL-000015,Primary Contact,Primary communication channel for policy servicing.,Policy,Operational,Core,Dynamic,Policy Holder,,Mobile,+91XXXXXXXXXX,Customer,Customer contact.
+GLOSS-POL-000016,Communication Preference,Preferred communication method.,Policy,Operational,User Provided,Dynamic,Policy Holder,,Preference,WhatsApp,Customer,Supports servicing.
+GLOSS-POL-000017,KYC Verification Status,Represents whether policyholder KYC is verified.,Policy,Operational,Derived,Computed,Policy Holder,KYC Documents,,Verified,Derived,Supports issuance.
+GLOSS-POL-000018,Policy Holder Relationship,Relationship between insured object owner and policyholder.,Policy,Classification,Core,Stable,Policy Holder,,Relationship,Owner,Business,Supports underwriting.
+GLOSS-POL-000019,Nominee Available,Indicates whether a nominee has been specified.,Policy,Operational,Core,Dynamic,Policy Holder,,Nominee,False,Business,Future extensibility.
+GLOSS-POL-000020,Policy Holder Summary,Simplified explanation of the policyholder.,Policy,Derived,Derived,Computed,Policy Holder,Customer Profile,,Verified customer.,Derived,Supports AI explanation.
+GLOSS-POL-000021,Policy Vehicle,Represents the insured vehicle associated with the policy.,Policy,Identity,Core,Stable,Policy,,Insured Vehicle,Vehicle,Business,Parent business concept.
+GLOSS-POL-000022,Vehicle Identifier,Reference to the canonical vehicle.,Policy,Reference,Core,Stable,Policy Vehicle,,Vehicle ID,VEH-100001,Vehicle,Foreign reference.
+GLOSS-POL-000023,Registration Number,Registered vehicle number insured under the policy.,Policy,Reference,Core,Stable,Policy Vehicle,,Registration,MH12AB1234,Vehicle,Vehicle reference.
+GLOSS-POL-000024,Vehicle Category,Category of insured vehicle.,Policy,Classification,Core,Stable,Policy Vehicle,,Vehicle Type,Private Car,Business,References Vehicle Category Master.
+GLOSS-POL-000025,Vehicle Make,Manufacturer of the insured vehicle.,Policy,Reference,Core,Stable,Policy Vehicle,,Manufacturer,Tata Motors,Vehicle,Reference.
+GLOSS-POL-000026,Vehicle Model,Model of the insured vehicle.,Policy,Reference,Core,Stable,Policy Vehicle,,Model,Nexon,Vehicle,Reference.
+GLOSS-POL-000027,Insured Declared Value,Declared value of the insured vehicle under the policy.,Policy,Financial,Core,Dynamic,Policy Vehicle,,IDV,₹850000,Business,Financial reference.
+GLOSS-POL-000028,Vehicle Usage,Declared usage of the insured vehicle.,Policy,Reference,Core,Dynamic,Policy Vehicle,,Usage,Private,Vehicle,Supports underwriting.
+GLOSS-POL-000029,Garaging Location,Primary garaging location of the insured vehicle.,Policy,Reference,Core,Dynamic,Policy Vehicle,,Garaging,Pune,Business,Risk factor.
+GLOSS-POL-000030,Policy Vehicle Summary,Simplified explanation of the insured vehicle.,Policy,Derived,Derived,Computed,Policy Vehicle,Vehicle Profile,,Private Tata Nexon.,Derived,Supports AI explanation.
+GLOSS-POL-000031,Policy Driver,Represents the insured or declared driver associated with the policy.,Policy,Identity,Core,Stable,Policy,,Declared Driver,Driver,Business,Parent business concept.
+GLOSS-POL-000032,Driver Identifier,Reference to the canonical driver.,Policy,Reference,Core,Stable,Policy Driver,,Driver ID,DRV-100001,Driver,Foreign reference.
+GLOSS-POL-000033,Primary Driver,Indicates whether the driver is the primary insured driver.,Policy,Operational,Core,Dynamic,Policy Driver,,Primary Driver,True,Business,Supports underwriting.
+GLOSS-POL-000034,Driver Relationship,Relationship of the driver to the policyholder.,Policy,Classification,Core,Stable,Policy Driver,,Relationship,Self,Business,References Relationship Master.
+GLOSS-POL-000035,Licence Verification Status,Represents verification of the driving licence.,Policy,Operational,Derived,Computed,Policy Driver,Driving Licence,,Verified,Derived,Supports issuance.
+GLOSS-POL-000036,Driver Eligibility,Represents whether the driver satisfies underwriting rules.,Policy,Operational,Derived,Computed,Policy Driver,Driver Profile,,Eligible,Derived,Supports issuance.
+GLOSS-POL-000037,Declared Driver Count,Number of declared drivers under the policy.,Policy,Operational,Derived,Computed,Policy Driver,Driver List,,1,Derived,Supports underwriting.
+GLOSS-POL-000038,Young Driver Indicator,Indicates whether a young driver is covered.,Policy,Operational,Derived,Computed,Policy Driver,Driver Age,,False,Derived,Risk factor.
+GLOSS-POL-000039,High-Risk Driver Indicator,Indicates whether a high-risk driver is associated with the policy.,Policy,Risk,Derived,Computed,Policy Driver,Driver Assessment,,False,Derived,Risk assessment.
+GLOSS-POL-000040,Policy Driver Summary,Simplified explanation of insured driver information.,Policy,Derived,Derived,Computed,Policy Driver,Driver Profile,,Verified experienced driver.,Derived,Supports AI explanation.
+GLOSS-POL-000041,Selected Coverage,Represents a canonical coverage purchased under the issued policy.,Policy,Identity,Core,Dynamic,Policy,,Purchased Coverage,Own Damage,Business,Parent business concept.
+GLOSS-POL-000042,Coverage Identifier,Reference to the canonical coverage selected for the policy.,Policy,Reference,Core,Stable,Selected Coverage,,Coverage ID,COV-100001,Coverage,Foreign reference.
+GLOSS-POL-000043,Coverage Name,Official name of the selected coverage.,Policy,Reference,Core,Stable,Selected Coverage,,Coverage,Own Damage,Coverage,Reference copy.
+GLOSS-POL-000044,Coverage Status,Operational status of the selected coverage within the policy.,Policy,Operational,Derived,Dynamic,Selected Coverage,Coverage Lifecycle,,Active,Derived,Supports servicing.
+GLOSS-POL-000045,Coverage Effective Date,Date on which the selected coverage becomes active.,Policy,Operational,Core,Stable,Selected Coverage,,Effective Date,2026-07-01,Business,Coverage activation.
+GLOSS-POL-000046,Coverage Expiry Date,Date on which the selected coverage expires.,Policy,Operational,Core,Stable,Selected Coverage,,Expiry Date,2027-06-30,Business,Coverage termination.
+GLOSS-POL-000047,Coverage Premium,Premium attributable to the selected coverage.,Policy,Financial,Derived,Computed,Selected Coverage,Premium Allocation,,₹2400,Derived,Pricing component.
+GLOSS-POL-000048,Coverage Sum Insured,Maximum financial protection available under the selected coverage.,Policy,Financial,Core,Dynamic,Selected Coverage,,Coverage Limit,₹850000,Business,Policy-specific limit.
+GLOSS-POL-000049,Coverage Selection Reason,Business explanation describing why the coverage was selected.,Policy,Derived,AI Generated,Computed,Selected Coverage,Recommendation Engine,,Recommended for urban driving.,AI,Supports explainability.
+GLOSS-POL-000050,Selected Coverage Summary,Simplified explanation of the purchased coverage.,Policy,Derived,Derived,Computed,Selected Coverage,Coverage Name,,Own Damage coverage active.,Derived,Customer-facing explanation.
+GLOSS-POL-000051,Policy Premium,Represents the complete financial cost of the issued insurance policy.,Policy,Financial,Core,Dynamic,Policy,,Premium,₹22420,Business,Parent business concept.
+GLOSS-POL-000052,Base Premium,Premium before discounts, loading and taxes.,Policy,Financial,Core,Stable,Policy Premium,,Base Premium,₹18500,Business,Pricing component.
+GLOSS-POL-000053,Loading Amount,Additional premium charged because of increased risk.,Policy,Financial,Derived,Computed,Policy Premium,Risk Assessment,,₹2000,Derived,Risk pricing.
+GLOSS-POL-000054,Discount Amount,Premium reduction applied before taxation.,Policy,Financial,Derived,Computed,Policy Premium,Discount Rules,,₹1500,Derived,Promotional or underwriting.
+GLOSS-POL-000055,No Claim Bonus,Discount earned because no claims were reported during the previous policy period.,Policy,Financial,Core,Dynamic,Policy Premium,,NCB,20%,Business,Loyalty benefit.
+GLOSS-POL-000056,Applicable Taxes,Taxes applicable to the insurance premium.,Policy,Financial,Core,Stable,Policy Premium,,GST,18%,Regulatory,Government levy.
+GLOSS-POL-000057,Net Premium,Premium after loading and discounts but before taxes.,Policy,Financial,Derived,Computed,Policy Premium,Base Premium;Loading Amount;Discount Amount,,₹19000,Derived,Intermediate calculation.
+GLOSS-POL-000058,Gross Premium,Final premium payable including all taxes.,Policy,Financial,Derived,Computed,Policy Premium,Net Premium;Applicable Taxes,,₹22420,Derived,Customer payable amount.
+GLOSS-POL-000059,Premium Payment Status,Current payment status of the premium.,Policy,Operational,Derived,Dynamic,Policy Premium,Payment Information,,Paid,Derived,Supports servicing.
+GLOSS-POL-000060,Premium Summary,Simplified explanation of premium composition.,Policy,Derived,Derived,Computed,Policy Premium,Gross Premium,,Final payable premium ₹22,420.,Derived,Supports AI explanation.
+GLOSS-POL-000061,Endorsement,Represents a modification made to an active insurance policy after issuance.,Policy,Operational,Core,Dynamic,Policy,,Policy Amendment,Address Change,Business,Parent business concept.
+GLOSS-POL-000062,Endorsement Identifier,Unique identifier assigned to an endorsement.,Policy,Identity,Core,Stable,Endorsement,,Endorsement ID,END-100001,Platform,Primary identifier.
+GLOSS-POL-000063,Endorsement Type,Classification of policy modification.,Policy,Classification,Core,Stable,Endorsement,,Type,Vehicle Change,Business,References Endorsement Type Master.
+GLOSS-POL-000064,Endorsement Date,Date on which the endorsement becomes effective.,Policy,Operational,Core,Stable,Endorsement,,Effective Date,2026-10-01,Business,Business event.
+GLOSS-POL-000065,Endorsement Reason,Business justification for the endorsement.,Policy,Identity,Core,Dynamic,Endorsement,,Reason,Address Updated,Business,Operational reason.
+GLOSS-POL-000066,Premium Adjustment,Premium increase or decrease caused by the endorsement.,Policy,Financial,Derived,Computed,Endorsement,Premium Calculation,,₹450,Derived,Financial impact.
+GLOSS-POL-000067,Endorsement Status,Operational status of the endorsement.,Policy,Operational,Derived,Dynamic,Endorsement,Workflow,,Approved,Derived,Workflow status.
+GLOSS-POL-000068,Endorsement Approval,Represents whether the endorsement has been approved.,Policy,Operational,Derived,Computed,Endorsement,Approval Workflow,,Approved,Derived,Supports governance.
+GLOSS-POL-000069,Endorsement Effective Period,Period for which the endorsement remains applicable.,Policy,Operational,Core,Stable,Endorsement,,Effective Period,Remaining Policy Term,Business,Policy servicing.
+GLOSS-POL-000070,Endorsement Summary,Simplified explanation of the endorsement.,Policy,Derived,Derived,Computed,Endorsement,Endorsement Reason,,Address updated successfully.,Derived,Customer-facing explanation.
+GLOSS-POL-000071,Policy Renewal,Represents continuation of policy coverage after expiry.,Policy,Operational,Core,Dynamic,Policy,,Renewal,Annual Renewal,Business,Parent business concept.
+GLOSS-POL-000072,Renewal Identifier,Unique identifier assigned to the renewal transaction.,Policy,Identity,Core,Stable,Policy Renewal,,Renewal ID,REN-100001,Platform,Primary identifier.
+GLOSS-POL-000073,Renewal Eligibility,Represents whether the policy qualifies for renewal.,Policy,Operational,Derived,Computed,Policy Renewal,Policy Status,,Eligible,Derived,Supports servicing.
+GLOSS-POL-000074,Renewal Premium,Premium payable for the renewed policy.,Policy,Financial,Derived,Computed,Policy Renewal,Premium Calculation,,₹19850,Derived,Renewal pricing.
+GLOSS-POL-000075,Renewal Discount,Discount applied during renewal.,Policy,Financial,Derived,Computed,Policy Renewal,No Claim Bonus,,₹1200,Derived,Customer incentive.
+GLOSS-POL-000076,Renewal Offer,Commercial offer presented during renewal.,Policy,Operational,Core,Dynamic,Policy Renewal,,Offer,Free RSA,Business,Marketing feature.
+GLOSS-POL-000077,Renewal Reminder,Reminder issued before policy expiry.,Policy,Operational,Core,Dynamic,Policy Renewal,,Reminder,15 Days Before Expiry,Business,Customer engagement.
+GLOSS-POL-000078,Renewal Decision,Final customer decision regarding renewal.,Policy,Operational,Derived,Computed,Policy Renewal,Customer Response,,Renewed,Derived,Business outcome.
+GLOSS-POL-000079,Renewal Status,Operational status of the renewal process.,Policy,Operational,Derived,Dynamic,Policy Renewal,Renewal Workflow,,Completed,Derived,Workflow state.
+GLOSS-POL-000080,Renewal Summary,Simplified explanation of the renewal outcome.,Policy,Derived,Derived,Computed,Policy Renewal,Renewal Decision,,Policy renewed successfully.,Derived,Supports AI explanation.
+GLOSS-POL-000081,Policy Lifecycle,Represents the complete operational lifecycle of an issued insurance policy.,Policy,Operational,Core,Dynamic,Policy,,Lifecycle,Active,Business,Parent business concept.
+GLOSS-POL-000082,Lifecycle Stage,Current stage of the policy lifecycle.,Policy,Operational,Derived,Dynamic,Policy Lifecycle,Policy Status,,Active,Derived,Workflow stage.
+GLOSS-POL-000083,Issue Date,Date on which the policy was officially issued.,Policy,Operational,Core,Stable,Policy Lifecycle,,Issue Date,2026-07-01,Business,Issuance event.
+GLOSS-POL-000084,Activation Date,Date on which insurance protection becomes effective.,Policy,Operational,Core,Stable,Policy Lifecycle,,Activation Date,2026-07-01,Business,Coverage begins.
+GLOSS-POL-000085,Suspension Status,Indicates whether the policy has been temporarily suspended.,Policy,Operational,Derived,Dynamic,Policy Lifecycle,Policy Workflow,,False,Derived,Supports servicing.
+GLOSS-POL-000086,Cancellation Status,Represents whether the policy has been cancelled before expiry.,Policy,Operational,Derived,Dynamic,Policy Lifecycle,Cancellation Workflow,,False,Derived,Operational state.
+GLOSS-POL-000087,Cancellation Reason,Business justification for policy cancellation.,Policy,Identity,Core,Dynamic,Policy Lifecycle,,Reason,Customer Request,Business,Supports audit.
+GLOSS-POL-000088,Expiry Status,Indicates whether the policy has expired.,Policy,Operational,Derived,Computed,Policy Lifecycle,Policy Expiry Date,,False,Derived,Lifecycle status.
+GLOSS-POL-000089,Policy Archive Status,Represents archival status after policy completion.,Policy,Operational,Derived,Dynamic,Policy Lifecycle,Retention Policy,,Archived,Derived,Governance.
+GLOSS-POL-000090,Lifecycle Summary,Simplified explanation of the policy lifecycle.,Policy,Derived,Derived,Computed,Policy Lifecycle,Lifecycle Stage,,Active policy valid until June 2027.,Derived,Supports AI explanation.
+GLOSS-POL-000091,Policy Assessment,Business assessment summarizing the issued policy.,Policy,Operational,AI Generated,Computed,Policy,,Policy Evaluation,Preferred Policy,AI,Parent business concept.
+GLOSS-POL-000092,Policy Risk Score,Composite insurance risk score assigned to the policy.,Policy,Risk,AI Generated,Computed,Policy Assessment,Risk Engine,,28,AI,Supports underwriting.
+GLOSS-POL-000093,Policy Value Score,Composite value score representing benefits received.,Policy,Risk,AI Generated,Computed,Policy Assessment,Coverage;Premium,,91,AI,Supports recommendation.
+GLOSS-POL-000094,Policy Trust Score,Composite trust score associated with the issued policy.,Policy,Risk,AI Generated,Computed,Policy Assessment,Customer History,,95,AI,Supports servicing.
+GLOSS-POL-000095,Coverage Adequacy Score,Represents adequacy of selected coverages.,Policy,Risk,AI Generated,Computed,Policy Assessment,Coverage Analysis,,93,AI,Supports advisory.
+GLOSS-POL-000096,Premium Fairness Score,Represents fairness of premium relative to risk.,Policy,Risk,AI Generated,Computed,Policy Assessment,Pricing Engine,,90,AI,Supports explainability.
+GLOSS-POL-000097,Renewal Probability,Predicted probability that the customer will renew the policy.,Policy,Risk,AI Generated,Computed,Policy Assessment,Behavior Model,,88%,AI,Customer retention.
+GLOSS-POL-000098,Lapse Probability,Predicted probability that the policy will lapse.,Policy,Risk,AI Generated,Computed,Policy Assessment,Behavior Model,,7%,AI,Retention analytics.
+GLOSS-POL-000099,Fraud Risk Indicator,Represents estimated fraud risk associated with the policy.,Policy,Risk,AI Generated,Computed,Policy Assessment,Fraud Engine,,Low,AI,Supports fraud detection.
+GLOSS-POL-000100,Policy Health Score,Overall health score summarizing policy quality.,Policy,Risk,AI Generated,Computed,Policy Assessment,Multiple Scores,,94,AI,Executive KPI.
+GLOSS-POL-000101,Recommendation Summary,Natural-language explanation describing why this policy configuration is suitable.,Policy,Derived,AI Generated,Computed,Policy Assessment,Recommendation Engine,,Excellent protection with balanced premium.,AI,Primary explanation.
+GLOSS-POL-000102,Coverage Recommendation,Recommended additional coverage for the policy.,Policy,Derived,AI Generated,Computed,Policy Assessment,Recommendation Engine,,Engine Protect,AI,Cross-sell opportunity.
+GLOSS-POL-000103,Coverage Gap,Represents important protection currently missing from the policy.,Policy,Risk,AI Generated,Computed,Policy Assessment,Coverage Analysis,,Zero Depreciation Missing,AI,Advisory insight.
+GLOSS-POL-000104,Policy Optimization Opportunity,Potential improvement identified for the policy.,Policy,Derived,AI Generated,Computed,Policy Assessment,Optimization Engine,,Increase IDV,AI,Customer recommendation.
+GLOSS-POL-000105,Recommended Renewal Strategy,AI-generated renewal recommendation.,Policy,Derived,AI Generated,Computed,Policy Assessment,Renewal Engine,,Renew with same coverages,AI,Retention.
+GLOSS-POL-000106,Customer Satisfaction Estimate,Estimated customer satisfaction score.,Policy,Risk,AI Generated,Computed,Policy Assessment,Customer Model,,92,AI,Experience metric.
+GLOSS-POL-000107,Assessment Date,Date of latest policy assessment.,Policy,Operational,Core,Dynamic,Policy Assessment,,Assessment Date,2026-07-01,Platform,Metadata.
+GLOSS-POL-000108,Assessment Version,Version of assessment methodology.,Policy,Operational,Core,Stable,Policy Assessment,,Assessment Version,1.0.0,Platform,Reproducibility.
+GLOSS-POL-000109,Assessment Remarks,Human-readable assessment remarks.,Policy,Operational,Core,Dynamic,Policy Assessment,,Remarks,Highly suitable policy.,Platform,Operational notes.
+GLOSS-POL-000110,Explainability Summary,Structured explanation of major factors influencing policy recommendations.,Policy,Derived,AI Generated,Computed,Policy Assessment,Recommendation Engine,,High coverage with competitive premium.,AI,Supports Explainable AI.
+GLOSS-POL-000111,Referenced Insurance Product,Insurance product from which the policy was issued.,Policy,Reference,Core,Stable,Policy,,Insurance Product,Comprehensive Motor Insurance,Business,Foreign reference.
+GLOSS-POL-000112,Referenced Customer,Canonical customer referenced by the policy.,Policy,Reference,Core,Stable,Policy,,Customer,CUST-100001,Customer,Foreign reference.
+GLOSS-POL-000113,Referenced Driver,Canonical driver referenced by the policy.,Policy,Reference,Core,Stable,Policy,,Driver,DRV-100001,Driver,Foreign reference.
+GLOSS-POL-000114,Referenced Vehicle,Canonical vehicle referenced by the policy.,Policy,Reference,Core,Stable,Policy,,Vehicle,VEH-100001,Vehicle,Foreign reference.
+GLOSS-POL-000115,Referenced Coverages,Canonical coverages selected for the policy.,Policy,Reference,Core,Dynamic,Policy,,Coverage Set,Own Damage;Zero Dep,Coverage,Foreign references.
+GLOSS-POL-000116,Previous Policy,Reference to the immediately preceding policy.,Policy,Reference,Core,Dynamic,Policy,,Previous Policy,POL-099921,Business,Supports renewals.
+GLOSS-POL-000117,Next Policy,Reference to the subsequent renewed policy.,Policy,Reference,Derived,Dynamic,Policy,Renewal,,POL-100501,Derived,Policy chain.
+GLOSS-POL-000118,Parent Policy,Parent policy in case of endorsement lineage.,Policy,Reference,Core,Dynamic,Policy,,Parent Policy,POL-100001,Business,Version history.
+GLOSS-POL-000119,Child Policy Version,Derived policy version created after endorsement.,Policy,Reference,Derived,Dynamic,Policy,Endorsement,,POL-100001-V2,Derived,Policy lineage.
+GLOSS-POL-000120,Relationship Summary,Simplified explanation of policy relationships.,Policy,Derived,Derived,Computed,Policy,Referenced Insurance Product,,Issued from Comprehensive Motor Insurance.,Derived,Supports explainability.
+

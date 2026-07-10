@@ -1,0 +1,11 @@
+compensation_id,action_name,business_domain,trigger_event,compensation_strategy,requires_human,restores_consistency,description,status
+COMP-000001,Reverse Payment,Claims,Payment Failure,Reverse Transaction,FALSE,TRUE,Reverse financial transaction,Active
+COMP-000002,Withdraw Recommendation,Recommendation,Recommendation Error,Invalidate Recommendation,FALSE,TRUE,Remove invalid recommendation,Active
+COMP-000003,Restore Memory,Memory,Memory Corruption,Restore Backup,FALSE,TRUE,Recover enterprise memory,Active
+COMP-000004,Reopen Claim,Claims,Settlement Failure,Restore Claim State,TRUE,TRUE,Reopen insurance claim,Active
+COMP-000005,Reassign Workflow,Execution,Workflow Failure,Assign Alternate Executor,FALSE,TRUE,Continue execution elsewhere,Active
+COMP-000006,Notify Administrator,Operations,Critical Failure,Escalation,TRUE,FALSE,Operational escalation,Active
+COMP-000007,Restart Planning,Planning,Planning Failure,Generate New Plan,FALSE,TRUE,Restart planning cycle,Active
+COMP-000008,Recompute Reasoning,Reasoning,Reasoning Failure,Rerun Reasoner,FALSE,TRUE,Recompute AI reasoning,Active
+COMP-000009,Graph Repair,Knowledge Graph,Graph Inconsistency,Repair Relationships,FALSE,TRUE,Repair graph integrity,Active
+COMP-000010,Manual Recovery,Enterprise,Unknown Failure,Human Intervention,TRUE,TRUE,Manual enterprise recovery,Active

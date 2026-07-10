@@ -1,0 +1,11 @@
+retry_policy_id,policy_name,failure_category,max_retries,backoff_strategy,initial_delay_ms,max_delay_ms,jitter_enabled,retry_condition,abort_condition,description,status
+RETRY-000001,Immediate Retry,Transient Error,3,Fixed,500,2000,FALSE,Network Timeout,Max Retries Exceeded,Retry transient failures,Active
+RETRY-000002,Exponential Retry,Service Failure,5,Exponential,1000,30000,TRUE,Service Unavailable,Critical Failure,Recover external service failures,Active
+RETRY-000003,Reasoning Retry,AI Failure,2,Fixed,1000,3000,FALSE,Low Confidence,Repeated Low Confidence,Retry reasoning engine,Active
+RETRY-000004,Graph Retry,Knowledge Graph,3,Linear,500,5000,FALSE,Graph Query Failure,Graph Offline,Retry graph retrieval,Active
+RETRY-000005,Vector Search Retry,Vector DB,3,Linear,500,4000,FALSE,Embedding Retrieval Failure,Index Missing,Retry semantic retrieval,Active
+RETRY-000006,Workflow Retry,Execution Engine,2,Exponential,2000,10000,TRUE,Workflow Failure,Fatal Error,Retry workflow execution,Active
+RETRY-000007,Notification Retry,Communication,5,Exponential,1000,60000,TRUE,Delivery Failure,Permanent Bounce,Retry notification delivery,Active
+RETRY-000008,Database Retry,Persistence,4,Exponential,500,15000,TRUE,Database Timeout,Integrity Failure,Retry persistence operations,Active
+RETRY-000009,Human Approval Retry,Approval,1,None,0,0,FALSE,Approval Timeout,Approval Rejected,Retry human approval,Active
+RETRY-000010,Adaptive Retry,Hybrid,Unlimited,Adaptive,1000,120000,TRUE,Recoverable Failure,Critical Policy Violation,Dynamic retry policy,Active

@@ -1,0 +1,18 @@
+field_name,data_type,required,description
+memory_id,String,TRUE,Unique memory identifier
+memory_type,String,TRUE,Working/Semantic/Episodic/etc.
+memory_category,String,TRUE,Business classification
+memory_source,String,TRUE,Origin of memory
+memory_title,String,TRUE,Short memory title
+memory_content,String,TRUE,Stored information
+embedding_id,String,FALSE,Associated embedding
+graph_node_id,String,FALSE,Knowledge graph node
+ontology_entity,String,FALSE,Ontology entity
+importance_score,Float,TRUE,Importance score
+confidence_score,Float,FALSE,Confidence
+retention_policy,String,TRUE,Retention policy
+expiry_date,Datetime,FALSE,Expiration
+created_at,Datetime,TRUE,Creation timestamp
+updated_at,Datetime,FALSE,Last update
+owner_agent,String,FALSE,Owning AI agent
+status,String,TRUE,Memory state

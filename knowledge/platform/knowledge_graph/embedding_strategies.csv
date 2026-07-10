@@ -1,0 +1,13 @@
+embedding_id,embedding_name,embedding_family,embedding_level,input_data,embedding_dimension,primary_use_case,llm_compatible,graph_ml_compatible,description,status
+EMB-000001,Node2Vec,Random Walk,Node,Graph Structure,128,Node similarity,Yes,Yes,Random walk embeddings,Active
+EMB-000002,DeepWalk,Random Walk,Node,Graph Structure,128,Knowledge discovery,Yes,Yes,Uniform random walk embeddings,Active
+EMB-000003,FastRP,Projection,Node,Graph Structure,256,Large enterprise graph,Yes,Yes,Fast random projection embeddings,Active
+EMB-000004,GraphSAGE,GNN,Node,Features+Graph,256,Inductive learning,Yes,Yes,Neighborhood aggregation,Active
+EMB-000005,GCN,GNN,Node,Features+Graph,256,Node classification,Yes,Yes,Graph convolution network,Active
+EMB-000006,GAT,GNN,Node,Features+Graph,256,Attention learning,Yes,Yes,Graph attention network,Active
+EMB-000007,TransE,Knowledge Graph,Edge,Knowledge Triples,200,Knowledge completion,Yes,Yes,Translation embedding,Active
+EMB-000008,RotatE,Knowledge Graph,Edge,Knowledge Triples,256,Link prediction,Yes,Yes,Rotational embedding,Active
+EMB-000009,ComplEx,Knowledge Graph,Edge,Knowledge Triples,256,Semantic reasoning,Yes,Yes,Complex embeddings,Active
+EMB-000010,Sentence Transformer,LLM,Document,Knowledge Documents,768,GraphRAG retrieval,Yes,No,Document embeddings,Active
+EMB-000011,OpenAI Embedding,LLM,Document,Enterprise Knowledge,1536,Semantic search,Yes,No,LLM semantic embedding,Active
+EMB-000012,Hybrid Graph+LLM,Hybrid,Graph+Text,Enterprise Graph,1024,GraphRAG,Yes,Yes,Fused graph-text embeddings,Active

@@ -1,0 +1,11 @@
+evaluation_id,evaluation_name,evaluation_type,metric,automatic,llm_judge,human_review,target_score,description,status
+PEVAL-000001,Accuracy Evaluation,Quality,Accuracy,TRUE,TRUE,TRUE,95,Measure factual correctness,Active
+PEVAL-000002,Grounding Evaluation,RAG,Grounding Score,TRUE,TRUE,FALSE,95,Measure grounding quality,Active
+PEVAL-000003,Hallucination Evaluation,Factuality,Hallucination Rate,TRUE,TRUE,FALSE,<5%,Detect hallucinations,Active
+PEVAL-000004,Toxicity Evaluation,Safety,Toxicity Score,TRUE,TRUE,FALSE,0,Measure toxicity,Active
+PEVAL-000005,Latency Evaluation,Performance,Latency,TRUE,FALSE,FALSE,<2000 ms,Measure execution latency,Active
+PEVAL-000006,Cost Evaluation,Efficiency,Cost per Request,TRUE,FALSE,FALSE,Budget,Measure inference cost,Active
+PEVAL-000007,Business KPI Evaluation,Business,Business Score,FALSE,TRUE,TRUE,90,Business objective evaluation,Active
+PEVAL-000008,Compliance Evaluation,Governance,Compliance Score,TRUE,TRUE,TRUE,100,Regulatory compliance,Active
+PEVAL-000009,Prompt Robustness,Security,Attack Resistance,TRUE,TRUE,FALSE,95,Adversarial robustness,Active
+PEVAL-000010,Overall Prompt Score,Composite,Composite Score,TRUE,TRUE,TRUE,95,Overall prompt quality,Active

@@ -1,0 +1,11 @@
+event_id,event_name,event_category,event_type,producer,primary_consumers,delivery_mode,persistence,description,status
+EVENT-000001,KnowledgeRetrieved,Knowledge,Domain Event,Knowledge Layer,Memory;Observability,Publish-Subscribe,TRUE,Knowledge successfully retrieved,Active
+EVENT-000002,MemoryUpdated,Memory,Domain Event,Memory Layer,Planning;Observability,Publish-Subscribe,TRUE,Memory updated after execution,Active
+EVENT-000003,PlanGenerated,Planning,Domain Event,Planning Engine,Execution;Observability,Publish-Subscribe,TRUE,Execution plan created,Active
+EVENT-000004,WorkflowCompleted,Execution,Domain Event,Execution Engine,Evaluation;Observability,Publish-Subscribe,TRUE,Workflow execution completed,Active
+EVENT-000005,AgentTaskCompleted,Agents,Domain Event,Agent Platform,Coordinator;Observability,Publish-Subscribe,TRUE,Agent task completed,Active
+EVENT-000006,RecommendationGenerated,Business,Business Event,Recommendation Engine,Business Apps;Observability,Publish-Subscribe,TRUE,Recommendation generated,Active
+EVENT-000007,GovernanceDecision,Governance,Policy Event,Governance Engine,Execution;Audit,Publish-Subscribe,TRUE,Governance decision issued,Active
+EVENT-000008,SecurityIncident,Security,Security Event,Security Platform,SOC;Observability,Publish-Subscribe,TRUE,Security event generated,Active
+EVENT-000009,TelemetryCollected,Observability,System Event,Observability Platform,Dashboards;Analytics,Streaming,TRUE,Telemetry received,Active
+EVENT-000010,ModelInferenceCompleted,Models,AI Event,Model Platform,Agents;Memory,Publish-Subscribe,TRUE,Model inference completed,Active

@@ -1,0 +1,11 @@
+key_id,key_name,key_type,key_storage,key_owner,rotation_frequency,backup_required,hsm_protected,description,status
+KEY-000001,Master Data Key,Symmetric,HSM,Security Team,365 Days,TRUE,TRUE,Master data encryption key,Active
+KEY-000002,Database Key,Symmetric,HSM,Platform Team,180 Days,TRUE,TRUE,Database encryption key,Active
+KEY-000003,JWT Signing Key,Asymmetric,HSM,Security Team,180 Days,TRUE,TRUE,JWT signing key pair,Active
+KEY-000004,TLS Private Key,Asymmetric,Certificate Manager,Infrastructure Team,365 Days,TRUE,TRUE,TLS private key,Active
+KEY-000005,Secrets Vault Key,Symmetric,HSM,Security Team,365 Days,TRUE,TRUE,Secrets encryption key,Active
+KEY-000006,Backup Key,Symmetric,HSM,Security Team,365 Days,TRUE,TRUE,Backup encryption key,Active
+KEY-000007,Audit Key,Symmetric,HSM,Compliance Office,365 Days,TRUE,TRUE,Audit repository encryption key,Active
+KEY-000008,Memory Key,Symmetric,HSM,Platform Team,180 Days,TRUE,TRUE,Memory encryption key,Active
+KEY-000009,Vector Store Key,Symmetric,HSM,AI Platform Team,180 Days,TRUE,TRUE,Vector database encryption key,Active
+KEY-000010,Recovery Key,Asymmetric,Offline Vault,CISO,730 Days,TRUE,TRUE,Emergency recovery key,Active

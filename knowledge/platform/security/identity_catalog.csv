@@ -1,0 +1,11 @@
+identity_id,identity_name,identity_type,identity_provider,authentication_required,default_role,lifecycle_state,mfa_required,description,status
+IDN-000001,Enterprise User,Human,Enterprise IAM,TRUE,Business User,Active,TRUE,Authenticated enterprise employee,Active
+IDN-000002,Customer,Human,Customer Identity Service,TRUE,Customer,Active,FALSE,Registered insurance customer,Active
+IDN-000003,Service Account,Machine,Internal IAM,TRUE,System Service,Active,FALSE,Backend service identity,Active
+IDN-000004,AI Agent,AI,Agent Registry,TRUE,AI Agent,Active,TRUE,Autonomous AI agent identity,Active
+IDN-000005,LLM Service,AI,Model Registry,TRUE,Model Service,Active,FALSE,Foundation model identity,Active
+IDN-000006,Workflow Engine,System,Internal IAM,TRUE,Workflow Executor,Active,FALSE,Workflow execution identity,Active
+IDN-000007,Administrator,Human,Enterprise IAM,TRUE,Platform Administrator,Active,TRUE,Platform administrator,Active
+IDN-000008,Security Auditor,Human,Enterprise IAM,TRUE,Security Auditor,Active,TRUE,Security audit identity,Active
+IDN-000009,External Partner,Human,Federated IAM,TRUE,Partner User,Active,TRUE,Third-party partner identity,Active
+IDN-000010,API Client,Machine,API Gateway,TRUE,API Consumer,Active,FALSE,External API consumer,Active

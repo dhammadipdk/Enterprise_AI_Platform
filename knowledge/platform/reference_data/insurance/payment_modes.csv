@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PAY-000001,UPI,UPI,Unified Payments Interface,Active,2026-01-01,,NPCI,
+REF-PAY-000002,CREDIT_CARD,Credit Card,Payment using credit card,Active,2026-01-01,,RBI,
+REF-PAY-000003,DEBIT_CARD,Debit Card,Payment using debit card,Active,2026-01-01,,RBI,
+REF-PAY-000004,NET_BANKING,Net Banking,Online banking payment,Active,2026-01-01,,RBI,
+REF-PAY-000005,WALLET,Digital Wallet,Approved digital wallet payment,Active,2026-01-01,,RBI,
+REF-PAY-000006,NEFT_RTGS,NEFT/RTGS,Bank transfer through NEFT or RTGS,Active,2026-01-01,,RBI,
+REF-PAY-000007,CHEQUE,Cheque,Cheque payment,Active,2026-01-01,,RBI,
+REF-PAY-000008,CASH,Cash,Cash payment where legally permitted,Active,2026-01-01,,RBI,

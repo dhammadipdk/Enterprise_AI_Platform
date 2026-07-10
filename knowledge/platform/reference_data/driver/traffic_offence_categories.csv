@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-OFFCAT-000001,SPEEDING,Speeding,Exceeding prescribed speed limits,Active,2026-01-01,,Motor Vehicles Act,
+REF-OFFCAT-000002,TRAFFIC_SIGNAL,Traffic Signal Violation,Ignoring traffic control signals,Active,2026-01-01,,Motor Vehicles Act,
+REF-OFFCAT-000003,DOCUMENTATION,Documentation Offence,Missing or invalid mandatory documents,Active,2026-01-01,,Motor Vehicles Act,
+REF-OFFCAT-000004,SAFETY,Safety Violation,Seatbelt helmet and other safety violations,Active,2026-01-01,,Motor Vehicles Act,
+REF-OFFCAT-000005,ALCOHOL_DRUG,Alcohol/Drug Offence,Driving under influence,Active,2026-01-01,,Motor Vehicles Act,
+REF-OFFCAT-000006,DANGEROUS_DRIVING,Dangerous Driving,Reckless or dangerous driving behaviour,Active,2026-01-01,,Motor Vehicles Act,

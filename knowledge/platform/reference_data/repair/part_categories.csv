@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PART-000001,ENGINE,Engine Components,Engine assembly and associated components,Active,2026-01-01,,Industry,
+REF-PART-000002,TRANSMISSION,Transmission Components,Gearbox and drivetrain components,Active,2026-01-01,,Industry,
+REF-PART-000003,SUSPENSION,Suspension Components,Suspension and steering assemblies,Active,2026-01-01,,Industry,
+REF-PART-000004,BODY,Body Components,Body panels and structural members,Active,2026-01-01,,Industry,
+REF-PART-000005,ELECTRICAL,Electrical Components,Electrical and electronic systems,Active,2026-01-01,,Industry,
+REF-PART-000006,INTERIOR,Interior Components,Seats dashboard trim and cabin parts,Active,2026-01-01,,Industry,
+REF-PART-000007,GLASS,Glass Components,Windshield windows mirrors,Active,2026-01-01,,Industry,
+REF-PART-000008,TYRE_WHEEL,Tyres and Wheels,Tyres wheels and rims,Active,2026-01-01,,Industry,
+REF-PART-000009,BATTERY,Battery Systems,Conventional and EV battery systems,Active,2026-01-01,,Industry,
+REF-PART-000010,SENSORS,Sensors and ADAS,Safety sensors cameras radar lidar,Active,2026-01-01,,Industry,

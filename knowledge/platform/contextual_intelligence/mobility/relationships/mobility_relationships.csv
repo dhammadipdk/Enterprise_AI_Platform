@@ -1,0 +1,13 @@
+intelligence_id,intelligence_type,subject_type,subject_code,subject_name,attribute,score,level,confidence_score,derived_from,model_id,valid_from,valid_to,status,remarks
+INT-MOB-ALT-000001,ALERT,CITY,MUM,Mumbai,Heavy Congestion Alert,96,Critical,0.98,OBS-MOB1-000001,MODEL-MOB-ALT-001,2026-07-01,2026-07-01,Active,
+INT-MOB-ALT-000002,ALERT,CITY,DEL,Delhi,Major Accident Alert,93,Critical,0.97,Traffic Authority,MODEL-MOB-ALT-001,2026-07-01,2026-07-01,Active,
+INT-MOB-ALT-000003,ALERT,CITY,BLR,Bengaluru,Peak Hour Advisory,88,High,0.95,OBS-MOB1-000012,MODEL-MOB-ALT-002,2026-07-01,2026-07-01,Active,
+INT-MOB-ALT-000004,ALERT,CITY,CHE,Chennai,Travel Delay Alert,76,Medium,0.91,OBS-MOB2-000005,MODEL-MOB-ALT-002,2026-07-01,2026-07-01,Active,
+INT-MOB-ALT-000005,ALERT,CITY,PUN,Pune,Route Diversion Alert,82,High,0.93,Traffic Police,MODEL-MOB-ALT-003,2026-07-01,2026-07-02,Active,
+INT-MOB-ALT-000006,ALERT,CITY,KOL,Kolkata,Road Block Alert,85,High,0.94,Traffic Police,MODEL-MOB-ALT-003,2026-07-01,2026-07-02,Active,
+INT-MOB-ALT-000007,ALERT,CITY,GOA,Panaji,Tourist Traffic Alert,71,Medium,0.90,OBS-MOB3-000007,MODEL-MOB-ALT-004,2026-07-01,2026-07-15,Active,
+INT-MOB-ALT-000008,ALERT,CITY,SHI,Shimla,Hill Route Advisory,83,High,0.93,OBS-MOB2-000009,MODEL-MOB-ALT-004,2026-07-01,2026-09-30,Active,
+INT-MOB-ALT-000009,ALERT,ROAD_SEGMENT,NH48,NH-48,Highway Congestion Alert,89,High,0.95,OBS-MOB1-000011,MODEL-MOB-ALT-005,2026-07-01,2026-07-01,Active,
+INT-MOB-ALT-000010,ALERT,STATE,MH,Maharashtra,Peak Travel Advisory,78,Medium,0.91,FASTag Analytics,MODEL-MOB-ALT-005,2026-07-01,2026-07-03,Active,
+INT-MOB-ALT-000011,ALERT,DISTRICT,PUNE,Pune District,Freight Traffic Alert,81,High,0.92,OBS-MOB3-000011,MODEL-MOB-ALT-006,2026-07-01,2026-07-02,Active,
+INT-MOB-ALT-000012,ALERT,CITY,MUM,Mumbai,Public Event Traffic Alert,74,Medium,0.90,City Administration,MODEL-MOB-ALT-006,2026-07-01,2026-07-01,Active,

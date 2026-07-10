@@ -1,0 +1,13 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,cardinality,is_runtime,is_security_edge,is_identity_edge,is_ai_security_edge,description,status
+SECREL-000001,Identity,HAS,Role,Identity,1:N,TRUE,TRUE,TRUE,FALSE,Identity assigned one or more roles,Active
+SECREL-000002,Role,GRANTS,Permission,Authorization,1:N,TRUE,TRUE,TRUE,FALSE,Roles grant permissions,Active
+SECREL-000003,Permission,CONTROLS,Resource,Authorization,N:N,TRUE,TRUE,FALSE,FALSE,Permissions protect resources,Active
+SECREL-000004,AccessControlPolicy,PROTECTS,Resource,Authorization,N:N,TRUE,TRUE,FALSE,FALSE,Policies secure enterprise resources,Active
+SECREL-000005,SecurityPolicy,ENFORCED_BY,AISecurityControl,AI Security,1:N,TRUE,TRUE,FALSE,TRUE,Policies enforced through AI controls,Active
+SECREL-000006,AISecurityControl,PROTECTS,ModelSecurityProfile,AI Security,N:N,TRUE,TRUE,FALSE,TRUE,AI controls secure models,Active
+SECREL-000007,PromptSecurityPolicy,SECURES,Prompt,Prompt Security,1:N,TRUE,TRUE,FALSE,TRUE,Prompt policies secure prompts,Active
+SECREL-000008,Threat,TARGETS,Resource,Risk,N:N,TRUE,TRUE,FALSE,FALSE,Threats target enterprise resources,Active
+SECREL-000009,Vulnerability,LEADS_TO,SecurityIncident,Risk,N:N,TRUE,TRUE,FALSE,FALSE,Unresolved vulnerabilities may cause incidents,Active
+SECREL-000010,SecurityIncident,MEASURED_BY,SecurityMetric,Operations,N:N,TRUE,TRUE,FALSE,FALSE,Security incidents contribute to security metrics,Active
+SECREL-000011,AuditSecurity,VALIDATES,SecurityPolicy,Governance,N:N,FALSE,TRUE,FALSE,FALSE,Audit verifies policy compliance,Active
+SECREL-000012,EncryptionKey,PROTECTS,Resource,Cryptography,N:N,TRUE,TRUE,FALSE,FALSE,Encryption keys protect enterprise resources,Active

@@ -1,0 +1,17 @@
+field_name,data_type,required,description
+plan_id,String,TRUE,Unique planning identifier
+goal_id,String,TRUE,Associated goal
+plan_name,String,TRUE,Plan name
+planning_strategy,String,TRUE,Planning strategy
+priority,String,TRUE,Business priority
+estimated_cost,Float,FALSE,Estimated execution cost
+estimated_duration,Integer,FALSE,Estimated duration
+confidence_score,Float,FALSE,Planner confidence
+risk_score,Float,FALSE,Risk assessment
+resource_profile,String,FALSE,Assigned resources
+constraint_profile,String,FALSE,Applied constraints
+execution_state,String,TRUE,Planning state
+created_at,Datetime,TRUE,Creation timestamp
+updated_at,Datetime,FALSE,Last modification
+owner_agent,String,FALSE,Responsible planning agent
+status,String,TRUE,Lifecycle status

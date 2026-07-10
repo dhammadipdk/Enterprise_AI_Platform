@@ -1,0 +1,30 @@
+scenario_id,scenario_name,claim_profile,key_observations,derived_intelligence,predictions,recommendations,expected_business_impact
+SCN-CLM-000001,Minor Urban Collision,"Private Car","Minor bumper damage;Complete documents","Claim Health=95","Settlement within 5 days","Fast-track settlement","High customer satisfaction"
+
+SCN-CLM-000002,Heavy Monsoon Flood Damage,"SUV in Mumbai","Engine water ingress;Flood conditions","Severity Risk=91","High repair cost","Recommend Engine Protect review","Reduced future disputes"
+
+SCN-CLM-000003,Possible Fraud Claim,"Luxury Sedan","Late reporting;Witness mismatch","Fraud Risk=88","Manual investigation","Assign SIU","Reduced fraud payout"
+
+SCN-CLM-000004,Hit and Run,"Hatchback","Police FIR available","Recovery Potential=42","Settlement after verification","Approve claim","Improved trust"
+
+SCN-CLM-000005,Commercial Vehicle Accident,"Fleet Truck","Multiple damaged components","Reserve Risk=79","Large settlement","Increase reserve","Reserve adequacy"
+
+SCN-CLM-000006,Total Loss Claim,"Premium SUV","Vehicle beyond economical repair","Severity Index=98","Total loss settlement","Initiate salvage","Reduced loss"
+
+SCN-CLM-000007,Glass Only Damage,"Sedan","Windshield damage","Complexity Index=18","Quick repair","Straight-through processing","Reduced operational cost"
+
+SCN-CLM-000008,Third Party Injury,"Motorcycle","Injury liability","Legal Risk=74","Long settlement cycle","Legal review","Reduced litigation"
+
+SCN-CLM-000009,Repeated Claimant,"Private Car","Fourth claim in 18 months","Claim Risk=82","Premium revision","Risk review","Improved underwriting"
+
+SCN-CLM-000010,OEM Repair Claim,"Luxury Vehicle","Authorized garage","Repair Quality=95","Higher repair cost","Approve OEM repair","Customer retention"
+
+SCN-CLM-000011,Incomplete Documentation,"Private Car","Missing repair invoice","Document Risk=71","Delayed settlement","Request documents","Improved verification"
+
+SCN-CLM-000012,Fast Digital Claim,"EV Vehicle","Mobile upload complete","Automation Index=94","Same-day approval","STP processing","Operational efficiency"
+
+SCN-CLM-000013,High Salvage Vehicle,"Commercial Vehicle","Repair uneconomical","Recovery Index=83","High salvage recovery","Auction salvage","Lower net loss"
+
+SCN-CLM-000014,Third Party Recovery,"Sedan","Liability established","Recovery Potential=89","Successful subrogation","Initiate recovery","Reduced claim cost"
+
+SCN-CLM-000015,Excellent Claim Experience,"Long-term Customer","Fast settlement;Excellent CSAT","Claim Health=98","High renewal probability","Loyalty benefits","Higher customer lifetime value"

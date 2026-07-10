@@ -1,0 +1,10 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-LABOR-000001,MECHANICAL,Mechanical Labor,Mechanical repair labor,Active,2026-01-01,,Industry,
+REF-LABOR-000002,ELECTRICAL,Electrical Labor,Electrical repair labor,Active,2026-01-01,,Industry,
+REF-LABOR-000003,BODYSHOP,Body Shop Labor,Body repair labor,Active,2026-01-01,,Industry,
+REF-LABOR-000004,PAINT,Paint Labor,Painting and refinishing labor,Active,2026-01-01,,Industry,
+REF-LABOR-000005,DIAGNOSTICS,Diagnostic Labor,Inspection and fault diagnosis,Active,2026-01-01,,Industry,
+REF-LABOR-000006,CALIBRATION,Calibration Labor,ADAS and sensor calibration,Active,2026-01-01,,Industry,
+REF-LABOR-000007,INSTALLATION,Installation Labor,Accessory and component installation,Active,2026-01-01,,Industry,
+REF-LABOR-000008,DETAILING,Detailing Labor,Cleaning polishing and detailing,Active,2026-01-01,,Industry,
+

@@ -1,0 +1,13 @@
+step_id,step_name,parent_task,step_order,execution_type,input_artifacts,output_artifacts,is_checkpoint,is_parallel,retryable,estimated_duration_ms,description,status
+STEP-000001,Load Planning Context,Load Memory,1,System,Plan ID,Execution Context,FALSE,FALSE,TRUE,300,Load planning context into runtime,Active
+STEP-000002,Load Enterprise Memory,Load Memory,2,System,Memory ID,Working Context,FALSE,TRUE,TRUE,500,Retrieve enterprise memory,Active
+STEP-000003,Retrieve Knowledge Graph,Retrieve Graph,3,System,Graph Query,Graph Context,FALSE,TRUE,TRUE,800,Retrieve graph neighborhood,Active
+STEP-000004,Retrieve Semantic Memory,Retrieve Graph,4,System,Embedding Query,Semantic Context,FALSE,TRUE,TRUE,700,Retrieve semantic memory,Active
+STEP-000005,Merge Runtime Context,Run Reasoner,5,System,Graph+Memory,Unified Context,TRUE,FALSE,TRUE,600,Merge enterprise context,Active
+STEP-000006,Run Reasoning Engine,Run Reasoner,6,AI,Unified Context,Decision Context,FALSE,FALSE,TRUE,2500,Reasoning execution,Active
+STEP-000007,Generate Recommendation,Generate Recommendation,7,AI,Decision Context,Recommendation,FALSE,FALSE,TRUE,1500,Generate recommendation,Active
+STEP-000008,Business Rule Validation,Validate Policy,8,System,Recommendation,Validated Recommendation,TRUE,FALSE,FALSE,400,Validate rules,Active
+STEP-000009,Human Approval,Human Review,9,Human,Validated Recommendation,Approval,FALSE,FALSE,FALSE,300000,Manual approval,Active
+STEP-000010,Persist Runtime State,Persist Memory,10,System,Execution Result,Updated Memory,TRUE,FALSE,TRUE,700,Persist execution learning,Active
+STEP-000011,Generate Audit,Write Audit,11,System,Execution Trace,Audit Record,FALSE,TRUE,TRUE,300,Write audit log,Active
+STEP-000012,Close Execution,Close Workflow,12,System,Workflow State,Completed Workflow,FALSE,FALSE,FALSE,100,Finalize execution,Active

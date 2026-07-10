@@ -1,0 +1,26 @@
+term_id,term,business_definition
+INS-001,Policy Lifecycle,Complete lifecycle of an insurance policy from issuance to termination
+INS-002,Policy Renewal,Continuation of coverage after policy expiry
+INS-003,Policy Lapse,Termination of coverage due to non-renewal or non-payment
+INS-004,Premium Payment,Periodic payment made to maintain insurance coverage
+INS-005,Payment Reliability,Consistency of premium payments
+INS-006,Coverage Utilization,Degree to which purchased insurance coverage is used
+INS-007,Coverage Adequacy,Extent to which coverage meets customer needs
+INS-008,Endorsement,Modification made to an active insurance policy
+INS-009,Add-on Cover,Optional insurance benefit attached to a policy
+INS-010,No Claim Bonus (NCB),Discount earned due to claim-free policy years
+INS-011,Renewal Probability,Likelihood that a policy will be renewed
+INS-012,Lapse Risk,Probability of policy becoming inactive
+INS-013,Retention Rate,Probability of retaining a customer
+INS-014,Customer Loyalty,Long-term relationship strength with insurer
+INS-015,Cross-sell Opportunity,Potential to sell additional insurance products
+INS-016,Upsell Opportunity,Potential to upgrade existing coverage
+INS-017,Policy Health Score,Composite indicator representing policy quality
+INS-018,Product Engagement,Customer interaction with insurance products
+INS-019,Coverage Gap,Missing insurance protection relative to exposure
+INS-020,Policy Servicing,Operational servicing activities during policy lifecycle
+INS-021,Grace Period,Additional time allowed after premium due date
+INS-022,Cancellation Risk,Likelihood of policy cancellation
+INS-023,Claim Utilization,Extent to which claims are filed under a policy
+INS-024,Policy Tenure,Length of time a policy has remained active
+INS-025,Customer Lifetime Value (CLV),Estimated long-term business value of a customer

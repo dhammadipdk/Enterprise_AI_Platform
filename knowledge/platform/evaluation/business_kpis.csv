@@ -1,0 +1,11 @@
+business_kpi_id,kpi_name,business_domain,measurement_unit,target_value,measurement_frequency,owner,business_goal,description,status
+BKPI-000001,Claim Settlement Time,Claims,Hours,<24,Daily,Claims Operations,Faster Settlements,Average settlement duration,Active
+BKPI-000002,Fraud Detection Rate,Fraud,Percentage,95,Weekly,Fraud Team,Reduce Fraud,Detected fraudulent claims,Active
+BKPI-000003,Customer Retention,Customer,Percentage,90,Monthly,Customer Success,Customer Loyalty,Retention rate,Active
+BKPI-000004,Policy Renewal Rate,Insurance,Percentage,85,Monthly,Sales,Growth,Policy renewals,Active
+BKPI-000005,Recommendation Acceptance,Recommendation,Percentage,75,Weekly,Recommendation Team,Recommendation Quality,Accepted recommendations,Active
+BKPI-000006,Operational Cost Reduction,Operations,Percentage,15,Quarterly,Operations,Efficiency,Reduced operating cost,Active
+BKPI-000007,Agent Automation Rate,Enterprise AI,Percentage,85,Monthly,AI Platform,Automation,Higher autonomous execution,Active
+BKPI-000008,Knowledge Reuse Rate,Knowledge,Percentage,90,Monthly,Knowledge Team,Knowledge Utilization,Reuse enterprise knowledge,Active
+BKPI-000009,Enterprise AI Quality Index,Enterprise,Score (0-100),95,Monthly,AI Governance,Overall AI Quality,Composite AI quality score,Active
+BKPI-000010,Business ROI,Enterprise,Percentage,25,Quarterly,Executive Board,Business Growth,Return on AI investment,Active

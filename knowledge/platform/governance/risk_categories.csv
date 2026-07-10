@@ -1,0 +1,11 @@
+risk_category_id,risk_category,business_domain,risk_type,likelihood_scale,impact_scale,default_owner,mitigation_required,description,status
+RISKCAT-000001,Operational Risk,Operations,Execution,1-5,1-5,Operations Team,TRUE,Operational execution failures,Active
+RISKCAT-000002,Recommendation Risk,Business,AI Decision,1-5,1-5,Business Owner,TRUE,Incorrect customer recommendations,Active
+RISKCAT-000003,Fraud Risk,Fraud,Business Loss,1-5,1-5,Fraud Team,TRUE,Fraud detection failures,Active
+RISKCAT-000004,Knowledge Risk,Knowledge,Information Quality,1-5,1-5,Knowledge Office,TRUE,Incorrect enterprise knowledge,Active
+RISKCAT-000005,Privacy Risk,Security,Data Privacy,1-5,1-5,CISO,TRUE,Customer privacy exposure,Active
+RISKCAT-000006,Compliance Risk,Compliance,Regulatory,1-5,1-5,Compliance Office,TRUE,Regulatory non-compliance,Active
+RISKCAT-000007,Model Risk,AI,Model Performance,1-5,1-5,MLOps Team,TRUE,Model degradation or drift,Active
+RISKCAT-000008,Agent Risk,AI Platform,Autonomous AI,1-5,1-5,AI Governance Board,TRUE,Autonomous agent failures,Active
+RISKCAT-000009,Reputation Risk,Enterprise,Business Reputation,1-5,1-5,Executive Board,TRUE,Enterprise reputation impact,Active
+RISKCAT-000010,Strategic Risk,Enterprise,Business Strategy,1-5,1-5,Executive Board,TRUE,Strategic AI risks,Active

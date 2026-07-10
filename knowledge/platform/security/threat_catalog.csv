@@ -1,0 +1,11 @@
+threat_id,threat_name,threat_category,target_component,likelihood,impact,detection_method,primary_mitigation,description,status
+THREAT-000001,Prompt Injection,AI Attack,Prompt Layer,High,High,Input Validation,Prompt Sanitization,Prompt injection attacks,Active
+THREAT-000002,Model Poisoning,AI Attack,Model Layer,Medium,Critical,Model Validation,Trusted Training Pipeline,Compromised model training,Active
+THREAT-000003,Embedding Theft,Data Theft,Vector Store,Medium,High,Access Monitoring,Encryption,Embedding extraction attacks,Active
+THREAT-000004,Credential Theft,Identity,Authentication,High,Critical,Identity Monitoring,MFA and Rotation,Credential compromise,Active
+THREAT-000005,Privilege Escalation,Authorization,Authorization Engine,Medium,Critical,Access Audit,Least Privilege,Unauthorized privilege increase,Active
+THREAT-000006,Data Exfiltration,Data Security,Enterprise Data,Medium,Critical,DLP Monitoring,Encryption and Access Control,Sensitive data leakage,Active
+THREAT-000007,Agent Hijacking,AI Attack,Agent Platform,Medium,Critical,Behavior Monitoring,Capability Isolation,Compromised AI agent,Active
+THREAT-000008,API Abuse,API Security,API Gateway,High,Medium,Rate Limiting,API Protection,Excessive API usage,Active
+THREAT-000009,Insider Threat,Enterprise,Entire Platform,Low,Critical,Behavior Analytics,Continuous Monitoring,Malicious insider activity,Active
+THREAT-000010,Supply Chain Attack,Infrastructure,Dependencies,Low,Critical,Dependency Scanning,Software Verification,Compromised dependencies,Active

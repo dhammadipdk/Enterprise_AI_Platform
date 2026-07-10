@@ -1,0 +1,11 @@
+resource_id,resource_name,resource_category,capacity,availability,cost_model,parallel_execution,shareable,description,status
+RES-000001,LLM Planner,AI,100 Requests/min,High,Per Token,TRUE,TRUE,Primary planning model,Active
+RES-000002,Knowledge Graph,Knowledge,Unlimited,High,None,TRUE,TRUE,Enterprise graph backend,Active
+RES-000003,Vector Database,Memory,Unlimited,High,None,TRUE,TRUE,Semantic retrieval engine,Active
+RES-000004,Reasoning Engine,AI,50 Decisions/min,High,Per Request,FALSE,TRUE,Reasoning subsystem,Active
+RES-000005,Workflow Engine,Execution,500 Tasks/min,High,None,TRUE,TRUE,Workflow execution engine,Active
+RES-000006,Recommendation Engine,Business,200 Requests/min,High,None,TRUE,TRUE,Recommendation subsystem,Active
+RES-000007,Fraud Engine,Risk,100 Analyses/min,Medium,None,FALSE,TRUE,Fraud analysis engine,Active
+RES-000008,Business Rules Engine,Governance,Unlimited,High,None,TRUE,TRUE,Rule evaluation engine,Active
+RES-000009,Human Reviewer,Human,20 Reviews/day,Low,Hourly,FALSE,FALSE,Manual approval resource,Active
+RES-000010,External API,External,Variable,Medium,API Usage,FALSE,TRUE,Third-party services,Active

@@ -1,0 +1,11 @@
+relationship_id,source_memory,relationship,target_memory,relationship_type,bidirectional,description,status
+MEMREL-000001,Working Memory,REFERENCES,Semantic Memory,Dependency,TRUE,Working memory references semantic memory,Active
+MEMREL-000002,Semantic Memory,LINKS_TO,Knowledge Graph,Knowledge,TRUE,Semantic memory linked with graph,Active
+MEMREL-000003,Knowledge Graph,GENERATES,Graph Embeddings,Analytics,FALSE,Graph generates embeddings,Active
+MEMREL-000004,Conversation Memory,UPDATES,Working Memory,Context,FALSE,Conversation updates working context,Active
+MEMREL-000005,Observation Memory,SUPPORTS,Reasoning Memory,Reasoning,FALSE,Observations support reasoning,Active
+MEMREL-000006,Reasoning Memory,PRODUCES,Execution Memory,Execution,FALSE,Reasoning produces execution plans,Active
+MEMREL-000007,Execution Memory,UPDATES,Episodic Memory,Learning,FALSE,Execution becomes experience,Active
+MEMREL-000008,Episodic Memory,CONSOLIDATES_TO,Semantic Memory,Learning,FALSE,Experience becomes knowledge,Active
+MEMREL-000009,Agent Memory,SHARES,Enterprise Memory,Collaboration,TRUE,Cross-agent collaboration,Active
+MEMREL-000010,Enterprise Memory,SUPPORTS,Planning Engine,Decision Support,FALSE,Enterprise memory supports planning,Active

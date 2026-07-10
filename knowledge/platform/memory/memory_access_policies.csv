@@ -1,0 +1,11 @@
+policy_id,policy_name,memory_scope,authorized_roles,authentication_required,authorization_level,audit_required,mask_sensitive_data,cross_agent_access,description,status
+ACCESS-000001,Public Knowledge,Knowledge,"All Agents",TRUE,Read,TRUE,FALSE,TRUE,Shared enterprise knowledge,Active
+ACCESS-000002,Customer Profile,Customer,"Claims,Recommendation",TRUE,Restricted,TRUE,TRUE,TRUE,Customer information,Active
+ACCESS-000003,Fraud Investigation,Fraud,"Fraud Team",TRUE,Highly Restricted,TRUE,TRUE,FALSE,Fraud investigation memory,Active
+ACCESS-000004,Reasoning Trace,Reasoning,"Reasoning Engine",TRUE,Restricted,TRUE,FALSE,TRUE,Reasoning explanations,Active
+ACCESS-000005,Conversation Memory,Conversation,"Assistant",TRUE,Private,TRUE,TRUE,FALSE,Conversation history,Active
+ACCESS-000006,Graph Memory,Knowledge Graph,"Graph Engine",TRUE,Internal,TRUE,FALSE,TRUE,Knowledge graph storage,Active
+ACCESS-000007,Execution History,Execution,"Planner,Executor",TRUE,Restricted,TRUE,FALSE,TRUE,Workflow execution,Active
+ACCESS-000008,Legal Archive,Compliance,"Compliance",TRUE,Critical,TRUE,TRUE,FALSE,Legal memory,Active
+ACCESS-000009,Agent Shared Memory,Agents,"All Agents",TRUE,Internal,TRUE,FALSE,TRUE,Collaborative memory,Active
+ACCESS-000010,System Cache,Infrastructure,"System",FALSE,System,FALSE,FALSE,FALSE,Internal optimization cache,Active

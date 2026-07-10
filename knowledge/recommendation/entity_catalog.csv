@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-REC-000001,Recommendation,Represents an AI-generated insurance recommendation.,Aggregate Root,,GLOSS-REC-000001,Recommendation Identifier,Dynamic,Recommendation,Root aggregate of the Recommendation domain.
+ENT-REC-000002,Recommendation Ranking,Represents ranking of candidate recommendations.,Entity,Recommendation,GLOSS-REC-000011,,Computed,Recommendation,Recommendation ordering.
+ENT-REC-000003,Recommendation Explanation,Represents natural-language explanations supporting recommendations.,Entity,Recommendation,GLOSS-REC-000021,,Computed,Recommendation,Explainable AI.
+ENT-REC-000004,Recommendation Reasoning,Represents structured reasoning process used to generate recommendations.,Entity,Recommendation,GLOSS-REC-000031,,Computed,Recommendation,Reasoning graph.
+ENT-REC-000005,Decision Support,Represents AI-assisted business decision support.,Entity,Recommendation,GLOSS-REC-000041,,Computed,Recommendation,Decision assistance.
+ENT-REC-000006,Conversation Context,Represents conversational context influencing recommendation generation.,Entity,Recommendation,GLOSS-REC-000051,,Dynamic,Recommendation,Conversation memory.
+ENT-REC-000007,Recommendation Feedback,Represents customer feedback used for recommendation improvement.,Entity,Recommendation,GLOSS-REC-000061,,Dynamic,Recommendation,Learning signal.
+ENT-REC-000008,Recommendation Lifecycle,Represents lifecycle and operational status of recommendations.,Entity,Recommendation,GLOSS-REC-000071,,Dynamic,Recommendation,Workflow management.
+ENT-REC-000009,Recommendation Trace,Represents traceability and provenance of recommendation generation.,Entity,Recommendation,GLOSS-REC-000079,,Computed,Recommendation,Enterprise governance.
+ENT-REC-000010,Recommendation Assessment,Represents AI-generated assessment of recommendation quality, robustness and explainability.,Entity,Recommendation,GLOSS-REC-000089,,Computed,Recommendation,Responsible AI assessment.

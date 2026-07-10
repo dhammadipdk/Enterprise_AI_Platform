@@ -1,0 +1,11 @@
+human_task_id,task_name,task_category,approval_required,sla_hours,assigned_role,escalation_policy,business_critical,description,status
+HTASK-000001,Claims Approval,Business Approval,TRUE,24,Claims Manager,Manager Escalation,TRUE,Approve insurance claims,Active
+HTASK-000002,Fraud Review,Risk Review,TRUE,12,Fraud Analyst,Director Escalation,TRUE,Review fraud investigation,Active
+HTASK-000003,Compliance Approval,Compliance,TRUE,24,Compliance Officer,CIO Escalation,TRUE,Approve compliance decisions,Active
+HTASK-000004,Executive Approval,Executive Decision,TRUE,48,Executive Board,CEO Escalation,TRUE,Executive approvals,Active
+HTASK-000005,Security Review,Security,TRUE,4,Security Officer,CISO Escalation,TRUE,Review security incidents,Active
+HTASK-000006,AI Override,AI Validation,FALSE,2,AI Supervisor,Platform Lead,FALSE,Override AI recommendation,Active
+HTASK-000007,Data Quality Review,Quality,FALSE,24,Data Steward,Data Manager,FALSE,Review data quality,Active
+HTASK-000008,Knowledge Approval,Knowledge,TRUE,12,Knowledge Manager,Knowledge Lead,FALSE,Approve knowledge updates,Active
+HTASK-000009,Workflow Restart,Operations,FALSE,2,Operations Engineer,Operations Manager,FALSE,Restart failed workflow,Active
+HTASK-000010,Emergency Intervention,Critical Incident,TRUE,1,Incident Commander,Executive Response,TRUE,Emergency workflow intervention,Active

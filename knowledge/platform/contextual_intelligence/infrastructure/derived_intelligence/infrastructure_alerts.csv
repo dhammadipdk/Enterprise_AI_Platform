@@ -1,0 +1,13 @@
+intelligence_id,intelligence_type,subject_type,subject_code,subject_name,attribute,score,level,confidence_score,derived_from,model_id,valid_from,valid_to,status,remarks
+INT-INF-ALT-000001,ALERT,CITY,MUM,Mumbai,Road Construction Alert,82,High,0.94,Enterprise Reports,MODEL-INF-ALT-001,2026-07-01,2026-07-10,Active,
+INT-INF-ALT-000002,ALERT,CITY,DEL,Delhi,Traffic Signal Failure,75,Medium,0.90,Municipal Reports,MODEL-INF-ALT-001,2026-07-02,2026-07-03,Active,
+INT-INF-ALT-000003,ALERT,CITY,CHE,Chennai,Bridge Maintenance Alert,68,Medium,0.91,NHAI Reports,MODEL-INF-ALT-002,2026-07-05,2026-07-15,Active,
+INT-INF-ALT-000004,ALERT,CITY,BLR,Bengaluru,Pothole Alert,91,Critical,0.96,Road Survey,MODEL-INF-ALT-002,2026-07-01,2026-08-31,Active,
+INT-INF-ALT-000005,ALERT,CITY,PUN,Pune,Road Closure Alert,87,High,0.95,Traffic Authority,MODEL-INF-ALT-003,2026-07-08,2026-07-09,Active,
+INT-INF-ALT-000006,ALERT,CITY,GOA,Panaji,Bridge Closure Alert,71,Medium,0.91,State PWD,MODEL-INF-ALT-003,2026-07-10,2026-07-12,Active,
+INT-INF-ALT-000007,ALERT,CITY,SHI,Shimla,Landslide Road Closure,96,Critical,0.98,Disaster Authority,MODEL-INF-ALT-004,2026-08-01,2026-08-05,Active,
+INT-INF-ALT-000008,ALERT,CITY,KOL,Kolkata,Street Light Failure,63,Medium,0.89,Municipal Reports,MODEL-INF-ALT-004,2026-07-01,2026-07-04,Active,
+INT-INF-ALT-000009,ALERT,CITY,GUW,Guwahati,Bridge Inspection Alert,67,Medium,0.90,NHAI Reports,MODEL-INF-ALT-005,2026-07-12,2026-07-18,Active,
+INT-INF-ALT-000010,ALERT,ROAD_SEGMENT,NH48-001,NH-48 Mumbai-Pune,Road Maintenance Alert,86,High,0.95,NHAI Reports,MODEL-INF-ALT-005,2026-07-15,2026-07-25,Active,
+INT-INF-ALT-000011,ALERT,STATE,MH,Maharashtra,Fuel Supply Disruption,72,Medium,0.91,Petroleum Reports,MODEL-INF-ALT-006,2026-07-20,2026-07-23,Active,
+INT-INF-ALT-000012,ALERT,CITY,MUM,Mumbai,EV Charging Network Outage,66,Medium,0.90,BEE Reports,MODEL-INF-ALT-006,2026-07-18,2026-07-19,Active,

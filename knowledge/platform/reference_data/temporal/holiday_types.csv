@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-HOL-000001,NATIONAL,National Holiday,Holiday declared nationwide,Active,2026-01-01,,Government of India,
+REF-HOL-000002,STATE,State Holiday,Holiday declared by state government,Active,2026-01-01,,State Government,
+REF-HOL-000003,BANK,Bank Holiday,Banking holiday,Active,2026-01-01,,Reserve Bank of India,
+REF-HOL-000004,FESTIVAL,Festival Holiday,Religious or cultural festival holiday,Active,2026-01-01,,Government,
+REF-HOL-000005,OPTIONAL,Optional Holiday,Restricted or optional holiday,Active,2026-01-01,,Government,

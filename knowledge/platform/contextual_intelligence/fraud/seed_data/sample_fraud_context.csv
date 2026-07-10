@@ -1,0 +1,30 @@
+scenario_id,scenario_name,fraud_profile,key_observations,derived_intelligence,predictions,recommendations,expected_business_impact
+SCN-FRD-000001,Duplicate Motor Claim,"Same vehicle reported twice","Duplicate claim detected;Matching accident details","Fraud Risk=95","Fraud probability=0.96","Assign SIU immediately","Prevent duplicate payout"
+
+SCN-FRD-000002,Synthetic Identity,"Fake customer identity","Device mismatch;Identity inconsistency","Identity Risk=89","Manual verification required","Perform enhanced KYC","Reduce identity fraud"
+
+SCN-FRD-000003,Staged Accident,"Organized collision","Witness inconsistency;GPS mismatch","Fraud Ring Risk=91","Network expansion likely","Investigate linked entities","Prevent organized fraud"
+
+SCN-FRD-000004,Inflated Repair Estimate,"Excessive repair quotation","Repair estimate anomaly","Repair Fraud Risk=82","High settlement inflation","Independent repair assessment","Reduce claim leakage"
+
+SCN-FRD-000005,Forged Invoice,"Modified repair invoice","OCR anomaly;Invoice mismatch","Document Fraud Risk=87","Manual validation","Verify with garage","Prevent fraudulent reimbursement"
+
+SCN-FRD-000006,Repeated Fraudster,"Customer with prior fraud","Historical fraud flags","Repeat Offender Risk=84","Future fraud likely","Continuous monitoring","Reduce recurring losses"
+
+SCN-FRD-000007,Shared Bank Account,"Multiple claims to same account","Bank account linkage","Fraud Ring Probability=93","Network fraud","Graph investigation","Disrupt organized fraud"
+
+SCN-FRD-000008,Garage Collusion,"Same garage across suspicious claims","Repair network similarity","Collusion Risk=86","Expanded fraud network","Audit garage","Reduce repair fraud"
+
+SCN-FRD-000009,Image Manipulation,"Edited accident photos","Image forensic anomaly","Evidence Risk=88","Manual review","Obtain original media","Improve evidence quality"
+
+SCN-FRD-000010,Blacklisted Customer,"Watchlist match","Blacklist hit","Critical Fraud Alert","High fraud probability","Reject automatic processing","Reduce financial exposure"
+
+SCN-FRD-000011,Premium Payment Fraud,"Suspicious payment reversal","Payment anomaly","Payment Fraud Risk=78","Recovery required","Freeze payment","Reduce payment fraud"
+
+SCN-FRD-000012,Internal Collusion,"Employee-garage relationship","Shared investigation history","Insider Fraud Risk=81","Internal audit","Launch audit","Improve governance"
+
+SCN-FRD-000013,Cross-Policy Fraud,"Linked policies across identities","Entity graph connections","Network Risk=89","Further linked cases expected","Expand graph search","Detect wider fraud network"
+
+SCN-FRD-000014,High-Confidence Legitimate Claim,"Strong evidence consistency","Verified documents;Consistent telematics","False Positive Index=12","Approve processing","Fast-track settlement","Improve customer satisfaction"
+
+SCN-FRD-000015,Recovered Fraud Case,"Confirmed fraud with recovery","Legal action completed","Recovery Potential=100","Recovered amount confirmed","Close investigation","Knowledge retained for future detection"

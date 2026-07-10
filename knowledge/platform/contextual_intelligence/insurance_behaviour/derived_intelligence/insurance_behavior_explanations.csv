@@ -1,0 +1,16 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-INS-000001,POLICY,POL-000001,REC-INS-000001,Offer Early Renewal,"Excellent payment history;High loyalty","No recent claims","Policy demonstrates strong renewal behaviour and low servicing cost.",0.98,XAI Engine
+EXP-INS-000002,POLICY,POL-000002,PRED-INS-000002,High Lapse Risk,"Late premium payments","Low portal engagement","Repeated payment delays significantly increase lapse probability.",0.96,XAI Engine
+EXP-INS-000003,POLICY,POL-000003,REC-INS-000003,Enable Auto Debit,"Missed payment history","Quarterly premium schedule","Automatic payments are expected to reduce future lapses.",0.95,XAI Engine
+EXP-INS-000004,POLICY,POL-000004,REC-INS-000004,Recommend Engine Protect,"Vehicle age;Coverage gap","Repair cost trend","Existing policy lacks protection against expensive engine failures.",0.97,XAI Engine
+EXP-INS-000005,POLICY,POL-000005,REC-INS-000005,Recommend Roadside Assistance,"High travel exposure","Long-distance driving","Roadside assistance will reduce inconvenience during breakdowns.",0.95,XAI Engine
+EXP-INS-000006,POLICY,POL-000006,REC-INS-000006,Loyalty Reward,"Multiple renewals","High customer satisfaction","Customer exhibits long-term profitable behaviour.",0.94,XAI Engine
+EXP-INS-000007,POLICY,POL-000007,REC-INS-000007,Coverage Review,"Coverage adequacy below benchmark","High IDV","Coverage optimization is recommended.",0.95,XAI Engine
+EXP-INS-000008,POLICY,POL-000008,REC-INS-000008,Manual Review,"Fraud indicators","Claim irregularities","Manual underwriting review is recommended before renewal.",0.97,XAI Engine
+EXP-INS-000009,POLICY,POL-000009,REC-INS-000009,Increase Digital Engagement,"Low portal usage","Few app sessions","Digital engagement improves customer servicing efficiency.",0.92,XAI Engine
+EXP-INS-000010,POLICY,POL-000010,REC-INS-000010,Retention Campaign,"Churn probability","Reduced interactions","Retention offers are likely to improve renewal probability.",0.95,XAI Engine
+EXP-INS-000011,POLICY,POL-000011,REC-INS-000011,Cross-sell Accident Cover,"Family profile","Existing protection gap","Additional accident protection is appropriate.",0.93,XAI Engine
+EXP-INS-000012,POLICY,POL-000012,REC-INS-000012,Upgrade Zero Dep,"Vehicle age","Repair history","Upgrade provides improved financial protection.",0.94,XAI Engine
+EXP-INS-000013,POLICY,POL-000013,REC-INS-000013,Annual Payment,"Monthly servicing overhead","Payment consistency","Annual payment improves operational efficiency.",0.91,XAI Engine
+EXP-INS-000014,POLICY,POL-000014,REC-INS-000014,KYC Update,"Regulatory requirement","Pending documents","Policy servicing requires updated customer information.",0.98,XAI Engine
+EXP-INS-000015,POLICY,POL-000015,REC-INS-000015,Portfolio Review,"Multiple policy changes","Coverage complexity","Portfolio optimization is recommended.",0.93,XAI Engine

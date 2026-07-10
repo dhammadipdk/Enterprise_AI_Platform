@@ -1,0 +1,11 @@
+privacy_control_id,control_name,privacy_principle,protected_data,implementation,verification_method,business_owner,description,status
+PRIV-000001,Data Minimization,Collect Minimum Data,Customer Data,Application Validation,Privacy Audit,Privacy Office,Collect only required information,Active
+PRIV-000002,Purpose Limitation,Use Restriction,Customer Data,Policy Engine,Compliance Review,Privacy Office,Use data only for intended purpose,Active
+PRIV-000003,Consent Management,Customer Consent,PII,Consent Service,Consent Validation,Customer Operations,Manage customer consent,Active
+PRIV-000004,Right to Erasure,Data Deletion,Personal Data,Deletion Workflow,Deletion Audit,Privacy Office,Delete customer data upon request,Active
+PRIV-000005,Data Portability,Customer Export,Personal Data,Export Service,Export Validation,Platform Team,Export customer information,Active
+PRIV-000006,Data Masking,Mask Sensitive Data,PII,Masking Engine,Data Review,Platform Team,Mask sensitive information,Active
+PRIV-000007,Anonymization,Identity Removal,Analytics Data,Anonymization Pipeline,Privacy Audit,Analytics Team,Remove personal identifiers,Active
+PRIV-000008,Pseudonymization,Identity Replacement,Operational Data,Tokenization Service,Compliance Review,Platform Team,Replace identities with tokens,Active
+PRIV-000009,Retention Enforcement,Retention Policy,Enterprise Data,Lifecycle Manager,Retention Audit,Compliance Office,Enforce retention periods,Active
+PRIV-000010,Cross-border Control,Data Residency,Customer Data,Location Policies,Compliance Validation,Compliance Office,Control international data movement,Active

@@ -1,0 +1,11 @@
+security_id,security_control,threat_type,protection_layer,enforcement_mode,logging_enabled,audit_required,description,status
+PSEC-000001,Prompt Injection Filter,Prompt Injection,Compiler,Blocking,TRUE,TRUE,Detect prompt injection attacks,Active
+PSEC-000002,System Prompt Isolation,Privilege Escalation,Runtime,Blocking,TRUE,TRUE,Protect system prompts,Active
+PSEC-000003,Context Sanitization,Data Leakage,Compilation,Blocking,TRUE,FALSE,Remove unsafe context,Active
+PSEC-000004,Prompt Signing,Tampering,Registry,Blocking,TRUE,TRUE,Digitally sign prompts,Active
+PSEC-000005,Variable Sanitization,Injection,Compilation,Blocking,TRUE,FALSE,Sanitize prompt variables,Active
+PSEC-000006,Output Filtering,Unsafe Output,Post-Inference,Blocking,TRUE,FALSE,Filter unsafe responses,Active
+PSEC-000007,Tool Authorization,Unauthorized Tool Access,Tool Execution,Blocking,TRUE,TRUE,Authorize tool usage,Active
+PSEC-000008,Memory Isolation,Cross-Tenant Leakage,Runtime,Blocking,TRUE,TRUE,Protect tenant memory,Active
+PSEC-000009,Audit Logging,Compliance,Entire Pipeline,Monitoring,TRUE,TRUE,Log prompt lifecycle,Active
+PSEC-000010,Zero Trust Prompting,Enterprise Security,Entire Pipeline,Blocking,TRUE,TRUE,Apply zero trust principles,Active

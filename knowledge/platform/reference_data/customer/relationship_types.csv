@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-REL-000001,SELF,Self,Primary customer,Active,2026-01-01,,Enterprise,
+REF-REL-000002,SPOUSE,Spouse,Legally married partner,Active,2026-01-01,,Enterprise,
+REF-REL-000003,FATHER,Father,Father of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000004,MOTHER,Mother,Mother of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000005,SON,Son,Son of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000006,DAUGHTER,Daughter,Daughter of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000007,BROTHER,Brother,Brother of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000008,SISTER,Sister,Sister of customer,Active,2026-01-01,,Enterprise,
+REF-REL-000009,LEGAL_GUARDIAN,Legal Guardian,Legally appointed guardian,Active,2026-01-01,,Enterprise,
+REF-REL-000010,NOMINEE,Nominee,Designated nominee or beneficiary,Active,2026-01-01,,Enterprise,

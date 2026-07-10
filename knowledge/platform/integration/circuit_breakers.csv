@@ -1,0 +1,11 @@
+circuit_breaker_id,circuit_name,protected_service,failure_threshold,rolling_window_seconds,open_duration_seconds,half_open_requests,fallback_strategy,description,status
+CB-000001,Knowledge Service Breaker,Knowledge Service,5,60,30,3,Return Cached Response,Knowledge service protection,Active
+CB-000002,Memory Service Breaker,Memory Service,5,60,30,3,Graceful Degradation,Memory service protection,Active
+CB-000003,Planning Service Breaker,Planning Service,5,60,30,3,Default Planning,Planning protection,Active
+CB-000004,Execution Service Breaker,Execution Service,5,60,30,3,Pause Workflow,Execution protection,Active
+CB-000005,Recommendation Service Breaker,Recommendation Service,5,60,30,3,Fallback Recommendation,Recommendation protection,Active
+CB-000006,External API Breaker,External Systems,3,60,60,2,Cached Response,External API protection,Active
+CB-000007,LLM Service Breaker,Model Platform,3,60,120,2,Secondary Model,LLM protection,Active
+CB-000008,Vector Database Breaker,Vector Store,5,60,30,3,Keyword Search,RAG protection,Active
+CB-000009,Identity Service Breaker,Security Platform,3,60,30,2,Deny Requests,Identity protection,Active
+CB-000010,Gateway Breaker,API Gateway,5,60,30,3,Maintenance Response,Gateway protection,Active

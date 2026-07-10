@@ -1,0 +1,11 @@
+service_id,service_name,service_type,service_owner,discovery_method,health_check_enabled,load_balanced,service_version,description,status
+SERVICE-000001,Knowledge Service,Microservice,Knowledge Team,Registry,TRUE,TRUE,v1,Knowledge APIs,Active
+SERVICE-000002,Memory Service,Microservice,Platform Team,Registry,TRUE,TRUE,v1,Memory APIs,Active
+SERVICE-000003,Planning Service,Microservice,Planning Team,Registry,TRUE,TRUE,v1,Planning APIs,Active
+SERVICE-000004,Execution Service,Microservice,Execution Team,Registry,TRUE,TRUE,v1,Workflow execution,Active
+SERVICE-000005,Agent Service,Microservice,AI Platform Team,Registry,TRUE,TRUE,v1,Agent coordination,Active
+SERVICE-000006,Recommendation Service,Microservice,Business Team,Registry,TRUE,TRUE,v1,Recommendation engine,Active
+SERVICE-000007,Governance Service,Microservice,Governance Board,Registry,TRUE,TRUE,v1,Governance engine,Active
+SERVICE-000008,Observability Service,Microservice,Platform Team,Registry,TRUE,TRUE,v1,Telemetry platform,Active
+SERVICE-000009,Security Service,Microservice,Security Team,Registry,TRUE,TRUE,v1,Identity and authorization,Active
+SERVICE-000010,Gateway Service,Gateway,Platform Team,Registry,TRUE,TRUE,v1,Enterprise API gateway,Active

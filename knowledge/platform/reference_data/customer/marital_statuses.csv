@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-MARITAL-000001,SINGLE,Single,Never married,Active,2026-01-01,,Enterprise,
+REF-MARITAL-000002,MARRIED,Married,Legally married,Active,2026-01-01,,Enterprise,
+REF-MARITAL-000003,DIVORCED,Divorced,Marriage legally dissolved,Active,2026-01-01,,Enterprise,
+REF-MARITAL-000004,WIDOWED,Widowed,Spouse deceased,Active,2026-01-01,,Enterprise,
+REF-MARITAL-000005,SEPARATED,Separated,Living separately without legal divorce,Active,2026-01-01,,Enterprise,

@@ -1,0 +1,11 @@
+decision_id,decision_type,decision_source,governing_policy,risk_level,approval_required,decision_outcome,decision_trace_required,audit_required,description,status
+GDEC-000001,Recommendation Approval,Recommendation Engine,GPOL-000003,Medium,TRUE,Approved,TRUE,TRUE,Recommendation governance decision,Active
+GDEC-000002,Fraud Escalation,Fraud Engine,GPOL-000009,High,TRUE,Escalated,TRUE,TRUE,Fraud investigation escalation,Active
+GDEC-000003,Knowledge Publication,Knowledge Office,GPOL-000002,Low,TRUE,Approved,TRUE,TRUE,Knowledge release decision,Active
+GDEC-000004,Planning Override,Planning Engine,GPOL-000004,High,TRUE,Rejected,TRUE,TRUE,Planning override request,Active
+GDEC-000005,Workflow Rollback,Execution Engine,GPOL-000009,Critical,TRUE,Approved,TRUE,TRUE,Rollback authorization,Active
+GDEC-000006,Model Deployment,MLOps,GPOL-000009,High,TRUE,Approved,TRUE,TRUE,Model deployment approval,Active
+GDEC-000007,Policy Exception,Governance,GPOL-000001,Critical,TRUE,Pending,TRUE,TRUE,Policy exception review,Active
+GDEC-000008,Security Override,Security Office,GPOL-000005,Critical,TRUE,Rejected,TRUE,TRUE,Security override decision,Active
+GDEC-000009,Compliance Review,Compliance Office,GPOL-000008,Medium,TRUE,Approved,TRUE,TRUE,Compliance validation decision,Active
+GDEC-000010,Enterprise Governance,Executive Board,GPOL-000001,Critical,TRUE,Approved,TRUE,TRUE,Strategic governance decision,Active

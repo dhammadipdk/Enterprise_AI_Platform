@@ -1,0 +1,11 @@
+task_id,task_name,execution_layer,invoked_by,tool_required,estimated_seconds,critical,retryable,description,status
+ETASK-000001,Load Memory,Context,Workflow,TRUE,2,TRUE,TRUE,Load runtime memory,Active
+ETASK-000002,Retrieve Graph,Knowledge,Workflow,TRUE,3,TRUE,TRUE,Retrieve graph context,Active
+ETASK-000003,Run Reasoner,Reasoning,Workflow,TRUE,8,TRUE,TRUE,Execute reasoning engine,Active
+ETASK-000004,Generate Recommendation,AI,Workflow,TRUE,6,TRUE,TRUE,Recommendation generation,Active
+ETASK-000005,Validate Policy,Governance,Workflow,FALSE,2,TRUE,FALSE,Business validation,Active
+ETASK-000006,Human Review,Approval,Workflow,FALSE,300,FALSE,FALSE,Human approval,Active
+ETASK-000007,Persist Memory,Learning,Workflow,TRUE,3,FALSE,TRUE,Store learning,Active
+ETASK-000008,Notify Customer,Communication,Workflow,TRUE,2,FALSE,TRUE,Customer notification,Active
+ETASK-000009,Write Audit,Audit,Workflow,TRUE,1,FALSE,TRUE,Audit persistence,Active
+ETASK-000010,Close Workflow,Lifecycle,Workflow,FALSE,1,FALSE,FALSE,Workflow completion,Active

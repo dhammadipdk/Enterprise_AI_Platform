@@ -1,0 +1,11 @@
+execution_id,stage,component,input,output,next_stage
+WFCTX-000001,Request Reception,Gateway,Customer Request,Validated Request,Workflow Router
+WFCTX-000002,Workflow Selection,Workflow Registry,Validated Request,Workflow Version,Workflow Compiler
+WFCTX-000003,Workflow Compilation,Workflow Compiler,Workflow Definition,Execution Graph,Graph Optimizer
+WFCTX-000004,Graph Optimization,Execution Graph Optimizer,Execution Graph,Optimized DAG,Execution Scheduler
+WFCTX-000005,Execution Scheduling,Execution Scheduler,Optimized DAG,Scheduled Tasks,Prompt Compiler
+WFCTX-000006,Prompt Compilation,Prompt Compiler,Scheduled Task,Compiled Prompt,Context Builder
+WFCTX-000007,Context Assembly,Context Builder,Compiled Prompt,Grounded Prompt,Prompt Execution Planner
+WFCTX-000008,Execution Planning,Prompt Execution Planner,Grounded Prompt,Execution Plan,Model Router
+WFCTX-000009,Model Routing,Model Router,Execution Plan,Selected Model,AI Runtime
+WFCTX-000010,AI Runtime,Inference Engine,Selected Model,Validated Response,Customer Delivery

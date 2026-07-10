@@ -1,0 +1,11 @@
+queue_id,queue_name,queue_type,message_broker,durability,dead_letter_queue,max_retry,ordering_guarantee,description,status
+QUEUE-000001,Knowledge Queue,Work Queue,RabbitMQ,TRUE,TRUE,5,None,Knowledge processing,Active
+QUEUE-000002,Planning Queue,Work Queue,RabbitMQ,TRUE,TRUE,5,None,Planning requests,Active
+QUEUE-000003,Execution Queue,Work Queue,RabbitMQ,TRUE,TRUE,5,None,Workflow execution,Active
+QUEUE-000004,Agent Queue,Task Queue,NATS,TRUE,TRUE,3,None,Agent task scheduling,Active
+QUEUE-000005,Recommendation Queue,Business Queue,RabbitMQ,TRUE,TRUE,5,None,Recommendation generation,Active
+QUEUE-000006,Security Queue,Critical Queue,RabbitMQ,TRUE,TRUE,10,Strict,Security processing,Active
+QUEUE-000007,Governance Queue,Critical Queue,RabbitMQ,TRUE,TRUE,10,Strict,Governance processing,Active
+QUEUE-000008,Telemetry Queue,Streaming Buffer,Kafka,TRUE,FALSE,0,None,Telemetry buffering,Active
+QUEUE-000009,Notification Queue,Notification,RabbitMQ,TRUE,TRUE,5,None,Notification delivery,Active
+QUEUE-000010,Dead Letter Queue,DLQ,RabbitMQ,TRUE,FALSE,0,None,Failed message storage,Active

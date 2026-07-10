@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-POLTYPE-000001,THIRD_PARTY,Third Party Liability,Statutory liability insurance,Active,2026-01-01,,IRDAI,
+REF-POLTYPE-000002,OWN_DAMAGE,Own Damage,Covers insured vehicle damage only,Active,2026-01-01,,IRDAI,
+REF-POLTYPE-000003,COMPREHENSIVE,Comprehensive,Covers own damage and third-party liability,Active,2026-01-01,,IRDAI,
+REF-POLTYPE-000004,BUNDLED,Bundled Policy,Own damage with long-term third-party cover,Active,2026-01-01,,IRDAI,
+REF-POLTYPE-000005,LONG_TERM_TP,Long-Term Third Party,Multi-year third-party policy,Active,2026-01-01,,IRDAI,
+REF-POLTYPE-000006,FLEET,Fleet Policy,Covers multiple commercial vehicles,Active,2026-01-01,,IRDAI,

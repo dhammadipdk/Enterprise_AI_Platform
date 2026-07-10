@@ -1,0 +1,5 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-JUR-000001,NATIONAL,National,Applicable throughout India,Active,2026-01-01,,Government of India,
+REF-JUR-000002,STATE,State,Applicable within a state or union territory,Active,2026-01-01,,State Government,
+REF-JUR-000003,DISTRICT,District,Applicable within a district,Active,2026-01-01,,District Administration,
+REF-JUR-000004,LOCAL,Local,Applicable within a municipality or local authority,Active,2026-01-01,,Local Authority,

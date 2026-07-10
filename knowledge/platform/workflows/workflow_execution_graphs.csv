@@ -1,0 +1,11 @@
+graph_id,graph_name,graph_type,start_node,end_node,node_count,supports_parallel,supports_branching,supports_loops,description,status
+GRAPH-000001,RAG Graph,DAG,Input,Response,12,TRUE,TRUE,FALSE,Enterprise RAG execution graph,Active
+GRAPH-000002,Claims Graph,DAG,Claim Intake,Decision,18,TRUE,TRUE,TRUE,Claims automation graph,Active
+GRAPH-000003,Fraud Investigation,DAG,Alert,Resolution,22,TRUE,TRUE,TRUE,Fraud investigation graph,Active
+GRAPH-000004,Planning Graph,DAG,Goal,Execution,10,FALSE,TRUE,FALSE,Planning execution graph,Active
+GRAPH-000005,Recommendation Graph,DAG,Customer Profile,Recommendation,15,TRUE,TRUE,FALSE,Recommendation graph,Active
+GRAPH-000006,Agent Collaboration,DAG,Coordinator,Merge Results,25,TRUE,TRUE,TRUE,Multi-agent graph,Active
+GRAPH-000007,Document AI,DAG,Upload,Structured Output,16,TRUE,FALSE,FALSE,Document understanding graph,Active
+GRAPH-000008,Executive Decision,DAG,Question,Recommendation,14,FALSE,TRUE,FALSE,Decision support graph,Active
+GRAPH-000009,Compliance Workflow,DAG,Request,Approval,15,FALSE,TRUE,FALSE,Compliance execution graph,Active
+GRAPH-000010,Research Workflow,DAG,Hypothesis,Research Report,28,TRUE,TRUE,TRUE,Research execution graph,Active

@@ -1,0 +1,11 @@
+validation_id,validation_name,validation_type,execution_stage,automatic,severity,blocking,description,status
+VALID-000001,Template Syntax Validation,Static Analysis,Design Time,TRUE,Critical,TRUE,Validate prompt syntax,Active
+VALID-000002,Variable Resolution,Static Analysis,Compilation,TRUE,Critical,TRUE,Ensure variables resolve correctly,Active
+VALID-000003,Prompt Length Validation,Static Analysis,Compilation,TRUE,High,TRUE,Validate token limits,Active
+VALID-000004,Grounding Validation,RAG Validation,Compilation,TRUE,Medium,FALSE,Validate grounding sources,Active
+VALID-000005,Guardrail Validation,Security,Compilation,TRUE,Critical,TRUE,Validate security guardrails,Active
+VALID-000006,Few-shot Validation,Quality,Compilation,TRUE,Medium,FALSE,Validate examples,Active
+VALID-000007,Model Compatibility,Compatibility,Pre-Inference,TRUE,Critical,TRUE,Validate model compatibility,Active
+VALID-000008,Policy Validation,Governance,Pre-Inference,TRUE,Critical,TRUE,Validate governance policies,Active
+VALID-000009,Output Schema Validation,Runtime,Post-Inference,TRUE,Medium,FALSE,Validate structured outputs,Active
+VALID-000010,Evaluation Validation,Quality,Post-Inference,TRUE,Medium,FALSE,Validate evaluation pipeline,Active

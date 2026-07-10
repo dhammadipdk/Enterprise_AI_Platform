@@ -1,0 +1,13 @@
+dependency_id,parent_task,child_task,dependency_type,mandatory,execution_order,condition,description,status
+DEP-000001,Retrieve Customer Context,Retrieve Knowledge Graph,Sequential,TRUE,2,Always,Graph requires customer context,Active
+DEP-000002,Retrieve Customer Context,Retrieve Semantic Memory,Sequential,TRUE,2,Always,Semantic retrieval requires context,Active
+DEP-000003,Retrieve Knowledge Graph,Build Unified Context,Join,TRUE,3,Always,Merge graph context,Active
+DEP-000004,Retrieve Semantic Memory,Build Unified Context,Join,TRUE,3,Always,Merge semantic context,Active
+DEP-000005,Build Unified Context,Perform Risk Assessment,Sequential,TRUE,4,Always,Risk assessment depends on context,Active
+DEP-000006,Perform Risk Assessment,Generate Recommendations,Sequential,TRUE,5,Risk Completed,Recommendation generation,Active
+DEP-000007,Generate Recommendations,Validate Business Rules,Sequential,TRUE,6,Always,Rule validation,Active
+DEP-000008,Validate Business Rules,Generate Explanation,Parallel,FALSE,7,Always,Explanation generation,Active
+DEP-000009,Validate Business Rules,Human Approval,Conditional,FALSE,8,Requires Approval,Manual review path,Active
+DEP-000010,Human Approval,Execute Recommendation,Sequential,TRUE,9,Approved,Execution dependency,Active
+DEP-000011,Execute Recommendation,Update Enterprise Memory,Sequential,TRUE,10,Completed,Learning update,Active
+DEP-000012,Execute Recommendation,Notify Customer,Parallel,FALSE,10,Completed,Customer notification,Active

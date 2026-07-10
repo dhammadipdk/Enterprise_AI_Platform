@@ -1,0 +1,11 @@
+metric_id,metric_name,metric_category,measurement_unit,target_value,measurement_frequency,business_owner,executive_dashboard,description,status
+GMET-000001,Policy Compliance Rate,Compliance,Percentage,100,Daily,Compliance Office,TRUE,Overall policy compliance,Active
+GMET-000002,Governance Approval Time,Operations,Hours,<24,Daily,Operations Team,TRUE,Average approval turnaround time,Active
+GMET-000003,Risk Exposure Index,Risk,Score (0-100),<20,Weekly,Risk Office,TRUE,Overall enterprise risk exposure,Active
+GMET-000004,Control Effectiveness Index,Governance,Percentage,98,Monthly,Governance Board,TRUE,Governance control performance,Active
+GMET-000005,Audit Readiness Score,Audit,Score (0-100),100,Monthly,Compliance Office,TRUE,Audit preparedness,Active
+GMET-000006,Responsible AI Compliance,Responsible AI,Percentage,100,Monthly,AI Governance Board,TRUE,Responsible AI adherence,Active
+GMET-000007,Human Approval SLA,Operations,Percentage,95,Weekly,Operations Team,TRUE,Approval SLA achievement,Active
+GMET-000008,Policy Exception Rate,Governance,Percentage,<2,Monthly,Governance Board,TRUE,Frequency of governance exceptions,Active
+GMET-000009,Regulatory Compliance Index,Compliance,Score (0-100),100,Monthly,Compliance Office,TRUE,Overall regulatory compliance,Active
+GMET-000010,Enterprise Governance Index,Enterprise,Score (0-100),95,Quarterly,Executive Board,TRUE,Overall governance maturity,Active

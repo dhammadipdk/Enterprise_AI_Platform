@@ -1,0 +1,14 @@
+field_name,data_type,required,description,example
+model_id,string,Yes,Unique model identifier,MODEL-RISK-001
+model_name,string,Yes,Human-readable model name,Flood Risk Index
+model_category,string,Yes,Type of model,Scoring
+model_version,string,Yes,Version identifier,1.0.0
+owner,string,Yes,Maintaining team,Risk Analytics
+input_entities,string,Yes,Required input entities,Rainfall;Elevation;Claim Frequency
+output_entity,string,Yes,Generated intelligence,Flood Risk
+algorithm_type,string,Yes,Rule-Based/Statistical/ML,Rule-Based
+documentation_reference,string,No,Reference documentation,RM-001
+status,string,Yes,Model status,Active
+effective_date,date,Yes,Model effective date,2026-01-01
+expiry_date,date,No,Retirement date,
+remarks,string,No,Additional notes,

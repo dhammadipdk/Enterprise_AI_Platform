@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-OUTCOME-000001,FULLY_REPAIRED,Fully Repaired,Vehicle restored to expected operating condition,Active,2026-01-01,,Industry,
+REF-OUTCOME-000002,PARTIALLY_REPAIRED,Partially Repaired,Only part of required repairs completed,Active,2026-01-01,,Industry,
+REF-OUTCOME-000003,TOTAL_LOSS,Total Loss,Repair not economically viable,Active,2026-01-01,,Industry,
+REF-OUTCOME-000004,REPAIR_DECLINED,Repair Declined,Repair not approved or declined by customer,Active,2026-01-01,,Industry,
+REF-OUTCOME-000005,UNREPAIRABLE,Unrepairable,Vehicle cannot be safely repaired,Active,2026-01-01,,Industry,

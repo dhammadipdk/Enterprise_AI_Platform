@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-DOC-000001,Document,Represents a digital or physical insurance document managed by the platform.,Aggregate Root,,GLOSS-DOC-000001,Document Identifier,Dynamic,Documents,Root aggregate of the Documents domain.
+ENT-DOC-000002,Document Metadata,Represents descriptive metadata associated with a document.,Entity,Document,GLOSS-DOC-000011,,Dynamic,Documents,Supports indexing and discovery.
+ENT-DOC-000003,Document Classification,Represents AI/manual document categorization.,Entity,Document,GLOSS-DOC-000021,,Dynamic,Documents,Supports retrieval.
+ENT-DOC-000004,OCR Extraction,Represents extracted textual information from document images.,Entity,Document,GLOSS-DOC-000031,,Computed,Documents,Supports downstream AI.
+ENT-DOC-000005,Document Validation,Represents business and technical validation of documents.,Entity,Document,GLOSS-DOC-000041,,Dynamic,Documents,Supports fraud prevention.
+ENT-DOC-000006,Document Relationship,Represents relationships between documents and business entities.,Entity,Document,GLOSS-DOC-000051,,Dynamic,Documents,Cross-domain references.
+ENT-DOC-000007,Document Version,Represents version history of a document.,Entity,Document,GLOSS-DOC-000061,,Dynamic,Documents,Version management.
+ENT-DOC-000008,Document Storage,Represents storage and infrastructure metadata.,Entity,Document,GLOSS-DOC-000071,,Dynamic,Documents,Infrastructure metadata.
+ENT-DOC-000009,Document Lifecycle,Represents operational workflow of the document.,Entity,Document,GLOSS-DOC-000081,,Dynamic,Documents,Workflow management.
+ENT-DOC-000010,Document Assessment,Represents AI-generated quality assessment and document intelligence.,Entity,Document,GLOSS-DOC-000089,,Computed,Documents,AI understanding and explainability.

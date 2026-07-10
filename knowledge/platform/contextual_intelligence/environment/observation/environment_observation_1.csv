@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-DIS-000001,DISASTER,CITY,MUM,Mumbai,Flood,Flood Severity,Level,High,2026-07-03T00:00:00Z,Mumbai,Monsoon,Government,NDMA,Incident Report,0.98,0.98,v1.0,
+OBS-DIS-000002,DISASTER,CITY,CHE,Chennai,Cyclone,Cyclone Category,Category,2,2026-10-22T00:00:00Z,Chennai,Cyclone Season,Government,IMD,Forecast,0.97,0.96,v1.0,
+OBS-DIS-000003,DISASTER,CITY,SHI,Shimla,Landslide,Landslide Severity,Level,Medium,2026-08-01T00:00:00Z,Shimla,Monsoon,Government,NDMA,Incident Report,0.98,0.97,v1.0,
+OBS-DIS-000004,DISASTER,CITY,DEL,Delhi,Heatwave,Heatwave Severity,Level,Extreme,2026-06-15T00:00:00Z,Delhi,Summer,Government,IMD,Forecast,0.98,0.97,v1.0,
+OBS-DIS-000005,DISASTER,CITY,KOL,Kolkata,Lightning,Lightning Frequency,Events/day,32,2026-08-18T00:00:00Z,Kolkata,Monsoon,Government,IMD,Observation,0.97,0.96,v1.0,
+OBS-DIS-000006,DISASTER,CITY,GOA,Panaji,Coastal Surge,Wave Height,m,2.3,2026-06-20T00:00:00Z,Goa,Monsoon,Government,INCOIS,Observation,0.97,0.96,v1.0,
+OBS-DIS-000007,DISASTER,CITY,GUW,Guwahati,Flood,Flood Severity,Level,Very High,2026-07-14T00:00:00Z,Guwahati,Monsoon,Government,NDMA,Incident Report,0.98,0.98,v1.0,
+OBS-DIS-000008,DISASTER,CITY,JAI,Jaipur,Drought,Drought Severity,Level,Moderate,2026-04-15T00:00:00Z,Jaipur,Summer,Government,NDMA,Assessment,0.97,0.96,v1.0,
+OBS-DIS-000009,DISASTER,CITY,PUN,Pune,Hailstorm,Hailstorm Severity,Level,Low,2026-03-20T00:00:00Z,Pune,Spring,Government,IMD,Observation,0.97,0.96,v1.0,
+OBS-DIS-000010,DISASTER,CITY,AHM,Ahmedabad,Dust Storm,Storm Severity,Level,Medium,2026-05-18T00:00:00Z,Ahmedabad,Summer,Government,IMD,Observation,0.97,0.96,v1.0,
+OBS-DIS-000011,DISASTER,CITY,SHI,Shimla,Snowfall,Snowfall Depth,cm,35,2026-01-12T00:00:00Z,Shimla,Winter,Government,IMD,Observation,0.98,0.98,v1.0,
+OBS-DIS-000012,DISASTER,CITY,CHE,Chennai,Flood,Flood Severity,Level,Medium,2026-11-18T00:00:00Z,Chennai,Monsoon,Government,NDMA,Incident Report,0.98,0.97,v1.0,

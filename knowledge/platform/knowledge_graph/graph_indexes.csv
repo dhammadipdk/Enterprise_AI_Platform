@@ -1,0 +1,16 @@
+index_id,index_name,index_type,node_label,index_properties,index_purpose,index_backend,is_unique,status
+INDEX-000001,IDX_CUSTOMER_ID,Node,Customer,customer_id,Lookup,BTree,TRUE,Active
+INDEX-000002,IDX_POLICY_NUMBER,Node,Policy,policy_number,Lookup,BTree,TRUE,Active
+INDEX-000003,IDX_CLAIM_NUMBER,Node,Claim,claim_number,Lookup,BTree,TRUE,Active
+INDEX-000004,IDX_VEHICLE_REG,Node,Vehicle,registration_number,Lookup,BTree,TRUE,Active
+INDEX-000005,IDX_DRIVER_LICENSE,Node,Driver,license_number,Lookup,BTree,TRUE,Active
+INDEX-000006,IDX_FRAUD_SCORE,Node,FraudCase,fraud_score,Range Search,BTree,FALSE,Active
+INDEX-000007,IDX_RISK_SCORE,Node,Customer,risk_score,Analytics,BTree,FALSE,Active
+INDEX-000008,IDX_TIMESTAMP,Node,Observation,timestamp,Temporal,BTree,FALSE,Active
+INDEX-000009,IDX_DECISION_CONFIDENCE,Node,Decision,confidence,Analytics,BTree,FALSE,Active
+INDEX-000010,IDX_RECOMMENDATION_PRIORITY,Node,Recommendation,priority,Filtering,BTree,FALSE,Active
+INDEX-000011,IDX_CREATED_DATE,Node,All,created_at,Temporal,BTree,FALSE,Active
+INDEX-000012,IDX_UPDATED_DATE,Node,All,updated_at,Temporal,BTree,FALSE,Active
+INDEX-000013,IDX_CONTEXT_TYPE,Node,Observation,context_type,Context Lookup,BTree,FALSE,Active
+INDEX-000014,IDX_EDGE_TIMESTAMP,Edge,All,timestamp,Traversal,BTree,FALSE,Active
+INDEX-000015,IDX_NODE_LABEL,Node,All,node_label,Metadata,Hash,FALSE,Active

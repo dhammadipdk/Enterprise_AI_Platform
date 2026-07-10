@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-SIGN-000001,HANDWRITTEN,Handwritten Signature,Traditional handwritten signature,Active,2026-01-01,,Enterprise,
+REF-SIGN-000002,DIGITAL,Digital Signature,PKI-based digital signature,Active,2026-01-01,,Controller of Certifying Authorities,
+REF-SIGN-000003,ELECTRONIC,Electronic Signature,Electronic acceptance signature,Active,2026-01-01,,Information Technology Act,
+REF-SIGN-000004,AADHAAR_ESIGN,Aadhaar eSign,UIDAI Aadhaar-based electronic signature,Active,2026-01-01,,UIDAI,
+REF-SIGN-000005,BIOMETRIC,Biometric Signature,Biometric authentication-based signature,Active,2026-01-01,,Enterprise,

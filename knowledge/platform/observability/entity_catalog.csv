@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+TelemetryEvent,Runtime,Operational event
+TelemetrySource,Infrastructure,Telemetry producer
+Trace,Tracing,Distributed execution trace
+Span,Tracing,Single execution span
+Metric,Analytics,Operational metric
+LogEntry,Logging,Runtime log
+Alert,Monitoring,Operational alert
+Incident,Operations,Operational incident
+Dashboard,Visualization,Monitoring dashboard
+HealthCheck,Monitoring,Health validation
+RuntimeStatistic,Analytics,Performance statistics
+SLA,Governance,Service level agreement
+SLO,Governance,Service objective
+Anomaly,Analytics,Unexpected behavior
+KPI,Business,Business performance indicator

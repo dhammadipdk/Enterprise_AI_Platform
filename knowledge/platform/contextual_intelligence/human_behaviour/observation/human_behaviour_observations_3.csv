@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-HUM3-000001,PROFILE,DRIVER,DRV-000001,Driver-000001,Night Driving Ratio,Ratio,%,38,2026-07-01T00:00:00Z,Mumbai,Monthly,Telematics,OEM API,GPS,0.97,0.96,v1.0,
+OBS-HUM3-000002,PROFILE,DRIVER,DRV-000002,Driver-000002,Eco Driving Score,Score,index,81,2026-07-01T00:00:00Z,Pune,Monthly,Analytics,Telematics,Analytics,0.97,0.96,v1.0,
+OBS-HUM3-000003,PROFILE,DRIVER,DRV-000003,Driver-000003,Route Familiarity,Familiarity,%,88,2026-07-01T00:00:00Z,Delhi,Monthly,GPS,Enterprise GPS,Analytics,0.96,0.95,v1.0,
+OBS-HUM3-000004,PROFILE,DRIVER,DRV-000004,Driver-000004,Driving Consistency,Score,index,74,2026-07-01T00:00:00Z,Bengaluru,Monthly,Analytics,Telematics,Analytics,0.96,0.95,v1.0,
+OBS-HUM3-000005,PROFILE,DRIVER,DRV-000005,Driver-000005,Weekend Driving Ratio,Ratio,%,31,2026-07-01T00:00:00Z,Chennai,Monthly,Telematics,OEM API,GPS,0.96,0.95,v1.0,
+OBS-HUM3-000006,PROFILE,DRIVER,DRV-000006,Driver-000006,Highway Preference,Preference,%,44,2026-07-01T00:00:00Z,Ahmedabad,Monthly,GPS,Telematics,GPS,0.96,0.95,v1.0,
+OBS-HUM3-000007,PROFILE,DRIVER,DRV-000007,Driver-000007,Urban Driving Ratio,Ratio,%,82,2026-07-01T00:00:00Z,Jaipur,Monthly,GPS,Telematics,GPS,0.96,0.95,v1.0,
+OBS-HUM3-000008,PROFILE,DRIVER,DRV-000008,Driver-000008,Average Driving Session,Duration,min,58,2026-07-01T00:00:00Z,Kolkata,Monthly,Telematics,OEM API,GPS,0.97,0.96,v1.0,
+OBS-HUM3-000009,PROFILE,DRIVER,DRV-000009,Driver-000009,Rest Break Frequency,Breaks,count/day,3,2026-07-01T00:00:00Z,NH48,Daily,Telematics,OEM API,GPS,0.96,0.95,v1.0,
+OBS-HUM3-000010,PROFILE,DRIVER,DRV-000010,Driver-000010,Aggressive Driving Index,Score,index,63,2026-07-01T00:00:00Z,Hyderabad,Monthly,Analytics,Telematics,Analytics,0.96,0.95,v1.0,
+OBS-HUM3-000011,PROFILE,DRIVER,DRV-000011,Driver-000011,Defensive Driving Score,Score,index,91,2026-07-01T00:00:00Z,Goa,Monthly,Analytics,Telematics,Analytics,0.97,0.96,v1.0,
+OBS-HUM3-000012,PROFILE,DRIVER,DRV-000012,Driver-000012,Risk Taking Behaviour,Score,index,42,2026-07-01T00:00:00Z,Surat,Monthly,Analytics,Telematics,Analytics,0.96,0.95,v1.0,

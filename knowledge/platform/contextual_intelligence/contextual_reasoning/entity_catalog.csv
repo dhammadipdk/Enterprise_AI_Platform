@@ -1,0 +1,17 @@
+entity_name,entity_type,description
+ReasoningRule,Rule,Enterprise rule used for contextual reasoning
+CausalRule,Rule,Cause-and-effect relationship used for inference
+AggregationRule,Rule,Rule defining aggregation of multiple intelligence signals
+PriorityRule,Rule,Rule establishing execution priority among competing decisions
+ConflictResolutionRule,Rule,Rule resolving contradictory evidence or recommendations
+ConfidencePropagationRule,Rule,Rule defining confidence propagation across reasoning chains
+RecommendationPolicy,Policy,Policy controlling recommendation generation and execution
+DecisionStrategy,Strategy,Overall decision-making methodology
+ReasoningPattern,Pattern,Reusable reasoning workflow or inference pattern
+ExplanationTemplate,Template,Structured template for explainable decision generation
+ReasoningRelationship,Relationship,Relationship among reasoning concepts
+EvidenceNode,Evidence,Atomic unit of supporting evidence
+HypothesisNode,Hypothesis,Intermediate inferred conclusion
+DecisionNode,Decision,Final business decision
+ReasoningTrace,Trace,Complete trace of reasoning execution
+ReasoningScenario,SeedData,Representative end-to-end reasoning example

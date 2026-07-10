@@ -1,0 +1,16 @@
+scenario_id,enterprise_object,ontology_class,parent_class,key_relationships,properties,lifecycle_state,business_meaning
+ONTO-SCN-000001,Customer_1001,Customer,Person,"OWNS->Policy_2001;FILES->Claim_3001","customer_id=C1001;city=Pune;risk_score=22",Verified,Primary insured customer
+ONTO-SCN-000002,Policy_2001,Policy,Business Object,"COVERS->Vehicle_5001;PROVIDES->Coverage_6001","policy_no=P2001;premium=14500",Active,Private motor policy
+ONTO-SCN-000003,Vehicle_5001,Vehicle,Asset,"HAS_DRIVER->Driver_7001","registration=MH12AB1234;fuel=Petrol",Active,Insured passenger vehicle
+ONTO-SCN-000004,Driver_7001,Driver,Person,"OPERATES->Vehicle_5001","license_status=Valid;experience=8",Verified,Primary driver
+ONTO-SCN-000005,Claim_3001,Claim,Business Object,"INITIATES->Repair_4001;MAY_TRIGGER->FraudCase_8001","claim_amount=95000;severity=High",Under Review,Accident claim
+ONTO-SCN-000006,Repair_4001,Repair,Business Process,"ASSIGNED_TO->Garage_9001","estimated_cost=88000",In Progress,Vehicle repair workflow
+ONTO-SCN-000007,FraudCase_8001,Fraud Case,Risk Object,"GENERATES->Recommendation_10001","fraud_score=91",Investigating,Potential organized fraud
+ONTO-SCN-000008,Recommendation_10001,Recommendation,Decision Object,"IMPACTS->Customer_1001","priority=Critical",Generated,Assign SIU investigation
+ONTO-SCN-000009,Observation_11001,Observation,Context Object,"SUPPORTS->Evidence_12001","weather=Heavy Rain",Collected,Environmental observation
+ONTO-SCN-000010,Evidence_12001,Evidence,Reasoning Object,"SUPPORTS->Hypothesis_13001","confidence=0.94",Validated,Supporting evidence
+ONTO-SCN-000011,Hypothesis_13001,Hypothesis,Reasoning Object,"GENERATES->Decision_14001","hypothesis=Potential Fraud",Active,Intermediate reasoning
+ONTO-SCN-000012,Decision_14001,Decision,Decision Object,"GENERATES->Recommendation_10001","confidence=0.96",Approved,Enterprise decision
+ONTO-SCN-000013,BusinessRule_15001,Business Rule,Knowledge Object,"CONSTRAINS->Decision_14001","rule=Fraud>90→SIU",Active,Fraud escalation rule
+ONTO-SCN-000014,EnvironmentContext_16001,Environment Context,Context Object,"CONTAINS->Observation_11001","weather=Heavy Rain;visibility=Low",Active,Environmental context
+ONTO-SCN-000015,EnterpriseGraph_17001,Enterprise Ontology,Semantic Layer,"REALIZES->Knowledge Graph","nodes=15;edges=24",Published,Semantic blueprint for enterprise graph

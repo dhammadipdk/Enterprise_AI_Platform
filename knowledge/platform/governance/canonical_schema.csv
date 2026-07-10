@@ -1,0 +1,13 @@
+field_name,data_type,required,description
+governance_id,String,TRUE,Unique governance identifier
+policy_id,String,FALSE,Policy identifier
+control_id,String,FALSE,Control identifier
+decision_id,String,FALSE,Decision identifier
+risk_level,String,TRUE,Risk classification
+approval_level,String,FALSE,Approval requirement
+regulatory_reference,String,FALSE,Applicable regulation
+effective_date,Date,TRUE,Effective date
+review_date,Date,FALSE,Scheduled review
+owner,String,TRUE,Governance owner
+business_domain,String,TRUE,Governed domain
+status,String,TRUE,Lifecycle state

@@ -1,0 +1,5 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-SEASON-000001,WINTER,Winter,Winter season in India,Active,2026-01-01,,IMD,
+REF-SEASON-000002,SUMMER,Summer,Summer season in India,Active,2026-01-01,,IMD,
+REF-SEASON-000003,MONSOON,Monsoon,Southwest monsoon period,Active,2026-01-01,,IMD,
+REF-SEASON-000004,POST_MONSOON,Post Monsoon,Retreating monsoon period,Active,2026-01-01,,IMD,

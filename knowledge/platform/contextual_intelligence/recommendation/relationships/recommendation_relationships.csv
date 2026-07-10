@@ -1,0 +1,48 @@
+relationship_id,source_context,relationship_type,target_context,relationship_strength,relationship_nature,evidence_level,confidence_score,model_reference,remarks
+REL-REC-000001,High Fraud Risk,TRIGGERS,Assign SIU Recommendation,0.99,Causal,High,0.99,MODEL-REC-001,
+REL-REC-000002,Low Fraud Risk,ENABLES,Fast Track Settlement,0.97,Causal,High,0.98,MODEL-REC-002,
+REL-REC-000003,High Claim Severity,INCREASES,Reserve Recommendation,0.96,Causal,High,0.97,MODEL-REC-003,
+REL-REC-000004,Coverage Gap,TRIGGERS,Coverage Upgrade Recommendation,0.94,Causal,High,0.95,MODEL-REC-004,
+REL-REC-000005,Vehicle Health Degradation,TRIGGERS,Preventive Maintenance Recommendation,0.95,Causal,High,0.96,MODEL-REC-005,
+
+REL-REC-000006,Aggressive Driving,TRIGGERS,Safe Driving Advisory,0.93,Causal,High,0.94,MODEL-REC-006,
+REL-REC-000007,High Customer Lifetime Value,INCREASES,Retention Recommendation Priority,0.91,Correlational,Medium,0.92,MODEL-REC-007,
+REL-REC-000008,High Loyalty Score,INCREASES,Renewal Offer Recommendation,0.92,Correlational,Medium,0.93,MODEL-REC-008,
+REL-REC-000009,Poor Customer Satisfaction,TRIGGERS,Customer Outreach Recommendation,0.94,Causal,High,0.95,MODEL-REC-009,
+REL-REC-000010,Complaint History,INCREASES,Human Review Recommendation,0.88,Correlational,Medium,0.89,MODEL-REC-010,
+
+REL-REC-000011,Severe Weather,TRIGGERS,Risk Advisory Recommendation,0.95,Causal,High,0.96,MODEL-REC-011,
+REL-REC-000012,Poor Road Conditions,TRIGGERS,Travel Advisory Recommendation,0.91,Causal,High,0.92,MODEL-REC-012,
+REL-REC-000013,Traffic Congestion,TRIGGERS,Route Optimization Recommendation,0.89,Correlational,Medium,0.90,MODEL-REC-013,
+REL-REC-000014,Garage Availability,INCREASES,Preferred Garage Recommendation,0.90,Correlational,Medium,0.91,MODEL-REC-014,
+REL-REC-000015,Surveyor Availability,ENABLES,Immediate Survey Recommendation,0.93,Causal,High,0.94,MODEL-REC-015,
+
+REL-REC-000016,Repair Delay,TRIGGERS,Repair Escalation Recommendation,0.94,Causal,High,0.95,MODEL-REC-016,
+REL-REC-000017,High Repair Quality,INCREASES,Preferred Workshop Recommendation,0.89,Correlational,Medium,0.90,MODEL-REC-017,
+REL-REC-000018,High Operational Workload,TRIGGERS,Resource Allocation Recommendation,0.91,Causal,High,0.92,MODEL-REC-018,
+REL-REC-000019,SLA Breach Risk,TRIGGERS,Operational Escalation Recommendation,0.95,Causal,High,0.96,MODEL-REC-019,
+REL-REC-000020,Resource Shortage,TRIGGERS,Priority Scheduling Recommendation,0.92,Causal,High,0.93,MODEL-REC-020,
+
+REL-REC-000021,Regulatory Constraint,TRIGGERS,Compliance Review Recommendation,0.98,Causal,High,0.99,MODEL-REC-021,
+REL-REC-000022,High AI Confidence,ENABLES,Automatic Execution Recommendation,0.94,Causal,High,0.95,MODEL-REC-022,
+REL-REC-000023,Low AI Confidence,TRIGGERS,Manual Decision Recommendation,0.96,Causal,High,0.97,MODEL-REC-023,
+REL-REC-000024,Explainability Score,INCREASES,Recommendation Trust,0.91,Correlational,Medium,0.92,MODEL-REC-024,
+REL-REC-000025,Historical Success Rate,INCREASES,Recommendation Confidence,0.90,Correlational,Medium,0.91,MODEL-REC-025,
+
+REL-REC-000026,Business Rule Match,ENABLES,Decision Execution,0.97,Causal,High,0.98,MODEL-REC-026,
+REL-REC-000027,Business Impact,INCREASES,Recommendation Priority,0.94,Causal,High,0.95,MODEL-REC-027,
+REL-REC-000028,Financial Benefit,INCREASES,Recommendation Ranking,0.91,Correlational,Medium,0.92,MODEL-REC-028,
+REL-REC-000029,Risk Reduction,INCREASES,Recommendation Value,0.93,Causal,High,0.94,MODEL-REC-029,
+REL-REC-000030,Implementation Cost,DECREASES,Recommendation Ranking,0.89,Correlational,Medium,0.90,MODEL-REC-030,
+
+REL-REC-000031,Approval Requirement,DECREASES,Automation Suitability,0.92,Causal,High,0.93,MODEL-REC-031,
+REL-REC-000032,Decision Trace Completeness,INCREASES,Audit Confidence,0.94,Causal,High,0.95,MODEL-REC-032,
+REL-REC-000033,Business Objective Alignment,INCREASES,Enterprise Value,0.95,Causal,High,0.96,MODEL-REC-033,
+REL-REC-000034,Recommendation Priority,INCREASES,Execution Priority,0.97,Causal,High,0.98,MODEL-REC-034,
+REL-REC-000035,Recommendation Confidence,INCREASES,Automation Probability,0.91,Causal,High,0.92,MODEL-REC-035,
+
+REL-REC-000036,Human Override,DECREASES,Automation Confidence,0.90,Causal,High,0.91,MODEL-REC-036,
+REL-REC-000037,Customer Benefit,INCREASES,Customer Experience,0.92,Correlational,Medium,0.93,MODEL-REC-037,
+REL-REC-000038,Operational Efficiency,INCREASES,Business Performance,0.94,Causal,High,0.95,MODEL-REC-038,
+REL-REC-000039,Recommendation Acceptance,INCREASES,Business Outcome,0.95,Causal,High,0.96,MODEL-REC-039,
+REL-REC-000040,Effective Recommendations,INCREASES,Enterprise Intelligence,0.98,Causal,High,0.99,MODEL-REC-040,

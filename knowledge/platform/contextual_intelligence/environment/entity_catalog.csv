@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+RainfallObservation,Observation,Measured rainfall
+FloodObservation,Observation,Flood occurrence observation
+WeatherObservation,Observation,General weather observation
+TemperatureObservation,Observation,Ambient temperature
+HumidityObservation,Observation,Humidity measurement
+VisibilityObservation,Observation,Visibility measurement
+WindObservation,Observation,Wind speed measurement
+AirQualityObservation,Observation,Air quality measurement
+FloodRisk,Derived Intelligence,Computed flood risk
+CycloneRisk,Derived Intelligence,Computed cyclone risk
+WaterIngressRisk,Derived Intelligence,Risk of vehicle water ingress
+ClimateSeverityIndex,Derived Intelligence,Composite climate severity score
+EnvironmentalExposureIndex,Derived Intelligence,Overall environmental exposure
+WeatherConfidence,Derived Intelligence,Confidence of weather intelligence
+EnvironmentalRelationship,Relationship,Causal environmental relationships

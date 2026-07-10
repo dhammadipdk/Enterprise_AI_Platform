@@ -1,0 +1,30 @@
+scenario_id,scenario_name,location,mobility_context,key_observations,derived_intelligence,recommendations,expected_business_impact
+SCN-MOB-000001,Mumbai Morning Rush,Mumbai,"CBD Morning Peak","Congestion=91;Speed=18 km/h;Queue=320m","Congestion Risk=91;Travel Delay=High","Alternative Route;Flexible Departure","Higher minor accident probability"
+
+SCN-MOB-000002,Bengaluru Tech Corridor,Bengaluru,"IT Peak Hours","Speed=19 km/h;Idle Time=44 min","Driver Fatigue Risk=High","Usage-Based Insurance","High commuting exposure"
+
+SCN-MOB-000003,Delhi Ring Road,Delhi,"Urban Expressway","Vehicle Density=High;Peak Hour","Intersection Risk=82","Safe Driving Advisory","Frequent collision claims"
+
+SCN-MOB-000004,Mumbai-Pune Expressway,NH-48,"Intercity Highway","Speed=84 km/h;Heavy Traffic","High-speed Collision Risk","Roadside Assistance","High severity claims"
+
+SCN-MOB-000005,Shimla Mountain Route,Shimla,"Mountain Tourism","Sharp Curves;Tourist Traffic","Mountain Route Risk=86","Travel Advisory","High seasonal accident exposure"
+
+SCN-MOB-000006,Goa Tourist Season,Goa,"Holiday Traffic","Tourist Vehicles=High","Parking Congestion=High","Comprehensive Cover","Increase in parking claims"
+
+SCN-MOB-000007,Kolkata Freight Corridor,Kolkata,"Commercial Transport","Freight Ratio=High","Heavy Vehicle Risk","Commercial Vehicle Insurance","Higher collision severity"
+
+SCN-MOB-000008,Pune Daily Commute,Pune,"Industrial Corridor","Trip Frequency=4/day","Commute Fatigue Risk","Usage-Based Insurance","Moderate long-term exposure"
+
+SCN-MOB-000009,Ahmedabad BRT Corridor,Ahmedabad,"Mixed Traffic","Public Transport=Good","Exposure Risk=Medium","Standard Premium","Lower accident probability"
+
+SCN-MOB-000010,Guwahati Flood Diversion,Guwahati,"Emergency Route","Traffic Diversion;Congestion","Travel Delay=High","Dynamic Route Recommendation","Increase in travel time"
+
+SCN-MOB-000011,Leh Highway Expedition,Leh,"Remote Mountain Highway","Long Distance;Low Services","Travel Exposure=Very High","Roadside Assistance;Travel Assistance","High breakdown severity"
+
+SCN-MOB-000012,Hyderabad ORR,Hyderabad,"Urban Expressway","High Average Speed","High-speed Collision Risk","Telematics Monitoring","Moderate frequency but severe claims"
+
+SCN-MOB-000013,Chennai Port Logistics,Chennai,"Freight Corridor","Commercial Vehicles=High","Commercial Traffic Risk","Fleet Insurance","Freight-related claim increase"
+
+SCN-MOB-000014,Jaipur Festival Traffic,Jaipur,"Special Event","Temporary Congestion","Peak Hour Risk","Temporary Premium Advisory","Short-term risk increase"
+
+SCN-MOB-000015,Smart City Surat,Surat,"Adaptive Traffic Network","Dynamic Signals;Low Delay","Journey Efficiency=92","Usage-Based Insurance","Excellent mobility profile"

@@ -1,0 +1,11 @@
+dataset_id,dataset_name,dataset_category,data_source,contains_ground_truth,update_frequency,primary_use,data_size,description,status
+DATASET-000001,Knowledge Validation Set,Knowledge,Enterprise Knowledge Base,TRUE,Monthly,Knowledge Benchmark,5000,Knowledge verification dataset,Active
+DATASET-000002,Customer Recommendation Set,Business,Historical Recommendations,TRUE,Weekly,Recommendation Evaluation,25000,Recommendation validation dataset,Active
+DATASET-000003,Fraud Investigation Set,Fraud,Historical Fraud Cases,TRUE,Monthly,Fraud Benchmark,12000,Fraud detection evaluation,Active
+DATASET-000004,Claim Processing Set,Claims,Historical Claims,TRUE,Monthly,Workflow Evaluation,40000,Claims workflow dataset,Active
+DATASET-000005,Retrieval QA Dataset,Retrieval,Knowledge Graph,TRUE,Weekly,Retrieval Benchmark,10000,Question-answer benchmark,Active
+DATASET-000006,Reasoning Evaluation Set,Reasoning,Synthetic Scenarios,TRUE,Weekly,Reasoning Benchmark,8000,Reasoning validation scenarios,Active
+DATASET-000007,Planning Scenario Set,Planning,Business Simulations,TRUE,Monthly,Planning Evaluation,5000,Planning scenarios,Active
+DATASET-000008,Execution Workflow Set,Execution,Workflow Logs,FALSE,Daily,Execution Monitoring,Unlimited,Production execution logs,Active
+DATASET-000009,Agent Collaboration Set,Agents,Simulation Platform,TRUE,Monthly,Agent Benchmark,6000,Multi-agent collaboration dataset,Active
+DATASET-000010,Business KPI Dataset,Business,Enterprise Analytics,FALSE,Daily,Business Evaluation,Unlimited,Business performance metrics,Active

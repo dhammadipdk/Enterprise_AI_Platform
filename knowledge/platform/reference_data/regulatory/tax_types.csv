@@ -1,0 +1,4 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-TAX-000001,GST,Goods and Services Tax,Indirect tax on goods and services,Active,2017-07-01,,GST Council,
+REF-TAX-000002,TDS,Tax Deducted at Source,Income tax withholding mechanism,Active,1961-04-01,,Income Tax Department,
+REF-TAX-000003,STAMP_DUTY,Stamp Duty,Tax applicable to specified legal instruments,Active,2026-01-01,,State Government,

@@ -1,0 +1,11 @@
+framework_id,framework_name,evaluation_method,supports_llm,supports_agents,supports_workflows,benchmark_driven,description,status
+FRAME-000001,Offline Benchmark Framework,Offline Testing,TRUE,TRUE,TRUE,TRUE,Dataset-based benchmarking,Active
+FRAME-000002,Online Production Evaluation,Online Monitoring,TRUE,TRUE,TRUE,FALSE,Production monitoring,Active
+FRAME-000003,Human Expert Review,Manual Review,TRUE,TRUE,TRUE,FALSE,Human evaluation framework,Active
+FRAME-000004,Ground Truth Validation,Reference Comparison,TRUE,FALSE,FALSE,TRUE,Compare against expected outputs,Active
+FRAME-000005,A/B Evaluation,Comparative Testing,TRUE,TRUE,TRUE,TRUE,Compare multiple systems,Active
+FRAME-000006,Regression Evaluation,Historical Comparison,TRUE,TRUE,TRUE,TRUE,Detect regressions,Active
+FRAME-000007,Simulation Framework,Scenario Testing,TRUE,TRUE,TRUE,TRUE,Enterprise simulation testing,Active
+FRAME-000008,Continuous Evaluation,Streaming Evaluation,TRUE,TRUE,TRUE,FALSE,Continuous monitoring,Active
+FRAME-000009,Business KPI Evaluation,Business Analytics,FALSE,FALSE,TRUE,FALSE,Business performance measurement,Active
+FRAME-000010,Enterprise Scorecard,Composite Evaluation,TRUE,TRUE,TRUE,TRUE,Overall enterprise AI evaluation,Active

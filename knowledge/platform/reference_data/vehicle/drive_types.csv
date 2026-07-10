@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DRIVE-000001,FWD,Front Wheel Drive,Power delivered to front wheels,Active,2026-01-01,,Industry,
+REF-DRIVE-000002,RWD,Rear Wheel Drive,Power delivered to rear wheels,Active,2026-01-01,,Industry,
+REF-DRIVE-000003,AWD,All Wheel Drive,Power delivered to all wheels continuously,Active,2026-01-01,,Industry,
+REF-DRIVE-000004,4WD,Four Wheel Drive,Selectable four wheel drive system,Active,2026-01-01,,Industry,
+REF-DRIVE-000005,PART_TIME_4WD,Part-time Four Wheel Drive,Driver selectable four wheel drive,Active,2026-01-01,,Industry,
+REF-DRIVE-000006,FULL_TIME_4WD,Full-time Four Wheel Drive,Permanent four wheel drive system,Active,2026-01-01,,Industry,

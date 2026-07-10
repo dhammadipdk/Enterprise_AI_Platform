@@ -1,0 +1,11 @@
+source_id,source_name,source_category,produces_logs,produces_metrics,produces_traces,produces_events,sampling_strategy,description,status
+TSRC-000001,Knowledge Layer,Knowledge,TRUE,TRUE,TRUE,TRUE,Full,Knowledge telemetry source,Active
+TSRC-000002,Memory Layer,Memory,TRUE,TRUE,TRUE,TRUE,Full,Memory telemetry source,Active
+TSRC-000003,Planning Engine,Planning,TRUE,TRUE,TRUE,TRUE,Full,Planning telemetry source,Active
+TSRC-000004,Execution Engine,Execution,TRUE,TRUE,TRUE,TRUE,Full,Execution telemetry source,Active
+TSRC-000005,Agent Platform,Agents,TRUE,TRUE,TRUE,TRUE,Full,Agent telemetry source,Active
+TSRC-000006,Evaluation Platform,Evaluation,TRUE,TRUE,TRUE,TRUE,Full,Evaluation telemetry source,Active
+TSRC-000007,Governance Platform,Governance,TRUE,TRUE,TRUE,TRUE,Full,Governance telemetry source,Active
+TSRC-000008,Security Platform,Security,TRUE,TRUE,TRUE,TRUE,Full,Security telemetry source,Active
+TSRC-000009,API Gateway,Infrastructure,TRUE,TRUE,TRUE,TRUE,Adaptive,Gateway telemetry,Active
+TSRC-000010,Business Applications,Application,TRUE,TRUE,TRUE,TRUE,Adaptive,Business application telemetry,Active

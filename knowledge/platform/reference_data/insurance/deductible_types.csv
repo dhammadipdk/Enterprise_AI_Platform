@@ -1,0 +1,5 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DED-000001,COMPULSORY,Compulsory Deductible,Mandatory deductible prescribed by insurer/regulation,Active,2026-01-01,,IRDAI,
+REF-DED-000002,VOLUNTARY,Voluntary Deductible,Optional deductible selected by customer for premium reduction,Active,2026-01-01,,IRDAI,
+REF-DED-000003,FIXED,Fixed Deductible,Fixed monetary deductible per claim,Active,2026-01-01,,Industry,
+REF-DED-000004,PERCENTAGE,Percentage Deductible,Deductible calculated as percentage of claim amount,Active,2026-01-01,,Industry,

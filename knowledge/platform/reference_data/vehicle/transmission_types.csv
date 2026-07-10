@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-TRANS-000001,MANUAL,Manual Transmission,Manual gearbox,Active,2026-01-01,,Industry,
+REF-TRANS-000002,AUTOMATIC,Automatic Transmission,Torque converter automatic,Active,2026-01-01,,Industry,
+REF-TRANS-000003,AMT,Automated Manual Transmission,AMT gearbox,Active,2026-01-01,,Industry,
+REF-TRANS-000004,CVT,Continuously Variable Transmission,CVT gearbox,Active,2026-01-01,,Industry,
+REF-TRANS-000005,DCT,Dual Clutch Transmission,DCT gearbox,Active,2026-01-01,,Industry,
+REF-TRANS-000006,E_CVT,Electronic CVT,eCVT for hybrids,Active,2026-01-01,,Industry,

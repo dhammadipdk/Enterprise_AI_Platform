@@ -1,0 +1,41 @@
+relationship_id,source_context,relationship_type,target_context,relationship_strength,relationship_nature,evidence_level,confidence_score,model_reference,remarks
+REL-HUM-000001,Frequent Speeding,INCREASES,Accident Probability,0.98,Causal,High,0.98,MODEL-HUM-001,
+REL-HUM-000002,Accident Probability,INCREASES,Claim Frequency,0.96,Causal,High,0.97,MODEL-CLM-001,
+REL-HUM-000003,Claim Frequency,INCREASES,Insurance Premium,0.94,Business Rule,High,0.95,RULE-PRC-001,
+
+REL-HUM-000004,Harsh Braking,INCREASES,Brake Wear,0.95,Causal,High,0.96,MODEL-VEH-001,
+REL-HUM-000005,Brake Wear,INCREASES,Maintenance Cost,0.92,Causal,High,0.93,MODEL-VEH-002,
+
+REL-HUM-000006,Rapid Acceleration,INCREASES,Fuel Consumption,0.94,Causal,High,0.95,MODEL-VEH-003,
+REL-HUM-000007,Fuel Consumption,DECREASES,Fuel Efficiency,0.92,Causal,High,0.93,MODEL-VEH-004,
+
+REL-HUM-000008,Driver Fatigue,INCREASES,Reaction Time,0.95,Causal,High,0.96,MODEL-HUM-002,
+REL-HUM-000009,Slow Reaction Time,INCREASES,Collision Probability,0.95,Causal,High,0.96,MODEL-HUM-003,
+
+REL-HUM-000010,Driver Distraction,INCREASES,Lane Departure Risk,0.96,Causal,High,0.97,MODEL-HUM-004,
+REL-HUM-000011,Lane Departure Risk,INCREASES,Side Collision Risk,0.93,Causal,High,0.94,MODEL-HUM-005,
+
+REL-HUM-000012,Unsafe Following Distance,INCREASES,Rear-end Collision Risk,0.96,Causal,High,0.97,MODEL-HUM-006,
+
+REL-HUM-000013,Aggressive Driving,INCREASES,Tyre Wear,0.92,Causal,High,0.93,MODEL-VEH-005,
+REL-HUM-000014,Aggressive Driving,INCREASES,Engine Wear,0.93,Causal,High,0.94,MODEL-VEH-006,
+
+REL-HUM-000015,Traffic Rule Compliance,DECREASES,Insurance Risk Score,0.91,Causal,High,0.92,MODEL-RISK-001,
+
+REL-HUM-000016,Eco Driving,DECREASES,Fuel Consumption,0.95,Causal,High,0.96,MODEL-ECO-001,
+REL-HUM-000017,Eco Driving,INCREASES,Vehicle Life,0.91,Causal,High,0.92,MODEL-ECO-002,
+
+REL-HUM-000018,Defensive Driving,DECREASES,Claim Probability,0.94,Causal,High,0.95,MODEL-CLM-002,
+
+REL-HUM-000019,Night Driving,INCREASES,Fatigue Risk,0.93,Causal,High,0.94,MODEL-HUM-007,
+REL-HUM-000020,Fatigue Risk,INCREASES,Accident Severity,0.91,Causal,High,0.92,MODEL-CLM-003,
+
+REL-HUM-000021,Driver Trust Score,DECREASES,Fraud Investigation Priority,0.88,Correlational,Medium,0.89,MODEL-FRD-001,
+
+REL-HUM-000022,Safe Driving Behaviour,QUALIFIES_FOR,Usage-Based Insurance,0.97,Business Rule,High,0.98,RULE-UBI-001,
+
+REL-HUM-000023,Driver Coaching,DECREASES,Aggressive Driving Index,0.89,Causal,Medium,0.90,MODEL-HUM-008,
+
+REL-HUM-000024,Reduced Aggressive Driving,DECREASES,Insurance Premium,0.87,Business Rule,Medium,0.88,RULE-PRC-002,
+
+REL-HUM-000025,Overall Driver Quality Index,RECOMMENDS,Preferred Driver Status,0.96,Business Rule,High,0.97,RULE-LOYALTY-001,

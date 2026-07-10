@@ -1,0 +1,11 @@
+type_id,type_name,execution_style,supports_parallel,supports_human_tasks,supports_agents,supports_tools,supports_compensation,description,status
+TYPE-000001,Synchronous Workflow,Sequential,FALSE,FALSE,TRUE,TRUE,FALSE,Standard synchronous workflow,Active
+TYPE-000002,Asynchronous Workflow,Event Driven,TRUE,TRUE,TRUE,TRUE,TRUE,Long-running workflow,Active
+TYPE-000003,Human Approval Workflow,Hybrid,FALSE,TRUE,TRUE,TRUE,TRUE,Requires manual approvals,Active
+TYPE-000004,Agent Workflow,Distributed,TRUE,FALSE,TRUE,TRUE,TRUE,Multi-agent orchestration,Active
+TYPE-000005,RAG Workflow,Pipeline,FALSE,FALSE,TRUE,TRUE,FALSE,RAG pipeline workflow,Active
+TYPE-000006,Planning Workflow,Reasoning,FALSE,FALSE,TRUE,TRUE,FALSE,AI planning workflow,Active
+TYPE-000007,Decision Workflow,Hybrid,TRUE,TRUE,TRUE,TRUE,TRUE,Decision support workflow,Active
+TYPE-000008,Batch Workflow,Batch,TRUE,FALSE,FALSE,TRUE,TRUE,Offline batch processing,Active
+TYPE-000009,Streaming Workflow,Streaming,TRUE,FALSE,TRUE,TRUE,FALSE,Continuous streaming workflow,Active
+TYPE-000010,Saga Workflow,Distributed,FALSE,TRUE,TRUE,TRUE,TRUE,Distributed transaction workflow,Active

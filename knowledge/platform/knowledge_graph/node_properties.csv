@@ -1,0 +1,21 @@
+property_id,node_label,property_name,data_type,required,indexed,searchable,description
+PROP-000001,Customer,customer_id,String,TRUE,TRUE,TRUE,Unique customer identifier
+PROP-000002,Customer,customer_name,String,TRUE,TRUE,TRUE,Customer name
+PROP-000003,Customer,risk_score,Float,FALSE,TRUE,TRUE,Customer risk score
+PROP-000004,Driver,license_number,String,TRUE,TRUE,TRUE,Driving license
+PROP-000005,Driver,license_status,String,TRUE,FALSE,TRUE,License status
+PROP-000006,Vehicle,registration_number,String,TRUE,TRUE,TRUE,Vehicle registration
+PROP-000007,Vehicle,vehicle_health,Float,FALSE,FALSE,TRUE,Vehicle health score
+PROP-000008,Vehicle,fuel_type,String,FALSE,FALSE,TRUE,Fuel type
+PROP-000009,Policy,policy_number,String,TRUE,TRUE,TRUE,Policy number
+PROP-000010,Policy,premium_amount,Decimal,TRUE,FALSE,TRUE,Premium amount
+PROP-000011,Coverage,coverage_limit,Decimal,TRUE,FALSE,TRUE,Coverage amount
+PROP-000012,Claim,claim_number,String,TRUE,TRUE,TRUE,Claim identifier
+PROP-000013,Claim,claim_amount,Decimal,TRUE,FALSE,TRUE,Claim amount
+PROP-000014,Claim,severity,String,FALSE,FALSE,TRUE,Claim severity
+PROP-000015,FraudCase,fraud_score,Float,FALSE,TRUE,TRUE,Fraud score
+PROP-000016,Recommendation,priority,String,FALSE,FALSE,TRUE,Recommendation priority
+PROP-000017,Observation,timestamp,Datetime,TRUE,TRUE,TRUE,Observation timestamp
+PROP-000018,Evidence,confidence_score,Float,FALSE,FALSE,TRUE,Evidence confidence
+PROP-000019,Decision,decision_confidence,Float,FALSE,FALSE,TRUE,Decision confidence
+PROP-000020,BusinessRule,rule_version,String,FALSE,FALSE,FALSE,Rule version

@@ -1,0 +1,11 @@
+lifecycle_id,state_name,state_category,entry_trigger,exit_trigger,next_possible_states,allows_task_assignment,allows_delegation,persistent_memory_active,health_monitoring,description,status
+ALIFE-000001,Registered,Initialization,Agent Created,Configuration Complete,Initializing,FALSE,FALSE,FALSE,TRUE,Agent registered in platform,Active
+ALIFE-000002,Initializing,Startup,Configuration Loaded,Health Check Passed,Ready,FALSE,FALSE,TRUE,TRUE,Loading memory and capabilities,Active
+ALIFE-000003,Ready,Operational,Initialization Complete,Task Assigned,Running,TRUE,TRUE,TRUE,TRUE,Idle and ready for work,Active
+ALIFE-000004,Running,Execution,Task Started,Task Completed,Waiting|Learning|Paused,TRUE,TRUE,TRUE,TRUE,Executing assigned work,Active
+ALIFE-000005,Waiting,Scheduling,Awaiting Dependency,Dependency Satisfied,Running,TRUE,FALSE,TRUE,TRUE,Waiting for prerequisite,Active
+ALIFE-000006,Paused,Execution,Manual Pause,Resume Requested,Running,FALSE,FALSE,TRUE,TRUE,Temporarily paused,Active
+ALIFE-000007,Learning,Learning,Task Completed,Knowledge Updated,Ready,FALSE,FALSE,TRUE,TRUE,Updating enterprise knowledge,Active
+ALIFE-000008,Recovering,Recovery,Execution Failure,Recovery Complete,Ready|Running,FALSE,FALSE,TRUE,TRUE,Recovering from failure,Active
+ALIFE-000009,Retired,Lifecycle,Retirement Requested,None,None,FALSE,FALSE,FALSE,FALSE,Agent permanently retired,Active
+ALIFE-000010,Failed,Failure,Critical Failure,Administrator Recovery,Recovering,FALSE,FALSE,TRUE,TRUE,Agent failure state,Active

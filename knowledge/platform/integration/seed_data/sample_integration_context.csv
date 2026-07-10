@@ -1,0 +1,11 @@
+context_id,stage,component,input,integration_action,output,next_stage,business_context
+INTCTX-000001,API Gateway,Gateway Service,Customer Request,Authenticate Request,Validated Request,Knowledge Service,Customer enters platform
+INTCTX-000002,Knowledge Service,Knowledge Layer,Validated Request,Retrieve Knowledge,Knowledge Response,Memory Service,Knowledge retrieved
+INTCTX-000003,Memory Service,Memory Layer,Knowledge Response,Update Memory,Memory Updated,Planning Service,Context stored
+INTCTX-000004,Planning Service,Planning Engine,Updated Context,Generate Plan,Execution Plan,Execution Service,Plan generated
+INTCTX-000005,Execution Service,Execution Engine,Execution Plan,Execute Workflow,Workflow Result,Agent Service,Workflow executed
+INTCTX-000006,Agent Service,Agent Platform,Workflow Result,Invoke Agent,Agent Response,Recommendation Service,Agent collaboration
+INTCTX-000007,Recommendation Service,Business Layer,Agent Response,Generate Recommendation,Recommendation,Governance Service,Business recommendation
+INTCTX-000008,Governance Service,Governance Layer,Recommendation,Policy Validation,Approved Recommendation,Gateway Service,Governance approval
+INTCTX-000009,Gateway Service,Gateway API,Approved Response,Return Response,Customer Response,Observability,Customer receives result
+INTCTX-000010,Observability,Monitoring Platform,Runtime Events,Collect Telemetry,Operational Metrics,None,Platform monitoring complete

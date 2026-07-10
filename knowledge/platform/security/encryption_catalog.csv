@@ -1,0 +1,11 @@
+encryption_id,encryption_name,algorithm,key_length,data_scope,applies_to,key_rotation_required,description,status
+ENC-000001,AES-256 at Rest,AES-256,256 bits,Data at Rest,Databases,TRUE,Encrypt stored enterprise data,Active
+ENC-000002,TLS 1.3 in Transit,TLS 1.3,Modern Cipher Suite,Data in Transit,APIs,TRUE,Encrypt network communication,Active
+ENC-000003,Column Encryption,AES-256,256 bits,Sensitive Fields,PII Columns,TRUE,Encrypt sensitive database columns,Active
+ENC-000004,Object Storage Encryption,AES-256,256 bits,Object Storage,Documents,TRUE,Encrypt stored documents,Active
+ENC-000005,Memory Encryption,AES-256,256 bits,Memory Store,Memory Layer,TRUE,Encrypt persisted memories,Active
+ENC-000006,Backup Encryption,AES-256,256 bits,Backups,Backup Storage,TRUE,Encrypt backups,Active
+ENC-000007,Secrets Encryption,AES-256,256 bits,Secrets Vault,Secrets,TRUE,Protect secrets at rest,Active
+ENC-000008,Audit Encryption,AES-256,256 bits,Audit Logs,Governance,TRUE,Protect audit evidence,Active
+ENC-000009,Vector Store Encryption,AES-256,256 bits,Embeddings,Vector Database,TRUE,Encrypt vector database,Active
+ENC-000010,Key Wrapping,RSA-4096,RSA 4096 bits,Key Management,Encryption Keys,TRUE,Protect encryption keys,Active

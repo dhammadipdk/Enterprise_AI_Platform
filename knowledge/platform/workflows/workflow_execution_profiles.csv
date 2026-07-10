@@ -1,0 +1,11 @@
+profile_id,profile_name,execution_goal,max_execution_time,max_parallel_nodes,retry_enabled,checkpoint_frequency,priority_level,resource_profile,description,status
+WEP-000001,Interactive,Low Latency,30 Seconds,4,TRUE,Every Node,High,Standard,Interactive user workflows,Active
+WEP-000002,Balanced,General Purpose,5 Minutes,8,TRUE,Every 2 Nodes,Medium,Balanced,General enterprise workflows,Active
+WEP-000003,High Throughput,Batch Processing,2 Hours,64,TRUE,Every 10 Nodes,Low,High CPU,Large batch processing,Active
+WEP-000004,Research,Maximum Accuracy,None,16,TRUE,Every Node,Medium,High GPU,Research workflows,Active
+WEP-000005,Critical Business,Maximum Reliability,10 Minutes,4,TRUE,Every Node,Critical,Reserved Resources,Critical workflows,Active
+WEP-000006,Streaming,Continuous,None,32,TRUE,Periodic,High,Streaming,Streaming workflows,Active
+WEP-000007,Agent Collaboration,Distributed,None,64,TRUE,Per Agent,High,Distributed,Multi-agent workflows,Active
+WEP-000008,RAG Execution,RAG,60 Seconds,8,TRUE,Every Node,High,Balanced,RAG workflows,Active
+WEP-000009,Planning,Reasoning,120 Seconds,2,TRUE,Every Node,High,GPU,Planning workflows,Active
+WEP-000010,Recovery,Disaster Recovery,None,2,FALSE,Continuous,Critical,Recovery Cluster,Recovery workflows,Active

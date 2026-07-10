@@ -1,0 +1,30 @@
+scenario_id,scenario_name,vehicle_type,key_observations,derived_intelligence,predictions,recommendations,expected_business_impact
+SCN-VEH-000001,Daily City Commuter,Hatchback,"Annual Mileage=24k km;Idle Time=52 min/day","Vehicle Health=88;Usage Intensity=82","Next Service in 90 days","Schedule Preventive Service","Moderate maintenance cost"
+
+SCN-VEH-000002,Highway Fleet Vehicle,SUV,"Annual Mileage=52k km;High Engine Load","Mechanical Risk=81","Brake Replacement in 8k km","Roadside Assistance;Brake Inspection","High wear but predictable maintenance"
+
+SCN-VEH-000003,Occasional Personal Vehicle,Sedan,"Annual Mileage=8k km;Excellent Service History","Vehicle Health=96","Battery Replacement in 2 years","Continue Standard Maintenance","Very low insurance risk"
+
+SCN-VEH-000004,Urban Taxi,Sedan,"Trips/day=18;High Idle Time","Usage Intensity=94","Tyre Replacement in 10k km","Tyre Rotation;Oil Change","High operational cost"
+
+SCN-VEH-000005,Delivery Vehicle,Mini Truck,"Frequent Stop-Go;Hard Braking","Brake Wear=78","Brake Service in 2 months","Brake Inspection","Higher brake maintenance"
+
+SCN-VEH-000006,Electric Vehicle,EV SUV,"Battery Health=92%;Charge Cycles=610","Battery Health Index=90","Battery SOH 87% next year","Battery Diagnostics","Stable battery performance"
+
+SCN-VEH-000007,Old Diesel SUV,SUV,"Vehicle Age=12 years;Odometer=186k km","Mechanical Risk=86","Powertrain Failure Risk Elevated","Engine Protect Cover","Higher claim probability"
+
+SCN-VEH-000008,Mountain Usage SUV,SUV,"Steep Gradient Usage;Brake Usage High","Brake Health=69","Brake Pad Replacement in 5k km","Brake Inspection","High downhill wear"
+
+SCN-VEH-000009,Coastal Vehicle,Hatchback,"Salt Exposure;Humidity","Corrosion Risk=74","Body Inspection in 6 months","Anti-corrosion Treatment","Higher body repair cost"
+
+SCN-VEH-000010,Premium Luxury Sedan,Luxury Sedan,"OEM Service Compliance=100%","Vehicle Health=98","Very Low Breakdown Probability","Continue OEM Maintenance","Lower claim frequency"
+
+SCN-VEH-000011,Shared Mobility Vehicle,Hatchback,"Multiple Drivers;High Daily Utilization","Usage Intensity=96","Accelerated Wear Forecast","Increase Service Frequency","Fleet maintenance optimization"
+
+SCN-VEH-000012,Rural Utility Vehicle,Pickup,"Poor Roads;Heavy Load","Suspension Wear=82","Suspension Service in 4 months","Suspension Inspection","Higher suspension claims"
+
+SCN-VEH-000013,Corporate Fleet Sedan,Sedan,"Consistent Usage;Telematics Enabled","Operational Efficiency=91","Low Failure Probability","Usage-Based Insurance","Reduced fleet operating cost"
+
+SCN-VEH-000014,Long Distance Tourer,SUV,"Highway Ratio=92%;Annual Mileage=41k km","Travel Exposure High","Tyre Replacement Forecast","Roadside Assistance","Long-distance reliability"
+
+SCN-VEH-000015,Neglected Vehicle,Hatchback,"Delayed Service;Multiple DTCs","Vehicle Health=54","Breakdown Probability=61%","Immediate Workshop Visit","High insurance and maintenance risk"

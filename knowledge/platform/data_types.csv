@@ -1,0 +1,10 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+DT-000001,String,A sequence of textual characters.,Primitive,1,Active,1.0.0,,General text values.
+DT-000002,Integer,A whole numeric value without fractional digits.,Primitive,2,Active,1.0.0,,Used for counts and whole numbers.
+DT-000003,Decimal,A numeric value that may contain fractional digits.,Primitive,3,Active,1.0.0,,Used for measurements, currency and percentages.
+DT-000004,Boolean,A logical value representing True or False.,Primitive,4,Active,1.0.0,,Binary values.
+DT-000005,Date,A calendar date without time information.,Primitive,5,Active,1.0.0,,ISO-8601 format recommended.
+DT-000006,DateTime,A date and time value.,Primitive,6,Active,1.0.0,,ISO-8601 timestamp.
+DT-000007,Enumeration,A value selected from a controlled vocabulary.,Structured,7,Active,1.0.0,,References shared vocabularies.
+DT-000008,Collection,An ordered collection of multiple values.,Structured,8,Active,1.0.0,,Lists or arrays.
+DT-000009,Object,A structured object composed of multiple related attributes.,Structured,9,Active,1.0.0,,Reserved for future composite structures.

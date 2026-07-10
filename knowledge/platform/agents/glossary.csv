@@ -1,0 +1,21 @@
+term_id,term,business_definition
+AGENT-001,Agent,Autonomous enterprise AI worker
+AGENT-002,Capability,Action an agent can perform
+AGENT-003,Role,Business responsibility
+AGENT-004,Delegation,Assigning work to another agent
+AGENT-005,Coordination,Managing multiple agents
+AGENT-006,Collaboration,Agents working together
+AGENT-007,Tool,External executable capability
+AGENT-008,Agent Memory,Persistent agent knowledge
+AGENT-009,Agent Goal,Assigned objective
+AGENT-010,Task Assignment,Delegated work
+AGENT-011,Communication,Information exchange
+AGENT-012,Supervisor Agent,Coordinator agent
+AGENT-013,Worker Agent,Execution agent
+AGENT-014,Planning Agent,Planning specialist
+AGENT-015,Reasoning Agent,Inference specialist
+AGENT-016,Learning Agent,Knowledge improvement
+AGENT-017,Agent Trust,Confidence in an agent
+AGENT-018,Agent Policy,Governance rule
+AGENT-019,Agent Session,Single execution lifecycle
+AGENT-020,Multi-Agent System,Collaborative AI ecosystem

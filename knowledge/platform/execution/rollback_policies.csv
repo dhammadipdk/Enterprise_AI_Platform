@@ -1,0 +1,11 @@
+rollback_policy_id,rollback_name,rollback_scope,trigger_condition,rollback_strategy,restore_checkpoint,partial_supported,audit_required,description,status
+ROLL-000001,Workflow Rollback,Workflow,Execution Failure,Reverse Execution,Latest Checkpoint,TRUE,TRUE,Rollback workflow execution,Active
+ROLL-000002,Memory Rollback,Memory,Persistence Failure,Restore Snapshot,Memory Checkpoint,FALSE,TRUE,Restore memory state,Active
+ROLL-000003,Graph Rollback,Knowledge Graph,Graph Update Failure,Reverse Graph Update,Graph Snapshot,FALSE,TRUE,Restore graph integrity,Active
+ROLL-000004,Recommendation Rollback,Business,Recommendation Failure,Discard Recommendation,None,TRUE,TRUE,Cancel recommendation,Active
+ROLL-000005,Execution Rollback,Execution,Critical Runtime Error,Reverse Tasks,Execution Checkpoint,TRUE,TRUE,Rollback runtime state,Active
+ROLL-000006,Policy Rollback,Governance,Validation Failure,Undo Changes,Validation Checkpoint,FALSE,TRUE,Rollback policy changes,Active
+ROLL-000007,Agent Rollback,Agents,Agent Failure,Reassign Agent,Agent Snapshot,TRUE,TRUE,Recover from agent failure,Active
+ROLL-000008,Tool Rollback,Infrastructure,Tool Failure,Switch Tool,None,TRUE,FALSE,Fallback tool execution,Active
+ROLL-000009,Distributed Rollback,Distributed,Multi-Agent Failure,Global Compensation,Distributed Snapshot,TRUE,TRUE,Distributed rollback,Active
+ROLL-000010,Emergency Rollback,System,Critical Incident,Restore System Snapshot,System Backup,FALSE,TRUE,Emergency recovery,Active

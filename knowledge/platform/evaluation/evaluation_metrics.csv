@@ -1,0 +1,11 @@
+metric_id,metric_name,metric_category,measurement_unit,target_direction,acceptable_threshold,critical_threshold,business_use,description,status
+EVMET-000001,Accuracy,Quality,Percentage,Maximize,95,90,Overall correctness,Prediction accuracy,Active
+EVMET-000002,Precision,Quality,Percentage,Maximize,94,88,False positive reduction,Prediction precision,Active
+EVMET-000003,Recall,Quality,Percentage,Maximize,93,87,Coverage evaluation,Recall performance,Active
+EVMET-000004,F1 Score,Quality,Percentage,Maximize,94,89,Balanced evaluation,F1 measurement,Active
+EVMET-000005,Grounding Score,Validation,Percentage,Maximize,98,95,Grounding quality,Grounding accuracy,Active
+EVMET-000006,Hallucination Rate,Safety,Percentage,Minimize,2,5,AI safety,Unsupported response rate,Active
+EVMET-000007,Response Latency,Performance,Milliseconds,Minimize,2000,5000,User experience,Response time,Active
+EVMET-000008,Task Completion Rate,Execution,Percentage,Maximize,97,92,Workflow reliability,Completed tasks,Active
+EVMET-000009,Recommendation Acceptance,Business,Percentage,Maximize,75,60,Business impact,Accepted recommendations,Active
+EVMET-000010,Enterprise Quality Index,Composite,Score (0-100),Maximize,95,90,Overall AI quality,Composite enterprise score,Active

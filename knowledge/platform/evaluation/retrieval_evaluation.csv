@@ -1,0 +1,11 @@
+retrieval_eval_id,evaluation_dimension,metric_name,retrieval_type,ground_truth_required,evaluation_method,pass_threshold,business_use,description,status
+RET-000001,Recall,Recall@5,Vector Search,TRUE,Ground Truth,90,RAG,Recall evaluation,Active
+RET-000002,Recall,Recall@10,Hybrid Search,TRUE,Ground Truth,94,Enterprise Search,Recall@10 evaluation,Active
+RET-000003,Precision,Precision@5,Hybrid Search,TRUE,Ground Truth,92,RAG,Precision evaluation,Active
+RET-000004,MRR,Mean Reciprocal Rank,Semantic Search,TRUE,Reference Ranking,90,Knowledge Retrieval,Ranking quality,Active
+RET-000005,NDCG,Normalized DCG,Hybrid Search,TRUE,Reference Ranking,93,Enterprise Search,Ranking effectiveness,Active
+RET-000006,Coverage,Knowledge Coverage,Knowledge Graph,FALSE,Coverage Analysis,95,Knowledge Management,Knowledge coverage,Active
+RET-000007,Citation Accuracy,Citation Match,Hybrid Search,TRUE,Evidence Validation,98,Grounding,Citation correctness,Active
+RET-000008,Latency,Response Time,Retriever,FALSE,Performance Measurement,2000,Performance,Retrieval latency,Active
+RET-000009,Freshness,Knowledge Freshness,Hybrid Search,FALSE,Temporal Validation,95,Current Knowledge,Knowledge freshness,Active
+RET-000010,Composite Retrieval Score,Enterprise Score,Hybrid,FALSE,Composite Evaluation,95,Enterprise AI,Overall retrieval quality,Active

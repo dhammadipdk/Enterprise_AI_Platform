@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CDEC-000001,APPROVE,Approve,Claim approved,Active,2026-01-01,,Industry,
+REF-CDEC-000002,PARTIAL_APPROVAL,Partial Approval,Partial claim approval,Active,2026-01-01,,Industry,
+REF-CDEC-000003,REJECT,Reject,Claim rejected,Active,2026-01-01,,Industry,
+REF-CDEC-000004,REQUEST_INFORMATION,Request Information,Additional information requested,Active,2026-01-01,,Industry,
+REF-CDEC-000005,INVESTIGATE,Investigate,Further investigation required,Active,2026-01-01,,Industry,
+REF-CDEC-000006,ESCALATE,Escalate,Escalate to senior reviewer,Active,2026-01-01,,Industry,

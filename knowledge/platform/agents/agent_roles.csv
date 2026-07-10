@@ -1,0 +1,11 @@
+role_id,role_name,responsibility_level,business_scope,decision_authority,delegation_allowed,human_override,description,status
+ROLE-000001,Supervisor,Enterprise,All Domains,Full,TRUE,TRUE,Supervises enterprise agents,Active
+ROLE-000002,Planner,Cognitive,Planning,High,TRUE,TRUE,Creates execution plans,Active
+ROLE-000003,Reasoner,Cognitive,Reasoning,High,FALSE,TRUE,Performs reasoning,Active
+ROLE-000004,Executor,Operational,Execution,Medium,FALSE,TRUE,Executes workflows,Active
+ROLE-000005,Knowledge Manager,Knowledge,Knowledge,Medium,FALSE,FALSE,Maintains knowledge,Active
+ROLE-000006,Memory Manager,Infrastructure,Memory,Medium,FALSE,FALSE,Maintains enterprise memory,Active
+ROLE-000007,Recommendation Specialist,Business,Recommendation,Medium,FALSE,TRUE,Recommendation generation,Active
+ROLE-000008,Fraud Investigator,Risk,Fraud,High,TRUE,TRUE,Fraud investigation specialist,Active
+ROLE-000009,Learning Specialist,Learning,Learning,Low,FALSE,FALSE,Continuous learning,Active
+ROLE-000010,Coordinator,Enterprise,Multi-Agent,Full,TRUE,TRUE,Coordinates distributed agents,Active

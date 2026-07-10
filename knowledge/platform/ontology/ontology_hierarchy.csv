@@ -1,0 +1,16 @@
+hierarchy_id,parent_class,child_class,hierarchy_type,inheritance_rule,description,status
+HIER-000001,Person,Customer,Inheritance,Full,Customer inherits person attributes,Active
+HIER-000002,Person,Driver,Inheritance,Full,Driver inherits person attributes,Active
+HIER-000003,Person,Surveyor,Inheritance,Full,Surveyor inherits person attributes,Active
+HIER-000004,Business Object,Policy,Inheritance,Full,Policy is business object,Active
+HIER-000005,Business Object,Claim,Inheritance,Full,Claim is business object,Active
+HIER-000006,Business Object,Coverage,Inheritance,Full,Coverage is business object,Active
+HIER-000007,Decision Object,Recommendation,Inheritance,Full,Recommendation is decision object,Active
+HIER-000008,Decision Object,Decision,Inheritance,Full,Decision is decision object,Active
+HIER-000009,Context Object,Observation,Inheritance,Full,Observation is context object,Active
+HIER-000010,Context Object,Derived Intelligence,Inheritance,Full,Derived intelligence is context object,Active
+HIER-000011,Reasoning Object,Evidence,Inheritance,Full,Evidence is reasoning object,Active
+HIER-000012,Reasoning Object,Hypothesis,Inheritance,Full,Hypothesis is reasoning object,Active
+HIER-000013,Actor,Person,Inheritance,Full,Person is enterprise actor,Active
+HIER-000014,Asset,Vehicle,Inheritance,Full,Vehicle is enterprise asset,Active
+HIER-000015,Knowledge Object,Business Rule,Inheritance,Full,Business rule is knowledge object,Active

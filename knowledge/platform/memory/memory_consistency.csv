@@ -1,0 +1,11 @@
+consistency_id,consistency_rule,validation_scope,detection_method,resolution_strategy,conflict_priority,audit_required,automatic_fix,description,status
+MCON-000001,Unique Memory ID,Global,Primary Key,Reject Duplicate,Critical,TRUE,TRUE,Prevent duplicate memories,Active
+MCON-000002,Ontology Alignment,Semantic,Ontology Validation,Reject,Critical,TRUE,FALSE,Ontology consistency,Active
+MCON-000003,Graph Consistency,Knowledge Graph,Relationship Validation,Repair Graph,High,TRUE,TRUE,Graph integrity,Active
+MCON-000004,Embedding Sync,Vector,Embedding Validation,Recompute,Medium,FALSE,TRUE,Embedding synchronization,Active
+MCON-000005,Memory Timestamp,Temporal,Timestamp Validation,Latest Wins,Medium,FALSE,TRUE,Temporal consistency,Active
+MCON-000006,Reasoning Trace,Reasoning,Decision Validation,Manual Review,High,TRUE,FALSE,Reasoning completeness,Active
+MCON-000007,Conversation Order,Conversation,Sequence Validation,Reorder,Low,FALSE,TRUE,Conversation continuity,Active
+MCON-000008,Cross-Agent Memory,Agents,Shared Validation,Consensus,Medium,TRUE,FALSE,Shared memory consistency,Active
+MCON-000009,Version Alignment,Governance,Schema Validation,Migrate,Medium,TRUE,TRUE,Schema synchronization,Active
+MCON-000010,Enterprise Integrity,Global,Hybrid Validation,Escalate,Critical,TRUE,FALSE,Enterprise memory integrity,Active

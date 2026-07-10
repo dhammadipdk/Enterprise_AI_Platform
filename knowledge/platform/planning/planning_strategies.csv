@@ -1,0 +1,11 @@
+strategy_id,strategy_name,planning_style,supports_replanning,multi_agent,constraint_based,optimization_based,description,status
+PSTRAT-000001,Sequential Planning,Deterministic,TRUE,FALSE,TRUE,FALSE,Linear task planning,Active
+PSTRAT-000002,Hierarchical Planning,Hierarchical,TRUE,TRUE,TRUE,TRUE,Goal decomposition planning,Active
+PSTRAT-000003,Graph Planning,Graph-Based,TRUE,TRUE,FALSE,TRUE,Knowledge graph planning,Active
+PSTRAT-000004,Reactive Planning,Adaptive,TRUE,FALSE,TRUE,FALSE,Respond to dynamic events,Active
+PSTRAT-000005,Goal-Oriented Planning,Goal Driven,TRUE,TRUE,TRUE,TRUE,Goal-directed planning,Active
+PSTRAT-000006,Constraint Planning,Constraint-Based,FALSE,FALSE,TRUE,TRUE,Solve constrained planning,Active
+PSTRAT-000007,Utility Planning,Optimization,TRUE,FALSE,FALSE,TRUE,Maximize utility,Active
+PSTRAT-000008,Risk-Aware Planning,Risk-Based,TRUE,TRUE,TRUE,TRUE,Optimize under uncertainty,Active
+PSTRAT-000009,Collaborative Planning,Distributed,TRUE,TRUE,TRUE,FALSE,Multi-agent planning,Active
+PSTRAT-000010,LLM-Assisted Planning,Hybrid,TRUE,TRUE,TRUE,TRUE,LLM-supported planning,Active

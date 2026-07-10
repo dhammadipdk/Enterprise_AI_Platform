@@ -1,0 +1,9 @@
+reference_id,organization_code,organization_name,organization_type,website,status,effective_date,expiry_date,source_authority,remarks
+REF-REGAUTH-000001,IRDAI,Insurance Regulatory and Development Authority of India,Insurance Regulator,https://irdai.gov.in,Active,1999-04-19,,Government of India,
+REF-REGAUTH-000002,MORTH,Ministry of Road Transport and Highways,Government Ministry,https://morth.nic.in,Active,1985-01-01,,Government of India,
+REF-REGAUTH-000003,RBI,Reserve Bank of India,Central Bank,https://rbi.org.in,Active,1935-04-01,,Government of India,
+REF-REGAUTH-000004,GSTC,GST Council,Tax Authority,https://gstcouncil.gov.in,Active,2016-09-12,,Government of India,
+REF-REGAUTH-000005,UIDAI,Unique Identification Authority of India,Government Authority,https://uidai.gov.in,Active,2009-01-28,,Government of India,
+REF-REGAUTH-000006,NPCI,National Payments Corporation of India,Payments Authority,https://npci.org.in,Active,2008-01-01,,Government of India,
+REF-REGAUTH-000007,CCI,Controller of Certifying Authorities,Digital Signature Authority,https://cca.gov.in,Active,2000-10-17,,Government of India,
+REF-REGAUTH-000008,STATE_TRANSPORT,State Transport Department,State Regulatory Authority,,Active,2026-01-01,,State Government,

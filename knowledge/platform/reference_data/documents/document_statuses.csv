@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DOCSTATUS-000001,DRAFT,Draft,Document being prepared,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000002,UPLOADED,Uploaded,Document uploaded by user,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000003,UNDER_REVIEW,Under Review,Document verification in progress,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000004,VERIFIED,Verified,Document successfully verified,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000005,REJECTED,Rejected,Document verification failed,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000006,EXPIRED,Expired,Document validity expired,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000007,ARCHIVED,Archived,Document archived for retention,Active,2026-01-01,,Enterprise,
+REF-DOCSTATUS-000008,DELETED,Deleted,Document removed according to policy,Active,2026-01-01,,Enterprise,

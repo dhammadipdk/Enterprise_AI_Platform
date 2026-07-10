@@ -1,0 +1,16 @@
+state_id,state_name,state_category,applicable_entity,previous_states,next_states,is_initial,is_terminal,business_meaning,status
+STATE-000001,Draft,Lifecycle,Policy,None,Active,TRUE,FALSE,Entity being created,Active
+STATE-000002,Active,Lifecycle,Policy,Draft,Suspended|Expired,FALSE,FALSE,Entity currently operational,Active
+STATE-000003,Suspended,Lifecycle,Policy,Active,Active|Cancelled,FALSE,FALSE,Temporarily inactive,Active
+STATE-000004,Expired,Lifecycle,Policy,Active,Renewed,FALSE,TRUE,Policy validity ended,Active
+STATE-000005,Registered,Lifecycle,Customer,None,Verified,TRUE,FALSE,Customer registered,Active
+STATE-000006,Verified,Lifecycle,Customer,Registered,Active,FALSE,FALSE,KYC completed,Active
+STATE-000007,Open,Lifecycle,Claim,None,Under Review,TRUE,FALSE,Claim submitted,Active
+STATE-000008,Under Review,Lifecycle,Claim,Open,Approved|Rejected,FALSE,FALSE,Claim assessment underway,Active
+STATE-000009,Approved,Lifecycle,Claim,Under Review,Settled,FALSE,FALSE,Claim approved,Active
+STATE-000010,Rejected,Lifecycle,Claim,Under Review,None,FALSE,TRUE,Claim denied,Active
+STATE-000011,Settled,Lifecycle,Claim,Approved,None,FALSE,TRUE,Claim completed,Active
+STATE-000012,Investigating,Lifecycle,Fraud Case,None,Closed,TRUE,FALSE,Fraud investigation active,Active
+STATE-000013,Closed,Lifecycle,Fraud Case,Investigating,None,FALSE,TRUE,Investigation complete,Active
+STATE-000014,Generated,Lifecycle,Recommendation,None,Executed|Rejected,TRUE,FALSE,Recommendation generated,Active
+STATE-000015,Executed,Lifecycle,Recommendation,Generated,None,FALSE,TRUE,Recommendation executed,Active

@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-VERIFY-000001,NOT_STARTED,Not Started,Verification not initiated,Active,2026-01-01,,Enterprise,
+REF-VERIFY-000002,IN_PROGRESS,In Progress,Verification underway,Active,2026-01-01,,Enterprise,
+REF-VERIFY-000003,VERIFIED,Verified,Document authenticity confirmed,Active,2026-01-01,,Enterprise,
+REF-VERIFY-000004,FAILED,Failed,Verification unsuccessful,Active,2026-01-01,,Enterprise,
+REF-VERIFY-000005,MANUAL_REVIEW,Manual Review,Human verification required,Active,2026-01-01,,Enterprise,
+REF-VERIFY-000006,FRAUD_SUSPECTED,Fraud Suspected,Potential fraudulent document detected,Active,2026-01-01,,Enterprise,

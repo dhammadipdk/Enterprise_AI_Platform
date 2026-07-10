@@ -1,0 +1,13 @@
+metric_id,metric_name,metric_category,measurement_unit,target_direction,aggregation_period,business_use,description,status
+AMET-000001,Task Success Rate,Performance,Percentage,Maximize,Daily,Agent Effectiveness,Percentage of successful tasks,Active
+AMET-000002,Average Response Time,Performance,Milliseconds,Minimize,Hourly,Latency Monitoring,Average response latency,Active
+AMET-000003,Planning Accuracy,Cognitive,Percentage,Maximize,Daily,Planning Quality,Correct planning decisions,Active
+AMET-000004,Reasoning Confidence,Cognitive,Score (0-1),Maximize,Realtime,AI Quality,Reasoning confidence,Active
+AMET-000005,Delegation Accuracy,Coordination,Percentage,Maximize,Weekly,Delegation Quality,Correct delegation decisions,Active
+AMET-000006,Knowledge Reuse Rate,Knowledge,Percentage,Maximize,Daily,Knowledge Management,Reuse enterprise knowledge,Active
+AMET-000007,Memory Utilization,Infrastructure,Percentage,Optimize,Hourly,Memory Planning,Memory usage efficiency,Active
+AMET-000008,Tool Success Rate,Execution,Percentage,Maximize,Daily,Execution Monitoring,Successful tool invocations,Active
+AMET-000009,Human Intervention Rate,Governance,Percentage,Minimize,Weekly,Automation Maturity,Need for manual intervention,Active
+AMET-000010,Business Value Score,Business,Score (0-100),Maximize,Monthly,Business ROI,Enterprise contribution,Active
+AMET-000011,Agent Availability,Reliability,Percentage,Maximize,Daily,Platform Reliability,Uptime percentage,Active
+AMET-000012,Collaboration Efficiency,Multi-Agent,Score (0-100),Maximize,Weekly,Team Performance,Efficiency of collaboration,Active

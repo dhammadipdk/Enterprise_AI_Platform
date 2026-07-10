@@ -1,0 +1,11 @@
+authority_id,authority_name,authority_type,business_scope,approval_level,max_authority,delegation_allowed,contact_group,description,status
+AUTH-000001,Business Owner,Business,Recommendations,Level 3,High,TRUE,Business Team,Business recommendation approvals,Active
+AUTH-000002,Claims Manager,Operations,Claims,Level 2,Medium,TRUE,Claims Team,Claims approval authority,Active
+AUTH-000003,Fraud Investigation Head,Risk,Fraud,Level 3,High,FALSE,Fraud Team,Fraud governance authority,Active
+AUTH-000004,Knowledge Owner,Knowledge,Knowledge Assets,Level 2,Medium,TRUE,Knowledge Office,Knowledge governance,Active
+AUTH-000005,Platform Administrator,Infrastructure,AI Platform,Level 2,Medium,FALSE,Platform Team,Platform administration,Active
+AUTH-000006,MLOps Lead,AI,Model Governance,Level 3,High,FALSE,MLOps Team,Model deployment authority,Active
+AUTH-000007,Chief Compliance Officer,Compliance,Enterprise,Level 4,Critical,FALSE,Compliance Office,Compliance governance,Active
+AUTH-000008,Chief Information Security Officer,Security,Security,Level 4,Critical,FALSE,Security Office,Security governance,Active
+AUTH-000009,AI Governance Board,Governance,Enterprise AI,Level 5,Critical,FALSE,Governance Board,Enterprise AI governance,Active
+AUTH-000010,Executive Board,Executive,Enterprise,Level 5,Enterprise,FALSE,Executive Office,Final enterprise authority,Active

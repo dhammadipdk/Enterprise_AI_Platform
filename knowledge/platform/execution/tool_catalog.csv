@@ -1,0 +1,11 @@
+tool_id,tool_name,tool_category,input_type,output_type,synchronous,requires_authentication,agent_accessible,retry_supported,description,status
+TOOL-000001,Knowledge Graph,Knowledge,Graph Query,Subgraph,TRUE,TRUE,TRUE,TRUE,Enterprise graph retrieval,Active
+TOOL-000002,Vector Database,Memory,Embedding Query,Documents,TRUE,TRUE,TRUE,TRUE,Semantic retrieval,Active
+TOOL-000003,Reasoning Engine,AI,Context,Decision,FALSE,TRUE,TRUE,TRUE,Reasoning subsystem,Active
+TOOL-000004,Recommendation Engine,Business,Customer Context,Recommendations,FALSE,TRUE,TRUE,TRUE,Recommendation generation,Active
+TOOL-000005,Business Rules Engine,Governance,Recommendation,Validation,TRUE,FALSE,TRUE,FALSE,Policy validation,Active
+TOOL-000006,Workflow Engine,Execution,Execution Plan,Execution State,FALSE,TRUE,TRUE,TRUE,Workflow orchestration,Active
+TOOL-000007,Memory Service,Memory,Memory Query,Memory Objects,TRUE,TRUE,TRUE,TRUE,Enterprise memory service,Active
+TOOL-000008,Notification Service,Communication,Notification,Delivery Status,FALSE,TRUE,TRUE,TRUE,Customer notifications,Active
+TOOL-000009,Audit Service,Governance,Execution Trace,Audit Record,TRUE,TRUE,TRUE,TRUE,Audit persistence,Active
+TOOL-000010,External API Gateway,External,REST Request,JSON,FALSE,TRUE,TRUE,TRUE,External integrations,Active

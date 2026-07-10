@@ -1,0 +1,13 @@
+intelligence_id,intelligence_type,subject_type,subject_code,subject_name,attribute,score,level,confidence_score,derived_from,model_id,valid_from,valid_to,status,remarks
+INT-INF-IDX-000001,INDEX,CITY,MUM,Mumbai,Road Quality Index,91,Very High,0.97,Multiple Observations,MODEL-INF-IDX-001,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000002,INDEX,CITY,DEL,Delhi,Infrastructure Reliability Index,86,High,0.95,Multiple Observations,MODEL-INF-IDX-001,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000003,INDEX,CITY,PUN,Pune,Parking Safety Index,72,Medium,0.91,OBS-INF2-000004,MODEL-INF-IDX-002,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000004,INDEX,CITY,CHE,Chennai,Emergency Accessibility Index,88,High,0.95,OBS-INF3-000004,MODEL-INF-IDX-002,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000005,INDEX,CITY,BLR,Bengaluru,Maintenance Quality Index,69,Medium,0.90,Multiple Observations,MODEL-INF-IDX-003,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000006,INDEX,CITY,GOA,Panaji,Service Coverage Index,81,High,0.93,Multiple Observations,MODEL-INF-IDX-003,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000007,INDEX,CITY,SHI,Shimla,Road Safety Index,67,Medium,0.91,Multiple Observations,MODEL-INF-IDX-004,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000008,INDEX,CITY,KOL,Kolkata,Smart Infrastructure Index,78,High,0.92,Multiple Observations,MODEL-INF-IDX-004,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000009,INDEX,STATE,MH,Maharashtra,State Road Quality Index,82,High,0.93,Multiple Observations,MODEL-INF-IDX-005,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000010,INDEX,STATE,KA,Karnataka,Infrastructure Reliability Index,79,High,0.92,Multiple Observations,MODEL-INF-IDX-005,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000011,INDEX,ROAD_SEGMENT,NH48-001,NH-48 Mumbai-Pune,Highway Quality Index,84,High,0.94,Road Survey,MODEL-INF-IDX-006,2026-01-01,2026-12-31,Active,
+INT-INF-IDX-000012,INDEX,DISTRICT,PUNE,Pune District,Emergency Service Coverage Index,77,High,0.91,Multiple Observations,MODEL-INF-IDX-006,2026-01-01,2026-12-31,Active,

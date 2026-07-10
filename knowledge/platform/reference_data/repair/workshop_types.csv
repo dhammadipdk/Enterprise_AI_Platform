@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-WORKSHOP-000001,AUTHORIZED_OEM,Authorized OEM Workshop,Manufacturer authorized service center,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000002,MULTI_BRAND,Multi-brand Workshop,Independent workshop servicing multiple brands,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000003,INSURANCE_NETWORK,Insurance Network Garage,Insurer empanelled repair workshop,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000004,SPECIALIZED_BODYSHOP,Specialized Body Shop,Body repair and painting facility,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000005,GLASS_CENTER,Glass Repair Center,Glass repair and replacement specialist,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000006,TYRE_CENTER,Tyre Service Center,Tyre and wheel specialist,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000007,EV_SERVICE,EV Service Center,Electric vehicle certified workshop,Active,2026-01-01,,Industry,
+REF-WORKSHOP-000008,MOBILE_REPAIR,Mobile Repair Unit,On-site repair service provider,Active,2026-01-01,,Industry,

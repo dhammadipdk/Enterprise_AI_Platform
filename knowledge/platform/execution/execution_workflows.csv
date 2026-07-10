@@ -1,0 +1,11 @@
+workflow_id,workflow_name,workflow_category,input_plan,execution_mode,parallel_supported,human_in_loop,recoverable,max_steps,description,status
+WF-000001,Customer Recommendation Workflow,Recommendation,PLAN-000001,Synchronous,TRUE,FALSE,TRUE,12,Customer recommendation execution,Active
+WF-000002,Claim Settlement Workflow,Claims,PLAN-000002,Asynchronous,TRUE,TRUE,TRUE,25,Claim settlement execution,Active
+WF-000003,Fraud Investigation Workflow,Fraud,PLAN-000003,Asynchronous,TRUE,TRUE,TRUE,40,Fraud investigation workflow,Active
+WF-000004,Risk Assessment Workflow,Risk,PLAN-000004,Synchronous,FALSE,FALSE,TRUE,10,Risk execution workflow,Active
+WF-000005,Knowledge Retrieval Workflow,Knowledge,PLAN-000005,Synchronous,TRUE,FALSE,FALSE,8,Knowledge retrieval execution,Active
+WF-000006,Agent Collaboration Workflow,Agents,PLAN-000006,Distributed,TRUE,TRUE,TRUE,50,Multi-agent execution,Active
+WF-000007,Policy Recommendation Workflow,Recommendation,PLAN-000007,Synchronous,TRUE,FALSE,TRUE,15,Policy recommendation runtime,Active
+WF-000008,Compliance Workflow,Governance,PLAN-000008,Asynchronous,FALSE,TRUE,TRUE,20,Compliance execution,Active
+WF-000009,Customer Onboarding Workflow,Operations,PLAN-000009,Asynchronous,TRUE,TRUE,TRUE,35,Customer onboarding runtime,Active
+WF-000010,Adaptive Enterprise Workflow,Enterprise,PLAN-000010,Dynamic,TRUE,TRUE,TRUE,Unlimited,Adaptive execution engine,Active

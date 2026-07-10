@@ -1,0 +1,11 @@
+execution_plan_id,plan_name,goal_type,planner_template,total_tasks,estimated_duration_seconds,critical_path_length,replanning_enabled,optimization_target,description,status
+PLAN-000001,Customer Recommendation Flow,Customer Recommendation,Customer Recommendation Plan,10,40,8,TRUE,Customer Satisfaction,Complete recommendation workflow,Active
+PLAN-000002,Claim Settlement Flow,Claim Settlement,Claim Settlement Plan,12,900,10,TRUE,Settlement Time,Claims workflow,Active
+PLAN-000003,Fraud Investigation Flow,Fraud Investigation,Fraud Investigation Plan,15,1800,13,TRUE,Risk Reduction,Fraud investigation workflow,Active
+PLAN-000004,Risk Assessment Flow,Risk Assessment,Risk Assessment Plan,8,30,6,TRUE,Prediction Accuracy,Risk computation workflow,Active
+PLAN-000005,Knowledge Retrieval Flow,Knowledge Retrieval,Knowledge Retrieval Plan,5,10,4,TRUE,Retrieval Quality,Enterprise retrieval workflow,Active
+PLAN-000006,Agent Collaboration Flow,Agent Coordination,Multi-Agent Coordination Plan,18,300,15,TRUE,Collaboration Efficiency,Distributed planning workflow,Active
+PLAN-000007,Policy Recommendation Flow,Policy Recommendation,Policy Recommendation Plan,9,45,7,TRUE,Coverage Quality,Policy recommendation workflow,Active
+PLAN-000008,Compliance Review Flow,Enterprise Optimization,Compliance Review Plan,11,600,9,FALSE,Compliance Score,Compliance workflow,Active
+PLAN-000009,Customer Onboarding Flow,Enterprise Optimization,Customer Onboarding Plan,14,1200,12,FALSE,Completion Rate,Customer onboarding workflow,Active
+PLAN-000010,Adaptive Workflow,Enterprise Optimization,Adaptive Planning Template,20,Variable,Variable,TRUE,Dynamic Optimization,Adaptive enterprise workflow,Active

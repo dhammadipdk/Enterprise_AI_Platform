@@ -1,0 +1,11 @@
+summary_id,summary_name,summary_scope,input_memory,trigger_condition,summarization_method,output_memory,retention_strategy,llm_assisted,description,status
+MSUM-000001,Conversation Summary,Conversation,Conversation Memory,100 Messages,LLM Summary,Conversation Summary,Long Term,TRUE,Conversation compression,Active
+MSUM-000002,Claim Timeline,Claims,Claim Memory,Claim Closed,Chronological Summary,Claim History,Permanent,FALSE,Claim lifecycle summary,Active
+MSUM-000003,Customer Profile Summary,Customer,Customer Memory,Profile Updated,Entity Aggregation,Customer Profile,Permanent,TRUE,Unified customer summary,Active
+MSUM-000004,Fraud Investigation Summary,Fraud,Fraud Memory,Investigation Closed,Case Summary,Fraud History,Permanent,TRUE,Fraud investigation summary,Active
+MSUM-000005,Reasoning Summary,Reasoning,Reasoning Memory,Decision Approved,Trace Compression,Decision Summary,Permanent,TRUE,Reasoning explanation summary,Active
+MSUM-000006,Execution Summary,Execution,Execution Memory,Workflow Complete,Workflow Summary,Execution History,Permanent,FALSE,Workflow execution summary,Active
+MSUM-000007,Observation Digest,Context,Observation Memory,Hourly,Aggregation,Context Snapshot,Medium Term,FALSE,Observation aggregation,Active
+MSUM-000008,Enterprise Daily Brief,Enterprise,All Memories,Daily Schedule,Hybrid Summary,Enterprise Digest,Archive,TRUE,Daily enterprise summary,Active
+MSUM-000009,Agent Learning Summary,Agents,Agent Memory,Task Complete,Learning Summary,Agent Knowledge,Permanent,TRUE,Continual learning summary,Active
+MSUM-000010,Knowledge Consolidation,Knowledge,Semantic Memory,Weekly,Semantic Merge,Knowledge Memory,Permanent,TRUE,Knowledge consolidation,Active

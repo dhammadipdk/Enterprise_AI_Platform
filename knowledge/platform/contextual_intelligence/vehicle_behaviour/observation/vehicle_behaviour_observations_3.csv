@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-VEH3-000001,HEALTH,VEHICLE,VH-000001,Vehicle-000001,Battery Voltage,Voltage,V,12.5,2026-07-01T00:00:00Z,Mumbai,Daily,OBD,OBD-II,CAN,0.99,0.99,v1.0,
+OBS-VEH3-000002,HEALTH,VEHICLE,VH-000002,Vehicle-000002,Battery Health,Health,%,91,2026-07-01T00:00:00Z,Pune,Monthly,BMS,OEM API,BMS,0.98,0.97,v1.0,
+OBS-VEH3-000003,HEALTH,VEHICLE,VH-000003,Vehicle-000003,Tyre Pressure,Pressure,psi,33,2026-07-01T00:00:00Z,Delhi,Daily,TPMS,OEM API,TPMS,0.99,0.98,v1.0,
+OBS-VEH3-000004,HEALTH,VEHICLE,VH-000004,Vehicle-000004,Tyre Tread Depth,Depth,mm,5.8,2026-07-01T00:00:00Z,Bengaluru,Monthly,Workshop,Service Center,Inspection,0.98,0.97,v1.0,
+OBS-VEH3-000005,HEALTH,VEHICLE,VH-000005,Vehicle-000005,Brake Pad Thickness,Thickness,mm,7.2,2026-07-01T00:00:00Z,Chennai,Monthly,Workshop,Service Center,Inspection,0.98,0.97,v1.0,
+OBS-VEH3-000006,SERVICE,VEHICLE,VH-000006,Vehicle-000006,Service Interval,Distance,km,9800,2026-07-01T00:00:00Z,Mumbai,Current,Workshop,OEM Service,Records,0.98,0.98,v1.0,
+OBS-VEH3-000007,SERVICE,VEHICLE,VH-000007,Vehicle-000007,Maintenance Frequency,Services,count/year,2,2026-07-01T00:00:00Z,Jaipur,Annual,Workshop,OEM Service,Records,0.97,0.96,v1.0,
+OBS-VEH3-000008,HEALTH,VEHICLE,VH-000008,Vehicle-000008,Diagnostic Trouble Codes,DTC,count,1,2026-07-01T00:00:00Z,Kolkata,Current,OBD,OBD-II,CAN,0.99,0.98,v1.0,P0420
+OBS-VEH3-000009,SERVICE,VEHICLE,VH-000009,Vehicle-000009,Breakdown Events,Events,count/year,0,2026-07-01T00:00:00Z,NH48,Annual,Enterprise,RSA Logs,Analytics,0.98,0.97,v1.0,
+OBS-VEH3-000010,HEALTH,VEHICLE,VH-000010,Vehicle-000010,Battery Charge Cycles,Cycles,count,682,2026-07-01T00:00:00Z,Hyderabad,Lifetime,BMS,OEM API,BMS,0.98,0.97,v1.0,
+OBS-VEH3-000011,SERVICE,VEHICLE,VH-000011,Vehicle-000011,Last Service Age,Days,days,146,2026-07-01T00:00:00Z,Ahmedabad,Current,Workshop,OEM Service,Records,0.98,0.97,v1.0,
+OBS-VEH3-000012,HEALTH,VEHICLE,VH-000012,Vehicle-000012,Remaining Brake Life,Life,%,64,2026-07-01T00:00:00Z,Goa,Monthly,Workshop,Service Center,Inspection,0.97,0.96,v1.0

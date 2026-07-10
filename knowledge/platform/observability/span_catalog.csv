@@ -1,0 +1,11 @@
+span_id,span_name,parent_operation,component,operation_type,expected_latency_ms,captures_inputs,captures_outputs,description,status
+SPAN-000001,Knowledge Search Span,Knowledge Retrieval,Knowledge Layer,Search,100,TRUE,TRUE,Knowledge lookup,Active
+SPAN-000002,Embedding Search Span,Retriever,Retriever,Vector Search,80,TRUE,TRUE,Embedding retrieval,Active
+SPAN-000003,Reasoning Span,Reasoning Engine,Reasoning,Cognitive,600,TRUE,TRUE,LLM reasoning,Active
+SPAN-000004,Planning Span,Planning Engine,Planning,Planning,500,TRUE,TRUE,Planning operation,Active
+SPAN-000005,Execution Span,Execution Engine,Execution,Workflow,700,TRUE,TRUE,Workflow execution,Active
+SPAN-000006,Governance Span,Governance Engine,Governance,Validation,120,TRUE,TRUE,Governance validation,Active
+SPAN-000007,Evaluation Span,Evaluation Engine,Evaluation,Analytics,250,TRUE,TRUE,Evaluation operation,Active
+SPAN-000008,Agent Coordination Span,Coordinator Agent,Agents,Coordination,300,TRUE,TRUE,Agent coordination,Active
+SPAN-000009,Recommendation Span,Recommendation Engine,Recommendation,Inference,450,TRUE,TRUE,Recommendation generation,Active
+SPAN-000010,Memory Update Span,Memory Layer,Memory,Update,60,TRUE,TRUE,Memory update operation,Active

@@ -1,0 +1,11 @@
+embedding_model_id,model_name,embedding_dimension,supports_multilingual,max_input_tokens,normalized_output,distance_metric,primary_use_case,description,status
+EMBED-000001,Enterprise Embedding Small,768,TRUE,8192,TRUE,Cosine,Semantic Search,General embedding model,Active
+EMBED-000002,Enterprise Embedding Large,1536,TRUE,8192,TRUE,Cosine,Enterprise Search,High quality embeddings,Active
+EMBED-000003,Document Embedding Model,1024,TRUE,16384,TRUE,Cosine,RAG Documents,Document embedding model,Active
+EMBED-000004,Query Embedding Model,768,TRUE,4096,TRUE,Cosine,Query Search,Query embedding model,Active
+EMBED-000005,Code Embedding Model,1024,TRUE,8192,TRUE,Cosine,Code Search,Source code embeddings,Active
+EMBED-000006,Image Embedding Model,1024,FALSE,32768,TRUE,Cosine,Vision Retrieval,Image embeddings,Active
+EMBED-000007,Hybrid Embedding Model,2048,TRUE,16384,TRUE,Cosine,Hybrid Search,Combined embedding model,Active
+EMBED-000008,Fast Embedding Model,384,TRUE,4096,TRUE,Cosine,Low Latency,Fast embeddings,Active
+EMBED-000009,Long Context Embedding,1536,TRUE,32768,TRUE,Cosine,Long Documents,Long-context embeddings,Active
+EMBED-000010,Experimental Embedding,2048,TRUE,65536,TRUE,Cosine,Research,Experimental embedding model,Active

@@ -1,0 +1,11 @@
+metric_id,metric_name,metric_category,measurement_unit,optimization_goal,collection_frequency,business_use,description,status
+PMET-000001,Planning Time,Performance,Milliseconds,Minimize,Realtime,Planner Performance,Time required to generate plan,Active
+PMET-000002,Plan Cost,Financial,Currency,Minimize,Realtime,Cost Optimization,Estimated execution cost,Active
+PMET-000003,Plan Quality,Quality,Score (0-100),Maximize,Realtime,Plan Evaluation,Overall plan quality,Active
+PMET-000004,Constraint Satisfaction,Governance,Percentage,Maximize,Realtime,Compliance,Constraint satisfaction rate,Active
+PMET-000005,Critical Path Length,Scheduling,Tasks,Minimize,Realtime,Scheduling,Critical execution chain,Active
+PMET-000006,Resource Utilization,Resource,Percentage,Maximize,Realtime,Capacity Planning,Resource efficiency,Active
+PMET-000007,Planning Confidence,AI,Score (0-1),Maximize,Realtime,AI Confidence,Planner confidence score,Active
+PMET-000008,Replanning Frequency,Adaptation,Count,Minimize,Daily,Adaptability,Number of replans,Active
+PMET-000009,Goal Completion Rate,Business,Percentage,Maximize,Daily,Business Success,Goal completion success,Active
+PMET-000010,Knowledge Reuse Rate,Knowledge,Percentage,Maximize,Daily,Knowledge Management,Reuse of existing enterprise knowledge,Active

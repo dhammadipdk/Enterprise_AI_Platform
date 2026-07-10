@@ -1,0 +1,11 @@
+health_check_id,component_name,health_indicator,check_frequency,healthy_threshold,degraded_threshold,critical_threshold,auto_recovery,description,status
+HC-000001,Knowledge Layer,Knowledge Availability,30 Seconds,99.9%,99%,98%,TRUE,Knowledge service health,Active
+HC-000002,Memory Layer,Memory Response Time,15 Seconds,<50 ms,<100 ms,<250 ms,TRUE,Memory health,Active
+HC-000003,Planning Engine,Planning Latency,30 Seconds,<500 ms,<1000 ms,<3000 ms,TRUE,Planning engine health,Active
+HC-000004,Execution Engine,Workflow Success Rate,30 Seconds,99%,97%,95%,TRUE,Execution health,Active
+HC-000005,Agent Platform,Active Agent Ratio,30 Seconds,99%,97%,95%,TRUE,Agent runtime health,Active
+HC-000006,Recommendation Engine,Recommendation Accuracy,5 Minutes,95%,90%,85%,FALSE,Recommendation quality health,Active
+HC-000007,Governance Platform,Policy Compliance,1 Minute,100%,99%,98%,FALSE,Governance platform health,Active
+HC-000008,Evaluation Platform,Evaluation Completion,5 Minutes,100%,98%,95%,FALSE,Evaluation health,Active
+HC-000009,Security Platform,Security Status,15 Seconds,Healthy,Warning,Critical,FALSE,Security health monitoring,Active
+HC-000010,Enterprise Platform,Composite Health Index,30 Seconds,95,90,80,TRUE,Overall enterprise platform health,Active

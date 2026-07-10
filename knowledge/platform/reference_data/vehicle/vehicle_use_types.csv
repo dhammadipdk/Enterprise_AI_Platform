@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-USE-000001,PRIVATE,Private Use,Personal non-commercial usage,Active,2026-01-01,,MoRTH,
+REF-USE-000002,COMMERCIAL,Commercial Use,Commercial passenger or goods transport,Active,2026-01-01,,MoRTH,
+REF-USE-000003,TAXI,Taxi,Passenger transport taxi service,Active,2026-01-01,,MoRTH,
+REF-USE-000004,RIDE_SHARING,Ride Sharing,Aggregator platform vehicles,Active,2026-01-01,,MoRTH,
+REF-USE-000005,SELF_DRIVE_RENTAL,Self Drive Rental,Rental vehicle without driver,Active,2026-01-01,,MoRTH,
+REF-USE-000006,GOVERNMENT,Government Use,Government department vehicle,Active,2026-01-01,,Government of India,
+REF-USE-000007,DEFENCE,Defence Use,Military and defence vehicle,Active,2026-01-01,,Government of India,
+REF-USE-000008,AGRICULTURE,Agricultural Use,Farm and agricultural operations,Active,2026-01-01,,MoRTH,
+REF-USE-000009,EMERGENCY,Emergency Services,Ambulance, fire and disaster response vehicles,Active,2026-01-01,,Government of India,
+REF-USE-000010,EDUCATIONAL,Educational Institution,Vehicles owned by educational institutions,Active,2026-01-01,,Government of India,

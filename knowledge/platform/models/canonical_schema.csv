@@ -1,0 +1,11 @@
+field_name,data_type,required,description
+model_id,String,TRUE,Unique model identifier
+model_name,String,TRUE,Model name
+provider,String,TRUE,Hosting provider
+model_family,String,TRUE,Model family
+deployment_type,String,TRUE,Deployment type
+endpoint,String,FALSE,Inference endpoint
+version,String,TRUE,Model version
+status,String,TRUE,Lifecycle status
+owner,String,TRUE,Responsible owner
+metadata,JSON,FALSE,Additional model metadata

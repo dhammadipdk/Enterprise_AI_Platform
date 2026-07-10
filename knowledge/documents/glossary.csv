@@ -1,0 +1,101 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-DOC-000001,Document,Represents a digital or physical insurance-related document.,Documents,Identity,Core,Dynamic,,,File,Policy PDF,Business,Root business concept.
+GLOSS-DOC-000002,Document Identifier,Unique identifier assigned to the document.,Documents,Identity,Core,Stable,Document,,Document ID,DOC-100001,Platform,Primary identifier.
+GLOSS-DOC-000003,Document Name,Official document name.,Documents,Identity,Core,Stable,Document,,File Name,policy.pdf,Business,Display name.
+GLOSS-DOC-000004,Document Type,Classification of document.,Documents,Classification,Core,Stable,Document,,Type,Policy Certificate,Business,References Document Type Master.
+GLOSS-DOC-000005,Document Category,Business category of document.,Documents,Classification,Core,Stable,Document,,Category,Policy,Business,Supports organization.
+GLOSS-DOC-000006,Document Owner,Business entity owning the document.,Documents,Reference,Core,Dynamic,Document,,Owner,Customer,Business,Cross-domain reference.
+GLOSS-DOC-000007,Document Source,Origin of the document.,Documents,Operational,Core,Stable,Document,,Source,Customer Upload,Business,Supports audit.
+GLOSS-DOC-000008,Upload Timestamp,Timestamp when document was uploaded.,Documents,Operational,Core,Stable,Document,,Upload Time,2026-08-15T09:30:00,Business,Audit.
+GLOSS-DOC-000009,Document Status,Current operational status.,Documents,Operational,Derived,Dynamic,Document,Document Lifecycle,,Active,Derived,Workflow.
+GLOSS-DOC-000010,Document Summary,Simplified explanation of document.,Documents,Derived,Derived,Computed,Document,Document Type,,Uploaded policy certificate.,Derived,AI explanation.
+GLOSS-DOC-000011,Document Metadata,Represents descriptive metadata associated with a document.,Documents,Identity,Core,Dynamic,Document,,Metadata,Metadata,Business,Parent concept.
+GLOSS-DOC-000012,File Name,Original filename.,Documents,Identity,Core,Stable,Document Metadata,,Filename,policy.pdf,Business,Original upload.
+GLOSS-DOC-000013,File Extension,Document extension.,Documents,Classification,Core,Stable,Document Metadata,,Extension,PDF,Business,Supports processing.
+GLOSS-DOC-000014,MIME Type,Internet media type.,Documents,Classification,Core,Stable,Document Metadata,,Content Type,application/pdf,Business,Technical metadata.
+GLOSS-DOC-000015,File Size,Document size.,Documents,Operational,Core,Stable,Document Metadata,,Size,2.4 MB,Business,Storage metadata.
+GLOSS-DOC-000016,Page Count,Number of pages.,Documents,Operational,Derived,Computed,Document Metadata,Parser,,6,Derived,Processing.
+GLOSS-DOC-000017,Language,Primary language detected.,Documents,Classification,Derived,Computed,Document Metadata,OCR,,English,Derived,Language detection.
+GLOSS-DOC-000018,Checksum,Hash representing document integrity.,Documents,Identity,Core,Stable,Document Metadata,,SHA256,abc123...,Platform,Integrity.
+GLOSS-DOC-000019,Metadata Completeness,Completeness of metadata.,Documents,Assessment,Derived,Computed,Document Metadata,Metadata Validation,,Complete,Derived,Quality.
+GLOSS-DOC-000020,Metadata Summary,Simplified metadata explanation.,Documents,Derived,Derived,Computed,Document Metadata,Metadata Completeness,,Complete PDF document.,Derived,AI explanation.
+GLOSS-DOC-000021,Document Classification,Represents AI/manual classification of a document.,Documents,Classification,Core,Dynamic,Document,,Classification,Policy,Business,Parent concept.
+GLOSS-DOC-000022,Classification Method,Method used for classification.,Documents,Classification,Core,Stable,Document Classification,,Method,AI Classifier,Business,Processing.
+GLOSS-DOC-000023,Classification Label,Assigned document label.,Documents,Classification,Core,Dynamic,Document Classification,,Label,Driving Licence,Business,Business label.
+GLOSS-DOC-000024,Classification Confidence,Confidence score.,Documents,Assessment,AI Generated,Computed,Document Classification,Classifier,,98%,AI,Decision support.
+GLOSS-DOC-000025,Classification Status,Current classification status.,Documents,Operational,Derived,Dynamic,Document Classification,Workflow,,Completed,Derived,Workflow.
+GLOSS-DOC-000026,Multi-label Indicator,Whether multiple labels exist.,Documents,Operational,Core,Stable,Document Classification,,Multi Label,False,Business,Classification metadata.
+GLOSS-DOC-000027,Primary Label,Primary business label.,Documents,Classification,Derived,Computed,Document Classification,Classification Label,,Policy Certificate,Derived,Search optimization.
+GLOSS-DOC-000028,Secondary Labels,Additional labels.,Documents,Classification,Derived,Computed,Document Classification,Classifier,,Insurance;Policy,Derived,Search.
+GLOSS-DOC-000029,Classification Summary,Simplified explanation of classification.,Documents,Derived,Derived,Computed,Document Classification,Classification Label,,Policy certificate detected.,Derived,AI explanation.
+GLOSS-DOC-000030,Classification Version,Version of classifier used.,Documents,Operational,Core,Stable,Document Classification,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-DOC-000031,OCR Extraction,Represents text extracted from document images.,Documents,Operational,Core,Dynamic,Document,,OCR,Extracted Text,Business,Parent concept.
+GLOSS-DOC-000032,OCR Engine,OCR engine used.,Documents,Operational,Core,Stable,OCR Extraction,,OCR Engine,Tesseract,Business,Processing metadata.
+GLOSS-DOC-000033,Extracted Text,Machine-extracted text.,Documents,Identity,Derived,Computed,OCR Extraction,OCR Engine,,Vehicle Registration...,Derived,Primary output.
+GLOSS-DOC-000034,OCR Confidence,Confidence associated with OCR output.,Documents,Assessment,AI Generated,Computed,OCR Extraction,OCR Engine,,97%,AI,Quality metric.
+GLOSS-DOC-000035,Detected Entities,Named entities extracted from text.,Documents,Derived,AI Generated,Computed,OCR Extraction,NER Engine,,Registration Number,AI,Information extraction.
+GLOSS-DOC-000036,Detected Tables,Structured tables extracted.,Documents,Derived,AI Generated,Computed,OCR Extraction,Table Parser,,Invoice Table,AI,Structured extraction.
+GLOSS-DOC-000037,Detected Signatures,Presence of signatures.,Documents,Derived,AI Generated,Computed,OCR Extraction,Vision Model,,True,AI,Authenticity support.
+GLOSS-DOC-000038,Detected Stamps,Presence of official stamps.,Documents,Derived,AI Generated,Computed,OCR Extraction,Vision Model,,True,AI,Document verification.
+GLOSS-DOC-000039,OCR Status,Current OCR workflow status.,Documents,Operational,Derived,Dynamic,OCR Extraction,Workflow,,Completed,Derived,Workflow.
+GLOSS-DOC-000040,OCR Summary,Simplified explanation of OCR results.,Documents,Derived,Derived,Computed,OCR Extraction,Extracted Text,,Registration details extracted.,Derived,AI explanation.
+GLOSS-DOC-000041,Document Validation,Represents validation performed on uploaded documents.,Documents,Operational,Core,Dynamic,Document,,Validation,Validated,Business,Parent concept.
+GLOSS-DOC-000042,Validation Status,Current validation result.,Documents,Operational,Derived,Computed,Document Validation,Validation Rules,,Passed,Derived,Workflow.
+GLOSS-DOC-000043,Integrity Verification,Verification of document integrity.,Documents,Assessment,Derived,Computed,Document Validation,Checksum,,Verified,Derived,Security.
+GLOSS-DOC-000044,Authenticity Verification,Verification of document authenticity.,Documents,Assessment,AI Generated,Computed,Document Validation,Validation Engine,,Verified,AI,Fraud prevention.
+GLOSS-DOC-000045,Expiry Verification,Verification that document remains valid.,Documents,Assessment,Derived,Computed,Document Validation,Expiry Date,,Valid,Derived,Business.
+GLOSS-DOC-000046,Tampering Indicator,Indicates whether tampering is suspected.,Documents,Assessment,AI Generated,Computed,Document Validation,Tampering Engine,,False,AI,Security.
+GLOSS-DOC-000047,Validation Errors,Validation issues identified.,Documents,Identity,Derived,Computed,Document Validation,Validation Engine,,None,Derived,Operational.
+GLOSS-DOC-000048,Validation Confidence,Confidence associated with validation.,Documents,Assessment,AI Generated,Computed,Document Validation,Validation Engine,,99%,AI,Automation.
+GLOSS-DOC-000049,Validation Summary,Simplified validation explanation.,Documents,Derived,Derived,Computed,Document Validation,Validation Status,,Document successfully validated.,Derived,AI explanation.
+GLOSS-DOC-000050,Validation Timestamp,Timestamp of latest validation.,Documents,Operational,Core,Stable,Document Validation,,Validation Time,2026-08-15T09:45:00,Business,Audit.
+GLOSS-DOC-000051,Document Relationship,Represents business relationships between documents and insurance entities.,Documents,Reference,Core,Dynamic,Document,,Relationship,Linked Policy,Business,Parent business concept.
+GLOSS-DOC-000052,Related Entity Type,Business entity type associated with the document.,Documents,Reference,Core,Stable,Document Relationship,,Entity Type,Policy,Business,Cross-domain reference.
+GLOSS-DOC-000053,Related Entity Identifier,Identifier of the linked business entity.,Documents,Reference,Core,Stable,Document Relationship,,Entity ID,POL-100001,Business,Foreign reference.
+GLOSS-DOC-000054,Relationship Type,Classification of document relationship.,Documents,Classification,Core,Stable,Document Relationship,,Relationship,Supporting Document,Business,Relationship semantics.
+GLOSS-DOC-000055,Primary Document Indicator,Indicates whether this is the primary document for the business entity.,Documents,Operational,Core,Stable,Document Relationship,,Primary,True,Business,Supports retrieval.
+GLOSS-DOC-000056,Reference Priority,Priority of the document relationship.,Documents,Classification,Derived,Computed,Document Relationship,Relationship Rules,,High,Derived,Search optimization.
+GLOSS-DOC-000057,Relationship Status,Current relationship status.,Documents,Operational,Derived,Dynamic,Document Relationship,Relationship Workflow,,Active,Derived,Workflow.
+GLOSS-DOC-000058,Cross Reference Count,Number of business entities referencing the document.,Documents,Operational,Derived,Computed,Document Relationship,Relationship Graph,,3,Derived,Analytics.
+GLOSS-DOC-000059,Relationship Summary,Simplified explanation of document relationships.,Documents,Derived,Derived,Computed,Document Relationship,Related Entity Type,,Linked to policy and claim.,Derived,AI explanation.
+GLOSS-DOC-000060,Relationship Confidence,Confidence associated with automatic linking.,Documents,Assessment,AI Generated,Computed,Document Relationship,Relationship Engine,,98%,AI,Automation.
+GLOSS-DOC-000061,Document Version,Represents version history of the document.,Documents,Operational,Core,Dynamic,Document,,Version,Version 2,Business,Parent business concept.
+GLOSS-DOC-000062,Version Identifier,Unique identifier assigned to document version.,Documents,Identity,Core,Stable,Document Version,,Version ID,VER-100001,Platform,Primary identifier.
+GLOSS-DOC-000063,Version Number,Sequential version number.,Documents,Operational,Core,Stable,Document Version,,Version,2,Business,Version control.
+GLOSS-DOC-000064,Previous Version,Reference to previous version.,Documents,Reference,Core,Stable,Document Version,,Previous Version,VER-100000,Business,Version lineage.
+GLOSS-DOC-000065,Version Reason,Reason for creating a new version.,Documents,Identity,Core,Dynamic,Document Version,,Reason,Updated RC,Business,Audit trail.
+GLOSS-DOC-000066,Version Timestamp,Timestamp when version was created.,Documents,Operational,Core,Stable,Document Version,,Version Time,2026-08-18T14:20:00,Business,Audit.
+GLOSS-DOC-000067,Current Version Indicator,Indicates whether this is the latest version.,Documents,Operational,Derived,Computed,Document Version,Version History,,True,Derived,Version management.
+GLOSS-DOC-000068,Version Status,Current version status.,Documents,Operational,Derived,Dynamic,Document Version,Lifecycle,,Active,Derived,Workflow.
+GLOSS-DOC-000069,Version Summary,Simplified explanation of version history.,Documents,Derived,Derived,Computed,Document Version,Version Number,,Current version 2.,Derived,AI explanation.
+GLOSS-DOC-000070,Version Integrity,Integrity verification across versions.,Documents,Assessment,Derived,Computed,Document Version,Checksum,,Verified,Derived,Governance.
+GLOSS-DOC-000071,Document Storage,Represents storage metadata associated with the document.,Documents,Operational,Core,Dynamic,Document,,Storage,Object Storage,Business,Parent business concept.
+GLOSS-DOC-000072,Storage Identifier,Unique storage identifier.,Documents,Identity,Core,Stable,Document Storage,,Storage ID,STO-100001,Platform,Primary identifier.
+GLOSS-DOC-000073,Storage Provider,Underlying storage platform.,Documents,Reference,Core,Stable,Document Storage,,Provider,S3 Compatible,Business,Infrastructure.
+GLOSS-DOC-000074,Storage Location,Logical storage path.,Documents,Reference,Core,Stable,Document Storage,,Location,/documents/policy/,Business,Storage metadata.
+GLOSS-DOC-000075,Encryption Status,Indicates whether document is encrypted.,Documents,Operational,Core,Stable,Document Storage,,Encrypted,True,Business,Security.
+GLOSS-DOC-000076,Retention Policy,Retention rule applied to document.,Documents,Reference,Core,Stable,Document Storage,,Retention,7 Years,Regulatory,Compliance.
+GLOSS-DOC-000077,Archive Status,Indicates whether document is archived.,Documents,Operational,Derived,Dynamic,Document Storage,Lifecycle,,False,Derived,Storage lifecycle.
+GLOSS-DOC-000078,Backup Status,Current backup status.,Documents,Operational,Derived,Dynamic,Document Storage,Backup Workflow,,Completed,Derived,Disaster recovery.
+GLOSS-DOC-000079,Storage Summary,Simplified explanation of storage information.,Documents,Derived,Derived,Computed,Document Storage,Storage Provider,,Stored securely in encrypted repository.,Derived,AI explanation.
+GLOSS-DOC-000080,Storage Health,Operational health of document storage.,Documents,Assessment,Derived,Computed,Document Storage,Monitoring,,Healthy,Derived,Infrastructure KPI.
+GLOSS-DOC-000081,Document Lifecycle,Represents operational lifecycle of the document.,Documents,Operational,Core,Dynamic,Document,,Lifecycle,Active,Business,Parent business concept.
+GLOSS-DOC-000082,Lifecycle Stage,Current lifecycle stage.,Documents,Operational,Derived,Dynamic,Document Lifecycle,Workflow,,Validated,Derived,Workflow.
+GLOSS-DOC-000083,Approval Status,Approval status of the document.,Documents,Operational,Derived,Dynamic,Document Lifecycle,Approval Workflow,,Approved,Derived,Business.
+GLOSS-DOC-000084,Review Status,Current review status.,Documents,Operational,Derived,Dynamic,Document Lifecycle,Review Workflow,,Reviewed,Derived,Governance.
+GLOSS-DOC-000085,Expiry Status,Indicates whether document has expired.,Documents,Operational,Derived,Computed,Document Lifecycle,Expiry Verification,,Valid,Derived,Compliance.
+GLOSS-DOC-000086,Deletion Eligibility,Eligibility for permanent deletion.,Documents,Operational,Derived,Computed,Document Lifecycle,Retention Policy,,False,Derived,Governance.
+GLOSS-DOC-000087,Lifecycle Timeline,Chronological document events.,Documents,Derived,Derived,Computed,Document Lifecycle,Workflow History,,Upload → OCR → Validation → Active.,Derived,Operational history.
+GLOSS-DOC-000088,Lifecycle Summary,Simplified explanation of lifecycle.,Documents,Derived,Derived,Computed,Document Lifecycle,Lifecycle Stage,,Document active and validated.,Derived,AI explanation.
+GLOSS-DOC-000089,Document Assessment,Represents AI-generated assessment of document quality and usefulness.,Documents,Assessment,AI Generated,Computed,Document,,Assessment,High Quality,AI,Parent AI concept.
+GLOSS-DOC-000090,Document Quality Score,Overall quality score.,Documents,Assessment,AI Generated,Computed,Document Assessment,Assessment Engine,,96,AI,Quality KPI.
+GLOSS-DOC-000091,Readability Score,Readability assessment.,Documents,Assessment,AI Generated,Computed,Document Assessment,OCR Engine,,98,AI,OCR quality.
+GLOSS-DOC-000092,Completeness Score,Completeness assessment.,Documents,Assessment,AI Generated,Computed,Document Assessment,Validation Engine,,95,AI,Data quality.
+GLOSS-DOC-000093,Authenticity Score,Estimated authenticity score.,Documents,Assessment,AI Generated,Computed,Document Assessment,Authenticity Engine,,99,AI,Fraud prevention.
+GLOSS-DOC-000094,Searchability Score,Document retrieval quality score.,Documents,Assessment,AI Generated,Computed,Document Assessment,Index Engine,,94,AI,Search optimization.
+GLOSS-DOC-000095,Assessment Confidence,Confidence associated with AI assessment.,Documents,Assessment,AI Generated,Computed,Document Assessment,Assessment Engine,,98%,AI,Automation.
+GLOSS-DOC-000096,Optimization Recommendation,AI recommendation for improving document quality.,Documents,Derived,AI Generated,Computed,Document Assessment,Optimization Engine,,Upload higher resolution scan.,AI,Quality improvement.
+GLOSS-DOC-000097,Assessment Version,Version of assessment methodology.,Documents,Operational,Core,Stable,Document Assessment,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-DOC-000098,Assessment Timestamp,Timestamp of latest assessment.,Documents,Operational,Core,Stable,Document Assessment,,Assessment Time,2026-08-15T10:15:00,Business,Audit.
+GLOSS-DOC-000099,Assessment Summary,Overall explanation of document assessment.,Documents,Derived,Derived,Computed,Document Assessment,Document Quality Score,,High-quality validated document.,Derived,Executive summary.
+GLOSS-DOC-000100,Document Intelligence Summary,Natural-language summary of document understanding.,Documents,Derived,AI Generated,Computed,Document Assessment,LLM Pipeline,,Policy certificate extracted successfully with verified customer and vehicle details.,AI,Explainable AI.

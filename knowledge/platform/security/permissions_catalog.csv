@@ -1,0 +1,11 @@
+permission_id,permission_name,resource_type,action,risk_level,approval_required,auditable,description,status
+PERM-000001,Read Customer Profile,Customer,READ,Low,FALSE,TRUE,View customer profile,Active
+PERM-000002,Update Customer Profile,Customer,WRITE,Medium,FALSE,TRUE,Modify customer profile,Active
+PERM-000003,Approve Claim,Claim,APPROVE,High,TRUE,TRUE,Approve insurance claim,Active
+PERM-000004,Reject Claim,Claim,REJECT,High,TRUE,TRUE,Reject insurance claim,Active
+PERM-000005,Publish Knowledge,Knowledge,PUBLISH,High,TRUE,TRUE,Publish enterprise knowledge,Active
+PERM-000006,Execute Workflow,Workflow,EXECUTE,Medium,FALSE,TRUE,Execute enterprise workflow,Active
+PERM-000007,Invoke AI Agent,Agent,INVOKE,Medium,FALSE,TRUE,Invoke AI agent,Active
+PERM-000008,Deploy Model,Model,DEPLOY,Critical,TRUE,TRUE,Deploy production model,Active
+PERM-000009,Manage Secrets,Security,MANAGE,Critical,TRUE,TRUE,Manage enterprise secrets,Active
+PERM-000010,View Audit Logs,Audit,READ,High,TRUE,TRUE,Read audit logs,Active

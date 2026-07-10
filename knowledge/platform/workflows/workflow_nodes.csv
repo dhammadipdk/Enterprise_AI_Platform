@@ -1,0 +1,11 @@
+node_id,node_name,node_type,execution_component,input_type,output_type,retry_supported,checkpoint_required,description,status
+NODE-000001,Receive Request,Gateway,Gateway,None,Validated Request,FALSE,FALSE,Workflow entry point,Active
+NODE-000002,Retrieve Knowledge,RAG,Knowledge Layer,Query,Knowledge Context,TRUE,FALSE,Retrieve enterprise knowledge,Active
+NODE-000003,Resolve Memory,Memory,Memory Layer,Session,Memory Context,TRUE,FALSE,Retrieve conversation memory,Active
+NODE-000004,Compile Prompt,Prompt Compiler,Prompt Engine,Context,Compiled Prompt,TRUE,FALSE,Compile enterprise prompt,Active
+NODE-000005,Route Model,Model Router,Model Platform,Prompt,Selected Model,TRUE,FALSE,Select best model,Active
+NODE-000006,Inference,LLM,Inference Engine,Prompt,LLM Output,TRUE,TRUE,Execute model inference,Active
+NODE-000007,Evaluate Response,Evaluation,Evaluation Platform,Response,Quality Score,TRUE,FALSE,Evaluate output quality,Active
+NODE-000008,Governance Check,Governance,Governance Platform,Response,Approved Response,TRUE,FALSE,Governance validation,Active
+NODE-000009,Deliver Response,Output,Gateway,Approved Response,Customer Response,FALSE,FALSE,Return response,Active
+NODE-000010,Persist Memory,Memory Update,Memory Layer,Conversation,Stored Memory,TRUE,TRUE,Store conversation memory,Active

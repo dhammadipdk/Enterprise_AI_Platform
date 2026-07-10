@@ -1,0 +1,11 @@
+learning_id,learning_source,feedback_type,target_component,learning_action,trigger_condition,validation_required,automatic_update,business_value,description,status
+LEARN-000001,Knowledge Evaluation,Accuracy Feedback,Knowledge Layer,Update Knowledge,Knowledge Gap Detected,TRUE,FALSE,Improve Knowledge,Knowledge improvement cycle,Active
+LEARN-000002,Retrieval Evaluation,Recall Feedback,Retriever,Retrain Retriever,Recall Below Threshold,TRUE,FALSE,Improve Retrieval,Retrieval optimization,Active
+LEARN-000003,Reasoning Evaluation,Reasoning Feedback,Reasoning Engine,Prompt Refinement,Reasoning Failure,TRUE,FALSE,Improve Reasoning,Reasoning improvement,Active
+LEARN-000004,Planning Evaluation,Planning Feedback,Planning Engine,Update Planning Strategy,Low Planning Score,TRUE,FALSE,Improve Planning,Planning optimization,Active
+LEARN-000005,Execution Evaluation,Execution Feedback,Execution Engine,Update Workflow,Repeated Failures,TRUE,FALSE,Improve Reliability,Execution improvement,Active
+LEARN-000006,Agent Evaluation,Capability Feedback,Agent Platform,Improve Capabilities,Low Agent Score,TRUE,FALSE,Improve Agents,Agent capability enhancement,Active
+LEARN-000007,Business KPI,Business Feedback,Recommendation Engine,Retrain Recommendation Model,Low Acceptance Rate,TRUE,FALSE,Increase Business Value,Recommendation optimization,Active
+LEARN-000008,Human Feedback,Expert Feedback,Entire Platform,Knowledge Incorporation,Manual Review,TRUE,FALSE,Enterprise Learning,Human-in-the-loop learning,Active
+LEARN-000009,Production Monitoring,Operational Feedback,Entire Platform,Continuous Optimization,Performance Drift,TRUE,TRUE,Operational Excellence,Continuous monitoring loop,Active
+LEARN-000010,Enterprise Governance,Governance Feedback,Entire Platform,Platform Evolution,Governance Review,TRUE,FALSE,Enterprise Improvement,Strategic improvement cycle,Active

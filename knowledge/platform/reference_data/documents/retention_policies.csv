@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-RET-000001,CLAIM_7Y,Claims Records 7 Years,Retain claim documents for seven years unless regulations require longer retention,Active,2026-01-01,,Enterprise Policy,
+REF-RET-000002,POLICY_7Y,Policy Records 7 Years,Retain policy documents for seven years after policy closure unless regulations require longer retention,Active,2026-01-01,,Enterprise Policy,
+REF-RET-000003,KYC_ACTIVE,KYC During Relationship,KYC documents retained while the customer relationship is active and for the applicable post-closure retention period,Active,2026-01-01,,Regulatory Policy,
+REF-RET-000004,LEGAL_HOLD,Legal Hold,Retain until legal hold is released,Active,2026-01-01,,Legal Department,
+REF-RET-000005,PERMANENT,Permanent Retention,Never automatically deleted,Active,2026-01-01,,Enterprise Policy,

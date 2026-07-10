@@ -1,0 +1,11 @@
+id,value,business_definition,category,display_order,status,introduced_version,deprecated_version,remarks
+CC-000001,Identity,Defines identity and identification concepts.,Business,1,Active,1.0.0,,
+CC-000002,Classification,Defines categorization concepts.,Business,2,Active,1.0.0,,
+CC-000003,Profile,Defines descriptive profile information.,Business,3,Active,1.0.0,,
+CC-000004,Relationship,Defines business relationships.,Business,4,Active,1.0.0,,Mainly ontology.
+CC-000005,Operational,Defines operational business concepts.,Business,5,Active,1.0.0,,
+CC-000006,Financial,Defines monetary concepts.,Business,6,Active,1.0.0,,
+CC-000007,Risk,Defines insurance risk concepts.,Business,7,Active,1.0.0,,
+CC-000008,Regulatory,Defines regulatory concepts.,Business,8,Active,1.0.0,,
+CC-000009,Reference,Defines master reference concepts.,Business,9,Active,1.0.0,,
+CC-000010,Derived,Defines computed business concepts.,Business,10,Active,1.0.0,,

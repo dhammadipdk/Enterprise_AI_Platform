@@ -1,0 +1,11 @@
+execution_event_id,event_name,event_category,event_source,event_severity,event_trigger,event_payload,recorded_in_audit,description,status
+EVENT-000001,Workflow Started,Lifecycle,Workflow Engine,Info,Execution Created,Workflow Metadata,TRUE,Workflow execution begins,Active
+EVENT-000002,Memory Loaded,Memory,Memory Service,Info,Memory Retrieved,Memory Context,FALSE,Runtime memory loaded,Active
+EVENT-000003,Knowledge Retrieved,Knowledge,Knowledge Graph,Info,Graph Query,Subgraph,FALSE,Knowledge graph retrieved,Active
+EVENT-000004,Reasoning Completed,Reasoning,Reasoning Engine,Info,Reasoning Finished,Decision Context,TRUE,Reasoning completed,Active
+EVENT-000005,Recommendation Generated,Business,Recommendation Engine,Info,Recommendation Ready,Recommendation,FALSE,Recommendation available,Active
+EVENT-000006,Validation Failed,Governance,Rules Engine,Warning,Policy Violation,Validation Result,TRUE,Validation failed,Active
+EVENT-000007,Retry Initiated,Recovery,Execution Engine,Warning,Retry Policy,Retry Context,TRUE,Retry execution started,Active
+EVENT-000008,Rollback Started,Recovery,Execution Engine,Critical,Rollback Policy,Rollback Context,TRUE,Rollback initiated,Active
+EVENT-000009,Workflow Completed,Lifecycle,Workflow Engine,Info,Execution Success,Execution Summary,TRUE,Workflow completed successfully,Active
+EVENT-000010,Workflow Failed,Lifecycle,Execution Engine,Critical,Fatal Failure,Failure Report,TRUE,Workflow terminated,Active

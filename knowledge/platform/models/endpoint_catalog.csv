@@ -1,0 +1,11 @@
+endpoint_id,endpoint_name,endpoint_type,protocol,authentication,streaming_supported,max_context_tokens,description,status
+MODEL-END-000001,foundation-prod,Inference,gRPC,mTLS,TRUE,128000,Foundation model endpoint,Active
+MODEL-END-000002,embedding-prod,Inference,gRPC,mTLS,FALSE,8192,Embedding endpoint,Active
+MODEL-END-000003,reranker-prod,Inference,gRPC,mTLS,FALSE,16384,Reranker endpoint,Active
+MODEL-END-000004,vision-prod,Inference,REST,OAuth2,FALSE,32768,Vision endpoint,Active
+MODEL-END-000005,speech-prod,Inference,gRPC,mTLS,TRUE,65536,Speech endpoint,Active
+MODEL-END-000006,recommendation-prod,Inference,REST,OAuth2,FALSE,4096,Business recommendation endpoint,Active
+MODEL-END-000007,fraud-prod,Inference,REST,mTLS,FALSE,4096,Fraud detection endpoint,Active
+MODEL-END-000008,evaluation-prod,Inference,gRPC,mTLS,FALSE,8192,Evaluation endpoint,Active
+MODEL-END-000009,sandbox,Research,REST,None,TRUE,131072,Experimental endpoint,Active
+MODEL-END-000010,backup-prod,Inference,gRPC,mTLS,TRUE,128000,Disaster recovery endpoint,Active

@@ -1,0 +1,102 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-REG-000001,Regulation,Represents an authoritative regulatory requirement governing insurance operations.,Regulatory,Identity,Core,Dynamic,,,Regulatory Rule,IRDAI Motor Regulation,Business,Root business concept.
+GLOSS-REG-000002,Regulation Identifier,Unique identifier assigned to the regulation.,Regulatory,Identity,Core,Stable,Regulation,,Regulation ID,REG-100001,Platform,Primary identifier.
+GLOSS-REG-000003,Regulation Name,Official title of the regulation.,Regulatory,Identity,Core,Stable,Regulation,,Title,Motor Insurance Service Regulations,Business,Official name.
+GLOSS-REG-000004,Regulation Category,Classification of regulation.,Regulatory,Classification,Core,Stable,Regulation,,Category,Claims Settlement,Business,Supports organization.
+GLOSS-REG-000005,Regulation Scope,Business scope governed by the regulation.,Regulatory,Classification,Core,Stable,Regulation,,Scope,Motor Insurance,Business,Applicability.
+GLOSS-REG-000006,Regulation Status,Current operational status.,Regulatory,Operational,Derived,Dynamic,Regulation,Regulatory Lifecycle,,Active,Derived,Lifecycle.
+GLOSS-REG-000007,Effective Date,Date from which regulation becomes effective.,Regulatory,Operational,Core,Stable,Regulation,,Effective Date,2024-04-01,Regulatory,Legal metadata.
+GLOSS-REG-000008,Expiry Date,Date on which regulation expires if applicable.,Regulatory,Operational,Core,Stable,Regulation,,Expiry Date,2030-03-31,Regulatory,Legal metadata.
+GLOSS-REG-000009,Issuing Authority,Authority issuing the regulation.,Regulatory,Reference,Core,Stable,Regulation,,Authority,IRDAI,Regulatory,Foreign reference.
+GLOSS-REG-000010,Regulation Summary,Simplified explanation of regulation.,Regulatory,Derived,Derived,Computed,Regulation,Regulation Name,,Motor insurance service regulation.,Derived,AI explanation.
+GLOSS-REG-000011,Regulatory Authority,Represents an organization responsible for issuing regulations.,Regulatory,Identity,Core,Stable,Regulation,,Authority,IRDAI,Business,Parent concept.
+GLOSS-REG-000012,Authority Identifier,Unique authority identifier.,Regulatory,Identity,Core,Stable,Regulatory Authority,,Authority ID,AUTH-100001,Platform,Primary identifier.
+GLOSS-REG-000013,Authority Name,Official authority name.,Regulatory,Identity,Core,Stable,Regulatory Authority,,Authority Name,Insurance Regulatory and Development Authority of India,Regulatory,Official title.
+GLOSS-REG-000014,Authority Type,Classification of authority.,Regulatory,Classification,Core,Stable,Regulatory Authority,,Authority Type,Regulator,Regulatory,Supports categorization.
+GLOSS-REG-000015,Jurisdiction,Geographical jurisdiction governed by the authority.,Regulatory,Reference,Core,Stable,Regulatory Authority,,Jurisdiction,India,Regulatory,Applicability.
+GLOSS-REG-000016,Authority Website,Official information source.,Regulatory,Reference,Core,Stable,Regulatory Authority,,Website,irdai.gov.in,Regulatory,Reference.
+GLOSS-REG-000017,Authority Status,Current authority status.,Regulatory,Operational,Core,Stable,Regulatory Authority,,Status,Active,Regulatory,Operational.
+GLOSS-REG-000018,Authority Description,Business description of authority.,Regulatory,Identity,Core,Stable,Regulatory Authority,,Description,Insurance regulator.,Regulatory,Knowledge.
+GLOSS-REG-000019,Authority Summary,Simplified authority explanation.,Regulatory,Derived,Derived,Computed,Regulatory Authority,Authority Name,,National insurance regulator.,Derived,AI explanation.
+GLOSS-REG-000020,Authority Confidence,Confidence associated with authority mapping.,Regulatory,Assessment,AI Generated,Computed,Regulatory Authority,Knowledge Engine,,100%,AI,Knowledge integrity.
+GLOSS-REG-000021,Legal Reference,Represents statutory acts, rules or legal provisions supporting regulations.,Regulatory,Identity,Core,Stable,Regulation,,Legal Citation,Motor Vehicles Act,Business,Parent concept.
+GLOSS-REG-000022,Reference Identifier,Unique legal reference identifier.,Regulatory,Identity,Core,Stable,Legal Reference,,Reference ID,LAW-100001,Platform,Primary identifier.
+GLOSS-REG-000023,Act Name,Official act or statute name.,Regulatory,Identity,Core,Stable,Legal Reference,,Act Name,Motor Vehicles Act 1988,Regulatory,Official citation.
+GLOSS-REG-000024,Section Reference,Section or clause identifier.,Regulatory,Reference,Core,Stable,Legal Reference,,Section,Section 146,Regulatory,Legal citation.
+GLOSS-REG-000025,Provision Summary,Summary of legal provision.,Regulatory,Derived,Core,Stable,Legal Reference,,Provision,Mandatory third-party insurance.,Regulatory,Knowledge.
+GLOSS-REG-000026,Legal Applicability,Business applicability of the provision.,Regulatory,Classification,Core,Stable,Legal Reference,,Applicability,Private Cars,Regulatory,Scope.
+GLOSS-REG-000027,Legal Status,Current legal status.,Regulatory,Operational,Derived,Dynamic,Legal Reference,Regulatory Lifecycle,,In Force,Derived,Lifecycle.
+GLOSS-REG-000028,Citation Format,Canonical legal citation.,Regulatory,Reference,Core,Stable,Legal Reference,,Citation,MVA 1988 Sec.146,Regulatory,Standard citation.
+GLOSS-REG-000029,Reference Summary,Simplified legal explanation.,Regulatory,Derived,Derived,Computed,Legal Reference,Act Name,,Mandatory third-party insurance requirement.,Derived,AI explanation.
+GLOSS-REG-000030,Reference Confidence,Confidence associated with legal mapping.,Regulatory,Assessment,AI Generated,Computed,Legal Reference,Knowledge Engine,,99%,AI,Knowledge quality.
+GLOSS-REG-000031,Circular,Represents regulatory circulars, notifications and advisories.,Regulatory,Identity,Core,Dynamic,Regulation,,Notification,IRDAI Circular,Business,Parent concept.
+GLOSS-REG-000032,Circular Identifier,Unique circular identifier.,Regulatory,Identity,Core,Stable,Circular,,Circular ID,CIR-100001,Platform,Primary identifier.
+GLOSS-REG-000033,Circular Number,Official circular number.,Regulatory,Identity,Core,Stable,Circular,,Circular No.,IRDAI/NL/CIR/001,Regulatory,Official reference.
+GLOSS-REG-000034,Circular Issue Date,Issue date of circular.,Regulatory,Operational,Core,Stable,Circular,,Issue Date,2024-05-10,Regulatory,Legal metadata.
+GLOSS-REG-000035,Circular Subject,Subject of circular.,Regulatory,Identity,Core,Stable,Circular,,Subject,Claim Settlement Timelines,Regulatory,Official title.
+GLOSS-REG-000036,Circular Applicability,Business applicability.,Regulatory,Classification,Core,Stable,Circular,,Applicability,Motor Insurance,Regulatory,Scope.
+GLOSS-REG-000037,Circular Status,Current status.,Regulatory,Operational,Derived,Dynamic,Circular,Regulatory Lifecycle,,Active,Derived,Lifecycle.
+GLOSS-REG-000038,Superseded Circular,Reference to previous circular.,Regulatory,Reference,Core,Stable,Circular,,Supersedes,CIR-099999,Regulatory,Version chain.
+GLOSS-REG-000039,Circular Summary,Simplified circular explanation.,Regulatory,Derived,Derived,Computed,Circular,Circular Subject,,Updated claim settlement timelines.,Derived,AI explanation.
+GLOSS-REG-000040,Circular Confidence,Confidence associated with circular interpretation.,Regulatory,Assessment,AI Generated,Computed,Circular,Knowledge Engine,,98%,AI,Knowledge quality.
+GLOSS-REG-000041,Business Rule,Represents executable insurance business rules derived from regulations.,Regulatory,Identity,Core,Dynamic,Regulation,,Rule,Cashless Eligibility Rule,Business,Parent concept.
+GLOSS-REG-000042,Rule Identifier,Unique business rule identifier.,Regulatory,Identity,Core,Stable,Business Rule,,Rule ID,RULE-100001,Platform,Primary identifier.
+GLOSS-REG-000043,Rule Name,Official business rule name.,Regulatory,Identity,Core,Stable,Business Rule,,Rule Name,Claim Settlement Timeline,Regulatory,Business identifier.
+GLOSS-REG-000044,Rule Category,Classification of business rule.,Regulatory,Classification,Core,Stable,Business Rule,,Category,Claims,Regulatory,Organization.
+GLOSS-REG-000045,Rule Trigger,Business condition activating the rule.,Regulatory,Operational,Core,Dynamic,Business Rule,,Trigger,Claim Submitted,Business,Execution.
+GLOSS-REG-000046,Rule Outcome,Expected outcome after execution.,Regulatory,Operational,Core,Dynamic,Business Rule,,Outcome,Settlement within SLA,Business,Rule consequence.
+GLOSS-REG-000047,Rule Priority,Execution priority.,Regulatory,Classification,Derived,Computed,Business Rule,Rule Engine,,High,Derived,Conflict resolution.
+GLOSS-REG-000048,Rule Status,Current operational status.,Regulatory,Operational,Derived,Dynamic,Business Rule,Regulatory Lifecycle,,Active,Derived,Lifecycle.
+GLOSS-REG-000049,Rule Summary,Simplified explanation of business rule.,Regulatory,Derived,Derived,Computed,Business Rule,Rule Name,,Claims must be settled within prescribed timelines.,Derived,AI explanation.
+GLOSS-REG-000050,Rule Confidence,Confidence associated with rule interpretation.,Regulatory,Assessment,AI Generated,Computed,Business Rule,Rule Engine,,99%,AI,Automation.
+GLOSS-REG-000051,Compliance Requirement,Represents a mandatory regulatory compliance obligation.,Regulatory,Identity,Core,Dynamic,Regulation,,Compliance Requirement,IRDAI Compliance,Business,Parent business concept.
+GLOSS-REG-000052,Compliance Identifier,Unique identifier assigned to the compliance requirement.,Regulatory,Identity,Core,Stable,Compliance Requirement,,Compliance ID,COMP-100001,Platform,Primary identifier.
+GLOSS-REG-000053,Compliance Category,Classification of compliance requirement.,Regulatory,Classification,Core,Stable,Compliance Requirement,,Category,Claims Compliance,Regulatory,Organization.
+GLOSS-REG-000054,Compliance Scope,Business scope governed by compliance.,Regulatory,Classification,Core,Stable,Compliance Requirement,,Scope,Motor Insurance,Regulatory,Applicability.
+GLOSS-REG-000055,Compliance Trigger,Business event triggering compliance.,Regulatory,Operational,Core,Dynamic,Compliance Requirement,,Trigger,Claim Settlement,Business,Execution.
+GLOSS-REG-000056,Compliance Status,Current compliance status.,Regulatory,Operational,Derived,Dynamic,Compliance Requirement,Regulatory Lifecycle,,Satisfied,Derived,Lifecycle.
+GLOSS-REG-000057,Compliance Severity,Business severity associated with non-compliance.,Regulatory,Classification,Derived,Computed,Compliance Requirement,Rule Engine,,High,Derived,Risk.
+GLOSS-REG-000058,Compliance Evidence,Evidence demonstrating compliance.,Regulatory,Reference,Core,Dynamic,Compliance Requirement,,Evidence,Settlement Record,Business,Audit.
+GLOSS-REG-000059,Compliance Summary,Simplified compliance explanation.,Regulatory,Derived,Derived,Computed,Compliance Requirement,Compliance Status,,Compliance satisfied.,Derived,AI explanation.
+GLOSS-REG-000060,Compliance Confidence,Confidence associated with compliance evaluation.,Regulatory,Assessment,AI Generated,Computed,Compliance Requirement,Compliance Engine,,99%,AI,Decision support.
+GLOSS-REG-000061,Rule Version,Represents version history of regulatory rules.,Regulatory,Operational,Core,Dynamic,Business Rule,,Version,Version 2,Business,Parent concept.
+GLOSS-REG-000062,Version Identifier,Unique version identifier.,Regulatory,Identity,Core,Stable,Rule Version,,Version ID,VER-100001,Platform,Primary identifier.
+GLOSS-REG-000063,Version Number,Sequential version number.,Regulatory,Operational,Core,Stable,Rule Version,,Version,2,Platform,Versioning.
+GLOSS-REG-000064,Previous Version,Reference to previous version.,Regulatory,Reference,Core,Stable,Rule Version,,Previous Version,VER-100000,Business,Lineage.
+GLOSS-REG-000065,Version Effective Date,Effective date of version.,Regulatory,Operational,Core,Stable,Rule Version,,Effective Date,2024-04-01,Regulatory,Legal metadata.
+GLOSS-REG-000066,Version Reason,Reason for new version.,Regulatory,Identity,Core,Dynamic,Rule Version,,Reason,IRDAI Amendment,Regulatory,Audit.
+GLOSS-REG-000067,Current Version Indicator,Indicates latest version.,Regulatory,Operational,Derived,Computed,Rule Version,Version History,,True,Derived,Version management.
+GLOSS-REG-000068,Version Status,Current version lifecycle state.,Regulatory,Operational,Derived,Dynamic,Rule Version,Regulatory Lifecycle,,Active,Derived,Lifecycle.
+GLOSS-REG-000069,Version Summary,Simplified version explanation.,Regulatory,Derived,Derived,Computed,Rule Version,Version Number,,Current rule version.,Derived,AI explanation.
+GLOSS-REG-000070,Version Integrity,Integrity verification across versions.,Regulatory,Assessment,Derived,Computed,Rule Version,Knowledge Engine,,Verified,Derived,Governance.
+GLOSS-REG-000071,Regulatory Lifecycle,Represents operational lifecycle of regulations.,Regulatory,Operational,Core,Dynamic,Regulation,,Lifecycle,Active,Business,Parent concept.
+GLOSS-REG-000072,Lifecycle Stage,Current lifecycle stage.,Regulatory,Operational,Derived,Dynamic,Regulatory Lifecycle,Workflow,,Published,Derived,Workflow.
+GLOSS-REG-000073,Publication Status,Publication status of regulation.,Regulatory,Operational,Derived,Dynamic,Regulatory Lifecycle,Publication Workflow,,Published,Derived,Operations.
+GLOSS-REG-000074,Review Status,Current review status.,Regulatory,Operational,Derived,Dynamic,Regulatory Lifecycle,Review Workflow,,Reviewed,Derived,Governance.
+GLOSS-REG-000075,Superseded Indicator,Indicates whether regulation is superseded.,Regulatory,Operational,Derived,Computed,Regulatory Lifecycle,Version History,,False,Derived,Lifecycle.
+GLOSS-REG-000076,Retirement Status,Current retirement status.,Regulatory,Operational,Derived,Dynamic,Regulatory Lifecycle,Lifecycle,,Active,Derived,Governance.
+GLOSS-REG-000077,Lifecycle Timeline,Chronological history of regulation.,Regulatory,Derived,Derived,Computed,Regulatory Lifecycle,Workflow History,,Draft → Published → Active.,Derived,Audit.
+GLOSS-REG-000078,Lifecycle Summary,Simplified lifecycle explanation.,Regulatory,Derived,Derived,Computed,Regulatory Lifecycle,Lifecycle Stage,,Regulation currently active.,Derived,AI explanation.
+GLOSS-REG-000079,Rule Interpretation,Represents structured interpretation of regulatory knowledge.,Regulatory,Knowledge,Core,Dynamic,Regulation,,Interpretation,Legal Interpretation,Business,Parent business concept.
+GLOSS-REG-000080,Interpretation Identifier,Unique interpretation identifier.,Regulatory,Identity,Core,Stable,Rule Interpretation,,Interpretation ID,INT-100001,Platform,Primary identifier.
+GLOSS-REG-000081,Interpretation Type,Classification of interpretation.,Regulatory,Classification,Core,Stable,Rule Interpretation,,Interpretation Type,Business Interpretation,Regulatory,Knowledge.
+GLOSS-REG-000082,Interpretation Context,Business context of interpretation.,Regulatory,Reference,Core,Stable,Rule Interpretation,,Context,Claim Settlement,Business,Applicability.
+GLOSS-REG-000083,Interpretation Text,Structured business interpretation.,Regulatory,Knowledge,Core,Dynamic,Rule Interpretation,,Interpretation,Settlement must occur within prescribed timelines.,Business,Knowledge.
+GLOSS-REG-000084,Interpretation Confidence,Confidence associated with interpretation.,Regulatory,Assessment,AI Generated,Computed,Rule Interpretation,LLM Reasoner,,98%,AI,Reasoning quality.
+GLOSS-REG-000085,Interpretation Source,Source supporting interpretation.,Regulatory,Reference,Core,Stable,Rule Interpretation,,Source,IRDAI Circular,Business,Traceability.
+GLOSS-REG-000086,Interpretation Summary,Simplified interpretation explanation.,Regulatory,Derived,Derived,Computed,Rule Interpretation,Interpretation Text,,Rule requires timely settlement.,Derived,AI explanation.
+GLOSS-REG-000087,Regulatory Assessment,Represents AI-generated assessment of regulatory compliance and knowledge quality.,Regulatory,Assessment,AI Generated,Computed,Regulation,,Assessment,High Confidence,AI,Parent AI concept.
+GLOSS-REG-000088,Knowledge Quality Score,Overall regulatory knowledge quality score.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Knowledge Engine,,97,AI,Knowledge KPI.
+GLOSS-REG-000089,Consistency Score,Consistency of linked rules.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Reasoning Engine,,96,AI,Knowledge integrity.
+GLOSS-REG-000090,Coverage Score,Coverage of business scenarios.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Knowledge Graph,,94,AI,Completeness.
+GLOSS-REG-000091,Assessment Confidence,Confidence associated with assessment.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Assessment Engine,,99%,AI,Automation.
+GLOSS-REG-000092,Conflict Indicator,Indicates whether conflicting rules exist.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Conflict Detector,,False,AI,Knowledge validation.
+GLOSS-REG-000093,Missing Rule Indicator,Indicates missing regulatory coverage.,Regulatory,Assessment,AI Generated,Computed,Regulatory Assessment,Coverage Analyzer,,False,AI,Gap analysis.
+GLOSS-REG-000094,Optimization Recommendation,Recommendation for improving regulatory knowledge.,Regulatory,Derived,AI Generated,Computed,Regulatory Assessment,Assessment Engine,,Link latest IRDAI circular.,AI,Knowledge improvement.
+GLOSS-REG-000095,Assessment Version,Version of assessment methodology.,Regulatory,Operational,Core,Stable,Regulatory Assessment,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REG-000096,Assessment Timestamp,Timestamp of latest assessment.,Regulatory,Operational,Core,Stable,Regulatory Assessment,,Assessment Time,2026-08-15T10:30:00,Business,Audit.
+GLOSS-REG-000097,Assessment Summary,Overall explanation of regulatory knowledge quality.,Regulatory,Derived,Derived,Computed,Regulatory Assessment,Knowledge Quality Score,,Knowledge base complete and consistent.,Derived,Executive summary.
+GLOSS-REG-000098,Regulatory Intelligence Summary,Natural-language explanation of applicable regulations.,Regulatory,Derived,AI Generated,Computed,Regulatory Assessment,LLM Reasoner,,Applicable IRDAI rules identified successfully.,AI,Explainable AI.
+GLOSS-REG-000099,Reasoning Trace,Machine-readable reasoning trace supporting interpretation.,Regulatory,Knowledge,AI Generated,Computed,Regulatory Assessment,Reasoning Engine,,Rule A → Rule B → Decision,AI,Auditability.
+GLOSS-REG-000100,Knowledge Coverage Summary,Summary of regulatory knowledge coverage across insurance workflows.,Regulatory,Derived,AI Generated,Computed,Regulatory Assessment,Knowledge Graph,,Coverage complete for policy, claims, repair and documents.,AI,Repository summary.
+

@@ -1,0 +1,11 @@
+recovery_id,recovery_name,failure_type,recovery_strategy,max_retries,checkpoint_required,compensation_required,human_intervention,timeout_seconds,description,status
+WREC-000001,Node Retry Recovery,Transient Failure,Retry Node,3,FALSE,FALSE,FALSE,60,Retry failed node execution,Active
+WREC-000002,Checkpoint Resume,System Failure,Resume From Checkpoint,5,TRUE,FALSE,FALSE,300,Resume workflow from last checkpoint,Active
+WREC-000003,Compensation Recovery,Business Failure,Execute Compensation,1,TRUE,TRUE,FALSE,600,Undo completed business actions,Active
+WREC-000004,Fallback Workflow,Critical Failure,Switch Workflow,1,FALSE,FALSE,FALSE,120,Execute fallback workflow,Active
+WREC-000005,Model Failure Recovery,Inference Failure,Route Alternate Model,2,FALSE,FALSE,FALSE,90,Switch to backup model,Active
+WREC-000006,Agent Failure Recovery,Agent Failure,Restart Agent,3,TRUE,FALSE,FALSE,180,Recover failed agent execution,Active
+WREC-000007,Human Escalation,Business Exception,Manual Resolution,0,FALSE,FALSE,TRUE,86400,Escalate to human operator,Active
+WREC-000008,Security Recovery,Security Violation,Terminate Workflow,0,FALSE,FALSE,TRUE,30,Stop unsafe workflow execution,Active
+WREC-000009,Disaster Recovery,Infrastructure Failure,Switch Region,1,TRUE,FALSE,FALSE,900,Recover from regional outage,Active
+WREC-000010,Global Recovery Policy,Unknown Failure,Adaptive Recovery,5,TRUE,TRUE,TRUE,None,Enterprise recovery strategy,Active

@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-VEH2-000001,ENGINE,VEHICLE,VH-000001,Vehicle-000001,Average Engine RPM,RPM,rpm,2450,2026-07-01T00:00:00Z,Mumbai,Daily,CAN Bus,OEM ECU,CAN,0.98,0.98,v1.0,
+OBS-VEH2-000002,ENGINE,VEHICLE,VH-000002,Vehicle-000002,Average Engine Load,Load,%,58,2026-07-01T00:00:00Z,Pune,Daily,CAN Bus,OEM ECU,CAN,0.98,0.98,v1.0,
+OBS-VEH2-000003,ENGINE,VEHICLE,VH-000003,Vehicle-000003,Coolant Temperature,Temperature,°C,91,2026-07-01T00:00:00Z,Delhi,Daily,OBD,OBD-II,CAN,0.99,0.98,v1.0,
+OBS-VEH2-000004,ENGINE,VEHICLE,VH-000004,Vehicle-000004,Fuel Consumption,Fuel,l/100km,8.6,2026-07-01T00:00:00Z,Bengaluru,Daily,OBD,OBD-II,CAN,0.97,0.96,v1.0,
+OBS-VEH2-000005,ENGINE,VEHICLE,VH-000005,Vehicle-000005,Gear Changes,Gear,count/day,618,2026-07-01T00:00:00Z,Chennai,Daily,CAN Bus,OEM ECU,CAN,0.96,0.95,v1.0,
+OBS-VEH2-000006,BRAKE,VEHICLE,VH-000006,Vehicle-000006,Hard Braking Events,Events,count/day,11,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,OEM API,Accelerometer,0.97,0.96,v1.0,
+OBS-VEH2-000007,TRANSMISSION,VEHICLE,VH-000007,Vehicle-000007,Gear Shift Smoothness,Score,index,84,2026-07-01T00:00:00Z,Jaipur,Monthly,CAN Bus,OEM ECU,CAN,0.96,0.95,v1.0,
+OBS-VEH2-000008,ENGINE,VEHICLE,VH-000008,Vehicle-000008,Engine Idle RPM,RPM,rpm,790,2026-07-01T00:00:00Z,Kolkata,Daily,CAN Bus,OEM ECU,CAN,0.98,0.98,v1.0,
+OBS-VEH2-000009,ENGINE,VEHICLE,VH-000009,Vehicle-000009,Throttle Usage,Throttle,%,43,2026-07-01T00:00:00Z,NH48,Daily,CAN Bus,OEM ECU,CAN,0.97,0.96,v1.0,
+OBS-VEH2-000010,BRAKE,VEHICLE,VH-000010,Vehicle-000010,Brake Usage Rate,Usage,index,72,2026-07-01T00:00:00Z,Hyderabad,Monthly,Telematics,OEM API,Telematics,0.96,0.95,v1.0,
+OBS-VEH2-000011,ENGINE,VEHICLE,VH-000011,Vehicle-000011,Average Acceleration,Acceleration,m/s²,2.6,2026-07-01T00:00:00Z,Ahmedabad,Daily,Telematics,OEM API,Accelerometer,0.96,0.95,v1.0,
+OBS-VEH2-000012,ENGINE,VEHICLE,VH-000012,Vehicle-000012,Engine Runtime,Hours,hours/day,5.4,2026-07-01T00:00:00Z,Goa,Daily,CAN Bus,OEM ECU,CAN,0.97,0.96,v1.0

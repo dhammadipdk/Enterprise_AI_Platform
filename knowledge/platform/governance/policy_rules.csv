@@ -1,0 +1,11 @@
+rule_id,policy_id,rule_name,rule_category,evaluation_condition,enforcement_action,severity,automatic,human_override,description,status
+RULE-000001,GPOL-000001,Every AI Decision Auditable,Audit,Decision Generated,Create Audit Record,Critical,TRUE,FALSE,Every AI decision must be traceable,Active
+RULE-000002,GPOL-000003,Ground Every Response,Grounding,LLM Response Generated,Validate Evidence,Critical,TRUE,FALSE,Every response requires evidence,Active
+RULE-000003,GPOL-000004,High Risk Requires Approval,Approval,Risk>High,Pause Workflow,Critical,TRUE,TRUE,Human approval for high-risk actions,Active
+RULE-000004,GPOL-000005,Protect Customer Data,Privacy,Customer Data Access,Verify Permissions,Critical,TRUE,FALSE,Privacy protection rule,Active
+RULE-000005,GPOL-000006,Fair Recommendation,Fairness,Recommendation Generated,Run Bias Evaluation,High,TRUE,TRUE,Fair recommendation generation,Active
+RULE-000006,GPOL-000007,Store Decision Trace,Audit,Decision Completed,Persist Trace,High,TRUE,FALSE,Store governance trace,Active
+RULE-000007,GPOL-000008,Monitor Risk,Risk,Risk Score Updated,Update Risk Dashboard,Medium,TRUE,FALSE,Continuous risk monitoring,Active
+RULE-000008,GPOL-000009,Validate Model Version,Model,Model Invoked,Verify Registry,High,TRUE,FALSE,Only approved models allowed,Active
+RULE-000009,GPOL-000002,Validate Knowledge Quality,Knowledge,Knowledge Updated,Run Validation,High,TRUE,FALSE,Knowledge quality validation,Active
+RULE-000010,GPOL-000010,Learn From Feedback,Learning,Evaluation Completed,Trigger Learning,Medium,TRUE,FALSE,Continuous improvement rule,Active

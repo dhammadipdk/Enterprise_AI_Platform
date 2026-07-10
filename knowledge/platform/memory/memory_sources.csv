@@ -1,0 +1,13 @@
+source_id,source_name,source_category,origin_system,data_format,trust_level,refresh_frequency,graph_enabled,vector_enabled,description,status
+MSRC-000001,Knowledge Repository,Enterprise Knowledge,Knowledge Layer,Structured,Very High,Daily,TRUE,TRUE,Enterprise domain knowledge,Active
+MSRC-000002,Knowledge Graph,Graph,Neo4j,Graph,Very High,Realtime,TRUE,FALSE,Connected enterprise graph,Active
+MSRC-000003,Reference Data,Master Data,Reference Repository,Structured,Very High,Monthly,FALSE,FALSE,Controlled vocabularies,Active
+MSRC-000004,Contextual Intelligence,AI Context,Context Engine,Structured,High,Realtime,TRUE,TRUE,Context observations and intelligence,Active
+MSRC-000005,Reasoning Engine,AI Reasoning,Reasoning Engine,Semi-Structured,Very High,Realtime,TRUE,TRUE,Reasoning traces,Active
+MSRC-000006,LLM Conversation,Conversation,Assistant,Text,Medium,Realtime,FALSE,TRUE,Conversation history,Active
+MSRC-000007,Business Applications,Operational,Claims System,Structured,High,Realtime,FALSE,FALSE,Business transactions,Active
+MSRC-000008,IoT Devices,Sensor,Telematics,Time Series,High,Realtime,FALSE,FALSE,Vehicle telemetry,Active
+MSRC-000009,Documents,Knowledge,Document Repository,PDF/Text,Medium,Daily,FALSE,TRUE,Enterprise documents,Active
+MSRC-000010,External APIs,External,Weather API,JSON,Medium,Hourly,FALSE,FALSE,External contextual information,Active
+MSRC-000011,Human Feedback,Human,Employees,Text,Very High,Realtime,FALSE,TRUE,Manual corrections,Active
+MSRC-000012,Agent Memory,Agent,AI Agents,Structured,High,Realtime,TRUE,TRUE,Cross-agent knowledge sharing,Active

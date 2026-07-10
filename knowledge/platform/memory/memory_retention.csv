@@ -1,0 +1,11 @@
+retention_id,policy_name,memory_type,retention_period,archive_after,delete_after,backup_required,encryption_required,business_reason,status
+RET-000001,Working Memory Policy,Working Memory,30 Minutes,None,30 Minutes,FALSE,FALSE,Temporary reasoning,Active
+RET-000002,Conversation Policy,Conversation,90 Days,365 Days,730 Days,TRUE,TRUE,Conversation history,Active
+RET-000003,Semantic Knowledge,Semantic,Permanent,None,Never,TRUE,TRUE,Enterprise knowledge,Active
+RET-000004,Episodic Memory,Episodic,5 Years,5 Years,10 Years,TRUE,TRUE,Historical reasoning,Active
+RET-000005,Reasoning Trace,Reasoning,2 Years,2 Years,5 Years,TRUE,TRUE,Explainability requirements,Active
+RET-000006,Execution History,Execution,3 Years,3 Years,7 Years,TRUE,TRUE,Operational audit,Active
+RET-000007,Fraud Investigation,Fraud,Permanent,None,Never,TRUE,TRUE,Legal compliance,Active
+RET-000008,Claim History,Claims,10 Years,10 Years,Never,TRUE,TRUE,Insurance regulations,Active
+RET-000009,Learning Memory,Learning,Permanent,None,Never,TRUE,FALSE,AI continual learning,Active
+RET-000010,Temporary Cache,Cache,1 Hour,None,1 Hour,FALSE,FALSE,Performance optimization,Active

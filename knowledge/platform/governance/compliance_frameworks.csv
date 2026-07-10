@@ -1,0 +1,11 @@
+framework_id,framework_name,framework_type,jurisdiction,primary_focus,mandatory,governing_authority,enterprise_mapping,description,status
+COMP-000001,IRDAI Compliance,Insurance,India,Insurance Regulation,TRUE,IRDAI,Recommendation Governance,Insurance regulatory compliance,Active
+COMP-000002,DPDP Act 2023,Privacy,India,Personal Data Protection,TRUE,Government of India,Data Governance,Personal data protection compliance,Active
+COMP-000003,ISO 27001,Security,International,Information Security,FALSE,ISO,Security Governance,Information security management,Active
+COMP-000004,ISO 42001,AI Governance,International,AI Management,FALSE,ISO,Enterprise Governance,AI management system,Active
+COMP-000005,NIST AI RMF,Responsible AI,International,AI Risk,FALSE,NIST,Risk Governance,AI risk management framework,Active
+COMP-000006,OECD AI Principles,Responsible AI,International,Trustworthy AI,FALSE,OECD,Responsible AI,Ethical AI principles,Active
+COMP-000007,Internal Enterprise Policy,Enterprise,Organization,Enterprise Governance,TRUE,Executive Board,Enterprise Governance,Internal governance framework,Active
+COMP-000008,SOC 2,Security,International,Operational Controls,FALSE,AICPA,Security Governance,Operational security controls,Active
+COMP-000009,Audit Governance,Compliance,Enterprise,Audit Readiness,TRUE,Compliance Office,Audit Governance,Enterprise audit governance,Active
+COMP-000010,Responsible AI Charter,Responsible AI,Enterprise,AI Ethics,TRUE,AI Governance Board,Responsible AI,Enterprise AI ethics charter,Active

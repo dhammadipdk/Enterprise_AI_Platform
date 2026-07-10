@@ -1,0 +1,11 @@
+log_id,log_name,log_level,component,structured_log,contains_trace_id,contains_span_id,retention_period,description,status
+LOG-000001,Knowledge Logs,INFO,Knowledge Layer,TRUE,TRUE,TRUE,180 Days,Knowledge runtime logs,Active
+LOG-000002,Memory Logs,INFO,Memory Layer,TRUE,TRUE,TRUE,180 Days,Memory runtime logs,Active
+LOG-000003,Planning Logs,INFO,Planning Engine,TRUE,TRUE,TRUE,180 Days,Planning execution logs,Active
+LOG-000004,Execution Logs,INFO,Execution Engine,TRUE,TRUE,TRUE,180 Days,Workflow execution logs,Active
+LOG-000005,Agent Logs,INFO,Agent Platform,TRUE,TRUE,TRUE,180 Days,Agent runtime logs,Active
+LOG-000006,Recommendation Logs,INFO,Recommendation Engine,TRUE,TRUE,TRUE,180 Days,Recommendation logs,Active
+LOG-000007,Evaluation Logs,INFO,Evaluation Platform,TRUE,TRUE,TRUE,365 Days,Evaluation logs,Active
+LOG-000008,Governance Logs,AUDIT,Governance Platform,TRUE,TRUE,TRUE,365 Days,Governance audit logs,Active
+LOG-000009,Security Logs,SECURITY,Security Platform,TRUE,TRUE,TRUE,365 Days,Security audit logs,Active
+LOG-000010,System Logs,SYSTEM,Infrastructure,TRUE,TRUE,TRUE,365 Days,System runtime logs,Active

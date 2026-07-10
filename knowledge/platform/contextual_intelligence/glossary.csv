@@ -1,0 +1,101 @@
+term_id,term,business_definition,category
+CTX-001,Observation,A directly measured or collected fact describing an entity or environment.,Core
+CTX-002,Derived Intelligence,Knowledge inferred or computed from one or more observations.,Core
+CTX-003,Context,A surrounding condition or circumstance influencing business decisions.,Core
+CTX-004,Context Type,High-level classification of contextual information.,Core
+CTX-005,Context Attribute,A measurable property describing contextual state.,Core
+CTX-006,Subject Entity,The business entity to which contextual intelligence applies.,Core
+CTX-007,Observation Source,Origin from which an observation is obtained.,Core
+CTX-008,Evidence,Supporting information used to justify an intelligence value.,Core
+CTX-009,Evidence Source,Origin of supporting evidence.,Core
+CTX-010,Indicator,A measurable quantity representing an underlying phenomenon.,Core
+CTX-011,Metric,A quantitative measurement used in analysis.,Core
+CTX-012,Feature,An input variable used by analytical or predictive models.,Core
+CTX-013,Attribute,A characteristic describing a subject or context.,Core
+CTX-014,Dimension,A perspective used to organize contextual information.,Core
+CTX-015,Signal,A meaningful change or event detected from observations.,Core
+CTX-016,Risk,Potential for adverse outcomes under specified conditions.,Core
+CTX-017,Risk Score,Normalized numerical estimate of risk.,Core
+CTX-018,Risk Level,Categorical interpretation of a risk score.,Core
+CTX-019,Confidence Score,Estimated reliability of an intelligence value.,Core
+CTX-020,Reliability,Expected consistency and trustworthiness of information.,Core
+CTX-021,Freshness,Recency of available information.,Core
+CTX-022,Validity Window,Time interval during which intelligence is considered applicable.,Core
+CTX-023,Baseline,Reference value used for comparison.,Core
+CTX-024,Trend,Direction and magnitude of change over time.,Core
+CTX-025,Anomaly,Observation significantly deviating from expected behaviour.,Core
+CTX-026,Observation Model,Representation of measured facts.,Model
+CTX-027,Inference Model,Method used to derive contextual intelligence.,Model
+CTX-028,Scoring Model,Method used to calculate normalized scores.,Model
+CTX-029,Weight,Relative importance assigned to an observation.,Model
+CTX-030,Aggregation,Combining multiple observations into a summary value.,Model
+CTX-031,Normalization,Transforming values into comparable scales.,Model
+CTX-032,Threshold,Boundary separating different contextual states.,Model
+CTX-033,Rule,A deterministic condition producing intelligence.,Model
+CTX-034,Rule Engine,Component executing business rules.,Model
+CTX-035,Inference,Process of deriving new knowledge.,Model
+CTX-036,Dependency,Causal or logical influence between contexts.,Model
+CTX-037,Causal Relationship,Relationship where one context influences another.,Model
+CTX-038,Correlation,Statistical association between variables.,Model
+CTX-039,Propagation,Transfer of influence through connected contexts.,Model
+CTX-040,Composite Index,Index formed by combining multiple metrics.,Model
+CTX-041,Risk Index,Normalized representation of contextual risk.,Model
+CTX-042,Exposure,Degree to which a subject experiences a contextual factor.,Model
+CTX-043,Vulnerability,Susceptibility to negative outcomes.,Model
+CTX-044,Resilience,Ability to withstand adverse conditions.,Model
+CTX-045,Severity,Expected magnitude of adverse impact.,Model
+CTX-046,Likelihood,Probability that an event occurs.,Model
+CTX-047,Impact,Expected consequence of an event.,Model
+CTX-048,Probability,Numeric estimate of event occurrence.,Model
+CTX-049,Uncertainty,Degree of unknown information.,Model
+CTX-050,Explainability,Ability to justify an intelligence result using evidence.,Model
+CTX-051,Geographic Scope,Spatial extent where intelligence applies.,Spatial
+CTX-052,Administrative Boundary,Political or administrative geographic boundary.,Spatial
+CTX-053,Region,Defined geographical area.,Spatial
+CTX-054,Locality,Specific city, district or neighborhood.,Spatial
+CTX-055,Coverage Area,Area represented by observations.,Spatial
+CTX-056,Spatial Resolution,Granularity of geographic observations.,Spatial
+CTX-057,Temporal Scope,Time period represented by intelligence.,Temporal
+CTX-058,Observation Timestamp,Time when data was collected.,Temporal
+CTX-059,Update Frequency,Expected refresh interval.,Temporal
+CTX-060,Historical Observation,Observation from previous periods.,Temporal
+CTX-061,Current Observation,Most recent available observation.,Temporal
+CTX-062,Forecast,Predicted future observation.,Temporal
+CTX-063,Seasonality,Recurring temporal pattern.,Temporal
+CTX-064,Peak Period,Interval of maximum activity.,Temporal
+CTX-065,Off-Peak Period,Interval of relatively low activity.,Temporal
+CTX-066,Rolling Window,Sliding period used for aggregation.,Temporal
+CTX-067,Snapshot,State of intelligence at a specific point in time.,Temporal
+CTX-068,Version,Revision of contextual intelligence.,Temporal
+CTX-069,Validity Start,Beginning of applicability period.,Temporal
+CTX-070,Validity End,End of applicability period.,Temporal
+CTX-071,Historical Trend,Observed long-term progression.,Temporal
+CTX-072,Forecast Horizon,Future period covered by predictions.,Temporal
+CTX-073,Refresh Cycle,Scheduled update interval.,Temporal
+CTX-074,Latency,Delay between observation and availability.,Temporal
+CTX-075,Time Granularity,Smallest temporal resolution represented.,Temporal
+CTX-076,Recommendation,Suggested action derived from contextual intelligence.,Decision
+CTX-077,Recommendation Reason,Explanation supporting a recommendation.,Decision
+CTX-078,Decision Context,Context considered while making a recommendation.,Decision
+CTX-079,Decision Factor,Specific factor influencing a decision.,Decision
+CTX-080,Decision Outcome,Result produced after evaluation.,Decision
+CTX-081,Priority,Relative importance assigned to an action.,Decision
+CTX-082,Opportunity,Potential beneficial condition identified.,Decision
+CTX-083,Threat,Potential adverse condition identified.,Decision
+CTX-084,Mitigation,Action reducing identified risk.,Decision
+CTX-085,Preventive Action,Action performed before adverse events occur.,Decision
+CTX-086,Corrective Action,Action performed after adverse events occur.,Decision
+CTX-087,Recommendation Confidence,Confidence associated with a recommendation.,Decision
+CTX-088,Business Rule Trigger,Rule causing recommendation generation.,Decision
+CTX-089,Recommendation Score,Normalized recommendation strength.,Decision
+CTX-090,Alert,Notification requiring attention.,Decision
+CTX-091,Warning,Potential issue requiring monitoring.,Decision
+CTX-092,Critical Condition,High-severity contextual state.,Decision
+CTX-093,Decision Threshold,Minimum score required to trigger an action.,Decision
+CTX-094,Scenario,Hypothetical or observed contextual situation.,Decision
+CTX-095,Scenario Analysis,Evaluation of alternative contextual situations.,Decision
+CTX-096,Decision Trace,Traceable reasoning chain behind a decision.,Decision
+CTX-097,Evidence Chain,Linked evidence supporting intelligence.,Decision
+CTX-098,Knowledge Chain,Sequence of dependent contextual relationships.,Decision
+CTX-099,Recommendation Policy,Business policy governing recommendation generation.,Decision
+CTX-100,Context Graph,Graph representation of contextual relationships.,Decision

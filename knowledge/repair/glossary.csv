@@ -1,0 +1,103 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-REP-000001,Repair Order,Represents an approved repair job created after claim approval.,Repair,Identity,Core,Dynamic,,,Repair Job,Repair Order,Business,Root business concept.
+GLOSS-REP-000002,Repair Order Identifier,Unique identifier assigned to the repair order.,Repair,Identity,Core,Stable,Repair Order,,Repair ID,REP-100001,Platform,Primary identifier.
+GLOSS-REP-000003,Repair Order Number,Official repair order number.,Repair,Identity,Core,Stable,Repair Order,,Repair Number,RP202600123,Workshop,Customer-facing identifier.
+GLOSS-REP-000004,Repair Status,Current operational status of repair.,Repair,Operational,Derived,Dynamic,Repair Order,Repair Progress,,In Progress,Derived,Workflow.
+GLOSS-REP-000005,Repair Type,Classification of repair.,Repair,Classification,Core,Stable,Repair Order,,Repair Type,Collision Repair,Business,References Repair Type Master.
+GLOSS-REP-000006,Repair Category,Business classification of repair.,Repair,Classification,Core,Stable,Repair Order,,Category,Body Repair,Business,Supports analytics.
+GLOSS-REP-000007,Repair Creation Date,Date on which repair order was created.,Repair,Operational,Core,Stable,Repair Order,,Creation Date,2026-08-15,Business,Operational timestamp.
+GLOSS-REP-000008,Repair Priority,Business priority assigned to repair.,Repair,Classification,Derived,Computed,Repair Order,Repair Severity,,High,Derived,Supports scheduling.
+GLOSS-REP-000009,Repair Source,Source responsible for repair initiation.,Repair,Operational,Core,Stable,Repair Order,,Source,Approved Claim,Business,Workflow origin.
+GLOSS-REP-000010,Repair Summary,Simplified explanation of repair order.,Repair,Derived,Derived,Computed,Repair Order,Repair Type,,Collision repair approved.,Derived,AI explanation.
+GLOSS-REP-000011,Repair Workshop,Represents an authorized repair workshop.,Repair,Identity,Core,Stable,Repair Order,,Garage,Authorized Workshop,Business,Parent concept.
+GLOSS-REP-000012,Workshop Identifier,Unique identifier assigned to workshop.,Repair,Identity,Core,Stable,Repair Workshop,,Workshop ID,WS-100001,Platform,Primary identifier.
+GLOSS-REP-000013,Workshop Name,Official business name of workshop.,Repair,Identity,Core,Stable,Repair Workshop,,Garage Name,ABC Motors,Business,Customer-facing.
+GLOSS-REP-000014,Workshop Type,Classification of workshop.,Repair,Classification,Core,Stable,Repair Workshop,,Workshop Type,Authorized Dealer,Business,References Workshop Type Master.
+GLOSS-REP-000015,Workshop Location,Primary operating location.,Repair,Reference,Core,Stable,Repair Workshop,,Location,Pune,Business,Operational.
+GLOSS-REP-000016,OEM Authorization,Indicates whether workshop is OEM authorized.,Repair,Operational,Core,Stable,Repair Workshop,,OEM Approved,True,Business,Quality indicator.
+GLOSS-REP-000017,Cashless Facility,Indicates whether cashless repairs are supported.,Repair,Operational,Core,Stable,Repair Workshop,,Cashless,True,Business,Network feature.
+GLOSS-REP-000018,Workshop Rating,Operational quality rating.,Repair,Assessment,Derived,Computed,Repair Workshop,Customer Feedback,,4.8,Derived,Quality metric.
+GLOSS-REP-000019,Workshop Capacity,Current repair capacity.,Repair,Operational,Derived,Dynamic,Repair Workshop,Operations,,Available,Derived,Scheduling.
+GLOSS-REP-000020,Workshop Summary,Simplified explanation of workshop.,Repair,Derived,Derived,Computed,Repair Workshop,Workshop Rating,,Authorized cashless workshop.,Derived,AI explanation.
+GLOSS-REP-000021,Repair Estimate,Represents estimated repair cost before execution.,Repair,Financial,Core,Dynamic,Repair Order,,Estimate,Repair Estimate,Business,Parent concept.
+GLOSS-REP-000022,Estimate Identifier,Unique identifier assigned to estimate.,Repair,Identity,Core,Stable,Repair Estimate,,Estimate ID,EST-100001,Platform,Primary identifier.
+GLOSS-REP-000023,Estimate Date,Date estimate was prepared.,Repair,Operational,Core,Stable,Repair Estimate,,Estimate Date,2026-08-15,Business,Operational.
+GLOSS-REP-000024,Estimated Parts Cost,Estimated cost of spare parts.,Repair,Financial,Core,Dynamic,Repair Estimate,,Parts Cost,28000,Business,Financial.
+GLOSS-REP-000025,Estimated Labor Cost,Estimated labor cost.,Repair,Financial,Core,Dynamic,Repair Estimate,,Labor Cost,9000,Business,Financial.
+GLOSS-REP-000026,Estimated Paint Cost,Estimated painting cost.,Repair,Financial,Core,Dynamic,Repair Estimate,,Paint Cost,5500,Business,Financial.
+GLOSS-REP-000027,Estimated Repair Duration,Estimated repair duration.,Repair,Operational,Core,Dynamic,Repair Estimate,,Repair Time,5 Days,Business,Planning.
+GLOSS-REP-000028,Estimate Approval Status,Current approval status.,Repair,Operational,Derived,Dynamic,Repair Estimate,Approval Workflow,,Approved,Derived,Workflow.
+GLOSS-REP-000029,Estimate Confidence,Confidence associated with estimate.,Repair,Assessment,AI Generated,Computed,Repair Estimate,Estimation Engine,,95%,AI,Decision support.
+GLOSS-REP-000030,Estimate Summary,Simplified estimate explanation.,Repair,Derived,Derived,Computed,Repair Estimate,Estimated Parts Cost,,Estimated repair cost ₹42,500.,Derived,AI explanation.
+GLOSS-REP-000031,Spare Part,Represents a component required during repair.,Repair,Identity,Core,Stable,Repair Order,,Part,Front Bumper,Business,Parent concept.
+GLOSS-REP-000032,Part Identifier,Unique identifier assigned to spare part.,Repair,Identity,Core,Stable,Spare Part,,Part ID,PART-100001,Platform,Primary identifier.
+GLOSS-REP-000033,Part Name,Official name of spare part.,Repair,Identity,Core,Stable,Spare Part,,Part Name,Front Bumper,Business,Customer-facing.
+GLOSS-REP-000034,Part Category,Classification of spare part.,Repair,Classification,Core,Stable,Spare Part,,Category,Body Panel,Business,References Part Category Master.
+GLOSS-REP-000035,OEM Part Indicator,Indicates whether OEM part is used.,Repair,Operational,Core,Stable,Spare Part,,OEM Part,True,Business,Quality indicator.
+GLOSS-REP-000036,Part Quantity,Quantity required for repair.,Repair,Operational,Core,Dynamic,Spare Part,,Quantity,1,Business,Inventory.
+GLOSS-REP-000037,Part Unit Cost,Cost per spare part.,Repair,Financial,Core,Dynamic,Spare Part,,Unit Cost,18000,Business,Financial.
+GLOSS-REP-000038,Part Availability,Availability status.,Repair,Operational,Derived,Dynamic,Spare Part,Inventory,,Available,Derived,Supply chain.
+GLOSS-REP-000039,Part Supplier,Supplier providing spare part.,Repair,Reference,Core,Stable,Spare Part,,Supplier,Tata Genuine Parts,Business,Procurement.
+GLOSS-REP-000040,Part Summary,Simplified explanation of spare part.,Repair,Derived,Derived,Computed,Spare Part,Part Name,,OEM front bumper replacement.,Derived,AI explanation.
+GLOSS-REP-000041,Labor Activity,Represents repair work performed by technicians.,Repair,Operational,Core,Dynamic,Repair Order,,Repair Labor,Body Repair,Business,Parent business concept.
+GLOSS-REP-000042,Labor Identifier,Unique identifier assigned to labor activity.,Repair,Identity,Core,Stable,Labor Activity,,Labor ID,LAB-100001,Platform,Primary identifier.
+GLOSS-REP-000043,Labor Type,Classification of labor activity.,Repair,Classification,Core,Stable,Labor Activity,,Labor Type,Body Repair,Business,References Labor Type Master.
+GLOSS-REP-000044,Assigned Technician,Technician responsible for the activity.,Repair,Reference,Core,Dynamic,Labor Activity,,Technician,Rajesh Kumar,Business,Workshop assignment.
+GLOSS-REP-000045,Labor Hours,Estimated labor hours required.,Repair,Operational,Core,Dynamic,Labor Activity,,Labor Hours,8 Hours,Business,Planning.
+GLOSS-REP-000046,Labor Cost,Cost associated with labor activity.,Repair,Financial,Core,Dynamic,Labor Activity,,Labor Cost,9000,Business,Financial.
+GLOSS-REP-000047,Labor Status,Current status of labor activity.,Repair,Operational,Derived,Dynamic,Labor Activity,Labor Workflow,,Completed,Derived,Workflow.
+GLOSS-REP-000048,Labor Completion Date,Completion date of labor activity.,Repair,Operational,Core,Dynamic,Labor Activity,,Completion Date,2026-08-18,Business,Operational.
+GLOSS-REP-000049,Labor Quality Score,Quality score assigned after completion.,Repair,Assessment,Derived,Computed,Labor Activity,Quality Inspection,,96,Derived,Quality KPI.
+GLOSS-REP-000050,Labor Summary,Simplified explanation of labor activity.,Repair,Derived,Derived,Computed,Labor Activity,Labor Type,,Body repair completed.,Derived,AI explanation.
+
+GLOSS-REP-000051,Repair Progress,Represents operational progress of the repair order.,Repair,Operational,Core,Dynamic,Repair Order,,Progress,In Progress,Business,Parent business concept.
+GLOSS-REP-000052,Current Stage,Current repair stage.,Repair,Operational,Derived,Dynamic,Repair Progress,Workflow,,Painting,Derived,Workflow.
+GLOSS-REP-000053,Completion Percentage,Percentage of repair completed.,Repair,Operational,Derived,Computed,Repair Progress,Completed Tasks,,75%,Derived,Progress KPI.
+GLOSS-REP-000054,Expected Completion Date,Expected completion date.,Repair,Operational,Derived,Computed,Repair Progress,Repair Estimate,,2026-08-20,Derived,Planning.
+GLOSS-REP-000055,Delay Indicator,Indicates whether repair is delayed.,Repair,Operational,Derived,Computed,Repair Progress,Schedule,,False,Derived,Planning.
+GLOSS-REP-000056,Delay Reason,Reason for repair delay.,Repair,Operational,Core,Dynamic,Repair Progress,,Parts Delay,Business,Workflow support.
+GLOSS-REP-000057,Repair Timeline,Chronological repair milestones.,Repair,Derived,Derived,Computed,Repair Progress,Workflow Events,,Inspection → Parts → Paint → Delivery.,Derived,Customer tracking.
+GLOSS-REP-000058,Progress Status,Current workflow status.,Repair,Operational,Derived,Dynamic,Repair Progress,Workflow,,On Schedule,Derived,Operations.
+GLOSS-REP-000059,Repair Duration,Actual repair duration.,Repair,Operational,Derived,Computed,Repair Progress,Start Date;Completion Date,,5 Days,Derived,Operational KPI.
+GLOSS-REP-000060,Progress Summary,Simplified explanation of repair progress.,Repair,Derived,Derived,Computed,Repair Progress,Completion Percentage,,Repair 75% complete.,Derived,AI explanation.
+
+GLOSS-REP-000061,Vehicle Inspection,Represents inspections performed during repair.,Repair,Operational,Core,Dynamic,Repair Order,,Inspection,Inspection,Business,Parent business concept.
+GLOSS-REP-000062,Inspection Identifier,Unique inspection identifier.,Repair,Identity,Core,Stable,Vehicle Inspection,,Inspection ID,INS-100001,Platform,Primary identifier.
+GLOSS-REP-000063,Inspection Stage,Stage during which inspection occurred.,Repair,Classification,Core,Stable,Vehicle Inspection,,Inspection Stage,Pre Repair,Business,Workflow.
+GLOSS-REP-000064,Inspector,Person performing inspection.,Repair,Reference,Core,Stable,Vehicle Inspection,,Inspector,Amit Sharma,Business,Workshop staff.
+GLOSS-REP-000065,Inspection Findings,Technical findings recorded during inspection.,Repair,Identity,Core,Dynamic,Vehicle Inspection,,Findings,Minor dent remaining.,Business,Operational.
+GLOSS-REP-000066,Inspection Result,Overall inspection result.,Repair,Assessment,Derived,Computed,Vehicle Inspection,Inspection Findings,,Passed,Derived,Quality gate.
+GLOSS-REP-000067,Rework Required,Indicates whether rework is required.,Repair,Operational,Derived,Computed,Vehicle Inspection,Inspection Result,,False,Derived,Operations.
+GLOSS-REP-000068,Inspection Status,Current inspection workflow status.,Repair,Operational,Derived,Dynamic,Vehicle Inspection,Inspection Workflow,,Completed,Derived,Workflow.
+GLOSS-REP-000069,Inspection Confidence,Confidence associated with inspection findings.,Repair,Assessment,AI Generated,Computed,Vehicle Inspection,Inspection Engine,,97%,AI,Decision support.
+GLOSS-REP-000070,Inspection Summary,Simplified explanation of inspection.,Repair,Derived,Derived,Computed,Vehicle Inspection,Inspection Findings,,Vehicle passed inspection.,Derived,AI explanation.
+GLOSS-REP-000071,Quality Inspection,Represents final quality verification before delivery.,Repair,Operational,Core,Dynamic,Repair Order,,Quality Check,Final QA,Business,Parent business concept.
+GLOSS-REP-000072,Quality Score,Overall repair quality score.,Repair,Assessment,Derived,Computed,Quality Inspection,Quality Checklist,,96,Derived,Quality KPI.
+GLOSS-REP-000073,Paint Quality,Assessment of paint quality.,Repair,Assessment,Derived,Computed,Quality Inspection,Inspection,,Excellent,Derived,Quality.
+GLOSS-REP-000074,Fitment Quality,Assessment of component fitment.,Repair,Assessment,Derived,Computed,Quality Inspection,Inspection,,Excellent,Derived,Quality.
+GLOSS-REP-000075,Road Test Status,Status of post-repair road testing.,Repair,Operational,Derived,Dynamic,Quality Inspection,Road Test,,Passed,Derived,Verification.
+GLOSS-REP-000076,Customer Acceptance,Indicates whether customer accepted repair quality.,Repair,Operational,Core,Dynamic,Quality Inspection,,Accepted,Customer,Delivery.
+GLOSS-REP-000077,Quality Approval,Overall quality approval status.,Repair,Operational,Derived,Computed,Quality Inspection,Quality Checklist,,Approved,Derived,Workflow.
+GLOSS-REP-000078,Quality Remarks,Inspector remarks after QA.,Repair,Identity,Core,Dynamic,Quality Inspection,,Remarks,Repair meets OEM standards.,Business,Operational.
+GLOSS-REP-000079,Quality Summary,Simplified quality explanation.,Repair,Derived,Derived,Computed,Quality Inspection,Quality Approval,,Vehicle passed final QA.,Derived,AI explanation.
+GLOSS-REP-000080,Delivery Ready,Indicates whether vehicle is ready for delivery.,Repair,Operational,Derived,Computed,Quality Inspection,Quality Approval,,True,Derived,Operations.
+GLOSS-REP-000081,Repair Invoice,Represents financial invoice generated after repair completion.,Repair,Financial,Core,Dynamic,Repair Order,,Invoice,Repair Invoice,Business,Parent business concept.
+GLOSS-REP-000082,Invoice Identifier,Unique invoice identifier.,Repair,Identity,Core,Stable,Repair Invoice,,Invoice ID,INV-100001,Platform,Primary identifier.
+GLOSS-REP-000083,Invoice Amount,Total repair invoice amount.,Repair,Financial,Core,Dynamic,Repair Invoice,,Invoice Amount,42500,Business,Financial.
+GLOSS-REP-000084,Invoice Tax,Applicable taxes.,Repair,Financial,Core,Dynamic,Repair Invoice,,GST,18%,Business,Financial.
+GLOSS-REP-000085,Invoice Status,Current invoice status.,Repair,Operational,Derived,Dynamic,Repair Invoice,Invoice Workflow,,Paid,Derived,Financial workflow.
+GLOSS-REP-000086,Invoice Date,Invoice generation date.,Repair,Operational,Core,Stable,Repair Invoice,,Invoice Date,2026-08-18,Business,Operational.
+GLOSS-REP-000087,Payment Status,Current invoice payment status.,Repair,Operational,Derived,Dynamic,Repair Invoice,Payment Workflow,,Settled,Derived,Finance.
+GLOSS-REP-000088,Invoice Summary,Simplified invoice explanation.,Repair,Derived,Derived,Computed,Repair Invoice,Invoice Amount,,Repair invoice ₹42,500.,Derived,AI explanation.
+GLOSS-REP-000089,Repair Completion,Represents completion and delivery of repaired vehicle.,Repair,Operational,Core,Dynamic,Repair Order,,Completion,Vehicle Delivered,Business,Parent business concept.
+GLOSS-REP-000090,Completion Date,Date repair completed.,Repair,Operational,Core,Stable,Repair Completion,,Completion Date,2026-08-19,Business,Operational.
+GLOSS-REP-000091,Vehicle Delivery Date,Date vehicle delivered to customer.,Repair,Operational,Core,Stable,Repair Completion,,Delivery Date,2026-08-20,Business,Customer service.
+GLOSS-REP-000092,Customer Satisfaction Score,Customer satisfaction after repair.,Repair,Assessment,Derived,Computed,Repair Completion,Customer Feedback,,4.9,Derived,Quality KPI.
+GLOSS-REP-000093,Warranty Provided,Indicates whether repair warranty is provided.,Repair,Operational,Core,Stable,Repair Completion,,Warranty,True,Business,Customer assurance.
+GLOSS-REP-000094,Warranty Duration,Repair warranty period.,Repair,Operational,Core,Stable,Repair Completion,,Warranty Period,12 Months,Business,Service.
+GLOSS-REP-000095,Repair Outcome,Overall repair outcome.,Repair,Assessment,Derived,Computed,Repair Completion,Quality Inspection,,Successful,Derived,Operations.
+GLOSS-REP-000096,Repair Assessment,Overall AI assessment of repair quality and efficiency.,Repair,Assessment,AI Generated,Computed,Repair Completion,Assessment Engine,,Excellent Repair,AI,Parent AI concept.
+GLOSS-REP-000097,Repair Confidence,Confidence associated with repair assessment.,Repair,Assessment,AI Generated,Computed,Repair Assessment,Assessment Engine,,98%,AI,Decision support.
+GLOSS-REP-000098,Optimization Recommendation,AI recommendation for improving repair workflow.,Repair,Derived,AI Generated,Computed,Repair Assessment,Optimization Engine,,Use OEM inventory earlier.,AI,Operational improvement.
+GLOSS-REP-000099,Assessment Summary,Overall explanation of repair assessment.,Repair,Derived,Derived,Computed,Repair Assessment,Assessment Engine,,High-quality repair completed on schedule.,Derived,Executive summary.
+GLOSS-REP-000100,Repair Completion Summary,Simplified explanation of completed repair.,Repair,Derived,Derived,Computed,Repair Completion,Repair Outcome,,Vehicle repaired and delivered successfully.,Derived,Customer explanation.

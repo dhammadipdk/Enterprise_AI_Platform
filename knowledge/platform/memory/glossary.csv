@@ -1,0 +1,21 @@
+term_id,term,business_definition
+MEM-001,Memory,Persistent information available to AI
+MEM-002,Working Memory,Temporary context during reasoning
+MEM-003,Semantic Memory,Long-term enterprise knowledge
+MEM-004,Episodic Memory,Historical events
+MEM-005,Procedural Memory,Stored procedures and workflows
+MEM-006,Graph Memory,Knowledge graph information
+MEM-007,Vector Memory,Embedding-based memory
+MEM-008,Conversation Memory,Dialogue history
+MEM-009,Business Memory,Enterprise knowledge
+MEM-010,Reasoning Memory,Reasoning traces
+MEM-011,Execution Memory,Workflow execution history
+MEM-012,Memory Object,Individual stored memory
+MEM-013,Memory Retrieval,Finding relevant memory
+MEM-014,Memory Importance,Relative value of memory
+MEM-015,Memory Retention,How long memory persists
+MEM-016,Memory Consolidation,Combining related memories
+MEM-017,Memory Decay,Reduction in importance over time
+MEM-018,Memory Index,Retrieval optimization
+MEM-019,Memory Embedding,Vector representation of memory
+MEM-020,Hybrid Memory,Combination of multiple memory types

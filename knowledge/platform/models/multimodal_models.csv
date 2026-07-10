@@ -1,0 +1,11 @@
+multimodal_model_id,model_name,supported_modalities,tool_calling,streaming,max_context_window,reasoning_capability,best_use_case,description,status
+MM-000001,Enterprise Multimodal Assistant,Text;Image,TRUE,TRUE,128000,High,Enterprise Assistant,General multimodal reasoning,Active
+MM-000002,Document Intelligence Model,Text;PDF;Image,TRUE,FALSE,128000,High,Document AI,Document reasoning,Active
+MM-000003,Insurance Claims AI,Text;Image;PDF,TRUE,FALSE,128000,High,Claims Processing,Insurance claim reasoning,Active
+MM-000004,Fraud Investigation AI,Text;Image;Graph,TRUE,FALSE,128000,Very High,Fraud Investigation,Fraud analysis,Active
+MM-000005,Knowledge Assistant,Text;Image,TRUE,TRUE,64000,High,Enterprise Knowledge,Knowledge assistant,Active
+MM-000006,Customer Service AI,Text;Speech,TRUE,TRUE,64000,Medium,Customer Support,Conversational AI,Active
+MM-000007,Executive Copilot,Text;Spreadsheet;Presentation,TRUE,TRUE,256000,Very High,Executive Decision Support,Business copilot,Active
+MM-000008,Engineering Assistant,Text;Diagram;Code,TRUE,TRUE,256000,Very High,Engineering AI,Technical assistant,Active
+MM-000009,Compliance Assistant,Text;PDF,TRUE,FALSE,128000,High,Regulatory Analysis,Compliance AI,Active
+MM-000010,Experimental Multimodal,All Modalities,TRUE,TRUE,512000,Research,Research Platform,Experimental multimodal AI,Active

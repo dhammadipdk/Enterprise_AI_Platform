@@ -1,0 +1,16 @@
+template_id,template_name,template_category,description,input_parameters,output_type,complexity,cypher_pattern,primary_use_case,status
+CYPHER-000001,Customer360,Customer Profile,Retrieve complete customer ecosystem,"customer_id",Subgraph,Medium,"Customer→Policy→Claim→Recommendation",Customer dashboard,Active
+CYPHER-000002,PolicyLookup,Policy Search,Retrieve policy information,"policy_number",Node,Low,"Policy",Policy servicing,Active
+CYPHER-000003,ClaimHistory,Claims,Retrieve complete claim history,"customer_id",Subgraph,Medium,"Customer→Claim",Claims analysis,Active
+CYPHER-000004,VehicleHistory,Vehicle,Retrieve vehicle lifecycle,"vehicle_id",Subgraph,Medium,"Vehicle→Policy→Claim→Repair",Vehicle analytics,Active
+CYPHER-000005,FraudNeighborhood,Fraud,Find fraud neighborhood,"claim_number",Subgraph,High,"Claim→Fraud→Customer→Vehicle",Fraud investigation,Active
+CYPHER-000006,RiskPropagation,Risk,Propagate contextual risk,"customer_id",Graph,High,"Environment→Vehicle→Customer",Risk scoring,Active
+CYPHER-000007,RecommendationTrace,Recommendation,Explain recommendation,"recommendation_id",Path,Medium,"Recommendation→Decision→Evidence→Observation",Explainable AI,Active
+CYPHER-000008,DecisionTrace,Reasoning,Retrieve decision chain,"decision_id",Path,Medium,"Decision→Hypothesis→Evidence→Observation",Reasoning trace,Active
+CYPHER-000009,GraphSearch,Knowledge,Semantic graph search,"keywords",Subgraph,Medium,"KnowledgeDocument→BusinessRule→Observation",GraphRAG retrieval,Active
+CYPHER-000010,ShortestFraudPath,Fraud,Shortest path to fraud,"customer_id,fraud_case_id",Path,High,"ShortestPath(Customer,FraudCase)",Fraud analytics,Active
+CYPHER-000011,CommunityMembers,Community,Retrieve graph community,"node_id",Subgraph,Medium,"Community()",Customer segmentation,Active
+CYPHER-000012,CentralEntities,Analytics,Most influential nodes,None,List,Medium,"PageRank()",Enterprise analytics,Active
+CYPHER-000013,CoverageImpact,Coverage,Coverage dependency,"policy_number",Subgraph,Medium,"Policy→Coverage→Claim",Coverage analysis,Active
+CYPHER-000014,WeatherImpact,Environment,Weather impact graph,"weather_event_id",Subgraph,Medium,"Weather→Road→Vehicle→Claim",Environmental analytics,Active
+CYPHER-000015,EnterpriseTraversal,Enterprise,Full enterprise traversal,"node_id",Graph,High,"Variable Length Traversal",Enterprise exploration,Active

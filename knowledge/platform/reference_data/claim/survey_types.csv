@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-SURVEY-000001,PRELIMINARY,Preliminary Survey,Initial claim inspection,Active,2026-01-01,,IRDAI,
+REF-SURVEY-000002,DETAILED,Detailed Survey,Complete technical assessment,Active,2026-01-01,,IRDAI,
+REF-SURVEY-000003,REINSPECTION,Reinspection,Follow-up inspection after repairs,Active,2026-01-01,,IRDAI,
+REF-SURVEY-000004,REMOTE,Remote Survey,Photo/video based inspection,Active,2026-01-01,,IRDAI,
+REF-SURVEY-000005,FINAL,Final Survey,Final verification before settlement,Active,2026-01-01,,IRDAI,

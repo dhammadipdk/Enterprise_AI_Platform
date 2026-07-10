@@ -1,0 +1,26 @@
+term_id,term,business_definition
+VEH-001,Annual Mileage,Total distance travelled by a vehicle in one year
+VEH-002,Daily Mileage,Average daily distance travelled
+VEH-003,Odometer Reading,Total accumulated vehicle distance
+VEH-004,Driving Exposure,Amount of operational exposure experienced by a vehicle
+VEH-005,Usage Intensity,Degree to which the vehicle is utilized
+VEH-006,Engine Health,Operational condition of the engine
+VEH-007,Transmission Health,Operational condition of the transmission system
+VEH-008,Brake Health,Condition of the braking system
+VEH-009,Tyre Wear,Amount of degradation in tyre condition
+VEH-010,Battery Health,Remaining effectiveness of the battery
+VEH-011,Fuel Efficiency,Distance travelled per unit fuel consumed
+VEH-012,Energy Efficiency,Distance travelled per unit electrical energy
+VEH-013,Vehicle Health Score,Composite indicator of overall vehicle condition
+VEH-014,Mechanical Failure,Failure of one or more mechanical systems
+VEH-015,Breakdown Probability,Likelihood of roadside breakdown
+VEH-016,Maintenance Frequency,Frequency of maintenance activities
+VEH-017,Service Compliance,Degree of adherence to recommended servicing
+VEH-018,Remaining Useful Life,Estimated operational life remaining
+VEH-019,Operational Efficiency,Efficiency of vehicle operation
+VEH-020,Powertrain Reliability,Reliability of engine, transmission and drivetrain
+VEH-021,Idle Time,Time spent stationary while operational
+VEH-022,Cold Start,Engine start after prolonged inactivity
+VEH-023,Engine Load,Mechanical load experienced by the engine
+VEH-024,Brake Usage,Operational braking characteristics
+VEH-025,Tyre Pressure,Inflation pressure of tyres

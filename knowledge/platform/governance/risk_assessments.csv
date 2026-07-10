@@ -1,0 +1,11 @@
+assessment_id,risk_category_id,asset_under_assessment,likelihood,impact,inherent_risk,residual_risk,mitigation_strategy,last_review_date,next_review_date,status
+RISK-000001,RISKCAT-000001,Execution Engine,2,4,Medium,Low,Automated rollback and monitoring,2026-01-01,2026-04-01,Active
+RISK-000002,RISKCAT-000002,Recommendation Engine,3,5,High,Medium,Grounding and human approval,2026-01-01,2026-04-01,Active
+RISK-000003,RISKCAT-000003,Fraud Detection Agent,2,5,High,Medium,Continuous fraud validation,2026-01-01,2026-04-01,Active
+RISK-000004,RISKCAT-000004,Knowledge Repository,2,4,Medium,Low,Knowledge review workflow,2026-01-01,2026-04-01,Active
+RISK-000005,RISKCAT-000005,Customer Memory Store,2,5,High,Low,Encryption and RBAC,2026-01-01,2026-04-01,Active
+RISK-000006,RISKCAT-000006,Compliance Engine,2,5,High,Low,Continuous compliance monitoring,2026-01-01,2026-04-01,Active
+RISK-000007,RISKCAT-000007,Foundation Models,3,4,High,Medium,Model evaluation pipeline,2026-01-01,2026-04-01,Active
+RISK-000008,RISKCAT-000008,Multi-Agent Platform,3,4,High,Medium,Governance policies and supervision,2026-01-01,2026-04-01,Active
+RISK-000009,RISKCAT-000009,Recommendation Platform,2,4,Medium,Low,Responsible AI controls,2026-01-01,2026-04-01,Active
+RISK-000010,RISKCAT-000010,Enterprise AI Platform,3,5,Critical,Medium,Executive governance oversight,2026-01-01,2026-04-01,Active

@@ -1,0 +1,12 @@
+field_name,data_type,required,description
+security_id,String,TRUE,Unique security identifier
+resource_id,String,FALSE,Protected resource
+identity_id,String,FALSE,Identity performing action
+role_id,String,FALSE,Role associated with identity
+permission_id,String,FALSE,Permission being evaluated
+classification,String,TRUE,Security classification
+risk_level,String,TRUE,Risk level
+owner,String,TRUE,Security owner
+effective_date,Date,TRUE,Effective date
+review_date,Date,FALSE,Scheduled review
+status,String,TRUE,Lifecycle status

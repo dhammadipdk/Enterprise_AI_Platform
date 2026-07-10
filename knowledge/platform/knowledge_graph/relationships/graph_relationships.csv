@@ -1,0 +1,31 @@
+relationship_id,source_label,relationship,target_label,relationship_category,business_domain,direction,cardinality,is_temporal,is_weighted,is_reasoning_edge,is_context_edge,is_graph_rag_edge,edge_priority,description,status
+GREL-000001,Customer,OWNS,Policy,Ownership,Policy,Outgoing,1:N,TRUE,FALSE,FALSE,FALSE,TRUE,Critical,Customer owns policy,Active
+GREL-000002,Policy,COVERS,Vehicle,Coverage,Policy,Outgoing,1:N,TRUE,FALSE,FALSE,FALSE,TRUE,Critical,Policy covers vehicle,Active
+GREL-000003,Policy,PROVIDES,Coverage,Coverage,Coverage,Outgoing,1:N,FALSE,FALSE,FALSE,FALSE,TRUE,High,Policy provides coverage,Active
+GREL-000004,Customer,FILES,Claim,Claims,Claims,Outgoing,1:N,TRUE,FALSE,FALSE,FALSE,TRUE,Critical,Customer files claim,Active
+GREL-000005,Claim,INVOLVES,Vehicle,Claims,Claims,Outgoing,N:N,TRUE,FALSE,FALSE,FALSE,TRUE,High,Claim involves vehicle,Active
+GREL-000006,Claim,INITIATES,Repair,Workflow,Repair,Outgoing,1:1,TRUE,FALSE,FALSE,FALSE,FALSE,High,Repair initiated,Active
+GREL-000007,Repair,ASSIGNED_TO,Garage,Workflow,Repair,Outgoing,N:1,TRUE,FALSE,FALSE,FALSE,FALSE,Medium,Garage assignment,Active
+GREL-000008,Garage,EMPLOYS,Surveyor,Operations,Repair,Outgoing,1:N,FALSE,FALSE,FALSE,FALSE,FALSE,Low,Surveyor employment,Active
+GREL-000009,Surveyor,INSPECTS,Claim,Claims,Claims,Outgoing,N:N,TRUE,FALSE,FALSE,FALSE,FALSE,Medium,Survey inspection,Active
+GREL-000010,Claim,MAY_TRIGGER,FraudCase,Risk,Fraud,Outgoing,1:0..1,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Fraud trigger,Active
+GREL-000011,FraudCase,GENERATES,Recommendation,Reasoning,Recommendation,Outgoing,1:N,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Recommendation generation,Active
+GREL-000012,Recommendation,AFFECTS,Customer,Recommendation,Recommendation,Outgoing,N:N,TRUE,FALSE,FALSE,FALSE,TRUE,Medium,Recommendation affects customer,Active
+GREL-000013,Observation,SUPPORTS,Evidence,Reasoning,Reasoning,Outgoing,N:N,TRUE,TRUE,TRUE,TRUE,TRUE,Critical,Observation supports evidence,Active
+GREL-000014,Evidence,SUPPORTS,Hypothesis,Reasoning,Reasoning,Outgoing,N:N,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Evidence supports hypothesis,Active
+GREL-000015,Hypothesis,GENERATES,Decision,Reasoning,Reasoning,Outgoing,N:N,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Hypothesis generates decision,Active
+GREL-000016,Decision,GENERATES,Recommendation,Reasoning,Recommendation,Outgoing,1:N,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Decision produces recommendation,Active
+GREL-000017,BusinessRule,CONSTRAINS,Decision,Governance,Reasoning,Outgoing,N:N,FALSE,FALSE,TRUE,FALSE,FALSE,High,Business rule constraint,Active
+GREL-000018,Observation,BELONGS_TO,EnvironmentContext,Context,Environment,Outgoing,N:1,TRUE,FALSE,FALSE,TRUE,FALSE,Medium,Environment context,Active
+GREL-000019,Observation,BELONGS_TO,VehicleBehaviourContext,Context,Vehicle Behaviour,Outgoing,N:1,TRUE,FALSE,FALSE,TRUE,FALSE,Medium,Vehicle behaviour context,Active
+GREL-000020,Observation,BELONGS_TO,HumanBehaviourContext,Context,Human Behaviour,Outgoing,N:1,TRUE,FALSE,FALSE,TRUE,FALSE,Medium,Human behaviour context,Active
+GREL-000021,DerivedIntelligence,DERIVED_FROM,Observation,Analytics,Contextual Intelligence,Outgoing,N:N,TRUE,TRUE,TRUE,TRUE,FALSE,High,Derived intelligence source,Active
+GREL-000022,EnvironmentContext,AFFECTS,VehicleBehaviourContext,Context Fusion,Environment,Outgoing,N:N,TRUE,TRUE,TRUE,TRUE,TRUE,High,Environment influences driving,Active
+GREL-000023,VehicleBehaviourContext,AFFECTS,HumanBehaviourContext,Context Fusion,Behaviour,Outgoing,N:N,TRUE,TRUE,TRUE,TRUE,TRUE,High,Vehicle behaviour affects driver behaviour,Active
+GREL-000024,HumanBehaviourContext,AFFECTS,RiskAssessment,Risk,Risk,Outgoing,N:N,TRUE,TRUE,TRUE,TRUE,TRUE,Critical,Human behaviour influences risk,Active
+GREL-000025,RiskAssessment,INFLUENCES,Recommendation,Decision,Risk,Outgoing,N:N,TRUE,TRUE,TRUE,FALSE,TRUE,Critical,Risk drives recommendation,Active
+GREL-000026,KnowledgeDocument,DESCRIBES,Policy,Knowledge,Knowledge,Outgoing,N:N,FALSE,FALSE,FALSE,FALSE,TRUE,Medium,Policy documentation,Active
+GREL-000027,KnowledgeDocument,DESCRIBES,Claim,Knowledge,Knowledge,Outgoing,N:N,FALSE,FALSE,FALSE,FALSE,TRUE,Medium,Claim documentation,Active
+GREL-000028,KnowledgeDocument,SUPPORTS,BusinessRule,Knowledge,Knowledge,Outgoing,N:N,FALSE,FALSE,TRUE,FALSE,TRUE,High,Business rules documentation,Active
+GREL-000029,WeatherEvent,AFFECTS,RoadSegment,Environment,Infrastructure,Outgoing,N:N,TRUE,TRUE,FALSE,TRUE,FALSE,High,Weather affects road,Active
+GREL-000030,RoadSegment,AFFECTS,Vehicle,Infrastructure,Vehicle,Outgoing,N:N,TRUE,TRUE,FALSE,TRUE,FALSE,High,Road affects vehicle,Active

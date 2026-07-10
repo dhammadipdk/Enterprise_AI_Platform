@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-HUM1-000001,DRIVING,DRIVER,DRV-000001,Driver-000001,Average Speed,Speed,km/h,46,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,OEM API,GPS,0.98,0.97,v1.0,
+OBS-HUM1-000002,DRIVING,DRIVER,DRV-000002,Driver-000002,Speed Limit Violations,Violations,count/day,5,2026-07-01T00:00:00Z,Pune,Daily,Telematics,ADAS,GPS,0.97,0.96,v1.0,
+OBS-HUM1-000003,DRIVING,DRIVER,DRV-000003,Driver-000003,Harsh Acceleration,Events,count/day,9,2026-07-01T00:00:00Z,Delhi,Daily,Telematics,OEM API,Accelerometer,0.97,0.96,v1.0,
+OBS-HUM1-000004,DRIVING,DRIVER,DRV-000004,Driver-000004,Harsh Braking,Events,count/day,11,2026-07-01T00:00:00Z,Bengaluru,Daily,Telematics,OEM API,Accelerometer,0.98,0.97,v1.0,
+OBS-HUM1-000005,DRIVING,DRIVER,DRV-000005,Driver-000005,Sharp Cornering,Events,count/day,7,2026-07-01T00:00:00Z,Chennai,Daily,Telematics,OEM API,Gyroscope,0.96,0.95,v1.0,
+OBS-HUM1-000006,DRIVING,DRIVER,DRV-000006,Driver-000006,Steering Smoothness,Smoothness,index,84,2026-07-01T00:00:00Z,Ahmedabad,Daily,CAN Bus,EPS,CAN,0.96,0.95,v1.0,
+OBS-HUM1-000007,DRIVING,DRIVER,DRV-000007,Driver-000007,Reaction Time,Reaction,ms,620,2026-07-01T00:00:00Z,Jaipur,Daily,ADAS,DMS,Vision,0.95,0.94,v1.0,
+OBS-HUM1-000008,DRIVING,DRIVER,DRV-000008,Driver-000008,Following Distance,Distance,seconds,1.4,2026-07-01T00:00:00Z,Kolkata,Daily,ADAS,Radar,Sensor Fusion,0.97,0.96,v1.0,
+OBS-HUM1-000009,DRIVING,DRIVER,DRV-000009,Driver-000009,Average Speed,Speed,km/h,73,2026-07-01T00:00:00Z,NH48,Daily,Telematics,OEM API,GPS,0.98,0.97,v1.0,
+OBS-HUM1-000010,DRIVING,DRIVER,DRV-000010,Driver-000010,Harsh Braking,Events,count/day,2,2026-07-01T00:00:00Z,Hyderabad,Daily,Telematics,OEM API,Accelerometer,0.97,0.96,v1.0,
+OBS-HUM1-000011,DRIVING,DRIVER,DRV-000011,Driver-000011,Speed Variability,Std Dev,km/h,18,2026-07-01T00:00:00Z,Goa,Daily,Telematics,OEM API,GPS,0.96,0.95,v1.0,
+OBS-HUM1-000012,DRIVING,DRIVER,DRV-000012,Driver-000012,Driving Smoothness,Score,index,91,2026-07-01T00:00:00Z,Surat,Daily,Telematics,OEM API,Analytics,0.98,0.97,v1.0,

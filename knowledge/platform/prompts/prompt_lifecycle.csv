@@ -1,0 +1,11 @@
+lifecycle_id,lifecycle_stage,entry_criteria,exit_criteria,approval_required,deployment_allowed,rollback_supported,description,status
+PLIFE-000001,Draft,Author Created,Review,FALSE,FALSE,TRUE,Initial prompt creation,Active
+PLIFE-000002,Review,Author Submission,Validation,TRUE,FALSE,TRUE,Peer review stage,Active
+PLIFE-000003,Validation,Review Approved,Testing,TRUE,FALSE,TRUE,Validation stage,Active
+PLIFE-000004,Testing,Validation Passed,Staging,TRUE,FALSE,TRUE,Testing prompts,Active
+PLIFE-000005,Staging,Testing Passed,Production,TRUE,TRUE,TRUE,Pre-production stage,Active
+PLIFE-000006,Production,Deployment Approved,Maintenance,TRUE,TRUE,TRUE,Production prompt,Active
+PLIFE-000007,Maintenance,Production Updates,Retirement,FALSE,TRUE,TRUE,Prompt maintenance,Active
+PLIFE-000008,Deprecated,Replacement Exists,Archived,TRUE,FALSE,TRUE,Deprecated prompt,Active
+PLIFE-000009,Archived,Retention Completed,None,FALSE,FALSE,FALSE,Archived prompt version,Active
+PLIFE-000010,Retired,Business Decision,None,TRUE,FALSE,FALSE,Retired enterprise prompt,Active

@@ -1,0 +1,11 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-REP-000001,Repair Order,Represents an approved repair order created after insurance claim approval.,Aggregate Root,,GLOSS-REP-000001,Repair Order Number,Dynamic,Repair,Root aggregate of the Repair domain.
+ENT-REP-000002,Repair Workshop,Represents the workshop responsible for executing repairs.,Entity,Repair Order,GLOSS-REP-000011,,Stable,Repair,Authorized repair facility.
+ENT-REP-000003,Repair Estimate,Represents estimated repair cost and duration before execution.,Entity,Repair Order,GLOSS-REP-000021,,Dynamic,Repair,Supports planning and approval.
+ENT-REP-000004,Spare Part,Represents spare parts required during repair.,Entity,Repair Order,GLOSS-REP-000031,,Dynamic,Repair,Supports inventory and costing.
+ENT-REP-000005,Labor Activity,Represents repair work performed by technicians.,Entity,Repair Order,GLOSS-REP-000041,,Dynamic,Repair,Tracks labor execution.
+ENT-REP-000006,Repair Progress,Represents operational workflow and progress of the repair.,Entity,Repair Order,GLOSS-REP-000051,,Dynamic,Repair,Supports monitoring.
+ENT-REP-000007,Vehicle Inspection,Represents inspections performed during the repair lifecycle.,Entity,Repair Order,GLOSS-REP-000061,,Dynamic,Repair,Supports verification.
+ENT-REP-000008,Quality Inspection,Represents final quality assurance before vehicle delivery.,Entity,Repair Order,GLOSS-REP-000071,,Dynamic,Repair,Supports quality control.
+ENT-REP-000009,Repair Invoice,Represents financial invoice generated after repair completion.,Entity,Repair Order,GLOSS-REP-000081,,Dynamic,Repair,Supports billing.
+ENT-REP-000010,Repair Completion,Represents completion, delivery and AI assessment of repairs.,Entity,Repair Order,GLOSS-REP-000089,,Computed,Repair,Contains operational intelligence.

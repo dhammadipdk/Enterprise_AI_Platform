@@ -1,0 +1,11 @@
+execution_id,stage,input,component,output,next_stage
+PROMPTCTX-000001,Request Received,User Query,Gateway,Validated Request,Prompt Router
+PROMPTCTX-000002,Prompt Selection,Validated Request,Prompt Router,Selected Prompt Version,Prompt Compiler
+PROMPTCTX-000003,Variable Resolution,Selected Prompt,Prompt Compiler,Resolved Variables,Context Builder
+PROMPTCTX-000004,Context Assembly,Resolved Variables,Context Builder,Compiled Context,Grounding Engine
+PROMPTCTX-000005,Grounding,Compiled Context,Grounding Engine,Grounded Prompt,Guardrail Engine
+PROMPTCTX-000006,Guardrails,Grounded Prompt,Guardrail Engine,Validated Prompt,Execution Planner
+PROMPTCTX-000007,Execution Planning,Validated Prompt,Prompt Execution Planner,Execution Plan,Model Router
+PROMPTCTX-000008,Model Routing,Execution Plan,Model Router,Selected Model,Inference Engine
+PROMPTCTX-000009,Inference,Selected Model,Inference Engine,Generated Response,Evaluation Engine
+PROMPTCTX-000010,Evaluation,Generated Response,Evaluation Engine,Approved Response,Delivery

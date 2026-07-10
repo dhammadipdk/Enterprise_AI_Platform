@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+EvaluationRun,Execution,Single evaluation process
+Benchmark,Reference,Reference benchmark
+EvaluationMetric,Analytics,Measured metric
+GroundTruth,Knowledge,Expected answer
+EvaluationDataset,Dataset,Evaluation corpus
+QualityThreshold,Governance,Acceptance criteria
+HallucinationCheck,Validation,Hallucination detection
+GroundingCheck,Validation,Grounding verification
+ReasoningEvaluation,Analytics,Reasoning assessment
+PlanningEvaluation,Analytics,Planning assessment
+ExecutionEvaluation,Analytics,Execution assessment
+AgentEvaluation,Analytics,Agent assessment
+BusinessKPI,Analytics,Business metric
+ContinuousLearning,Learning,Learning feedback
+EnterpriseScorecard,Analytics,Enterprise AI scorecard

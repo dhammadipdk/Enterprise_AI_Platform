@@ -1,0 +1,11 @@
+workflow_id,workflow_name,workflow_category,primary_capability,business_owner,execution_mode,lifecycle_stage,reusable,description,status
+WFLOW-000001,Enterprise Assistant Workflow,AI Assistant,Reasoning,AI Platform,Synchronous,Production,TRUE,General assistant workflow,Active
+WFLOW-000002,RAG Workflow,Knowledge,RAG,Knowledge Office,Synchronous,Production,TRUE,RAG workflow,Active
+WFLOW-000003,Claims Workflow,Insurance,Claims,Claims Department,Hybrid,Production,TRUE,Claims automation workflow,Active
+WFLOW-000004,Fraud Investigation,Fraud,Fraud Analysis,Fraud Team,Hybrid,Production,TRUE,Fraud investigation workflow,Active
+WFLOW-000005,Recommendation Workflow,Business,Recommendations,Business Team,Synchronous,Production,TRUE,Recommendation workflow,Active
+WFLOW-000006,Planning Workflow,Planning,Planning,Planning Team,Synchronous,Production,TRUE,Planning workflow,Active
+WFLOW-000007,Agent Collaboration,Agents,Multi-Agent,AI Platform,Asynchronous,Production,TRUE,Multi-agent workflow,Active
+WFLOW-000008,Document Intelligence,Document AI,Vision,Operations,Synchronous,Production,TRUE,Document AI workflow,Active
+WFLOW-000009,Executive Copilot,Decision Support,Executive,Executive Office,Synchronous,Production,TRUE,Executive workflow,Active
+WFLOW-000010,Research Workflow,Research,Research,Research Team,Hybrid,Experimental,TRUE,Research workflow,Experimental

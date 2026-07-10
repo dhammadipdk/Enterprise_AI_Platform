@@ -1,0 +1,7 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-DROLE-000001,POLICYHOLDER,Policyholder,Policy owner,Active,2026-01-01,,Enterprise,
+REF-DROLE-000002,PRIMARY_DRIVER,Primary Driver,Main driver of the insured vehicle,Active,2026-01-01,,Enterprise,
+REF-DROLE-000003,SECONDARY_DRIVER,Secondary Driver,Additional authorized driver,Active,2026-01-01,,Enterprise,
+REF-DROLE-000004,OCCASIONAL_DRIVER,Occasional Driver,Driver with occasional usage,Active,2026-01-01,,Enterprise,
+REF-DROLE-000005,CHAUFFEUR,Chauffeur,Professional employed driver,Active,2026-01-01,,Enterprise,
+REF-DROLE-000006,FLEET_DRIVER,Fleet Driver,Driver operating fleet vehicles,Active,2026-01-01,,Enterprise,

@@ -1,0 +1,21 @@
+term_id,term,business_definition
+GRAPH-001,Knowledge Graph,Graph representation of enterprise knowledge
+GRAPH-002,Node,Graph vertex representing an entity
+GRAPH-003,Edge,Relationship connecting two nodes
+GRAPH-004,Property,Attribute stored on node or edge
+GRAPH-005,Traversal,Navigation through graph relationships
+GRAPH-006,Cypher,Graph query language
+GRAPH-007,Subgraph,Subset of enterprise graph
+GRAPH-008,Projection,Filtered graph representation
+GRAPH-009,Graph Embedding,Vector representation of graph structure
+GRAPH-010,Community,Cluster of related nodes
+GRAPH-011,Centrality,Importance measure within graph
+GRAPH-012,Shortest Path,Minimum traversal path
+GRAPH-013,Graph Index,Performance optimization structure
+GRAPH-014,Knowledge Hub,Highly connected node
+GRAPH-015,Property Graph,Graph where nodes and edges have properties
+GRAPH-016,Heterogeneous Graph,Graph with multiple node and edge types
+GRAPH-017,Graph Pattern,Reusable graph query
+GRAPH-018,Graph Schema,Structure of graph
+GRAPH-019,Multi-hop Reasoning,Inference across several graph edges
+GRAPH-020,GraphRAG,Retrieval augmented generation over graph

@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-AUDIT-000001,INTERNAL,Internal Audit,Internal organizational audit,Active,2026-01-01,,Enterprise,
+REF-AUDIT-000002,REGULATORY,Regulatory Audit,Audit by regulatory authority,Active,2026-01-01,,Regulator,
+REF-AUDIT-000003,FINANCIAL,Financial Audit,Financial compliance audit,Active,2026-01-01,,Enterprise,
+REF-AUDIT-000004,IT_SECURITY,IT Security Audit,Information security audit,Active,2026-01-01,,Enterprise,
+REF-AUDIT-000005,CLAIMS_AUDIT,Claims Audit,Audit of claims processing,Active,2026-01-01,,Enterprise,

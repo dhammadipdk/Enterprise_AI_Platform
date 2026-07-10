@@ -1,0 +1,11 @@
+context_id,stage,component,input,governance_action,output,next_stage,business_context
+GCTX-000001,Request Received,Recommendation Engine,Customer Recommendation Request,Identify Applicable Policies,Applicable Policies,Risk Assessment,Recommendation initiated
+GCTX-000002,Risk Assessment,Risk Engine,Recommendation Context,Calculate Risk,Risk Score,Policy Validation,Risk classified
+GCTX-000003,Policy Validation,Governance Engine,Risk Score,Validate Policies,Policy Compliance Result,Approval Workflow,Policies validated
+GCTX-000004,Approval Decision,Approval Workflow,High Risk Recommendation,Request Approval,Approval Decision,Execution,Approval granted
+GCTX-000005,Execution Governance,Execution Engine,Approved Recommendation,Apply Governance Controls,Controlled Execution,Audit Logging,Governed execution
+GCTX-000006,Audit Logging,Audit Service,Execution Trace,Persist Decision Trace,Audit Record,Monitoring,Audit completed
+GCTX-000007,Governance Monitoring,Monitoring Service,Audit Record,Measure Governance KPIs,Governance Dashboard,Continuous Review,Metrics updated
+GCTX-000008,Continuous Review,Governance Board,Governance Dashboard,Review Governance Health,Improvement Actions,Knowledge Update,Governance improvement initiated
+GCTX-000009,Knowledge Update,Knowledge Office,Improvement Actions,Update Governance Knowledge,Updated Policies,Enterprise Governance,Governance knowledge improved
+GCTX-000010,Executive Oversight,Executive Board,Governance Reports,Strategic Governance Review,Enterprise Governance Scorecard,None,Governance cycle completed

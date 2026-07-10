@@ -1,0 +1,7 @@
+reference_id,code,name,start_time,end_time,description,status,effective_date,expiry_date,source_authority,remarks
+REF-TIME-000001,EARLY_MORNING,Early Morning,04:00,06:00,Early morning period,Active,2026-01-01,,Enterprise,
+REF-TIME-000002,MORNING,Morning,06:00,12:00,Morning period,Active,2026-01-01,,Enterprise,
+REF-TIME-000003,AFTERNOON,Afternoon,12:00,17:00,Afternoon period,Active,2026-01-01,,Enterprise,
+REF-TIME-000004,EVENING,Evening,17:00,21:00,Evening period,Active,2026-01-01,,Enterprise,
+REF-TIME-000005,NIGHT,Night,21:00,00:00,Night period,Active,2026-01-01,,Enterprise,
+REF-TIME-000006,LATE_NIGHT,Late Night,00:00,04:00,Late night period,Active,2026-01-01,,Enterprise,

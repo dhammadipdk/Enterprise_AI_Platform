@@ -1,0 +1,12 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-CLM-000001,Claim,Represents a formal insurance claim submitted against an issued policy.,Aggregate Root,,GLOSS-CLM-000001,Claim Number,Dynamic,Claims,Root aggregate.
+ENT-CLM-000002,Claim Notification,Represents First Notice of Loss (FNOL) information submitted by the claimant.,Entity,Claim,GLOSS-CLM-000011,,Dynamic,Claims,Initial reporting.
+ENT-CLM-000003,Loss Event,Represents the insured event that resulted in the claim.,Entity,Claim,GLOSS-CLM-000021,,Stable,Claims,Accident information.
+ENT-CLM-000004,Damage Assessment,Represents technical assessment of physical damages.,Entity,Claim,GLOSS-CLM-000031,,Dynamic,Claims,Inspection results.
+ENT-CLM-000005,Coverage Validation,Represents verification of policy coverage and eligibility.,Entity,Claim,GLOSS-CLM-000041,,Dynamic,Claims,Coverage decision.
+ENT-CLM-000006,Survey Assessment,Represents surveyor inspection and recommendations.,Entity,Claim,GLOSS-CLM-000051,,Dynamic,Claims,Survey workflow.
+ENT-CLM-000007,Claim Settlement,Represents approved financial settlement information.,Entity,Claim,GLOSS-CLM-000061,,Dynamic,Claims,Settlement workflow.
+ENT-CLM-000008,Recovery & Salvage,Represents recovery, salvage and subrogation activities.,Entity,Claim,GLOSS-CLM-000071,,Dynamic,Claims,Post-settlement activities.
+ENT-CLM-000009,Claim Lifecycle,Represents operational workflow and lifecycle of the claim.,Entity,Claim,GLOSS-CLM-000081,,Dynamic,Claims,Workflow management.
+ENT-CLM-000010,Fraud Assessment,Represents fraud detection and investigation intelligence.,Entity,Claim,GLOSS-CLM-000091,,Computed,Claims,Fraud analytics.
+ENT-CLM-000011,Claim Assessment,Represents AI-generated assessment, explainability and operational intelligence for the claim.,Entity,Claim,GLOSS-CLM-000096,,Computed,Claims,Decision intelligence.

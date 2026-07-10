@@ -1,0 +1,21 @@
+term_id,term,business_definition
+MODEL-001,Foundation Model,Large general purpose AI model
+MODEL-002,Embedding Model,Model producing vector embeddings
+MODEL-003,Reranker,Model reordering retrieved documents
+MODEL-004,Inference,Executing a model
+MODEL-005,Deployment,Serving a model
+MODEL-006,Checkpoint,Stored model weights
+MODEL-007,Endpoint,Inference endpoint
+MODEL-008,Fine-tuning,Adapting a pretrained model
+MODEL-009,Quantization,Reducing model precision
+MODEL-010,Context Window,Maximum supported input tokens
+MODEL-011,Token,Atomic text unit processed by models
+MODEL-012,Inference Profile,Execution configuration
+MODEL-013,Provider,Organization hosting models
+MODEL-014,Model Registry,Central repository of models
+MODEL-015,Lifecycle,Model operational stages
+MODEL-016,Artifact,Stored model files
+MODEL-017,Latency,Inference execution time
+MODEL-018,Throughput,Requests processed
+MODEL-019,Hallucination,Unsupported model output
+MODEL-020,Routing Policy,Policy selecting models

@@ -1,0 +1,11 @@
+role_id,role_name,role_category,authorization_model,privilege_level,requires_mfa,delegation_allowed,description,status
+ROLE-000001,Customer,Business,RBAC,Low,FALSE,FALSE,Insurance customer,Active
+ROLE-000002,Business User,Business,RBAC,Medium,TRUE,TRUE,Business operations user,Active
+ROLE-000003,Claims Adjuster,Claims,RBAC,Medium,TRUE,TRUE,Claims processing specialist,Active
+ROLE-000004,Fraud Analyst,Fraud,RBAC,High,TRUE,FALSE,Fraud investigation specialist,Active
+ROLE-000005,Knowledge Administrator,Knowledge,RBAC,High,TRUE,FALSE,Knowledge management administrator,Active
+ROLE-000006,AI Agent,AI,Capability Based Access Control,Medium,TRUE,FALSE,Autonomous agent role,Active
+ROLE-000007,Platform Administrator,Platform,RBAC,Critical,TRUE,FALSE,Platform administration,Active
+ROLE-000008,Security Auditor,Security,RBAC,High,TRUE,FALSE,Security audit role,Active
+ROLE-000009,CISO,Executive,RBAC,Critical,TRUE,FALSE,Chief Information Security Officer,Active
+ROLE-000010,System Service,System,ABAC,Medium,FALSE,FALSE,Internal service role,Active

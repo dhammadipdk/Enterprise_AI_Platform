@@ -1,0 +1,11 @@
+telemetry_id,telemetry_name,telemetry_category,data_type,collection_frequency,retention_period,business_importance,description,status
+TEL-000001,Knowledge Telemetry,Knowledge,Structured Event,Realtime,180 Days,Critical,Knowledge operations telemetry,Active
+TEL-000002,Memory Telemetry,Memory,Structured Event,Realtime,180 Days,Critical,Memory operations telemetry,Active
+TEL-000003,Planning Telemetry,Planning,Structured Event,Realtime,180 Days,Critical,Planning telemetry,Active
+TEL-000004,Execution Telemetry,Execution,Structured Event,Realtime,180 Days,Critical,Execution telemetry,Active
+TEL-000005,Agent Telemetry,Agents,Structured Event,Realtime,180 Days,Critical,Agent telemetry,Active
+TEL-000006,Retrieval Telemetry,Retrieval,Structured Event,Realtime,180 Days,High,Retriever telemetry,Active
+TEL-000007,LLM Telemetry,Models,Structured Event,Realtime,180 Days,Critical,LLM invocation telemetry,Active
+TEL-000008,Recommendation Telemetry,Business,Structured Event,Realtime,180 Days,High,Recommendation telemetry,Active
+TEL-000009,Governance Telemetry,Governance,Structured Event,Realtime,365 Days,Critical,Governance events,Active
+TEL-000010,Platform Telemetry,Infrastructure,Structured Event,Realtime,365 Days,Critical,Platform-wide telemetry,Active

@@ -1,0 +1,16 @@
+agent_capability_id,agent_id,capability_id,proficiency_level,is_primary,max_parallel_tasks,confidence_score,requires_supervision,description,status
+ACAP-000001,AG-000001,CAP-000007,Expert,TRUE,10,0.97,FALSE,Recommendation generation,Active
+ACAP-000002,AG-000001,CAP-000004,Advanced,FALSE,8,0.94,FALSE,Recommendation reasoning,Active
+ACAP-000003,AG-000002,CAP-000008,Expert,TRUE,6,0.98,TRUE,Fraud investigation,Active
+ACAP-000004,AG-000002,CAP-000004,Expert,FALSE,6,0.96,TRUE,Fraud reasoning,Active
+ACAP-000005,AG-000003,CAP-000006,Expert,TRUE,12,0.96,FALSE,Claims execution,Active
+ACAP-000006,AG-000003,CAP-000009,Advanced,FALSE,12,0.95,FALSE,Business validation,Active
+ACAP-000007,AG-000004,CAP-000005,Expert,TRUE,20,0.99,FALSE,Planning specialist,Active
+ACAP-000008,AG-000005,CAP-000006,Expert,TRUE,25,0.99,FALSE,Workflow execution,Active
+ACAP-000009,AG-000006,CAP-000004,Expert,TRUE,15,0.99,FALSE,Reasoning specialist,Active
+ACAP-000010,AG-000007,CAP-000001,Expert,TRUE,30,0.98,FALSE,Knowledge retrieval,Active
+ACAP-000011,AG-000007,CAP-000002,Expert,FALSE,30,0.97,FALSE,Graph traversal,Active
+ACAP-000012,AG-000007,CAP-000003,Expert,FALSE,30,0.97,FALSE,Semantic retrieval,Active
+ACAP-000013,AG-000008,CAP-000011,Expert,TRUE,25,0.99,FALSE,Enterprise memory management,Active
+ACAP-000014,AG-000009,CAP-000013,Expert,TRUE,50,0.99,FALSE,Multi-agent coordination,Active
+ACAP-000015,AG-000010,CAP-000010,Expert,TRUE,15,0.98,FALSE,Enterprise learning,Active

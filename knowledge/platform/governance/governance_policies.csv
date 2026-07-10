@@ -1,0 +1,11 @@
+policy_id,policy_name,policy_category,governance_domain,enforcement_mode,mandatory,human_override,review_frequency,description,status
+GPOL-000001,Enterprise AI Policy,Enterprise,Enterprise Governance,Strict,TRUE,TRUE,Quarterly,Enterprise AI governance policy,Active
+GPOL-000002,Knowledge Quality Policy,Knowledge,Knowledge Governance,Strict,TRUE,FALSE,Monthly,Knowledge quality policy,Active
+GPOL-000003,Grounding Policy,Responsible AI,Recommendation Governance,Strict,TRUE,FALSE,Monthly,All AI responses must be grounded,Active
+GPOL-000004,Human Approval Policy,Operations,Execution Governance,Conditional,TRUE,TRUE,Quarterly,High-risk actions require approval,Active
+GPOL-000005,Privacy Policy,Security,Data Governance,Strict,TRUE,FALSE,Quarterly,Customer privacy policy,Active
+GPOL-000006,Fairness Policy,Responsible AI,Model Governance,Strict,TRUE,TRUE,Quarterly,Fair AI decisions,Active
+GPOL-000007,Audit Policy,Governance,Enterprise Governance,Strict,TRUE,FALSE,Yearly,Every decision must be auditable,Active
+GPOL-000008,Compliance Policy,Compliance,Enterprise Governance,Strict,TRUE,FALSE,Quarterly,Regulatory compliance policy,Active
+GPOL-000009,Risk Management Policy,Risk,Enterprise Governance,Adaptive,TRUE,TRUE,Monthly,Risk-based governance,Active
+GPOL-000010,Continuous Review Policy,Governance,Enterprise Governance,Continuous,TRUE,FALSE,Continuous,Ongoing governance review,Active

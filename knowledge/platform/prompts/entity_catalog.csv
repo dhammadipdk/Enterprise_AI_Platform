@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Prompt,AI Asset,Enterprise prompt
+PromptTemplate,Template,Reusable template
+PromptVersion,Version,Prompt revision
+PromptVariable,Parameter,Dynamic variable
+PromptContext,Context,Supporting context
+PromptChain,Workflow,Sequence of prompts
+PromptGuardrail,Safety,Safety constraints
+PromptGrounding,Knowledge,RAG grounding
+PromptEvaluation,Evaluation,Prompt assessment
+PromptProfile,Execution,Execution configuration
+PromptOptimization,Optimization,Optimization strategy
+PromptLifecycle,Lifecycle,Prompt lifecycle
+PromptRegistry,Repository,Prompt repository
+PromptPolicy,Governance,Prompt routing policy
+PromptMonitoring,Observability,Prompt monitoring

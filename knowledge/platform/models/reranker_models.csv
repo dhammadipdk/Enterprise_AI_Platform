@@ -1,0 +1,11 @@
+reranker_model_id,model_name,architecture,max_input_tokens,supports_multilingual,ranking_strategy,latency_class,primary_use_case,description,status
+RERANK-000001,Enterprise Reranker Small,Cross Encoder,4096,TRUE,Cross Encoder,Low,RAG Retrieval,Fast reranker for production,Active
+RERANK-000002,Enterprise Reranker Large,Cross Encoder,8192,TRUE,Cross Encoder,Medium,High Accuracy RAG,High accuracy enterprise reranker,Active
+RERANK-000003,Document Reranker,Transformer,8192,TRUE,Semantic Similarity,Medium,Document Ranking,Enterprise document ranking,Active
+RERANK-000004,Knowledge Graph Reranker,Graph Transformer,8192,TRUE,Graph Ranking,High,Knowledge Retrieval,Graph-aware reranking,Active
+RERANK-000005,Legal Reranker,Cross Encoder,8192,TRUE,Legal Ranking,Medium,Legal Documents,Legal domain reranking,Active
+RERANK-000006,Insurance Reranker,Cross Encoder,8192,TRUE,Business Ranking,Medium,Insurance Search,Insurance-specific ranking,Active
+RERANK-000007,Fast Candidate Reranker,Bi Encoder,4096,TRUE,Candidate Filtering,Very Low,Large-scale Retrieval,Fast reranking,Active
+RERANK-000008,Code Reranker,Transformer,8192,TRUE,Code Similarity,Medium,Developer Search,Code retrieval ranking,Active
+RERANK-000009,Multimodal Reranker,Transformer,16384,TRUE,Cross Modal,High,Vision + Text Retrieval,Multimodal ranking,Active
+RERANK-000010,Experimental Reranker,Research,32768,TRUE,Experimental,High,Research,Experimental reranking model,Active

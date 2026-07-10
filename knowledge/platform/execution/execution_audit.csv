@@ -1,0 +1,11 @@
+audit_id,audit_type,audited_entity,audit_trigger,audit_scope,retention_policy,immutable,contains_sensitive_data,compliance_requirement,description,status
+AUD-000001,Workflow Audit,Workflow,Workflow Completed,Complete Execution,7 Years,TRUE,FALSE,Operational Audit,Workflow audit trail,Active
+AUD-000002,Decision Audit,Reasoning,Decision Generated,Reasoning Trace,10 Years,TRUE,TRUE,Explainable AI,Decision audit,Active
+AUD-000003,Recommendation Audit,Recommendation,Recommendation Delivered,Business Recommendation,7 Years,TRUE,TRUE,Business Governance,Recommendation audit,Active
+AUD-000004,Memory Audit,Memory,Memory Updated,Memory Operations,Permanent,TRUE,TRUE,Knowledge Governance,Memory modifications,Active
+AUD-000005,Tool Audit,Tool,Tool Invocation,Infrastructure,5 Years,TRUE,FALSE,Infrastructure Governance,Tool execution log,Active
+AUD-000006,Security Audit,Security,Authentication,Access Events,10 Years,TRUE,TRUE,Security Compliance,Security events,Active
+AUD-000007,Compliance Audit,Governance,Policy Validation,Governance,10 Years,TRUE,TRUE,Regulatory Compliance,Compliance validation,Active
+AUD-000008,Failure Audit,Recovery,Execution Failure,Failure Analysis,10 Years,TRUE,FALSE,Incident Management,Failure investigation,Active
+AUD-000009,Agent Audit,Agents,Agent Action,Agent Operations,7 Years,TRUE,FALSE,AI Governance,Agent activity tracking,Active
+AUD-000010,Enterprise Audit,Enterprise,System Event,Enterprise Operations,Permanent,TRUE,TRUE,Enterprise Governance,Enterprise-wide audit,Active

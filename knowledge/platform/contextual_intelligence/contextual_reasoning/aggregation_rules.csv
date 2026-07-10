@@ -1,0 +1,11 @@
+aggregation_rule_id,aggregation_name,input_contexts,aggregation_method,weight_distribution,output_metric,normalization_method,confidence_method,remarks,status
+AGG-000001,Overall Driving Risk,"Vehicle,Human,Environment",Weighted Average,"0.40|0.40|0.20",Driving Risk Score,MinMax,Weighted Confidence,,Active
+AGG-000002,Overall Fraud Risk,"Fraud,Claims,Documents",Weighted Average,"0.50|0.30|0.20",Fraud Risk Score,MinMax,Weighted Confidence,,Active
+AGG-000003,Claim Decision Score,"Claims,Fraud,Recommendation",Weighted Average,"0.50|0.30|0.20",Decision Score,MinMax,Combined Confidence,,Active
+AGG-000004,Customer Value Index,"Customer,Insurance",Weighted Average,"0.70|0.30",Customer Value Index,Z-Score,Weighted Confidence,,Active
+AGG-000005,Recommendation Score,"Claims,Fraud,Vehicle,Customer",Weighted Average,"0.30|0.30|0.20|0.20",Recommendation Score,MinMax,Combined Confidence,,Active
+AGG-000006,Operational Readiness,"Infrastructure,Operations,Resources",Weighted Average,"0.40|0.30|0.30",Operational Index,MinMax,Weighted Confidence,,Active
+AGG-000007,Enterprise Risk,"Environment,Vehicle,Human,Fraud",Weighted Average,"0.20|0.30|0.20|0.30",Enterprise Risk Index,MinMax,Combined Confidence,,Active
+AGG-000008,Settlement Readiness,"Claims,Documents,Fraud",Weighted Average,"0.40|0.30|0.30",Settlement Readiness Index,MinMax,Weighted Confidence,,Active
+AGG-000009,Repair Readiness,"Vehicle,Repair,Infrastructure",Weighted Average,"0.50|0.30|0.20",Repair Readiness Score,MinMax,Weighted Confidence,,Active
+AGG-000010,Business Intelligence Index,"All Domains",Weighted Average,Adaptive,Enterprise Intelligence Score,Adaptive,Combined Confidence,,Active

@@ -1,0 +1,11 @@
+memory_security_id,control_name,memory_scope,protection_type,access_validation,encryption_required,retention_policy,audit_required,description,status
+MEMSEC-000001,Working Memory Protection,Working Memory,Access Control,TRUE,TRUE,Session,FALSE,Protect working memory during execution,Active
+MEMSEC-000002,Short-term Memory Protection,Short-term Memory,Encryption,TRUE,TRUE,30 Days,TRUE,Protect temporary conversational memory,Active
+MEMSEC-000003,Long-term Memory Protection,Long-term Memory,Encryption,TRUE,TRUE,Policy Driven,TRUE,Protect enterprise long-term memory,Active
+MEMSEC-000004,Episodic Memory Protection,Episodic Memory,Access Control,TRUE,TRUE,Policy Driven,TRUE,Protect episodic memory,Active
+MEMSEC-000005,Semantic Memory Protection,Semantic Memory,Integrity Validation,TRUE,TRUE,Permanent,TRUE,Protect semantic knowledge,Active
+MEMSEC-000006,Memory Isolation,Tenant Memory,Isolation,TRUE,TRUE,Policy Driven,TRUE,Isolate tenant memories,Active
+MEMSEC-000007,Memory Version Control,Memory Repository,Integrity Validation,TRUE,FALSE,Permanent,TRUE,Track memory versions,Active
+MEMSEC-000008,Memory Deletion Control,Memory Lifecycle,Secure Deletion,TRUE,TRUE,On Request,TRUE,Securely erase memories,Active
+MEMSEC-000009,Memory Backup Protection,Backup Storage,Encryption,TRUE,TRUE,Policy Driven,TRUE,Protect memory backups,Active
+MEMSEC-000010,Memory Access Audit,Entire Memory Layer,Audit Logging,TRUE,FALSE,Permanent,TRUE,Audit all memory access,Active

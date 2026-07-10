@@ -1,0 +1,43 @@
+relationship_id,source_context,relationship_type,target_context,relationship_strength,relationship_nature,evidence_level,confidence_score,model_reference,remarks
+REL-VEH-000001,High Annual Mileage,INCREASES,Component Wear,0.97,Causal,High,0.98,MODEL-VEH-001,
+REL-VEH-000002,Component Wear,INCREASES,Mechanical Failure Risk,0.95,Causal,High,0.96,MODEL-VEH-001,
+REL-VEH-000003,Mechanical Failure Risk,INCREASES,Breakdown Probability,0.96,Causal,High,0.97,MODEL-VEH-002,
+REL-VEH-000004,Breakdown Probability,RECOMMENDS,Roadside Assistance Add-on,0.95,Business Rule,High,0.96,RULE-REC-001,
+
+REL-VEH-000005,High Engine Load,INCREASES,Engine Wear,0.94,Causal,High,0.95,MODEL-ENG-001,
+REL-VEH-000006,Engine Wear,DECREASES,Engine Health Index,0.93,Causal,High,0.94,MODEL-ENG-001,
+REL-VEH-000007,Low Engine Health Index,INCREASES,Engine Failure Risk,0.94,Causal,High,0.95,MODEL-ENG-002,
+
+REL-VEH-000008,Frequent Hard Braking,INCREASES,Brake Wear,0.95,Causal,High,0.96,MODEL-BRK-001,
+REL-VEH-000009,Brake Wear,INCREASES,Brake Failure Risk,0.94,Causal,High,0.95,MODEL-BRK-001,
+REL-VEH-000010,Brake Failure Risk,RECOMMENDS,Brake Inspection,0.96,Business Rule,High,0.97,RULE-BRK-001,
+
+REL-VEH-000011,Low Tyre Pressure,INCREASES,Tyre Wear,0.94,Causal,High,0.95,MODEL-TYR-001,
+REL-VEH-000012,Tyre Wear,INCREASES,Tyre Burst Risk,0.93,Causal,High,0.94,MODEL-TYR-001,
+REL-VEH-000013,Tyre Burst Risk,INCREASES,Accident Probability,0.92,Causal,High,0.93,MODEL-INS-001,
+
+REL-VEH-000014,Poor Battery Health,INCREASES,Starting Failure Probability,0.95,Causal,High,0.96,MODEL-BAT-001,
+REL-VEH-000015,Battery Failure Probability,RECOMMENDS,Battery Replacement,0.98,Business Rule,High,0.98,RULE-BAT-001,
+
+REL-VEH-000016,High Fuel Consumption,DECREASES,Operational Efficiency,0.90,Causal,Medium,0.91,MODEL-FUEL-001,
+REL-VEH-000017,Low Operational Efficiency,INCREASES,Maintenance Cost,0.91,Causal,High,0.92,MODEL-COST-001,
+
+REL-VEH-000018,Poor Service Compliance,INCREASES,Mechanical Failure Risk,0.95,Causal,High,0.96,MODEL-SRV-001,
+REL-VEH-000019,Regular Preventive Maintenance,DECREASES,Breakdown Probability,0.94,Causal,High,0.95,MODEL-SRV-002,
+
+REL-VEH-000020,High Vehicle Age,INCREASES,Maintenance Frequency,0.92,Causal,High,0.93,MODEL-AGE-001,
+REL-VEH-000021,Maintenance Frequency,INCREASES,Maintenance Cost,0.88,Causal,Medium,0.89,MODEL-COST-002,
+
+REL-VEH-000022,Remaining Useful Life,DECREASES,Asset Value,0.91,Causal,High,0.92,MODEL-RUL-001,
+REL-VEH-000023,Low Remaining Useful Life,RECOMMENDS,Vehicle Replacement Planning,0.89,Business Rule,Medium,0.90,RULE-RUL-001,
+
+REL-VEH-000024,Vehicle Health Score,DECREASES,Insurance Risk Score,0.93,Causal,High,0.94,MODEL-RISK-001,
+REL-VEH-000025,Insurance Risk Score,INCREASES,Premium Adjustment,0.91,Business Rule,High,0.92,RULE-PRICING-001,
+
+REL-VEH-000026,Usage Intensity,INCREASES,Wear Rate,0.95,Causal,High,0.96,MODEL-USG-001,
+REL-VEH-000027,Wear Rate,DECREASES,Remaining Useful Life,0.94,Causal,High,0.95,MODEL-RUL-002,
+
+REL-VEH-000028,Repeated DTC Events,INCREASES,Workshop Visit Probability,0.93,Causal,High,0.94,MODEL-DTC-001,
+REL-VEH-000029,Workshop Visit Probability,INCREASES,Maintenance Cost,0.89,Causal,Medium,0.90,MODEL-COST-003,
+
+REL-VEH-000030,Overall Vehicle Health Score,RECOMMENDS,Preventive Maintenance Plan,0.97,Business Rule,High,0.98,RULE-MAINT-001,

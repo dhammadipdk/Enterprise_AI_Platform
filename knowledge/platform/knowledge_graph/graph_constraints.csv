@@ -1,0 +1,16 @@
+constraint_id,constraint_name,constraint_category,applies_to,constraint_expression,enforcement_level,violation_action,description,status
+GCONST-000001,Unique Customer ID,Uniqueness,Customer,customer_id IS UNIQUE,Strict,Reject,Prevent duplicate customer nodes,Active
+GCONST-000002,Unique Policy Number,Uniqueness,Policy,policy_number IS UNIQUE,Strict,Reject,Prevent duplicate policy nodes,Active
+GCONST-000003,Unique Vehicle Registration,Uniqueness,Vehicle,registration_number IS UNIQUE,Strict,Reject,Prevent duplicate vehicles,Active
+GCONST-000004,Unique Claim Number,Uniqueness,Claim,claim_number IS UNIQUE,Strict,Reject,Prevent duplicate claims,Active
+GCONST-000005,Mandatory Customer Node,Existence,Policy,Policy MUST CONNECT Customer,Strict,Reject,Every policy must belong to customer,Active
+GCONST-000006,Mandatory Policy Node,Existence,Claim,Claim MUST CONNECT Policy,Strict,Reject,Claim requires policy,Active
+GCONST-000007,Mandatory Vehicle Node,Existence,Claim,Claim MUST CONNECT Vehicle,Strict,Reject,Claim requires vehicle,Active
+GCONST-000008,Fraud Score Range,Range,FraudCase,0<=fraud_score<=100,Soft,Warn,Maintain valid fraud score,Active
+GCONST-000009,Confidence Range,Range,Decision,0<=confidence<=1,Soft,Warn,Confidence normalization,Active
+GCONST-000010,No Self Loop,Topology,All,Source!=Destination,Strict,Reject,Prevent self relationships,Active
+GCONST-000011,Allowed Edge Types,Topology,All,Relationship MUST EXIST in edge_types.csv,Strict,Reject,Restrict graph schema,Active
+GCONST-000012,Ontology Alignment,Semantic,All,Node MUST map to ontology,Strict,Reject,Ontology-driven graph,Active
+GCONST-000013,Property Validation,Schema,All,Required Properties Present,Strict,Reject,Schema completeness,Active
+GCONST-000014,Temporal Validity,Temporal,Edges,start_date<=end_date,Soft,Warn,Temporal consistency,Active
+GCONST-000015,Version Consistency,Governance,Graph,Latest Schema Version,Soft,Warn,Graph evolution control,Active

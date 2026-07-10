@@ -1,0 +1,11 @@
+metric_id,metric_name,metric_category,measurement_unit,target_direction,collection_frequency,business_use,description,status
+EMET-000001,Execution Duration,Performance,Milliseconds,Minimize,Realtime,Runtime Performance,Workflow execution time,Active
+EMET-000002,Workflow Success Rate,Reliability,Percentage,Maximize,Daily,Operational Health,Successful executions,Active
+EMET-000003,Retry Rate,Recovery,Percentage,Minimize,Daily,Execution Stability,Retry frequency,Active
+EMET-000004,Rollback Frequency,Recovery,Count,Minimize,Daily,System Reliability,Rollback occurrences,Active
+EMET-000005,Checkpoint Recovery Time,Recovery,Milliseconds,Minimize,Realtime,Recovery Performance,Checkpoint restoration time,Active
+EMET-000006,Tool Utilization,Infrastructure,Percentage,Optimize,Hourly,Infrastructure Planning,Tool usage efficiency,Active
+EMET-000007,Execution Cost,Financial,Currency,Minimize,Daily,Cost Optimization,Runtime operational cost,Active
+EMET-000008,Human Intervention Rate,Operations,Percentage,Minimize,Weekly,Automation Maturity,Manual intervention frequency,Active
+EMET-000009,Execution SLA Compliance,Governance,Percentage,Maximize,Daily,SLA Monitoring,SLA adherence,Active
+EMET-000010,Learning Update Success,Learning,Percentage,Maximize,Daily,Continuous Learning,Memory update success,Active

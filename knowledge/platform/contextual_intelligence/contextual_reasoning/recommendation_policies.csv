@@ -1,0 +1,11 @@
+policy_id,policy_name,policy_category,trigger_condition,recommended_action,minimum_confidence,approval_required,execution_mode,rollback_supported,description,status
+POLICY-000001,Automatic Approval,Execution,Confidence>=0.95,Execute Recommendation,0.95,No,Automatic,Yes,Automatically execute highly confident recommendations.,Active
+POLICY-000002,Manual Review,Execution,Confidence<0.70,Assign Human Review,0.70,Yes,Manual,N/A,Low-confidence decisions require review.,Active
+POLICY-000003,Fraud Escalation,Fraud,FraudRisk>=90,Assign SIU,0.90,Yes,Manual,N/A,Critical fraud requires investigation.,Active
+POLICY-000004,Freeze Payment,Fraud,FraudRisk>=95,Freeze Payment,0.95,Yes,Manual,N/A,Prevent suspicious payouts.,Active
+POLICY-000005,Fast Track Claims,Claims,LowRiskClaim=True,Fast Track Settlement,0.90,No,Semi-Automatic,Yes,Accelerate low-risk claims.,Active
+POLICY-000006,Compliance Review,Compliance,ComplianceScore<85,Compliance Review,0.85,Yes,Manual,N/A,Review regulatory issues.,Active
+POLICY-000007,Customer Retention,Customer,HighCLV=True,Retention Offer,0.80,No,Automatic,Yes,Protect valuable customers.,Active
+POLICY-000008,Coverage Enhancement,Insurance,CoverageGap=True,Recommend Coverage Upgrade,0.75,No,Automatic,Yes,Improve customer protection.,Active
+POLICY-000009,Preventive Maintenance,Vehicle,VehicleHealth<70,Schedule Maintenance,0.80,No,Automatic,Yes,Reduce future failures.,Active
+POLICY-000010,Enterprise Recommendation,Enterprise,DecisionReadiness>=90,Execute Enterprise Recommendation,0.90,Optional,Hybrid,Yes,Execute integrated decision plan.,Active

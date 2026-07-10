@@ -1,0 +1,11 @@
+guardrail_id,guardrail_name,guardrail_category,enforcement_stage,severity,blocking,applies_to,description,status
+GR-000001,PII Protection,Privacy,Pre-Inference,Critical,TRUE,All Prompts,Prevent disclosure of personally identifiable information,Active
+GR-000002,Prompt Injection Detection,Security,Pre-Inference,Critical,TRUE,RAG Prompts,Detect prompt injection attacks,Active
+GR-000003,Jailbreak Prevention,Security,Pre-Inference,Critical,TRUE,System Prompts,Prevent jailbreak attempts,Active
+GR-000004,Toxicity Prevention,Safety,Post-Inference,High,TRUE,Generated Responses,Prevent toxic responses,Active
+GR-000005,Hallucination Check,Quality,Post-Inference,Medium,FALSE,Knowledge Responses,Detect unsupported claims,Active
+GR-000006,Compliance Validation,Governance,Post-Inference,Critical,TRUE,Compliance Prompts,Validate regulatory compliance,Active
+GR-000007,Role Isolation,Security,Prompt Compilation,Critical,TRUE,Agent Prompts,Prevent privilege escalation between agents,Active
+GR-000008,Sensitive Tool Protection,Security,Tool Invocation,Critical,TRUE,Tool Calling,Restrict sensitive tool execution,Active
+GR-000009,Output Formatting,Quality,Post-Inference,Low,FALSE,Business Responses,Ensure standardized formatting,Active
+GR-000010,Human Approval Check,Governance,Post-Inference,Critical,FALSE,Critical Decisions,Require approval before execution,Active

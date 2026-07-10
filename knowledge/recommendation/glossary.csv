@@ -1,0 +1,101 @@
+glossary_id,canonical_term,business_definition,domain,concept_category,semantic_class,lifecycle,parent_concept,derived_from,aliases,example,source,remarks
+GLOSS-REC-000001,Recommendation,Represents an AI-generated insurance recommendation.,Recommendation,Identity,Core,Dynamic,,,Recommendation,Recommended Policy,AI,Root business concept.
+GLOSS-REC-000002,Recommendation Identifier,Unique identifier assigned to the recommendation.,Recommendation,Identity,Core,Stable,Recommendation,,Recommendation ID,REC-100001,Platform,Primary identifier.
+GLOSS-REC-000003,Recommendation Type,Classification of recommendation.,Recommendation,Classification,Core,Stable,Recommendation,,Type,Policy Recommendation,Business,Recommendation category.
+GLOSS-REC-000004,Recommendation Status,Current operational status.,Recommendation,Operational,Derived,Dynamic,Recommendation,Recommendation Lifecycle,,Active,Derived,Lifecycle.
+GLOSS-REC-000005,Recommendation Timestamp,Timestamp when recommendation was generated.,Recommendation,Operational,Core,Stable,Recommendation,,Generated Time,2026-08-20T10:00:00,System,Audit.
+GLOSS-REC-000006,Recommendation Target,Business object being recommended.,Recommendation,Reference,Core,Stable,Recommendation,,Target,HDFC Ergo Comprehensive,Business,Cross-domain reference.
+GLOSS-REC-000007,Recommendation Objective,Primary business objective.,Recommendation,Classification,Core,Stable,Recommendation,,Objective,Maximum Coverage,Business,Optimization goal.
+GLOSS-REC-000008,Recommendation Confidence,Overall recommendation confidence.,Recommendation,Assessment,AI Generated,Computed,Recommendation,Reasoning Engine,,97%,AI,Primary confidence.
+GLOSS-REC-000009,Recommendation Score,Overall recommendation score.,Recommendation,Assessment,AI Generated,Computed,Recommendation,Ranking Engine,,96.5,AI,Ranking score.
+GLOSS-REC-000010,Recommendation Summary,Simplified explanation of recommendation.,Recommendation,Derived,Derived,Computed,Recommendation,Recommendation Score,,Recommended because of high coverage and value.,Derived,AI explanation.
+GLOSS-REC-000011,Recommendation Ranking,Represents ranking of candidate insurance products.,Recommendation,Assessment,Core,Dynamic,Recommendation,,Ranking,Top 3,Business,Parent concept.
+GLOSS-REC-000012,Ranking Method,Ranking methodology.,Recommendation,Classification,Core,Stable,Recommendation Ranking,,Method,Hybrid Ranking,AI,Ranking algorithm.
+GLOSS-REC-000013,Candidate Count,Number of evaluated candidates.,Recommendation,Operational,Core,Dynamic,Recommendation Ranking,,Candidates,24,AI,Evaluation.
+GLOSS-REC-000014,Top Recommendation,Highest ranked recommendation.,Recommendation,Reference,Derived,Computed,Recommendation Ranking,Ranking Engine,,Policy A,Derived,Best option.
+GLOSS-REC-000015,Ranking Position,Rank assigned to candidate.,Recommendation,Assessment,Derived,Computed,Recommendation Ranking,Ranking Engine,,1,Derived,Ordering.
+GLOSS-REC-000016,Ranking Score,Score assigned during ranking.,Recommendation,Assessment,AI Generated,Computed,Recommendation Ranking,Ranking Engine,,96.5,AI,Primary metric.
+GLOSS-REC-000017,Ranking Confidence,Confidence in ranking.,Recommendation,Assessment,AI Generated,Computed,Recommendation Ranking,Ranking Engine,,98%,AI,Stability.
+GLOSS-REC-000018,Tie Resolution,Method used for resolving ties.,Recommendation,Operational,Derived,Computed,Recommendation Ranking,Ranking Engine,,Coverage Priority,Derived,Ranking consistency.
+GLOSS-REC-000019,Ranking Summary,Simplified explanation of ranking.,Recommendation,Derived,Derived,Computed,Recommendation Ranking,Ranking Engine,,Ranked by value and coverage.,Derived,AI explanation.
+GLOSS-REC-000020,Ranking Version,Version of ranking methodology.,Recommendation,Operational,Core,Stable,Recommendation Ranking,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000021,Recommendation Explanation,Represents natural-language explanation supporting recommendations.,Recommendation,Knowledge,Core,Dynamic,Recommendation,,Explanation,Policy Explanation,AI,Parent concept.
+GLOSS-REC-000022,Explanation Identifier,Unique explanation identifier.,Recommendation,Identity,Core,Stable,Recommendation Explanation,,Explanation ID,EXP-100001,Platform,Primary identifier.
+GLOSS-REC-000023,Explanation Type,Classification of explanation.,Recommendation,Classification,Core,Stable,Recommendation Explanation,,Explanation Type,Coverage Explanation,Business,Organization.
+GLOSS-REC-000024,Explanation Text,Natural-language explanation.,Recommendation,Knowledge,AI Generated,Computed,Recommendation Explanation,LLM,,Recommended because your vehicle is new and annual mileage is high.,AI,Customer-facing.
+GLOSS-REC-000025,Explanation Length,Length of generated explanation.,Recommendation,Operational,Derived,Computed,Recommendation Explanation,LLM,,Medium,Derived,Presentation.
+GLOSS-REC-000026,Explanation Audience,Target audience.,Recommendation,Classification,Core,Stable,Recommendation Explanation,,Audience,Customer,Business,Personalization.
+GLOSS-REC-000027,Explanation Confidence,Confidence associated with explanation.,Recommendation,Assessment,AI Generated,Computed,Recommendation Explanation,Reasoning Engine,,98%,AI,Quality.
+GLOSS-REC-000028,Supporting Evidence,Knowledge supporting explanation.,Recommendation,Reference,Derived,Computed,Recommendation Explanation,Knowledge Graph,,Coverage Rules,Derived,Traceability.
+GLOSS-REC-000029,Explanation Summary,Simplified explanation summary.,Recommendation,Derived,Derived,Computed,Recommendation Explanation,LLM,,Recommended for comprehensive protection.,Derived,Executive summary.
+GLOSS-REC-000030,Explanation Version,Version of explanation template.,Recommendation,Operational,Core,Stable,Recommendation Explanation,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000031,Recommendation Reasoning,Represents structured reasoning behind recommendations.,Recommendation,Knowledge,Core,Dynamic,Recommendation,,Reasoning,Reasoning Graph,AI,Parent concept.
+GLOSS-REC-000032,Reasoning Strategy,Reasoning strategy used.,Recommendation,Classification,Core,Stable,Recommendation Reasoning,,Strategy,Hybrid Rule + LLM,AI,Inference.
+GLOSS-REC-000033,Rule Matches,Business rules satisfied.,Recommendation,Knowledge,Derived,Computed,Recommendation Reasoning,Rule Engine,,18 Rules,Derived,Rule engine output.
+GLOSS-REC-000034,Retrieved Knowledge,Knowledge retrieved during reasoning.,Recommendation,Knowledge,Derived,Computed,Recommendation Reasoning,RAG,,Policy Documents,Derived,RAG.
+GLOSS-REC-000035,Reasoning Path,High-level reasoning path.,Recommendation,Knowledge,AI Generated,Computed,Recommendation Reasoning,Reasoner,,Customer → Vehicle → Coverage → Ranking,AI,Explainability.
+GLOSS-REC-000036,Reasoning Confidence,Confidence associated with reasoning.,Recommendation,Assessment,AI Generated,Computed,Recommendation Reasoning,Reasoner,,97%,AI,Quality.
+GLOSS-REC-000037,Reasoning Depth,Approximate reasoning complexity.,Recommendation,Assessment,Derived,Computed,Recommendation Reasoning,Reasoner,,High,Derived,Analytics.
+GLOSS-REC-000038,Knowledge Sources,Knowledge sources consulted.,Recommendation,Reference,Derived,Computed,Recommendation Reasoning,RAG,,Customer;Policy;Regulatory,Derived,Traceability.
+GLOSS-REC-000039,Reasoning Summary,Simplified reasoning explanation.,Recommendation,Derived,Derived,Computed,Recommendation Reasoning,Reasoner,,Recommendation satisfies customer requirements and regulations.,Derived,AI explanation.
+GLOSS-REC-000040,Reasoning Version,Version of reasoning pipeline.,Recommendation,Operational,Core,Stable,Recommendation Reasoning,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000041,Decision Support,Represents AI-assisted insurance decision support.,Recommendation,Knowledge,Core,Dynamic,Recommendation,,Decision Support,Insurance Advisor,AI,Parent concept.
+GLOSS-REC-000042,Decision Type,Type of supported decision.,Recommendation,Classification,Core,Stable,Decision Support,,Decision,Purchase,Business,Decision category.
+GLOSS-REC-000043,Decision Outcome,Recommended business decision.,Recommendation,Knowledge,AI Generated,Computed,Decision Support,Reasoning Engine,,Buy Comprehensive Policy,AI,Recommendation.
+GLOSS-REC-000044,Risk Tradeoff,Tradeoff considered during recommendation.,Recommendation,Knowledge,Derived,Computed,Decision Support,Reasoning Engine,,Premium vs Coverage,Derived,Optimization.
+GLOSS-REC-000045,Alternative Options,Alternative recommendations.,Recommendation,Reference,Derived,Computed,Decision Support,Ranking Engine,,Policy B;Policy C,Derived,Customer choice.
+GLOSS-REC-000046,Decision Confidence,Confidence in recommended decision.,Recommendation,Assessment,AI Generated,Computed,Decision Support,Reasoning Engine,,98%,AI,Decision quality.
+GLOSS-REC-000047,Decision Constraints,Business constraints applied.,Recommendation,Knowledge,Derived,Computed,Decision Support,Rule Engine,,Budget;Eligibility,Derived,Traceability.
+GLOSS-REC-000048,Decision Summary,Simplified decision explanation.,Recommendation,Derived,Derived,Computed,Decision Support,Decision Outcome,,Best balance between premium and protection.,Derived,AI explanation.
+GLOSS-REC-000049,Decision Version,Decision engine version.,Recommendation,Operational,Core,Stable,Decision Support,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000050,Decision Trace,High-level trace of decision generation.,Recommendation,Knowledge,AI Generated,Computed,Decision Support,Reasoner,,Knowledge → Ranking → Recommendation,AI,Auditability.
+GLOSS-REC-000051,Conversation Context,Represents conversational context used during recommendation generation.,Recommendation,Knowledge,Core,Dynamic,Recommendation,,Conversation Context,Insurance Chat Session,AI,Parent business concept.
+GLOSS-REC-000052,Conversation Identifier,Unique conversation identifier.,Recommendation,Identity,Core,Stable,Conversation Context,,Conversation ID,CONV-100001,Platform,Primary identifier.
+GLOSS-REC-000053,Conversation Channel,Channel through which interaction occurs.,Recommendation,Classification,Core,Stable,Conversation Context,,Channel,Web Chat,Business,Interaction source.
+GLOSS-REC-000054,Conversation Intent,Detected customer intent.,Recommendation,Knowledge,AI Generated,Computed,Conversation Context,Intent Classifier,,Buy Insurance,AI,Intent understanding.
+GLOSS-REC-000055,Conversation State,Current conversational state.,Recommendation,Operational,Derived,Dynamic,Conversation Context,Dialogue Manager,,Recommendation Phase,Derived,Dialogue management.
+GLOSS-REC-000056,Conversation History,Historical dialogue context.,Recommendation,Knowledge,Derived,Computed,Conversation Context,Conversation Memory,,Previous Messages,Derived,LLM memory.
+GLOSS-REC-000057,Context Completeness,Completeness of available context.,Recommendation,Assessment,AI Generated,Computed,Conversation Context,Context Engine,,95%,AI,Quality metric.
+GLOSS-REC-000058,Context Confidence,Confidence associated with conversation understanding.,Recommendation,Assessment,AI Generated,Computed,Conversation Context,Context Engine,,98%,AI,Reasoning quality.
+GLOSS-REC-000059,Conversation Summary,Simplified conversation summary.,Recommendation,Derived,Derived,Computed,Conversation Context,Conversation History,,Customer looking for comprehensive policy.,Derived,AI explanation.
+GLOSS-REC-000060,Conversation Version,Conversation engine version.,Recommendation,Operational,Core,Stable,Conversation Context,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000061,Recommendation Feedback,Represents customer feedback on generated recommendations.,Recommendation,Identity,Core,Dynamic,Recommendation,,Feedback,Accepted Recommendation,Business,Parent business concept.
+GLOSS-REC-000062,Feedback Identifier,Unique feedback identifier.,Recommendation,Identity,Core,Stable,Recommendation Feedback,,Feedback ID,FDBK-100001,Platform,Primary identifier.
+GLOSS-REC-000063,Feedback Type,Classification of feedback.,Recommendation,Classification,Core,Stable,Recommendation Feedback,,Feedback Type,Acceptance,Business,Feedback category.
+GLOSS-REC-000064,Feedback Rating,Customer rating.,Recommendation,Assessment,Core,Dynamic,Recommendation Feedback,,Rating,5,Business,Satisfaction.
+GLOSS-REC-000065,Feedback Comments,Customer comments.,Recommendation,Knowledge,Core,Dynamic,Recommendation Feedback,,Comments,Very useful recommendation.,Customer,Qualitative feedback.
+GLOSS-REC-000066,Recommendation Accepted,Indicates recommendation acceptance.,Recommendation,Operational,Core,Dynamic,Recommendation Feedback,,Accepted,True,Business,Outcome.
+GLOSS-REC-000067,Recommendation Rejected,Indicates recommendation rejection.,Recommendation,Operational,Derived,Computed,Recommendation Feedback,Recommendation Accepted,,False,Derived,Outcome.
+GLOSS-REC-000068,Learning Signal,Signal generated for model improvement.,Recommendation,Knowledge,AI Generated,Computed,Recommendation Feedback,Learning Engine,,Positive Signal,AI,Continuous learning.
+GLOSS-REC-000069,Feedback Summary,Simplified feedback explanation.,Recommendation,Derived,Derived,Computed,Recommendation Feedback,Feedback Rating,,Customer accepted recommendation.,Derived,AI explanation.
+GLOSS-REC-000070,Feedback Confidence,Confidence associated with interpreted feedback.,Recommendation,Assessment,AI Generated,Computed,Recommendation Feedback,Feedback Engine,,99%,AI,Automation.
+GLOSS-REC-000071,Recommendation Lifecycle,Represents lifecycle of generated recommendations.,Recommendation,Operational,Core,Dynamic,Recommendation,,Lifecycle,Active,Business,Parent business concept.
+GLOSS-REC-000072,Lifecycle Stage,Current lifecycle stage.,Recommendation,Operational,Derived,Dynamic,Recommendation Lifecycle,Workflow,,Generated,Derived,Workflow.
+GLOSS-REC-000073,Activation Status,Current activation status.,Recommendation,Operational,Derived,Dynamic,Recommendation Lifecycle,Lifecycle,,Active,Derived,Operational.
+GLOSS-REC-000074,Expiry Status,Recommendation expiry status.,Recommendation,Operational,Derived,Computed,Recommendation Lifecycle,Validity Rules,,Valid,Derived,Lifecycle.
+GLOSS-REC-000075,Recommendation Validity,Validity duration.,Recommendation,Operational,Core,Stable,Recommendation Lifecycle,,30 Days,Business,Recommendation lifetime.
+GLOSS-REC-000076,Refresh Indicator,Indicates recommendation refresh requirement.,Recommendation,Operational,Derived,Computed,Recommendation Lifecycle,Recommendation Engine,,False,Derived,Freshness.
+GLOSS-REC-000077,Lifecycle Timeline,Chronological lifecycle events.,Recommendation,Derived,Derived,Computed,Recommendation Lifecycle,Workflow History,,Generated → Delivered → Accepted,Derived,Operational history.
+GLOSS-REC-000078,Lifecycle Summary,Simplified lifecycle explanation.,Recommendation,Derived,Derived,Computed,Recommendation Lifecycle,Lifecycle Stage,,Recommendation currently active.,Derived,AI explanation.
+GLOSS-REC-000079,Recommendation Trace,Represents traceability information supporting recommendation generation.,Recommendation,Knowledge,Core,Dynamic,Recommendation,,Trace,Reasoning Trace,AI,Parent business concept.
+GLOSS-REC-000080,Trace Identifier,Unique trace identifier.,Recommendation,Identity,Core,Stable,Recommendation Trace,,Trace ID,TRACE-100001,Platform,Primary identifier.
+GLOSS-REC-000081,Feature Sources,Business features used during recommendation.,Recommendation,Reference,Derived,Computed,Recommendation Trace,Feature Store,,Customer;Vehicle;Claims,Derived,Traceability.
+GLOSS-REC-000082,Knowledge References,Knowledge assets referenced during reasoning.,Recommendation,Reference,Derived,Computed,Recommendation Trace,RAG,,Policy;Regulation;Coverage,Derived,RAG provenance.
+GLOSS-REC-000083,Model Versions,Model versions involved in reasoning.,Recommendation,Operational,Core,Stable,Recommendation Trace,,Models,Ranker-v1;LLM-v2,System,Reproducibility.
+GLOSS-REC-000084,Reasoning Trace,Machine-readable reasoning graph.,Recommendation,Knowledge,AI Generated,Computed,Recommendation Trace,Reasoning Engine,,Customer→Coverage→Ranking→Recommendation,AI,Auditability.
+GLOSS-REC-000085,Execution Duration,Total recommendation execution time.,Recommendation,Operational,Derived,Computed,Recommendation Trace,Pipeline,,1.2 Seconds,Derived,Performance.
+GLOSS-REC-000086,Resource Usage,Approximate computational resources used.,Recommendation,Operational,Derived,Computed,Recommendation Trace,Pipeline,,Medium,Derived,Optimization.
+GLOSS-REC-000087,Trace Summary,Simplified trace explanation.,Recommendation,Derived,Derived,Computed,Recommendation Trace,Reasoning Trace,,Recommendation fully traceable.,Derived,AI explanation.
+GLOSS-REC-000088,Trace Confidence,Confidence associated with trace completeness.,Recommendation,Assessment,AI Generated,Computed,Recommendation Trace,Trace Engine,,98%,AI,Governance.
+GLOSS-REC-000089,Recommendation Assessment,Represents AI-generated assessment of recommendation quality.,Recommendation,Assessment,AI Generated,Computed,Recommendation,,Assessment,High Quality Recommendation,AI,Parent AI concept.
+GLOSS-REC-000090,Recommendation Quality Score,Overall recommendation quality score.,Recommendation,Assessment,AI Generated,Computed,Recommendation Assessment,Assessment Engine,,97,AI,Primary KPI.
+GLOSS-REC-000091,Personalization Score,Degree of personalization.,Recommendation,Assessment,AI Generated,Computed,Recommendation Assessment,Personalization Engine,,95,AI,Customer fit.
+GLOSS-REC-000092,Explainability Score,Quality of recommendation explanation.,Recommendation,Assessment,AI Generated,Computed,Recommendation Assessment,Explanation Engine,,98,AI,Transparency.
+GLOSS-REC-000093,Fairness Score,Fairness assessment.,Recommendation,Assessment,AI Generated,Computed,Recommendation Assessment,Fairness Engine,,96,AI,Responsible AI.
+GLOSS-REC-000094,Assessment Confidence,Confidence associated with recommendation assessment.,Recommendation,Assessment,AI Generated,Computed,Recommendation Assessment,Assessment Engine,,99%,AI,Automation.
+GLOSS-REC-000095,Optimization Recommendation,Recommendation for improving recommendation quality.,Recommendation,Derived,AI Generated,Computed,Recommendation Assessment,Assessment Engine,,Collect more driving history.,AI,Continuous improvement.
+GLOSS-REC-000096,Assessment Version,Assessment methodology version.,Recommendation,Operational,Core,Stable,Recommendation Assessment,,Version,1.0.0,Platform,Reproducibility.
+GLOSS-REC-000097,Assessment Timestamp,Timestamp of assessment.,Recommendation,Operational,Core,Stable,Recommendation Assessment,,Assessment Time,2026-08-20T10:05:00,System,Audit.
+GLOSS-REC-000098,Assessment Summary,Overall explanation of recommendation quality.,Recommendation,Derived,Derived,Computed,Recommendation Assessment,Recommendation Quality Score,,Recommendation is highly suitable and well supported.,Derived,Executive summary.
+GLOSS-REC-000099,AI Orchestration Summary,Natural-language summary of AI orchestration process.,Recommendation,Derived,AI Generated,Computed,Recommendation Assessment,AI Orchestrator,,Knowledge fused from customer, vehicle, policy, regulatory and claims domains.,AI,Enterprise explanation.
+GLOSS-REC-000100,Decision Intelligence Summary,Overall natural-language summary of the final AI decision.,Recommendation,Derived,AI Generated,Computed,Recommendation Assessment,LLM Reasoner,,Best policy selected with high confidence, full regulatory compliance and explainable reasoning.,AI,Top-level enterprise summary.

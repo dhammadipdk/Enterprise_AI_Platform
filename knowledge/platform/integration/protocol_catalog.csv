@@ -1,0 +1,11 @@
+protocol_id,protocol_name,communication_style,best_use_case,streaming_supported,bidirectional,encryption_required,description,status
+PROTO-000001,HTTP REST,Synchronous,External APIs,FALSE,FALSE,TRUE,RESTful APIs,Active
+PROTO-000002,gRPC,Synchronous,Internal Microservices,TRUE,TRUE,TRUE,High-performance RPC,Active
+PROTO-000003,WebSocket,Persistent,Real-time Applications,TRUE,TRUE,TRUE,Bidirectional communication,Active
+PROTO-000004,Kafka Protocol,Asynchronous,Event Streaming,TRUE,FALSE,TRUE,Distributed event streaming,Active
+PROTO-000005,AMQP,Asynchronous,Reliable Messaging,FALSE,FALSE,TRUE,Message queue protocol,Active
+PROTO-000006,MQTT,Asynchronous,IoT,FALSE,FALSE,TRUE,Lightweight messaging,Active
+PROTO-000007,Server Sent Events,Streaming,Live Dashboards,TRUE,FALSE,TRUE,One-way streaming,Active
+PROTO-000008,GraphQL,Synchronous,Flexible APIs,FALSE,FALSE,TRUE,Graph-based APIs,Active
+PROTO-000009,MCP,Tool Communication,AI Tool Calling,TRUE,TRUE,TRUE,Model Context Protocol,Active
+PROTO-000010,HTTPS,TLS Transport,Secure Communication,FALSE,FALSE,TRUE,Encrypted HTTP,Active

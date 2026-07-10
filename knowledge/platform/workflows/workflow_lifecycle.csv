@@ -1,0 +1,11 @@
+lifecycle_id,lifecycle_stage,entry_criteria,exit_criteria,approval_required,deployment_allowed,rollback_supported,description,status
+WLIFE-000001,Draft,Created,Reviewed,FALSE,FALSE,TRUE,Workflow authoring,Active
+WLIFE-000002,Review,Peer Review,Validated,TRUE,FALSE,TRUE,Workflow review,Active
+WLIFE-000003,Validation,Quality Checks,Testing,TRUE,FALSE,TRUE,Validation stage,Active
+WLIFE-000004,Testing,Successful Tests,Staging,TRUE,FALSE,TRUE,Testing workflow,Active
+WLIFE-000005,Staging,Approval,Production,TRUE,TRUE,TRUE,Staging environment,Active
+WLIFE-000006,Production,Deployment,Maintenance,TRUE,TRUE,TRUE,Production workflow,Active
+WLIFE-000007,Maintenance,Production Updates,Retirement,FALSE,TRUE,TRUE,Maintenance stage,Active
+WLIFE-000008,Deprecated,Replacement Available,Archive,TRUE,FALSE,TRUE,Deprecated workflow,Active
+WLIFE-000009,Archived,Retention Complete,None,FALSE,FALSE,FALSE,Archived workflow,Active
+WLIFE-000010,Retired,Business Decision,None,TRUE,FALSE,FALSE,Retired workflow,Active

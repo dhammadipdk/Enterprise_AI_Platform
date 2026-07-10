@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-FRAUD-000001,DOCUMENT_MISMATCH,Document Mismatch,Inconsistent claim documentation,Active,2026-01-01,,Industry,
+REF-FRAUD-000002,DUPLICATE_CLAIM,Duplicate Claim,Same incident claimed multiple times,Active,2026-01-01,,Industry,
+REF-FRAUD-000003,EXAGGERATED_DAMAGE,Exaggerated Damage,Claimed damage exceeds observed damage,Active,2026-01-01,,Industry,
+REF-FRAUD-000004,SUSPICIOUS_TIMELINE,Suspicious Timeline,Unusual sequence of claim events,Active,2026-01-01,,Industry,
+REF-FRAUD-000005,LOCATION_INCONSISTENCY,Location Inconsistency,Claim location inconsistent with evidence,Active,2026-01-01,,Industry,
+REF-FRAUD-000006,MULTIPLE_PRIOR_CLAIMS,Multiple Prior Claims,Abnormally frequent claims history,Active,2026-01-01,,Industry,
+REF-FRAUD-000007,TAMPERED_DOCUMENT,Document Tampering,Suspected document alteration,Active,2026-01-01,,Industry,
+REF-FRAUD-000008,IDENTITY_MISMATCH,Identity Mismatch,Customer identity inconsistency,Active,2026-01-01,,Industry,
+REF-FRAUD-000009,STAGED_ACCIDENT,Staged Accident,Suspected intentionally staged accident,Active,2026-01-01,,Industry,
+REF-FRAUD-000010,HIGH_RISK_PATTERN,High Risk Pattern,Known fraud pattern detected,Active,2026-01-01,,Industry,

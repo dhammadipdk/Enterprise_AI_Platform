@@ -1,0 +1,9 @@
+entity_id,entity_name,business_definition,entity_type,parent_entity,glossary_reference,business_identifier,lifecycle,owned_by_domain,remarks
+ENT-CUST-000001,Customer,Represents the primary business entity seeking, purchasing, or holding insurance products through the InsureAI platform.,Aggregate Root,,GLOSS-CUST-000001,Customer Identifier,Stable,Customer,Root aggregate of the Customer domain.
+ENT-CUST-000002,Customer Identity,Represents the official identity information used to uniquely identify a customer.,Entity,Customer,GLOSS-CUST-000002,Customer Identifier,Stable,Customer,Contains legal identity information.
+ENT-CUST-000003,Customer Contact,Represents the communication information associated with a customer.,Entity,Customer,GLOSS-CUST-000023,,Dynamic,Customer,Supports customer communication.
+ENT-CUST-000004,Customer Address,Represents residential and correspondence address information of a customer.,Entity,Customer,GLOSS-CUST-000033,,Dynamic,Customer,Supports geographic association and servicing.
+ENT-CUST-000005,Customer Profile,Represents demographic, educational, occupational, and financial characteristics of a customer.,Entity,Customer,GLOSS-CUST-000011,,Dynamic,Customer,Supports underwriting, profiling and personalization.
+ENT-CUST-000006,Customer Preference,Represents insurance and communication preferences specified by a customer.,Entity,Customer,GLOSS-CUST-000061,,Dynamic,Customer,Supports recommendation and engagement.
+ENT-CUST-000007,Customer Eligibility,Represents verification, compliance, onboarding and eligibility information associated with a customer.,Entity,Customer,GLOSS-CUST-000079,,Dynamic,Customer,Supports regulatory compliance and onboarding.
+ENT-CUST-000008,Customer Assessment,Represents derived business assessments, AI predictions, segmentation and customer scores.,Entity,Customer,GLOSS-CUST-000087,,Computed,Customer,Contains computed and AI-generated business knowledge.

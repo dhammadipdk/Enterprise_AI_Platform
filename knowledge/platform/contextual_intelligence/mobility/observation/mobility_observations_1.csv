@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-MOB1-000001,TRAFFIC,CITY,MUM,Mumbai,Traffic Flow,Vehicles per Hour,vehicles/hr,6850,2026-07-01T08:30:00Z,Mumbai,Morning Peak,Traffic API,Google Maps,Sensor Fusion,0.98,0.97,v1.0,
+OBS-MOB1-000002,TRAFFIC,CITY,DEL,Delhi,Congestion Level,Congestion Index,index,86,2026-07-01T09:00:00Z,Delhi,Morning Peak,Traffic API,Google Maps,Live API,0.98,0.97,v1.0,
+OBS-MOB1-000003,TRAFFIC,CITY,BLR,Bengaluru,Average Speed,Road Speed,km/h,21,2026-07-01T08:45:00Z,Bengaluru,Morning Peak,Traffic API,Google Maps,GPS,0.97,0.96,v1.0,
+OBS-MOB1-000004,TRAFFIC,CITY,CHE,Chennai,Vehicle Density,Vehicles/km,count/km,146,2026-07-01T09:10:00Z,Chennai,Morning Peak,Traffic Police,Smart City,Camera Analytics,0.96,0.95,v1.0,
+OBS-MOB1-000005,TRAFFIC,CITY,KOL,Kolkata,Queue Length,Average Queue,m,315,2026-07-01T08:50:00Z,Kolkata,Morning Peak,Traffic Police,CCTV,Vision Analytics,0.96,0.95,v1.0,
+OBS-MOB1-000006,TRAFFIC,CITY,PUN,Pune,Intersection Delay,Signal Delay,sec,104,2026-07-01T09:00:00Z,Pune,Morning Peak,Smart City,Traffic Signals,IoT,0.95,0.95,v1.0,
+OBS-MOB1-000007,TRAFFIC,CITY,AHM,Ahmedabad,Road Occupancy,Occupancy,%,72,2026-07-01T08:45:00Z,Ahmedabad,Morning Peak,Traffic API,Google Maps,Live API,0.95,0.95,v1.0,
+OBS-MOB1-000008,TRAFFIC,CITY,GOA,Panaji,Traffic Flow,Vehicles/hr,vehicles/hr,1650,2026-07-01T10:00:00Z,Goa,Off Peak,Traffic Police,Traffic Sensors,Sensor,0.95,0.94,v1.0,
+OBS-MOB1-000009,TRAFFIC,CITY,SHI,Shimla,Average Speed,Road Speed,km/h,34,2026-07-01T09:15:00Z,Shimla,Normal,Traffic Police,Manual Survey,GPS,0.94,0.94,v1.0,
+OBS-MOB1-000010,TRAFFIC,CITY,GUW,Guwahati,Congestion Level,Congestion Index,index,64,2026-07-01T08:40:00Z,Guwahati,Morning Peak,Traffic Police,Smart City,Camera Analytics,0.95,0.94,v1.0,
+OBS-MOB1-000011,TRAFFIC,ROAD_SEGMENT,NH48,NH-48 Mumbai-Pune,Average Speed,Road Speed,km/h,78,2026-07-01T11:00:00Z,NH-48,Daytime,FASTag,NHAI,GPS,0.98,0.97,v1.0,
+OBS-MOB1-000012,TRAFFIC,ROAD_SEGMENT,ORR-BLR,Bengaluru ORR,Congestion Level,Congestion Index,index,93,2026-07-01T08:30:00Z,Outer Ring Road,Morning Peak,Traffic API,Google Maps,Live API,0.98,0.98,v1.0,

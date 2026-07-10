@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-INF2-000001,URBAN_INFRA,CITY,MUM,Mumbai,Street Lighting,Lighting Coverage,%,98,2026-01-01T00:00:00Z,Mumbai,Static,Municipal,BMC,Survey,0.98,0.98,v1.0,
+OBS-INF2-000002,URBAN_INFRA,CITY,DEL,Delhi,CCTV Coverage,Cameras per sq km,count,74,2026-01-01T00:00:00Z,Delhi,Static,Government,Delhi Police,GIS,0.97,0.97,v1.0,
+OBS-INF2-000003,URBAN_INFRA,CITY,CHE,Chennai,Traffic Signal Density,Signals per sq km,count,23,2026-01-01T00:00:00Z,Chennai,Static,Municipal,GCC,GIS,0.97,0.97,v1.0,
+OBS-INF2-000004,URBAN_INFRA,CITY,PUN,Pune,Parking Availability,Public Parking,count,162,2026-01-01T00:00:00Z,Pune,Static,Municipal,PMC,Survey,0.96,0.96,v1.0,
+OBS-INF2-000005,URBAN_INFRA,CITY,BLR,Bengaluru,Parking Security,Security Rating,Score,72,2026-01-01T00:00:00Z,Bengaluru,Static,Enterprise,Parking Audit,Inspection,0.95,0.95,v1.0,
+OBS-INF2-000006,URBAN_INFRA,CITY,GOA,Panaji,Footpath Quality,Footpath Rating,Score,78,2026-01-01T00:00:00Z,Goa,Static,Municipal,CCP,Survey,0.95,0.95,v1.0,
+OBS-INF2-000007,URBAN_INFRA,CITY,SHI,Shimla,Street Lighting,Lighting Coverage,%,81,2026-01-01T00:00:00Z,Shimla,Static,Municipal,SMC,Survey,0.95,0.95,v1.0,
+OBS-INF2-000008,URBAN_INFRA,CITY,AHM,Ahmedabad,Speed Breakers,Speed Breakers per km,count/km,4,2026-01-01T00:00:00Z,Ahmedabad,Static,Municipal,AMC,Survey,0.95,0.95,v1.0,
+OBS-INF2-000009,URBAN_INFRA,CITY,JAI,Jaipur,Pedestrian Crossing,Crossings per km,count/km,7,2026-01-01T00:00:00Z,Jaipur,Static,Municipal,JMC,GIS,0.95,0.95,v1.0,
+OBS-INF2-000010,URBAN_INFRA,CITY,KOL,Kolkata,CCTV Coverage,Cameras per sq km,count,52,2026-01-01T00:00:00Z,Kolkata,Static,Government,Kolkata Police,GIS,0.96,0.96,v1.0,
+OBS-INF2-000011,URBAN_INFRA,CITY,GUW,Guwahati,Parking Availability,Parking Capacity,vehicles,640,2026-01-01T00:00:00Z,Guwahati,Static,Municipal,GMC,Survey,0.95,0.95,v1.0,
+OBS-INF2-000012,URBAN_INFRA,CITY,MUM,Mumbai,Traffic Signal Density,Signals per sq km,count,36,2026-01-01T00:00:00Z,Mumbai,Static,Municipal,BMC,GIS,0.98,0.98,v1.0,

@@ -1,0 +1,11 @@
+template_id,template_name,workflow_type,node_count,supports_branching,supports_parallel,supports_retry,supports_compensation,description,status
+WTEMP-000001,RAG Template,RAG Workflow,8,TRUE,FALSE,TRUE,FALSE,Standard RAG execution graph,Active
+WTEMP-000002,Agent Collaboration Template,Agent Workflow,12,TRUE,TRUE,TRUE,TRUE,Multi-agent execution template,Active
+WTEMP-000003,Approval Template,Human Approval Workflow,6,TRUE,FALSE,TRUE,TRUE,Approval workflow template,Active
+WTEMP-000004,Claims Processing Template,Decision Workflow,15,TRUE,TRUE,TRUE,TRUE,Insurance claims template,Active
+WTEMP-000005,Fraud Investigation Template,Decision Workflow,18,TRUE,TRUE,TRUE,TRUE,Fraud investigation template,Active
+WTEMP-000006,Planning Template,Planning Workflow,10,FALSE,FALSE,TRUE,FALSE,Planning template,Active
+WTEMP-000007,Executive Decision Template,Decision Workflow,14,TRUE,FALSE,TRUE,TRUE,Executive workflow template,Active
+WTEMP-000008,Document AI Template,RAG Workflow,10,TRUE,FALSE,TRUE,FALSE,Document AI workflow template,Active
+WTEMP-000009,Research Template,Agent Workflow,20,TRUE,TRUE,TRUE,TRUE,Research workflow template,Active
+WTEMP-000010,Streaming Analytics Template,Streaming Workflow,16,TRUE,TRUE,TRUE,FALSE,Streaming analytics template,Active

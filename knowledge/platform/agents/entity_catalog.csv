@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+Agent,Runtime,Autonomous AI worker
+AgentRole,Reference,Business responsibility
+Capability,Reference,Agent capability
+ToolBinding,Execution,Tool assignment
+AgentMemory,Memory,Persistent agent memory
+DelegationPolicy,Governance,Delegation rules
+CoordinationStrategy,Planning,Multi-agent coordination
+CommunicationProtocol,Protocol,Agent messaging
+AgentLifecycle,Lifecycle,Agent states
+AgentMetric,Analytics,Agent KPIs
+AgentSecurity,Governance,Security policy
+SupervisorAgent,Runtime,Coordinator
+WorkerAgent,Runtime,Execution worker
+PlanningAgent,Runtime,Planning specialist
+ReasoningAgent,Runtime,Reasoning specialist

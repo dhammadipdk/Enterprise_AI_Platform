@@ -1,0 +1,11 @@
+context_id,stage,component,input,security_action,output,next_stage,business_context
+SECCTX-000001,Authentication,API Gateway,Customer Login Request,Authenticate Identity,Authenticated Identity,Authorization,Customer begins session
+SECCTX-000002,Authorization,Authorization Engine,Authenticated Identity,Evaluate Permissions,Access Decision,Resource Access,Identity authorized
+SECCTX-000003,Resource Access,Knowledge Layer,Knowledge Request,Validate Resource Policy,Protected Resource,AI Processing,Knowledge access approved
+SECCTX-000004,AI Processing,Prompt Security,User Prompt,Validate Prompt Safety,Safe Prompt,Model Invocation,Prompt approved
+SECCTX-000005,Model Invocation,Model Security,Validated Prompt,Verify Model Access,Authorized Model,Agent Execution,Secure model invocation
+SECCTX-000006,Agent Execution,Agent Security,Model Response,Validate Agent Capability,Authorized Agent Action,Memory Update,Agent securely executed
+SECCTX-000007,Memory Update,Memory Security,Execution Results,Validate Memory Access,Protected Memory,Audit Logging,Memory securely updated
+SECCTX-000008,Audit Logging,Audit Security,Security Events,Persist Immutable Audit,Audit Record,Observability,Security evidence stored
+SECCTX-000009,Monitoring,Security Operations,Audit Stream,Threat Detection,Security Alert,Incident Response,Continuous monitoring
+SECCTX-000010,Incident Response,Security Operations Center,Security Alert,Execute Response Playbook,Resolved Incident,None,Security lifecycle completed

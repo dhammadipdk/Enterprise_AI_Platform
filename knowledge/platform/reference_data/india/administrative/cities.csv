@@ -1,0 +1,11 @@
+reference_id,code,name,parent_code,parent_name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CITY-000001,MUM,Mumbai,MH-MUM,Mumbai,Municipal Corporation Area,Active,1950-01-26,,Government of Maharashtra,
+REF-CITY-000002,PUN,Pune,MH-PUN,Pune,Municipal Corporation Area,Active,1950-01-26,,Government of Maharashtra,
+REF-CITY-000003,BLR,Bengaluru,KA-BLR,Bengaluru Urban,Municipal Corporation Area,Active,1956-11-01,,Government of Karnataka,
+REF-CITY-000004,DEL,New Delhi,DL-CEN,Central Delhi,National Capital Area,Active,1950-01-26,,Government of NCT Delhi,
+REF-CITY-000005,CHE,Chennai,TN-CHE,Chennai,Municipal Corporation Area,Active,1950-01-26,,Government of Tamil Nadu,
+REF-CITY-000006,AHD,Ahmedabad,GJ-AHD,Ahmedabad,Municipal Corporation Area,Active,1960-05-01,,Government of Gujarat,
+REF-CITY-000007,KOL,Kolkata,WB-KOL,Kolkata,Municipal Corporation Area,Active,1950-01-26,,Government of West Bengal,
+REF-CITY-000008,HYD,Hyderabad,TG-HYD,Hyderabad,Municipal Corporation Area,Active,2014-06-02,,Government of Telangana,
+REF-CITY-000009,LKO,Lucknow,UP-LKO,Lucknow,Municipal Corporation Area,Active,1950-01-26,,Government of Uttar Pradesh,
+REF-CITY-000010,JAI,Jaipur,RJ-JPR,Jaipur,Municipal Corporation Area,Active,1956-11-01,,Government of Rajasthan,

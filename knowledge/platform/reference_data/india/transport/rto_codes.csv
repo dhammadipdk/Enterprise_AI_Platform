@@ -1,0 +1,11 @@
+reference_id,code,name,parent_code,parent_name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-RTO-000001,MH-01,Mumbai Central RTO,MH,Maharashtra,Mumbai Central Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000002,MH-12,Pune RTO,MH,Maharashtra,Pune Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000003,KA-01,Bengaluru Central RTO,KA,Karnataka,Bengaluru Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000004,DL-01,Mall Road RTO,DL,Delhi,Delhi Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000005,TN-01,Chennai Central RTO,TN,Tamil Nadu,Chennai Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000006,GJ-01,Ahmedabad RTO,GJ,Gujarat,Ahmedabad Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000007,WB-01,Kolkata RTO,WB,West Bengal,Kolkata Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000008,TG-09,Hyderabad Central RTO,TG,Telangana,Hyderabad Regional Transport Office,Active,2014-06-02,,Ministry of Road Transport & Highways,
+REF-RTO-000009,UP-32,Lucknow RTO,UP,Uttar Pradesh,Lucknow Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,
+REF-RTO-000010,RJ-14,Jaipur RTO,RJ,Rajasthan,Jaipur Regional Transport Office,Active,1989-01-01,,Ministry of Road Transport & Highways,

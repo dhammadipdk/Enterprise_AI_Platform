@@ -1,0 +1,5 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-SETTLE-000001,CASHLESS,Cashless Settlement,Repair settled directly with network workshop,Active,2026-01-01,,IRDAI,
+REF-SETTLE-000002,REIMBURSEMENT,Reimbursement,Customer pays first and insurer reimburses,Active,2026-01-01,,IRDAI,
+REF-SETTLE-000003,TOTAL_LOSS,Total Loss Settlement,Settlement for constructive or actual total loss,Active,2026-01-01,,IRDAI,
+REF-SETTLE-000004,THEFT_SETTLEMENT,Theft Settlement,Settlement for theft claims,Active,2026-01-01,,IRDAI,

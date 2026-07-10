@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-VEH1-000001,USAGE,VEHICLE,VH-000001,Vehicle-000001,Annual Mileage,Distance,km,22480,2026-07-01T00:00:00Z,Mumbai,Annual,Telematics,OEM API,Telematics,0.99,0.98,v1.0,
+OBS-VEH1-000002,USAGE,VEHICLE,VH-000001,Vehicle-000001,Daily Mileage,Distance,km/day,62,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,OEM API,Telematics,0.98,0.97,v1.0,
+OBS-VEH1-000003,USAGE,VEHICLE,VH-000002,Vehicle-000002,Odometer Reading,Distance,km,98210,2026-07-01T00:00:00Z,Pune,Current,OBD,OBD-II,CAN Bus,0.99,0.99,v1.0,
+OBS-VEH1-000004,USAGE,VEHICLE,VH-000003,Vehicle-000003,Vehicle Age,Age,years,8,2026-07-01T00:00:00Z,Delhi,Current,RTO,VAHAN,Registry,0.99,0.99,v1.0,
+OBS-VEH1-000005,USAGE,VEHICLE,VH-000004,Vehicle-000004,Driving Hours,Hours,hours/day,4.8,2026-07-01T00:00:00Z,Bengaluru,Daily,Telematics,OEM API,Telematics,0.97,0.96,v1.0,
+OBS-VEH1-000006,USAGE,VEHICLE,VH-000005,Vehicle-000005,Idle Time,Duration,min/day,47,2026-07-01T00:00:00Z,Chennai,Daily,OBD,OBD-II,CAN Bus,0.97,0.96,v1.0,
+OBS-VEH1-000007,USAGE,VEHICLE,VH-000006,Vehicle-000006,Trips Per Day,Trips,count,5,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,Enterprise GPS,GPS,0.97,0.96,v1.0,
+OBS-VEH1-000008,USAGE,VEHICLE,VH-000007,Vehicle-000007,Operating Hours,Hours,hours,4860,2026-07-01T00:00:00Z,Jaipur,Lifetime,Telematics,OEM API,Telematics,0.98,0.97,v1.0,
+OBS-VEH1-000009,USAGE,VEHICLE,VH-000008,Vehicle-000008,Night Driving Ratio,Ratio,%,38,2026-07-01T00:00:00Z,Kolkata,Monthly,Telematics,OEM API,GPS,0.96,0.95,v1.0,
+OBS-VEH1-000010,USAGE,VEHICLE,VH-000009,Vehicle-000009,Highway Driving Ratio,Ratio,%,61,2026-07-01T00:00:00Z,NH48,Monthly,Telematics,OEM API,GPS,0.97,0.96,v1.0,
+OBS-VEH1-000011,USAGE,VEHICLE,VH-000010,Vehicle-000010,Urban Driving Ratio,Ratio,%,82,2026-07-01T00:00:00Z,Hyderabad,Monthly,Telematics,OEM API,GPS,0.97,0.96,v1.0,
+OBS-VEH1-000012,USAGE,VEHICLE,VH-000011,Vehicle-000011,Average Trip Length,Distance,km,14.8,2026-07-01T00:00:00Z,Ahmedabad,Monthly,Telematics,OEM API,GPS,0.97,0.96,v1.0

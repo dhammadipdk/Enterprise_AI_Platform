@@ -1,0 +1,11 @@
+mapping_id,regulation,policy_id,affected_component,compliance_control,validation_method,evidence_required,risk_if_non_compliant,description,status
+REGMAP-000001,DPDP Act 2023,GPOL-000005,Memory Layer,Data Access Control,Privacy Audit,TRUE,Critical,Protect customer personal data,Active
+REGMAP-000002,IRDAI Guidelines,GPOL-000008,Recommendation Engine,Recommendation Validation,Compliance Review,TRUE,High,Insurance recommendation compliance,Active
+REGMAP-000003,ISO 42001,GPOL-000001,Entire Platform,Governance Controls,Governance Audit,TRUE,Medium,Enterprise AI governance,Active
+REGMAP-000004,NIST AI RMF,GPOL-000009,Model Layer,Model Risk Assessment,Risk Evaluation,TRUE,Medium,Model risk governance,Active
+REGMAP-000005,Responsible AI Charter,GPOL-000006,Recommendation Engine,Bias Evaluation,Fairness Assessment,TRUE,High,Responsible recommendations,Active
+REGMAP-000006,SOC 2,GPOL-000007,Execution Layer,Audit Logging,Audit Verification,TRUE,Medium,Operational audit compliance,Active
+REGMAP-000007,ISO 27001,GPOL-000005,Security Layer,Access Monitoring,Security Audit,TRUE,Critical,Security governance,Active
+REGMAP-000008,Enterprise Policy,GPOL-000004,Planning Layer,Approval Workflow,Workflow Audit,FALSE,Medium,Planning approval governance,Active
+REGMAP-000009,Internal Audit Policy,GPOL-000007,Agent Platform,Decision Logging,Audit Trail,TRUE,Medium,Agent governance audit,Active
+REGMAP-000010,Executive Governance,GPOL-000010,Enterprise Platform,Continuous Review,Governance Dashboard,FALSE,Low,Strategic governance oversight,Active

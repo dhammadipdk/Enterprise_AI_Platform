@@ -1,0 +1,11 @@
+resource_id,resource_name,resource_category,owner,classification,contains_pii,encryption_required,audit_required,description,status
+RES-000001,Customer Profiles,Customer Data,Customer Operations,Confidential,TRUE,TRUE,TRUE,Customer profile repository,Active
+RES-000002,Policy Repository,Knowledge,Knowledge Office,Internal,FALSE,TRUE,TRUE,Insurance policy knowledge,Active
+RES-000003,Claims Repository,Claims,Claims Operations,Confidential,TRUE,TRUE,TRUE,Insurance claims data,Active
+RES-000004,Knowledge Graph,Knowledge,Knowledge Office,Internal,FALSE,TRUE,TRUE,Enterprise knowledge graph,Active
+RES-000005,Vector Database,AI Platform,AI Platform Team,Restricted,FALSE,TRUE,TRUE,Embedding vector store,Active
+RES-000006,Memory Store,Memory,Platform Team,Restricted,TRUE,TRUE,TRUE,Enterprise memory storage,Active
+RES-000007,Model Registry,AI Platform,MLOps Team,Internal,FALSE,TRUE,TRUE,Approved AI models,Active
+RES-000008,Secrets Vault,Security,Security Team,Highly Restricted,FALSE,TRUE,TRUE,Enterprise secrets vault,Active
+RES-000009,Audit Repository,Governance,Compliance Office,Highly Restricted,FALSE,TRUE,TRUE,Immutable audit records,Active
+RES-000010,Workflow Repository,Execution,Operations Team,Internal,FALSE,TRUE,TRUE,Workflow definitions,Active

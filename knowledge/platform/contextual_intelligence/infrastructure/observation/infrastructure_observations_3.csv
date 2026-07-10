@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-INF3-000001,SERVICE_INFRA,CITY,MUM,Mumbai,Fuel Station Density,Stations per 100 sq km,count,46,2026-01-01T00:00:00Z,Mumbai,Static,Government,Petroleum Ministry,GIS,0.98,0.98,v1.0,
+OBS-INF3-000002,SERVICE_INFRA,CITY,MUM,Mumbai,EV Charging Density,Chargers per 100 sq km,count,34,2026-01-01T00:00:00Z,Mumbai,Static,Government,BEE,GIS,0.97,0.97,v1.0,
+OBS-INF3-000003,SERVICE_INFRA,CITY,DEL,Delhi,Hospital Distance,Average Distance,km,1.8,2026-01-01T00:00:00Z,Delhi,Static,GIS,Health GIS,GIS,0.98,0.98,v1.0,
+OBS-INF3-000004,SERVICE_INFRA,CITY,CHE,Chennai,Police Station Distance,Average Distance,km,2.3,2026-01-01T00:00:00Z,Chennai,Static,GIS,Police GIS,GIS,0.97,0.97,v1.0,
+OBS-INF3-000005,SERVICE_INFRA,CITY,PUN,Pune,Fire Station Distance,Average Distance,km,3.4,2026-01-01T00:00:00Z,Pune,Static,GIS,Fire Department,GIS,0.97,0.97,v1.0,
+OBS-INF3-000006,SERVICE_INFRA,CITY,BLR,Bengaluru,Authorized Workshop Density,Workshops per 100 sq km,count,18,2026-01-01T00:00:00Z,Bengaluru,Static,Enterprise,OEM Network,Survey,0.96,0.96,v1.0,
+OBS-INF3-000007,SERVICE_INFRA,CITY,GOA,Panaji,Tow Service Availability,Tow Operators,count,8,2026-01-01T00:00:00Z,Goa,Static,Enterprise,Service Directory,Survey,0.95,0.95,v1.0,
+OBS-INF3-000008,SERVICE_INFRA,CITY,SHI,Shimla,Fuel Station Density,Stations per 100 sq km,count,7,2026-01-01T00:00:00Z,Shimla,Static,Government,Petroleum Ministry,GIS,0.96,0.96,v1.0,
+OBS-INF3-000009,SERVICE_INFRA,CITY,AHM,Ahmedabad,EV Charging Density,Chargers per 100 sq km,count,19,2026-01-01T00:00:00Z,Ahmedabad,Static,Government,BEE,GIS,0.96,0.96,v1.0,
+OBS-INF3-000010,SERVICE_INFRA,CITY,JAI,Jaipur,Authorized Workshop Distance,Average Distance,km,5.6,2026-01-01T00:00:00Z,Jaipur,Static,Enterprise,OEM Network,GIS,0.95,0.95,v1.0,
+OBS-INF3-000011,SERVICE_INFRA,CITY,KOL,Kolkata,Hospital Distance,Average Distance,km,2.1,2026-01-01T00:00:00Z,Kolkata,Static,GIS,Health GIS,GIS,0.97,0.97,v1.0,
+OBS-INF3-000012,SERVICE_INFRA,CITY,GUW,Guwahati,Tow Service Availability,Tow Operators,count,5,2026-01-01T00:00:00Z,Guwahati,Static,Enterprise,Service Directory,Survey,0.94,0.94,v1.0,

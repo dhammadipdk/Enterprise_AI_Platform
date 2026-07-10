@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-REPL-000001,REPAIR_PREFERRED,Repair Preferred,Repair is technically and economically preferred,Active,2026-01-01,,Industry,
+REF-REPL-000002,REPLACEMENT_REQUIRED,Replacement Required,Component must be replaced,Active,2026-01-01,,Industry,
+REF-REPL-000003,OEM_REPLACEMENT,OEM Replacement,Replace with Original Equipment Manufacturer part,Active,2026-01-01,,Industry,
+REF-REPL-000004,AFTERMARKET_REPLACEMENT,Aftermarket Replacement,Replace with approved aftermarket part,Active,2026-01-01,,Industry,
+REF-REPL-000005,CUSTOMER_DECISION,Customer Decision,Final choice depends on customer approval,Active,2026-01-01,,Industry,

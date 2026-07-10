@@ -1,0 +1,11 @@
+reference_id,code,name,offence_category,description,status,effective_date,expiry_date,source_authority,remarks
+REF-VIOL-000001,OVER_SPEEDING,Overspeeding,SPEEDING,Driving above prescribed speed limit,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000002,RED_LIGHT_JUMP,Red Light Jump,TRAFFIC_SIGNAL,Ignoring traffic signal,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000003,NO_SEATBELT,Seat Belt Violation,SAFETY,Failure to wear seat belt,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000004,NO_HELMET,Helmet Violation,SAFETY,Failure to wear helmet where required,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000005,DRUNK_DRIVING,Driving Under Influence,ALCOHOL_DRUG,Driving under influence of alcohol or drugs,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000006,USING_MOBILE,Mobile Phone Usage,DANGEROUS_DRIVING,Using handheld mobile phone while driving,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000007,WRONG_SIDE,Wrong Side Driving,DANGEROUS_DRIVING,Driving against permitted traffic direction,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000008,DANGEROUS_OVERTAKE,Dangerous Overtaking,DANGEROUS_DRIVING,Unsafe overtaking manoeuvre,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000009,NO_VALID_LICENSE,Driving Without Valid Licence,DOCUMENTATION,Driving without a valid licence,Active,2026-01-01,,Motor Vehicles Act,
+REF-VIOL-000010,NO_INSURANCE,Driving Without Insurance,DOCUMENTATION,Operating vehicle without mandatory insurance,Active,2026-01-01,,Motor Vehicles Act,

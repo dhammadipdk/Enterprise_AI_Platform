@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+API,Interface,Enterprise API
+Endpoint,Network,API endpoint
+Connector,Integration,External connector
+Event,Messaging,Business event
+Message,Messaging,Communication payload
+Webhook,Integration,HTTP callback
+Queue,Messaging,Reliable queue
+EventBus,Messaging,Enterprise event bus
+Service,Infrastructure,Discoverable service
+Protocol,Communication,Communication protocol
+ExternalSystem,Integration,Third-party system
+CircuitBreaker,Reliability,Failure isolation
+RetryPolicy,Reliability,Retry configuration
+RateLimit,Traffic,Traffic control
+StreamingChannel,Streaming,Continuous data stream

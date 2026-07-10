@@ -1,0 +1,26 @@
+term_id,term,business_definition
+FRD-001,Fraud,Intentional deception for financial gain
+FRD-002,Fraud Indicator,Observable signal suggesting possible fraud
+FRD-003,Fraud Risk,Estimated likelihood of fraudulent activity
+FRD-004,Fraud Ring,Group coordinating fraudulent claims
+FRD-005,Duplicate Claim,Multiple claims for the same loss event
+FRD-006,Identity Fraud,Use of false or stolen identity
+FRD-007,Document Fraud,Forged or manipulated documentation
+FRD-008,Claim Inflation,Artificial increase in claimed losses
+FRD-009,Staged Accident,Deliberately created accident
+FRD-010,Synthetic Identity,Artificially constructed customer identity
+FRD-011,Ghost Claim,Claim for a non-existent loss
+FRD-012,Repair Fraud,Fraud involving repair estimates or invoices
+FRD-013,Premium Fraud,Fraud during policy purchase or renewal
+FRD-014,Fraud Alert,System-generated notification of suspicious activity
+FRD-015,Fraud Investigation,Detailed examination of suspicious activity
+FRD-016,SIU,Special Investigation Unit
+FRD-017,Fraud Suspicion Index,Composite fraud likelihood indicator
+FRD-018,Fraud Explainability,Human-readable explanation of fraud reasoning
+FRD-019,False Positive,Legitimate claim incorrectly flagged as fraud
+FRD-020,Case Priority,Priority assigned for fraud investigation
+FRD-021,Fraud Network,Relationships among entities indicating organized fraud
+FRD-022,Behavioral Anomaly,Behavior deviating from expected patterns
+FRD-023,Risk Amplification,Multiple indicators increasing fraud confidence
+FRD-024,Evidence Correlation,Linking evidence across multiple sources
+FRD-025,Investigation Outcome,Final conclusion of fraud investigation

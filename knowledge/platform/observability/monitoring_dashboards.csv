@@ -1,0 +1,11 @@
+dashboard_id,dashboard_name,dashboard_scope,primary_users,data_refresh_interval,contains_alerts,contains_traces,contains_business_kpis,description,status
+DASH-000001,Executive AI Dashboard,Enterprise,Executive Board,1 Minute,TRUE,FALSE,TRUE,Enterprise AI overview,Active
+DASH-000002,Platform Operations Dashboard,Infrastructure,SRE Team,15 Seconds,TRUE,TRUE,FALSE,Platform runtime monitoring,Active
+DASH-000003,Knowledge Dashboard,Knowledge,Knowledge Team,30 Seconds,FALSE,TRUE,FALSE,Knowledge monitoring dashboard,Active
+DASH-000004,Agent Dashboard,Agents,AI Operations Team,15 Seconds,TRUE,TRUE,FALSE,Multi-agent monitoring,Active
+DASH-000005,Recommendation Dashboard,Business,Business Team,1 Minute,TRUE,FALSE,TRUE,Recommendation performance dashboard,Active
+DASH-000006,Governance Dashboard,Governance,Governance Board,5 Minutes,TRUE,FALSE,TRUE,Governance monitoring dashboard,Active
+DASH-000007,Evaluation Dashboard,Evaluation,Evaluation Team,5 Minutes,FALSE,FALSE,TRUE,Evaluation results dashboard,Active
+DASH-000008,Security Dashboard,Security,Security Operations,15 Seconds,TRUE,TRUE,FALSE,Security monitoring dashboard,Active
+DASH-000009,Incident Dashboard,Operations,Incident Response Team,15 Seconds,TRUE,TRUE,FALSE,Incident management dashboard,Active
+DASH-000010,System Health Dashboard,Infrastructure,Platform Team,15 Seconds,TRUE,TRUE,FALSE,Enterprise health dashboard,Active

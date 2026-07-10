@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-COV-000001,THIRD_PARTY_DAMAGE,Third Party Damage,Liability for third-party property damage,Active,2026-01-01,,IRDAI,
+REF-COV-000002,THIRD_PARTY_INJURY,Third Party Injury,Liability for bodily injury or death,Active,2026-01-01,,IRDAI,
+REF-COV-000003,OWN_DAMAGE,Own Damage,Damage to insured vehicle,Active,2026-01-01,,IRDAI,
+REF-COV-000004,FIRE,Fire Damage,Damage due to fire or explosion,Active,2026-01-01,,IRDAI,
+REF-COV-000005,THEFT,Vehicle Theft,Loss due to theft,Active,2026-01-01,,IRDAI,
+REF-COV-000006,NATURAL_CALAMITY,Natural Calamity,Flood, cyclone, storm, earthquake and similar perils,Active,2026-01-01,,IRDAI,
+REF-COV-000007,MAN_MADE_CALAMITY,Man-made Calamity,Riot, strike, malicious damage and terrorism,Active,2026-01-01,,IRDAI,
+REF-COV-000008,PERSONAL_ACCIDENT,Personal Accident,Owner-driver accident cover,Active,2026-01-01,,IRDAI,
+REF-COV-000009,PASSENGER_COVER,Passenger Cover,Occupant personal accident cover,Active,2026-01-01,,IRDAI,
+REF-COV-000010,LEGAL_LIABILITY,Legal Liability,Liability for paid driver or employees,Active,2026-01-01,,IRDAI,

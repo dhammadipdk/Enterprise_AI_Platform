@@ -1,0 +1,11 @@
+projection_id,projection_name,included_nodes,included_edges,projection_purpose,target_algorithm,refresh_frequency,status
+PROJ-000001,Customer360,"Customer,Policy,Claim,Recommendation","OWNS,FILES,AFFECTS",Customer Analytics,PageRank,Daily,Active
+PROJ-000002,Fraud Investigation,"Claim,FraudCase,Customer,Vehicle","FILES,MAY_TRIGGER,OWNS",Fraud Detection,Louvain,Hourly,Active
+PROJ-000003,Claims Network,"Customer,Claim,Surveyor,Garage","FILES,INSPECTED_BY,ASSIGNED_TO",Claims Analytics,Connected Components,Daily,Active
+PROJ-000004,Risk Propagation,"Customer,Vehicle,EnvironmentContext","AFFECTS,BELONGS_TO",Risk Assessment,Personalized PageRank,Hourly,Active
+PROJ-000005,Recommendation Graph,"Decision,Recommendation,Customer","GENERATES,AFFECTS",Recommendation Engine,Node Similarity,Realtime,Active
+PROJ-000006,Vehicle Intelligence,"Vehicle,Driver,Repair","HAS_DRIVER,INITIATES",Predictive Maintenance,FastRP,Daily,Active
+PROJ-000007,Knowledge Search,"KnowledgeDocument,BusinessRule,Observation","SUPPORTS,CONSTRAINS",GraphRAG,GraphSAGE,Realtime,Active
+PROJ-000008,Enterprise Graph,All,All,Complete Enterprise Graph,Multi-Algorithm,Daily,Active
+PROJ-000009,Operations Graph,"Claim,Repair,Garage","INITIATES,ASSIGNED_TO",Operational Monitoring,Betweenness,Hourly,Active
+PROJ-000010,Compliance Graph,"Policy,Recommendation,BusinessRule","CONSTRAINS,GENERATES",Compliance Analytics,Shortest Path,Daily,Active

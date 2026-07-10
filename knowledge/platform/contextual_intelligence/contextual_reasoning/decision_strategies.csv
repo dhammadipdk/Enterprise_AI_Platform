@@ -1,0 +1,11 @@
+strategy_id,strategy_name,objective,optimization_target,primary_metric,risk_tolerance,human_in_loop,automation_level,description,status
+STRAT-000001,Risk Minimization,Reduce Risk,Risk Score,Risk Reduction,Low,Optional,Medium,Choose safest decision.,Active
+STRAT-000002,Customer First,Customer Experience,CSAT,Customer Satisfaction,Medium,Optional,Medium,Prioritize customer experience.,Active
+STRAT-000003,Fraud First,Loss Prevention,Fraud Detection,Fraud Prevention,Very Low,Required,Low,Prevent fraudulent payouts.,Active
+STRAT-000004,Cost Optimization,Financial Efficiency,Cost,ROI,Medium,Optional,High,Minimize operational cost.,Active
+STRAT-000005,Regulatory Compliance,Compliance,Compliance Score,Compliance Rate,None,Required,Low,Always remain compliant.,Active
+STRAT-000006,Operational Excellence,SLA,SLA Compliance,Processing Time,Medium,Optional,High,Improve operational efficiency.,Active
+STRAT-000007,Explainability First,Transparency,Explainability,XAI Score,Medium,Required,Low,Prefer interpretable decisions.,Active
+STRAT-000008,AI First,Automation,Automation Rate,Execution Speed,Medium,Optional,Very High,Prefer AI automation.,Active
+STRAT-000009,Human First,Governance,Human Approval,Decision Quality,Low,Always,None,Human decision is primary.,Active
+STRAT-000010,Enterprise Balanced,Overall Enterprise,Business Value,Composite KPI,Medium,Optional,High,Balance all business objectives.,Active

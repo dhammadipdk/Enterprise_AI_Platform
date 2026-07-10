@@ -1,0 +1,11 @@
+planning_eval_id,evaluation_dimension,evaluation_metric,evaluation_method,target_threshold,warning_threshold,critical_threshold,business_use,description,status
+PLANEVAL-000001,Goal Achievement,Goal Completion Rate,Execution Outcome,95,90,85,Planning Effectiveness,Percentage of goals achieved,Active
+PLANEVAL-000002,Plan Optimality,Optimization Score,Multi-objective Analysis,94,90,85,Optimization Quality,Quality of optimized plans,Active
+PLANEVAL-000003,Constraint Satisfaction,Constraint Compliance,Rule Validation,99,97,95,Governance,Constraint adherence,Active
+PLANEVAL-000004,Planning Latency,Planning Time,Performance Measurement,3000,5000,8000,User Experience,Planning response time,Active
+PLANEVAL-000005,Resource Efficiency,Resource Utilization,Capacity Analysis,90,85,80,Infrastructure,Resource allocation quality,Active
+PLANEVAL-000006,Plan Robustness,Failure Recovery Rate,Simulation Testing,95,90,85,Reliability,Plan resilience,Active
+PLANEVAL-000007,Replanning Efficiency,Replanning Success,Dynamic Testing,94,90,85,Adaptability,Quality of replanning,Active
+PLANEVAL-000008,Task Dependency Quality,Dependency Correctness,Graph Validation,98,95,90,Workflow Quality,Dependency correctness,Active
+PLANEVAL-000009,Planning Explainability,Explanation Score,Human Review,95,90,85,Trust,Explainability quality,Active
+PLANEVAL-000010,Composite Planning Index,Planning Quality Index,Composite Evaluation,95,92,90,Enterprise KPI,Overall planning quality,Active

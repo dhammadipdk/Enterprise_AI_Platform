@@ -1,0 +1,5 @@
+reference_id,code,name,start_month,end_month,status,effective_date,expiry_date,source_authority,remarks
+REF-QTR-000001,Q1,Quarter 1,January,March,Active,2026-01-01,,Enterprise,
+REF-QTR-000002,Q2,Quarter 2,April,June,Active,2026-01-01,,Enterprise,
+REF-QTR-000003,Q3,Quarter 3,July,September,Active,2026-01-01,,Enterprise,
+REF-QTR-000004,Q4,Quarter 4,October,December,Active,2026-01-01,,Enterprise,

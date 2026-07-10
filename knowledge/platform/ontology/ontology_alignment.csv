@@ -1,0 +1,21 @@
+alignment_id,ontology_entity,aligned_module,aligned_file,alignment_type,target_entity,mapping_rule,bidirectional,confidence_score,description,status
+ALIGN-000001,Customer,knowledge/customer,canonical_schema.csv,Direct,Customer,1:1,TRUE,1.00,Customer ontology maps directly to customer schema,Active
+ALIGN-000002,Driver,knowledge/driver,canonical_schema.csv,Direct,Driver,1:1,TRUE,1.00,Driver ontology maps to driver schema,Active
+ALIGN-000003,Vehicle,knowledge/vehicle,canonical_schema.csv,Direct,Vehicle,1:1,TRUE,1.00,Vehicle ontology maps to vehicle schema,Active
+ALIGN-000004,Policy,knowledge/policy,canonical_schema.csv,Direct,Policy,1:1,TRUE,1.00,Policy ontology maps to policy schema,Active
+ALIGN-000005,Coverage,knowledge/coverage,canonical_schema.csv,Direct,Coverage,1:1,TRUE,1.00,Coverage ontology mapping,Active
+ALIGN-000006,Claim,knowledge/claims,canonical_schema.csv,Direct,Claim,1:1,TRUE,1.00,Claim ontology mapping,Active
+ALIGN-000007,Repair,knowledge/repair,canonical_schema.csv,Direct,Repair,1:1,TRUE,1.00,Repair ontology mapping,Active
+ALIGN-000008,Recommendation,knowledge/recommendation,canonical_schema.csv,Direct,Recommendation,1:1,TRUE,1.00,Recommendation ontology mapping,Active
+ALIGN-000009,Observation,shared/contextual_intelligence/*,observation/*.csv,Semantic,Observation,Semantic,TRUE,0.98,Maps all contextual observations,Active
+ALIGN-000010,Derived Intelligence,shared/contextual_intelligence/*,derived_intelligence/*.csv,Semantic,Derived Intelligence,Semantic,TRUE,0.99,Maps derived intelligence outputs,Active
+ALIGN-000011,Evidence,shared/contextual_reasoning,reasoning_rules.csv,Reasoning,Evidence,Semantic,FALSE,0.97,Reasoning evidence mapping,Active
+ALIGN-000012,Hypothesis,shared/contextual_reasoning,reasoning_rules.csv,Reasoning,Hypothesis,Semantic,FALSE,0.96,Reasoning hypothesis mapping,Active
+ALIGN-000013,Decision,shared/contextual_reasoning,decision_strategies.csv,Reasoning,Decision,Semantic,FALSE,0.98,Decision mapping,Active
+ALIGN-000014,Business Rule,shared/contextual_reasoning,reasoning_rules.csv,Rule,Business Rule,Direct,TRUE,1.00,Enterprise rules mapping,Active
+ALIGN-000015,Fraud Case,shared/contextual_intelligence/fraud,fraud_risk_scores.csv,Semantic,Fraud,Derived,FALSE,0.98,Fraud intelligence alignment,Active
+ALIGN-000016,Environment Context,shared/contextual_intelligence/environment,environment_observations_*.csv,Semantic,Environment Observation,Derived,FALSE,0.97,Environment context mapping,Active
+ALIGN-000017,Vehicle Behaviour Context,shared/contextual_intelligence/vehicle_behaviour,vehicle_behaviour_observations_*.csv,Semantic,Vehicle Behaviour,FALSE,FALSE,0.97,Vehicle behaviour mapping,Active
+ALIGN-000018,Human Behaviour Context,shared/contextual_intelligence/human_behaviour,human_behaviour_observations_*.csv,Semantic,Human Behaviour,FALSE,FALSE,0.97,Human behaviour mapping,Active
+ALIGN-000019,Knowledge Graph,knowledge/shared/knowledge_graph,node_types.csv,Implementation,Graph Node,Implementation,FALSE,1.00,Ontology generates graph schema,Active
+ALIGN-000020,GraphRAG,shared/graphrag,graph_index.csv,Semantic,GraphRAG Retrieval,Semantic,FALSE,0.95,Ontology supports GraphRAG retrieval,Active

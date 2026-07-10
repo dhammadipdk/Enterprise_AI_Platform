@@ -1,0 +1,16 @@
+explanation_id,subject_type,subject_code,intelligence_reference,decision,primary_factors,secondary_factors,explanation,confidence_score,generated_by
+EXP-REC-000001,CLAIM,CLM-000001,REC-000001,Fast-track Settlement,"Low fraud risk;Complete documentation","High customer value","The claim satisfies fast-track criteria with minimal operational risk.",0.99,XAI Engine
+EXP-REC-000002,CASE,CASE-000002,REC-000002,Assign SIU,"High fraud score;Network linkage","Duplicate claim indicators","Multiple fraud indicators justify immediate SIU assignment.",0.99,XAI Engine
+EXP-REC-000003,CUSTOMER,CUS-000003,REC-000003,Offer Renewal,"High loyalty;Renewal probability","Low complaint history","The customer demonstrates strong retention potential.",0.96,XAI Engine
+EXP-REC-000004,POLICY,POL-000004,REC-000004,Additional Coverage,"Coverage gap identified","High asset exposure","Current policy does not adequately protect the insured asset.",0.95,XAI Engine
+EXP-REC-000005,VEHICLE,VEH-000005,REC-000005,Preventive Maintenance,"Vehicle health decline","Increasing mileage","Preventive servicing is expected to reduce future failures.",0.94,XAI Engine
+EXP-REC-000006,CLAIM,CLM-000006,REC-000006,Preferred Garage,"Garage quality score","Repair turnaround","Preferred repair network provides better quality and SLA.",0.95,XAI Engine
+EXP-REC-000007,CUSTOMER,CUS-000007,REC-000007,Safe Driving Advisory,"Aggressive driving score","Recent speeding events","Driving guidance can reduce future accident probability.",0.93,XAI Engine
+EXP-REC-000008,OPS,OPS-000008,REC-000008,Senior Surveyor,"High claim complexity","Large financial exposure","Experienced surveyors improve decision quality.",0.95,XAI Engine
+EXP-REC-000009,CLAIM,CLM-000009,REC-000009,Increase Reserve,"High damage severity","Repair estimate uncertainty","Current reserve may be insufficient based on predicted costs.",0.92,XAI Engine
+EXP-REC-000010,POLICY,POL-000010,REC-000010,Regulatory Review,"Compliance rule triggered","Policy exception","Additional compliance verification is required.",0.94,XAI Engine
+EXP-REC-000011,BUSINESS,BUS-000011,REC-000011,Optimize Workload,"High operational load","Available alternative resources","Rebalancing workload improves efficiency.",0.93,XAI Engine
+EXP-REC-000012,SYSTEM,SYS-000012,REC-000012,Automatic Execution,"High confidence","Low execution risk","The recommendation satisfies autonomous execution criteria.",0.91,XAI Engine
+EXP-REC-000013,CASE,CASE-000013,REC-000013,Freeze Payment,"Critical fraud risk","Pending investigation","Payment suspension minimizes potential fraud losses.",0.99,XAI Engine
+EXP-REC-000014,CUSTOMER,CUS-000014,REC-000014,Customer Outreach,"Customer experience opportunity","Recent interaction history","A proactive call is expected to improve satisfaction.",0.92,XAI Engine
+EXP-REC-000015,DECISION,DEC-000015,REC-000015,Execute Action Plan,"Highest business value","Strong evidence;High confidence","The integrated recommendation provides the optimal balance of customer value, operational efficiency, risk reduction, and financial benefit.",0.99,XAI Engine

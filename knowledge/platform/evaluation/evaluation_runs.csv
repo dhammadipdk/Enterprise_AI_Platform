@@ -1,0 +1,11 @@
+run_id,evaluation_name,target_component,benchmark_id,dataset_id,start_time,end_time,evaluator,overall_score,pass_fail,description,status
+RUN-000001,Daily Knowledge Evaluation,Knowledge Layer,BENCH-000001,DATASET-000001,02:00,02:10,Evaluation Engine,98.7,Pass,Daily knowledge validation,Completed
+RUN-000002,Retrieval Regression Test,Retrieval Engine,BENCH-000002,DATASET-000005,03:00,03:08,Evaluation Engine,96.5,Pass,Retrieval quality regression,Completed
+RUN-000003,Reasoning Accuracy Test,Reasoning Engine,BENCH-000003,DATASET-000006,04:00,04:15,Evaluation Engine,95.9,Pass,Reasoning evaluation,Completed
+RUN-000004,Planning Quality Test,Planning Engine,BENCH-000004,DATASET-000007,05:00,05:20,Evaluation Engine,94.2,Pass,Planning benchmark,Completed
+RUN-000005,Execution Reliability Test,Execution Engine,BENCH-000005,DATASET-000008,Continuous,Continuous,Monitoring Service,99.1,Pass,Production monitoring,Running
+RUN-000006,Agent Collaboration Test,Agent Platform,BENCH-000006,DATASET-000009,06:00,06:25,Simulation Engine,97.3,Pass,Agent benchmark,Completed
+RUN-000007,Recommendation Evaluation,Recommendation Engine,BENCH-000007,DATASET-000002,07:00,07:20,Evaluation Engine,93.8,Pass,Recommendation assessment,Completed
+RUN-000008,Grounding Validation,Grounding Engine,BENCH-000008,DATASET-000001,Continuous,Continuous,Grounding Validator,99.4,Pass,Grounding verification,Running
+RUN-000009,Hallucination Detection,LLM Platform,BENCH-000009,DATASET-000006,Continuous,Continuous,Safety Engine,99.8,Pass,Hallucination monitoring,Running
+RUN-000010,Enterprise Monthly Review,Enterprise Platform,BENCH-000010,DATASET-000010,Month End,Month End,Governance Board,96.9,Pass,Enterprise AI assessment,Completed

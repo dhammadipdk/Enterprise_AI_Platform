@@ -1,0 +1,21 @@
+term_id,term,business_definition
+EVAL-001,Evaluation,Systematic assessment of AI performance
+EVAL-002,Benchmark,Reference performance measurement
+EVAL-003,Grounding,Verifying outputs against enterprise knowledge
+EVAL-004,Hallucination,Unsupported AI-generated information
+EVAL-005,Retrieval Accuracy,Quality of retrieved knowledge
+EVAL-006,Reasoning Accuracy,Correctness of reasoning process
+EVAL-007,Planning Quality,Quality of generated plans
+EVAL-008,Execution Reliability,Reliability of workflow execution
+EVAL-009,Agent Performance,Overall effectiveness of AI agents
+EVAL-010,Business KPI,Business outcome metric
+EVAL-011,Evaluation Run,Single evaluation execution
+EVAL-012,Quality Threshold,Minimum acceptable quality
+EVAL-013,Benchmark Dataset,Reference evaluation dataset
+EVAL-014,Ground Truth,Expected correct output
+EVAL-015,Evaluation Dimension,Area being measured
+EVAL-016,Confidence Score,Confidence in evaluation
+EVAL-017,Evaluation Framework,Methodology used
+EVAL-018,Regression Test,Comparison with previous results
+EVAL-019,Continuous Learning,Improvement using evaluation
+EVAL-020,Enterprise Scorecard,Overall AI quality report

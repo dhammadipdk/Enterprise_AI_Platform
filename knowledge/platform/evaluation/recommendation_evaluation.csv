@@ -1,0 +1,11 @@
+recommendation_eval_id,evaluation_dimension,evaluation_metric,evaluation_method,target_threshold,warning_threshold,critical_threshold,business_use,description,status
+RECEVAL-000001,Acceptance Rate,Customer Acceptance,Business Analytics,75,65,55,Business Impact,Accepted recommendations,Active
+RECEVAL-000002,Conversion Rate,Recommendation Conversion,Historical Analysis,45,35,25,Revenue,Conversion effectiveness,Active
+RECEVAL-000003,Policy Fit,Coverage Match,Policy Validation,95,90,85,Customer Satisfaction,Recommendation suitability,Active
+RECEVAL-000004,Risk Reduction,Risk Improvement,Risk Analytics,90,85,80,Risk Management,Risk mitigation effectiveness,Active
+RECEVAL-000005,Revenue Impact,Premium Improvement,Financial Analysis,Positive,Positive,Neutral,Revenue Growth,Business revenue impact,Active
+RECEVAL-000006,Customer Satisfaction,Satisfaction Score,Survey Analytics,90,85,80,Customer Experience,Recommendation satisfaction,Active
+RECEVAL-000007,Explanation Quality,Explanation Rating,Human Review,95,90,85,Trust,Explainability quality,Active
+RECEVAL-000008,Fairness,Fairness Score,Bias Evaluation,98,95,90,Responsible AI,Fair recommendations,Active
+RECEVAL-000009,Compliance,Compliance Rate,Policy Validation,100,99,98,Governance,Regulatory compliance,Active
+RECEVAL-000010,Composite Recommendation Index,Recommendation Quality Index,Composite Evaluation,94,92,90,Enterprise KPI,Overall recommendation quality,Active

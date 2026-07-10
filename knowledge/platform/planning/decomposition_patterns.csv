@@ -1,0 +1,11 @@
+pattern_id,pattern_name,decomposition_strategy,input_goal,output_structure,recursive,max_depth,supports_parallelism,multi_agent_friendly,description,status
+DECOMP-000001,Linear Workflow,Sequential,Single Goal,Task Sequence,FALSE,8,FALSE,FALSE,Simple sequential decomposition,Active
+DECOMP-000002,Hierarchical Tree,Hierarchical,Complex Goal,Task Tree,TRUE,12,TRUE,TRUE,Recursive goal decomposition,Active
+DECOMP-000003,DAG Planning,Directed Graph,Enterprise Goal,DAG,FALSE,20,TRUE,TRUE,Dependency graph planning,Active
+DECOMP-000004,Graph Expansion,Knowledge Graph,Knowledge Goal,Subgraph,TRUE,10,TRUE,FALSE,Knowledge graph decomposition,Active
+DECOMP-000005,Goal Stack,Stack Based,Operational Goal,Goal Stack,TRUE,15,FALSE,FALSE,Recursive stack planning,Active
+DECOMP-000006,Task Pipeline,Pipeline,Business Workflow,Pipeline,FALSE,10,TRUE,FALSE,Pipeline execution planning,Active
+DECOMP-000007,Constraint Expansion,Constraint Based,Restricted Goal,Constraint Graph,TRUE,15,FALSE,TRUE,Constraint-aware decomposition,Active
+DECOMP-000008,Risk-Based Split,Risk Driven,Risk Goal,Risk Tree,TRUE,10,TRUE,TRUE,Risk-aware planning,Active
+DECOMP-000009,Collaborative Planning,Distributed,Enterprise Goal,Agent Graph,TRUE,25,TRUE,TRUE,Multi-agent decomposition,Active
+DECOMP-000010,Adaptive Planning,Dynamic,Changing Goal,Dynamic Graph,TRUE,Unlimited,TRUE,TRUE,Adaptive replanning,Active

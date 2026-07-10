@@ -1,0 +1,16 @@
+pattern_id,pattern_name,traversal_type,direction,max_depth,termination_condition,primary_algorithm,graph_use_case,description,status
+TRAV-000001,One Hop,Neighborhood,Both,1,None,BFS,Immediate neighbors,Direct relationships,Active
+TRAV-000002,Two Hop,Neighborhood,Both,2,None,BFS,Customer ecosystem,Extended relationships,Active
+TRAV-000003,K Hop Expansion,Neighborhood,Both,5,None,BFS,Graph exploration,Multi-hop traversal,Active
+TRAV-000004,Shortest Path,Path Search,Both,Unlimited,Target Found,Dijkstra,Relationship discovery,Shortest connection,Active
+TRAV-000005,All Paths,Path Search,Both,5,None,DFS,Knowledge discovery,Enumerate all paths,Active
+TRAV-000006,Risk Propagation,Propagation,Outgoing,6,Risk Threshold,Weighted BFS,Risk analysis,Propagate contextual risk,Active
+TRAV-000007,Fraud Propagation,Propagation,Both,5,Confidence<0.4,Weighted DFS,Fraud network,Trace fraud influence,Active
+TRAV-000008,Evidence Chain,Reasoning,Outgoing,6,Decision Node,DFS,Reasoning engine,Observation→Decision path,Active
+TRAV-000009,Recommendation Trace,Reasoning,Incoming,6,Observation Node,DFS,Explainability,Decision explanation,Active
+TRAV-000010,GraphRAG Expansion,Semantic,Both,4,Similarity Threshold,Semantic BFS,Context retrieval,Semantic neighborhood,Active
+TRAV-000011,Temporal Walk,Temporal,Forward,10,Current Time,Chronological,Event timeline,Temporal reasoning,Active
+TRAV-000012,Dependency Chain,Dependency,Outgoing,8,None,DFS,Business dependency,Dependency analysis,Active
+TRAV-000013,Community Expansion,Community,Both,Unlimited,Community Boundary,Louvain,Customer clustering,Community exploration,Active
+TRAV-000014,Influence Flow,Influence,Outgoing,6,Weight<0.2,PageRank Flow,Influence analysis,Influence propagation,Active
+TRAV-000015,Enterprise Crawl,Enterprise,Both,Unlimited,None,Hybrid,Enterprise graph,Complete graph traversal,Active

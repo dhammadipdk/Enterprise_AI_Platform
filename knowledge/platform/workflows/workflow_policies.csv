@@ -1,0 +1,11 @@
+policy_id,policy_name,policy_category,applies_to,enforcement_stage,failure_action,human_override,audit_required,description,status
+WPOL-000001,Maximum Runtime,Execution,All Workflows,Runtime,Terminate,FALSE,TRUE,Limit workflow runtime,Active
+WPOL-000002,Cost Budget Policy,Financial,AI Workflows,Planning,Abort,TRUE,TRUE,Prevent budget overruns,Active
+WPOL-000003,Security Approval,Security,Sensitive Workflows,Execution,Pause,TRUE,TRUE,Require security approval,Active
+WPOL-000004,Compliance Validation,Governance,Regulated Workflows,Pre-Execution,Reject,FALSE,TRUE,Validate regulations,Active
+WPOL-000005,Human Approval Policy,Business,Critical Decisions,Runtime,Wait,TRUE,TRUE,Human approval workflow,Active
+WPOL-000006,Agent Coordination Policy,Agents,Multi-Agent,Runtime,Coordinator Recovery,FALSE,TRUE,Coordinate agent execution,Active
+WPOL-000007,Resource Allocation Policy,Infrastructure,Large Workflows,Scheduling,Queue,FALSE,FALSE,Allocate execution resources,Active
+WPOL-000008,Retry Governance,Reliability,Recoverable Failures,Runtime,Retry,FALSE,TRUE,Govern retry behavior,Active
+WPOL-000009,Data Residency Policy,Privacy,Cross Region Workflows,Planning,Reject,FALSE,TRUE,Ensure data locality,Active
+WPOL-000010,Enterprise Workflow Policy,Enterprise,Entire Platform,Entire Lifecycle,Escalate,TRUE,TRUE,Global enterprise workflow policy,Active

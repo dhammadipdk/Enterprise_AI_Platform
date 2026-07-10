@@ -1,0 +1,11 @@
+pattern_id,pattern_name,pattern_category,description,input_requirement,output_type,explainable,graph_supported,llm_supported,status
+PATTERN-000001,Rule Based,Deterministic,Traditional IF-THEN reasoning,Structured Facts,Decision,Yes,Yes,Yes,Active
+PATTERN-000002,Causal Reasoning,Causal,Cause-effect inference,Evidence Chain,Hypothesis,Yes,Yes,Yes,Active
+PATTERN-000003,Bayesian Reasoning,Probabilistic,Probability updating,Probabilities,Posterior Probability,Yes,No,Yes,Active
+PATTERN-000004,Evidence Aggregation,Statistical,Combine heterogeneous evidence,Multiple Evidence,Composite Score,Yes,Yes,Yes,Active
+PATTERN-000005,Graph Reasoning,Graph,Knowledge graph traversal,Knowledge Graph,Graph Inference,Yes,Yes,Yes,Active
+PATTERN-000006,Temporal Reasoning,Temporal,Reason across time,Time Series,Temporal Decision,Yes,Yes,Yes,Active
+PATTERN-000007,Counterfactual,Simulation,What-if reasoning,Scenario,Hypothetical Decision,Yes,Yes,Yes,Active
+PATTERN-000008,Case Based,Similarity,Historical case matching,Past Decisions,Recommended Decision,Yes,Yes,Yes,Active
+PATTERN-000009,Hybrid AI,Hybrid,Rules + ML + LLM,Mixed Context,Decision,Yes,Yes,Yes,Active
+PATTERN-000010,Multi-Agent,Collaborative,Agent consensus reasoning,Multiple Agents,Consensus Decision,Yes,Yes,Yes,Active

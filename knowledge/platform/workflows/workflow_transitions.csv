@@ -1,0 +1,11 @@
+transition_id,transition_name,transition_type,condition_expression,on_success,on_failure,retry_policy,timeout_seconds,description,status
+TRANS-000001,Knowledge Success,Automatic,knowledge_found,Continue,Fallback_RAG,Retry-Standard,10,Knowledge retrieval transition,Active
+TRANS-000002,Memory Resolution,Automatic,memory_loaded,Continue,Skip Memory,None,5,Memory transition,Active
+TRANS-000003,Prompt Compilation,Automatic,prompt_compiled,Continue,Abort,Retry-Light,15,Prompt compiler transition,Active
+TRANS-000004,Model Selection,Automatic,model_available,Continue,Fallback_Model,Retry-Light,10,Model routing transition,Active
+TRANS-000005,Inference Execution,Automatic,inference_completed,Continue,Fallback_Model,Retry-Heavy,120,Inference transition,Active
+TRANS-000006,Evaluation Check,Conditional,score>=90,Continue,Prompt Optimization,None,20,Evaluation transition,Active
+TRANS-000007,Governance Validation,Conditional,approved,Continue,Human Review,None,30,Governance validation,Active
+TRANS-000008,Human Approval,Manual,user_approved,Continue,Reject,None,86400,Human approval transition,Active
+TRANS-000009,Workflow Recovery,Automatic,error_detected,Recovery,Abort,Recovery Policy,300,Workflow recovery transition,Active
+TRANS-000010,Completion,Automatic,workflow_completed,Finish,None,None,5,Workflow completion,Active

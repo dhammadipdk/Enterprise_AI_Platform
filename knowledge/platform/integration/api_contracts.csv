@@ -1,0 +1,11 @@
+contract_id,api_name,contract_type,input_schema,output_schema,versioning_strategy,backward_compatible,owner,description,status
+CONTRACT-000001,Knowledge API,OpenAPI,KnowledgeRequest,KnowledgeResponse,Semantic Versioning,TRUE,Knowledge Team,Knowledge API contract,Active
+CONTRACT-000002,Memory API,Protobuf,MemoryRequest,MemoryResponse,Semantic Versioning,TRUE,Platform Team,Memory API contract,Active
+CONTRACT-000003,Planning API,Protobuf,PlanRequest,PlanResponse,Semantic Versioning,TRUE,Planning Team,Planning API contract,Active
+CONTRACT-000004,Execution API,Protobuf,ExecutionRequest,ExecutionResponse,Semantic Versioning,TRUE,Execution Team,Execution API contract,Active
+CONTRACT-000005,Agent API,Protobuf,AgentRequest,AgentResponse,Semantic Versioning,TRUE,AI Platform Team,Agent API contract,Active
+CONTRACT-000006,Recommendation API,OpenAPI,RecommendationRequest,RecommendationResponse,Semantic Versioning,TRUE,Business Team,Recommendation API contract,Active
+CONTRACT-000007,Governance API,OpenAPI,GovernanceRequest,GovernanceResponse,Semantic Versioning,TRUE,Governance Board,Governance API contract,Active
+CONTRACT-000008,Security API,OpenAPI,SecurityRequest,SecurityResponse,Semantic Versioning,TRUE,Security Team,Security API contract,Active
+CONTRACT-000009,Observability API,OpenAPI,TelemetryRequest,TelemetryResponse,Semantic Versioning,TRUE,Platform Team,Observability API contract,Active
+CONTRACT-000010,Gateway API,OpenAPI,GatewayRequest,GatewayResponse,Semantic Versioning,TRUE,Platform Team,Gateway API contract,Active

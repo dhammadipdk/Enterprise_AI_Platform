@@ -1,0 +1,11 @@
+schema_id,event_name,schema_format,schema_version,key_field,contains_trace_id,contains_correlation_id,schema_registry,description,status
+SCHEMA-000001,KnowledgeRetrieved,JSON,v1,event_id,TRUE,TRUE,Enterprise Registry,Knowledge retrieval event schema,Active
+SCHEMA-000002,MemoryUpdated,JSON,v1,event_id,TRUE,TRUE,Enterprise Registry,Memory update schema,Active
+SCHEMA-000003,PlanGenerated,Avro,v1,event_id,TRUE,TRUE,Enterprise Registry,Planning schema,Active
+SCHEMA-000004,WorkflowCompleted,Avro,v1,event_id,TRUE,TRUE,Enterprise Registry,Workflow completion schema,Active
+SCHEMA-000005,AgentTaskCompleted,Protobuf,v1,event_id,TRUE,TRUE,Enterprise Registry,Agent event schema,Active
+SCHEMA-000006,RecommendationGenerated,JSON,v1,event_id,TRUE,TRUE,Enterprise Registry,Recommendation schema,Active
+SCHEMA-000007,GovernanceDecision,JSON,v1,event_id,TRUE,TRUE,Enterprise Registry,Governance schema,Active
+SCHEMA-000008,SecurityIncident,JSON,v1,event_id,TRUE,TRUE,Enterprise Registry,Security schema,Active
+SCHEMA-000009,TelemetryCollected,Protobuf,v1,event_id,TRUE,TRUE,Enterprise Registry,Telemetry schema,Active
+SCHEMA-000010,ModelInferenceCompleted,Protobuf,v1,event_id,TRUE,TRUE,Enterprise Registry,Inference schema,Active

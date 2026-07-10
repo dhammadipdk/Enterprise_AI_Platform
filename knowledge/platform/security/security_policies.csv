@@ -1,0 +1,11 @@
+policy_id,policy_name,policy_category,security_domain,enforcement_mode,mandatory,human_override,review_frequency,description,status
+SPOL-000001,Zero Trust Policy,Identity,Enterprise Security,Strict,TRUE,FALSE,Quarterly,Every request must be authenticated and authorized,Active
+SPOL-000002,Least Privilege Policy,Authorization,Identity Security,Strict,TRUE,TRUE,Quarterly,Grant minimum required permissions,Active
+SPOL-000003,Encryption Policy,Cryptography,Data Security,Strict,TRUE,FALSE,Yearly,Encrypt sensitive data at rest and in transit,Active
+SPOL-000004,Secrets Management Policy,Credentials,Enterprise Security,Strict,TRUE,FALSE,Quarterly,Store secrets in managed vaults only,Active
+SPOL-000005,Prompt Injection Protection,AI Security,Prompt Security,Strict,TRUE,FALSE,Monthly,Validate and sanitize prompts,Active
+SPOL-000006,Model Access Policy,AI Security,Model Security,Strict,TRUE,FALSE,Quarterly,Restrict model access to authorized identities,Active
+SPOL-000007,Agent Authorization Policy,AI Security,Agent Security,Strict,TRUE,TRUE,Monthly,Agents may execute only approved capabilities,Active
+SPOL-000008,Privacy Protection Policy,Privacy,Data Security,Strict,TRUE,FALSE,Quarterly,Protect personally identifiable information,Active
+SPOL-000009,Audit Logging Policy,Audit,Enterprise Security,Strict,TRUE,FALSE,Yearly,Record all privileged security actions,Active
+SPOL-000010,Continuous Security Validation,Operations,Enterprise Security,Continuous,TRUE,FALSE,Continuous,Continuously verify identities, devices and services,Active

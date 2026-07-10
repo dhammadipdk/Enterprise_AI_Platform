@@ -1,0 +1,11 @@
+recommendation_id,recommendation_type,subject_type,subject_code,subject_name,recommendation,priority,expected_benefit,confidence_score,generated_from,rule_or_model,recommendation_timestamp,status,remarks
+REC-HUM-000001,Training,DRIVER,DRV-000001,Driver-000001,Complete Defensive Driving Course,High,Reduce accident probability,0.97,Driver Risk,RULE-HUM-001,2026-07-01,Active,
+REC-HUM-000002,Behavior,DRIVER,DRV-000002,Driver-000002,Reduce Speeding Events,High,Improve safety score,0.96,Speeding Risk,RULE-HUM-002,2026-07-01,Active,
+REC-HUM-000003,Fatigue,DRIVER,DRV-000003,Driver-000003,Take Regular Rest Breaks,High,Reduce fatigue incidents,0.95,Fatigue Prediction,RULE-HUM-003,2026-07-01,Active,
+REC-HUM-000004,Attention,DRIVER,DRV-000004,Driver-000004,Avoid Mobile Phone Usage While Driving,Critical,Reduce distraction risk,0.98,Distraction Alert,RULE-HUM-004,2026-07-01,Active,
+REC-HUM-000005,Insurance,DRIVER,DRV-000005,Driver-000005,Enroll in Usage-Based Insurance,Medium,Lower insurance premium,0.91,Behavior Profile,RULE-HUM-005,2026-07-01,Active,
+REC-HUM-000006,Eco Driving,DRIVER,DRV-000006,Driver-000006,Adopt Eco-Driving Practices,Medium,Reduce fuel consumption,0.90,Eco Score,RULE-HUM-006,2026-07-01,Active,
+REC-HUM-000007,Training,DRIVER,DRV-000007,Driver-000007,Improve Following Distance,Medium,Reduce collision risk,0.92,Driving Dynamics,RULE-HUM-007,2026-07-01,Active,
+REC-HUM-000008,Compliance,DRIVER,DRV-000008,Driver-000008,Improve Traffic Rule Compliance,High,Lower violation frequency,0.94,Compliance Score,RULE-HUM-008,2026-07-01,Active,
+REC-HUM-000009,Safety,DRIVER,DRV-000009,Driver-000009,Limit Night Driving Duration,Medium,Reduce fatigue risk,0.91,Night Driving Risk,RULE-HUM-009,2026-07-01,Active,
+REC-HUM-000010,Coaching,DRIVER,DRV-000010,Driver-000010,Monthly Driver Coaching Session,Medium,Improve driving consistency,0.90,Behavior Analysis,MODEL-HUM-REC-001,2026-07-01,Active,

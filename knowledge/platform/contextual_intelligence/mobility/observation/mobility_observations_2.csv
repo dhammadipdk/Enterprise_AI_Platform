@@ -1,0 +1,13 @@
+observation_id,observation_type,subject_type,subject_code,subject_name,attribute,metric,metric_unit,observed_value,observation_timestamp,geographic_scope,temporal_scope,source_type,source_name,collection_method,quality_score,confidence_score,version,remarks
+OBS-MOB2-000001,TRIP,CITY,MUM,Mumbai,Average Trip Distance,Distance,km,18.4,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,Enterprise GPS,GPS,0.97,0.96,v1.0,
+OBS-MOB2-000002,TRIP,CITY,MUM,Mumbai,Average Trip Duration,Duration,min,62,2026-07-01T00:00:00Z,Mumbai,Daily,Telematics,Enterprise GPS,GPS,0.97,0.96,v1.0,
+OBS-MOB2-000003,TRIP,CITY,DEL,Delhi,Daily Commute Frequency,Trips/day,count,3.4,2026-07-01T00:00:00Z,Delhi,Daily,Telematics,Fleet GPS,GPS,0.96,0.95,v1.0,
+OBS-MOB2-000004,TRIP,CITY,BLR,Bengaluru,Idle Time,Engine Idle,min/day,41,2026-07-01T00:00:00Z,Bengaluru,Daily,Telematics,Enterprise GPS,OBD,0.96,0.95,v1.0,
+OBS-MOB2-000005,TRIP,CITY,CHE,Chennai,Parking Duration,Average Parking,hours,7.8,2026-07-01T00:00:00Z,Chennai,Daily,Telematics,Enterprise GPS,GPS,0.95,0.95,v1.0,
+OBS-MOB2-000006,TRIP,CITY,PUN,Pune,Route Changes,Routes/day,count,2.3,2026-07-01T00:00:00Z,Pune,Daily,Telematics,Enterprise GPS,GPS,0.95,0.94,v1.0,
+OBS-MOB2-000007,TRIP,CITY,KOL,Kolkata,Stops Per Trip,Stops,count,11,2026-07-01T00:00:00Z,Kolkata,Daily,Telematics,Enterprise GPS,GPS,0.95,0.94,v1.0,
+OBS-MOB2-000008,TRIP,CITY,GOA,Panaji,Tourist Travel Ratio,Trips,%,38,2026-07-01T00:00:00Z,Goa,Seasonal,Tourism Board,Survey,Analytics,0.93,0.92,v1.0,
+OBS-MOB2-000009,TRIP,CITY,SHI,Shimla,Mountain Route Usage,Trips,%,61,2026-07-01T00:00:00Z,Shimla,Daily,Telematics,Fleet GPS,GPS,0.94,0.93,v1.0,
+OBS-MOB2-000010,TRIP,STATE,MH,Maharashtra,Average Daily Travel,Distance,km,37.2,2026-07-01T00:00:00Z,Maharashtra,Daily,FASTag,NHAI,Aggregated,0.96,0.95,v1.0,
+OBS-MOB2-000011,TRIP,ROAD_SEGMENT,NH44,NH-44,Travel Time,Travel Time,min,104,2026-07-01T00:00:00Z,NH-44,Daily,FASTag,NHAI,Aggregated,0.97,0.96,v1.0,
+OBS-MOB2-000012,TRIP,DISTRICT,PUNE,Pune District,Commute Duration,Duration,min,46,2026-07-01T00:00:00Z,Pune District,Daily,Enterprise,Telematics,GPS,0.95,0.95,v1.0,

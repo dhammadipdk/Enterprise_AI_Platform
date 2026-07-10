@@ -1,0 +1,11 @@
+embedding_id,embedding_name,embedding_type,embedding_model,embedding_dimension,input_object,storage_backend,similarity_metric,supports_graph,supports_llm,update_strategy,description,status
+MEMEMB-000001,Customer Semantic Embedding,Semantic,text-embedding,1536,Customer,Vector DB,Cosine,TRUE,TRUE,Incremental,Customer profile representation,Active
+MEMEMB-000002,Policy Embedding,Semantic,text-embedding,1536,Policy,Vector DB,Cosine,TRUE,TRUE,Incremental,Policy semantic representation,Active
+MEMEMB-000003,Claim Embedding,Semantic,text-embedding,1536,Claim,Vector DB,Cosine,TRUE,TRUE,Incremental,Claim semantic vector,Active
+MEMEMB-000004,Fraud Embedding,Semantic,text-embedding,1536,Fraud Case,Vector DB,Cosine,TRUE,TRUE,Realtime,Fraud investigation vectors,Active
+MEMEMB-000005,Conversation Embedding,Conversation,text-embedding,1536,Conversation,Vector DB,Cosine,FALSE,TRUE,Realtime,Conversation memory vectors,Active
+MEMEMB-000006,Reasoning Embedding,Reasoning,text-embedding,1536,Reasoning Trace,Vector DB,Cosine,TRUE,TRUE,Realtime,Reasoning representation,Active
+MEMEMB-000007,Observation Embedding,Context,text-embedding,768,Observation,Vector DB,Cosine,FALSE,TRUE,Realtime,Observation vectors,Active
+MEMEMB-000008,Document Embedding,Document,text-embedding,1536,Knowledge Document,Vector DB,Cosine,FALSE,TRUE,Batch,Enterprise document embeddings,Active
+MEMEMB-000009,Graph Node Embedding,Graph,Node2Vec,256,Graph Node,Graph DB,Cosine,TRUE,FALSE,Batch,Knowledge graph node embedding,Active
+MEMEMB-000010,Hybrid Enterprise Embedding,Hybrid,Graph+Text,2048,Enterprise Context,Hybrid Store,Cosine,TRUE,TRUE,Realtime,Unified enterprise embedding,Active

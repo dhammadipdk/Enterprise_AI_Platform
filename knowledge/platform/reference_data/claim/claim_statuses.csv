@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-CSTATUS-000001,REGISTERED,Registered,Claim has been registered,Active,2026-01-01,,Industry,
+REF-CSTATUS-000002,UNDER_REVIEW,Under Review,Claim under assessment,Active,2026-01-01,,Industry,
+REF-CSTATUS-000003,SURVEY_ASSIGNED,Survey Assigned,Surveyor assigned to claim,Active,2026-01-01,,Industry,
+REF-CSTATUS-000004,DOCUMENT_PENDING,Document Pending,Awaiting required documents,Active,2026-01-01,,Industry,
+REF-CSTATUS-000005,APPROVED,Approved,Claim approved for settlement,Active,2026-01-01,,Industry,
+REF-CSTATUS-000006,PARTIALLY_APPROVED,Partially Approved,Partial settlement approved,Active,2026-01-01,,Industry,
+REF-CSTATUS-000007,REJECTED,Rejected,Claim rejected,Active,2026-01-01,,Industry,
+REF-CSTATUS-000008,SETTLED,Settled,Claim settlement completed,Active,2026-01-01,,Industry,
+REF-CSTATUS-000009,CLOSED,Closed,Claim closed,Active,2026-01-01,,Industry,
+REF-CSTATUS-000010,WITHDRAWN,Withdrawn,Claim withdrawn by claimant,Active,2026-01-01,,Industry,

@@ -1,0 +1,11 @@
+delegation_id,policy_name,delegation_strategy,selection_criteria,max_delegation_depth,allow_recursive_delegation,requires_acknowledgement,escalation_policy,description,status
+DELEG-000001,Capability Based,Capability Match,Highest Capability,3,FALSE,TRUE,Supervisor Escalation,Assign by capability,Active
+DELEG-000002,Load Balanced,Load Aware,Lowest Utilization,2,FALSE,TRUE,Coordinator Review,Distribute workload,Active
+DELEG-000003,Trust Based,Trust Score,Highest Trust,2,FALSE,TRUE,Manual Review,Delegate to trusted agents,Active
+DELEG-000004,Role Based,Role Match,Assigned Role,2,FALSE,TRUE,Supervisor Review,Role-specific delegation,Active
+DELEG-000005,Cost Optimized,Cost Aware,Lowest Cost,3,TRUE,FALSE,Automatic Retry,Optimize operational cost,Active
+DELEG-000006,Latency Optimized,Performance,Lowest Latency,2,FALSE,FALSE,Automatic Retry,Fastest available agent,Active
+DELEG-000007,Risk Aware,Risk Based,Lowest Risk,2,FALSE,TRUE,Human Approval,High-risk delegation,Active
+DELEG-000008,Geographic,Location Based,Nearest Region,2,FALSE,FALSE,Regional Escalation,Regional delegation,Active
+DELEG-000009,Hybrid,Composite,Weighted Score,4,TRUE,TRUE,Supervisor Escalation,Hybrid delegation strategy,Active
+DELEG-000010,Enterprise Default,Enterprise,Capability+Trust+Load,3,TRUE,TRUE,Coordinator Review,Default enterprise delegation,Active

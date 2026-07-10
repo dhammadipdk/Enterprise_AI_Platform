@@ -1,0 +1,11 @@
+benchmark_id,benchmark_name,benchmark_category,target_component,evaluation_framework,ground_truth_required,comparison_type,frequency,description,status
+BENCH-000001,Knowledge Accuracy Benchmark,Knowledge,Knowledge Layer,Ground Truth Validation,TRUE,Reference,Daily,Validate enterprise knowledge accuracy,Active
+BENCH-000002,Retrieval Benchmark,Retrieval,Retrieval Engine,Offline Benchmark Framework,TRUE,Recall@K,Realtime,Measure retrieval quality,Active
+BENCH-000003,Reasoning Benchmark,Reasoning,Reasoning Engine,Offline Benchmark Framework,TRUE,Ground Truth,Realtime,Evaluate reasoning correctness,Active
+BENCH-000004,Planning Benchmark,Planning,Planning Engine,Simulation Framework,TRUE,Workflow Success,Daily,Assess planning quality,Active
+BENCH-000005,Execution Benchmark,Execution,Execution Engine,Online Production Evaluation,FALSE,SLA Compliance,Realtime,Monitor execution reliability,Active
+BENCH-000006,Agent Benchmark,Agents,Agent Platform,Simulation Framework,TRUE,Task Success,Realtime,Evaluate agent performance,Active
+BENCH-000007,Recommendation Benchmark,Business,Recommendation Engine,Human Expert Review,TRUE,Acceptance Rate,Daily,Evaluate recommendation quality,Active
+BENCH-000008,Grounding Benchmark,Validation,Grounding Engine,Ground Truth Validation,TRUE,Evidence Match,Realtime,Validate grounding,Active
+BENCH-000009,Hallucination Benchmark,Validation,LLM Responses,Ground Truth Validation,TRUE,Unsupported Claims,Realtime,Detect hallucinations,Active
+BENCH-000010,Enterprise Scorecard,Enterprise,Entire Platform,Enterprise Scorecard,FALSE,Composite Score,Monthly,Overall enterprise AI quality,Active

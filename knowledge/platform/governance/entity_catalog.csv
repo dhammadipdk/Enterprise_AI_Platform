@@ -1,0 +1,16 @@
+entity_name,entity_type,description
+GovernancePolicy,Policy,Enterprise governance policy
+PolicyRule,Rule,Atomic policy rule
+ComplianceFramework,Compliance,Compliance standard
+GovernanceDecision,Decision,Governance decision
+ApprovalWorkflow,Workflow,Approval process
+ApprovalAuthority,Organization,Approval authority
+RiskAssessment,Risk,Risk evaluation
+GovernanceControl,Control,Governance mechanism
+GovernanceException,Exception,Policy exception
+RegulatoryMapping,Compliance,Regulation mapping
+ControlEffectiveness,Analytics,Control performance
+GovernanceMetric,Analytics,Governance KPI
+ResponsibleAI,Governance,Responsible AI practice
+DecisionTrace,Audit,Governance history
+ComplianceEvidence,Evidence,Supporting evidence

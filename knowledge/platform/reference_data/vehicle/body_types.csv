@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-BODY-000001,HATCHBACK,Hatchback,Rear hatch door configuration,Active,2026-01-01,,Industry,
+REF-BODY-000002,SEDAN,Sedan,Three-box passenger car,Active,2026-01-01,,Industry,
+REF-BODY-000003,SUV,SUV,Sport utility vehicle body,Active,2026-01-01,,Industry,
+REF-BODY-000004,MUV,MUV,Multi utility vehicle body,Active,2026-01-01,,Industry,
+REF-BODY-000005,MPV,MPV,Multi-purpose vehicle body,Active,2026-01-01,,Industry,
+REF-BODY-000006,COUPE,Coupe,Two-door coupe,Active,2026-01-01,,Industry,
+REF-BODY-000007,CONVERTIBLE,Convertible,Retractable roof vehicle,Active,2026-01-01,,Industry,
+REF-BODY-000008,PICKUP,Pickup,Pickup truck body,Active,2026-01-01,,Industry,
+REF-BODY-000009,VAN,Van,Passenger or cargo van,Active,2026-01-01,,Industry,
+REF-BODY-000010,WAGON,Wagon,Estate wagon,Active,2026-01-01,,Industry,

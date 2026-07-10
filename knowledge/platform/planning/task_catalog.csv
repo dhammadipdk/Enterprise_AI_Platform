@@ -1,0 +1,13 @@
+task_id,task_name,task_category,task_type,input_dependencies,output_artifact,estimated_duration_seconds,parallelizable,requires_human,description,status
+TASK-000001,Retrieve Customer Context,Retrieval,System,None,Customer Context,3,TRUE,FALSE,Retrieve enterprise customer context,Active
+TASK-000002,Retrieve Knowledge Graph,Retrieval,System,Customer Context,Graph Context,2,TRUE,FALSE,Load graph neighborhood,Active
+TASK-000003,Retrieve Semantic Memory,Retrieval,System,Customer Context,Semantic Context,2,TRUE,FALSE,Retrieve semantic memory,Active
+TASK-000004,Build Unified Context,Context,System,Graph Context;Semantic Context,Unified Context,2,FALSE,FALSE,Merge retrieved context,Active
+TASK-000005,Perform Risk Assessment,Analytics,AI,Unified Context,Risk Score,8,FALSE,FALSE,Compute enterprise risk,Active
+TASK-000006,Generate Recommendations,Reasoning,AI,Risk Score,Recommendations,10,FALSE,FALSE,Generate recommendations,Active
+TASK-000007,Validate Business Rules,Governance,System,Recommendations,Validated Recommendations,3,FALSE,FALSE,Validate enterprise rules,Active
+TASK-000008,Generate Explanation,Explainability,AI,Validated Recommendations,Explanation,5,TRUE,FALSE,Produce explainability,Active
+TASK-000009,Human Approval,Approval,Human,Validated Recommendations,Approval,300,FALSE,TRUE,Manual approval if needed,Active
+TASK-000010,Execute Recommendation,Execution,System,Approval,Execution Result,5,FALSE,FALSE,Execute workflow,Active
+TASK-000011,Update Enterprise Memory,Learning,System,Execution Result,Updated Memory,3,TRUE,FALSE,Persist learning,Active
+TASK-000012,Notify Customer,Communication,System,Execution Result,Notification,2,TRUE,FALSE,Customer communication,Active

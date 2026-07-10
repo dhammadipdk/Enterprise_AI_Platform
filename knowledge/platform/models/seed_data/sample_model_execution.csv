@@ -1,0 +1,11 @@
+execution_id,stage,input,selected_capability,selected_policy,selected_model,inference_profile,output,next_stage
+MODELCTX-000001,User Request,Customer asks insurance question,Reasoning,Reasoning Policy,Enterprise Foundation Model,Balanced Production,Reasoning Response,RAG
+MODELCTX-000002,RAG Retrieval,Knowledge search request,Embedding,Embedding Policy,Enterprise Embedding Model,RAG Search,Embedding Vector,Vector Search
+MODELCTX-000003,Vector Search,Vector Query,Reranking,RAG Policy,Enterprise Reranker,RAG Search,Ranked Documents,Prompt Assembly
+MODELCTX-000004,Prompt Assembly,Context + Question,Reasoning,Reasoning Policy,Enterprise Foundation Model,Reasoning,Grounded Prompt,Inference
+MODELCTX-000005,Inference,Grounded Prompt,Reasoning,Dynamic Routing Policy,Enterprise Foundation Model,Reasoning,LLM Response,Evaluation
+MODELCTX-000006,Evaluation,LLM Response,Evaluation,Evaluation Policy,Enterprise Evaluation Model,Evaluation,Quality Score,Governance
+MODELCTX-000007,Governance,Validated Response,Compliance,None,None,None,Approved Response,Delivery
+MODELCTX-000008,Delivery,Approved Response,None,None,None,None,Customer Response,Completed
+MODELCTX-000009,Monitoring,Inference Metrics,Monitoring,None,None,None,Operational Metrics,Dashboard
+MODELCTX-000010,Optimization,Usage Statistics,Routing,Dynamic Routing Policy,Enterprise Router,Adaptive,Updated Routing Policy,Future Requests

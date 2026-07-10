@@ -1,0 +1,11 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-LOSS-000001,COLLISION,Collision,Loss caused by collision,Active,2026-01-01,,Industry,
+REF-LOSS-000002,THEFT,Theft,Vehicle stolen,Active,2026-01-01,,Industry,
+REF-LOSS-000003,FIRE,Fire,Fire-related loss,Active,2026-01-01,,Industry,
+REF-LOSS-000004,FLOOD,Flood,Flood or water ingress,Active,2026-01-01,,Industry,
+REF-LOSS-000005,CYCLONE,Cyclone,Cyclone or storm damage,Active,2026-01-01,,Industry,
+REF-LOSS-000006,EARTHQUAKE,Earthquake,Earthquake damage,Active,2026-01-01,,Industry,
+REF-LOSS-000007,VANDALISM,Vandalism,Intentional damage,Active,2026-01-01,,Industry,
+REF-LOSS-000008,RIOT,Riot,Riot or civil disturbance,Active,2026-01-01,,Industry,
+REF-LOSS-000009,TREE_FALL,Tree Fall,Falling tree or branch,Active,2026-01-01,,Industry,
+REF-LOSS-000010,LANDSLIDE,Landslide,Landslide or rockfall,Active,2026-01-01,,Industry,

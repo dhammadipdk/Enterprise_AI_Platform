@@ -1,0 +1,11 @@
+profile_id,profile_name,optimization_goal,max_context_tokens,temperature,top_p,max_output_tokens,streaming_enabled,evaluation_required,description,status
+PROFILE-000001,Fast Assistant,Low Latency,16000,0.2,0.9,2000,TRUE,FALSE,Fast enterprise assistant,Active
+PROFILE-000002,Balanced Assistant,Balanced,64000,0.3,0.95,4000,TRUE,TRUE,Balanced profile,Active
+PROFILE-000003,Deep Reasoning,Highest Quality,128000,0.1,0.95,8000,TRUE,TRUE,Complex reasoning profile,Active
+PROFILE-000004,RAG Assistant,Retrieval,64000,0.1,0.9,4000,FALSE,TRUE,RAG optimized execution,Active
+PROFILE-000005,Planner,Planning,128000,0.2,0.95,6000,TRUE,TRUE,Planning profile,Active
+PROFILE-000006,Evaluator,Evaluation,32000,0.0,1.0,3000,FALSE,FALSE,Evaluation profile,Active
+PROFILE-000007,Executive Copilot,Decision Support,128000,0.2,0.95,6000,TRUE,TRUE,Executive reasoning profile,Active
+PROFILE-000008,Research Assistant,Research,256000,0.4,0.95,12000,TRUE,TRUE,Research profile,Active
+PROFILE-000009,Customer Assistant,Customer Support,32000,0.3,0.9,3000,TRUE,FALSE,Customer interaction profile,Active
+PROFILE-000010,Agent Prompt,Agent Execution,16000,0.1,0.9,2000,FALSE,FALSE,Autonomous agent profile,Active

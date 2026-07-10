@@ -1,0 +1,11 @@
+kpi_id,kpi_name,business_domain,owner,target_value,measurement_frequency,executive_visible,description,status
+KPI-000001,Claim Settlement SLA,Claims,Claims Operations,<24 Hours,Daily,TRUE,Average claim settlement time,Active
+KPI-000002,Fraud Detection Accuracy,Fraud,Fraud Team,95%,Weekly,TRUE,Fraud detection effectiveness,Active
+KPI-000003,Recommendation Acceptance,Business,Recommendation Team,75%,Weekly,TRUE,Accepted recommendations,Active
+KPI-000004,Customer Satisfaction,Customer,Customer Success,90%,Monthly,TRUE,Customer satisfaction score,Active
+KPI-000005,Knowledge Freshness,Knowledge,Knowledge Office,95%,Monthly,FALSE,Knowledge currency,Active
+KPI-000006,Agent Productivity,AI Platform,AI Operations,95%,Weekly,FALSE,Agent productivity,Active
+KPI-000007,Governance Compliance,Governance,Governance Board,100%,Monthly,TRUE,Governance adherence,Active
+KPI-000008,Platform Availability,Infrastructure,Platform Team,99.9%,Monthly,TRUE,Platform uptime,Active
+KPI-000009,Evaluation Quality,Evaluation,Evaluation Team,95%,Monthly,FALSE,Evaluation completeness,Active
+KPI-000010,Enterprise AI Health,Enterprise,Executive Board,95/100,Monthly,TRUE,Overall enterprise AI health score,Active

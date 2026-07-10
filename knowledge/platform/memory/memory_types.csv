@@ -1,0 +1,11 @@
+memory_type_id,memory_type,cognitive_role,persistence,retrieval_latency,update_frequency,primary_use_case,status
+MTYPE-000001,Working Memory,Short-Term,Temporary,Very Low,Continuous,Current reasoning,Active
+MTYPE-000002,Semantic Memory,Knowledge,Permanent,Low,Occasional,Enterprise facts,Active
+MTYPE-000003,Episodic Memory,History,Permanent,Medium,Frequent,Historical events,Active
+MTYPE-000004,Procedural Memory,Skills,Permanent,Low,Rare,Business workflows,Active
+MTYPE-000005,Graph Memory,Relationships,Permanent,Low,Frequent,Knowledge graph traversal,Active
+MTYPE-000006,Vector Memory,Similarity,Permanent,Low,Frequent,Semantic search,Active
+MTYPE-000007,Conversation Memory,Dialogue,Temporary,Very Low,Continuous,Chat continuity,Active
+MTYPE-000008,Reasoning Memory,Inference,Permanent,Medium,Continuous,Explainability,Active
+MTYPE-000009,Execution Memory,Operations,Permanent,Medium,Continuous,Workflow execution,Active
+MTYPE-000010,Business Memory,Enterprise,Permanent,Medium,Occasional,Business knowledge,Active

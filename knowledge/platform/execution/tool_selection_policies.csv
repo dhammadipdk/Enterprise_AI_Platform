@@ -1,0 +1,11 @@
+policy_id,policy_name,selection_condition,preferred_tool,fallback_tool,selection_strategy,max_retry,description,status
+TPOL-000001,Knowledge Retrieval,Graph Query,Knowledge Graph,Vector Database,Priority,2,Prefer graph retrieval,Active
+TPOL-000002,Semantic Search,Document Query,Vector Database,Knowledge Graph,Similarity,2,Semantic retrieval,Active
+TPOL-000003,Decision Generation,Reasoning,Reasoning Engine,None,Single Tool,1,Reasoning execution,Active
+TPOL-000004,Recommendation Generation,Recommendation,Recommendation Engine,Reasoning Engine,Priority,2,Recommendation engine selection,Active
+TPOL-000005,Policy Validation,Governance,Business Rules Engine,None,Mandatory,0,Always validate rules,Active
+TPOL-000006,Memory Persistence,Memory Update,Memory Service,None,Mandatory,2,Persist memory,Active
+TPOL-000007,Workflow Control,Workflow,Workflow Engine,None,Mandatory,3,Workflow orchestration,Active
+TPOL-000008,Notification Delivery,Notification,Notification Service,None,Retry,5,Customer notifications,Active
+TPOL-000009,Audit Logging,Audit,Audit Service,None,Mandatory,2,Audit persistence,Active
+TPOL-000010,External Integration,External API,External API Gateway,None,Fallback,3,Third-party integration,Active

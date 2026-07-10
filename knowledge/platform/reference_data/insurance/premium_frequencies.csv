@@ -1,0 +1,6 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-PREMFREQ-000001,ONE_TIME,One-Time Payment,Single premium payment for policy term,Active,2026-01-01,,Industry,
+REF-PREMFREQ-000002,MONTHLY,Monthly,Premium paid monthly,Active,2026-01-01,,Industry,
+REF-PREMFREQ-000003,QUARTERLY,Quarterly,Premium paid every three months,Active,2026-01-01,,Industry,
+REF-PREMFREQ-000004,HALF_YEARLY,Half-Yearly,Premium paid every six months,Active,2026-01-01,,Industry,
+REF-PREMFREQ-000005,ANNUALLY,Annually,Premium paid once every year,Active,2026-01-01,,Industry,

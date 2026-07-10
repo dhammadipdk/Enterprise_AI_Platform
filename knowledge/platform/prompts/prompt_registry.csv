@@ -1,0 +1,11 @@
+prompt_id,prompt_name,prompt_category,primary_capability,default_model_family,business_owner,lifecycle_stage,reusable,description,status
+PR-000001,Enterprise Assistant,System Prompt,Reasoning,Foundation LLM,AI Platform Team,Production,TRUE,General enterprise assistant,Active
+PR-000002,Knowledge Retrieval,System Prompt,RAG,Foundation LLM,Knowledge Office,Production,TRUE,RAG system prompt,Active
+PR-000003,Claims Assistant,System Prompt,Insurance,Foundation LLM,Claims Team,Production,TRUE,Claims reasoning prompt,Active
+PR-000004,Fraud Investigation,System Prompt,Fraud,Foundation LLM,Fraud Team,Production,TRUE,Fraud investigation prompt,Active
+PR-000005,Recommendation Assistant,System Prompt,Recommendation,Foundation LLM,Business Team,Production,TRUE,Recommendation generation,Active
+PR-000006,Planning Prompt,System Prompt,Planning,Planning Models,Planning Team,Production,TRUE,Planning assistant,Active
+PR-000007,Evaluation Prompt,System Prompt,Evaluation,Evaluation Models,Evaluation Team,Production,TRUE,Evaluation prompt,Active
+PR-000008,Executive Copilot,System Prompt,Decision Support,Foundation LLM,Executive Office,Production,TRUE,Executive AI assistant,Active
+PR-000009,Compliance Advisor,System Prompt,Compliance,Foundation LLM,Compliance Office,Production,TRUE,Compliance reasoning prompt,Active
+PR-000010,Research Assistant,System Prompt,Research,Foundation LLM,Research Team,Research,TRUE,Research assistant,Experimental

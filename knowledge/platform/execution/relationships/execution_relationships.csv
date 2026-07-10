@@ -1,0 +1,21 @@
+relationship_id,source_entity,relationship,target_entity,relationship_category,direction,cardinality,is_runtime,is_failure_path,is_audit_edge,is_learning_edge,priority,description,status
+EREL-000001,ExecutionPlan,EXECUTES,ExecutionWorkflow,Execution,Forward,1:1,TRUE,FALSE,FALSE,FALSE,Critical,Execution plan launches workflow,Active
+EREL-000002,ExecutionWorkflow,CONTAINS,ExecutionTask,Composition,Forward,1:N,TRUE,FALSE,FALSE,FALSE,Critical,Workflow contains runtime tasks,Active
+EREL-000003,ExecutionTask,DECOMPOSES_TO,ExecutionStep,Composition,Forward,1:N,TRUE,FALSE,FALSE,FALSE,Critical,Task decomposes into executable steps,Active
+EREL-000004,ExecutionStep,USES,Tool,Invocation,Forward,N:N,TRUE,FALSE,FALSE,FALSE,High,Execution step invokes tool,Active
+EREL-000005,Tool,GENERATES,ExecutionEvent,Monitoring,Forward,1:N,TRUE,FALSE,TRUE,FALSE,Medium,Tool invocation generates runtime event,Active
+EREL-000006,ExecutionEvent,UPDATES,ExecutionContext,Context,Forward,N:1,TRUE,FALSE,FALSE,FALSE,High,Runtime events update execution context,Active
+EREL-000007,ExecutionContext,CREATES,ExecutionCheckpoint,Recovery,Forward,1:N,TRUE,FALSE,FALSE,FALSE,Medium,Context snapshot stored as checkpoint,Active
+EREL-000008,ExecutionCheckpoint,SUPPORTS,RetryPolicy,Recovery,Forward,N:N,TRUE,TRUE,FALSE,FALSE,Medium,Retry starts from checkpoint,Active
+EREL-000009,RetryPolicy,ESCALATES_TO,RollbackPolicy,Recovery,Forward,N:1,TRUE,TRUE,FALSE,FALSE,Critical,Retry exhaustion triggers rollback,Active
+EREL-000010,RollbackPolicy,INITIATES,CompensationAction,Recovery,Forward,1:N,TRUE,TRUE,FALSE,FALSE,Critical,Rollback invokes business compensation,Active
+EREL-000011,CompensationAction,RESTORES,ExecutionContext,Recovery,Forward,N:1,TRUE,TRUE,FALSE,FALSE,High,Compensation restores consistency,Active
+EREL-000012,ExecutionWorkflow,GENERATES,ExecutionMetric,Monitoring,Forward,1:N,TRUE,FALSE,FALSE,FALSE,Medium,Execution produces KPIs,Active
+EREL-000013,ExecutionWorkflow,WRITES,ExecutionAudit,Governance,Forward,1:N,TRUE,FALSE,TRUE,FALSE,Critical,Execution audit generated,Active
+EREL-000014,ExecutionAudit,UPDATES,EnterpriseMemory,Learning,Forward,N:1,TRUE,FALSE,TRUE,TRUE,Medium,Audit contributes to enterprise memory,Active
+EREL-000015,ExecutionMetric,SUPPORTS,PlanningEngine,Feedback,Backward,N:N,TRUE,FALSE,FALSE,TRUE,Medium,Execution metrics improve planning,Active
+EREL-000016,EnterpriseMemory,SUPPORTS,PlanningEngine,Feedback,Backward,N:N,TRUE,FALSE,FALSE,TRUE,Medium,Execution knowledge improves planning,Active
+EREL-000017,PlanningEngine,HANDS_OFF_TO,ExecutionEngine,Lifecycle,Forward,1:1,TRUE,FALSE,FALSE,FALSE,Critical,Planning transfers execution plan,Active
+EREL-000018,ReasoningEngine,GUIDES,ExecutionTask,Reasoning,Forward,N:N,TRUE,FALSE,FALSE,FALSE,High,Reasoning guides execution,Active
+EREL-000019,ExecutionWorkflow,NOTIFIES,NotificationService,Communication,Forward,N:N,TRUE,FALSE,FALSE,FALSE,Low,Notify external systems,Active
+EREL-000020,ExecutionWorkflow,COMPLETES,BusinessOutcome,Lifecycle,Forward,1:1,TRUE,FALSE,FALSE,TRUE,Critical,Execution produces business outcome,Active

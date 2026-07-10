@@ -1,0 +1,11 @@
+fine_tuned_model_id,base_model,domain_name,fine_tuning_method,training_dataset,owner,production_ready,evaluation_score,description,status
+FT-000001,Enterprise Foundation Model,Insurance,Supervised Fine Tuning,Insurance Corpus,AI Platform Team,TRUE,94.6,Insurance reasoning model,Active
+FT-000002,Enterprise Foundation Model,Claims Processing,Supervised Fine Tuning,Claims Knowledge Base,Claims AI Team,TRUE,95.2,Claims assistant model,Active
+FT-000003,Enterprise Foundation Model,Fraud Detection,Instruction Tuning,Fraud Investigation Corpus,Fraud Team,TRUE,96.1,Fraud investigation assistant,Active
+FT-000004,Enterprise Foundation Model,Recommendation,Instruction Tuning,Recommendation Dataset,Recommendation Team,TRUE,93.8,Recommendation model,Active
+FT-000005,Enterprise Foundation Model,Customer Support,Supervised Fine Tuning,Support Conversations,Customer Operations,TRUE,94.1,Customer assistant,Active
+FT-000006,Enterprise Foundation Model,Compliance,Supervised Fine Tuning,Regulatory Corpus,Compliance Team,TRUE,95.7,Compliance advisor,Active
+FT-000007,Enterprise Foundation Model,Knowledge Management,Instruction Tuning,Enterprise Knowledge Base,Knowledge Office,TRUE,95.3,Knowledge assistant,Active
+FT-000008,Enterprise Foundation Model,Planning,Supervised Fine Tuning,Workflow Dataset,Planning Team,FALSE,90.4,Planning optimization model,Experimental
+FT-000009,Enterprise Foundation Model,Executive Copilot,RLHF,Executive Decision Dataset,Executive Office,FALSE,91.8,Executive AI assistant,Experimental
+FT-000010,Enterprise Foundation Model,Research,LoRA,Research Corpus,Research Team,FALSE,88.9,Research model,Research

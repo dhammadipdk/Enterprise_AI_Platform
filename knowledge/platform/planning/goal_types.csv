@@ -1,0 +1,11 @@
+goal_type_id,goal_name,planning_level,business_domain,priority,optimization_target,time_horizon,description,status
+GOAL-000001,Customer Recommendation,Operational,Recommendation,High,Customer Satisfaction,Minutes,Recommend best insurance policy,Active
+GOAL-000002,Fraud Investigation,Tactical,Fraud,Critical,Risk Reduction,Hours,Investigate suspected fraud,Active
+GOAL-000003,Claim Settlement,Operational,Claims,Critical,Settlement Time,Days,Complete claim processing,Active
+GOAL-000004,Premium Optimization,Tactical,Pricing,High,Profitability,Days,Optimize premium calculation,Active
+GOAL-000005,Risk Assessment,Operational,Risk,High,Prediction Accuracy,Minutes,Assess customer risk,Active
+GOAL-000006,Policy Recommendation,Operational,Insurance,High,Coverage Quality,Minutes,Recommend policy options,Active
+GOAL-000007,Knowledge Retrieval,Operational,Knowledge,Medium,Retrieval Precision,Seconds,Retrieve enterprise knowledge,Active
+GOAL-000008,Graph Exploration,Operational,Knowledge Graph,Medium,Traversal Efficiency,Seconds,Explore enterprise graph,Active
+GOAL-000009,Agent Coordination,Strategic,Agents,High,Collaboration,Minutes,Coordinate multiple agents,Active
+GOAL-000010,Enterprise Optimization,Strategic,Enterprise,Critical,Business Value,Months,Optimize enterprise operations,Active

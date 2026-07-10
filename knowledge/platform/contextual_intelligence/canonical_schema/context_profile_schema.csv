@@ -1,0 +1,17 @@
+field_name,data_type,required,description,example
+profile_id,string,Yes,Unique context profile identifier,PROFILE-000001
+profile_type,string,Yes,Type of profile,CUSTOMER_PROFILE
+subject_type,string,Yes,Business entity type,CUSTOMER
+subject_code,string,Yes,Business entity identifier,CUST-000145
+subject_name,string,No,Human-readable subject name,Rajesh Kumar
+snapshot_timestamp,datetime,Yes,Time at which the profile was generated,2026-07-01T10:30:00Z
+geographic_context,string,Yes,Applicable geographic context,Mumbai
+temporal_context,string,Yes,Applicable temporal context,Monsoon
+active_contexts,string,Yes,Semicolon-separated active contextual intelligence,FLOOD_HIGH;TRAFFIC_HIGH;CRIME_MEDIUM
+risk_summary,string,Yes,Summary of primary risks,High flood exposure and elevated congestion risk
+opportunity_summary,string,No,Summary of positive contextual opportunities,Eligible for safe driving discount
+recommended_focus,string,Yes,Primary recommendation focus,ENGINE_PROTECT;RSA;ZERO_DEP
+confidence_score,float,Yes,Overall confidence score (0-1),0.94
+profile_version,string,Yes,Profile schema/version,v1.0
+generated_by,string,Yes,System or model generating the profile,Context Engine
+remarks,string,No,Additional notes,

@@ -1,0 +1,11 @@
+conflict_id,conflict_type,detection_method,resolution_strategy,priority_basis,human_override,audit_required,description,status
+CONF-000001,Capability Conflict,Capability Matching,Highest Proficiency,Capability Score,FALSE,TRUE,Multiple capable agents,Active
+CONF-000002,Resource Conflict,Resource Manager,Priority Scheduling,Task Priority,FALSE,TRUE,Competing resource requests,Active
+CONF-000003,Knowledge Conflict,Knowledge Validation,Latest Verified Knowledge,Knowledge Freshness,TRUE,TRUE,Conflicting knowledge,Active
+CONF-000004,Reasoning Conflict,Reasoning Comparison,Highest Confidence,Confidence Score,TRUE,TRUE,Different reasoning outputs,Active
+CONF-000005,Recommendation Conflict,Business Rules,Business Rule Validation,Business Priority,TRUE,TRUE,Recommendation disagreement,Active
+CONF-000006,Execution Conflict,Workflow Engine,Execution Policy,SLA,FALSE,TRUE,Workflow contention,Active
+CONF-000007,Planning Conflict,Planning Engine,Planner Consensus,Planning Score,FALSE,TRUE,Competing execution plans,Active
+CONF-000008,Delegation Conflict,Coordinator,Trust-Based Selection,Trust Score,FALSE,TRUE,Delegation ambiguity,Active
+CONF-000009,Security Conflict,Security Engine,Deny by Default,Security Policy,FALSE,TRUE,Security violations,Active
+CONF-000010,Enterprise Conflict,Governance Board,Human Escalation,Enterprise Policy,TRUE,TRUE,Enterprise-wide conflicts,Active

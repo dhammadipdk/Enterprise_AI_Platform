@@ -1,0 +1,9 @@
+reference_id,code,name,description,status,effective_date,expiry_date,source_authority,remarks
+REF-LCLASS-000001,MCWG,Motorcycle with Gear,Motorcycle with gear transmission,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000002,MCWOG,Motorcycle without Gear,Motorcycle or scooter without gear,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000003,LMV,Light Motor Vehicle,Private light motor vehicle,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000004,LMV_TRANSPORT,LMV Transport,Commercial light motor vehicle,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000005,HMV,Heavy Motor Vehicle,Heavy commercial vehicle,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000006,TRAILER,Trailer Vehicle,Trailer vehicle authorization,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000007,HAZMAT,Hazardous Goods Vehicle,Hazardous goods transport authorization,Active,2026-01-01,,MoRTH,
+REF-LCLASS-000008,PSV,Public Service Vehicle,Passenger transport authorization,Active,2026-01-01,,MoRTH,

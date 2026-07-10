@@ -1,0 +1,15 @@
+field_name,data_type,required,description
+agent_id,String,TRUE,Unique identifier
+agent_name,String,TRUE,Agent name
+agent_role,String,TRUE,Assigned role
+primary_capability,String,TRUE,Main capability
+memory_profile,String,FALSE,Memory configuration
+planning_profile,String,FALSE,Planning strategy
+execution_profile,String,FALSE,Execution strategy
+security_profile,String,FALSE,Security policy
+trust_score,Float,FALSE,Agent trust
+health_score,Float,FALSE,Runtime health
+owner,String,FALSE,Business owner
+created_at,Datetime,TRUE,Creation timestamp
+updated_at,Datetime,FALSE,Last update
+status,String,TRUE,Lifecycle status
