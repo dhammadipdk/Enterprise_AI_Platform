@@ -1,23 +1,32 @@
 """
 Platform Bootstrap.
-
-Responsible for initializing the Enterprise AI Platform.
 """
 
-from enterprise_ai_platform.framework.core.platform_kernel import PlatformKernel
+from enterprise_ai_platform.configuration import ConfigurationService
+from enterprise_ai_platform.logging import LoggingService
 
 
 class PlatformBootstrap:
     """
-    Bootstraps the Enterprise AI Platform.
+    Bootstraps the platform.
     """
 
     def __init__(self) -> None:
-        self.kernel = PlatformKernel()
+
+        self.configuration = ConfigurationService()
+
+        self.logging = LoggingService()
 
     def run(self) -> None:
-        """
-        Execute the platform startup sequence.
-        """
 
-        self.kernel.start()
+        self.logging.initialize()
+
+        settings = self.configuration.settings
+
+        from loguru import logger
+
+        logger.info(
+            f"Starting {settings.platform_name} "
+            f"{settings.version} "
+            f"({settings.environment})"
+        )
