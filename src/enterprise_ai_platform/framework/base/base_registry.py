@@ -40,6 +40,11 @@ class BaseRegistry(Generic[T]):
         Retrieve a registered item.
         """
 
+        if name not in self._items:
+            raise KeyError(
+                f"No item registered with name '{name}'."
+            )
+
         return self._items[name]
 
     def exists(self, name: str) -> bool:
