@@ -30,6 +30,9 @@ class DatasetLoader:
         name: str,
         path: Path,
     ) -> None:
+        """
+        Load a single CSV dataset.
+        """
 
         records = self._provider.load(path)
 
@@ -42,3 +45,20 @@ class DatasetLoader:
             name,
             dataset,
         )
+
+    def load_directory(
+        self,
+        directory: Path,
+    ) -> None:
+        """
+        Load every CSV file in a directory.
+        """
+
+        for csv_file in sorted(directory.glob("*.csv")):
+
+            dataset_name = csv_file.stem
+
+            self.load_csv(
+                dataset_name,
+                csv_file,
+            )
