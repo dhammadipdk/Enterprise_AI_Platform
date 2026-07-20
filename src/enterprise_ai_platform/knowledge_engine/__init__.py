@@ -1,4 +1,5 @@
 from enterprise_ai_platform.knowledge_engine.models import (
+    Chunk,
     KnowledgeAsset,
     KnowledgeDomain,
     KnowledgeManifest,
@@ -18,6 +19,12 @@ from enterprise_ai_platform.knowledge_engine.providers import (
     KnowledgeProviderRegistry,
     MarkdownProvider,
 )
+from enterprise_ai_platform.knowledge_engine.chunking import (
+    BaseChunkingStrategy,
+    ChunkingStrategyRegistry,
+    TabularChunker,
+    TextChunker,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationIssue,
@@ -29,6 +36,7 @@ from enterprise_ai_platform.knowledge_engine.services import (
 
 
 __all__ = [
+    "Chunk",
     "KnowledgeAsset",
     "KnowledgeDomain",
     "KnowledgeManifest",
@@ -39,6 +47,10 @@ __all__ = [
     "CSVProvider",
     "MarkdownProvider",
     "KnowledgeProviderRegistry",
+    "BaseChunkingStrategy",
+    "ChunkingStrategyRegistry",
+    "TabularChunker",
+    "TextChunker",
     "RepositoryValidator",
     "ValidationIssue",
     "ValidationReport",

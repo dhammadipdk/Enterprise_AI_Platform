@@ -12,10 +12,17 @@ from enterprise_ai_platform.framework.base import (
     BaseService,
     ComponentState,
 )
+from enterprise_ai_platform.knowledge_engine.chunking import (
+    BaseChunkingStrategy,
+    ChunkingStrategyRegistry,
+    TabularChunker,
+    TextChunker,
+)
 from enterprise_ai_platform.knowledge_engine.loaders import (
     KnowledgeRepositoryLoader,
 )
 from enterprise_ai_platform.knowledge_engine.models import (
+    Chunk,
     KnowledgeAsset,
     KnowledgeDomain,
     KnowledgeManifest,
@@ -42,7 +49,7 @@ class KnowledgeService(BaseService):
     Every other subsystem interacts with knowledge exclusively through
     this service. Nothing outside the Knowledge Engine should reference
     KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository or
-    the providers directly.
+    the providers / chunking strategies directly.
     """
 
     def __init__(self) -> None:
@@ -60,6 +67,12 @@ class KnowledgeService(BaseService):
         self._providers.register(".md", MarkdownProvider())
 
         self._validator = RepositoryValidator()
+
+        self._chunkers = ChunkingStrategyRegistry()
+
+        self._chunkers.register(".csv", TabularChunker())
+
+        self._chunkers.register(".md", TextChunker())
 
     def initialize(self) -> None:
         """
@@ -271,6 +284,96 @@ class KnowledgeService(BaseService):
         provider = self._providers.get(extension)
 
         return provider.load(target_asset.path)
+
+    # ------------------------------------------------------------------
+    # Chunking
+    # ------------------------------------------------------------------
+
+    def register_chunking_strategy(
+        self,
+        extension: str,
+        strategy: BaseChunkingStrategy,
+    ) -> None:
+        """
+        Register a chunking strategy for a file extension, e.g. ".json".
+
+        Overwrites any strategy already registered for that extension.
+        """
+
+        if self._chunkers.exists(extension):
+            self._chunkers.unregister(extension)
+
+        self._chunkers.register(extension, strategy)
+
+    def chunk_asset(
+        self,
+        name: str,
+        domain: str,
+        asset: str,
+    ) -> list[Chunk]:
+        """
+        Load and chunk an asset's content using the matching strategy,
+        dispatched by file extension.
+        """
+
+        target_asset = self.get_asset(name, domain, asset)
+
+        extension = target_asset.path.suffix.lower()
+
+        if not self._chunkers.exists(extension):
+            raise ValueError(
+                f"No chunking strategy registered for extension "
+                f"'{extension}' (asset '{asset}' in domain '{domain}' "
+                f"of repository '{name}')."
+            )
+
+        content = self.load_asset_content(name, domain, asset)
+
+        strategy = self._chunkers.get(extension)
+
+        return strategy.chunk(content, name, domain, asset)
+
+    def chunk_domain(
+        self,
+        name: str,
+        domain: str,
+    ) -> list[Chunk]:
+        """
+        Chunk every asset in a domain.
+
+        Assets whose extension has no registered chunking strategy are
+        silently skipped.
+        """
+
+        chunks: list[Chunk] = []
+
+        for asset_name in self.list_assets(name, domain):
+
+            asset = self.get_asset(name, domain, asset_name)
+
+            extension = asset.path.suffix.lower()
+
+            if not self._chunkers.exists(extension):
+                continue
+
+            chunks.extend(self.chunk_asset(name, domain, asset_name))
+
+        return chunks
+
+    def chunk_repository(
+        self,
+        name: str,
+    ) -> list[Chunk]:
+        """
+        Chunk every asset across every domain in a repository.
+        """
+
+        chunks: list[Chunk] = []
+
+        for domain in self.list_domains(name):
+            chunks.extend(self.chunk_domain(name, domain))
+
+        return chunks
 
     # ------------------------------------------------------------------
     # Validation

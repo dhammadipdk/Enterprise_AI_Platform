@@ -259,3 +259,80 @@ def test_get_manifest_when_absent(tmp_path: Path) -> None:
     service.load_repository("insurance", tmp_path)
 
     assert service.get_manifest("insurance", "policy") is None
+    
+def test_chunk_asset_csv(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    chunks = service.chunk_asset("insurance", "policy", "canonical_schema")
+
+    assert len(chunks) == 1
+
+    assert chunks[0].content == "id: 1\nname: Comprehensive"
+
+    assert chunks[0].repository == "insurance"
+
+    assert chunks[0].domain == "policy"
+
+    assert chunks[0].asset == "canonical_schema"
+
+
+def test_chunk_asset_markdown(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    chunks = service.chunk_asset("insurance", "policy", "README")
+
+    assert len(chunks) == 1
+
+    assert chunks[0].content == "# Policy"
+
+
+def test_chunk_domain_covers_all_assets(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    chunks = service.chunk_domain("insurance", "policy")
+
+    assert len(chunks) == 2
+
+
+def test_chunk_repository_covers_all_domains(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    chunks = service.chunk_repository("insurance")
+
+    assert len(chunks) == 2
+
+
+def test_chunk_asset_unsupported_extension_raises(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "notes.txt").write_text("unsupported")
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    with pytest.raises(ValueError):
+        service.chunk_asset("insurance", "policy", "notes")
