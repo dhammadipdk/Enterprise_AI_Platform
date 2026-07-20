@@ -1,4 +1,7 @@
 from enterprise_ai_platform.knowledge_engine.models.chunk import Chunk
+from enterprise_ai_platform.knowledge_engine.models.embedded_chunk import (
+    EmbeddedChunk,
+)
 from enterprise_ai_platform.knowledge_engine.models.knowledge_asset import (
     KnowledgeAsset,
 )
@@ -14,6 +17,7 @@ from enterprise_ai_platform.knowledge_engine.models.knowledge_repository import 
 
 __all__ = [
     "Chunk",
+    "EmbeddedChunk",
     "KnowledgeAsset",
     "KnowledgeDomain",
     "KnowledgeManifest",

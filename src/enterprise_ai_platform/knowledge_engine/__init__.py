@@ -1,5 +1,6 @@
 from enterprise_ai_platform.knowledge_engine.models import (
     Chunk,
+    EmbeddedChunk,
     KnowledgeAsset,
     KnowledgeDomain,
     KnowledgeManifest,
@@ -25,6 +26,11 @@ from enterprise_ai_platform.knowledge_engine.chunking import (
     TabularChunker,
     TextChunker,
 )
+from enterprise_ai_platform.knowledge_engine.embedding import (
+    BaseEmbeddingProvider,
+    EmbeddingPipeline,
+    LocalEmbeddingProvider,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationIssue,
@@ -37,6 +43,7 @@ from enterprise_ai_platform.knowledge_engine.services import (
 
 __all__ = [
     "Chunk",
+    "EmbeddedChunk",
     "KnowledgeAsset",
     "KnowledgeDomain",
     "KnowledgeManifest",
@@ -51,6 +58,9 @@ __all__ = [
     "ChunkingStrategyRegistry",
     "TabularChunker",
     "TextChunker",
+    "BaseEmbeddingProvider",
+    "EmbeddingPipeline",
+    "LocalEmbeddingProvider",
     "RepositoryValidator",
     "ValidationIssue",
     "ValidationReport",

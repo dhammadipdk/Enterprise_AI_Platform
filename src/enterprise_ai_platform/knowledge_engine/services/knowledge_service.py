@@ -18,11 +18,17 @@ from enterprise_ai_platform.knowledge_engine.chunking import (
     TabularChunker,
     TextChunker,
 )
+from enterprise_ai_platform.knowledge_engine.embedding import (
+    BaseEmbeddingProvider,
+    EmbeddingPipeline,
+    LocalEmbeddingProvider,
+)
 from enterprise_ai_platform.knowledge_engine.loaders import (
     KnowledgeRepositoryLoader,
 )
 from enterprise_ai_platform.knowledge_engine.models import (
     Chunk,
+    EmbeddedChunk,
     KnowledgeAsset,
     KnowledgeDomain,
     KnowledgeManifest,
@@ -49,7 +55,7 @@ class KnowledgeService(BaseService):
     Every other subsystem interacts with knowledge exclusively through
     this service. Nothing outside the Knowledge Engine should reference
     KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository or
-    the providers / chunking strategies directly.
+    the providers / chunking strategies / embedding provider directly.
     """
 
     def __init__(self) -> None:
@@ -73,6 +79,8 @@ class KnowledgeService(BaseService):
         self._chunkers.register(".csv", TabularChunker())
 
         self._chunkers.register(".md", TextChunker())
+
+        self._embedding_pipeline = EmbeddingPipeline(LocalEmbeddingProvider())
 
     def initialize(self) -> None:
         """
@@ -374,6 +382,64 @@ class KnowledgeService(BaseService):
             chunks.extend(self.chunk_domain(name, domain))
 
         return chunks
+
+    # ------------------------------------------------------------------
+    # Embedding
+    # ------------------------------------------------------------------
+
+    def set_embedding_provider(self, provider: BaseEmbeddingProvider) -> None:
+        """
+        Swap the active embedding provider (e.g. local -> API-based)
+        without changing any other Knowledge Engine code.
+        """
+
+        self._embedding_pipeline = EmbeddingPipeline(provider)
+
+    def get_embedding_provider(self) -> BaseEmbeddingProvider:
+        """
+        Return the currently active embedding provider.
+        """
+
+        return self._embedding_pipeline.provider
+
+    def embed_asset(
+        self,
+        name: str,
+        domain: str,
+        asset: str,
+    ) -> list[EmbeddedChunk]:
+        """
+        Chunk and embed a single asset.
+        """
+
+        chunks = self.chunk_asset(name, domain, asset)
+
+        return self._embedding_pipeline.embed(chunks)
+
+    def embed_domain(
+        self,
+        name: str,
+        domain: str,
+    ) -> list[EmbeddedChunk]:
+        """
+        Chunk and embed every asset in a domain.
+        """
+
+        chunks = self.chunk_domain(name, domain)
+
+        return self._embedding_pipeline.embed(chunks)
+
+    def embed_repository(
+        self,
+        name: str,
+    ) -> list[EmbeddedChunk]:
+        """
+        Chunk and embed every asset across every domain in a repository.
+        """
+
+        chunks = self.chunk_repository(name)
+
+        return self._embedding_pipeline.embed(chunks)
 
     # ------------------------------------------------------------------
     # Validation

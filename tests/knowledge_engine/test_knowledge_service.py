@@ -4,6 +4,7 @@ import pytest
 
 from enterprise_ai_platform.knowledge_engine import KnowledgeService
 from enterprise_ai_platform.framework.base import BaseProvider
+from enterprise_ai_platform.knowledge_engine.embedding import BaseEmbeddingProvider
 
 
 def _build_sample_repository(root: Path) -> None:
@@ -336,3 +337,73 @@ def test_chunk_asset_unsupported_extension_raises(tmp_path: Path) -> None:
 
     with pytest.raises(ValueError):
         service.chunk_asset("insurance", "policy", "notes")
+        
+        
+        
+class _FakeEmbeddingProvider(BaseEmbeddingProvider):
+
+    @property
+    def name(self) -> str:
+        return "fake"
+
+    @property
+    def dimension(self) -> int:
+        return 2
+
+    def embed_text(self, text: str) -> list[float]:
+        return self.embed_batch([text])[0]
+
+    def embed_batch(self, texts: list[str]) -> list[list[float]]:
+        return [[float(len(text)), 0.0] for text in texts]
+
+
+def test_embed_asset_uses_configured_provider(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    embedded = service.embed_asset("insurance", "policy", "README")
+
+    assert len(embedded) == 1
+
+    assert embedded[0].provider == "fake"
+
+    assert embedded[0].chunk.asset == "README"
+
+
+def test_embed_repository_matches_chunk_repository(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    embedded = service.embed_repository("insurance")
+
+    assert len(embedded) == len(service.chunk_repository("insurance"))
+
+
+def test_get_embedding_provider_defaults_to_local() -> None:
+
+    service = KnowledgeService()
+
+    assert service.get_embedding_provider().name.startswith("local:")
+
+
+def test_set_embedding_provider_swaps_cleanly() -> None:
+
+    service = KnowledgeService()
+
+    fake = _FakeEmbeddingProvider()
+
+    service.set_embedding_provider(fake)
+
+    assert service.get_embedding_provider() is fake
