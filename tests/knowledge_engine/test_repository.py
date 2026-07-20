@@ -11,6 +11,7 @@ def test_repository_model() -> None:
 
     asset = KnowledgeAsset(
         name="canonical_schema",
+        asset_type="schema",
         path=Path("policy/canonical_schema.csv"),
     )
 

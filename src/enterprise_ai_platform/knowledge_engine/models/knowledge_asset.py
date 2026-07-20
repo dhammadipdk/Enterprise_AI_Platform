@@ -16,4 +16,6 @@ class KnowledgeAsset(BaseModel):
 
     name: str
 
+    asset_type: str
+
     path: Path
