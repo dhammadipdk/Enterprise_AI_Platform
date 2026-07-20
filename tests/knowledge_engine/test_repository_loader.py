@@ -31,3 +31,34 @@ def test_repository_loader(tmp_path: Path) -> None:
         "schema",
         "documentation",
     }
+    
+    
+def test_repository_loader_applies_manifest_overrides(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "premium_bands.csv").write_text("band,premium\n")
+
+    (policy / "manifest.yaml").write_text(
+        "owner: Product Team\n"
+        "asset_type_overrides:\n"
+        "  premium_bands: reference_data\n"
+    )
+
+    loader = KnowledgeRepositoryLoader()
+
+    repository = loader.load(tmp_path)
+
+    domain = repository.domains[0]
+
+    assert domain.manifest is not None
+
+    assert domain.manifest.owner == "Product Team"
+
+    assert len(domain.assets) == 1
+
+    assert domain.assets[0].asset_type == "reference_data"

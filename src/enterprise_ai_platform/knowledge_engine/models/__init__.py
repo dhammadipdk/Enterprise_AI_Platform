@@ -4,6 +4,9 @@ from enterprise_ai_platform.knowledge_engine.models.knowledge_asset import (
 from enterprise_ai_platform.knowledge_engine.models.knowledge_domain import (
     KnowledgeDomain,
 )
+from enterprise_ai_platform.knowledge_engine.models.knowledge_manifest import (
+    KnowledgeManifest,
+)
 from enterprise_ai_platform.knowledge_engine.models.knowledge_repository import (
     KnowledgeRepository,
 )
@@ -11,5 +14,6 @@ from enterprise_ai_platform.knowledge_engine.models.knowledge_repository import 
 __all__ = [
     "KnowledgeAsset",
     "KnowledgeDomain",
+    "KnowledgeManifest",
     "KnowledgeRepository",
 ]

@@ -2,8 +2,11 @@
 Knowledge repository loader.
 """
 
+from __future__ import annotations
+
 from pathlib import Path
 
+from enterprise_ai_platform.knowledge_engine.manifest import ManifestLoader
 from enterprise_ai_platform.knowledge_engine.models import (
     KnowledgeAsset,
     KnowledgeDomain,
@@ -15,6 +18,10 @@ class KnowledgeRepositoryLoader:
     """
     Builds a KnowledgeRepository from the filesystem.
     """
+
+    def __init__(self) -> None:
+
+        self._manifest_loader = ManifestLoader()
 
     def load(
         self,
@@ -28,6 +35,10 @@ class KnowledgeRepositoryLoader:
             if not directory.is_dir():
                 continue
 
+            manifest = self._manifest_loader.load(directory)
+
+            overrides = manifest.asset_type_overrides if manifest else {}
+
             assets: list[KnowledgeAsset] = []
 
             for file in sorted(directory.rglob("*")):
@@ -35,11 +46,21 @@ class KnowledgeRepositoryLoader:
                 if not file.is_file():
                     continue
 
+                if file.name == ManifestLoader.MANIFEST_FILENAME:
+                    continue
+
                 relative = file.relative_to(directory)
 
+                asset_name = relative.stem
+
+                asset_type = overrides.get(
+                    asset_name,
+                    self._infer_asset_type(relative),
+                )
+
                 asset = KnowledgeAsset(
-                    name=relative.stem,
-                    asset_type=self._infer_asset_type(relative),
+                    name=asset_name,
+                    asset_type=asset_type,
                     path=file,
                 )
 
@@ -49,6 +70,7 @@ class KnowledgeRepositoryLoader:
                 KnowledgeDomain(
                     name=directory.name,
                     assets=assets,
+                    manifest=manifest,
                 )
             )
 

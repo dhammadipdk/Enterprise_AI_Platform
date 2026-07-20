@@ -18,6 +18,7 @@ from enterprise_ai_platform.knowledge_engine.loaders import (
 from enterprise_ai_platform.knowledge_engine.models import (
     KnowledgeAsset,
     KnowledgeDomain,
+    KnowledgeManifest,
     KnowledgeRepository,
 )
 from enterprise_ai_platform.knowledge_engine.providers import (
@@ -25,12 +26,12 @@ from enterprise_ai_platform.knowledge_engine.providers import (
     KnowledgeProviderRegistry,
     MarkdownProvider,
 )
+from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
+    KnowledgeRegistry,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationReport,
-)
-from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
-    KnowledgeRegistry,
 )
 
 
@@ -57,7 +58,7 @@ class KnowledgeService(BaseService):
         self._providers.register(".csv", CSVProvider())
 
         self._providers.register(".md", MarkdownProvider())
-        
+
         self._validator = RepositoryValidator()
 
     def initialize(self) -> None:
@@ -178,6 +179,17 @@ class KnowledgeService(BaseService):
             f"No domain named '{domain}' in repository '{name}'."
         )
 
+    def get_manifest(
+        self,
+        name: str,
+        domain: str,
+    ) -> KnowledgeManifest | None:
+        """
+        Return the manifest for a domain, if one exists.
+        """
+
+        return self.get_domain(name, domain).manifest
+
     # ------------------------------------------------------------------
     # Asset access
     # ------------------------------------------------------------------
@@ -261,6 +273,19 @@ class KnowledgeService(BaseService):
         return provider.load(target_asset.path)
 
     # ------------------------------------------------------------------
+    # Validation
+    # ------------------------------------------------------------------
+
+    def validate_repository(self, name: str) -> ValidationReport:
+        """
+        Validate a registered repository and return the report.
+        """
+
+        repository = self.get_repository(name)
+
+        return self._validator.validate(repository)
+
+    # ------------------------------------------------------------------
     # Statistics
     # ------------------------------------------------------------------
 
@@ -290,12 +315,3 @@ class KnowledgeService(BaseService):
             "asset_count": total_assets,
             "asset_types": asset_type_counts,
         }
-        
-    def validate_repository(self, name: str) -> ValidationReport:
-        """
-        Validate a registered repository and return the report.
-        """
-
-        repository = self.get_repository(name)
-
-        return self._validator.validate(repository)

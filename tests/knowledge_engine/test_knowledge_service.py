@@ -249,3 +249,13 @@ def test_validate_repository(tmp_path: Path) -> None:
     codes = {issue.code for issue in report.warnings}
 
     assert "MISSING_DOCUMENTATION" in codes
+    
+def test_get_manifest_when_absent(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    assert service.get_manifest("insurance", "policy") is None
