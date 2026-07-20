@@ -5,8 +5,10 @@ Knowledge service.
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 from enterprise_ai_platform.framework.base import (
+    BaseProvider,
     BaseService,
     ComponentState,
 )
@@ -17,6 +19,11 @@ from enterprise_ai_platform.knowledge_engine.models import (
     KnowledgeAsset,
     KnowledgeDomain,
     KnowledgeRepository,
+)
+from enterprise_ai_platform.knowledge_engine.providers import (
+    CSVProvider,
+    KnowledgeProviderRegistry,
+    MarkdownProvider,
 )
 from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
     KnowledgeRegistry,
@@ -29,8 +36,8 @@ class KnowledgeService(BaseService):
 
     Every other subsystem interacts with knowledge exclusively through
     this service. Nothing outside the Knowledge Engine should reference
-    KnowledgeRepositoryLoader, KnowledgeRegistry or KnowledgeRepository
-    directly.
+    KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository or
+    the providers directly.
     """
 
     def __init__(self) -> None:
@@ -40,6 +47,12 @@ class KnowledgeService(BaseService):
         self._registry = KnowledgeRegistry()
 
         self._loader = KnowledgeRepositoryLoader()
+
+        self._providers = KnowledgeProviderRegistry()
+
+        self._providers.register(".csv", CSVProvider())
+
+        self._providers.register(".md", MarkdownProvider())
 
     def initialize(self) -> None:
         """
@@ -194,6 +207,52 @@ class KnowledgeService(BaseService):
             f"No asset named '{asset}' in domain '{domain}' "
             f"of repository '{name}'."
         )
+
+    # ------------------------------------------------------------------
+    # Providers / content loading
+    # ------------------------------------------------------------------
+
+    def register_provider(
+        self,
+        extension: str,
+        provider: BaseProvider,
+    ) -> None:
+        """
+        Register a provider for a file extension, e.g. ".json", ".pdf".
+
+        Overwrites any provider already registered for that extension.
+        """
+
+        if self._providers.exists(extension):
+            self._providers.unregister(extension)
+
+        self._providers.register(extension, provider)
+
+    def load_asset_content(
+        self,
+        name: str,
+        domain: str,
+        asset: str,
+    ) -> Any:
+        """
+        Load the actual content of an asset using the matching provider,
+        dispatched by file extension.
+        """
+
+        target_asset = self.get_asset(name, domain, asset)
+
+        extension = target_asset.path.suffix.lower()
+
+        if not self._providers.exists(extension):
+            raise ValueError(
+                f"No knowledge provider registered for extension "
+                f"'{extension}' (asset '{asset}' in domain '{domain}' "
+                f"of repository '{name}')."
+            )
+
+        provider = self._providers.get(extension)
+
+        return provider.load(target_asset.path)
 
     # ------------------------------------------------------------------
     # Statistics

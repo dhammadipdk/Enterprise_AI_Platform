@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 
 from enterprise_ai_platform.knowledge_engine import KnowledgeService
+from enterprise_ai_platform.framework.base import BaseProvider
 
 
 def _build_sample_repository(root: Path) -> None:
@@ -11,7 +12,9 @@ def _build_sample_repository(root: Path) -> None:
 
     policy.mkdir()
 
-    (policy / "canonical_schema.csv").write_text("id,name\n")
+    (policy / "canonical_schema.csv").write_text(
+        "id,name\n1,Comprehensive\n"
+    )
 
     (policy / "glossary.csv").write_text("term,definition\n")
 
@@ -155,3 +158,77 @@ def test_reload_repository_replaces_content(tmp_path: Path) -> None:
         "policy",
         "vehicle",
     ]
+    
+
+
+def test_load_asset_content_csv(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    content = service.load_asset_content(
+        "insurance", "policy", "canonical_schema"
+    )
+
+    assert content == [{"id": 1, "name": "Comprehensive"}]
+
+
+def test_load_asset_content_markdown(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    content = service.load_asset_content("insurance", "policy", "README")
+
+    assert content == "# Policy"
+
+
+def test_load_asset_content_unsupported_extension_raises(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "notes.txt").write_text("unsupported")
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    with pytest.raises(ValueError):
+        service.load_asset_content("insurance", "policy", "notes")
+
+
+def test_register_custom_provider(tmp_path: Path) -> None:
+
+    class UpperCaseTextProvider(BaseProvider):
+
+        def load(self, path: Path) -> str:
+            return path.read_text().upper()
+
+        def save(self, data: str, path: Path) -> None:
+            path.write_text(data)
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "notes.txt").write_text("hello")
+
+    service = KnowledgeService()
+
+    service.register_provider(".txt", UpperCaseTextProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    content = service.load_asset_content("insurance", "policy", "notes")
+
+    assert content == "HELLO"
