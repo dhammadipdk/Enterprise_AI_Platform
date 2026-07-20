@@ -46,6 +46,11 @@ from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationReport,
 )
+from enterprise_ai_platform.knowledge_engine.vector_store import (
+    BaseVectorStore,
+    ChromaVectorStore,
+    VectorStoreMatch,
+)
 
 
 class KnowledgeService(BaseService):
@@ -54,8 +59,9 @@ class KnowledgeService(BaseService):
 
     Every other subsystem interacts with knowledge exclusively through
     this service. Nothing outside the Knowledge Engine should reference
-    KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository or
-    the providers / chunking strategies / embedding provider directly.
+    KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository,
+    the providers, chunking strategies, embedding provider or vector
+    store directly.
     """
 
     def __init__(self) -> None:
@@ -81,6 +87,8 @@ class KnowledgeService(BaseService):
         self._chunkers.register(".md", TextChunker())
 
         self._embedding_pipeline = EmbeddingPipeline(LocalEmbeddingProvider())
+
+        self._vector_store: BaseVectorStore = ChromaVectorStore()
 
     def initialize(self) -> None:
         """
@@ -440,6 +448,92 @@ class KnowledgeService(BaseService):
         chunks = self.chunk_repository(name)
 
         return self._embedding_pipeline.embed(chunks)
+
+    # ------------------------------------------------------------------
+    # Vector store / search
+    # ------------------------------------------------------------------
+
+    def set_vector_store(self, store: BaseVectorStore) -> None:
+        """
+        Swap the active vector store (e.g. in-memory -> persistent, or
+        Chroma -> another backend) without changing any other Knowledge
+        Engine code.
+        """
+
+        self._vector_store = store
+
+    def get_vector_store(self) -> BaseVectorStore:
+        """
+        Return the currently active vector store.
+        """
+
+        return self._vector_store
+
+    def index_asset(self, name: str, domain: str, asset: str) -> int:
+        """
+        Embed a single asset and add its chunks to the vector store.
+
+        Returns the number of chunks indexed.
+        """
+
+        embedded = self.embed_asset(name, domain, asset)
+
+        self._vector_store.add(embedded)
+
+        return len(embedded)
+
+    def index_domain(self, name: str, domain: str) -> int:
+        """
+        Embed every asset in a domain and add the chunks to the vector
+        store.
+        """
+
+        embedded = self.embed_domain(name, domain)
+
+        self._vector_store.add(embedded)
+
+        return len(embedded)
+
+    def index_repository(self, name: str) -> int:
+        """
+        Embed every asset across a repository and add the chunks to the
+        vector store.
+        """
+
+        embedded = self.embed_repository(name)
+
+        self._vector_store.add(embedded)
+
+        return len(embedded)
+
+    def search(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+    ) -> list[VectorStoreMatch]:
+        """
+        Embed `query_text` and return the top_k most similar chunks
+        from repository `name`, optionally narrowed to one domain.
+        """
+
+        vector = self._embedding_pipeline.provider.embed_text(query_text)
+
+        conditions: list[dict[str, Any]] = [{"repository": name}]
+
+        if domain is not None:
+            conditions.append({"domain": domain})
+
+        filters = (
+            conditions[0] if len(conditions) == 1 else {"$and": conditions}
+        )
+
+        return self._vector_store.query(
+            vector,
+            top_k=top_k,
+            filters=filters,
+        )
 
     # ------------------------------------------------------------------
     # Validation

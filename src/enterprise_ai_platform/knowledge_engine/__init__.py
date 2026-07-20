@@ -31,6 +31,11 @@ from enterprise_ai_platform.knowledge_engine.embedding import (
     EmbeddingPipeline,
     LocalEmbeddingProvider,
 )
+from enterprise_ai_platform.knowledge_engine.vector_store import (
+    BaseVectorStore,
+    ChromaVectorStore,
+    VectorStoreMatch,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationIssue,
@@ -61,6 +66,9 @@ __all__ = [
     "BaseEmbeddingProvider",
     "EmbeddingPipeline",
     "LocalEmbeddingProvider",
+    "BaseVectorStore",
+    "ChromaVectorStore",
+    "VectorStoreMatch",
     "RepositoryValidator",
     "ValidationIssue",
     "ValidationReport",

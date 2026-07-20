@@ -5,6 +5,7 @@ import pytest
 from enterprise_ai_platform.knowledge_engine import KnowledgeService
 from enterprise_ai_platform.framework.base import BaseProvider
 from enterprise_ai_platform.knowledge_engine.embedding import BaseEmbeddingProvider
+from enterprise_ai_platform.knowledge_engine.vector_store import ChromaVectorStore
 
 
 def _build_sample_repository(root: Path) -> None:
@@ -357,6 +358,31 @@ class _FakeEmbeddingProvider(BaseEmbeddingProvider):
         return [[float(len(text)), 0.0] for text in texts]
 
 
+class _KeywordEmbeddingProvider(BaseEmbeddingProvider):
+    """
+    Deterministic fake: embeds by presence of two keywords, so
+    similarity search behaves predictably in tests without a real model.
+    """
+
+    @property
+    def name(self) -> str:
+        return "fake-keyword"
+
+    @property
+    def dimension(self) -> int:
+        return 2
+
+    def embed_text(self, text: str) -> list[float]:
+        lowered = text.lower()
+        return [
+            1.0 if "idv" in lowered else 0.0,
+            1.0 if "ncb" in lowered else 0.0,
+        ]
+
+    def embed_batch(self, texts: list[str]) -> list[list[float]]:
+        return [self.embed_text(text) for text in texts]
+
+
 def test_embed_asset_uses_configured_provider(tmp_path: Path) -> None:
 
     _build_sample_repository(tmp_path)
@@ -407,3 +433,115 @@ def test_set_embedding_provider_swaps_cleanly() -> None:
     service.set_embedding_provider(fake)
 
     assert service.get_embedding_provider() is fake
+    
+    
+def test_index_asset_adds_chunks_to_vector_store(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    count = service.index_asset("insurance", "policy", "README")
+
+    assert count == 1
+
+    assert service.get_vector_store().count() == 1
+
+
+def test_index_repository_indexes_every_chunk(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    count = service.index_repository("insurance")
+
+    assert count == len(service.chunk_repository("insurance"))
+
+    assert service.get_vector_store().count() == count
+
+
+def test_search_returns_relevant_chunk(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\n"
+        "IDV,Insured Declared Value\n"
+        "NCB,No Claim Bonus\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    results = service.search("insurance", "what does IDV mean?", top_k=1)
+
+    assert len(results) == 1
+
+    assert "IDV" in results[0].chunk.content
+
+
+def test_search_can_be_scoped_to_a_domain(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    claims = tmp_path / "claims"
+
+    claims.mkdir()
+
+    (claims / "glossary.csv").write_text(
+        "term,definition\nIDV,Different definition in claims\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    results = service.search("insurance", "IDV", top_k=5, domain="claims")
+
+    assert len(results) == 1
+
+    assert results[0].chunk.domain == "claims"
+
+
+def test_set_and_get_vector_store() -> None:
+
+    service = KnowledgeService()
+
+    store = ChromaVectorStore()
+
+    service.set_vector_store(store)
+
+    assert service.get_vector_store() is store
+
+
+def test_get_vector_store_defaults_to_chroma() -> None:
+
+    service = KnowledgeService()
+
+    assert isinstance(service.get_vector_store(), ChromaVectorStore)
