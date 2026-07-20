@@ -36,6 +36,9 @@ from enterprise_ai_platform.knowledge_engine.vector_store import (
     ChromaVectorStore,
     VectorStoreMatch,
 )
+from enterprise_ai_platform.knowledge_engine.retrieval import (
+    Retriever,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationIssue,
@@ -69,6 +72,7 @@ __all__ = [
     "BaseVectorStore",
     "ChromaVectorStore",
     "VectorStoreMatch",
+    "Retriever",
     "RepositoryValidator",
     "ValidationIssue",
     "ValidationReport",

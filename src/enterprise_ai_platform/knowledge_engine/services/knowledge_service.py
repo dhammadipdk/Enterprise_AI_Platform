@@ -42,6 +42,7 @@ from enterprise_ai_platform.knowledge_engine.providers import (
 from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
     KnowledgeRegistry,
 )
+from enterprise_ai_platform.knowledge_engine.retrieval import Retriever
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationReport,
@@ -60,8 +61,8 @@ class KnowledgeService(BaseService):
     Every other subsystem interacts with knowledge exclusively through
     this service. Nothing outside the Knowledge Engine should reference
     KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository,
-    the providers, chunking strategies, embedding provider or vector
-    store directly.
+    the providers, chunking strategies, embedding provider, vector
+    store or retriever directly.
     """
 
     def __init__(self) -> None:
@@ -89,6 +90,8 @@ class KnowledgeService(BaseService):
         self._embedding_pipeline = EmbeddingPipeline(LocalEmbeddingProvider())
 
         self._vector_store: BaseVectorStore = ChromaVectorStore()
+
+        self._retriever = Retriever(self.search)
 
     def initialize(self) -> None:
         """
@@ -534,6 +537,66 @@ class KnowledgeService(BaseService):
             top_k=top_k,
             filters=filters,
         )
+
+    # ------------------------------------------------------------------
+    # Retrieval
+    # ------------------------------------------------------------------
+
+    def retrieve(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+    ) -> list[VectorStoreMatch]:
+        """
+        Return relevant chunks for a query, above the configured
+        minimum relevance score.
+        """
+
+        return self._retriever.retrieve(
+            name,
+            query_text,
+            top_k=top_k,
+            domain=domain,
+        )
+
+    def retrieve_context(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+    ) -> str:
+        """
+        Retrieve relevant chunks for a query and render them into a
+        single text block ready to inject into a prompt.
+        """
+
+        return self._retriever.retrieve_as_context(
+            name,
+            query_text,
+            top_k=top_k,
+            domain=domain,
+        )
+
+    def set_retrieval_score_threshold(self, score_threshold: float) -> None:
+        """
+        Set the minimum relevance score a match must meet to be
+        returned by retrieve() / retrieve_context().
+        """
+
+        self._retriever = Retriever(
+            self.search,
+            score_threshold=score_threshold,
+        )
+
+    def get_retrieval_score_threshold(self) -> float:
+        """
+        Return the currently configured minimum relevance score.
+        """
+
+        return self._retriever.score_threshold
 
     # ------------------------------------------------------------------
     # Validation

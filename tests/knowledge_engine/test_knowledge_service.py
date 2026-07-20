@@ -545,3 +545,99 @@ def test_get_vector_store_defaults_to_chroma() -> None:
     service = KnowledgeService()
 
     assert isinstance(service.get_vector_store(), ChromaVectorStore)
+    
+def test_retrieve_uses_search_and_returns_matches(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    results = service.retrieve("insurance", "what does IDV mean?", top_k=1)
+
+    assert len(results) == 1
+
+    assert "IDV" in results[0].chunk.content
+
+
+def test_retrieve_context_returns_formatted_text(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    context = service.retrieve_context(
+        "insurance", "what does IDV mean?", top_k=1
+    )
+
+    assert "source: policy/glossary" in context
+
+    assert "IDV" in context
+
+
+def test_retrieve_context_empty_when_threshold_too_high(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    service.set_retrieval_score_threshold(1.5)
+
+    context = service.retrieve_context(
+        "insurance", "what does IDV mean?", top_k=5
+    )
+
+    assert context == ""
+
+
+def test_set_and_get_retrieval_score_threshold() -> None:
+
+    service = KnowledgeService()
+
+    service.set_retrieval_score_threshold(0.3)
+
+    assert service.get_retrieval_score_threshold() == 0.3
+
+
+def test_default_retrieval_score_threshold_is_zero() -> None:
+
+    service = KnowledgeService()
+
+    assert service.get_retrieval_score_threshold() == 0.0
