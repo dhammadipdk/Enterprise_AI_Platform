@@ -25,6 +25,10 @@ from enterprise_ai_platform.knowledge_engine.providers import (
     KnowledgeProviderRegistry,
     MarkdownProvider,
 )
+from enterprise_ai_platform.knowledge_engine.validation import (
+    RepositoryValidator,
+    ValidationReport,
+)
 from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
     KnowledgeRegistry,
 )
@@ -53,6 +57,8 @@ class KnowledgeService(BaseService):
         self._providers.register(".csv", CSVProvider())
 
         self._providers.register(".md", MarkdownProvider())
+        
+        self._validator = RepositoryValidator()
 
     def initialize(self) -> None:
         """
@@ -284,3 +290,12 @@ class KnowledgeService(BaseService):
             "asset_count": total_assets,
             "asset_types": asset_type_counts,
         }
+        
+    def validate_repository(self, name: str) -> ValidationReport:
+        """
+        Validate a registered repository and return the report.
+        """
+
+        repository = self.get_repository(name)
+
+        return self._validator.validate(repository)

@@ -14,6 +14,11 @@ from enterprise_ai_platform.knowledge_engine.providers import (
     KnowledgeProviderRegistry,
     MarkdownProvider,
 )
+from enterprise_ai_platform.knowledge_engine.validation import (
+    RepositoryValidator,
+    ValidationIssue,
+    ValidationReport,
+)
 from enterprise_ai_platform.knowledge_engine.services import (
     KnowledgeService,
 )
@@ -28,5 +33,8 @@ __all__ = [
     "CSVProvider",
     "MarkdownProvider",
     "KnowledgeProviderRegistry",
+    "RepositoryValidator",
+    "ValidationIssue",
+    "ValidationReport",
     "KnowledgeService",
 ]

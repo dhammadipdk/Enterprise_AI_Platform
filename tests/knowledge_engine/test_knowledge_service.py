@@ -232,3 +232,20 @@ def test_register_custom_provider(tmp_path: Path) -> None:
     content = service.load_asset_content("insurance", "policy", "notes")
 
     assert content == "HELLO"
+    
+    
+def test_validate_repository(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    report = service.validate_repository("insurance")
+
+    assert report.errors == []
+
+    codes = {issue.code for issue in report.warnings}
+
+    assert "MISSING_DOCUMENTATION" in codes
