@@ -53,6 +53,7 @@ from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import 
     KnowledgeRegistry,
 )
 from enterprise_ai_platform.knowledge_engine.retrieval import (
+    GraphRAGRetriever,
     HybridRetriever,
     Retriever,
 )
@@ -117,6 +118,11 @@ class KnowledgeService(BaseService):
         self._graph_builder = GraphBuilder(self.load_asset_content)
 
         self._graphs = KnowledgeGraphRegistry()
+
+        self._graphrag_retriever = GraphRAGRetriever(
+            self.hybrid_search,
+            self.get_knowledge_graph,
+        )
 
     def initialize(self) -> None:
         """
@@ -775,6 +781,54 @@ class KnowledgeService(BaseService):
             start_entity,
             max_depth=max_depth,
         )
+
+    # ------------------------------------------------------------------
+    # GraphRAG
+    # ------------------------------------------------------------------
+
+    def graphrag_context(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+    ) -> str:
+        """
+        Return a prompt-ready context block combining hybrid (semantic
+        + keyword) retrieval with directly connected facts from the
+        knowledge graph, if one has been built for this repository.
+
+        If no graph exists yet for `name`, this degrades transparently
+        to the same output as hybrid_search formatted as context --
+        graph augmentation is a strict enhancement, never a
+        requirement.
+        """
+
+        return self._graphrag_retriever.retrieve_context(
+            name,
+            query_text,
+            top_k=top_k,
+            domain=domain,
+        )
+
+    def set_graph_traversal_depth(self, max_depth: int) -> None:
+        """
+        Set how many hops graphrag_context() traverses from matched
+        entities in the knowledge graph.
+        """
+
+        self._graphrag_retriever = GraphRAGRetriever(
+            self.hybrid_search,
+            self.get_knowledge_graph,
+            traversal_depth=max_depth,
+        )
+
+    def get_graph_traversal_depth(self) -> int:
+        """
+        Return the currently configured graph traversal depth.
+        """
+
+        return self._graphrag_retriever.traversal_depth
 
     # ------------------------------------------------------------------
     # Validation

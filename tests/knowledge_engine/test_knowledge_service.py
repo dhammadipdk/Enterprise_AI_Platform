@@ -875,3 +875,110 @@ def test_repository_with_no_relationship_assets_builds_empty_graph(
     graph = service.build_knowledge_graph("insurance")
 
     assert graph.edge_count() == 0
+    
+class _UsedCarEmbeddingProvider(BaseEmbeddingProvider):
+    """
+    Deterministic fake used only for the GraphRAG integration test
+    below. Deliberately never returns an all-zero vector (unlike
+    _KeywordEmbeddingProvider, which only lights up for "idv"/"ncb"),
+    avoiding the mathematically-undefined cosine-similarity-of-a-
+    zero-vector edge case entirely.
+    """
+
+    @property
+    def name(self) -> str:
+        return "fake-usedcar"
+
+    @property
+    def dimension(self) -> int:
+        return 2
+
+    def embed_text(self, text: str) -> list[float]:
+        lowered = text.lower()
+        return [1.0 if "usedcar" in lowered else 0.5, 1.0]
+
+    def embed_batch(self, texts: list[str]) -> list[list[float]]:
+        return [self.embed_text(text) for text in texts]
+
+
+def test_graphrag_context_falls_back_to_chunks_without_graph(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    context = service.graphrag_context("insurance", "IDV", top_k=1)
+
+    assert "IDV" in context
+
+    assert "Related facts" not in context
+
+
+def test_graphrag_context_includes_graph_facts_when_available(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\n"
+        "UsedCar,A previously owned vehicle purchased through Spinny\n"
+    )
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\n"
+        "UsedCar,eligible_for,ThirdPartyInsurance\n"
+        "UsedCar,eligible_for,ComprehensiveInsurance\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_UsedCarEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    service.build_knowledge_graph("insurance")
+
+    context = service.graphrag_context(
+        "insurance", "what is my UsedCar eligible for?", top_k=1
+    )
+
+    assert "Related facts (from knowledge graph):" in context
+
+    assert "ThirdPartyInsurance" in context
+
+    assert "ComprehensiveInsurance" in context
+
+
+def test_set_and_get_graph_traversal_depth() -> None:
+
+    service = KnowledgeService()
+
+    service.set_graph_traversal_depth(3)
+
+    assert service.get_graph_traversal_depth() == 3
+
+
+def test_default_graph_traversal_depth_is_one() -> None:
+
+    service = KnowledgeService()
+
+    assert service.get_graph_traversal_depth() == 1

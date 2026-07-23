@@ -6,6 +6,9 @@ from __future__ import annotations
 
 from typing import Callable
 
+from enterprise_ai_platform.knowledge_engine.retrieval.context_formatting import (
+    format_chunk_matches,
+)
 from enterprise_ai_platform.knowledge_engine.vector_store import VectorStoreMatch
 
 
@@ -88,23 +91,4 @@ class Retriever:
             domain=domain,
         )
 
-        return self._format_context(matches)
-
-    @staticmethod
-    def _format_context(matches: list[VectorStoreMatch]) -> str:
-
-        if not matches:
-            return ""
-
-        blocks: list[str] = []
-
-        for index, match in enumerate(matches, start=1):
-
-            source = f"{match.chunk.domain}/{match.chunk.asset}"
-
-            blocks.append(
-                f"[{index}] (source: {source}, score: {match.score:.2f})\n"
-                f"{match.chunk.content}"
-            )
-
-        return "\n\n".join(blocks)
+        return format_chunk_matches(matches)

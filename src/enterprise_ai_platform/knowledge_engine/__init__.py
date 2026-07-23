@@ -42,6 +42,7 @@ from enterprise_ai_platform.knowledge_engine.indexing import (
     BM25KeywordIndex,
 )
 from enterprise_ai_platform.knowledge_engine.retrieval import (
+    GraphRAGRetriever,
     HybridRetriever,
     Retriever,
 )
@@ -86,6 +87,7 @@ __all__ = [
     "VectorStoreMatch",
     "BaseKeywordIndex",
     "BM25KeywordIndex",
+    "GraphRAGRetriever",
     "HybridRetriever",
     "Retriever",
     "GraphBuilder",
