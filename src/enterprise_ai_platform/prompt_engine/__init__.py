@@ -22,6 +22,12 @@ from enterprise_ai_platform.prompt_engine.resolution import (
 from enterprise_ai_platform.prompt_engine.renderer import (
     PromptRenderer,
 )
+from enterprise_ai_platform.prompt_engine.registry import (
+    PromptRegistry,
+)
+from enterprise_ai_platform.prompt_engine.services import (
+    PromptService,
+)
 
 __all__ = [
     "PromptDefinition",
@@ -36,4 +42,6 @@ __all__ = [
     "VariableResolutionResult",
     "VariableResolver",
     "PromptRenderer",
+    "PromptRegistry",
+    "PromptService",
 ]
