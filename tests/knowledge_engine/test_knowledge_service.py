@@ -6,6 +6,7 @@ from enterprise_ai_platform.knowledge_engine import KnowledgeService
 from enterprise_ai_platform.framework.base import BaseProvider
 from enterprise_ai_platform.knowledge_engine.embedding import BaseEmbeddingProvider
 from enterprise_ai_platform.knowledge_engine.vector_store import ChromaVectorStore
+from enterprise_ai_platform.knowledge_engine import BM25KeywordIndex
 
 
 def _build_sample_repository(root: Path) -> None:
@@ -641,3 +642,89 @@ def test_default_retrieval_score_threshold_is_zero() -> None:
     service = KnowledgeService()
 
     assert service.get_retrieval_score_threshold() == 0.0
+    
+def test_index_repository_also_populates_keyword_index(
+    tmp_path: Path,
+) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    assert service.get_keyword_index().count() == len(
+        service.chunk_repository("insurance")
+    )
+
+
+def test_keyword_search_finds_exact_term(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_FakeEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    results = service.keyword_search("insurance", "IDV")
+
+    assert len(results) == 1
+
+    assert "IDV" in results[0].chunk.content
+
+
+def test_hybrid_search_returns_results(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "glossary.csv").write_text(
+        "term,definition\nIDV,Insured Declared Value\nNCB,No Claim Bonus\n"
+    )
+
+    service = KnowledgeService()
+
+    service.set_embedding_provider(_KeywordEmbeddingProvider())
+
+    service.load_repository("insurance", tmp_path)
+
+    service.index_repository("insurance")
+
+    results = service.hybrid_search("insurance", "IDV", top_k=1)
+
+    assert len(results) == 1
+
+    assert "IDV" in results[0].chunk.content
+
+
+def test_set_and_get_keyword_index() -> None:
+
+    service = KnowledgeService()
+
+    index = BM25KeywordIndex()
+
+    service.set_keyword_index(index)
+
+    assert service.get_keyword_index() is index
+
+
+def test_get_keyword_index_defaults_to_bm25() -> None:
+
+    service = KnowledgeService()
+
+    assert isinstance(service.get_keyword_index(), BM25KeywordIndex)

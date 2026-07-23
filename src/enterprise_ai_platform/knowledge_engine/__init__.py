@@ -36,7 +36,12 @@ from enterprise_ai_platform.knowledge_engine.vector_store import (
     ChromaVectorStore,
     VectorStoreMatch,
 )
+from enterprise_ai_platform.knowledge_engine.indexing import (
+    BaseKeywordIndex,
+    BM25KeywordIndex,
+)
 from enterprise_ai_platform.knowledge_engine.retrieval import (
+    HybridRetriever,
     Retriever,
 )
 from enterprise_ai_platform.knowledge_engine.validation import (
@@ -72,6 +77,9 @@ __all__ = [
     "BaseVectorStore",
     "ChromaVectorStore",
     "VectorStoreMatch",
+    "BaseKeywordIndex",
+    "BM25KeywordIndex",
+    "HybridRetriever",
     "Retriever",
     "RepositoryValidator",
     "ValidationIssue",

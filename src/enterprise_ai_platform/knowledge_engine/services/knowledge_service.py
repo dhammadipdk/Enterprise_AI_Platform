@@ -23,6 +23,10 @@ from enterprise_ai_platform.knowledge_engine.embedding import (
     EmbeddingPipeline,
     LocalEmbeddingProvider,
 )
+from enterprise_ai_platform.knowledge_engine.indexing import (
+    BaseKeywordIndex,
+    BM25KeywordIndex,
+)
 from enterprise_ai_platform.knowledge_engine.loaders import (
     KnowledgeRepositoryLoader,
 )
@@ -42,7 +46,10 @@ from enterprise_ai_platform.knowledge_engine.providers import (
 from enterprise_ai_platform.knowledge_engine.registry.knowledge_registry import (
     KnowledgeRegistry,
 )
-from enterprise_ai_platform.knowledge_engine.retrieval import Retriever
+from enterprise_ai_platform.knowledge_engine.retrieval import (
+    HybridRetriever,
+    Retriever,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationReport,
@@ -62,7 +69,7 @@ class KnowledgeService(BaseService):
     this service. Nothing outside the Knowledge Engine should reference
     KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository,
     the providers, chunking strategies, embedding provider, vector
-    store or retriever directly.
+    store, keyword index or retrievers directly.
     """
 
     def __init__(self) -> None:
@@ -91,7 +98,14 @@ class KnowledgeService(BaseService):
 
         self._vector_store: BaseVectorStore = ChromaVectorStore()
 
+        self._keyword_index: BaseKeywordIndex = BM25KeywordIndex()
+
         self._retriever = Retriever(self.search)
+
+        self._hybrid_retriever = HybridRetriever(
+            self.search,
+            self.keyword_search,
+        )
 
     def initialize(self) -> None:
         """
@@ -474,7 +488,8 @@ class KnowledgeService(BaseService):
 
     def index_asset(self, name: str, domain: str, asset: str) -> int:
         """
-        Embed a single asset and add its chunks to the vector store.
+        Embed a single asset and add its chunks to the vector store
+        and the keyword index.
 
         Returns the number of chunks indexed.
         """
@@ -483,29 +498,35 @@ class KnowledgeService(BaseService):
 
         self._vector_store.add(embedded)
 
+        self._keyword_index.add([item.chunk for item in embedded])
+
         return len(embedded)
 
     def index_domain(self, name: str, domain: str) -> int:
         """
         Embed every asset in a domain and add the chunks to the vector
-        store.
+        store and the keyword index.
         """
 
         embedded = self.embed_domain(name, domain)
 
         self._vector_store.add(embedded)
 
+        self._keyword_index.add([item.chunk for item in embedded])
+
         return len(embedded)
 
     def index_repository(self, name: str) -> int:
         """
-        Embed every asset across a repository and add the chunks to the
-        vector store.
+        Embed every asset across a repository and add the chunks to
+        the vector store and the keyword index.
         """
 
         embedded = self.embed_repository(name)
 
         self._vector_store.add(embedded)
+
+        self._keyword_index.add([item.chunk for item in embedded])
 
         return len(embedded)
 
@@ -597,6 +618,66 @@ class KnowledgeService(BaseService):
         """
 
         return self._retriever.score_threshold
+
+    # ------------------------------------------------------------------
+    # Keyword / hybrid search
+    # ------------------------------------------------------------------
+
+    def set_keyword_index(self, index: BaseKeywordIndex) -> None:
+        """
+        Swap the active keyword index without changing any other
+        Knowledge Engine code.
+        """
+
+        self._keyword_index = index
+
+    def get_keyword_index(self) -> BaseKeywordIndex:
+        """
+        Return the currently active keyword index.
+        """
+
+        return self._keyword_index
+
+    def keyword_search(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+    ) -> list[VectorStoreMatch]:
+        """
+        Return the top_k chunks most relevant to `query_text` by exact
+        lexical (BM25) match, scoped to repository `name` and
+        optionally one domain.
+        """
+
+        return self._keyword_index.search(
+            name,
+            query_text,
+            top_k=top_k,
+            domain=domain,
+        )
+
+    def hybrid_search(
+        self,
+        name: str,
+        query_text: str,
+        top_k: int = 5,
+        domain: str | None = None,
+        candidate_pool: int = 20,
+    ) -> list[VectorStoreMatch]:
+        """
+        Return the top_k chunks by combining semantic (vector) search
+        with keyword (BM25) search via Reciprocal Rank Fusion.
+        """
+
+        return self._hybrid_retriever.retrieve(
+            name,
+            query_text,
+            top_k=top_k,
+            domain=domain,
+            candidate_pool=candidate_pool,
+        )
 
     # ------------------------------------------------------------------
     # Validation
