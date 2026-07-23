@@ -11,9 +11,13 @@ from enterprise_ai_platform.knowledge_engine.providers.markdown_provider import 
 from enterprise_ai_platform.knowledge_engine.providers.provider_registry import (
     KnowledgeProviderRegistry,
 )
+from enterprise_ai_platform.knowledge_engine.providers.yaml_provider import (
+    YAMLProvider,
+)
 
 __all__ = [
     "CSVProvider",
     "MarkdownProvider",
     "KnowledgeProviderRegistry",
+    "YAMLProvider",
 ]

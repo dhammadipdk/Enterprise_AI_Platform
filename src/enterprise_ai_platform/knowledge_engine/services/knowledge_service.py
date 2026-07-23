@@ -18,6 +18,12 @@ from enterprise_ai_platform.knowledge_engine.chunking import (
     TabularChunker,
     TextChunker,
 )
+from enterprise_ai_platform.knowledge_engine.providers import (
+    CSVProvider,
+    KnowledgeProviderRegistry,
+    MarkdownProvider,
+    YAMLProvider,
+)
 from enterprise_ai_platform.knowledge_engine.embedding import (
     BaseEmbeddingProvider,
     EmbeddingPipeline,
@@ -93,6 +99,10 @@ class KnowledgeService(BaseService):
         self._providers.register(".csv", CSVProvider())
 
         self._providers.register(".md", MarkdownProvider())
+        
+        self._providers.register(".yaml", YAMLProvider())
+
+        self._providers.register(".yml", YAMLProvider())
 
         self._validator = RepositoryValidator()
 

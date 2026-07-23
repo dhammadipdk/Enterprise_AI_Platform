@@ -7,6 +7,7 @@ from enterprise_ai_platform.framework.base import BaseProvider
 from enterprise_ai_platform.knowledge_engine.embedding import BaseEmbeddingProvider
 from enterprise_ai_platform.knowledge_engine.vector_store import ChromaVectorStore
 from enterprise_ai_platform.knowledge_engine import BM25KeywordIndex
+from enterprise_ai_platform.prompt_engine import PromptDefinitionLoader
 
 
 def _build_sample_repository(root: Path) -> None:
@@ -982,3 +983,81 @@ def test_default_graph_traversal_depth_is_one() -> None:
     service = KnowledgeService()
 
     assert service.get_graph_traversal_depth() == 1
+    
+def test_load_prompt_definition_from_knowledge_repository(
+    tmp_path: Path,
+) -> None:
+    """
+    End-to-end check of the frozen spec's Section 23 design: prompts
+    are stored inside the Knowledge Repository, not in a separate
+    Prompt Engine store. A "prompts" domain with a YAML asset should
+    be loadable through KnowledgeService exactly like any other
+    domain, and its parsed content should build a valid
+    PromptDefinition.
+    """
+
+    prompts = tmp_path / "prompts"
+
+    prompts.mkdir()
+
+    (prompts / "explain_zero_dep.yaml").write_text(
+        "name: explain_zero_dep\n"
+        "version: \"1.0.0\"\n"
+        "description: Explains zero depreciation cover in Hinglish.\n"
+        "system_prompt: |\n"
+        "  You are InsureAI's explanation assistant.\n"
+        "user_prompt: |\n"
+        "  Customer asked: {{question}}\n"
+        "  Retrieved context: {{context}}\n"
+        "variables:\n"
+        "  - name: question\n"
+        "    type: string\n"
+        "    required: true\n"
+        "  - name: context\n"
+        "    type: string\n"
+        "    required: true\n"
+        "metadata:\n"
+        "  domain: policy\n"
+        "  persona: explanation_agent\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("platform", tmp_path)
+
+    assert "prompts" in service.list_domains("platform")
+
+    raw_data = service.load_asset_content(
+        "platform", "prompts", "explain_zero_dep"
+    )
+
+    definition = PromptDefinitionLoader().load(raw_data)
+
+    assert definition.name == "explain_zero_dep"
+
+    assert definition.version == "1.0.0"
+
+    assert len(definition.variables) == 2
+
+    assert definition.metadata["persona"] == "explanation_agent"
+
+
+def test_yml_extension_also_works_by_default(tmp_path: Path) -> None:
+
+    prompts = tmp_path / "prompts"
+
+    prompts.mkdir()
+
+    (prompts / "short_prompt.yml").write_text(
+        "name: short_prompt\nversion: \"1.0.0\"\nuser_prompt: Hi {{name}}\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("platform", tmp_path)
+
+    raw_data = service.load_asset_content(
+        "platform", "prompts", "short_prompt"
+    )
+
+    assert raw_data["name"] == "short_prompt"

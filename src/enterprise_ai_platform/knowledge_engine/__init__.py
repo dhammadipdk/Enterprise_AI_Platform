@@ -59,6 +59,12 @@ from enterprise_ai_platform.knowledge_engine.validation import (
 from enterprise_ai_platform.knowledge_engine.services import (
     KnowledgeService,
 )
+from enterprise_ai_platform.knowledge_engine.providers import (
+    CSVProvider,
+    KnowledgeProviderRegistry,
+    MarkdownProvider,
+    YAMLProvider,
+)
 
 
 __all__ = [
@@ -89,6 +95,7 @@ __all__ = [
     "BM25KeywordIndex",
     "GraphRAGRetriever",
     "HybridRetriever",
+    "YAMLProvider",
     "Retriever",
     "GraphBuilder",
     "KnowledgeGraph",
