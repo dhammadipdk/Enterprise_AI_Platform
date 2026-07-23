@@ -1,5 +1,6 @@
 from enterprise_ai_platform.prompt_engine.models import (
     PromptDefinition,
+    PromptInstance,
     PromptTemplate,
     PromptVariable,
 )
@@ -18,9 +19,13 @@ from enterprise_ai_platform.prompt_engine.resolution import (
     VariableResolutionResult,
     VariableResolver,
 )
+from enterprise_ai_platform.prompt_engine.renderer import (
+    PromptRenderer,
+)
 
 __all__ = [
     "PromptDefinition",
+    "PromptInstance",
     "PromptTemplate",
     "PromptVariable",
     "PromptDefinitionLoader",
@@ -30,4 +35,5 @@ __all__ = [
     "VariableResolutionIssue",
     "VariableResolutionResult",
     "VariableResolver",
+    "PromptRenderer",
 ]

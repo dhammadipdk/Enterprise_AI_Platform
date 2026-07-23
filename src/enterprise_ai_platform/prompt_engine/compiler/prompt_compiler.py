@@ -10,12 +10,11 @@ from enterprise_ai_platform.prompt_engine.models import (
     PromptDefinition,
     PromptTemplate,
 )
+from enterprise_ai_platform.prompt_engine.templating import VARIABLE_PATTERN
 from enterprise_ai_platform.prompt_engine.validation import (
     PromptValidationIssue,
     PromptValidationReport,
 )
-
-_VARIABLE_PATTERN = re.compile(r"\{\{\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*\}\}")
 
 _VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 
@@ -112,7 +111,7 @@ class PromptCompiler:
 
         seen: list[str] = []
 
-        for match in _VARIABLE_PATTERN.finditer(text):
+        for match in VARIABLE_PATTERN.finditer(text):
 
             name = match.group(1)
 
