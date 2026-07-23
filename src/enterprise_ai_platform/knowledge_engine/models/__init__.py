@@ -8,6 +8,9 @@ from enterprise_ai_platform.knowledge_engine.models.knowledge_asset import (
 from enterprise_ai_platform.knowledge_engine.models.knowledge_domain import (
     KnowledgeDomain,
 )
+from enterprise_ai_platform.knowledge_engine.models.knowledge_graph_edge import (
+    KnowledgeGraphEdge,
+)
 from enterprise_ai_platform.knowledge_engine.models.knowledge_manifest import (
     KnowledgeManifest,
 )
@@ -20,6 +23,7 @@ __all__ = [
     "EmbeddedChunk",
     "KnowledgeAsset",
     "KnowledgeDomain",
+    "KnowledgeGraphEdge",
     "KnowledgeManifest",
     "KnowledgeRepository",
 ]

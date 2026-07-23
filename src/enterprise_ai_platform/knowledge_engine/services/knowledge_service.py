@@ -23,6 +23,11 @@ from enterprise_ai_platform.knowledge_engine.embedding import (
     EmbeddingPipeline,
     LocalEmbeddingProvider,
 )
+from enterprise_ai_platform.knowledge_engine.graph import (
+    GraphBuilder,
+    KnowledgeGraph,
+    KnowledgeGraphRegistry,
+)
 from enterprise_ai_platform.knowledge_engine.indexing import (
     BaseKeywordIndex,
     BM25KeywordIndex,
@@ -35,6 +40,7 @@ from enterprise_ai_platform.knowledge_engine.models import (
     EmbeddedChunk,
     KnowledgeAsset,
     KnowledgeDomain,
+    KnowledgeGraphEdge,
     KnowledgeManifest,
     KnowledgeRepository,
 )
@@ -69,7 +75,8 @@ class KnowledgeService(BaseService):
     this service. Nothing outside the Knowledge Engine should reference
     KnowledgeRepositoryLoader, KnowledgeRegistry, KnowledgeRepository,
     the providers, chunking strategies, embedding provider, vector
-    store, keyword index or retrievers directly.
+    store, keyword index, retrievers, or the graph builder / registry
+    directly.
     """
 
     def __init__(self) -> None:
@@ -106,6 +113,10 @@ class KnowledgeService(BaseService):
             self.search,
             self.keyword_search,
         )
+
+        self._graph_builder = GraphBuilder(self.load_asset_content)
+
+        self._graphs = KnowledgeGraphRegistry()
 
     def initialize(self) -> None:
         """
@@ -677,6 +688,92 @@ class KnowledgeService(BaseService):
             top_k=top_k,
             domain=domain,
             candidate_pool=candidate_pool,
+        )
+
+    # ------------------------------------------------------------------
+    # Knowledge graph
+    # ------------------------------------------------------------------
+
+    def build_knowledge_graph(self, name: str) -> KnowledgeGraph:
+        """
+        Build the knowledge graph for a repository from its
+        relationship-typed assets, and register it under the same
+        name.
+        """
+
+        repository = self.get_repository(name)
+
+        graph = self._graph_builder.build(name, repository)
+
+        if self._graphs.exists(name):
+            self._graphs.unregister(name)
+
+        self._graphs.register(name, graph)
+
+        return graph
+
+    def get_knowledge_graph(self, name: str) -> KnowledgeGraph:
+        """
+        Return the registered knowledge graph for a repository.
+        """
+
+        return self._graphs.get(name)
+
+    def knowledge_graph_exists(self, name: str) -> bool:
+        """
+        Return True if a knowledge graph has been built for `name`.
+        """
+
+        return self._graphs.exists(name)
+
+    def query_graph(
+        self,
+        name: str,
+        subject: str | None = None,
+        predicate: str | None = None,
+        object: str | None = None,
+    ) -> list[KnowledgeGraphEdge]:
+        """
+        Return every edge in repository `name`'s knowledge graph
+        matching the given triple pattern.
+        """
+
+        return self.get_knowledge_graph(name).find(
+            subject=subject,
+            predicate=predicate,
+            object=object,
+        )
+
+    def graph_neighbors(
+        self,
+        name: str,
+        entity: str,
+        predicate: str | None = None,
+    ) -> list[KnowledgeGraphEdge]:
+        """
+        Return outgoing edges from `entity` in repository `name`'s
+        knowledge graph.
+        """
+
+        return self.get_knowledge_graph(name).neighbors(
+            entity,
+            predicate=predicate,
+        )
+
+    def graph_traverse(
+        self,
+        name: str,
+        start_entity: str,
+        max_depth: int = 2,
+    ) -> list[KnowledgeGraphEdge]:
+        """
+        Return every edge reachable from `start_entity` in repository
+        `name`'s knowledge graph, up to max_depth hops.
+        """
+
+        return self.get_knowledge_graph(name).traverse(
+            start_entity,
+            max_depth=max_depth,
         )
 
     # ------------------------------------------------------------------

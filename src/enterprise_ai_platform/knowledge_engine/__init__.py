@@ -3,6 +3,7 @@ from enterprise_ai_platform.knowledge_engine.models import (
     EmbeddedChunk,
     KnowledgeAsset,
     KnowledgeDomain,
+    KnowledgeGraphEdge,
     KnowledgeManifest,
     KnowledgeRepository,
 )
@@ -44,6 +45,11 @@ from enterprise_ai_platform.knowledge_engine.retrieval import (
     HybridRetriever,
     Retriever,
 )
+from enterprise_ai_platform.knowledge_engine.graph import (
+    GraphBuilder,
+    KnowledgeGraph,
+    KnowledgeGraphRegistry,
+)
 from enterprise_ai_platform.knowledge_engine.validation import (
     RepositoryValidator,
     ValidationIssue,
@@ -59,6 +65,7 @@ __all__ = [
     "EmbeddedChunk",
     "KnowledgeAsset",
     "KnowledgeDomain",
+    "KnowledgeGraphEdge",
     "KnowledgeManifest",
     "KnowledgeRepository",
     "KnowledgeRegistry",
@@ -81,6 +88,9 @@ __all__ = [
     "BM25KeywordIndex",
     "HybridRetriever",
     "Retriever",
+    "GraphBuilder",
+    "KnowledgeGraph",
+    "KnowledgeGraphRegistry",
     "RepositoryValidator",
     "ValidationIssue",
     "ValidationReport",

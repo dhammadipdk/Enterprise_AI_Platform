@@ -728,3 +728,150 @@ def test_get_keyword_index_defaults_to_bm25() -> None:
     service = KnowledgeService()
 
     assert isinstance(service.get_keyword_index(), BM25KeywordIndex)
+    
+    
+def test_build_knowledge_graph_from_relationships_csv(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\n"
+        "Policy,has,Coverage\n"
+        "Coverage,has,Exclusion\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    graph = service.build_knowledge_graph("insurance")
+
+    assert graph.edge_count() == 2
+
+    assert service.knowledge_graph_exists("insurance")
+
+
+def test_get_knowledge_graph_returns_registered_graph(
+    tmp_path: Path,
+) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\nPolicy,has,Coverage\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    service.build_knowledge_graph("insurance")
+
+    graph = service.get_knowledge_graph("insurance")
+
+    assert graph.edge_count() == 1
+
+
+def test_get_knowledge_graph_before_build_raises(tmp_path: Path) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    with pytest.raises(KeyError):
+        service.get_knowledge_graph("insurance")
+
+
+def test_query_graph_by_predicate(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\n"
+        "UsedCar,eligible_for,ThirdPartyInsurance\n"
+        "UsedCar,eligible_for,ComprehensiveInsurance\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    service.build_knowledge_graph("insurance")
+
+    results = service.query_graph("insurance", predicate="eligible_for")
+
+    assert len(results) == 2
+
+
+def test_graph_neighbors(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\n"
+        "UsedCar,eligible_for,ThirdPartyInsurance\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    service.build_knowledge_graph("insurance")
+
+    results = service.graph_neighbors("insurance", "UsedCar")
+
+    assert len(results) == 1
+
+    assert results[0].object == "ThirdPartyInsurance"
+
+
+def test_graph_traverse(tmp_path: Path) -> None:
+
+    policy = tmp_path / "policy"
+
+    policy.mkdir()
+
+    (policy / "relationships.csv").write_text(
+        "subject,predicate,object\n"
+        "Policy,has,Coverage\n"
+        "Coverage,has,Exclusion\n"
+    )
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    service.build_knowledge_graph("insurance")
+
+    results = service.graph_traverse("insurance", "Policy", max_depth=2)
+
+    objects = {edge.object for edge in results}
+
+    assert objects == {"Coverage", "Exclusion"}
+
+
+def test_repository_with_no_relationship_assets_builds_empty_graph(
+    tmp_path: Path,
+) -> None:
+
+    _build_sample_repository(tmp_path)
+
+    service = KnowledgeService()
+
+    service.load_repository("insurance", tmp_path)
+
+    graph = service.build_knowledge_graph("insurance")
+
+    assert graph.edge_count() == 0
