@@ -25,6 +25,11 @@ from enterprise_ai_platform.prompt_engine.renderer import (
 from enterprise_ai_platform.prompt_engine.registry import (
     PromptRegistry,
 )
+from enterprise_ai_platform.prompt_engine.versioning import (
+    PromptDeprecationInfo,
+    PromptVersionComparator,
+    PromptVersionDiff,
+)
 from enterprise_ai_platform.prompt_engine.services import (
     PromptService,
 )
@@ -43,5 +48,8 @@ __all__ = [
     "VariableResolver",
     "PromptRenderer",
     "PromptRegistry",
+    "PromptDeprecationInfo",
+    "PromptVersionComparator",
+    "PromptVersionDiff",
     "PromptService",
 ]

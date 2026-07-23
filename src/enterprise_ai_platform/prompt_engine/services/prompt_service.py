@@ -27,6 +27,11 @@ from enterprise_ai_platform.prompt_engine.resolution import (
 from enterprise_ai_platform.prompt_engine.validation import (
     PromptValidationReport,
 )
+from enterprise_ai_platform.prompt_engine.versioning import (
+    PromptDeprecationInfo,
+    PromptVersionComparator,
+    PromptVersionDiff,
+)
 
 ListAssetsFunction = Callable[[str, str], list[str]]
 LoadAssetContentFunction = Callable[[str, str, str], Any]
@@ -40,7 +45,7 @@ class PromptService(BaseService):
     this service, exactly as KnowledgeService is the sole entry point
     for the Knowledge Engine. Nothing outside the Prompt Engine should
     reference PromptDefinitionLoader, PromptCompiler, VariableResolver,
-    PromptRenderer or PromptRegistry directly.
+    PromptRenderer, PromptRegistry or PromptVersionComparator directly.
 
     Deliberately does not import KnowledgeService: the frozen spec
     (Section 23) says prompts are stored inside the Knowledge
@@ -67,6 +72,10 @@ class PromptService(BaseService):
 
         self._registry = PromptRegistry()
 
+        self._version_comparator = PromptVersionComparator()
+
+        self._deprecated: dict[str, PromptDeprecationInfo] = {}
+
     def initialize(self) -> None:
         """
         Initialize the service.
@@ -90,10 +99,13 @@ class PromptService(BaseService):
 
     def dispose(self) -> None:
         """
-        Dispose the service and clear all registered prompts.
+        Dispose the service and clear all registered prompts and
+        deprecation state.
         """
 
         self._registry.clear()
+
+        self._deprecated.clear()
 
         self._set_state(ComponentState.DISPOSED)
 
@@ -161,9 +173,12 @@ class PromptService(BaseService):
         """
         Return a registered prompt template.
 
-        If `version` is omitted, returns the highest registered
-        version for `name` (compared numerically, e.g. "1.10.0" is
-        newer than "1.9.0" -- not by plain string comparison).
+        If `version` is omitted, returns the highest *non-deprecated*
+        registered version for `name` (compared numerically, e.g.
+        "1.10.0" is newer than "1.9.0"). If every version has been
+        deprecated, falls back to the highest version overall rather
+        than raising -- deprecation is an advisory signal for callers
+        to check via is_deprecated(), not a hard failure mode.
         """
 
         if version is not None:
@@ -174,7 +189,15 @@ class PromptService(BaseService):
         if not versions:
             raise KeyError(f"No prompt registered with name '{name}'.")
 
-        latest_version = max(versions, key=self._version_sort_key)
+        non_deprecated = [
+            candidate
+            for candidate in versions
+            if not self.is_deprecated(name, candidate)
+        ]
+
+        candidates = non_deprecated if non_deprecated else versions
+
+        latest_version = max(candidates, key=self._version_sort_key)
 
         return self._registry.get(self._key(name, latest_version))
 
@@ -196,7 +219,7 @@ class PromptService(BaseService):
     def list_prompts(self) -> list[str]:
         """
         Return the unique names of every registered prompt (not one
-        entry per version).
+        entry per version). Includes deprecated versions' names.
         """
 
         names = {
@@ -208,6 +231,7 @@ class PromptService(BaseService):
     def list_versions(self, name: str) -> list[str]:
         """
         Return every registered version of `name`, oldest to newest.
+        Includes deprecated versions.
         """
 
         versions = [
@@ -258,6 +282,78 @@ class PromptService(BaseService):
         resolution = self._resolver.resolve(template, provided_values)
 
         return self._renderer.render(template, resolution, context=context)
+
+    # ------------------------------------------------------------------
+    # Versioning
+    # ------------------------------------------------------------------
+
+    def compare_versions(
+        self,
+        name: str,
+        version_a: str,
+        version_b: str,
+    ) -> PromptVersionDiff:
+        """
+        Compare two registered versions of the same prompt and report
+        what changed between them.
+        """
+
+        template_a = self.get_prompt(name, version=version_a)
+
+        template_b = self.get_prompt(name, version=version_b)
+
+        return self._version_comparator.compare(template_a, template_b)
+
+    def deprecate(
+        self,
+        name: str,
+        version: str,
+        reason: str | None = None,
+    ) -> None:
+        """
+        Mark a specific registered version as deprecated.
+
+        Deprecated versions remain retrievable via get_prompt(name,
+        version=...) and stay visible in list_versions() /
+        list_prompts() -- only the default "latest" resolution in
+        get_prompt(name) skips them.
+        """
+
+        if not self.prompt_exists(name, version=version):
+            raise KeyError(
+                f"No prompt registered with name '{name}' and version "
+                f"'{version}'."
+            )
+
+        self._deprecated[self._key(name, version)] = PromptDeprecationInfo(
+            reason=reason
+        )
+
+    def undeprecate(self, name: str, version: str) -> None:
+        """
+        Remove a version's deprecated status, if it has one.
+        """
+
+        self._deprecated.pop(self._key(name, version), None)
+
+    def is_deprecated(self, name: str, version: str) -> bool:
+        """
+        Return True if this specific version has been deprecated.
+        """
+
+        return self._key(name, version) in self._deprecated
+
+    def get_deprecation_info(
+        self,
+        name: str,
+        version: str,
+    ) -> PromptDeprecationInfo | None:
+        """
+        Return deprecation details for a version, or None if it isn't
+        deprecated.
+        """
+
+        return self._deprecated.get(self._key(name, version))
 
     # ------------------------------------------------------------------
     # Knowledge Repository integration
