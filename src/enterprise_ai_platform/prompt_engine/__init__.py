@@ -13,6 +13,11 @@ from enterprise_ai_platform.prompt_engine.validation import (
 from enterprise_ai_platform.prompt_engine.compiler import (
     PromptCompiler,
 )
+from enterprise_ai_platform.prompt_engine.resolution import (
+    VariableResolutionIssue,
+    VariableResolutionResult,
+    VariableResolver,
+)
 
 __all__ = [
     "PromptDefinition",
@@ -22,4 +27,7 @@ __all__ = [
     "PromptValidationIssue",
     "PromptValidationReport",
     "PromptCompiler",
+    "VariableResolutionIssue",
+    "VariableResolutionResult",
+    "VariableResolver",
 ]
