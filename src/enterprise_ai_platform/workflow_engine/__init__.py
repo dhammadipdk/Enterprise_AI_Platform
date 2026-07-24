@@ -1,4 +1,6 @@
 from enterprise_ai_platform.workflow_engine.models import (
+    ExecutionState,
+    NodeExecutionResult,
     NodeType,
     RetryPolicy,
     WorkflowDefinition,
@@ -18,8 +20,15 @@ from enterprise_ai_platform.workflow_engine.validation import (
 from enterprise_ai_platform.workflow_engine.compiler import (
     WorkflowCompiler,
 )
+from enterprise_ai_platform.workflow_engine.execution import (
+    ExecutionContext,
+    WorkflowInstance,
+    WorkflowRuntime,
+)
 
 __all__ = [
+    "ExecutionState",
+    "NodeExecutionResult",
     "NodeType",
     "RetryPolicy",
     "WorkflowDefinition",
@@ -30,4 +39,7 @@ __all__ = [
     "WorkflowValidationIssue",
     "WorkflowValidationReport",
     "WorkflowCompiler",
+    "ExecutionContext",
+    "WorkflowInstance",
+    "WorkflowRuntime",
 ]
