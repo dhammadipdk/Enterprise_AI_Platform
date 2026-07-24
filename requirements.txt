@@ -12,3 +12,4 @@ ollama>=0.3
 anthropic>=0.30
 openai>=1.0
 jsonschema>=4.0
+requests>=2.31

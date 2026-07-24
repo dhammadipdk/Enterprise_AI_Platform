@@ -7,6 +7,8 @@ from enterprise_ai_platform.tool_engine.models import (
 )
 from enterprise_ai_platform.tool_engine.adapters import (
     BaseToolAdapter,
+    PythonFunctionAdapter,
+    RESTAdapter,
 )
 from enterprise_ai_platform.tool_engine.registry import (
     ToolRegistry,
@@ -26,6 +28,8 @@ __all__ = [
     "ToolRequest",
     "ToolResponse",
     "BaseToolAdapter",
+    "PythonFunctionAdapter",
+    "RESTAdapter",
     "ToolRegistry",
     "ToolValidationIssue",
     "ToolValidationReport",
