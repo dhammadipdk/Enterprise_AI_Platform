@@ -19,14 +19,18 @@ from enterprise_ai_platform.model_engine.models import (
     ProviderDefinition,
 )
 from enterprise_ai_platform.model_engine.registry import ModelRegistry
+from enterprise_ai_platform.model_engine.structured_output import (
+    StructuredOutputEnforcer,
+)
 
 
 class ModelService(BaseService):
     """
     Public API of the Model Engine (frozen spec, Section 15).
 
-    Implemented in this task: register_provider, register_model,
-    list_models, get_model, execute, health.
+    Implemented so far: register_provider, register_model,
+    list_models, get_model, execute (including structured output),
+    health.
 
     Deliberately not implemented yet:
       - stream() -- Section 17 streaming is its own later task; this
@@ -42,6 +46,12 @@ class ModelService(BaseService):
         ModelRouter making policy-based selections (cheapest, fastest,
         ...) is a sensible later addition once real usage data exists
         to route on.
+      - Provider-native structured output modes (OpenAI response_
+        format, Anthropic tool-forcing, Ollama's format parameter) --
+        structured output is enforced uniformly at this layer instead
+        (see StructuredOutputEnforcer's docstring), so it works
+        identically no matter which provider is active. Native modes
+        remain a reasonable future optimization on top of this.
 
     Every other subsystem interacts with models exclusively through
     this service, exactly as KnowledgeService / PromptService /
@@ -57,6 +67,8 @@ class ModelService(BaseService):
         self._provider_definitions: dict[str, ProviderDefinition] = {}
 
         self._models = ModelRegistry()
+
+        self._structured_output = StructuredOutputEnforcer()
 
     def initialize(self) -> None:
         """
@@ -256,24 +268,64 @@ class ModelService(BaseService):
         system_prompt: str | None = None,
         parameters: dict[str, Any] | None = None,
         context: dict[str, Any] | None = None,
+        response_schema: Any = None,
     ) -> ModelResponse:
         """
         Execute a prompt against a registered model and return its
         response.
+
+        If `response_schema` is given (a JSON schema dict, or a
+        pydantic BaseModel subclass), the prompt is augmented with
+        explicit formatting instructions, the raw model output is
+        parsed as JSON and validated against the schema, and the
+        result is populated on ModelResponse.structured_output. Raises
+        ValueError if the output can't be parsed as JSON or doesn't
+        match the schema.
         """
 
         model = self.get_model(model_name, version=version)
 
         adapter = self._providers[model.provider]
 
+        schema_dict = self._resolve_schema(response_schema)
+
+        final_prompt = prompt
+
+        if schema_dict is not None:
+            final_prompt = self._structured_output.augment_prompt(
+                prompt,
+                schema_dict,
+            )
+
         request = ModelRequest(
-            prompt=prompt,
+            prompt=final_prompt,
             system_prompt=system_prompt,
             parameters=parameters or {},
             context=context,
+            response_schema=schema_dict,
         )
 
-        return adapter.invoke(request, model)
+        raw_response = adapter.invoke(request, model)
+
+        if schema_dict is None:
+            return raw_response
+
+        structured = self._structured_output.parse_response(
+            raw_response.text,
+            schema_dict,
+        )
+
+        return ModelResponse(
+            request_id=raw_response.request_id,
+            response_id=raw_response.response_id,
+            text=raw_response.text,
+            structured_output=structured,
+            tool_calls=raw_response.tool_calls,
+            token_usage=raw_response.token_usage,
+            cost=raw_response.cost,
+            latency_seconds=raw_response.latency_seconds,
+            metadata=raw_response.metadata,
+        )
 
     # ------------------------------------------------------------------
     # Health
@@ -294,6 +346,29 @@ class ModelService(BaseService):
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _resolve_schema(response_schema: Any) -> dict[str, Any] | None:
+
+        if response_schema is None:
+            return None
+
+        if isinstance(response_schema, dict):
+            return response_schema
+
+        # A pydantic BaseModel subclass -- generate its JSON schema.
+        # Duck-typed rather than isinstance-checked against
+        # pydantic.BaseModel to avoid a hard import of pydantic here
+        # beyond what the rest of this module already needs.
+        if isinstance(response_schema, type) and hasattr(
+            response_schema, "model_json_schema"
+        ):
+            return response_schema.model_json_schema()
+
+        raise TypeError(
+            "response_schema must be a JSON schema dict or a pydantic "
+            "BaseModel subclass."
+        )
 
     @staticmethod
     def _key(name: str, version: str) -> str:

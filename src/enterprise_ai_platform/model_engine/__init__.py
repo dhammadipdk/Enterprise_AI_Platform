@@ -14,6 +14,9 @@ from enterprise_ai_platform.model_engine.adapters import (
 from enterprise_ai_platform.model_engine.registry import (
     ModelRegistry,
 )
+from enterprise_ai_platform.model_engine.structured_output import (
+    StructuredOutputEnforcer,
+)
 from enterprise_ai_platform.model_engine.services import (
     ModelService,
 )
@@ -29,5 +32,6 @@ __all__ = [
     "OllamaAdapter",
     "OpenAIAdapter",
     "ModelRegistry",
+    "StructuredOutputEnforcer",
     "ModelService",
 ]

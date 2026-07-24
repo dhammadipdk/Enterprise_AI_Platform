@@ -13,6 +13,15 @@ from pydantic import BaseModel, ConfigDict, Field
 class ModelRequest(BaseModel):
     """
     A single request to be sent to a model (Section 11).
+
+    `response_schema` carries the JSON schema a caller wants the
+    output to conform to, if any (Section 16). It's set here so the
+    request is self-describing, but only the Model Engine's execute()
+    currently *acts* on it (via StructuredOutputEnforcer); adapters
+    are free to ignore it entirely, and none of them use it yet.
+    A future task could let specific adapters use it for a provider-
+    native structured-output mode without needing to touch this
+    schema again.
     """
 
     model_config = ConfigDict(frozen=True)
@@ -28,5 +37,7 @@ class ModelRequest(BaseModel):
     context: dict[str, Any] | None = None
 
     attachments: list[Any] = []
+
+    response_schema: dict[str, Any] | None = None
 
     metadata: dict[str, Any] = {}
