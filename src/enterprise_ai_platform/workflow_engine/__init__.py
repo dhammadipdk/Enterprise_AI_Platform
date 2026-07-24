@@ -25,6 +25,12 @@ from enterprise_ai_platform.workflow_engine.execution import (
     WorkflowInstance,
     WorkflowRuntime,
 )
+from enterprise_ai_platform.workflow_engine.registry import (
+    WorkflowRegistry,
+)
+from enterprise_ai_platform.workflow_engine.services import (
+    WorkflowService,
+)
 
 __all__ = [
     "ExecutionState",
@@ -42,4 +48,6 @@ __all__ = [
     "ExecutionContext",
     "WorkflowInstance",
     "WorkflowRuntime",
+    "WorkflowRegistry",
+    "WorkflowService",
 ]
