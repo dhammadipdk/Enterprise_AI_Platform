@@ -311,3 +311,29 @@ def test_compile_raises_on_invalid_definition() -> None:
 
     with pytest.raises(ValueError, match="broken"):
         WorkflowCompiler().compile(definition)
+        
+def test_duplicate_node_ids_is_an_error() -> None:
+
+    definition = WorkflowDefinition(
+        name="broken",
+        version="1.0.0",
+        entry_node="start",
+        nodes=[
+            WorkflowNode(id="start", name="Start", node_type=NodeType.START),
+            WorkflowNode(id="dup", name="First", node_type=NodeType.TASK),
+            WorkflowNode(id="dup", name="Second", node_type=NodeType.TASK),
+            WorkflowNode(id="end", name="End", node_type=NodeType.END),
+        ],
+        edges=[
+            WorkflowEdge(source="start", destination="dup"),
+            WorkflowEdge(source="dup", destination="end"),
+        ],
+    )
+
+    report = WorkflowCompiler().validate(definition)
+
+    assert not report.is_valid
+
+    codes = {issue.code for issue in report.errors}
+
+    assert "DUPLICATE_NODE_ID" in codes

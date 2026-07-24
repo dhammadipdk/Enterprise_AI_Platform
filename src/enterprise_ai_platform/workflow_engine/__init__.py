@@ -20,6 +20,9 @@ from enterprise_ai_platform.workflow_engine.validation import (
 from enterprise_ai_platform.workflow_engine.compiler import (
     WorkflowCompiler,
 )
+from enterprise_ai_platform.workflow_engine.validation.workflow_validator import (
+    WorkflowValidator,
+)
 from enterprise_ai_platform.workflow_engine.execution import (
     ExecutionContext,
     WorkflowInstance,
@@ -45,6 +48,7 @@ __all__ = [
     "WorkflowValidationIssue",
     "WorkflowValidationReport",
     "WorkflowCompiler",
+    "WorkflowValidator",
     "ExecutionContext",
     "WorkflowInstance",
     "WorkflowRuntime",

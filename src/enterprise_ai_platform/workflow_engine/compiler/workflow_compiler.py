@@ -20,7 +20,17 @@ class WorkflowCompiler:
     Compiles a WorkflowDefinition into an immutable, traversable
     WorkflowGraph.
 
-    Enforces the frozen spec's Section 16 structural rules:
+    Enforces the frozen spec's Section 16 structural rules, plus one
+    addition found while designing the later, separate
+    WorkflowValidator: duplicate node ids. Nothing previously detected
+    this -- every id-keyed dict built downstream (entry-node lookup,
+    cycle detection, WorkflowGraph._nodes_by_id) would silently keep
+    only the last node sharing an id, so a workflow with a duplicate
+    id could compile "successfully" today with nodes quietly dropped.
+    This is a structural correctness issue, not a soft quality check,
+    so it belongs here rather than only in the validator layer.
+
+      - no duplicate node ids
       - exactly one Start node
       - at least one End node
       - entry_node references a real node, and that node is a Start
@@ -48,6 +58,8 @@ class WorkflowCompiler:
         """
 
         issues: list[WorkflowValidationIssue] = []
+
+        issues.extend(self._check_duplicate_node_ids(definition))
 
         issues.extend(self._check_start_node_count(definition))
 
@@ -92,6 +104,31 @@ class WorkflowCompiler:
             edges=definition.edges,
             metadata=definition.metadata,
         )
+
+    @staticmethod
+    def _check_duplicate_node_ids(
+        definition: WorkflowDefinition,
+    ) -> list[WorkflowValidationIssue]:
+
+        seen: set[str] = set()
+
+        duplicates: set[str] = set()
+
+        for node in definition.nodes:
+
+            if node.id in seen:
+                duplicates.add(node.id)
+
+            seen.add(node.id)
+
+        return [
+            WorkflowValidationIssue(
+                severity="error",
+                code="DUPLICATE_NODE_ID",
+                message=f"More than one node has id '{node_id}'.",
+            )
+            for node_id in sorted(duplicates)
+        ]
 
     @staticmethod
     def _check_start_node_count(
