@@ -4,6 +4,7 @@ from enterprise_ai_platform.model_engine.models import (
     ModelRequest,
     ModelResponse,
     ProviderDefinition,
+    StreamChunk,
 )
 from enterprise_ai_platform.model_engine.adapters import (
     AnthropicAdapter,
@@ -27,6 +28,7 @@ __all__ = [
     "ModelRequest",
     "ModelResponse",
     "ProviderDefinition",
+    "StreamChunk",
     "AnthropicAdapter",
     "BaseModelAdapter",
     "OllamaAdapter",

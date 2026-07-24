@@ -386,3 +386,40 @@ class ModelService(BaseService):
     def _version_sort_key(version: str) -> tuple[int, ...]:
 
         return tuple(int(part) for part in version.split("."))
+        
+    def stream(
+        self,
+        model_name: str,
+        prompt: str,
+        version: str | None = None,
+        system_prompt: str | None = None,
+        parameters: dict[str, Any] | None = None,
+        context: dict[str, Any] | None = None,
+    ) -> Iterator[StreamChunk]:
+        """
+        Execute a prompt against a registered model and yield its
+        response as a stream of chunks.
+
+        Lazy: nothing is sent to the model until the caller actually
+        iterates the returned generator, and stopping iteration early
+        is a valid form of cancellation (Section 17) -- there's no
+        separate cancel() needed for the pull-based generator model
+        used here.
+
+        Structured output (response_schema) is not supported here --
+        see this class's docstring for why. Use execute() for
+        structured output.
+        """
+
+        model = self.get_model(model_name, version=version)
+
+        adapter = self._providers[model.provider]
+
+        request = ModelRequest(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            parameters=parameters or {},
+            context=context,
+        )
+
+        return adapter.stream(request, model)

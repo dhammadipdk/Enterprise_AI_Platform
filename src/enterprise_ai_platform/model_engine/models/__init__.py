@@ -17,6 +17,9 @@ from enterprise_ai_platform.model_engine.models.model_response import (
 from enterprise_ai_platform.model_engine.models.provider_definition import (
     ProviderDefinition,
 )
+from enterprise_ai_platform.model_engine.models.stream_chunk import (
+    StreamChunk,
+)
 
 __all__ = [
     "ModelCapability",
@@ -24,4 +27,5 @@ __all__ = [
     "ModelRequest",
     "ModelResponse",
     "ProviderDefinition",
+    "StreamChunk",
 ]
