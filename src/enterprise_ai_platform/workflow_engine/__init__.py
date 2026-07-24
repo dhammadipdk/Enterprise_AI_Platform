@@ -8,6 +8,16 @@ from enterprise_ai_platform.workflow_engine.models import (
 from enterprise_ai_platform.workflow_engine.loaders import (
     WorkflowDefinitionLoader,
 )
+from enterprise_ai_platform.workflow_engine.graph import (
+    WorkflowGraph,
+)
+from enterprise_ai_platform.workflow_engine.validation import (
+    WorkflowValidationIssue,
+    WorkflowValidationReport,
+)
+from enterprise_ai_platform.workflow_engine.compiler import (
+    WorkflowCompiler,
+)
 
 __all__ = [
     "NodeType",
@@ -16,4 +26,8 @@ __all__ = [
     "WorkflowEdge",
     "WorkflowNode",
     "WorkflowDefinitionLoader",
+    "WorkflowGraph",
+    "WorkflowValidationIssue",
+    "WorkflowValidationReport",
+    "WorkflowCompiler",
 ]
