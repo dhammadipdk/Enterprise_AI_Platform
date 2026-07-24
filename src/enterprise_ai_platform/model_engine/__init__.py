@@ -6,7 +6,10 @@ from enterprise_ai_platform.model_engine.models import (
     ProviderDefinition,
 )
 from enterprise_ai_platform.model_engine.adapters import (
+    AnthropicAdapter,
     BaseModelAdapter,
+    OllamaAdapter,
+    OpenAIAdapter,
 )
 from enterprise_ai_platform.model_engine.registry import (
     ModelRegistry,
@@ -21,7 +24,10 @@ __all__ = [
     "ModelRequest",
     "ModelResponse",
     "ProviderDefinition",
+    "AnthropicAdapter",
     "BaseModelAdapter",
+    "OllamaAdapter",
+    "OpenAIAdapter",
     "ModelRegistry",
     "ModelService",
 ]
