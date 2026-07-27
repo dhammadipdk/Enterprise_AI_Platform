@@ -1,0 +1,9 @@
+owner: insureai
+description: >
+  Paraphrased regulatory knowledge distilled from IRDAI annual reports
+  (2009-10 through 2024-25). Used as the RAG corpus for explanation_agent
+  and claim_agent -- retrieval-ready rows with themes, source years,
+  the extracted regulatory signal, and its practical implication for
+  an agent's behavior.
+version: "1.0"
+tags: [irdai, regulatory, rag, explanation_agent, claim_agent]

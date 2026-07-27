@@ -1,0 +1,11 @@
+owner: insureai
+description: >
+  Synthetic (report-informed, not live) motor insurance product catalog:
+  48 policies across multiple synthetic insurers, with pricing fields,
+  coverage flags (zero_dep, engine_protect, roadside_assistance, ...),
+  target eligibility (vehicle age, mileage), scoring fields (cashless
+  garage, claim support, digital servicing), and plain-language pitches.
+  Used by recommendation_agent for deterministic policy matching --
+  the LLM formats output, it does not rank.
+version: "1.0"
+tags: [policy_catalog, recommendation_agent, pricing]

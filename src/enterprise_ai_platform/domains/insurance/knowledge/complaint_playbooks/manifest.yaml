@@ -1,0 +1,8 @@
+owner: insureai
+description: >
+  Complaint, escalation and Ombudsman (Bima Bharosa) response playbooks.
+  One row per issue type, with the first action to take, insurer TAT,
+  escalation channel, Ombudsman applicability rule, required evidence,
+  and a ready-to-use plain-language script. Used by claim_agent.
+version: "1.0"
+tags: [irdai, complaints, ombudsman, claim_agent]
