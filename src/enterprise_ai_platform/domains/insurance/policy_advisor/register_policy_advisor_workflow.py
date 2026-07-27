@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from enterprise_ai_platform.knowledge_engine import KnowledgeService
 from enterprise_ai_platform.model_engine import ModelService
 from enterprise_ai_platform.tool_engine import ToolService
 from enterprise_ai_platform.workflow_engine import NodeType, WorkflowService
@@ -28,10 +29,16 @@ def register_policy_advisor_workflow(
     tool_service: ToolService,
     model_service: ModelService,
     catalog_path: Path | str,
+    knowledge_service: KnowledgeService | None = None,
 ) -> None:
     """
     Wire up everything Policy Advisor needs: the recommend_policies
     tool, the workflow definition, and its node handlers.
+
+    Pass `knowledge_service` (with the "insurance" repository already
+    loaded via load_repository) to enable regulatory-grounded
+    explanations; omit it to get ungrounded explanations, same as
+    before -- this is additive, not required.
     """
 
     register_policy_advisor_tools(tool_service, catalog_path)
@@ -43,7 +50,7 @@ def register_policy_advisor_workflow(
 
     workflow_service.register_node_handler(
         NodeType.LLM,
-        make_llm_node_handler(model_service),
+        make_llm_node_handler(model_service, knowledge_service),
     )
 
     workflow_service.register_node_handler(

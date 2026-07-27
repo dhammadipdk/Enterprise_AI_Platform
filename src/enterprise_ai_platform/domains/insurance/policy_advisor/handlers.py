@@ -50,12 +50,19 @@ def check_required_slots_handler(
 
 def make_llm_node_handler(
     model_service: ModelService,
+    knowledge_service: Any | None = None,
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the shared LLM-node handler, closing over the ModelService
-    to call (the injected-callable pattern used throughout this
-    codebase, e.g. GraphBuilder/HybridRetriever).
+    (and optionally KnowledgeService) to call -- the injected-callable
+    pattern used throughout this codebase.
+
+    `knowledge_service` is optional and untyped here (Any) rather than
+    importing KnowledgeService, since domains/ code already imports
+    concrete engine classes freely (unlike engine-to-engine imports,
+    which stay banned) -- kept loose just to avoid a hard dependency
+    for callers/tests that don't need regulatory grounding.
     """
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
@@ -70,6 +77,45 @@ def make_llm_node_handler(
             "anything else, and do not repeat information already "
             "known."
         )
+
+    def _regulatory_requirement() -> str | None:
+        """
+        Retrieve the IRDAI plain-language disclosure requirement from
+        the real regulatory_knowledge corpus (RK001-style rows), to
+        make the explanation regulation-aware rather than just
+        catalog-derived.
+
+        This is genuine RAG grounding for the "Regulation" capability
+        specifically -- NOT a jargon glossary lookup. The corpus is
+        regulatory-process knowledge (disclosure mandates, complaint
+        handling), so "define zero dep" would retrieve nothing useful;
+        "what must a recommendation disclose" retrieves exactly what
+        it's meant to.
+
+        Degrades silently (returns None) if knowledge_service isn't
+        configured or retrieval fails for any reason -- regulatory
+        grounding is an enhancement to the explanation, not something
+        that should take down the whole response if, say, the vector
+        store isn't available in a given environment.
+        """
+
+        if knowledge_service is None:
+            return None
+
+        try:
+            matches = knowledge_service.hybrid_search(
+                "insurance",
+                "plain language recommendation exclusions disclosure",
+                top_k=1,
+                domain="regulatory_knowledge",
+            )
+        except Exception:
+            return None
+
+        if not matches:
+            return None
+
+        return matches[0].chunk.metadata.get("implication_for_agent")
 
     def _format_explanation(context: ExecutionContext) -> str:
 
@@ -94,13 +140,6 @@ def make_llm_node_handler(
 
         why_not_cheapest = recommendations_result.get("why_not_cheapest")
 
-        # Discrete, labeled facts -- NOT one paragraph to paraphrase.
-        # Small models reliably preserve numbers when translating a
-        # short bullet, but lose precision when also doing sentence
-        # fusion across several facts at once (confirmed: this is
-        # exactly what garbled the "3 of 3 vs 0 of 3" comparison
-        # earlier). Isolating "translate the language" from "preserve
-        # the numbers" is the actual fix.
         facts = [
             f"- Policy name: {top['product_name']} "
             f"(insurer: {top['insurer_name']})",
@@ -131,6 +170,14 @@ def make_llm_node_handler(
             "above. Write ONE short, warm message using these facts. "
             "Do not invent any additional facts."
         )
+
+        regulatory_note = _regulatory_requirement()
+
+        if regulatory_note:
+            prompt += (
+                f"\n\nRegulatory requirement you must also satisfy in "
+                f"your message: {regulatory_note}"
+            )
 
         return prompt
 
