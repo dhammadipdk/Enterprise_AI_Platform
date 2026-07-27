@@ -4,7 +4,7 @@ A metadata-driven, enterprise-grade AI platform for building intelligent busines
 
 ## Current Status
 
-🚧 Sprint 8 — Memory Engine
+🚧 Sprint 9 — Context Engine
 
 ## Vision
 
