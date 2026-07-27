@@ -4,7 +4,7 @@ A metadata-driven, enterprise-grade AI platform for building intelligent busines
 
 ## Current Status
 
-🚧 Sprint 10 — Execution Engine
+🚧 Sprint 12 — InsureAI
 
 ## Vision
 

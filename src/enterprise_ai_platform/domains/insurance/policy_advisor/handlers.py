@@ -51,19 +51,9 @@ def check_required_slots_handler(
 def make_llm_node_handler(
     model_service: ModelService,
     knowledge_service: Any | None = None,
+    glossary: Any | None = None,
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
-    """
-    Build the shared LLM-node handler, closing over the ModelService
-    (and optionally KnowledgeService) to call -- the injected-callable
-    pattern used throughout this codebase.
-
-    `knowledge_service` is optional and untyped here (Any) rather than
-    importing KnowledgeService, since domains/ code already imports
-    concrete engine classes freely (unlike engine-to-engine imports,
-    which stay banned) -- kept loose just to avoid a hard dependency
-    for callers/tests that don't need regulatory grounding.
-    """
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
@@ -79,25 +69,6 @@ def make_llm_node_handler(
         )
 
     def _regulatory_requirement() -> str | None:
-        """
-        Retrieve the IRDAI plain-language disclosure requirement from
-        the real regulatory_knowledge corpus (RK001-style rows), to
-        make the explanation regulation-aware rather than just
-        catalog-derived.
-
-        This is genuine RAG grounding for the "Regulation" capability
-        specifically -- NOT a jargon glossary lookup. The corpus is
-        regulatory-process knowledge (disclosure mandates, complaint
-        handling), so "define zero dep" would retrieve nothing useful;
-        "what must a recommendation disclose" retrieves exactly what
-        it's meant to.
-
-        Degrades silently (returns None) if knowledge_service isn't
-        configured or retrieval fails for any reason -- regulatory
-        grounding is an enhancement to the explanation, not something
-        that should take down the whole response if, say, the vector
-        store isn't available in a given environment.
-        """
 
         if knowledge_service is None:
             return None
@@ -156,6 +127,12 @@ def make_llm_node_handler(
                 f"number and count in this line exactly as written)"
             )
 
+        glossary_facts = (
+            glossary.lookup_many(top.get("matched_coverage", []))
+            if glossary is not None
+            else []
+        )
+
         prompt = (
             "You are writing a WhatsApp message to an Indian customer "
             "in Hinglish (mixed Hindi+English, casual WhatsApp style), "
@@ -165,11 +142,22 @@ def make_llm_node_handler(
             "recompute, or re-derive ANY number, Rs amount, or count "
             "in these facts -- copy every number exactly as written:\n\n"
             + "\n".join(facts)
-            + "\n\nAlso explain any insurance jargon (like 'zero dep' "
-            "or 'NCB') in simple terms if it appears in the facts "
-            "above. Write ONE short, warm message using these facts. "
-            "Do not invent any additional facts."
         )
+
+        if glossary_facts:
+            prompt += (
+                "\n\nIf you mention any of these terms, use EXACTLY "
+                "this meaning -- do not substitute your own "
+                "understanding of the term, even if you think you "
+                "know it:\n"
+                + "\n".join(f"- {fact}" for fact in glossary_facts)
+            )
+        else:
+            prompt += (
+                "\n\nOnly explain jargon terms if you are certain of "
+                "their correct meaning; otherwise mention the term "
+                "name without defining it."
+            )
 
         regulatory_note = _regulatory_requirement()
 
