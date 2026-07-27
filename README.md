@@ -4,7 +4,7 @@ A metadata-driven, enterprise-grade AI platform for building intelligent busines
 
 ## Current Status
 
-🚧 Sprint 5 — Worklflow Engine
+🚧 Sprint 8 — Memory Engine
 
 ## Vision
 
