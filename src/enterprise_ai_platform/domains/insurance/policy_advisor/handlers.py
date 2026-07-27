@@ -94,22 +94,43 @@ def make_llm_node_handler(
 
         why_not_cheapest = recommendations_result.get("why_not_cheapest")
 
-        prompt = (
-            "Explain this insurance recommendation to a customer in "
-            "Hinglish (Hindi+English WhatsApp style) -- warm, simple, "
-            "and explain any jargon (like 'zero dep' or 'NCB') rather "
-            "than assuming they know it:\n"
-            f"Top pick: {top['product_name']} by {top['insurer_name']}\n"
-            f"Estimated annual premium: Rs {top['estimated_annual_premium_rs']}\n"
-            f"Why it fits: {top['plain_language_pitch']}\n"
-            f"Best for: {top['best_for']}\n"
-        )
+        # Discrete, labeled facts -- NOT one paragraph to paraphrase.
+        # Small models reliably preserve numbers when translating a
+        # short bullet, but lose precision when also doing sentence
+        # fusion across several facts at once (confirmed: this is
+        # exactly what garbled the "3 of 3 vs 0 of 3" comparison
+        # earlier). Isolating "translate the language" from "preserve
+        # the numbers" is the actual fix.
+        facts = [
+            f"- Policy name: {top['product_name']} "
+            f"(insurer: {top['insurer_name']})",
+            f"- Annual premium: exactly Rs "
+            f"{top['estimated_annual_premium_rs']} (do not round or "
+            f"change this number)",
+            f"- Why it fits this customer: {top['plain_language_pitch']}",
+            f"- Best suited for: {top['best_for']}",
+        ]
 
         if why_not_cheapest:
-            prompt += (
-                f"If it seems relevant, briefly mention: "
-                f"{why_not_cheapest}\n"
+            facts.append(
+                f"- Note on pricing: {why_not_cheapest} (keep every "
+                f"number and count in this line exactly as written)"
             )
+
+        prompt = (
+            "You are writing a WhatsApp message to an Indian customer "
+            "in Hinglish (mixed Hindi+English, casual WhatsApp style), "
+            "warm and friendly.\n\n"
+            "Below are the ONLY facts you may use. Translate/localize "
+            "the language into Hinglish, but do NOT change, round, "
+            "recompute, or re-derive ANY number, Rs amount, or count "
+            "in these facts -- copy every number exactly as written:\n\n"
+            + "\n".join(facts)
+            + "\n\nAlso explain any insurance jargon (like 'zero dep' "
+            "or 'NCB') in simple terms if it appears in the facts "
+            "above. Write ONE short, warm message using these facts. "
+            "Do not invent any additional facts."
+        )
 
         return prompt
 
@@ -176,12 +197,6 @@ def make_tool_node_handler(
             ),
         }
 
-        # Omit budget_cap_rs entirely when unset, rather than passing
-        # None -- the input_schema declares it as {"type": "number"},
-        # not nullable, so an explicit None fails schema validation
-        # even though it's semantically "no cap". Omitting the key
-        # lets PolicyRecommendationEngine's own default (None) apply
-        # instead, without ever handing a null to the validator.
         budget_cap_rs = context.get_variable("budget_cap_rs")
 
         if budget_cap_rs is not None:
