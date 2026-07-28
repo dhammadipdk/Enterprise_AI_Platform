@@ -13,12 +13,12 @@ from typing import Any, Callable
 from enterprise_ai_platform.model_engine import ModelService
 from enterprise_ai_platform.tool_engine import ToolService
 from enterprise_ai_platform.workflow_engine import ExecutionContext, WorkflowNode
-from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
-    RiskScoringEngine,
-)
 
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
     REQUIRED_SLOTS,
+)
+from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
+    RiskScoringEngine,
 )
 
 _RANK_LABELS = ["Best match", "2nd best match", "3rd best match"]
@@ -36,14 +36,9 @@ def check_required_slots_handler(
 
     Produces three mutually exclusive flags rather than two
     independent booleans -- WorkflowRuntime's edge conditions only
-    check ONE named variable's truthiness each (no compound AND/OR
-    expressions), so each routing outcome needs its own single flag
-    that is True in exactly the cases that should take that edge.
-
-    Naming both policies without also giving vehicle info still
-    routes to the clarifying question, not straight to comparison --
-    compare_policies needs vehicle_idv_rs/vehicle_age_years too, so
-    "missing info" is checked before "which mode", not after.
+    check ONE named variable's truthiness each. Naming both policies
+    without also giving vehicle info still routes to the clarifying
+    question, not straight to comparison.
     """
 
     missing = [
@@ -95,8 +90,7 @@ def make_llm_node_handler(
         Retrieve the IRDAI plain-language disclosure requirement from
         the real regulatory_knowledge corpus. Degrades silently to
         None if knowledge_service isn't configured or retrieval fails
-        for any reason -- an enhancement, not something that should
-        take down the whole response.
+        for any reason.
         """
 
         if knowledge_service is None:
@@ -151,6 +145,52 @@ def make_llm_node_handler(
             "without defining it."
         )
 
+    def _facts_to_natural_prompt(
+        facts: list[str],
+        situational_reasons: list[str],
+        intro: str,
+    ) -> str:
+        """
+        Shared prompt-building for both explanation and comparison --
+        explicitly instructs against mirroring the fact list's own
+        structure in the output (labels, bullets, headers), which is
+        what caused an earlier "form-filled" style response. The fact
+        list itself stays structured internally (for the model to
+        read precisely) -- only the OUTPUT is asked to be natural
+        prose.
+        """
+
+        prompt = (
+            "You are an experienced, warm human insurance agent "
+            "replying to a customer on WhatsApp, in Hinglish "
+            "(mixed Hindi+English, casual conversational tone). "
+            f"{intro}\n\n"
+            "Speak the way a real agent actually talks -- flowing "
+            "sentences, like you're chatting with someone in person. "
+            "Do NOT use bullet points, numbered lists, bold headers, "
+            "or labeled fields (no 'Price:', no 'Best for:', no "
+            "'Policy name:'). Weave the facts into natural "
+            "paragraphs instead.\n\n"
+            "Below are the ONLY facts you may use. You may rephrase "
+            "and reorder freely, but do NOT change, round, recompute, "
+            "or re-derive ANY number, Rs amount, or count -- copy "
+            "every number exactly as it appears, and never combine "
+            "or confuse numbers from two different facts:\n\n"
+            + "\n".join(facts)
+        )
+
+        if situational_reasons:
+            prompt += (
+                "\n\nThese specific reasons matter for THIS customer "
+                "-- mention them naturally as part of your "
+                "explanation (e.g. 'roadside assistance is useful "
+                "here since you drive long distance often'), don't "
+                "just list them:\n"
+                + "\n".join(f"- {r}" for r in situational_reasons)
+            )
+
+        return prompt
+
     def _format_explanation(context: ExecutionContext) -> str:
 
         recommendations_result = context.get_variable(
@@ -166,8 +206,9 @@ def make_llm_node_handler(
                 "No matching policies were found.",
             )
             return (
-                f"Explain this to the customer warmly, in Hinglish "
-                f"(Hindi+English WhatsApp style): {message}"
+                f"Explain this to the customer warmly, as a real "
+                f"insurance agent would, in Hinglish (Hindi+English "
+                f"WhatsApp style): {message}"
             )
 
         facts: list[str] = []
@@ -178,6 +219,8 @@ def make_llm_node_handler(
 
         for rec in recommendations[1:]:
             common_coverage &= set(rec.get("matched_coverage", []))
+
+        situational_reasons: list[str] = []
 
         for i, rec in enumerate(recommendations):
 
@@ -200,6 +243,8 @@ def make_llm_node_handler(
             facts.append(f"  Best suited for: {rec['best_for']}")
 
             all_matched_coverage.update(rec.get("matched_coverage", []))
+
+            situational_reasons.extend(rec.get("match_reasons", []))
 
         if common_coverage:
             facts.append(
@@ -235,21 +280,15 @@ def make_llm_node_handler(
             else []
         )
 
-        prompt = (
-            "You are writing a WhatsApp message to an Indian customer "
-            "in Hinglish (mixed Hindi+English, casual WhatsApp style), "
-            "warm and friendly.\n\n"
-            "Present all the options below, ranked best to last, each "
-            "with its price and why it fits. Then briefly mention the "
-            "comparison notes so the customer understands the "
-            "trade-offs between the options.\n\n"
-            "Below are the ONLY facts you may use. Translate/localize "
-            "the language into Hinglish, but do NOT change, round, "
-            "recompute, or re-derive ANY number, Rs amount, or count "
-            "in these facts -- copy every number exactly as written, "
-            "and never combine or confuse numbers from two different "
-            "comparison lines:\n\n"
-            + "\n".join(facts)
+        prompt = _facts_to_natural_prompt(
+            facts,
+            situational_reasons,
+            intro=(
+                "Present the options below, best match first, "
+                "explaining what each is and why it fits, then "
+                "mention how they compare -- like you're walking the "
+                "customer through your recommendation."
+            ),
         )
 
         prompt += _glossary_guardrail_text(glossary_facts)
@@ -302,6 +341,11 @@ def make_llm_node_handler(
         if other_better_when:
             facts.append(f"- Exception worth mentioning: {other_better_when}")
 
+        situational_reasons = (
+            policy_a.get("match_reasons", [])
+            + policy_b.get("match_reasons", [])
+        )
+
         all_matched_coverage = set(
             policy_a.get("matched_coverage", [])
         ) | set(policy_b.get("matched_coverage", []))
@@ -312,18 +356,14 @@ def make_llm_node_handler(
             else []
         )
 
-        prompt = (
-            "You are writing a WhatsApp message to an Indian customer "
-            "in Hinglish (mixed Hindi+English, casual WhatsApp style), "
-            "warm and friendly. The customer asked you to compare two "
-            "specific policies by name.\n\n"
-            "Below are the ONLY facts you may use. Translate/localize "
-            "the language into Hinglish, but do NOT change, round, "
-            "recompute, or re-derive ANY number, Rs amount, or count "
-            "in these facts -- copy every number exactly as written, "
-            "and never combine or confuse numbers from two different "
-            "lines:\n\n"
-            + "\n".join(facts)
+        prompt = _facts_to_natural_prompt(
+            facts,
+            situational_reasons,
+            intro=(
+                "The customer asked you to compare two specific "
+                "policies by name -- give them your honest "
+                "professional take."
+            ),
         )
 
         prompt += _glossary_guardrail_text(glossary_facts)
@@ -365,12 +405,11 @@ def make_tool_node_handler(
     Build the shared Tool-node handler, dispatching on the node's
     configured tool_name (recommend_policies vs compare_policies).
 
-    Computes risk scoring INLINE here, right before building tool
+    Computes risk scoring inline here, right before building tool
     parameters -- matching the "risk_scoring_engine ->
     policy_catalog_lookup -> recommendation_ranker" pipeline shape the
-    real agentic_tasks fixtures show for every major task_type, without
-    needing a separate graph node for it: it's a plain function call
-    that happens before the tool call, achieving the same ordering.
+    real agentic_tasks fixtures show, without needing a separate graph
+    node for it.
     """
 
     risk_engine = RiskScoringEngine()
@@ -430,12 +469,6 @@ def make_tool_node_handler(
             "risk_band": risk_result["risk_band"],
         }
 
-        # Only included when explicitly known -- these three all have
-        # a semantically meaningful "None means preserve original
-        # behavior" default in PolicyRecommendationEngine, and the
-        # tool's input_schema doesn't mark them nullable, so an
-        # explicit None would fail validation the same way
-        # budget_cap_rs did before.
         for optional_field in (
             "annual_mileage_km",
             "digital_affinity_1to5",
