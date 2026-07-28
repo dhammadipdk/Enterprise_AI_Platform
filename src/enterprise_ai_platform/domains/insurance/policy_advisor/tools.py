@@ -17,19 +17,31 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.recommendation_engi
     PolicyRecommendationEngine,
 )
 
+_SHARED_PROPERTIES = {
+    "vehicle_idv_rs": {"type": "number"},
+    "vehicle_age_years": {"type": "integer"},
+    "ncb_percent": {"type": "number"},
+    "ev_flag": {"type": "boolean"},
+    "coverage_priorities": {"type": "array", "items": {"type": "string"}},
+    "budget_sensitivity_1to5": {"type": "integer"},
+    "prefers_cashless": {"type": "boolean"},
+    "annual_mileage_km": {"type": "number"},
+    "financed_vehicle": {"type": "boolean"},
+    "family_usage": {"type": "boolean"},
+    "digital_affinity_1to5": {"type": "integer"},
+    "protection_preference": {
+        "type": "string",
+        "enum": ["max_protection", "balanced", "budget_first"],
+    },
+    "wants_lowest_price": {"type": "boolean"},
+    "flood_exposed": {"type": "boolean"},
+    "risk_band": {"type": "string", "enum": ["low", "medium", "high"]},
+}
+
 _RECOMMEND_INPUT_SCHEMA = {
     "type": "object",
     "properties": {
-        "vehicle_idv_rs": {"type": "number"},
-        "vehicle_age_years": {"type": "integer"},
-        "ncb_percent": {"type": "number"},
-        "ev_flag": {"type": "boolean"},
-        "coverage_priorities": {
-            "type": "array",
-            "items": {"type": "string"},
-        },
-        "budget_sensitivity_1to5": {"type": "integer"},
-        "prefers_cashless": {"type": "boolean"},
+        **_SHARED_PROPERTIES,
         "budget_cap_rs": {"type": "number"},
         "top_n": {"type": "integer"},
     },
@@ -41,16 +53,7 @@ _COMPARE_INPUT_SCHEMA = {
     "properties": {
         "policy_id_a": {"type": "string"},
         "policy_id_b": {"type": "string"},
-        "vehicle_idv_rs": {"type": "number"},
-        "vehicle_age_years": {"type": "integer"},
-        "ncb_percent": {"type": "number"},
-        "ev_flag": {"type": "boolean"},
-        "coverage_priorities": {
-            "type": "array",
-            "items": {"type": "string"},
-        },
-        "budget_sensitivity_1to5": {"type": "integer"},
-        "prefers_cashless": {"type": "boolean"},
+        **_SHARED_PROPERTIES,
     },
     "required": [
         "policy_id_a",
@@ -82,11 +85,11 @@ def register_policy_advisor_tools(
             version="1.0.0",
             description=(
                 "Deterministically rank eligible motor insurance "
-                "policies for a customer profile, and compute "
-                "cross-comparison notes between the top matches. The "
-                "LLM must not re-rank or second-guess this tool's "
-                "ordering -- it only formats this tool's result in "
-                "natural language."
+                "policies for a customer profile, including region/"
+                "risk-aware weighting and cross-comparison notes "
+                "between the top matches. The LLM must not re-rank or "
+                "second-guess this tool's ordering -- it only formats "
+                "this tool's result in natural language."
             ),
             category=ToolCategory.CUSTOM,
             input_schema=_RECOMMEND_INPUT_SCHEMA,

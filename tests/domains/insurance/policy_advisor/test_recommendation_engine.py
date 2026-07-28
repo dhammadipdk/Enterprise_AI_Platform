@@ -57,7 +57,7 @@ def test_old_vehicle_returns_empty_with_clear_message(engine):
 
     assert result["total_eligible"] == 0
 
-    assert "maximum insurable age" in result["message"]
+    assert "exceeds every policy's limits" in result["message"]
 
 
 def test_ev_only_policies_excluded_for_non_ev_customer(engine):

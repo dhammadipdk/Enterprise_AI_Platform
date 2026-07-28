@@ -36,7 +36,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Get Policy Recommendations",
             "node_type": "tool",
             "configuration": {"tool_name": "recommend_policies"},
-            "outputs": ["recommendations_result"],
+            "outputs": ["recommendations_result", "risk_assessment"],
         },
         {
             "id": "format_explanation",
@@ -50,7 +50,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Get Policy Comparison",
             "node_type": "tool",
             "configuration": {"tool_name": "compare_policies"},
-            "outputs": ["comparison_result"],
+            "outputs": ["comparison_result", "risk_assessment"],
         },
         {
             "id": "format_comparison",

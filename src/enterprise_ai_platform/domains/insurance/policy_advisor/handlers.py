@@ -13,6 +13,9 @@ from typing import Any, Callable
 from enterprise_ai_platform.model_engine import ModelService
 from enterprise_ai_platform.tool_engine import ToolService
 from enterprise_ai_platform.workflow_engine import ExecutionContext, WorkflowNode
+from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
+    RiskScoringEngine,
+)
 
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
     REQUIRED_SLOTS,
@@ -361,9 +364,46 @@ def make_tool_node_handler(
     """
     Build the shared Tool-node handler, dispatching on the node's
     configured tool_name (recommend_policies vs compare_policies).
+
+    Computes risk scoring INLINE here, right before building tool
+    parameters -- matching the "risk_scoring_engine ->
+    policy_catalog_lookup -> recommendation_ranker" pipeline shape the
+    real agentic_tasks fixtures show for every major task_type, without
+    needing a separate graph node for it: it's a plain function call
+    that happens before the tool call, achieving the same ordering.
     """
 
-    def _recommend_parameters(context: ExecutionContext) -> dict[str, Any]:
+    risk_engine = RiskScoringEngine()
+
+    def _compute_risk(context: ExecutionContext) -> dict[str, Any]:
+
+        return risk_engine.score(
+            residence_cluster=context.get_variable("residence_cluster"),
+            city_risk_band=context.get_variable("city_risk_band"),
+            flood_risk_band=context.get_variable("flood_risk_band"),
+            commute_pattern=context.get_variable("commute_pattern"),
+            annual_mileage_km=context.get_variable("annual_mileage_km"),
+            theft_history=context.get_variable("theft_history", 0),
+            previous_claims_3yr=context.get_variable("previous_claims_3yr", 0),
+            at_fault_claims_3yr=context.get_variable("at_fault_claims_3yr", 0),
+            traffic_violations_3yr=context.get_variable(
+                "traffic_violations_3yr", 0
+            ),
+            anti_theft_device=context.get_variable(
+                "anti_theft_device", False
+            ),
+            adas_level=context.get_variable("adas_level", 0),
+            parking_type=context.get_variable("parking_type"),
+            driving_experience_years=context.get_variable(
+                "driving_experience_years"
+            ),
+            age=context.get_variable("age"),
+        )
+
+    def _shared_parameters(
+        context: ExecutionContext,
+        risk_result: dict[str, Any],
+    ) -> dict[str, Any]:
 
         parameters = {
             "vehicle_idv_rs": context.get_variable("vehicle_idv_rs"),
@@ -371,51 +411,41 @@ def make_tool_node_handler(
             "ncb_percent": context.get_variable("ncb_percent", 0),
             "ev_flag": context.get_variable("ev_flag", False),
             "coverage_priorities": context.get_variable(
-                "coverage_priorities",
-                [],
+                "coverage_priorities", []
             ),
             "budget_sensitivity_1to5": context.get_variable(
-                "budget_sensitivity_1to5",
-                3,
+                "budget_sensitivity_1to5", 3
             ),
             "prefers_cashless": context.get_variable(
-                "prefers_cashless",
-                False,
+                "prefers_cashless", False
             ),
+            "financed_vehicle": context.get_variable(
+                "financed_vehicle", False
+            ),
+            "family_usage": context.get_variable("family_usage", False),
+            "wants_lowest_price": context.get_variable(
+                "wants_lowest_price", False
+            ),
+            "flood_exposed": risk_result["flood_exposed"],
+            "risk_band": risk_result["risk_band"],
         }
 
-        # Omit budget_cap_rs entirely when unset, rather than passing
-        # None -- the input_schema declares it as {"type": "number"},
-        # not nullable, so an explicit None fails schema validation.
-        budget_cap_rs = context.get_variable("budget_cap_rs")
-
-        if budget_cap_rs is not None:
-            parameters["budget_cap_rs"] = budget_cap_rs
+        # Only included when explicitly known -- these three all have
+        # a semantically meaningful "None means preserve original
+        # behavior" default in PolicyRecommendationEngine, and the
+        # tool's input_schema doesn't mark them nullable, so an
+        # explicit None would fail validation the same way
+        # budget_cap_rs did before.
+        for optional_field in (
+            "annual_mileage_km",
+            "digital_affinity_1to5",
+            "protection_preference",
+        ):
+            value = context.get_variable(optional_field)
+            if value is not None:
+                parameters[optional_field] = value
 
         return parameters
-
-    def _compare_parameters(context: ExecutionContext) -> dict[str, Any]:
-
-        return {
-            "policy_id_a": context.get_variable("policy_id_a"),
-            "policy_id_b": context.get_variable("policy_id_b"),
-            "vehicle_idv_rs": context.get_variable("vehicle_idv_rs"),
-            "vehicle_age_years": context.get_variable("vehicle_age_years"),
-            "ncb_percent": context.get_variable("ncb_percent", 0),
-            "ev_flag": context.get_variable("ev_flag", False),
-            "coverage_priorities": context.get_variable(
-                "coverage_priorities",
-                [],
-            ),
-            "budget_sensitivity_1to5": context.get_variable(
-                "budget_sensitivity_1to5",
-                3,
-            ),
-            "prefers_cashless": context.get_variable(
-                "prefers_cashless",
-                False,
-            ),
-        }
 
     def tool_node_handler(
         node: WorkflowNode,
@@ -424,23 +454,31 @@ def make_tool_node_handler(
 
         tool_name = node.configuration.get("tool_name")
 
-        if tool_name == "recommend_policies":
-            parameters = _recommend_parameters(context)
-            output_key = "recommendations_result"
-        elif tool_name == "compare_policies":
-            parameters = _compare_parameters(context)
-            output_key = "comparison_result"
-        else:
+        if tool_name not in ("recommend_policies", "compare_policies"):
             raise ValueError(
                 f"Unknown tool_name '{tool_name}' for Tool node "
                 f"'{node.id}'."
             )
+
+        risk_result = _compute_risk(context)
+
+        parameters = _shared_parameters(context, risk_result)
+
+        if tool_name == "compare_policies":
+            parameters["policy_id_a"] = context.get_variable("policy_id_a")
+            parameters["policy_id_b"] = context.get_variable("policy_id_b")
+            output_key = "comparison_result"
+        else:
+            budget_cap_rs = context.get_variable("budget_cap_rs")
+            if budget_cap_rs is not None:
+                parameters["budget_cap_rs"] = budget_cap_rs
+            output_key = "recommendations_result"
 
         response = tool_service.execute(tool_name, parameters=parameters)
 
         if response.status == "failure":
             raise RuntimeError(f"{tool_name} tool failed: {response.error}")
 
-        return {output_key: response.result}
+        return {output_key: response.result, "risk_assessment": risk_result}
 
     return tool_node_handler
