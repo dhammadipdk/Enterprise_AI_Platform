@@ -13,15 +13,15 @@ import pandas as pd
 
 class PolicyRecommendationEngine:
     """
-    Deterministic policy scoring and ranking against the real policy
-    catalog (48 synthetic-but-structured motor products).
+    Deterministic policy scoring, ranking, and comparison against the
+    real policy catalog (48 synthetic-but-structured motor products).
 
     Matches the architecture principle from the InsureAI deck: the
-    LLM never ranks policies, it only formats already-ranked output
-    in natural language. Every score here is a plain arithmetic
-    function of visible catalog fields and the customer profile --
-    nothing here is an LLM call, so it's fast, deterministic, and
-    fully explainable.
+    LLM never ranks or compares policies, it only formats already-
+    computed output in natural language. Every score here is a plain
+    arithmetic function of visible catalog fields and the customer
+    profile -- nothing here is an LLM call, so it's fast,
+    deterministic, and fully explainable.
 
     IMPORTANT: pandas reads CSV boolean columns back as numpy.bool_,
     not Python's native bool -- `numpy.True_ is True` evaluates to
@@ -113,6 +113,7 @@ class PolicyRecommendationEngine:
                 "recommendations": [],
                 "total_eligible": 0,
                 "why_not_cheapest": None,
+                "comparisons": [],
                 "message": (
                     "No eligible policies found for this vehicle profile "
                     "in the current catalog. This usually means the "
@@ -151,6 +152,223 @@ class PolicyRecommendationEngine:
             "message": None,
         }
 
+    def recommend_with_comparison(
+        self,
+        vehicle_idv_rs: float,
+        vehicle_age_years: int,
+        ncb_percent: float = 0,
+        ev_flag: bool = False,
+        coverage_priorities: list[str] | None = None,
+        budget_sensitivity_1to5: int = 3,
+        prefers_cashless: bool = False,
+        budget_cap_rs: float | None = None,
+        top_n: int = 3,
+    ) -> dict[str, Any]:
+        """
+        Same as recommend(), but additionally computes pairwise
+        comparison reasons between every pair of the returned top_n
+        policies -- reusing the same premium/coverage-match reasoning
+        compare() uses, just applied within one ranked set instead of
+        two arbitrarily-named policies.
+
+        This is what the Policy Advisor workflow's recommend_policies
+        tool actually calls -- customers see all top_n options
+        side-by-side with their trade-offs, not just the single best
+        match.
+        """
+
+        result = self.recommend(
+            vehicle_idv_rs=vehicle_idv_rs,
+            vehicle_age_years=vehicle_age_years,
+            ncb_percent=ncb_percent,
+            ev_flag=ev_flag,
+            coverage_priorities=coverage_priorities,
+            budget_sensitivity_1to5=budget_sensitivity_1to5,
+            prefers_cashless=prefers_cashless,
+            budget_cap_rs=budget_cap_rs,
+            top_n=top_n,
+        )
+
+        recommendations = result["recommendations"]
+
+        comparisons = []
+
+        for i in range(len(recommendations)):
+            for j in range(i + 1, len(recommendations)):
+
+                reasons = self._pairwise_reasons(
+                    recommendations[i],
+                    recommendations[j],
+                    coverage_priorities or [],
+                )
+
+                comparisons.append(
+                    {
+                        "policy_a_id": recommendations[i]["policy_id"],
+                        "policy_b_id": recommendations[j]["policy_id"],
+                        "reasons": reasons,
+                    }
+                )
+
+        result["comparisons"] = comparisons
+
+        return result
+
+    def compare(
+        self,
+        policy_id_a: str,
+        policy_id_b: str,
+        vehicle_idv_rs: float,
+        vehicle_age_years: int,
+        ncb_percent: float = 0,
+        ev_flag: bool = False,
+        coverage_priorities: list[str] | None = None,
+        budget_sensitivity_1to5: int = 3,
+        prefers_cashless: bool = False,
+    ) -> dict[str, Any]:
+        """
+        Compare two named policies for one customer profile,
+        deterministically -- reuses the same scoring/premium logic
+        recommend() uses, applied to two specific policies instead of
+        ranking the whole catalog.
+
+        Raises KeyError if either policy_id is unknown.
+        """
+
+        coverage_priorities = coverage_priorities or []
+
+        policy_a = self._get_policy_row(policy_id_a)
+        policy_b = self._get_policy_row(policy_id_b)
+
+        score_a, premium_a = self._score(
+            policy_a,
+            vehicle_idv_rs,
+            ncb_percent,
+            coverage_priorities,
+            budget_sensitivity_1to5,
+            prefers_cashless,
+            None,
+        )
+
+        score_b, premium_b = self._score(
+            policy_b,
+            vehicle_idv_rs,
+            ncb_percent,
+            coverage_priorities,
+            budget_sensitivity_1to5,
+            prefers_cashless,
+            None,
+        )
+
+        matched_a = [c for c in coverage_priorities if policy_a.get(c)]
+
+        matched_b = [c for c in coverage_priorities if policy_b.get(c)]
+
+        winner_is_a = score_a >= score_b
+
+        winner_id = policy_id_a if winner_is_a else policy_id_b
+
+        reasons: list[str] = []
+
+        if premium_a != premium_b:
+            cheaper = "A" if premium_a < premium_b else "B"
+            diff = abs(premium_a - premium_b)
+            reasons.append(f"Policy {cheaper} is Rs {diff} cheaper per year")
+
+        if len(matched_a) != len(matched_b):
+            reasons.append(
+                f"Policy A matches {len(matched_a)}/"
+                f"{len(coverage_priorities)} priority coverages vs "
+                f"Policy B's {len(matched_b)}/{len(coverage_priorities)}"
+            )
+
+        if (
+            policy_a["cashless_garage_score"]
+            != policy_b["cashless_garage_score"]
+        ):
+            reasons.append(
+                f"Cashless garage score: A="
+                f"{policy_a['cashless_garage_score']} vs B="
+                f"{policy_b['cashless_garage_score']}"
+            )
+
+        other_better_when = None
+
+        if premium_a != premium_b:
+
+            cheaper_id = (
+                policy_id_a if premium_a < premium_b else policy_id_b
+            )
+
+            if cheaper_id != winner_id:
+
+                cheaper_name = (
+                    policy_a["product_name"]
+                    if cheaper_id == policy_id_a
+                    else policy_b["product_name"]
+                )
+
+                other_better_when = (
+                    f"{cheaper_name} may still suit a customer who "
+                    f"prioritizes lowest price over coverage breadth."
+                )
+
+        return {
+            "policy_a": {
+                "policy_id": policy_id_a,
+                "product_name": policy_a["product_name"],
+                "suitability_score": score_a,
+                "estimated_annual_premium_rs": premium_a,
+                "matched_coverage": matched_a,
+            },
+            "policy_b": {
+                "policy_id": policy_id_b,
+                "product_name": policy_b["product_name"],
+                "suitability_score": score_b,
+                "estimated_annual_premium_rs": premium_b,
+                "matched_coverage": matched_b,
+            },
+            "winner_policy_id": winner_id,
+            "reasons": reasons,
+            "other_better_when": other_better_when,
+        }
+
+    @staticmethod
+    def _pairwise_reasons(
+        rec_a: dict[str, Any],
+        rec_b: dict[str, Any],
+        coverage_priorities: list[str],
+    ) -> list[str]:
+
+        reasons: list[str] = []
+
+        premium_a = rec_a["estimated_annual_premium_rs"]
+
+        premium_b = rec_b["estimated_annual_premium_rs"]
+
+        if premium_a != premium_b:
+            cheaper = (
+                rec_a["product_name"]
+                if premium_a < premium_b
+                else rec_b["product_name"]
+            )
+            diff = abs(premium_a - premium_b)
+            reasons.append(f"{cheaper} is Rs {diff} cheaper per year")
+
+        matched_a = len(rec_a["matched_coverage"])
+
+        matched_b = len(rec_b["matched_coverage"])
+
+        if matched_a != matched_b and coverage_priorities:
+            reasons.append(
+                f"{rec_a['product_name']} matches {matched_a}/"
+                f"{len(coverage_priorities)} priority coverages vs "
+                f"{rec_b['product_name']}'s {matched_b}/"
+                f"{len(coverage_priorities)}"
+            )
+
+        return reasons
+
     @staticmethod
     def _is_eligible(
         policy: pd.Series,
@@ -167,6 +385,15 @@ class PolicyRecommendationEngine:
             return False
 
         return True
+
+    def _get_policy_row(self, policy_id: str) -> pd.Series:
+
+        matches = self._catalog[self._catalog["policy_id"] == policy_id]
+
+        if matches.empty:
+            raise KeyError(f"No policy found with policy_id '{policy_id}'.")
+
+        return matches.iloc[0]
 
     @classmethod
     def _score(

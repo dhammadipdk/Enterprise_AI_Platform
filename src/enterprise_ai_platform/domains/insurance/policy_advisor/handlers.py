@@ -20,6 +20,8 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_work
     REQUIRED_SLOTS,
 )
 
+_RANK_LABELS = ["Best match", "2nd best match", "3rd best match"]
+
 
 def check_required_slots_handler(
     node: WorkflowNode,
@@ -54,6 +56,15 @@ def make_llm_node_handler(
     glossary: Any | None = None,
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
+    """
+    Build the shared LLM-node handler, closing over the ModelService
+    (and optionally KnowledgeService / JargonGlossary) to call -- the
+    injected-callable pattern used throughout this codebase.
+
+    `knowledge_service` and `glossary` are optional and untyped here
+    (Any) rather than importing their concrete classes, to avoid a
+    hard dependency for callers/tests that don't need grounding.
+    """
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
@@ -69,6 +80,14 @@ def make_llm_node_handler(
         )
 
     def _regulatory_requirement() -> str | None:
+        """
+        Retrieve the IRDAI plain-language disclosure requirement from
+        the real regulatory_knowledge corpus. Genuine RAG grounding
+        for the "Regulation" capability -- degrades silently to None
+        if knowledge_service isn't configured or retrieval fails for
+        any reason, since this is an enhancement, not something that
+        should take down the whole response.
+        """
 
         if knowledge_service is None:
             return None
@@ -107,28 +126,50 @@ def make_llm_node_handler(
                 f"(Hindi+English WhatsApp style): {message}"
             )
 
-        top = recommendations[0]
+        facts: list[str] = []
 
-        why_not_cheapest = recommendations_result.get("why_not_cheapest")
+        all_matched_coverage: set[str] = set()
 
-        facts = [
-            f"- Policy name: {top['product_name']} "
-            f"(insurer: {top['insurer_name']})",
-            f"- Annual premium: exactly Rs "
-            f"{top['estimated_annual_premium_rs']} (do not round or "
-            f"change this number)",
-            f"- Why it fits this customer: {top['plain_language_pitch']}",
-            f"- Best suited for: {top['best_for']}",
-        ]
+        for i, rec in enumerate(recommendations):
 
-        if why_not_cheapest:
-            facts.append(
-                f"- Note on pricing: {why_not_cheapest} (keep every "
-                f"number and count in this line exactly as written)"
+            label = (
+                _RANK_LABELS[i]
+                if i < len(_RANK_LABELS)
+                else f"{i + 1}th best match"
             )
 
+            facts.append(
+                f"- {label}: {rec['product_name']} "
+                f"(insurer: {rec['insurer_name']})"
+            )
+            facts.append(
+                f"  Annual premium: exactly Rs "
+                f"{rec['estimated_annual_premium_rs']} (do not round "
+                f"or change this number)"
+            )
+            facts.append(f"  Why it fits: {rec['plain_language_pitch']}")
+            facts.append(f"  Best suited for: {rec['best_for']}")
+
+            all_matched_coverage.update(rec.get("matched_coverage", []))
+
+        comparisons = recommendations_result.get("comparisons", [])
+
+        comparison_lines = [
+            reason
+            for comparison in comparisons
+            for reason in comparison["reasons"]
+        ]
+
+        if comparison_lines:
+            facts.append(
+                "\nComparison notes between the options above (keep "
+                "every number and count exactly as written):"
+            )
+            for line in comparison_lines:
+                facts.append(f"- {line}")
+
         glossary_facts = (
-            glossary.lookup_many(top.get("matched_coverage", []))
+            glossary.lookup_many(sorted(all_matched_coverage))
             if glossary is not None
             else []
         )
@@ -137,6 +178,10 @@ def make_llm_node_handler(
             "You are writing a WhatsApp message to an Indian customer "
             "in Hinglish (mixed Hindi+English, casual WhatsApp style), "
             "warm and friendly.\n\n"
+            "Present all the options below, ranked best to last, each "
+            "with its price and why it fits. Then briefly mention the "
+            "comparison notes so the customer understands the "
+            "trade-offs between the options.\n\n"
             "Below are the ONLY facts you may use. Translate/localize "
             "the language into Hinglish, but do NOT change, round, "
             "recompute, or re-derive ANY number, Rs amount, or count "
@@ -232,6 +277,12 @@ def make_tool_node_handler(
             ),
         }
 
+        # Omit budget_cap_rs entirely when unset, rather than passing
+        # None -- the input_schema declares it as {"type": "number"},
+        # not nullable, so an explicit None fails schema validation
+        # even though it's semantically "no cap". Omitting the key
+        # lets PolicyRecommendationEngine's own default (None) apply
+        # instead, without ever handing a null to the validator.
         budget_cap_rs = context.get_variable("budget_cap_rs")
 
         if budget_cap_rs is not None:

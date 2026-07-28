@@ -36,13 +36,42 @@ _RECOMMEND_INPUT_SCHEMA = {
     "required": ["vehicle_idv_rs", "vehicle_age_years"],
 }
 
+_COMPARE_INPUT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "policy_id_a": {"type": "string"},
+        "policy_id_b": {"type": "string"},
+        "vehicle_idv_rs": {"type": "number"},
+        "vehicle_age_years": {"type": "integer"},
+        "ncb_percent": {"type": "number"},
+        "ev_flag": {"type": "boolean"},
+        "coverage_priorities": {
+            "type": "array",
+            "items": {"type": "string"},
+        },
+        "budget_sensitivity_1to5": {"type": "integer"},
+        "prefers_cashless": {"type": "boolean"},
+    },
+    "required": [
+        "policy_id_a",
+        "policy_id_b",
+        "vehicle_idv_rs",
+        "vehicle_age_years",
+    ],
+}
+
 
 def register_policy_advisor_tools(
     tool_service: ToolService,
     catalog_path: Path | str,
 ) -> None:
     """
-    Register the deterministic policy recommendation tool.
+    Register Policy Advisor's tools: recommend_policies (top-N ranked
+    policies with cross-comparison) and compare_policies (two named
+    policies, head-to-head).
+
+    Both share one PolicyRecommendationEngine instance loaded from
+    the same catalog.
     """
 
     engine = PolicyRecommendationEngine(catalog_path)
@@ -53,12 +82,30 @@ def register_policy_advisor_tools(
             version="1.0.0",
             description=(
                 "Deterministically rank eligible motor insurance "
-                "policies for a customer profile. The LLM must not "
-                "re-rank or second-guess this tool's ordering -- it "
-                "only formats the result in natural language."
+                "policies for a customer profile, and compute "
+                "cross-comparison notes between the top matches. The "
+                "LLM must not re-rank or second-guess this tool's "
+                "ordering -- it only formats this tool's result in "
+                "natural language."
             ),
             category=ToolCategory.CUSTOM,
             input_schema=_RECOMMEND_INPUT_SCHEMA,
         ),
-        PythonFunctionAdapter(engine.recommend),
+        PythonFunctionAdapter(engine.recommend_with_comparison),
+    )
+
+    tool_service.register_tool(
+        ToolDefinition(
+            name="compare_policies",
+            version="1.0.0",
+            description=(
+                "Deterministically compare two named policies for a "
+                "customer profile. The LLM must not re-decide the "
+                "winner -- it only formats this tool's result in "
+                "natural language."
+            ),
+            category=ToolCategory.CUSTOM,
+            input_schema=_COMPARE_INPUT_SCHEMA,
+        ),
+        PythonFunctionAdapter(engine.compare),
     )
