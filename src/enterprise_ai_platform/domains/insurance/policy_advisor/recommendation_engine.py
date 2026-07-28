@@ -347,13 +347,30 @@ class PolicyRecommendationEngine:
         premium_b = rec_b["estimated_annual_premium_rs"]
 
         if premium_a != premium_b:
-            cheaper = (
-                rec_a["product_name"]
-                if premium_a < premium_b
-                else rec_b["product_name"]
-            )
+
+            if premium_a < premium_b:
+                cheaper_name, pricier_name = (
+                    rec_a["product_name"],
+                    rec_b["product_name"],
+                )
+            else:
+                cheaper_name, pricier_name = (
+                    rec_b["product_name"],
+                    rec_a["product_name"],
+                )
+
             diff = abs(premium_a - premium_b)
-            reasons.append(f"{cheaper} is Rs {diff} cheaper per year")
+
+            # Both policy names in ONE sentence, deliberately -- a
+            # comparison fact that only names the cheaper side lets a
+            # small model lose track of which pair a number belongs
+            # to once there's more than one comparison in the prompt
+            # (confirmed: this exact ambiguity caused a real
+            # misattributed-number error in production output).
+            reasons.append(
+                f"{cheaper_name} is Rs {diff} cheaper than "
+                f"{pricier_name} per year"
+            )
 
         matched_a = len(rec_a["matched_coverage"])
 
