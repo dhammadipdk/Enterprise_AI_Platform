@@ -572,30 +572,53 @@ class PolicyRecommendationEngine:
                 (premium - budget_cap_rs) / budget_cap_rs,
             )
 
-        match_reasons: list[str] = []
+        match_reasons: list[dict[str, str]] = []
 
         context_bonus = 0.0
 
         if flood_exposed and policy.get("engine_protect"):
             context_bonus += 15
             match_reasons.append(
-                "Engine protection matters for you: your area has "
-                "flood risk"
+                {
+                    "coverage": "engine_protect",
+                    "reason": (
+                        "Engine protection matters for you: your area "
+                        "has flood risk"
+                    ),
+                }
             )
 
         if financed_vehicle and policy.get("return_to_invoice"):
             context_bonus += 10
             match_reasons.append(
-                "Return to Invoice matters for you: vehicle is financed"
+                {
+                    "coverage": "return_to_invoice",
+                    "reason": (
+                        "Return to Invoice matters for you: vehicle "
+                        "is financed"
+                    ),
+                }
             )
 
-        if family_usage and (
-            policy.get("passenger_cover")
-            or policy.get("personal_accident_cover")
-        ):
+        if family_usage and policy.get("passenger_cover"):
             context_bonus += 8
             match_reasons.append(
-                "Passenger/accident cover matters for you: family usage"
+                {
+                    "coverage": "passenger_cover",
+                    "reason": "Passenger cover matters for you: family usage",
+                }
+            )
+
+        if family_usage and policy.get("personal_accident_cover"):
+            context_bonus += 8
+            match_reasons.append(
+                {
+                    "coverage": "personal_accident_cover",
+                    "reason": (
+                        "Personal accident cover matters for you: "
+                        "family usage"
+                    ),
+                }
             )
 
         score = (

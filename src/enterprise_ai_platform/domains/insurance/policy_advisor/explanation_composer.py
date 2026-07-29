@@ -18,31 +18,56 @@ class ExplanationComposer:
     This exists because handing an LLM a flat pile of facts,
     match_reasons, and comparison notes for multiple policies at once
     asks it to do ATTRIBUTION work (which reason belongs to which
-    policy and which coverage) that a small model does unreliably --
-    confirmed in real testing: reasons got attached to the wrong
-    coverage, and even to the wrong policy, despite explicit prompt
-    instructions telling it not to. The fix is not a better-worded
-    instruction; it's not asking the LLM to do that binding at all.
+    policy and which coverage) that a small model does unreliably.
     Attribution is already 100% known and correct in the structured
-    data (PolicyRecommendationEngine computed it); composing it into
-    text is pure formatting and belongs in code, matching this
-    platform's core principle throughout ("the LLM never decides,
-    it only explains"). The LLM's only remaining job, once this
-    composer has run, is retelling already-correct text in a warmer
-    tone and in Hinglish -- not deciding what connects to what.
+    data; composing it into text is pure formatting and belongs in
+    code, matching this platform's core principle throughout ("the
+    LLM never decides, it only explains"). The LLM's only remaining
+    job, once this composer has run, is retelling already-correct
+    text in a warmer tone and in Hinglish.
 
-    Deliberately NOT metadata-specific or situation-specific: this
-    doesn't know or care what a match_reason SAYS, only that it
-    belongs to the policy dict it was read from. Works identically
-    for any coverage, any reason, any number of policies, without
-    needing new code when the underlying metadata grows.
+    Optionally takes a glossary (JargonGlossary) to look up proper
+    display labels for matched coverage that has no specific
+    situational reason attached -- reusing the SAME label data
+    already curated for jargon explanation, rather than inventing a
+    separate humanization scheme for coverage names.
     """
+
+    def __init__(self, glossary: Any | None = None) -> None:
+
+        self._glossary = glossary
+
+    def _humanize_coverage(self, coverage_term: str) -> str:
+
+        if self._glossary is not None:
+
+            entry = self._glossary.lookup(coverage_term)
+
+            if entry is not None:
+                label, _definition = entry
+                return label
+
+        return coverage_term.replace("_", " ")
+
+    def _join_labels(self, labels: list[str]) -> str:
+
+        if len(labels) == 1:
+            return labels[0]
+
+        if len(labels) == 2:
+            return f"{labels[0]} and {labels[1]}"
+
+        return ", ".join(labels[:-1]) + f", and {labels[-1]}"
 
     def compose_policy_paragraph(self, rec: dict[str, Any]) -> str:
         """
         One policy's complete, self-contained paragraph: premium,
-        pitch, and every match_reason that belongs to it -- and only
-        to it.
+        pitch, every match_reason that belongs specifically to it,
+        and a plain confirmation of any OTHER matched coverage that
+        has no specific situational reason -- so a customer who asked
+        for something (e.g. roadside assistance) that simply doesn't
+        have a special "why" attached still hears it's included,
+        rather than it silently disappearing from the narrative.
         """
 
         sentences = [
@@ -51,8 +76,21 @@ class ExplanationComposer:
             rec["plain_language_pitch"],
         ]
 
-        for reason in rec.get("match_reasons", []):
-            sentences.append(f"{reason}.")
+        reasoned_coverage: set[str] = set()
+
+        for match_reason in rec.get("match_reasons", []):
+            sentences.append(f"{match_reason['reason']}.")
+            reasoned_coverage.add(match_reason["coverage"])
+
+        remaining_coverage = [
+            c
+            for c in rec.get("matched_coverage", [])
+            if c not in reasoned_coverage
+        ]
+
+        if remaining_coverage:
+            labels = [self._humanize_coverage(c) for c in remaining_coverage]
+            sentences.append(f"It also includes {self._join_labels(labels)}.")
 
         return " ".join(sentences)
 
@@ -62,10 +100,7 @@ class ExplanationComposer:
     ) -> str:
         """
         The full, ready-to-retell text for a top-N recommendation
-        result: one paragraph per policy (each self-contained, no
-        cross-policy ambiguity), then the comparison notes (each
-        already a complete sentence naming both policies), then any
-        why-not-cheapest note.
+        result.
         """
 
         recommendations = recommendations_result.get("recommendations", [])

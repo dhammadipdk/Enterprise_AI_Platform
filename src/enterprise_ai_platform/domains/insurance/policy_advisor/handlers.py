@@ -78,7 +78,7 @@ def make_llm_node_handler(
     explanation_composer.py's docstring for why.
     """
 
-    composer = ExplanationComposer()
+    composer = ExplanationComposer(glossary)
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
