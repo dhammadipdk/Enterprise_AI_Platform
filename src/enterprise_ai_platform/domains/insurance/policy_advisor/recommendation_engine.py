@@ -13,16 +13,24 @@ import pandas as pd
 # Real customer_profiles.coverage_priorities values include terms that
 # are NOT policy_catalog boolean column names -- they're preference
 # signals about HOW to weight scoring dimensions, not coverage flags
-# to match against. Confirmed against real data: "digital_servicing",
-# "cashless_strength", "price_control" all appear in real
-# coverage_priorities values but have no matching boolean column
-# (the real columns are digital_servicing_score, cashless_garage_score,
-# etc. -- different names entirely). Treating these as flag names to
-# match would silently under-count them, every time, for every
-# customer who uses this vocabulary.
+# to match against.
 _PREFERENCE_TERMS = {"digital_servicing", "cashless_strength", "price_control"}
 
 _RISK_LOADING = {"high": 1.15, "medium": 1.0, "low": 0.95}
+
+# Used for genuine, honest tradeoff explanations between any two
+# scored policies -- e.g. explaining why a pricier option outranks a
+# cheaper one on quality grounds, not just "it costs more." Threshold
+# exists so noise-level score differences (e.g. 89 vs 91) don't get
+# reported as if they were meaningful.
+_QUALITY_FIELDS = [
+    ("cashless_garage_score", "cashless garage network"),
+    ("claim_support_score", "claim support"),
+    ("digital_servicing_score", "digital servicing"),
+    ("service_score", "overall service"),
+]
+
+_QUALITY_DIFF_THRESHOLD = 5
 
 
 class PolicyRecommendationEngine:
@@ -37,27 +45,26 @@ class PolicyRecommendationEngine:
     profile -- nothing here is an LLM call, so it's fast,
     deterministic, and fully explainable.
 
+    Every comparison this engine produces (top-vs-cheapest,
+    pairwise-among-top-N) goes through the SAME _compare_two_policies
+    method, which reports not just price differences but the
+    strongest quality-score differentiators driving a ranking --
+    added specifically because ranking a pricier policy #1 without
+    ever surfacing WHY (e.g. its actually-stronger claim support or
+    cashless network) left the customer with no real justification
+    for the recommendation, just a price tag. When nothing genuinely
+    differs beyond price, the comparison says so honestly rather than
+    manufacturing a reason.
+
     IMPORTANT: pandas reads CSV boolean columns back as numpy.bool_,
     not Python's native bool -- `numpy.True_ is True` evaluates to
-    False. Every boolean flag check here uses truthiness (`if
-    policy.get(flag):`), never identity (`is True`).
+    False. Every boolean flag check here uses truthiness, never
+    identity.
 
     This is a deliberately hand-designed scoring formula, not a
     reverse-engineered match of the source dataset's own premium/
     suitability numbers -- confirmed by testing several candidate
-    formulas against real rows; none matched exactly, and the
-    dataset's own values likely depend on additional hidden factors.
-
-    Every new parameter added beyond the original formula (mileage,
-    financed_vehicle, family_usage, digital_affinity_1to5,
-    protection_preference, wants_lowest_price, flood_exposed,
-    risk_band) defaults to a value that preserves the ORIGINAL scoring
-    behavior exactly when omitted -- verified by re-running every
-    existing test scenario against this version before treating it as
-    complete. None of these are optional conveniences bolted on
-    carelessly; each was checked against real catalog/customer data
-    before being included (see risk_scoring_engine.py's docstring for
-    the same discipline applied to risk banding).
+    formulas against real rows; none matched exactly.
     """
 
     def __init__(self, catalog_path: Path | str) -> None:
@@ -86,15 +93,9 @@ class PolicyRecommendationEngine:
     ) -> dict[str, Any]:
         """
         Return the top `top_n` eligible policies ranked by
-        suitability, plus a "why not the cheapest" explanation when
-        the top pick isn't the lowest-premium eligible option.
-
-        `flood_exposed`/`financed_vehicle`/`family_usage` surface
-        proactive coverage relevance the customer may not have
-        thought to ask for (e.g. engine_protect for a flood-prone
-        area) -- each match includes a `match_reasons` entry
-        explaining WHY, tied to the specific customer fact that
-        justified it, not just "this policy has X".
+        suitability, plus a genuine, honest explanation of why the
+        top pick was chosen over the cheapest eligible option when
+        they differ.
         """
 
         flag_terms, preference_terms = self._parse_coverage_priorities(
@@ -144,6 +145,12 @@ class PolicyRecommendationEngine:
                     "plain_language_pitch": policy["plain_language_pitch"],
                     "matched_coverage": matched_coverage,
                     "match_reasons": match_reasons,
+                    "cashless_garage_score": policy["cashless_garage_score"],
+                    "claim_support_score": policy["claim_support_score"],
+                    "digital_servicing_score": policy[
+                        "digital_servicing_score"
+                    ],
+                    "service_score": policy["service_score"],
                 }
             )
 
@@ -173,15 +180,25 @@ class PolicyRecommendationEngine:
         why_not_cheapest = None
 
         if top[0]["policy_id"] != cheapest["policy_id"]:
-            why_not_cheapest = (
-                f"{cheapest['product_name']} is cheaper "
-                f"(Rs {cheapest['estimated_annual_premium_rs']}) but "
-                f"ranked lower: it matches "
-                f"{len(cheapest['matched_coverage'])} of "
-                f"{len(flag_terms)} priority coverages you asked for, "
-                f"versus {len(top[0]['matched_coverage'])} for the top "
-                f"recommendation."
+
+            comparison_reasons = self._compare_two_policies(
+                top[0], cheapest, flag_terms
             )
+
+            if comparison_reasons:
+                why_not_cheapest = (
+                    f"{top[0]['product_name']} was chosen as the top "
+                    f"pick over the cheaper {cheapest['product_name']} "
+                    f"because: {'; '.join(comparison_reasons)}."
+                )
+            else:
+                why_not_cheapest = (
+                    f"{cheapest['product_name']} (Rs "
+                    f"{cheapest['estimated_annual_premium_rs']}) offers "
+                    f"very similar coverage and quality at a lower "
+                    f"price -- a reasonable alternative if budget is "
+                    f"the main priority."
+                )
 
         return {
             "recommendations": top,
@@ -212,7 +229,8 @@ class PolicyRecommendationEngine:
     ) -> dict[str, Any]:
         """
         Same as recommend(), but additionally computes pairwise
-        comparison reasons between every pair of the returned top_n
+        comparison reasons (price, coverage, AND quality
+        differentiators) between every pair of the returned top_n
         policies.
         """
 
@@ -245,7 +263,7 @@ class PolicyRecommendationEngine:
         for i in range(len(recommendations)):
             for j in range(i + 1, len(recommendations)):
 
-                reasons = self._pairwise_reasons(
+                reasons = self._compare_two_policies(
                     recommendations[i],
                     recommendations[j],
                     flag_terms,
@@ -320,29 +338,29 @@ class PolicyRecommendationEngine:
 
         winner_id = policy_id_a if winner_is_a else policy_id_b
 
-        reasons: list[str] = []
+        candidate_a = {
+            "policy_id": policy_id_a,
+            "product_name": policy_a["product_name"],
+            "estimated_annual_premium_rs": premium_a,
+            "matched_coverage": matched_a,
+            "cashless_garage_score": policy_a["cashless_garage_score"],
+            "claim_support_score": policy_a["claim_support_score"],
+            "digital_servicing_score": policy_a["digital_servicing_score"],
+            "service_score": policy_a["service_score"],
+        }
 
-        if premium_a != premium_b:
-            cheaper = "A" if premium_a < premium_b else "B"
-            diff = abs(premium_a - premium_b)
-            reasons.append(f"Policy {cheaper} is Rs {diff} cheaper per year")
+        candidate_b = {
+            "policy_id": policy_id_b,
+            "product_name": policy_b["product_name"],
+            "estimated_annual_premium_rs": premium_b,
+            "matched_coverage": matched_b,
+            "cashless_garage_score": policy_b["cashless_garage_score"],
+            "claim_support_score": policy_b["claim_support_score"],
+            "digital_servicing_score": policy_b["digital_servicing_score"],
+            "service_score": policy_b["service_score"],
+        }
 
-        if len(matched_a) != len(matched_b):
-            reasons.append(
-                f"Policy A matches {len(matched_a)}/{len(flag_terms)} "
-                f"priority coverages vs Policy B's {len(matched_b)}/"
-                f"{len(flag_terms)}"
-            )
-
-        if (
-            policy_a["cashless_garage_score"]
-            != policy_b["cashless_garage_score"]
-        ):
-            reasons.append(
-                f"Cashless garage score: A="
-                f"{policy_a['cashless_garage_score']} vs B="
-                f"{policy_b['cashless_garage_score']}"
-            )
+        reasons = self._compare_two_policies(candidate_a, candidate_b, flag_terms)
 
         other_better_when = None
 
@@ -362,7 +380,8 @@ class PolicyRecommendationEngine:
 
                 other_better_when = (
                     f"{cheaper_name} may still suit a customer who "
-                    f"prioritizes lowest price over coverage breadth."
+                    f"prioritizes lowest price over coverage/quality "
+                    f"breadth."
                 )
 
         return {
@@ -391,12 +410,6 @@ class PolicyRecommendationEngine:
     def _parse_coverage_priorities(
         coverage_priorities: list[str] | None,
     ) -> tuple[list[str], list[str]]:
-        """
-        Split raw coverage_priorities into (flag_terms,
-        preference_terms) -- flag_terms are matched against policy
-        boolean columns; preference_terms adjust scoring weights
-        instead (see _PREFERENCE_TERMS's module docstring).
-        """
 
         coverage_priorities = coverage_priorities or []
 
@@ -411,11 +424,26 @@ class PolicyRecommendationEngine:
         return flag_terms, preference_terms
 
     @staticmethod
-    def _pairwise_reasons(
+    def _compare_two_policies(
         rec_a: dict[str, Any],
         rec_b: dict[str, Any],
         flag_terms: list[str],
+        max_quality_reasons: int = 2,
     ) -> list[str]:
+        """
+        The single source of truth for comparing any two scored
+        candidates -- used for both top-vs-cheapest and pairwise-
+        among-top-N comparisons, so the reasoning is always consistent
+        wherever two policies are compared.
+
+        Reports price and coverage-match differences (as before), AND
+        the most significant quality-score differentiators (capped at
+        `max_quality_reasons`, ranked by how large the gap actually is,
+        so the explanation stays focused rather than dumping every
+        stat) -- this is what makes a ranking honestly explainable
+        when coverage match is tied, which price/coverage alone
+        couldn't do.
+        """
 
         reasons: list[str] = []
 
@@ -453,6 +481,37 @@ class PolicyRecommendationEngine:
                 f"{len(flag_terms)} priority coverages vs "
                 f"{rec_b['product_name']}'s {matched_b}/"
                 f"{len(flag_terms)}"
+            )
+
+        quality_diffs = []
+
+        for field, label in _QUALITY_FIELDS:
+
+            diff = rec_a[field] - rec_b[field]
+
+            if abs(diff) >= _QUALITY_DIFF_THRESHOLD:
+                quality_diffs.append((abs(diff), field, label, diff))
+
+        quality_diffs.sort(key=lambda item: item[0], reverse=True)
+
+        for _, field, label, diff in quality_diffs[:max_quality_reasons]:
+
+            if diff > 0:
+                better_name, worse_name = (
+                    rec_a["product_name"],
+                    rec_b["product_name"],
+                )
+                better_score, worse_score = rec_a[field], rec_b[field]
+            else:
+                better_name, worse_name = (
+                    rec_b["product_name"],
+                    rec_a["product_name"],
+                )
+                better_score, worse_score = rec_b[field], rec_a[field]
+
+            reasons.append(
+                f"{better_name} has stronger {label} than {worse_name} "
+                f"({better_score} vs {worse_score})"
             )
 
         return reasons
@@ -512,7 +571,7 @@ class PolicyRecommendationEngine:
         wants_lowest_price: bool,
         flood_exposed: bool,
         risk_band: str | None,
-    ) -> tuple[float, int, list[str]]:
+    ) -> tuple[float, int, list[dict[str, str]]]:
 
         premium = cls._estimate_premium(
             policy, vehicle_idv, ncb_percent, risk_band, annual_mileage_km
@@ -524,8 +583,6 @@ class PolicyRecommendationEngine:
             else 0.0
         )
 
-        # cashless_strength (preference term) triggers the same boost
-        # prefers_cashless does -- either signal means the same thing.
         effective_prefers_cashless = (
             prefers_cashless or "cashless_strength" in preference_terms
         )
@@ -534,8 +591,6 @@ class PolicyRecommendationEngine:
 
         cashless_weight = 1.5 if effective_prefers_cashless else 1.0
 
-        # None preserves the ORIGINAL flat weight of 1.0 exactly --
-        # only scales when a real digital_affinity value is given.
         if digital_affinity_1to5 is None:
             digital_weight = 1.0
         else:
@@ -644,12 +699,6 @@ class PolicyRecommendationEngine:
 
         premium = base * (1 - ncb_percent / 100) * policy["premium_multiplier"]
 
-        # Only applied when we've actually confirmed the customer's
-        # mileage -- a policy's own low_mileage_discount_pct field
-        # existing doesn't mean this specific customer qualifies for
-        # it; that's only known once annual_mileage_km is given (and
-        # eligibility, checked separately, already confirms it's
-        # within the policy's cap when it's known).
         if annual_mileage_km is not None and policy.get(
             "low_mileage_discount_pct"
         ):
