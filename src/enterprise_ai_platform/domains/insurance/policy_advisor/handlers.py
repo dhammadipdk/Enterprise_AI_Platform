@@ -14,14 +14,15 @@ from enterprise_ai_platform.model_engine import ModelService
 from enterprise_ai_platform.tool_engine import ToolService
 from enterprise_ai_platform.workflow_engine import ExecutionContext, WorkflowNode
 
+from enterprise_ai_platform.domains.insurance.policy_advisor.explanation_composer import (
+    ExplanationComposer,
+)
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
     REQUIRED_SLOTS,
 )
 from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
     RiskScoringEngine,
 )
-
-_RANK_LABELS = ["Best match", "2nd best match", "3rd best match"]
 
 
 def check_required_slots_handler(
@@ -68,9 +69,16 @@ def make_llm_node_handler(
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
-    Build the shared LLM-node handler, closing over the ModelService
-    (and optionally KnowledgeService / JargonGlossary) to call.
+    Build the shared LLM-node handler.
+
+    For explanation/comparison, the LLM's job is deliberately narrow:
+    retell ALREADY fact-checked, ALREADY correctly-attributed text
+    (built by ExplanationComposer) in a warmer tone and in Hinglish --
+    not to figure out which fact belongs where. See
+    explanation_composer.py's docstring for why.
     """
+
+    composer = ExplanationComposer()
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
@@ -86,12 +94,6 @@ def make_llm_node_handler(
         )
 
     def _regulatory_requirement() -> str | None:
-        """
-        Retrieve the IRDAI plain-language disclosure requirement from
-        the real regulatory_knowledge corpus. Degrades silently to
-        None if knowledge_service isn't configured or retrieval fails
-        for any reason.
-        """
 
         if knowledge_service is None:
             return None
@@ -145,51 +147,29 @@ def make_llm_node_handler(
             "without defining it."
         )
 
-    def _facts_to_natural_prompt(
-        facts: list[str],
-        situational_reasons: list[str],
-        intro: str,
-    ) -> str:
+    def _retelling_prompt(composed_text: str, intro: str) -> str:
         """
-        Shared prompt-building for both explanation and comparison --
-        explicitly instructs against mirroring the fact list's own
-        structure in the output (labels, bullets, headers), which is
-        what caused an earlier "form-filled" style response. The fact
-        list itself stays structured internally (for the model to
-        read precisely) -- only the OUTPUT is asked to be natural
-        prose.
+        The narrowed prompt: retell already-correct, already-attributed
+        text. No facts to bind, no reasons to assign -- that work is
+        already done by ExplanationComposer.
         """
 
-        prompt = (
-            "You are an experienced, warm human insurance agent "
-            "replying to a customer on WhatsApp, in Hinglish "
-            "(mixed Hindi+English, casual conversational tone). "
-            f"{intro}\n\n"
+        return (
+            "You are an experienced, warm insurance agent talking to "
+            "a customer on WhatsApp, in Hinglish (mixed Hindi+English, "
+            f"casual conversational tone). {intro}\n\n"
             "Speak the way a real agent actually talks -- flowing "
-            "sentences, like you're chatting with someone in person. "
-            "Do NOT use bullet points, numbered lists, bold headers, "
-            "or labeled fields (no 'Price:', no 'Best for:', no "
-            "'Policy name:'). Weave the facts into natural "
-            "paragraphs instead.\n\n"
-            "Below are the ONLY facts you may use. You may rephrase "
-            "and reorder freely, but do NOT change, round, recompute, "
-            "or re-derive ANY number, Rs amount, or count -- copy "
-            "every number exactly as it appears, and never combine "
-            "or confuse numbers from two different facts:\n\n"
-            + "\n".join(facts)
+            "sentences, no bullet points, no numbered lists, no bold "
+            "headers, no labeled fields.\n\n"
+            "Below is the exact information to retell -- it has "
+            "already been fact-checked and correctly organized. "
+            "Retell it faithfully in your own natural words. Do NOT "
+            "change any number. Do NOT invent any additional fact, "
+            "reason, or comparison beyond what is written here. Do "
+            "NOT move any sentence to a different policy than the "
+            "one it appears under below:\n\n"
+            + composed_text
         )
-
-        if situational_reasons:
-            prompt += (
-                "\n\nThese specific reasons matter for THIS customer "
-                "-- mention them naturally as part of your "
-                "explanation (e.g. 'roadside assistance is useful "
-                "here since you drive long distance often'), don't "
-                "just list them:\n"
-                + "\n".join(f"- {r}" for r in situational_reasons)
-            )
-
-        return prompt
 
     def _format_explanation(context: ExecutionContext) -> str:
 
@@ -206,73 +186,19 @@ def make_llm_node_handler(
                 "No matching policies were found.",
             )
             return (
-                f"Explain this to the customer warmly, as a real "
-                f"insurance agent would, in Hinglish (Hindi+English "
+                f"You are a warm insurance agent. Retell this to the "
+                f"customer in natural Hinglish (Hindi+English "
                 f"WhatsApp style): {message}"
             )
 
-        facts: list[str] = []
+        composed_text = composer.compose_recommendation_summary(
+            recommendations_result
+        )
 
         all_matched_coverage: set[str] = set()
 
-        common_coverage = set(recommendations[0].get("matched_coverage", []))
-
-        for rec in recommendations[1:]:
-            common_coverage &= set(rec.get("matched_coverage", []))
-
-        situational_reasons: list[str] = []
-
-        for i, rec in enumerate(recommendations):
-
-            label = (
-                _RANK_LABELS[i]
-                if i < len(_RANK_LABELS)
-                else f"{i + 1}th best match"
-            )
-
-            facts.append(
-                f"- {label}: {rec['product_name']} "
-                f"(insurer: {rec['insurer_name']})"
-            )
-            facts.append(
-                f"  Annual premium: exactly Rs "
-                f"{rec['estimated_annual_premium_rs']} (do not round "
-                f"or change this number)"
-            )
-            facts.append(f"  Why it fits: {rec['plain_language_pitch']}")
-            facts.append(f"  Best suited for: {rec['best_for']}")
-
+        for rec in recommendations:
             all_matched_coverage.update(rec.get("matched_coverage", []))
-
-            situational_reasons.extend(rec.get("match_reasons", []))
-
-        if common_coverage:
-            facts.append(
-                f"\n- IMPORTANT: ALL {len(recommendations)} options "
-                f"above genuinely include: "
-                f"{', '.join(sorted(common_coverage))}. Do not say "
-                f"any of these are unavailable or not applicable -- "
-                f"they apply to every option listed above."
-            )
-
-        comparisons = recommendations_result.get("comparisons", [])
-
-        comparison_lines = [
-            reason
-            for comparison in comparisons
-            for reason in comparison["reasons"]
-        ]
-
-        if comparison_lines:
-            facts.append(
-                "\nComparison notes between the options above -- each "
-                "line already names both policies being compared; "
-                "keep every number, name, and pairing exactly as "
-                "written, do not mix numbers from different lines "
-                "together:"
-            )
-            for line in comparison_lines:
-                facts.append(f"- {line}")
 
         glossary_facts = (
             glossary.lookup_many(sorted(all_matched_coverage))
@@ -280,14 +206,12 @@ def make_llm_node_handler(
             else []
         )
 
-        prompt = _facts_to_natural_prompt(
-            facts,
-            situational_reasons,
+        prompt = _retelling_prompt(
+            composed_text,
             intro=(
-                "Present the options below, best match first, "
-                "explaining what each is and why it fits, then "
-                "mention how they compare -- like you're walking the "
-                "customer through your recommendation."
+                "Present the options below, best match first, then "
+                "how they compare -- like you're walking the customer "
+                "through your recommendation."
             ),
         )
 
@@ -301,50 +225,13 @@ def make_llm_node_handler(
 
         comparison_result = context.get_variable("comparison_result", {})
 
+        composed_text = composer.compose_comparison_summary(
+            comparison_result
+        )
+
         policy_a = comparison_result.get("policy_a", {})
 
         policy_b = comparison_result.get("policy_b", {})
-
-        winner_id = comparison_result.get("winner_policy_id")
-
-        winner_name = (
-            policy_a.get("product_name")
-            if winner_id == policy_a.get("policy_id")
-            else policy_b.get("product_name")
-        )
-
-        facts = [
-            f"- Policy A: {policy_a.get('product_name')}, annual "
-            f"premium exactly Rs "
-            f"{policy_a.get('estimated_annual_premium_rs')} (do not "
-            f"round or change this number)",
-            f"- Policy B: {policy_b.get('product_name')}, annual "
-            f"premium exactly Rs "
-            f"{policy_b.get('estimated_annual_premium_rs')} (do not "
-            f"round or change this number)",
-            f"- Better overall fit for this customer: {winner_name}",
-        ]
-
-        reasons = comparison_result.get("reasons", [])
-
-        if reasons:
-            facts.append(
-                "- Reasons (each line is already complete -- keep "
-                "every number and name exactly as written, do not mix "
-                "numbers between lines):"
-            )
-            for reason in reasons:
-                facts.append(f"  - {reason}")
-
-        other_better_when = comparison_result.get("other_better_when")
-
-        if other_better_when:
-            facts.append(f"- Exception worth mentioning: {other_better_when}")
-
-        situational_reasons = (
-            policy_a.get("match_reasons", [])
-            + policy_b.get("match_reasons", [])
-        )
 
         all_matched_coverage = set(
             policy_a.get("matched_coverage", [])
@@ -356,9 +243,8 @@ def make_llm_node_handler(
             else []
         )
 
-        prompt = _facts_to_natural_prompt(
-            facts,
-            situational_reasons,
+        prompt = _retelling_prompt(
+            composed_text,
             intro=(
                 "The customer asked you to compare two specific "
                 "policies by name -- give them your honest "
@@ -465,7 +351,17 @@ def make_tool_node_handler(
             "wants_lowest_price": context.get_variable(
                 "wants_lowest_price", False
             ),
-            "flood_exposed": risk_result["flood_exposed"],
+            # An explicitly-set flood_exposed/theft_exposed must never
+            # be silently discarded just because we don't ALSO have
+            # the raw factors to derive it independently -- an
+            # explicit signal (e.g. from a future memory/extraction
+            # layer that already inferred this from "I live in
+            # Mumbai") is at least as trustworthy as a freshly-computed
+            # one, so either being true is enough.
+            "flood_exposed": (
+                risk_result["flood_exposed"]
+                or context.get_variable("flood_exposed", False)
+            ),
             "risk_band": risk_result["risk_band"],
         }
 
