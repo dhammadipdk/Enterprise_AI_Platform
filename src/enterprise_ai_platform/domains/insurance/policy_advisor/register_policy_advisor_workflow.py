@@ -25,6 +25,12 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_work
 from enterprise_ai_platform.domains.insurance.policy_advisor.tools import (
     register_policy_advisor_tools,
 )
+from enterprise_ai_platform.domains.insurance.policy_advisor.handlers import (
+    check_required_slots_handler,
+    ensure_session_handler,
+    make_llm_node_handler,
+    make_tool_node_handler,
+)
 
 
 def register_policy_advisor_workflow(
@@ -68,3 +74,8 @@ def register_policy_advisor_workflow(
     )
 
     workflow_service.register_workflow(POLICY_ADVISOR_WORKFLOW)
+    
+    workflow_service.register_node_handler(
+        NodeType.TASK,
+        ensure_session_handler,
+    )

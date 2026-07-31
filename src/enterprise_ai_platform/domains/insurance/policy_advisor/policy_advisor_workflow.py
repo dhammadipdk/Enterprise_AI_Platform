@@ -10,10 +10,16 @@ REQUIRED_SLOTS = ["vehicle_idv_rs", "vehicle_age_years"]
 
 POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
     "name": "policy_advisor",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "entry_node": "start",
     "nodes": [
         {"id": "start", "name": "Start", "node_type": "start"},
+        {
+            "id": "ensure_session",
+            "name": "Ensure Session Identifier",
+            "node_type": "task",
+            "outputs": ["session_id"],
+        },
         {
             "id": "check_slots",
             "name": "Check Required Slots And Route",
@@ -64,7 +70,8 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
         {"id": "end_compare", "name": "End (Compared)", "node_type": "end"},
     ],
     "edges": [
-        {"source": "start", "destination": "check_slots"},
+        {"source": "start", "destination": "ensure_session"},
+        {"source": "ensure_session", "destination": "check_slots"},
         {
             "source": "check_slots",
             "destination": "ask_clarifying_question",

@@ -74,6 +74,7 @@ def test_complete_info_reaches_recommendation_path(services) -> None:
 
     assert path == [
         "start",
+        "ensure_session",
         "check_slots",
         "get_recommendations",
         "format_explanation",
@@ -100,11 +101,11 @@ def test_missing_info_reaches_clarifying_question_path(services) -> None:
 
     assert path == [
         "start",
+        "ensure_session",
         "check_slots",
         "ask_clarifying_question",
         "end_ask",
     ]
-
     assert instance.context.get_variable("response_text") is not None
 
 

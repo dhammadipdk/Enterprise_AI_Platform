@@ -310,6 +310,28 @@ def make_llm_node_handler(
 
     return llm_node_handler
 
+def ensure_session_handler(
+    node: WorkflowNode,
+    context: ExecutionContext,
+) -> dict[str, Any]:
+    """
+    First node in the graph: preserves an existing session_id if the
+    caller supplied one (a continuing conversation), or generates a
+    new one if not (a fresh conversation). System-generated for now --
+    once real WhatsApp/auth integration exists, the caller will pass
+    a real, persistent identity in as session_id instead, and this
+    node's generation path simply won't fire.
+    """
+
+    session_id = context.get_variable("session_id")
+
+    if session_id is None:
+        import uuid
+
+        session_id = str(uuid.uuid4())
+
+    return {"session_id": session_id}
+
 
 def make_tool_node_handler(
     tool_service: ToolService,
