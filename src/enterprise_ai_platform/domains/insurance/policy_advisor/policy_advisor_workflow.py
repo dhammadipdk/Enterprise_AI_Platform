@@ -8,9 +8,56 @@ from typing import Any
 
 REQUIRED_SLOTS = ["vehicle_idv_rs", "vehicle_age_years"]
 
+# Every field the extraction node can populate -- shared with the
+# node's declared `outputs` so nothing extracted is silently dropped
+# (WorkflowRuntime only promotes a node's DECLARED outputs into
+# context variables; an undeclared key in a handler's return dict is
+# simply not accessible downstream).
+EXTRACTABLE_PROFILE_FIELDS = [
+    "name",
+    # Tier 1 -- hard required
+    "vehicle_idv_rs",
+    "vehicle_age_years",
+    # Tier 2 -- inferred from message + world knowledge, never a
+    # dedicated question
+    "fuel_type",
+    "ev_flag",
+    "annual_mileage_km",
+    "ncb_percent",
+    "residence_cluster",
+    "city_risk_band",
+    "flood_risk_band",
+    "commute_pattern",
+    "financed_vehicle",
+    "family_usage",
+    "dependents",
+    "vehicle_segment",
+    "protection_preference",
+    "wants_lowest_price",
+    "coverage_priorities",
+    "prefers_cashless",
+    # Tier 3 -- only if volunteered, never asked, retained if learned
+    "theft_history",
+    "previous_claims_3yr",
+    "at_fault_claims_3yr",
+    "traffic_violations_3yr",
+    "anti_theft_device",
+    "adas_level",
+    "parking_type",
+    "driving_experience_years",
+    "insurance_history_years",
+    "digital_affinity_1to5",
+    "telematics_opt_in",
+    "prior_policy_lapse",
+    "needs_plain_language_1to5",
+    "age",
+    # Metadata, not a profile fact
+    "is_chitchat_only",
+]
+
 POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
     "name": "policy_advisor",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "entry_node": "start",
     "nodes": [
         {"id": "start", "name": "Start", "node_type": "start"},
@@ -19,6 +66,12 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Ensure Session Identifier",
             "node_type": "task",
             "outputs": ["session_id"],
+        },
+        {
+            "id": "extract_and_merge_profile",
+            "name": "Extract And Merge Customer Profile",
+            "node_type": "memory",
+            "outputs": EXTRACTABLE_PROFILE_FIELDS,
         },
         {
             "id": "check_slots",
@@ -71,7 +124,8 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
     ],
     "edges": [
         {"source": "start", "destination": "ensure_session"},
-        {"source": "ensure_session", "destination": "check_slots"},
+        {"source": "ensure_session", "destination": "extract_and_merge_profile"},
+        {"source": "extract_and_merge_profile", "destination": "check_slots"},
         {
             "source": "check_slots",
             "destination": "ask_clarifying_question",

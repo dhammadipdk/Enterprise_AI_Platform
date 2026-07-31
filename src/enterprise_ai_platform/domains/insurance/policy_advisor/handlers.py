@@ -87,13 +87,24 @@ def make_llm_node_handler(
 
         missing_slots = context.get_metadata("missing_slots", [])
 
+        is_chitchat_only = context.get_variable("is_chitchat_only", False)
+
+        chitchat_note = (
+            "The customer's message was just a greeting/small talk "
+            "with no insurance content -- warmly acknowledge it "
+            "first, in a natural way, before asking for what's "
+            "missing. "
+            if is_chitchat_only
+            else ""
+        )
+
         return (
-            "Customer wants motor insurance advice on WhatsApp. We "
-            f"still need: {', '.join(missing_slots)}. Ask ONE short, "
-            "friendly question in Hinglish (Hindi+English WhatsApp "
-            "style) to get this missing information. Do not ask for "
-            "anything else, and do not repeat information already "
-            "known."
+            f"{chitchat_note}Customer wants motor insurance advice "
+            f"on WhatsApp. We still need: {', '.join(missing_slots)}. "
+            f"Ask ONE short, friendly question in Hinglish "
+            f"(Hindi+English WhatsApp style) to get this missing "
+            f"information. Do not ask for anything else, and do not "
+            f"repeat information already known."
         )
 
     def _regulatory_requirement() -> str | None:
@@ -459,3 +470,201 @@ def make_tool_node_handler(
         return {output_key: response.result, "risk_assessment": risk_result}
 
     return tool_node_handler
+    
+_EXTRACTION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "name": {"type": ["string", "null"]},
+        "vehicle_idv_rs": {"type": ["number", "null"]},
+        "vehicle_age_years": {"type": ["integer", "null"]},
+        "fuel_type": {"type": ["string", "null"]},
+        "ev_flag": {"type": ["boolean", "null"]},
+        "annual_mileage_km": {"type": ["number", "null"]},
+        "ncb_percent": {"type": ["number", "null"]},
+        "residence_cluster": {
+            "type": ["string", "null"],
+            "enum": [
+                None, "coastal_flood_prone", "metro_high_theft",
+                "urban_dense", "hilly_low_density", "suburban", "rural",
+            ],
+        },
+        "city_risk_band": {"type": ["string", "null"], "enum": [None, "low", "medium", "high"]},
+        "flood_risk_band": {"type": ["string", "null"], "enum": [None, "low", "medium", "high"]},
+        "commute_pattern": {
+            "type": ["string", "null"],
+            "enum": [None, "daily_commute", "long_distance", "weekend_only", "family_errands"],
+        },
+        "financed_vehicle": {"type": ["boolean", "null"]},
+        "family_usage": {"type": ["boolean", "null"]},
+        "dependents": {"type": ["integer", "null"]},
+        "vehicle_segment": {"type": ["string", "null"]},
+        "protection_preference": {
+            "type": ["string", "null"],
+            "enum": [None, "max_protection", "balanced", "budget_first"],
+        },
+        "wants_lowest_price": {"type": ["boolean", "null"]},
+        "coverage_priorities": {"type": ["array", "null"], "items": {"type": "string"}},
+        "prefers_cashless": {"type": ["boolean", "null"]},
+        "theft_history": {"type": ["integer", "null"]},
+        "previous_claims_3yr": {"type": ["integer", "null"]},
+        "at_fault_claims_3yr": {"type": ["integer", "null"]},
+        "traffic_violations_3yr": {"type": ["integer", "null"]},
+        "anti_theft_device": {"type": ["boolean", "null"]},
+        "adas_level": {"type": ["integer", "null"]},
+        "parking_type": {
+            "type": ["string", "null"],
+            "enum": [None, "covered_society", "gated", "street", "open_lot"],
+        },
+        "driving_experience_years": {"type": ["number", "null"]},
+        "insurance_history_years": {"type": ["number", "null"]},
+        "digital_affinity_1to5": {"type": ["integer", "null"]},
+        "telematics_opt_in": {"type": ["boolean", "null"]},
+        "prior_policy_lapse": {"type": ["boolean", "null"]},
+        "needs_plain_language_1to5": {"type": ["integer", "null"]},
+        "age": {"type": ["integer", "null"]},
+        "is_chitchat_only": {"type": "boolean"},
+    },
+    "required": ["is_chitchat_only"],
+}
+
+
+def make_extraction_handler(
+    model_service: ModelService,
+    memory_service: Any | None = None,
+    model_name: str = "explanation_model",
+) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
+    """
+    Build the profile extraction/merge handler (NodeType.MEMORY).
+
+    Uses MemoryType.SEMANTIC for the persisted profile, NOT
+    MemoryType.WORKING -- WORKING connotes short-lived, session-
+    scratchpad memory in this engine's design; a customer's facts
+    (e.g. residence, financed status) are meant to survive
+    permanently across every future conversation with the same
+    session_id, which is exactly what SEMANTIC (durable factual
+    knowledge) is for. Using WORKING here would have been a real bug
+    once any session-expiry policy is ever added to that memory type.
+
+    Deliberately does NOT extract phone/email/exact address at all,
+    and never gender/marital_status/income (excluded from collection
+    entirely, not just from use, matching the earlier fairness
+    decision).
+    """
+
+    def extraction_handler(
+        node: WorkflowNode,
+        context: ExecutionContext,
+    ) -> dict[str, Any]:
+
+        customer_message = context.get_variable("customer_message")
+
+        if customer_message is None:
+            return {}
+
+        session_id = context.get_variable("session_id")
+
+        existing_profile: dict[str, Any] = {}
+
+        if memory_service is not None:
+
+            try:
+                from enterprise_ai_platform.memory_engine import (
+                    MemoryQuery,
+                    MemoryType,
+                )
+
+                results = memory_service.search(
+                    MemoryQuery(
+                        collection=f"policy_advisor_profile:{session_id}",
+                        memory_type=MemoryType.SEMANTIC,
+                        limit=1,
+                    )
+                )
+
+                if results:
+                    existing_profile = dict(results[0].item.content)
+
+            except Exception:
+                existing_profile = {}
+
+        known_facts_text = (
+            "\n".join(
+                f"- {key}: {value}"
+                for key, value in existing_profile.items()
+                if value is not None
+            )
+            or "None yet."
+        )
+
+        prompt = (
+            "Extract insurance-relevant facts from the customer's "
+            "message below. Use your general world knowledge for "
+            "location-based inferences (e.g. a customer mentioning a "
+            "coastal or flood-prone Indian city should get "
+            "flood_risk_band='high' and "
+            "residence_cluster='coastal_flood_prone'). Only fill in a "
+            "field if the message actually supports it -- leave "
+            "anything not mentioned or not inferable as null. Do not "
+            "guess at fields with no basis in the message. Set "
+            "is_chitchat_only to true only if the ENTIRE message is "
+            "just a greeting or small talk with no insurance-relevant "
+            "content at all.\n\n"
+            f"Facts already known from earlier in this conversation "
+            f"(do not contradict these unless the new message clearly "
+            f"updates them):\n{known_facts_text}\n\n"
+            f'Customer\'s new message: "{customer_message}"'
+        )
+
+        try:
+            response = model_service.execute(
+                model_name,
+                prompt,
+                response_schema=_EXTRACTION_SCHEMA,
+            )
+            extracted = response.structured_output or {}
+            context.set_metadata("extraction_error", None)
+            context.set_metadata("extraction_raw_response", response.text)
+        except Exception as error:
+            extracted = {}
+            # Visible, not swallowed silently -- a real customer never
+            # sees this, but it's inspectable via
+            # instance.context.get_metadata("extraction_error") for
+            # debugging, rather than a silent no-op with no trace of
+            # what went wrong.
+            context.set_metadata("extraction_error", str(error))
+
+        merged_profile = dict(existing_profile)
+
+        for key, value in extracted.items():
+            if key == "is_chitchat_only":
+                continue
+            if value is not None:
+                merged_profile[key] = value
+
+        if memory_service is not None:
+
+            try:
+                from enterprise_ai_platform.memory_engine import MemoryType
+
+                memory_service.store(
+                    memory_type=MemoryType.SEMANTIC,
+                    content=merged_profile,
+                    collection=f"policy_advisor_profile:{session_id}",
+                )
+            except Exception:
+                pass
+
+        # Stash the extracted name (if any) as metadata so the
+        # conversation logger can redact it out of the RAW message
+        # text too, not just out of structured fields -- a name
+        # mentioned in free text is still present in the raw sentence
+        # even after it's been pulled into a structured field.
+        context.set_metadata("extracted_name_for_redaction", extracted.get("name"))
+
+        merged_profile["is_chitchat_only"] = extracted.get(
+            "is_chitchat_only", False
+        )
+
+        return merged_profile
+
+    return extraction_handler

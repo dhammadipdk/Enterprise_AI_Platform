@@ -9,12 +9,10 @@ from typing import Any
 
 from enterprise_ai_platform.memory_engine import MemoryService, MemoryType
 
-# Denylist (not allowlist) of context variable names that must NEVER
-# be logged in any form. Deliberately a denylist so it fails safe as
-# new fields are introduced: this list must be extended the moment a
-# new sensitive field type is added (e.g. once real free-text
-# extraction starts capturing names, phone numbers, or addresses),
-# rather than assuming unknown new fields are safe by default.
+from enterprise_ai_platform.domains.insurance.policy_advisor.text_redaction import (
+    redact_raw_message,
+)
+
 _SENSITIVE_FIELDS = {
     "name",
     "customer_name",
@@ -35,22 +33,22 @@ _REDACTED_PLACEHOLDER = "[REDACTED]"
 class ConversationLogger:
     """
     Logs each Policy Advisor conversation turn as EPISODIC memory --
-    intended as a future source of training data (e.g. for a smaller
-    fine-tuned model) and as a record of real customer questions and
-    which responses actually satisfied them (candidate FAQ material).
+    a historical record of individual events (contrast with the
+    customer profile in extraction_handler, stored as SEMANTIC --
+    durable facts, not a record of what happened when).
 
-    Every input variable is passed through an explicit denylist-based
-    redaction before storage. This is a real, deliberate constraint:
-    nothing sensitive is ever persisted, even for training purposes --
-    training value and privacy are treated as a real tradeoff here,
-    resolved in favor of privacy every time a field is uncertain.
+    Intended as future training data (e.g. for a smaller fine-tuned
+    model, or reinforcement-learning-style quality improvement) and
+    as a source of real customer-need patterns. Both the structured
+    input variables AND the raw customer message (redacted) are
+    logged, since training on communication quality needs to see
+    what the customer actually said, not just what got extracted from
+    it.
 
-    Logging failures are swallowed rather than raised, since a
-    logging outage must never break the customer-facing workflow --
-    but this means logging failures are currently silent, which is a
-    real observability gap worth addressing once this codebase has a
-    general logging/monitoring setup, not something to treat as fully
-    solved by this class alone.
+    Every input variable and the raw message both go through explicit
+    redaction before storage -- training value and privacy are a real
+    tradeoff here, resolved in favor of privacy whenever a field is
+    uncertain.
     """
 
     def __init__(self, memory_service: MemoryService) -> None:
@@ -63,6 +61,8 @@ class ConversationLogger:
         input_variables: dict[str, Any],
         outcome_path: list[str],
         response_text: str | None,
+        raw_customer_message: str | None = None,
+        extracted_name: str | None = None,
     ) -> None:
         """
         Log one conversation turn. Never raises.
@@ -70,12 +70,19 @@ class ConversationLogger:
 
         try:
 
-            redacted_input = self._redact(input_variables)
+            redacted_input = self._redact_variables(input_variables)
+
+            redacted_message = (
+                redact_raw_message(raw_customer_message, extracted_name)
+                if raw_customer_message is not None
+                else None
+            )
 
             self._memory_service.store(
                 memory_type=MemoryType.EPISODIC,
                 content={
                     "input_variables": redacted_input,
+                    "raw_customer_message_redacted": redacted_message,
                     "outcome_path": outcome_path,
                     "response_text": response_text,
                     "logged_at": datetime.now(timezone.utc).isoformat(),
@@ -88,7 +95,7 @@ class ConversationLogger:
             pass
 
     @staticmethod
-    def _redact(variables: dict[str, Any]) -> dict[str, Any]:
+    def _redact_variables(variables: dict[str, Any]) -> dict[str, Any]:
 
         return {
             key: (

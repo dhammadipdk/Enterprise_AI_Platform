@@ -75,6 +75,7 @@ def test_complete_info_reaches_recommendation_path(services) -> None:
     assert path == [
         "start",
         "ensure_session",
+        "extract_and_merge_profile",
         "check_slots",
         "get_recommendations",
         "format_explanation",
@@ -102,6 +103,7 @@ def test_missing_info_reaches_clarifying_question_path(services) -> None:
     assert path == [
         "start",
         "ensure_session",
+        "extract_and_merge_profile",
         "check_slots",
         "ask_clarifying_question",
         "end_ask",

@@ -7,6 +7,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from enterprise_ai_platform.knowledge_engine import KnowledgeService
+from enterprise_ai_platform.memory_engine import MemoryService
 from enterprise_ai_platform.model_engine import ModelService
 from enterprise_ai_platform.tool_engine import ToolService
 from enterprise_ai_platform.workflow_engine import NodeType, WorkflowService
@@ -16,6 +17,8 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.glossary import (
 )
 from enterprise_ai_platform.domains.insurance.policy_advisor.handlers import (
     check_required_slots_handler,
+    ensure_session_handler,
+    make_extraction_handler,
     make_llm_node_handler,
     make_tool_node_handler,
 )
@@ -24,12 +27,6 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_work
 )
 from enterprise_ai_platform.domains.insurance.policy_advisor.tools import (
     register_policy_advisor_tools,
-)
-from enterprise_ai_platform.domains.insurance.policy_advisor.handlers import (
-    check_required_slots_handler,
-    ensure_session_handler,
-    make_llm_node_handler,
-    make_tool_node_handler,
 )
 
 
@@ -40,22 +37,32 @@ def register_policy_advisor_workflow(
     catalog_path: Path | str,
     knowledge_service: KnowledgeService | None = None,
     glossary_path: Path | str | None = None,
+    memory_service: MemoryService | None = None,
 ) -> None:
     """
     Wire up everything Policy Advisor needs.
 
-    `knowledge_service` (with the "insurance" repository loaded AND
-    indexed via load_repository + index_repository) enables
-    regulatory-grounded explanations. `glossary_path` enables
-    correct-by-construction jargon definitions. Both are optional and
-    additive -- omitting either just gives the earlier, less-grounded
-    behavior.
+    `memory_service` (optional, additive) enables free-text profile
+    extraction and cross-turn session memory. Without it, the
+    extraction node still runs but has no prior facts to load and
+    nothing is persisted -- callers must keep supplying structured
+    kwargs directly, exactly as before.
     """
 
     register_policy_advisor_tools(tool_service, catalog_path)
 
     glossary = (
         JargonGlossary(glossary_path) if glossary_path is not None else None
+    )
+
+    workflow_service.register_node_handler(
+        NodeType.TASK,
+        ensure_session_handler,
+    )
+
+    workflow_service.register_node_handler(
+        NodeType.MEMORY,
+        make_extraction_handler(model_service, memory_service),
     )
 
     workflow_service.register_node_handler(
@@ -74,8 +81,3 @@ def register_policy_advisor_workflow(
     )
 
     workflow_service.register_workflow(POLICY_ADVISOR_WORKFLOW)
-    
-    workflow_service.register_node_handler(
-        NodeType.TASK,
-        ensure_session_handler,
-    )

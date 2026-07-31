@@ -19,11 +19,9 @@ def execute_policy_advisor_with_logging(
     initial_variables: dict[str, Any],
 ) -> WorkflowInstance:
     """
-    Runs the policy_advisor workflow exactly as
-    workflow_service.execute would, then logs the turn. Logging is a
-    cross-cutting concern, not a routing/decision concern, so it
-    stays OUTSIDE the workflow graph itself (no dedicated node for
-    it) rather than complicating the graph's branching logic.
+    Runs the policy_advisor workflow, then logs the turn -- logging
+    is a cross-cutting concern, kept outside the workflow graph
+    itself rather than adding a dedicated node for it.
     """
 
     instance = workflow_service.execute(
@@ -37,11 +35,17 @@ def execute_policy_advisor_with_logging(
 
     response_text = instance.context.get_variable("response_text")
 
+    extracted_name = instance.context.get_metadata(
+        "extracted_name_for_redaction"
+    )
+
     conversation_logger.log_turn(
         session_id=session_id,
         input_variables=initial_variables,
         outcome_path=outcome_path,
         response_text=response_text,
+        raw_customer_message=initial_variables.get("customer_message"),
+        extracted_name=extracted_name,
     )
 
     return instance
