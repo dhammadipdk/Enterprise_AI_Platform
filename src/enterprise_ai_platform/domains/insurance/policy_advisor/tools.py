@@ -36,6 +36,14 @@ _SHARED_PROPERTIES = {
     "wants_lowest_price": {"type": "boolean"},
     "flood_exposed": {"type": "boolean"},
     "risk_band": {"type": "string", "enum": ["low", "medium", "high"]},
+    "theft_exposed": {"type": "boolean"},
+    "age": {"type": "integer"},
+    "commute_pattern": {
+        "type": "string",
+        "enum": [
+            "daily_commute", "long_distance", "weekend_only", "family_errands",
+        ],
+    },
 }
 
 _RECOMMEND_INPUT_SCHEMA = {
@@ -67,17 +75,19 @@ _COMPARE_INPUT_SCHEMA = {
 def register_policy_advisor_tools(
     tool_service: ToolService,
     catalog_path: Path | str,
+    ontology_path: Path | str | None = None,
 ) -> None:
     """
     Register Policy Advisor's tools: recommend_policies (top-N ranked
     policies with cross-comparison) and compare_policies (two named
     policies, head-to-head).
 
-    Both share one PolicyRecommendationEngine instance loaded from
-    the same catalog.
+    `ontology_path` (optional, additive) enables ontology-driven
+    coverage bonuses; omitted, PolicyRecommendationEngine falls back
+    to only its two explicit rules (financed_vehicle, family_usage).
     """
 
-    engine = PolicyRecommendationEngine(catalog_path)
+    engine = PolicyRecommendationEngine(catalog_path, ontology_path)
 
     tool_service.register_tool(
         ToolDefinition(
@@ -85,11 +95,12 @@ def register_policy_advisor_tools(
             version="1.0.0",
             description=(
                 "Deterministically rank eligible motor insurance "
-                "policies for a customer profile, including region/"
-                "risk-aware weighting and cross-comparison notes "
-                "between the top matches. The LLM must not re-rank or "
-                "second-guess this tool's ordering -- it only formats "
-                "this tool's result in natural language."
+                "policies for a customer profile, including ontology-"
+                "driven coverage-relevance bonuses and cross-"
+                "comparison notes between the top matches. The LLM "
+                "must not re-rank or second-guess this tool's "
+                "ordering -- it only formats this tool's result in "
+                "natural language."
             ),
             category=ToolCategory.CUSTOM,
             input_schema=_RECOMMEND_INPUT_SCHEMA,

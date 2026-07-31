@@ -1,0 +1,14 @@
+city,flood_risk,theft_risk,traffic_risk,addon_priority
+Mumbai,high,medium,very_high,engine_protect
+Thane,high,medium,high,engine_protect
+Chennai,high,medium,high,engine_protect
+Kolkata,high,medium,high,engine_protect
+Delhi,medium,very_high,very_high,theft_protection
+Noida,medium,high,high,zero_dep
+Gurgaon,medium,high,very_high,zero_dep
+Bangalore,medium,medium,extreme,roadside_assistance
+Hyderabad,medium,medium,medium,balanced
+Pune,medium,medium,high,balanced
+Ahmedabad,low,medium,medium,value
+Tier2,low,low,low,value
+Tier3,low,low,low,value

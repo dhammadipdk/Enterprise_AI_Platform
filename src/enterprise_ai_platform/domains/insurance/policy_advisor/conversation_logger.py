@@ -18,13 +18,24 @@ _SENSITIVE_FIELDS = {
     "customer_name",
     "phone",
     "phone_number",
+    "mobile_number",
     "email",
+    "email_address",
     "address",
     "exact_address",
+    "residential_address",
     "pincode",
     "gender",
     "marital_status",
     "annual_income_lakh",
+    "date_of_birth",  # confirmed "Sensitive Personal" in canonical_schema.csv
+    "vehicle_registration_number",  # confirmed "Sensitive Personal", Vehicle domain
+    "vin",
+    "engine_number",
+    "chassis_number",
+    # NOTE: "age" is deliberately NOT here -- confirmed "Internal"
+    # classification (not Personal/Sensitive Personal) in the real
+    # Customer domain canonical_schema.csv, not my own assumption.
 }
 
 _REDACTED_PLACEHOLDER = "[REDACTED]"

@@ -411,15 +411,13 @@ def make_tool_node_handler(
             "wants_lowest_price": context.get_variable(
                 "wants_lowest_price", False
             ),
-            # An explicitly-set flood_exposed must never be silently
-            # discarded just because we don't ALSO have the raw
-            # factors to derive it independently -- an explicit
-            # signal (e.g. from a future memory/extraction layer that
-            # already inferred this from "I live in Mumbai") is at
-            # least as trustworthy as a freshly-computed one.
             "flood_exposed": (
                 risk_result["flood_exposed"]
                 or context.get_variable("flood_exposed", False)
+            ),
+            "theft_exposed": (
+                risk_result["theft_exposed"]
+                or context.get_variable("theft_exposed", False)
             ),
             "risk_band": risk_result["risk_band"],
         }
@@ -428,6 +426,8 @@ def make_tool_node_handler(
             "annual_mileage_km",
             "digital_affinity_1to5",
             "protection_preference",
+            "age",
+            "commute_pattern",
         ):
             value = context.get_variable(optional_field)
             if value is not None:
@@ -524,31 +524,34 @@ _EXTRACTION_SCHEMA = {
         "age": {"type": ["integer", "null"]},
         "is_chitchat_only": {"type": "boolean"},
     },
-    "required": ["is_chitchat_only"],
+    "required": [],
+}
+
+_RISK_LEVEL_NORMALIZE = {
+    "low": "low", "medium": "medium", "high": "high",
+    "very_high": "high", "extreme": "high",
 }
 
 
 def make_extraction_handler(
     model_service: ModelService,
     memory_service: Any | None = None,
+    location_risk: Any | None = None,
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the profile extraction/merge handler (NodeType.MEMORY).
 
-    Uses MemoryType.SEMANTIC for the persisted profile, NOT
-    MemoryType.WORKING -- WORKING connotes short-lived, session-
-    scratchpad memory in this engine's design; a customer's facts
-    (e.g. residence, financed status) are meant to survive
-    permanently across every future conversation with the same
-    session_id, which is exactly what SEMANTIC (durable factual
-    knowledge) is for. Using WORKING here would have been a real bug
-    once any session-expiry policy is ever added to that memory type.
-
-    Deliberately does NOT extract phone/email/exact address at all,
-    and never gender/marital_status/income (excluded from collection
-    entirely, not just from use, matching the earlier fairness
-    decision).
+    `location_risk` (a LocationRiskReference) runs BEFORE the LLM
+    call: if a known city is named, flood_risk_band/city_risk_band/
+    residence_cluster are set deterministically from the reference
+    table and OVERRIDE whatever the LLM separately produces for those
+    same fields -- a direct exact-match lookup is more reliable than
+    LLM recall for a fact this structured (confirmed necessary in
+    real testing: the LLM omitted flood_risk_band even when a
+    well-known flood-prone city was named explicitly). The LLM
+    extraction still runs for every other field, and still attempts
+    these three as a fallback for cities NOT in the reference table.
     """
 
     def extraction_handler(
@@ -598,17 +601,12 @@ def make_extraction_handler(
 
         prompt = (
             "Extract insurance-relevant facts from the customer's "
-            "message below. Use your general world knowledge for "
-            "location-based inferences (e.g. a customer mentioning a "
-            "coastal or flood-prone Indian city should get "
-            "flood_risk_band='high' and "
-            "residence_cluster='coastal_flood_prone'). Only fill in a "
-            "field if the message actually supports it -- leave "
-            "anything not mentioned or not inferable as null. Do not "
-            "guess at fields with no basis in the message. Set "
-            "is_chitchat_only to true only if the ENTIRE message is "
-            "just a greeting or small talk with no insurance-relevant "
-            "content at all.\n\n"
+            "message below. Only fill in a field if the message "
+            "actually supports it -- leave anything not mentioned as "
+            "null. Do not guess at fields with no basis in the "
+            "message. Set is_chitchat_only to true only if the "
+            "ENTIRE message is just a greeting or small talk with no "
+            "insurance-relevant content at all.\n\n"
             f"Facts already known from earlier in this conversation "
             f"(do not contradict these unless the new message clearly "
             f"updates them):\n{known_facts_text}\n\n"
@@ -622,16 +620,31 @@ def make_extraction_handler(
                 response_schema=_EXTRACTION_SCHEMA,
             )
             extracted = response.structured_output or {}
-            context.set_metadata("extraction_error", None)
-            context.set_metadata("extraction_raw_response", response.text)
-        except Exception as error:
+        except Exception:
             extracted = {}
-            # Visible, not swallowed silently -- a real customer never
-            # sees this, but it's inspectable via
-            # instance.context.get_metadata("extraction_error") for
-            # debugging, rather than a silent no-op with no trace of
-            # what went wrong.
-            context.set_metadata("extraction_error", str(error))
+
+        # Deterministic city lookup OVERRIDES the LLM's guess for
+        # these three fields specifically, when a known city matched.
+        if location_risk is not None:
+
+            city_match = location_risk.match_city(customer_message)
+
+            if city_match is not None:
+
+                normalized_flood = _RISK_LEVEL_NORMALIZE.get(
+                    city_match["flood_risk"], city_match["flood_risk"]
+                )
+                normalized_theft = _RISK_LEVEL_NORMALIZE.get(
+                    city_match["theft_risk"], city_match["theft_risk"]
+                )
+
+                extracted["flood_risk_band"] = normalized_flood
+                extracted["city_risk_band"] = normalized_theft
+
+                if normalized_flood == "high":
+                    extracted["residence_cluster"] = "coastal_flood_prone"
+                elif normalized_theft == "high":
+                    extracted["residence_cluster"] = "metro_high_theft"
 
         merged_profile = dict(existing_profile)
 
@@ -654,11 +667,6 @@ def make_extraction_handler(
             except Exception:
                 pass
 
-        # Stash the extracted name (if any) as metadata so the
-        # conversation logger can redact it out of the RAW message
-        # text too, not just out of structured fields -- a name
-        # mentioned in free text is still present in the raw sentence
-        # even after it's been pulled into a structured field.
         context.set_metadata("extracted_name_for_redaction", extracted.get("name"))
 
         merged_profile["is_chitchat_only"] = extracted.get(

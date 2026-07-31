@@ -10,11 +10,12 @@ from typing import Any
 
 import pandas as pd
 
-# Real customer_profiles.coverage_priorities values include terms that
-# are NOT policy_catalog boolean column names -- they're preference
-# signals about HOW to weight scoring dimensions, not coverage flags
-# to match against ("digital_servicing", "cashless_strength",
-# "price_control" have no matching boolean column).
+from enterprise_ai_platform.domains.insurance.policy_advisor.coverage_ontology import (
+    CoverageOntology,
+    apply_ontology_bonus,
+    derive_active_traits,
+)
+
 _PREFERENCE_TERMS = {"digital_servicing", "cashless_strength", "price_control"}
 
 _RISK_LOADING = {"high": 1.15, "medium": 1.0, "low": 0.95}
@@ -35,40 +36,42 @@ class PolicyRecommendationEngine:
     real policy catalog.
 
     RANKING, AND EVERY COMPARATIVE CONCLUSION, IS ALWAYS DECIDED HERE
-    -- NEVER BY THE LLM. This is not a style preference:
-    (1) it matches the architecture principle from the InsureAI deck
-        ("the LLM does NOT use LLM for recommendation logic... the
-        knowledge graph does the ranking"),
-    (2) IRDAI requires being able to show exactly what was
-        recommended and why if a customer disputes it -- an
-        LLM-derived ranking or comparison could differ across runs
-        for the identical profile, which is not auditable, and
-    (3) confirmed empirically across three different prompt designs:
-        asking an LLM to retell an already-stated conclusion, and
-        separately asking it to compute a conclusion from raw
-        numbers, BOTH produced real inversions in testing (a higher
-        number described as "weaker/lower" despite being given
-        correctly, or repeated correctly earlier in the same
-        response). The fix that held up: word the conclusion fully
-        and redundantly here (both directions stated explicitly, plus
-        an explicit spelled-out verdict), and give the LLM a
-        narrower, more mechanical task -- translate this into
-        Hinglish, do not rephrase or recompute it.
+    -- NEVER BY THE LLM.
+
+    Coverage-relevance bonuses (flood -> engine_protect, new vehicle
+    -> zero_dep/return_to_invoice, family -> passenger_cover, etc.)
+    are now driven by CoverageOntology (see coverage_ontology.py) --
+    a real, populated relationship dataset from the platform's
+    Contextual Intelligence repository -- rather than individually
+    hardcoded Python if/else branches per trait. Two rules remain
+    explicit here because the ontology doesn't model them:
+    financed_vehicle -> return_to_invoice, and family_usage ->
+    personal_accident_cover (the ontology only maps family traits to
+    passenger_cover). Both are merged into the SAME match_reasons
+    structure the ontology produces, with deduplication, so a policy
+    that qualifies for return_to_invoice via BOTH "new vehicle" and
+    "financed" gets one combined reason, not two stacked bonuses.
 
     IMPORTANT: pandas reads CSV boolean columns back as numpy.bool_,
-    not Python's native bool -- `numpy.True_ is True` evaluates to
-    False. Every boolean flag check here uses truthiness, never
-    identity.
+    not Python's native bool -- every boolean flag check here uses
+    truthiness, never identity.
 
     This is a deliberately hand-designed scoring formula, not a
     reverse-engineered match of the source dataset's own premium/
-    suitability numbers -- confirmed by testing several candidate
-    formulas against real rows; none matched exactly.
+    suitability numbers.
     """
 
-    def __init__(self, catalog_path: Path | str) -> None:
+    def __init__(
+        self,
+        catalog_path: Path | str,
+        ontology_path: Path | str | None = None,
+    ) -> None:
 
         self._catalog = pd.read_csv(catalog_path)
+
+        self._ontology = (
+            CoverageOntology(ontology_path) if ontology_path is not None else None
+        )
 
     def recommend(
         self,
@@ -89,12 +92,15 @@ class PolicyRecommendationEngine:
         wants_lowest_price: bool = False,
         flood_exposed: bool = False,
         risk_band: str | None = None,
+        theft_exposed: bool = False,
+        age: int | None = None,
+        commute_pattern: str | None = None,
     ) -> dict[str, Any]:
         """
         Return the top `top_n` eligible policies ranked by
-        suitability (deterministically), plus a fully-worded, already
-        -decided explanation of why the top pick beats the cheapest
-        eligible option when they differ.
+        suitability (deterministically), plus a fully-worded,
+        already-decided explanation of why the top pick beats the
+        cheapest eligible option when they differ.
         """
 
         flag_terms, preference_terms = self._parse_coverage_priorities(
@@ -127,6 +133,11 @@ class PolicyRecommendationEngine:
                 wants_lowest_price,
                 flood_exposed,
                 risk_band,
+                theft_exposed,
+                age,
+                vehicle_age_years,
+                commute_pattern,
+                ev_flag,
             )
 
             matched_coverage = [c for c in flag_terms if policy.get(c)]
@@ -225,6 +236,9 @@ class PolicyRecommendationEngine:
         wants_lowest_price: bool = False,
         flood_exposed: bool = False,
         risk_band: str | None = None,
+        theft_exposed: bool = False,
+        age: int | None = None,
+        commute_pattern: str | None = None,
     ) -> dict[str, Any]:
         """
         Same as recommend(), but additionally computes fully-worded
@@ -252,6 +266,9 @@ class PolicyRecommendationEngine:
             wants_lowest_price=wants_lowest_price,
             flood_exposed=flood_exposed,
             risk_band=risk_band,
+            theft_exposed=theft_exposed,
+            age=age,
+            commute_pattern=commute_pattern,
         )
 
         recommendations = result["recommendations"]
@@ -298,6 +315,9 @@ class PolicyRecommendationEngine:
         wants_lowest_price: bool = False,
         flood_exposed: bool = False,
         risk_band: str | None = None,
+        theft_exposed: bool = False,
+        age: int | None = None,
+        commute_pattern: str | None = None,
     ) -> dict[str, Any]:
         """
         Compare two named policies for one customer profile,
@@ -318,6 +338,7 @@ class PolicyRecommendationEngine:
             None, annual_mileage_km, financed_vehicle, family_usage,
             digital_affinity_1to5, protection_preference,
             wants_lowest_price, flood_exposed, risk_band,
+            theft_exposed, age, vehicle_age_years, commute_pattern, ev_flag,
         )
 
         score_b, premium_b, reasons_b = self._score(
@@ -326,6 +347,7 @@ class PolicyRecommendationEngine:
             None, annual_mileage_km, financed_vehicle, family_usage,
             digital_affinity_1to5, protection_preference,
             wants_lowest_price, flood_exposed, risk_band,
+            theft_exposed, age, vehicle_age_years, commute_pattern, ev_flag,
         )
 
         matched_a = [c for c in flag_terms if policy_a.get(c)]
@@ -406,12 +428,6 @@ class PolicyRecommendationEngine:
     def _parse_coverage_priorities(
         coverage_priorities: list[str] | None,
     ) -> tuple[list[str], list[str]]:
-        """
-        Split raw coverage_priorities into (flag_terms,
-        preference_terms) -- flag_terms are matched against policy
-        boolean columns; preference_terms adjust scoring weights
-        instead.
-        """
 
         coverage_priorities = coverage_priorities or []
 
@@ -435,15 +451,8 @@ class PolicyRecommendationEngine:
         """
         The single source of truth for comparing any two scored
         candidates. Returns FULLY-WORDED, already-decided sentences --
-        the conclusion (which is cheaper, which scores higher) is
-        decided and stated here, never left for the LLM to compute or
-        reword. Each fact is stated redundantly in both directions
-        with the verdict spelled out explicitly, minimizing room for
-        a downstream translation/paraphrase step to invert it.
-
-        Quality differentiators are capped at `max_quality_reasons`,
-        ranked by how large the gap actually is, so the explanation
-        stays focused rather than dumping every stat.
+        each fact stated redundantly in both directions with the
+        verdict spelled out explicitly.
         """
 
         reasons: list[str] = []
@@ -556,9 +565,8 @@ class PolicyRecommendationEngine:
 
         return matches.iloc[0]
 
-    @classmethod
     def _score(
-        cls,
+        self,
         policy: pd.Series,
         vehicle_idv: float,
         ncb_percent: float,
@@ -575,9 +583,14 @@ class PolicyRecommendationEngine:
         wants_lowest_price: bool,
         flood_exposed: bool,
         risk_band: str | None,
+        theft_exposed: bool = False,
+        age: int | None = None,
+        vehicle_age_years: int | None = None,
+        commute_pattern: str | None = None,
+        ev_flag: bool = False,
     ) -> tuple[float, int, list[dict[str, str]]]:
 
-        premium = cls._estimate_premium(
+        premium = self._estimate_premium(
             policy, vehicle_idv, ncb_percent, risk_band, annual_mileage_km
         )
 
@@ -631,50 +644,70 @@ class PolicyRecommendationEngine:
                 (premium - budget_cap_rs) / budget_cap_rs,
             )
 
+        # --- Coverage-relevance bonus: ontology-driven, plus two
+        # explicit rules the ontology doesn't model. ---
+
         match_reasons: list[dict[str, str]] = []
 
         context_bonus = 0.0
 
-        if flood_exposed and policy.get("engine_protect"):
-            context_bonus += 15
-            match_reasons.append(
-                {
-                    "coverage": "engine_protect",
-                    "reason": (
-                        "Engine protection matters for you: your area "
-                        "has flood risk"
-                    ),
-                }
+        active_traits = derive_active_traits(
+            vehicle_age_years=vehicle_age_years,
+            annual_mileage_km=annual_mileage_km,
+            commute_pattern=commute_pattern,
+            family_usage=family_usage,
+            ev_flag=ev_flag,
+            flood_exposed=flood_exposed,
+            theft_exposed=theft_exposed,
+            vehicle_idv_rs=vehicle_idv,
+            age=age,
+        )
+
+        if self._ontology is not None:
+
+            ontology_bonus, ontology_reasons = apply_ontology_bonus(
+                policy, self._ontology, active_traits
             )
 
+            context_bonus += ontology_bonus
+
+            match_reasons.extend(ontology_reasons)
+
+        # Explicit: financed_vehicle -> return_to_invoice (not in the
+        # ontology). Merge into any existing return_to_invoice reason
+        # rather than double-counting the bonus if new_vehicle ALSO
+        # already triggered it.
         if financed_vehicle and policy.get("return_to_invoice"):
-            context_bonus += 10
-            match_reasons.append(
-                {
-                    "coverage": "return_to_invoice",
-                    "reason": (
-                        "Return to Invoice matters for you: vehicle "
-                        "is financed"
-                    ),
-                }
+
+            existing = next(
+                (r for r in match_reasons if r["coverage"] == "return_to_invoice"),
+                None,
             )
 
-        if family_usage and policy.get("passenger_cover"):
-            context_bonus += 8
-            match_reasons.append(
-                {
-                    "coverage": "passenger_cover",
-                    "reason": "Passenger cover matters for you: family usage",
-                }
-            )
+            if existing is not None:
+                if "financed" not in existing["reason"]:
+                    existing["reason"] += " and vehicle is financed"
+            else:
+                context_bonus += 10
+                match_reasons.append(
+                    {
+                        "coverage": "return_to_invoice",
+                        "reason": (
+                            "return to invoice matters for you: "
+                            "vehicle is financed"
+                        ),
+                    }
+                )
 
+        # Explicit: family_usage -> personal_accident_cover (the
+        # ontology only maps family traits to passenger_cover).
         if family_usage and policy.get("personal_accident_cover"):
             context_bonus += 8
             match_reasons.append(
                 {
                     "coverage": "personal_accident_cover",
                     "reason": (
-                        "Personal accident cover matters for you: "
+                        "personal accident cover matters for you: "
                         "family usage"
                     ),
                 }

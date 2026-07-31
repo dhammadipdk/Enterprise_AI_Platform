@@ -22,6 +22,9 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.handlers import (
     make_llm_node_handler,
     make_tool_node_handler,
 )
+from enterprise_ai_platform.domains.insurance.policy_advisor.location_risk import (
+    LocationRiskReference,
+)
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
     POLICY_ADVISOR_WORKFLOW,
 )
@@ -38,21 +41,25 @@ def register_policy_advisor_workflow(
     knowledge_service: KnowledgeService | None = None,
     glossary_path: Path | str | None = None,
     memory_service: MemoryService | None = None,
+    ontology_path: Path | str | None = None,
+    location_risk_path: Path | str | None = None,
 ) -> None:
     """
-    Wire up everything Policy Advisor needs.
-
-    `memory_service` (optional, additive) enables free-text profile
-    extraction and cross-turn session memory. Without it, the
-    extraction node still runs but has no prior facts to load and
-    nothing is persisted -- callers must keep supplying structured
-    kwargs directly, exactly as before.
+    Wire up everything Policy Advisor needs. All new parameters are
+    optional and additive -- omitting any of them falls back to
+    earlier, less-grounded behavior rather than failing.
     """
 
-    register_policy_advisor_tools(tool_service, catalog_path)
+    register_policy_advisor_tools(tool_service, catalog_path, ontology_path)
 
     glossary = (
         JargonGlossary(glossary_path) if glossary_path is not None else None
+    )
+
+    location_risk = (
+        LocationRiskReference(location_risk_path)
+        if location_risk_path is not None
+        else None
     )
 
     workflow_service.register_node_handler(
@@ -62,7 +69,7 @@ def register_policy_advisor_workflow(
 
     workflow_service.register_node_handler(
         NodeType.MEMORY,
-        make_extraction_handler(model_service, memory_service),
+        make_extraction_handler(model_service, memory_service, location_risk),
     )
 
     workflow_service.register_node_handler(
