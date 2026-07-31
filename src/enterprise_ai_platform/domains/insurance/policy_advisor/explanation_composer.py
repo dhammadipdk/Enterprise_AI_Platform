@@ -11,26 +11,13 @@ _RANK_LABELS = ["Best match", "2nd best match", "3rd best match"]
 
 class ExplanationComposer:
     """
-    Composes complete, factually-correct English text from
-    PolicyRecommendationEngine's structured output -- pure
-    deterministic string assembly, no LLM involved.
-
-    This exists because handing an LLM a flat pile of facts,
-    match_reasons, and comparison notes for multiple policies at once
-    asks it to do ATTRIBUTION work (which reason belongs to which
-    policy and which coverage) that a small model does unreliably.
-    Attribution is already 100% known and correct in the structured
-    data; composing it into text is pure formatting and belongs in
-    code, matching this platform's core principle throughout ("the
-    LLM never decides, it only explains"). The LLM's only remaining
-    job, once this composer has run, is retelling already-correct
-    text in a warmer tone and in Hinglish.
-
-    Optionally takes a glossary (JargonGlossary) to look up proper
-    display labels for matched coverage that has no specific
-    situational reason attached -- reusing the SAME label data
-    already curated for jargon explanation, rather than inventing a
-    separate humanization scheme for coverage names.
+    Composes ONE complete, already-decided, already-correctly-worded
+    text from PolicyRecommendationEngine's structured output -- pure
+    deterministic string assembly, no LLM involved. Ranking, premiums,
+    match reasons, and every comparison conclusion are all fully
+    decided and stated here. The LLM's only remaining job (see
+    handlers.py's _retelling_prompt) is to translate this into
+    Hinglish, not to rephrase, recompute, or reconsider any of it.
     """
 
     def __init__(self, glossary: Any | None = None) -> None:
@@ -62,12 +49,9 @@ class ExplanationComposer:
     def compose_policy_paragraph(self, rec: dict[str, Any]) -> str:
         """
         One policy's complete, self-contained paragraph: premium,
-        pitch, every match_reason that belongs specifically to it,
-        and a plain confirmation of any OTHER matched coverage that
-        has no specific situational reason -- so a customer who asked
-        for something (e.g. roadside assistance) that simply doesn't
-        have a special "why" attached still hears it's included,
-        rather than it silently disappearing from the narrative.
+        pitch, every match_reason that belongs specifically to it, and
+        a plain confirmation of any other matched coverage with no
+        specific situational reason.
         """
 
         sentences = [
@@ -99,8 +83,9 @@ class ExplanationComposer:
         recommendations_result: dict[str, Any],
     ) -> str:
         """
-        The full, ready-to-retell text for a top-N recommendation
-        result.
+        The full, ready-to-translate text for a top-N recommendation
+        result: one paragraph per policy, then fully-worded comparison
+        sentences, then why_not_cheapest.
         """
 
         recommendations = recommendations_result.get("recommendations", [])
@@ -146,7 +131,7 @@ class ExplanationComposer:
         comparison_result: dict[str, Any],
     ) -> str:
         """
-        The full, ready-to-retell text for a 1-vs-1 comparison
+        The full, ready-to-translate text for a 1-vs-1 comparison
         result.
         """
 
@@ -171,7 +156,7 @@ class ExplanationComposer:
         reasons = comparison_result.get("reasons", [])
 
         if reasons:
-            text += " " + " ".join(reasons) + "."
+            text += " " + " ".join(reasons)
 
         other_better_when = comparison_result.get("other_better_when")
 

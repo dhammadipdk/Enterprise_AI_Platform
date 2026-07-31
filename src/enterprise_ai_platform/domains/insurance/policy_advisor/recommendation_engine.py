@@ -13,16 +13,12 @@ import pandas as pd
 # Real customer_profiles.coverage_priorities values include terms that
 # are NOT policy_catalog boolean column names -- they're preference
 # signals about HOW to weight scoring dimensions, not coverage flags
-# to match against.
+# to match against ("digital_servicing", "cashless_strength",
+# "price_control" have no matching boolean column).
 _PREFERENCE_TERMS = {"digital_servicing", "cashless_strength", "price_control"}
 
 _RISK_LOADING = {"high": 1.15, "medium": 1.0, "low": 0.95}
 
-# Used for genuine, honest tradeoff explanations between any two
-# scored policies -- e.g. explaining why a pricier option outranks a
-# cheaper one on quality grounds, not just "it costs more." Threshold
-# exists so noise-level score differences (e.g. 89 vs 91) don't get
-# reported as if they were meaningful.
 _QUALITY_FIELDS = [
     ("cashless_garage_score", "cashless garage network"),
     ("claim_support_score", "claim support"),
@@ -36,25 +32,28 @@ _QUALITY_DIFF_THRESHOLD = 5
 class PolicyRecommendationEngine:
     """
     Deterministic policy scoring, ranking, and comparison against the
-    real policy catalog (48 synthetic-but-structured motor products).
+    real policy catalog.
 
-    Matches the architecture principle from the InsureAI deck: the
-    LLM never ranks or compares policies, it only formats already-
-    computed output in natural language. Every score here is a plain
-    arithmetic function of visible catalog fields and the customer
-    profile -- nothing here is an LLM call, so it's fast,
-    deterministic, and fully explainable.
-
-    Every comparison this engine produces (top-vs-cheapest,
-    pairwise-among-top-N) goes through the SAME _compare_two_policies
-    method, which reports not just price differences but the
-    strongest quality-score differentiators driving a ranking --
-    added specifically because ranking a pricier policy #1 without
-    ever surfacing WHY (e.g. its actually-stronger claim support or
-    cashless network) left the customer with no real justification
-    for the recommendation, just a price tag. When nothing genuinely
-    differs beyond price, the comparison says so honestly rather than
-    manufacturing a reason.
+    RANKING, AND EVERY COMPARATIVE CONCLUSION, IS ALWAYS DECIDED HERE
+    -- NEVER BY THE LLM. This is not a style preference:
+    (1) it matches the architecture principle from the InsureAI deck
+        ("the LLM does NOT use LLM for recommendation logic... the
+        knowledge graph does the ranking"),
+    (2) IRDAI requires being able to show exactly what was
+        recommended and why if a customer disputes it -- an
+        LLM-derived ranking or comparison could differ across runs
+        for the identical profile, which is not auditable, and
+    (3) confirmed empirically across three different prompt designs:
+        asking an LLM to retell an already-stated conclusion, and
+        separately asking it to compute a conclusion from raw
+        numbers, BOTH produced real inversions in testing (a higher
+        number described as "weaker/lower" despite being given
+        correctly, or repeated correctly earlier in the same
+        response). The fix that held up: word the conclusion fully
+        and redundantly here (both directions stated explicitly, plus
+        an explicit spelled-out verdict), and give the LLM a
+        narrower, more mechanical task -- translate this into
+        Hinglish, do not rephrase or recompute it.
 
     IMPORTANT: pandas reads CSV boolean columns back as numpy.bool_,
     not Python's native bool -- `numpy.True_ is True` evaluates to
@@ -93,9 +92,9 @@ class PolicyRecommendationEngine:
     ) -> dict[str, Any]:
         """
         Return the top `top_n` eligible policies ranked by
-        suitability, plus a genuine, honest explanation of why the
-        top pick was chosen over the cheapest eligible option when
-        they differ.
+        suitability (deterministically), plus a fully-worded, already
+        -decided explanation of why the top pick beats the cheapest
+        eligible option when they differ.
         """
 
         flag_terms, preference_terms = self._parse_coverage_priorities(
@@ -187,17 +186,17 @@ class PolicyRecommendationEngine:
 
             if comparison_reasons:
                 why_not_cheapest = (
-                    f"{top[0]['product_name']} was chosen as the top "
-                    f"pick over the cheaper {cheapest['product_name']} "
-                    f"because: {'; '.join(comparison_reasons)}."
+                    f"{cheapest['product_name']} has a lower price. "
+                    f"Despite that, {top[0]['product_name']} was "
+                    f"still chosen as the top recommendation. Here is "
+                    f"why: {' '.join(comparison_reasons)}"
                 )
             else:
                 why_not_cheapest = (
-                    f"{cheapest['product_name']} (Rs "
-                    f"{cheapest['estimated_annual_premium_rs']}) offers "
-                    f"very similar coverage and quality at a lower "
-                    f"price -- a reasonable alternative if budget is "
-                    f"the main priority."
+                    f"{cheapest['product_name']} offers very similar "
+                    f"coverage and quality at a lower price -- a "
+                    f"reasonable alternative if budget is the main "
+                    f"priority."
                 )
 
         return {
@@ -228,9 +227,8 @@ class PolicyRecommendationEngine:
         risk_band: str | None = None,
     ) -> dict[str, Any]:
         """
-        Same as recommend(), but additionally computes pairwise
-        comparison reasons (price, coverage, AND quality
-        differentiators) between every pair of the returned top_n
+        Same as recommend(), but additionally computes fully-worded
+        comparison reasons between every pair of the returned top_n
         policies.
         """
 
@@ -339,7 +337,6 @@ class PolicyRecommendationEngine:
         winner_id = policy_id_a if winner_is_a else policy_id_b
 
         candidate_a = {
-            "policy_id": policy_id_a,
             "product_name": policy_a["product_name"],
             "estimated_annual_premium_rs": premium_a,
             "matched_coverage": matched_a,
@@ -350,7 +347,6 @@ class PolicyRecommendationEngine:
         }
 
         candidate_b = {
-            "policy_id": policy_id_b,
             "product_name": policy_b["product_name"],
             "estimated_annual_premium_rs": premium_b,
             "matched_coverage": matched_b,
@@ -410,6 +406,12 @@ class PolicyRecommendationEngine:
     def _parse_coverage_priorities(
         coverage_priorities: list[str] | None,
     ) -> tuple[list[str], list[str]]:
+        """
+        Split raw coverage_priorities into (flag_terms,
+        preference_terms) -- flag_terms are matched against policy
+        boolean columns; preference_terms adjust scoring weights
+        instead.
+        """
 
         coverage_priorities = coverage_priorities or []
 
@@ -432,17 +434,16 @@ class PolicyRecommendationEngine:
     ) -> list[str]:
         """
         The single source of truth for comparing any two scored
-        candidates -- used for both top-vs-cheapest and pairwise-
-        among-top-N comparisons, so the reasoning is always consistent
-        wherever two policies are compared.
+        candidates. Returns FULLY-WORDED, already-decided sentences --
+        the conclusion (which is cheaper, which scores higher) is
+        decided and stated here, never left for the LLM to compute or
+        reword. Each fact is stated redundantly in both directions
+        with the verdict spelled out explicitly, minimizing room for
+        a downstream translation/paraphrase step to invert it.
 
-        Reports price and coverage-match differences (as before), AND
-        the most significant quality-score differentiators (capped at
-        `max_quality_reasons`, ranked by how large the gap actually is,
-        so the explanation stays focused rather than dumping every
-        stat) -- this is what makes a ranking honestly explainable
-        when coverage match is tied, which price/coverage alone
-        couldn't do.
+        Quality differentiators are capped at `max_quality_reasons`,
+        ranked by how large the gap actually is, so the explanation
+        stays focused rather than dumping every stat.
         """
 
         reasons: list[str] = []
@@ -467,8 +468,9 @@ class PolicyRecommendationEngine:
             diff = abs(premium_a - premium_b)
 
             reasons.append(
-                f"{cheaper_name} is Rs {diff} cheaper than "
-                f"{pricier_name} per year"
+                f"{cheaper_name} costs Rs {diff} LESS per year than "
+                f"{pricier_name}. {pricier_name} costs Rs {diff} MORE "
+                f"per year than {cheaper_name}."
             )
 
         matched_a = len(rec_a["matched_coverage"])
@@ -477,10 +479,10 @@ class PolicyRecommendationEngine:
 
         if matched_a != matched_b and flag_terms:
             reasons.append(
-                f"{rec_a['product_name']} matches {matched_a}/"
-                f"{len(flag_terms)} priority coverages vs "
-                f"{rec_b['product_name']}'s {matched_b}/"
-                f"{len(flag_terms)}"
+                f"{rec_a['product_name']} matches {matched_a} out of "
+                f"{len(flag_terms)} priority coverages. "
+                f"{rec_b['product_name']} matches {matched_b} out of "
+                f"{len(flag_terms)}."
             )
 
         quality_diffs = []
@@ -510,8 +512,10 @@ class PolicyRecommendationEngine:
                 better_score, worse_score = rec_b[field], rec_a[field]
 
             reasons.append(
-                f"{better_name} has stronger {label} than {worse_name} "
-                f"({better_score} vs {worse_score})"
+                f"On {label}, {better_name} scores {better_score} out "
+                f"of 100. {worse_name} scores {worse_score} out of "
+                f"100, which is LOWER. So {better_name} has the "
+                f"better {label}."
             )
 
         return reasons

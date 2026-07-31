@@ -71,11 +71,14 @@ def make_llm_node_handler(
     """
     Build the shared LLM-node handler.
 
-    For explanation/comparison, the LLM's job is deliberately narrow:
-    retell ALREADY fact-checked, ALREADY correctly-attributed text
-    (built by ExplanationComposer) in a warmer tone and in Hinglish --
-    not to figure out which fact belongs where. See
-    explanation_composer.py's docstring for why.
+    For explanation/comparison, everything the LLM is given is
+    ALREADY fully decided and correctly worded by
+    PolicyRecommendationEngine + ExplanationComposer -- ranking,
+    premiums, and every comparison conclusion. The LLM's job is
+    narrowly scoped to TRANSLATION into Hinglish, not creative
+    retelling or computation. See _retelling_prompt's docstring for
+    why this specific framing was chosen after other approaches were
+    tried and failed in real testing.
     """
 
     composer = ExplanationComposer(glossary)
@@ -122,12 +125,15 @@ def make_llm_node_handler(
             f"\n\nRegulatory requirement you must also satisfy in "
             f"your message: {regulatory_note}\n"
             f"IMPORTANT: only mention specific details (charges, "
-            f"discontinuance terms, risks) if they were explicitly "
-            f"given to you above. If this requirement mentions "
-            f"something you have no specific facts about, say that "
-            f"details are available on request -- do NOT invent "
-            f"specific claims like penalty amounts or terms you were "
-            f"not given."
+            f"discontinuance terms, refund policy, risks) if they "
+            f"were explicitly given to you in the facts above. This "
+            f"applies even if you phrase it as a possibility or hedge "
+            f"it with words like 'might' or 'may' -- a hedged "
+            f"invented claim is still an invented claim. If this "
+            f"requirement mentions something you have no specific "
+            f"facts about, say ONLY that details are available on "
+            f"request -- do not describe, speculate about, or hint "
+            f"at what those details might be, even vaguely."
         )
 
     def _glossary_guardrail_text(glossary_facts: list[str]) -> str:
@@ -149,25 +155,46 @@ def make_llm_node_handler(
 
     def _retelling_prompt(composed_text: str, intro: str) -> str:
         """
-        The narrowed prompt: retell already-correct, already-attributed
-        text. No facts to bind, no reasons to assign -- that work is
-        already done by ExplanationComposer.
+        Everything in `composed_text` is ALREADY fully decided and
+        correctly worded -- ranking, premiums, and every comparison
+        conclusion (which policy costs more, which scores higher on
+        what). The LLM's ONLY job is to TRANSLATE this into Hinglish,
+        sentence by sentence -- NOT to creatively rephrase,
+        restructure, recompute, or reconsider any conclusion.
+
+        This specific framing exists because two earlier approaches
+        both failed in real testing: (1) asking the LLM to "retell
+        this in your own words" gave it enough latitude to invert an
+        already-correct comparative conclusion while paraphrasing
+        (kept the numbers right, called a higher number "weaker");
+        (2) asking the LLM to compute comparisons itself from raw
+        numbers got most cases right but drifted inconsistent later
+        in a long response (correctly called a score "higher" early
+        on, then called the SAME score "lower" later in the same
+        reply). Translation of an already-complete sentence is a
+        narrower, more mechanical task than either paraphrase or
+        computation, which is the fix being applied here. It is not
+        guaranteed to be perfect -- if inversions are still observed,
+        that's a signal this may be approaching a genuine model-size
+        ceiling rather than a prompt-wording problem.
         """
 
         return (
             "You are an experienced, warm insurance agent talking to "
             "a customer on WhatsApp, in Hinglish (mixed Hindi+English, "
             f"casual conversational tone). {intro}\n\n"
-            "Speak the way a real agent actually talks -- flowing "
-            "sentences, no bullet points, no numbered lists, no bold "
-            "headers, no labeled fields.\n\n"
-            "Below is the exact information to retell -- it has "
-            "already been fact-checked and correctly organized. "
-            "Retell it faithfully in your own natural words. Do NOT "
-            "change any number. Do NOT invent any additional fact, "
-            "reason, or comparison beyond what is written here. Do "
-            "NOT move any sentence to a different policy than the "
-            "one it appears under below:\n\n"
+            "Everything below is ALREADY DECIDED and ALREADY "
+            "CORRECTLY WORDED, including every comparison (which "
+            "policy costs more, which scores higher on what). Your "
+            "job is to TRANSLATE this into natural Hinglish, sentence "
+            "by sentence -- NOT to creatively rephrase, restructure, "
+            "recompute, or reconsider any conclusion. If a sentence "
+            "says one policy is MORE expensive or scores LOWER, your "
+            "Hinglish translation must say the exact same thing, just "
+            "in Hinglish words. Do not use bullet points, numbered "
+            "lists, or bold headers -- flowing spoken sentences, but "
+            "a faithful translation of the meaning below, not a "
+            "creative rewrite:\n\n"
             + composed_text
         )
 
@@ -351,13 +378,12 @@ def make_tool_node_handler(
             "wants_lowest_price": context.get_variable(
                 "wants_lowest_price", False
             ),
-            # An explicitly-set flood_exposed/theft_exposed must never
-            # be silently discarded just because we don't ALSO have
-            # the raw factors to derive it independently -- an
-            # explicit signal (e.g. from a future memory/extraction
-            # layer that already inferred this from "I live in
-            # Mumbai") is at least as trustworthy as a freshly-computed
-            # one, so either being true is enough.
+            # An explicitly-set flood_exposed must never be silently
+            # discarded just because we don't ALSO have the raw
+            # factors to derive it independently -- an explicit
+            # signal (e.g. from a future memory/extraction layer that
+            # already inferred this from "I live in Mumbai") is at
+            # least as trustworthy as a freshly-computed one.
             "flood_exposed": (
                 risk_result["flood_exposed"]
                 or context.get_variable("flood_exposed", False)
