@@ -43,16 +43,33 @@ def check_required_slots_handler(
     context: ExecutionContext,
 ) -> dict[str, Any]:
     """
-    Decision handler: FIRST checks whether this is a follow-up
-    question about something already shown (highest priority -- if
-    the customer is asking about their existing options, answering
-    that takes precedence over collecting new info), THEN checks
-    required-slot completeness and comparison-vs-recommendation
-    routing, exactly as before.
+    Decision handler: checks, in priority order --
+    1. Is this a question about the assistant itself ("who are you",
+       "what can you help with")? Highest priority: this can happen
+       as the very first message, before anything's been shown, and
+       should be answered regardless of what else is or isn't known.
+    2. Is this a follow-up question about something already shown
+       (recommendations/comparison)?
+    3. Do we have the required slots to recommend/compare?
+    4. Is this a comparison request (both policy_id_a/b known) or a
+       recommendation request?
 
-    Produces four mutually exclusive flags -- WorkflowRuntime's edge
+    Produces five mutually exclusive flags -- WorkflowRuntime's edge
     conditions only check ONE named variable's truthiness each.
     """
+
+    is_asking_about_assistant = context.get_variable(
+        "is_asking_about_assistant", False
+    )
+
+    if is_asking_about_assistant:
+        return {
+            "should_answer_about_assistant": True,
+            "should_answer_followup": False,
+            "should_ask_clarifying": False,
+            "should_compare": False,
+            "should_recommend": False,
+        }
 
     is_followup_question = context.get_variable("is_followup_question", False)
 
@@ -60,6 +77,7 @@ def check_required_slots_handler(
 
     if is_followup_question and has_last_shown:
         return {
+            "should_answer_about_assistant": False,
             "should_answer_followup": True,
             "should_ask_clarifying": False,
             "should_compare": False,
@@ -80,6 +98,7 @@ def check_required_slots_handler(
     )
 
     return {
+        "should_answer_about_assistant": False,
         "should_answer_followup": False,
         "should_ask_clarifying": not has_required_info,
         "should_compare": has_required_info and is_comparison_request,
@@ -129,6 +148,30 @@ def make_llm_node_handler(
             f"repeat information already known."
         )
 
+    def _answer_about_assistant(context: ExecutionContext) -> str:
+
+        customer_message = context.get_variable("customer_message", "")
+
+        return (
+            "You are an AI insurance assistant, helping customers on "
+            "WhatsApp find, compare, and understand motor insurance "
+            "(car, bike, and commercial vehicle) policies in India. "
+            "You are an AI, not a human agent -- if asked directly "
+            "whether you're a bot/AI, say so honestly, do not claim "
+            "to be human. You help with: recommending suitable "
+            "policies based on the customer's vehicle and needs, "
+            "comparing specific policies by name, and explaining "
+            "insurance terms in simple language.\n\n"
+            f'The customer just asked: "{customer_message}"\n\n'
+            "Answer this warmly and honestly in Hinglish "
+            "(Hindi+English WhatsApp style), using ONLY the facts "
+            "about yourself given above -- do not invent additional "
+            "capabilities (like claims handling, other insurance "
+            "types, or anything not mentioned above). Keep it short "
+            "and natural, then gently invite them to share their "
+            "vehicle details so you can help."
+        )
+
     def _answer_followup(context: ExecutionContext) -> str:
 
         customer_message = context.get_variable("customer_message", "")
@@ -144,12 +187,14 @@ def make_llm_node_handler(
             f'The customer is now asking a follow-up question: '
             f'"{customer_message}"\n\n'
             "Answer their question using ONLY the facts above -- do "
-            "NOT invent any new fact, number, or comparison not "
-            "already stated above. If their question asks about "
-            "something not covered by these facts, say so honestly "
-            "and offer to help them get that specific information "
-            "rather than guessing. No bullet points, numbered lists, "
-            "or bold headers -- warm, natural, flowing sentences."
+            "NOT invent any new fact, number, comparison, or detail "
+            "(such as financing status, vehicle condition, or "
+            "anything else) not already stated above. If their "
+            "question asks about something not covered by these "
+            "facts, say so honestly and offer to help them get that "
+            "specific information rather than guessing. No bullet "
+            "points, numbered lists, or bold headers -- warm, "
+            "natural, flowing sentences."
         )
 
     def _regulatory_requirement() -> str | None:
@@ -229,10 +274,21 @@ def make_llm_node_handler(
             "recompute, or reconsider any conclusion. If a sentence "
             "says one policy is MORE expensive or scores LOWER, your "
             "Hinglish translation must say the exact same thing, just "
-            "in Hinglish words. Do not use bullet points, numbered "
-            "lists, or bold headers -- flowing spoken sentences, but "
-            "a faithful translation of the meaning below, not a "
-            "creative rewrite:\n\n"
+            "in Hinglish words.\n\n"
+            "CRITICAL: do not add ANY fact, reason, attribute, or "
+            "detail that is not explicitly written below -- this "
+            "includes things like whether the vehicle is financed, "
+            "its condition, or any other detail. If a reason below "
+            "says a coverage matters 'because the vehicle is new', do "
+            "NOT add 'and financed' or any other elaboration -- state "
+            "only the exact reason given, nothing more, even if a "
+            "more familiar or complete-sounding explanation occurs to "
+            "you. Every sentence you write must trace back to "
+            "something explicitly stated below.\n\n"
+            "Do not use bullet points, numbered lists, or bold "
+            "headers -- flowing spoken sentences, but a faithful "
+            "translation of the meaning below, not a creative "
+            "rewrite:\n\n"
             + composed_text
         )
 
@@ -332,6 +388,8 @@ def make_llm_node_handler(
 
         if prompt_kind == "ask_clarifying_question":
             prompt = _ask_clarifying_question(context)
+        elif prompt_kind == "answer_about_assistant":
+            prompt = _answer_about_assistant(context)
         elif prompt_kind == "answer_followup":
             prompt = _answer_followup(context)
         elif prompt_kind == "format_explanation":
@@ -380,13 +438,9 @@ def make_tool_node_handler(
     configured tool_name (recommend_policies vs compare_policies).
 
     Also persists a snapshot of what was just shown to the customer
-    (a composed summary + the shown policy_ids) back into the SAME
-    session profile memory -- this is what enables both natural-
-    language "compare X vs Y" resolution (matching against what the
-    customer was actually just shown, not the whole catalog) and
-    follow-up question answering (answering from the exact facts
-    already given, without re-running recommend/compare and risking
-    a different result).
+    back into the same session profile memory -- this enables both
+    natural-language "compare X vs Y" resolution and follow-up
+    question answering.
     """
 
     risk_engine = RiskScoringEngine()
@@ -618,6 +672,7 @@ _EXTRACTION_SCHEMA = {
         "age": {"type": ["integer", "null"]},
         "is_chitchat_only": {"type": "boolean"},
         "is_followup_question": {"type": "boolean"},
+        "is_asking_about_assistant": {"type": "boolean"},
         "comparison_policy_name_a": {"type": ["string", "null"]},
         "comparison_policy_name_b": {"type": ["string", "null"]},
     },
@@ -639,13 +694,6 @@ def make_extraction_handler(
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the profile extraction/merge handler (NodeType.MEMORY).
-
-    `policy_name_resolver` (a PolicyNameResolver) resolves
-    comparison_policy_name_a/b (extracted by the LLM as free text,
-    e.g. "ClaimEase ThirdParty") into real policy_id_a/policy_id_b,
-    preferring a match against `_last_shown_policy_ids` (what the
-    customer was actually just shown) before falling back to the
-    whole catalog.
     """
 
     def extraction_handler(
@@ -686,6 +734,7 @@ def make_extraction_handler(
         if customer_message is None:
             existing_profile["is_chitchat_only"] = False
             existing_profile["is_followup_question"] = False
+            existing_profile["is_asking_about_assistant"] = False
             return existing_profile
 
         known_facts_text = (
@@ -731,10 +780,25 @@ def make_extraction_handler(
             "message below. Only fill in a field if the message "
             "actually supports it -- leave anything not mentioned as "
             "null. Do not guess at fields with no basis in the "
-            "message. Set is_chitchat_only to true only if the "
-            "ENTIRE message is just a greeting or small talk with no "
-            "insurance-relevant content at all, AND does not answer "
-            "a question we just asked."
+            "message. If the customer explicitly denies or negates a "
+            "yes/no fact (e.g. says 'no', 'nahi', 'not financed', "
+            "'nahi hai'), set that field to false explicitly -- do "
+            "NOT leave it null. null means the topic was never "
+            "mentioned at all; false means they explicitly said no.\n\n"
+            "Three DIFFERENT categories to distinguish carefully:\n"
+            "- is_chitchat_only: true ONLY for pure greeting/small "
+            "talk with no question at all (e.g. 'hi', 'thanks', "
+            "'ok') and no insurance content.\n"
+            "- is_asking_about_assistant: true if the customer is "
+            "asking WHO or WHAT you are, or what you can help with "
+            "(e.g. 'who are you', 'what can you do', 'are you a "
+            "bot', 'what is this'), regardless of what else is in "
+            "the message.\n"
+            "- is_followup_question: true if they're asking about, "
+            "clarifying, or wanting more explanation of something "
+            "ALREADY SHOWN to them earlier in this conversation "
+            "(recommendations/comparisons), not a general question "
+            "about you or a new request."
             f"{last_asked_text}"
             f"{followup_hint}\n\n"
             f"Facts already known from earlier in this conversation "
@@ -776,8 +840,6 @@ def make_extraction_handler(
                 elif normalized_theft == "high":
                     extracted["residence_cluster"] = "metro_high_theft"
 
-        # Resolve named policy comparison mentions to real policy_ids,
-        # preferring what was just shown to this customer.
         if policy_name_resolver is not None:
 
             name_a = extracted.get("comparison_policy_name_a")
@@ -800,6 +862,7 @@ def make_extraction_handler(
             if key in (
                 "is_chitchat_only",
                 "is_followup_question",
+                "is_asking_about_assistant",
                 "comparison_policy_name_a",
                 "comparison_policy_name_b",
             ):
@@ -833,13 +896,10 @@ def make_extraction_handler(
         merged_profile["is_followup_question"] = extracted.get(
             "is_followup_question", False
         )
+        merged_profile["is_asking_about_assistant"] = extracted.get(
+            "is_asking_about_assistant", False
+        )
 
-        # policy_id_a/policy_id_b resolved above aren't part of the
-        # DECLARED profile fields (they're routing signals, not
-        # persisted customer facts) -- set directly for THIS turn's
-        # context promotion. They are NOT added to
-        # EXTRACTABLE_PROFILE_FIELDS's persisted set, so a resolved
-        # comparison request doesn't leak into a later, unrelated turn.
         if "policy_id_a" in extracted:
             merged_profile["policy_id_a"] = extracted["policy_id_a"]
             merged_profile["policy_id_b"] = extracted["policy_id_b"]

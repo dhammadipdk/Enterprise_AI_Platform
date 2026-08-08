@@ -24,8 +24,6 @@ EXTRACTABLE_PROFILE_FIELDS = [
     "financed_vehicle",
     "family_usage",
     "dependents",
-    "policy_id_a",
-    "policy_id_b",
     "vehicle_segment",
     "protection_preference",
     "wants_lowest_price",
@@ -47,13 +45,16 @@ EXTRACTABLE_PROFILE_FIELDS = [
     "age",
     "is_chitchat_only",
     "is_followup_question",
+    "is_asking_about_assistant",
     "_last_shown_summary",
     "_last_shown_policy_ids",
+    "policy_id_a",
+    "policy_id_b",
 ]
 
 POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
     "name": "policy_advisor",
-    "version": "6.0.0",
+    "version": "7.0.0",
     "entry_node": "start",
     "nodes": [
         {"id": "start", "name": "Start", "node_type": "start"},
@@ -74,11 +75,19 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Check Required Slots And Route",
             "node_type": "decision",
             "outputs": [
+                "should_answer_about_assistant",
                 "should_answer_followup",
                 "should_ask_clarifying",
                 "should_compare",
                 "should_recommend",
             ],
+        },
+        {
+            "id": "answer_about_assistant",
+            "name": "Answer Question About The Assistant",
+            "node_type": "llm",
+            "configuration": {"prompt_kind": "answer_about_assistant"},
+            "outputs": ["response_text"],
         },
         {
             "id": "answer_followup",
@@ -126,6 +135,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "configuration": {"prompt_kind": "format_comparison"},
             "outputs": ["response_text"],
         },
+        {"id": "end_about_assistant", "name": "End (Answered About Assistant)", "node_type": "end"},
         {"id": "end_followup", "name": "End (Answered Follow-up)", "node_type": "end"},
         {"id": "end_ask", "name": "End (Asked Clarifying Question)", "node_type": "end"},
         {"id": "end_recommend", "name": "End (Recommended)", "node_type": "end"},
@@ -135,6 +145,11 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
         {"source": "start", "destination": "ensure_session"},
         {"source": "ensure_session", "destination": "extract_and_merge_profile"},
         {"source": "extract_and_merge_profile", "destination": "check_slots"},
+        {
+            "source": "check_slots",
+            "destination": "answer_about_assistant",
+            "condition": "should_answer_about_assistant",
+        },
         {
             "source": "check_slots",
             "destination": "answer_followup",
@@ -155,6 +170,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "destination": "get_recommendations",
             "condition": "should_recommend",
         },
+        {"source": "answer_about_assistant", "destination": "end_about_assistant"},
         {"source": "answer_followup", "destination": "end_followup"},
         {"source": "ask_clarifying_question", "destination": "end_ask"},
         {"source": "get_recommendations", "destination": "format_explanation"},
