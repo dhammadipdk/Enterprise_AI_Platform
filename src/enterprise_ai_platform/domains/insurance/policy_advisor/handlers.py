@@ -148,9 +148,13 @@ def make_llm_node_handler(
             f"Ask ONE short, friendly question in Hinglish "
             f"(Hindi+English WhatsApp style) to get this missing "
             f"information. Do not ask for anything else, and do not "
-            f"repeat information already known."
+            f"repeat information already known. Do NOT apologize for "
+            f"anything, and do NOT invent or reference any prior "
+            f"event, mistake, or issue that isn't explicitly "
+            f"described here -- just ask the question directly and "
+            f"warmly."
         )
-
+        
     def _answer_about_assistant(context: ExecutionContext) -> str:
 
         customer_message = context.get_variable("customer_message", "")
@@ -220,24 +224,43 @@ def make_llm_node_handler(
 
         return matches[0].chunk.metadata.get("implication_for_agent")
 
-    def _regulatory_guardrail_text(regulatory_note: str | None) -> str:
+    def _regulatory_guardrail_text(
+        regulatory_note: str | None,
+        top_pick_name: str | None = None,
+    ) -> str:
 
         if not regulatory_note:
             return ""
 
+        attribution_clause = (
+            f" This summary is about {top_pick_name} ONLY -- the "
+            f"single policy being recommended. Do NOT repeat this "
+            f"summary for any other policy mentioned in your "
+            f"comparison, and NEVER refer to any policy other than "
+            f"{top_pick_name} as 'your policy' or 'tumhari policy' -- "
+            f"the other policies are being discussed only to explain "
+            f"the comparison, they are not what's being recommended."
+            if top_pick_name
+            else ""
+        )
+
         return (
             f"\n\nRegulatory requirement you must also satisfy in "
             f"your message: {regulatory_note}\n"
-            f"IMPORTANT: only mention specific details (charges, "
-            f"discontinuance terms, refund policy, risks) if they "
-            f"were explicitly given to you in the facts above. This "
-            f"applies even if you phrase it as a possibility or hedge "
-            f"it with words like 'might' or 'may' -- a hedged "
-            f"invented claim is still an invented claim. If this "
-            f"requirement mentions something you have no specific "
-            f"facts about, say ONLY that details are available on "
-            f"request -- do not describe, speculate about, or hint "
-            f"at what those details might be, even vaguely.\n"
+            f"IMPORTANT: state this information ONCE as part of your "
+            f"overall response, near the end -- do not repeat a "
+            f"'plain language summary' block multiple times for "
+            f"different policies.{attribution_clause}\n"
+            f"Only mention specific details (charges, discontinuance "
+            f"terms, refund policy, risks) if they were explicitly "
+            f"given to you in the facts above. This applies even if "
+            f"you phrase it as a possibility or hedge it with words "
+            f"like 'might' or 'may' -- a hedged invented claim is "
+            f"still an invented claim. If this requirement mentions "
+            f"something you have no specific facts about, say ONLY "
+            f"that details are available on request -- do not "
+            f"describe, speculate about, or hint at what those "
+            f"details might be, even vaguely.\n"
             f"This must be woven into the SAME flowing Hinglish "
             f"paragraphs as the rest of your message -- do NOT add "
             f"separate labeled sections like 'Details:', 'Risks:', "
@@ -341,7 +364,11 @@ def make_llm_node_handler(
 
         prompt += _glossary_guardrail_text(glossary_facts)
 
-        prompt += _regulatory_guardrail_text(_regulatory_requirement())
+        top_pick_name = recommendations[0]["product_name"]
+
+        prompt += _regulatory_guardrail_text(
+            _regulatory_requirement(), top_pick_name
+        )
 
         return prompt
 
@@ -378,7 +405,17 @@ def make_llm_node_handler(
 
         prompt += _glossary_guardrail_text(glossary_facts)
 
-        prompt += _regulatory_guardrail_text(_regulatory_requirement())
+        winner_id = comparison_result.get("winner_policy_id")
+
+        top_pick_name = (
+            policy_a.get("product_name")
+            if winner_id == policy_a.get("policy_id")
+            else policy_b.get("product_name")
+        )
+
+        prompt += _regulatory_guardrail_text(
+            _regulatory_requirement(), top_pick_name
+        )
 
         return prompt
 
