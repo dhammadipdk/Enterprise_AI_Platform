@@ -724,6 +724,14 @@ _RISK_LEVEL_NORMALIZE = {
     "very_high": "high", "extreme": "high",
 }
 
+_SCORING_RELEVANT_FIELDS = {
+    "coverage_priorities", "prefers_cashless", "financed_vehicle", "family_usage",
+    "digital_affinity_1to5", "protection_preference", "wants_lowest_price",
+    "flood_risk_band", "city_risk_band", "residence_cluster",
+    "theft_history", "commute_pattern", "annual_mileage_km",
+    "budget_sensitivity_1to5", "budget_cap_rs", "age", "vehicle_segment",
+}
+
 import re
 
 _VEHICLE_SEGMENT_KEYWORDS = {
@@ -942,6 +950,26 @@ def make_extraction_handler(
                 if resolved_a is not None and resolved_b is not None:
                     extracted["policy_id_a"] = resolved_a
                     extracted["policy_id_b"] = resolved_b
+
+        # New, genuinely scoring-relevant information always takes
+        # priority over answering as a stale follow-up -- e.g. a
+        # customer revealing they live in Mumbai (changing
+        # flood_risk_band) while asking "does this change anything?"
+        # needs a FRESH recommendation reflecting that fact, not a
+        # retelling of the old one. Confirmed necessary in real
+        # testing: the deterministic city lookup correctly extracted
+        # flood_risk_band=high, but the system routed to
+        # answer_followup anyway and gave an answer that never
+        # mentioned flood risk at all, twice, because
+        # answer_followup can only draw on the pre-Mumbai summary.
+        has_new_scoring_fact = any(
+            extracted.get(field) is not None
+            and extracted.get(field) != existing_profile.get(field)
+            for field in _SCORING_RELEVANT_FIELDS
+        )
+
+        if has_new_scoring_fact:
+            extracted["is_followup_question"] = False
 
         merged_profile = dict(existing_profile)
 
