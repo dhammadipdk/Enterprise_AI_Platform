@@ -18,7 +18,11 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.explanation_compose
     ExplanationComposer,
 )
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
+    EXTRACTABLE_PROFILE_FIELDS,
     REQUIRED_SLOTS,
+)
+from enterprise_ai_platform.domains.insurance.policy_advisor.policy_name_resolver import (
+    PolicyNameResolver,
 )
 from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
     RiskScoringEngine,
@@ -27,23 +31,40 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.vehicle_info_resolv
     VehicleInfoResolver,
 )
 
+_SLOT_LABELS = {
+    "vehicle_idv_rs": "vehicle's IDV (insured value) in rupees",
+    "vehicle_age_years": "vehicle's age in years",
+    "vehicle_segment": "vehicle type -- car, bike/two-wheeler, or commercial vehicle",
+}
+
 
 def check_required_slots_handler(
     node: WorkflowNode,
     context: ExecutionContext,
 ) -> dict[str, Any]:
     """
-    Decision handler: checks whether the profile info both
-    recommend_policies and compare_policies need is present, AND
-    determines whether this is a comparison request (both policy_id_a
-    and policy_id_b named) or a recommendation request.
+    Decision handler: FIRST checks whether this is a follow-up
+    question about something already shown (highest priority -- if
+    the customer is asking about their existing options, answering
+    that takes precedence over collecting new info), THEN checks
+    required-slot completeness and comparison-vs-recommendation
+    routing, exactly as before.
 
-    Produces three mutually exclusive flags rather than two
-    independent booleans -- WorkflowRuntime's edge conditions only
-    check ONE named variable's truthiness each. Naming both policies
-    without also giving vehicle info still routes to the clarifying
-    question, not straight to comparison.
+    Produces four mutually exclusive flags -- WorkflowRuntime's edge
+    conditions only check ONE named variable's truthiness each.
     """
+
+    is_followup_question = context.get_variable("is_followup_question", False)
+
+    has_last_shown = context.get_variable("_last_shown_summary") is not None
+
+    if is_followup_question and has_last_shown:
+        return {
+            "should_answer_followup": True,
+            "should_ask_clarifying": False,
+            "should_compare": False,
+            "should_recommend": False,
+        }
 
     missing = [
         slot for slot in REQUIRED_SLOTS if context.get_variable(slot) is None
@@ -59,6 +80,7 @@ def check_required_slots_handler(
     )
 
     return {
+        "should_answer_followup": False,
         "should_ask_clarifying": not has_required_info,
         "should_compare": has_required_info and is_comparison_request,
         "should_recommend": has_required_info and not is_comparison_request,
@@ -73,31 +95,18 @@ def make_llm_node_handler(
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the shared LLM-node handler.
-
-    For explanation/comparison, everything the LLM is given is
-    ALREADY fully decided and correctly worded by
-    PolicyRecommendationEngine + ExplanationComposer -- ranking,
-    premiums, and every comparison conclusion. The LLM's job is
-    narrowly scoped to TRANSLATION into Hinglish, not creative
-    retelling or computation. See _retelling_prompt's docstring for
-    why this specific framing was chosen after other approaches were
-    tried and failed in real testing.
     """
 
     composer = ExplanationComposer(glossary)
 
-    _SLOT_LABELS = {
-        "vehicle_idv_rs": "vehicle's IDV (insured value) in rupees",
-        "vehicle_age_years": "vehicle's age in years",
-        "vehicle_segment": "vehicle type -- car, bike/two-wheeler, or commercial vehicle",
-    }
+    _SLOT_LABELS_LOCAL = _SLOT_LABELS
 
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
         missing_slots = context.get_metadata("missing_slots", [])
 
         readable_missing = [
-            _SLOT_LABELS.get(slot, slot) for slot in missing_slots
+            _SLOT_LABELS_LOCAL.get(slot, slot) for slot in missing_slots
         ]
 
         is_chitchat_only = context.get_variable("is_chitchat_only", False)
@@ -118,6 +127,29 @@ def make_llm_node_handler(
             f"(Hindi+English WhatsApp style) to get this missing "
             f"information. Do not ask for anything else, and do not "
             f"repeat information already known."
+        )
+
+    def _answer_followup(context: ExecutionContext) -> str:
+
+        customer_message = context.get_variable("customer_message", "")
+
+        last_shown_summary = context.get_variable("_last_shown_summary", "")
+
+        return (
+            "You are an experienced, warm insurance agent talking to "
+            "a customer on WhatsApp, in Hinglish (mixed Hindi+English, "
+            "casual conversational tone). The customer previously "
+            "received this information from you:\n\n"
+            f"{last_shown_summary}\n\n"
+            f'The customer is now asking a follow-up question: '
+            f'"{customer_message}"\n\n'
+            "Answer their question using ONLY the facts above -- do "
+            "NOT invent any new fact, number, or comparison not "
+            "already stated above. If their question asks about "
+            "something not covered by these facts, say so honestly "
+            "and offer to help them get that specific information "
+            "rather than guessing. No bullet points, numbered lists, "
+            "or bold headers -- warm, natural, flowing sentences."
         )
 
     def _regulatory_requirement() -> str | None:
@@ -184,30 +216,6 @@ def make_llm_node_handler(
         )
 
     def _retelling_prompt(composed_text: str, intro: str) -> str:
-        """
-        Everything in `composed_text` is ALREADY fully decided and
-        correctly worded -- ranking, premiums, and every comparison
-        conclusion (which policy costs more, which scores higher on
-        what). The LLM's ONLY job is to TRANSLATE this into Hinglish,
-        sentence by sentence -- NOT to creatively rephrase,
-        restructure, recompute, or reconsider any conclusion.
-
-        This specific framing exists because two earlier approaches
-        both failed in real testing: (1) asking the LLM to "retell
-        this in your own words" gave it enough latitude to invert an
-        already-correct comparative conclusion while paraphrasing
-        (kept the numbers right, called a higher number "weaker");
-        (2) asking the LLM to compute comparisons itself from raw
-        numbers got most cases right but drifted inconsistent later
-        in a long response (correctly called a score "higher" early
-        on, then called the SAME score "lower" later in the same
-        reply). Translation of an already-complete sentence is a
-        narrower, more mechanical task than either paraphrase or
-        computation, which is the fix being applied here. It is not
-        guaranteed to be perfect -- if inversions are still observed,
-        that's a signal this may be approaching a genuine model-size
-        ceiling rather than a prompt-wording problem.
-        """
 
         return (
             "You are an experienced, warm insurance agent talking to "
@@ -324,6 +332,8 @@ def make_llm_node_handler(
 
         if prompt_kind == "ask_clarifying_question":
             prompt = _ask_clarifying_question(context)
+        elif prompt_kind == "answer_followup":
+            prompt = _answer_followup(context)
         elif prompt_kind == "format_explanation":
             prompt = _format_explanation(context)
         elif prompt_kind == "format_comparison":
@@ -340,17 +350,14 @@ def make_llm_node_handler(
 
     return llm_node_handler
 
+
 def ensure_session_handler(
     node: WorkflowNode,
     context: ExecutionContext,
 ) -> dict[str, Any]:
     """
     First node in the graph: preserves an existing session_id if the
-    caller supplied one (a continuing conversation), or generates a
-    new one if not (a fresh conversation). System-generated for now --
-    once real WhatsApp/auth integration exists, the caller will pass
-    a real, persistent identity in as session_id instead, and this
-    node's generation path simply won't fire.
+    caller supplied one, or generates a new one if not.
     """
 
     session_id = context.get_variable("session_id")
@@ -365,20 +372,26 @@ def ensure_session_handler(
 
 def make_tool_node_handler(
     tool_service: ToolService,
+    catalog_path: Any,
+    memory_service: Any | None = None,
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the shared Tool-node handler, dispatching on the node's
     configured tool_name (recommend_policies vs compare_policies).
 
-    Computes risk scoring inline here, right before building tool
-    parameters -- matching the "risk_scoring_engine ->
-    policy_catalog_lookup -> recommendation_ranker" pipeline shape the
-    real agentic_tasks fixtures show, without needing a separate graph
-    node for it.
+    Also persists a snapshot of what was just shown to the customer
+    (a composed summary + the shown policy_ids) back into the SAME
+    session profile memory -- this is what enables both natural-
+    language "compare X vs Y" resolution (matching against what the
+    customer was actually just shown, not the whole catalog) and
+    follow-up question answering (answering from the exact facts
+    already given, without re-running recommend/compare and risking
+    a different result).
     """
 
     risk_engine = RiskScoringEngine()
     vehicle_info_resolver = VehicleInfoResolver()
+    composer = ExplanationComposer()
 
     def _compute_risk(context: ExecutionContext) -> dict[str, Any]:
 
@@ -409,7 +422,7 @@ def make_tool_node_handler(
         context: ExecutionContext,
         risk_result: dict[str, Any],
     ) -> dict[str, Any]:
-    
+
         parameters = {
             "vehicle_idv_rs": context.get_variable("vehicle_idv_rs"),
             "vehicle_age_years": context.get_variable("vehicle_age_years"),
@@ -441,16 +454,16 @@ def make_tool_node_handler(
             ),
             "risk_band": risk_result["risk_band"],
         }
-    
+
         resolved_vehicle_info = vehicle_info_resolver.resolve(
             vehicle_segment=context.get_variable("vehicle_segment"),
             vehicle_registration_number=context.get_variable(
                 "vehicle_registration_number"
             ),
         )
-    
+
         parameters["vehicle_category"] = resolved_vehicle_info["vehicle_category"]
-    
+
         for optional_field in (
             "annual_mileage_km",
             "digital_affinity_1to5",
@@ -461,8 +474,40 @@ def make_tool_node_handler(
             value = context.get_variable(optional_field)
             if value is not None:
                 parameters[optional_field] = value
-    
+
         return parameters
+
+    def _persist_last_shown(
+        context: ExecutionContext,
+        shown_policy_ids: list[str],
+        composed_summary: str,
+    ) -> None:
+
+        if memory_service is None:
+            return
+
+        session_id = context.get_variable("session_id")
+
+        current_profile = {
+            field: context.get_variable(field)
+            for field in EXTRACTABLE_PROFILE_FIELDS
+            if context.get_variable(field) is not None
+        }
+
+        current_profile["_last_shown_policy_ids"] = shown_policy_ids
+
+        current_profile["_last_shown_summary"] = composed_summary
+
+        try:
+            from enterprise_ai_platform.memory_engine import MemoryType
+
+            memory_service.store(
+                memory_type=MemoryType.SEMANTIC,
+                content=current_profile,
+                collection=f"policy_advisor_profile:{session_id}",
+            )
+        except Exception:
+            pass
 
     def tool_node_handler(
         node: WorkflowNode,
@@ -496,10 +541,29 @@ def make_tool_node_handler(
         if response.status == "failure":
             raise RuntimeError(f"{tool_name} tool failed: {response.error}")
 
-        return {output_key: response.result, "risk_assessment": risk_result}
+        result = response.result
+
+        if tool_name == "recommend_policies":
+            shown_ids = [r["policy_id"] for r in result.get("recommendations", [])]
+            composed_summary = composer.compose_recommendation_summary(result)
+        else:
+            shown_ids = [
+                result.get("policy_a", {}).get("policy_id"),
+                result.get("policy_b", {}).get("policy_id"),
+            ]
+            composed_summary = composer.compose_comparison_summary(result)
+
+        _persist_last_shown(context, shown_ids, composed_summary)
+
+        return {
+            output_key: result,
+            "risk_assessment": risk_result,
+            "vehicle_category": parameters["vehicle_category"],
+        }
 
     return tool_node_handler
-    
+
+
 _EXTRACTION_SCHEMA = {
     "type": "object",
     "properties": {
@@ -553,6 +617,9 @@ _EXTRACTION_SCHEMA = {
         "needs_plain_language_1to5": {"type": ["integer", "null"]},
         "age": {"type": ["integer", "null"]},
         "is_chitchat_only": {"type": "boolean"},
+        "is_followup_question": {"type": "boolean"},
+        "comparison_policy_name_a": {"type": ["string", "null"]},
+        "comparison_policy_name_b": {"type": ["string", "null"]},
     },
     "required": [],
 }
@@ -567,40 +634,18 @@ def make_extraction_handler(
     model_service: ModelService,
     memory_service: Any | None = None,
     location_risk: Any | None = None,
+    policy_name_resolver: Any | None = None,
     model_name: str = "explanation_model",
 ) -> Callable[[WorkflowNode, ExecutionContext], dict[str, Any]]:
     """
     Build the profile extraction/merge handler (NodeType.MEMORY).
 
-    Reads whatever's already known for this session from
-    MemoryService (MemoryType.SEMANTIC -- durable, permanent facts,
-    not short-lived working memory), asks the LLM to extract new
-    facts from the customer's free-text message via structured
-    output, merges NEW non-null values on top of what's already known
-    (never letting an unmentioned field erase a previously-learned
-    one), writes the merged profile back to memory, and returns it so
-    every downstream field (check_slots, risk scoring, recommend/
-    compare) sees a fully merged profile regardless of which turn
-    each fact was originally mentioned in.
-
-    Loading the existing profile from memory happens EVEN WHEN
-    there's no new customer_message this turn (e.g. a follow-up
-    action like naming two policies to compare) -- only the LLM
-    extraction step is skipped in that case, never the memory read.
-    An earlier version skipped both together, which meant facts
-    learned in prior turns silently disappeared on any turn that
-    wasn't itself a free-text message.
-
-    `location_risk` (a LocationRiskReference) runs BEFORE the LLM
-    call: if a known city is named, flood_risk_band/city_risk_band/
-    residence_cluster are set deterministically from the reference
-    table and OVERRIDE whatever the LLM separately produces for those
-    same fields.
-
-    Deliberately does NOT extract phone/email/exact address at all,
-    and never gender/marital_status/income (excluded from collection
-    entirely, not just from use, matching the earlier fairness
-    decision).
+    `policy_name_resolver` (a PolicyNameResolver) resolves
+    comparison_policy_name_a/b (extracted by the LLM as free text,
+    e.g. "ClaimEase ThirdParty") into real policy_id_a/policy_id_b,
+    preferring a match against `_last_shown_policy_ids` (what the
+    customer was actually just shown) before falling back to the
+    whole catalog.
     """
 
     def extraction_handler(
@@ -634,18 +679,13 @@ def make_extraction_handler(
             except Exception:
                 existing_profile = {}
 
-        # What we most recently asked the customer for, if anything --
-        # stored INSIDE the profile from the previous turn specifically
-        # so a short/ambiguous reply ("10000", a bare number) can be
-        # correctly anchored to the question it's actually answering.
-        # Without this, "10000" with no other context is genuinely
-        # ambiguous even to a human reading it cold.
         last_asked_about = existing_profile.pop("_last_asked_about", [])
 
         customer_message = context.get_variable("customer_message")
 
         if customer_message is None:
             existing_profile["is_chitchat_only"] = False
+            existing_profile["is_followup_question"] = False
             return existing_profile
 
         known_facts_text = (
@@ -668,6 +708,24 @@ def make_extraction_handler(
             else ""
         )
 
+        has_last_shown = existing_profile.get("_last_shown_summary") is not None
+
+        followup_hint = (
+            "\n\nThe customer was already shown some policy "
+            "recommendation(s) or comparison earlier in this "
+            "conversation. Set is_followup_question to true if their "
+            "new message is asking about, clarifying, or requesting "
+            "more explanation of what they were already shown (e.g. "
+            "'explain the difference', 'why is this one better', "
+            "'what does that mean'), rather than giving new "
+            "information or making a new request. If they name two "
+            "specific policies to compare, extract those names into "
+            "comparison_policy_name_a/comparison_policy_name_b "
+            "exactly as the customer phrased them."
+            if has_last_shown
+            else ""
+        )
+
         prompt = (
             "Extract insurance-relevant facts from the customer's "
             "message below. Only fill in a field if the message "
@@ -677,7 +735,8 @@ def make_extraction_handler(
             "ENTIRE message is just a greeting or small talk with no "
             "insurance-relevant content at all, AND does not answer "
             "a question we just asked."
-            f"{last_asked_text}\n\n"
+            f"{last_asked_text}"
+            f"{followup_hint}\n\n"
             f"Facts already known from earlier in this conversation "
             f"(do not contradict these unless the new message clearly "
             f"updates them):\n{known_facts_text}\n\n"
@@ -717,18 +776,37 @@ def make_extraction_handler(
                 elif normalized_theft == "high":
                     extracted["residence_cluster"] = "metro_high_theft"
 
+        # Resolve named policy comparison mentions to real policy_ids,
+        # preferring what was just shown to this customer.
+        if policy_name_resolver is not None:
+
+            name_a = extracted.get("comparison_policy_name_a")
+            name_b = extracted.get("comparison_policy_name_b")
+
+            if name_a and name_b:
+
+                last_shown_ids = existing_profile.get("_last_shown_policy_ids", [])
+
+                resolved_a = policy_name_resolver.resolve(name_a, last_shown_ids)
+                resolved_b = policy_name_resolver.resolve(name_b, last_shown_ids)
+
+                if resolved_a is not None and resolved_b is not None:
+                    extracted["policy_id_a"] = resolved_a
+                    extracted["policy_id_b"] = resolved_b
+
         merged_profile = dict(existing_profile)
 
         for key, value in extracted.items():
-            if key == "is_chitchat_only":
+            if key in (
+                "is_chitchat_only",
+                "is_followup_question",
+                "comparison_policy_name_a",
+                "comparison_policy_name_b",
+            ):
                 continue
             if value is not None:
                 merged_profile[key] = value
 
-        # Compute what's STILL missing after this merge, using the
-        # SAME REQUIRED_SLOTS check_slots will use next -- stored so
-        # the NEXT turn's extraction knows what question it's likely
-        # getting an answer to.
         still_missing = [
             slot for slot in REQUIRED_SLOTS if merged_profile.get(slot) is None
         ]
@@ -751,9 +829,20 @@ def make_extraction_handler(
 
         context.set_metadata("extracted_name_for_redaction", extracted.get("name"))
 
-        merged_profile["is_chitchat_only"] = extracted.get(
-            "is_chitchat_only", False
+        merged_profile["is_chitchat_only"] = extracted.get("is_chitchat_only", False)
+        merged_profile["is_followup_question"] = extracted.get(
+            "is_followup_question", False
         )
+
+        # policy_id_a/policy_id_b resolved above aren't part of the
+        # DECLARED profile fields (they're routing signals, not
+        # persisted customer facts) -- set directly for THIS turn's
+        # context promotion. They are NOT added to
+        # EXTRACTABLE_PROFILE_FIELDS's persisted set, so a resolved
+        # comparison request doesn't leak into a later, unrelated turn.
+        if "policy_id_a" in extracted:
+            merged_profile["policy_id_a"] = extracted["policy_id_a"]
+            merged_profile["policy_id_b"] = extracted["policy_id_b"]
 
         return merged_profile
 

@@ -28,6 +28,9 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.location_risk impor
 from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_workflow import (
     POLICY_ADVISOR_WORKFLOW,
 )
+from enterprise_ai_platform.domains.insurance.policy_advisor.policy_name_resolver import (
+    PolicyNameResolver,
+)
 from enterprise_ai_platform.domains.insurance.policy_advisor.tools import (
     register_policy_advisor_tools,
 )
@@ -46,9 +49,21 @@ def register_policy_advisor_workflow(
 ) -> None:
     """
     Wire up everything Policy Advisor needs. All new parameters are
-    optional and additive -- omitting any of them falls back to
-    earlier, less-grounded behavior rather than failing.
+    optional and additive.
     """
+
+    if memory_service is None:
+        print(
+            "\n" + "=" * 70 + "\n"
+            "WARNING: register_policy_advisor_workflow called WITHOUT "
+            "memory_service.\n"
+            "Conversation facts will NOT persist across turns, and "
+            "follow-up questions / compare-by-name will not work "
+            "either (both depend on session memory). Pass "
+            "memory_service=MemoryService() (created ONCE and reused "
+            "across every workflow_service.execute call in this "
+            "session).\n" + "=" * 70 + "\n"
+        )
 
     register_policy_advisor_tools(tool_service, catalog_path, ontology_path)
 
@@ -62,6 +77,8 @@ def register_policy_advisor_workflow(
         else None
     )
 
+    policy_name_resolver = PolicyNameResolver(catalog_path)
+
     workflow_service.register_node_handler(
         NodeType.TASK,
         ensure_session_handler,
@@ -69,7 +86,9 @@ def register_policy_advisor_workflow(
 
     workflow_service.register_node_handler(
         NodeType.MEMORY,
-        make_extraction_handler(model_service, memory_service, location_risk),
+        make_extraction_handler(
+            model_service, memory_service, location_risk, policy_name_resolver
+        ),
     )
 
     workflow_service.register_node_handler(
@@ -84,7 +103,7 @@ def register_policy_advisor_workflow(
 
     workflow_service.register_node_handler(
         NodeType.TOOL,
-        make_tool_node_handler(tool_service),
+        make_tool_node_handler(tool_service, catalog_path, memory_service),
     )
 
     workflow_service.register_workflow(POLICY_ADVISOR_WORKFLOW)

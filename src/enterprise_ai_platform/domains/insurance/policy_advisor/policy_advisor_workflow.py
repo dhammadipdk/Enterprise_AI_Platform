@@ -8,36 +8,29 @@ from typing import Any
 
 REQUIRED_SLOTS = ["vehicle_idv_rs", "vehicle_age_years", "vehicle_segment"]
 
-# Every field the extraction node can populate -- shared with the
-# node's declared `outputs` so nothing extracted is silently dropped
-# (WorkflowRuntime only promotes a node's DECLARED outputs into
-# context variables; an undeclared key in a handler's return dict is
-# simply not accessible downstream).
 EXTRACTABLE_PROFILE_FIELDS = [
     "name",
-    # Tier 1 -- hard required
     "vehicle_idv_rs",
     "vehicle_age_years",
-    "vehicle_registration_number",
-    # Tier 2 -- inferred from message + world knowledge, never a
-    # dedicated question
     "fuel_type",
     "ev_flag",
     "annual_mileage_km",
     "ncb_percent",
     "residence_cluster",
+    "vehicle_registration_number",
     "city_risk_band",
     "flood_risk_band",
     "commute_pattern",
     "financed_vehicle",
     "family_usage",
     "dependents",
+    "policy_id_a",
+    "policy_id_b",
     "vehicle_segment",
     "protection_preference",
     "wants_lowest_price",
     "coverage_priorities",
     "prefers_cashless",
-    # Tier 3 -- only if volunteered, never asked, retained if learned
     "theft_history",
     "previous_claims_3yr",
     "at_fault_claims_3yr",
@@ -52,13 +45,15 @@ EXTRACTABLE_PROFILE_FIELDS = [
     "prior_policy_lapse",
     "needs_plain_language_1to5",
     "age",
-    # Metadata, not a profile fact
     "is_chitchat_only",
+    "is_followup_question",
+    "_last_shown_summary",
+    "_last_shown_policy_ids",
 ]
 
 POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
     "name": "policy_advisor",
-    "version": "4.0.0",
+    "version": "6.0.0",
     "entry_node": "start",
     "nodes": [
         {"id": "start", "name": "Start", "node_type": "start"},
@@ -79,10 +74,18 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Check Required Slots And Route",
             "node_type": "decision",
             "outputs": [
+                "should_answer_followup",
                 "should_ask_clarifying",
                 "should_compare",
                 "should_recommend",
             ],
+        },
+        {
+            "id": "answer_followup",
+            "name": "Answer Follow-up Question",
+            "node_type": "llm",
+            "configuration": {"prompt_kind": "answer_followup"},
+            "outputs": ["response_text"],
         },
         {
             "id": "ask_clarifying_question",
@@ -96,7 +99,9 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Get Policy Recommendations",
             "node_type": "tool",
             "configuration": {"tool_name": "recommend_policies"},
-            "outputs": ["recommendations_result", "risk_assessment"],
+            "outputs": [
+                "recommendations_result", "risk_assessment", "vehicle_category",
+            ],
         },
         {
             "id": "format_explanation",
@@ -110,7 +115,9 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "name": "Get Policy Comparison",
             "node_type": "tool",
             "configuration": {"tool_name": "compare_policies"},
-            "outputs": ["comparison_result", "risk_assessment"],
+            "outputs": [
+                "comparison_result", "risk_assessment", "vehicle_category",
+            ],
         },
         {
             "id": "format_comparison",
@@ -119,6 +126,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "configuration": {"prompt_kind": "format_comparison"},
             "outputs": ["response_text"],
         },
+        {"id": "end_followup", "name": "End (Answered Follow-up)", "node_type": "end"},
         {"id": "end_ask", "name": "End (Asked Clarifying Question)", "node_type": "end"},
         {"id": "end_recommend", "name": "End (Recommended)", "node_type": "end"},
         {"id": "end_compare", "name": "End (Compared)", "node_type": "end"},
@@ -127,6 +135,11 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
         {"source": "start", "destination": "ensure_session"},
         {"source": "ensure_session", "destination": "extract_and_merge_profile"},
         {"source": "extract_and_merge_profile", "destination": "check_slots"},
+        {
+            "source": "check_slots",
+            "destination": "answer_followup",
+            "condition": "should_answer_followup",
+        },
         {
             "source": "check_slots",
             "destination": "ask_clarifying_question",
@@ -142,6 +155,7 @@ POLICY_ADVISOR_WORKFLOW: dict[str, Any] = {
             "destination": "get_recommendations",
             "condition": "should_recommend",
         },
+        {"source": "answer_followup", "destination": "end_followup"},
         {"source": "ask_clarifying_question", "destination": "end_ask"},
         {"source": "get_recommendations", "destination": "format_explanation"},
         {"source": "format_explanation", "destination": "end_recommend"},
