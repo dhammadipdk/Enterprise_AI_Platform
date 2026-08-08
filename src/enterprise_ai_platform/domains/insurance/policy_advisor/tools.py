@@ -33,6 +33,10 @@ _SHARED_PROPERTIES = {
         "type": "string",
         "enum": ["max_protection", "balanced", "budget_first"],
     },
+    "vehicle_category": {
+        "type": "string",
+        "enum": ["car", "two_wheeler", "commercial_vehicle"],
+    },
     "wants_lowest_price": {"type": "boolean"},
     "flood_exposed": {"type": "boolean"},
     "risk_band": {"type": "string", "enum": ["low", "medium", "high"]},

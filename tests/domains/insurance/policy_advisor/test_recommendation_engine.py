@@ -7,9 +7,13 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.recommendation_engi
 CATALOG_PATH = "src/enterprise_ai_platform/domains/insurance/knowledge/policy_catalog/entity_catalog.csv"
 
 
+CATALOG_PATH = "src/enterprise_ai_platform/domains/insurance/knowledge/policy_catalog/entity_catalog.csv"
+ONTOLOGY_PATH = "src/enterprise_ai_platform/domains/insurance/knowledge/coverage_ontology/relationships.csv"
+
+
 @pytest.fixture(scope="module")
 def engine():
-    return PolicyRecommendationEngine(CATALOG_PATH)
+    return PolicyRecommendationEngine(CATALOG_PATH, ONTOLOGY_PATH)
 
 
 def test_recommend_returns_ranked_eligible_policies(engine):

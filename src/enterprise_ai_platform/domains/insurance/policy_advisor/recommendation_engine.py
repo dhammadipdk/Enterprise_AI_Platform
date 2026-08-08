@@ -40,17 +40,24 @@ class PolicyRecommendationEngine:
 
     Coverage-relevance bonuses (flood -> engine_protect, new vehicle
     -> zero_dep/return_to_invoice, family -> passenger_cover, etc.)
-    are now driven by CoverageOntology (see coverage_ontology.py) --
-    a real, populated relationship dataset from the platform's
+    are driven by CoverageOntology (see coverage_ontology.py) -- a
+    real, populated relationship dataset from the platform's
     Contextual Intelligence repository -- rather than individually
     hardcoded Python if/else branches per trait. Two rules remain
     explicit here because the ontology doesn't model them:
     financed_vehicle -> return_to_invoice, and family_usage ->
-    personal_accident_cover (the ontology only maps family traits to
-    passenger_cover). Both are merged into the SAME match_reasons
-    structure the ontology produces, with deduplication, so a policy
-    that qualifies for return_to_invoice via BOTH "new vehicle" and
-    "financed" gets one combined reason, not two stacked bonuses.
+    personal_accident_cover.
+
+    vehicle_category is a first-class eligibility dimension,
+    independent of age/mileage/EV-ness -- the catalog now covers the
+    whole motor domain (car, two_wheeler, commercial_vehicle), not
+    just cars. IMPORTANT: when vehicle_category isn't specified, this
+    defaults internally to "car", NOT "no filter" -- treating unset as
+    "show everything regardless of category" would mix car, bike, and
+    commercial-vehicle policies into the same ranked result, which is
+    meaningless (a bike's premium isn't comparable to a car's), and
+    would silently change results for every caller that predates
+    vehicle_category and has no reason to pass it.
 
     IMPORTANT: pandas reads CSV boolean columns back as numpy.bool_,
     not Python's native bool -- every boolean flag check here uses
@@ -95,6 +102,7 @@ class PolicyRecommendationEngine:
         theft_exposed: bool = False,
         age: int | None = None,
         commute_pattern: str | None = None,
+        vehicle_category: str | None = None,
     ) -> dict[str, Any]:
         """
         Return the top `top_n` eligible policies ranked by
@@ -107,12 +115,20 @@ class PolicyRecommendationEngine:
             coverage_priorities
         )
 
+        effective_vehicle_category = vehicle_category or "car"
+
         candidates: list[dict[str, Any]] = []
+
+        category_has_any_products = False
 
         for _, policy in self._catalog.iterrows():
 
+            if policy.get("vehicle_category", "car") == effective_vehicle_category:
+                category_has_any_products = True
+
             if not self._is_eligible(
-                policy, vehicle_age_years, ev_flag, annual_mileage_km
+                policy, vehicle_age_years, ev_flag, annual_mileage_km,
+                effective_vehicle_category,
             ):
                 continue
 
@@ -165,17 +181,28 @@ class PolicyRecommendationEngine:
             )
 
         if not candidates:
-            return {
-                "recommendations": [],
-                "total_eligible": 0,
-                "why_not_cheapest": None,
-                "message": (
+
+            if not category_has_any_products:
+                message = (
+                    f"No {effective_vehicle_category.replace('_', ' ')} "
+                    f"insurance products exist in the catalog yet. Flag "
+                    f"this profile for manual/specialist follow-up as "
+                    f"coverage expands to other vehicle types."
+                )
+            else:
+                message = (
                     "No eligible policies found for this vehicle profile "
                     "in the current catalog. This usually means the "
                     "vehicle's age or mileage exceeds every policy's "
                     "limits -- flag for manual/specialist review rather "
                     "than silently returning nothing."
-                ),
+                )
+
+            return {
+                "recommendations": [],
+                "total_eligible": 0,
+                "why_not_cheapest": None,
+                "message": message,
             }
 
         candidates.sort(key=lambda c: c["suitability_score"], reverse=True)
@@ -239,6 +266,7 @@ class PolicyRecommendationEngine:
         theft_exposed: bool = False,
         age: int | None = None,
         commute_pattern: str | None = None,
+        vehicle_category: str | None = None,
     ) -> dict[str, Any]:
         """
         Same as recommend(), but additionally computes fully-worded
@@ -269,6 +297,7 @@ class PolicyRecommendationEngine:
             theft_exposed=theft_exposed,
             age=age,
             commute_pattern=commute_pattern,
+            vehicle_category=vehicle_category,
         )
 
         recommendations = result["recommendations"]
@@ -318,11 +347,15 @@ class PolicyRecommendationEngine:
         theft_exposed: bool = False,
         age: int | None = None,
         commute_pattern: str | None = None,
+        vehicle_category: str | None = None,
     ) -> dict[str, Any]:
         """
         Compare two named policies for one customer profile,
         deterministically. Raises KeyError if either policy_id is
-        unknown.
+        unknown. (Comparison intentionally skips eligibility/category
+        filtering -- comparing two specific, already-chosen policies
+        by name doesn't need a category gate; vehicle_category is
+        accepted here only for signature consistency, not used.)
         """
 
         flag_terms, preference_terms = self._parse_coverage_priorities(
@@ -410,6 +443,7 @@ class PolicyRecommendationEngine:
                 "estimated_annual_premium_rs": premium_a,
                 "matched_coverage": matched_a,
                 "match_reasons": reasons_a,
+                "plain_language_pitch": policy_a["plain_language_pitch"],
             },
             "policy_b": {
                 "policy_id": policy_id_b,
@@ -418,6 +452,7 @@ class PolicyRecommendationEngine:
                 "estimated_annual_premium_rs": premium_b,
                 "matched_coverage": matched_b,
                 "match_reasons": reasons_b,
+                "plain_language_pitch": policy_b["plain_language_pitch"],
             },
             "winner_policy_id": winner_id,
             "reasons": reasons,
@@ -535,6 +570,7 @@ class PolicyRecommendationEngine:
         vehicle_age_years: int,
         ev_flag: bool,
         annual_mileage_km: float | None = None,
+        vehicle_category: str | None = None,
     ) -> bool:
 
         max_age = policy.get("target_vehicle_age_max")
@@ -552,6 +588,19 @@ class PolicyRecommendationEngine:
             and annual_mileage_km is not None
             and annual_mileage_km > max_mileage
         ):
+            return False
+
+        # Default to "car" whenever vehicle_category isn't specified --
+        # NOT "no filter". Skipping the filter entirely would let car,
+        # bike, and commercial-vehicle policies get scored against
+        # each other in the same result set, which is meaningless, and
+        # would silently break every existing caller that predates
+        # vehicle_category.
+        effective_vehicle_category = vehicle_category or "car"
+
+        policy_category = policy.get("vehicle_category", "car")
+
+        if policy_category != effective_vehicle_category:
             return False
 
         return True
@@ -644,9 +693,6 @@ class PolicyRecommendationEngine:
                 (premium - budget_cap_rs) / budget_cap_rs,
             )
 
-        # --- Coverage-relevance bonus: ontology-driven, plus two
-        # explicit rules the ontology doesn't model. ---
-
         match_reasons: list[dict[str, str]] = []
 
         context_bonus = 0.0
@@ -673,10 +719,6 @@ class PolicyRecommendationEngine:
 
             match_reasons.extend(ontology_reasons)
 
-        # Explicit: financed_vehicle -> return_to_invoice (not in the
-        # ontology). Merge into any existing return_to_invoice reason
-        # rather than double-counting the bonus if new_vehicle ALSO
-        # already triggered it.
         if financed_vehicle and policy.get("return_to_invoice"):
 
             existing = next(
@@ -699,8 +741,6 @@ class PolicyRecommendationEngine:
                     }
                 )
 
-        # Explicit: family_usage -> personal_accident_cover (the
-        # ontology only maps family traits to passenger_cover).
         if family_usage and policy.get("personal_accident_cover"):
             context_bonus += 8
             match_reasons.append(

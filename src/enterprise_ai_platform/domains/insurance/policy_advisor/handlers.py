@@ -23,6 +23,9 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.policy_advisor_work
 from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine import (
     RiskScoringEngine,
 )
+from enterprise_ai_platform.domains.insurance.policy_advisor.vehicle_info_resolver import (
+    VehicleInfoResolver,
+)
 
 
 def check_required_slots_handler(
@@ -83,9 +86,19 @@ def make_llm_node_handler(
 
     composer = ExplanationComposer(glossary)
 
+    _SLOT_LABELS = {
+        "vehicle_idv_rs": "vehicle's IDV (insured value) in rupees",
+        "vehicle_age_years": "vehicle's age in years",
+        "vehicle_segment": "vehicle type -- car, bike/two-wheeler, or commercial vehicle",
+    }
+
     def _ask_clarifying_question(context: ExecutionContext) -> str:
 
         missing_slots = context.get_metadata("missing_slots", [])
+
+        readable_missing = [
+            _SLOT_LABELS.get(slot, slot) for slot in missing_slots
+        ]
 
         is_chitchat_only = context.get_variable("is_chitchat_only", False)
 
@@ -100,7 +113,7 @@ def make_llm_node_handler(
 
         return (
             f"{chitchat_note}Customer wants motor insurance advice "
-            f"on WhatsApp. We still need: {', '.join(missing_slots)}. "
+            f"on WhatsApp. We still need: {', '.join(readable_missing)}. "
             f"Ask ONE short, friendly question in Hinglish "
             f"(Hindi+English WhatsApp style) to get this missing "
             f"information. Do not ask for anything else, and do not "
@@ -144,7 +157,13 @@ def make_llm_node_handler(
             f"requirement mentions something you have no specific "
             f"facts about, say ONLY that details are available on "
             f"request -- do not describe, speculate about, or hint "
-            f"at what those details might be, even vaguely."
+            f"at what those details might be, even vaguely.\n"
+            f"This must be woven into the SAME flowing Hinglish "
+            f"paragraphs as the rest of your message -- do NOT add "
+            f"separate labeled sections like 'Details:', 'Risks:', "
+            f"or 'Discontinuance:', and do NOT switch to plain "
+            f"English for this part. One continuous reply, same "
+            f"style throughout, not a form."
         )
 
     def _glossary_guardrail_text(glossary_facts: list[str]) -> str:
@@ -359,6 +378,7 @@ def make_tool_node_handler(
     """
 
     risk_engine = RiskScoringEngine()
+    vehicle_info_resolver = VehicleInfoResolver()
 
     def _compute_risk(context: ExecutionContext) -> dict[str, Any]:
 
@@ -389,7 +409,7 @@ def make_tool_node_handler(
         context: ExecutionContext,
         risk_result: dict[str, Any],
     ) -> dict[str, Any]:
-
+    
         parameters = {
             "vehicle_idv_rs": context.get_variable("vehicle_idv_rs"),
             "vehicle_age_years": context.get_variable("vehicle_age_years"),
@@ -421,7 +441,16 @@ def make_tool_node_handler(
             ),
             "risk_band": risk_result["risk_band"],
         }
-
+    
+        resolved_vehicle_info = vehicle_info_resolver.resolve(
+            vehicle_segment=context.get_variable("vehicle_segment"),
+            vehicle_registration_number=context.get_variable(
+                "vehicle_registration_number"
+            ),
+        )
+    
+        parameters["vehicle_category"] = resolved_vehicle_info["vehicle_category"]
+    
         for optional_field in (
             "annual_mileage_km",
             "digital_affinity_1to5",
@@ -432,7 +461,7 @@ def make_tool_node_handler(
             value = context.get_variable(optional_field)
             if value is not None:
                 parameters[optional_field] = value
-
+    
         return parameters
 
     def tool_node_handler(
@@ -488,6 +517,7 @@ _EXTRACTION_SCHEMA = {
                 "urban_dense", "hilly_low_density", "suburban", "rural",
             ],
         },
+        "vehicle_registration_number": {"type": ["string", "null"]},
         "city_risk_band": {"type": ["string", "null"], "enum": [None, "low", "medium", "high"]},
         "flood_risk_band": {"type": ["string", "null"], "enum": [None, "low", "medium", "high"]},
         "commute_pattern": {
@@ -542,27 +572,41 @@ def make_extraction_handler(
     """
     Build the profile extraction/merge handler (NodeType.MEMORY).
 
+    Reads whatever's already known for this session from
+    MemoryService (MemoryType.SEMANTIC -- durable, permanent facts,
+    not short-lived working memory), asks the LLM to extract new
+    facts from the customer's free-text message via structured
+    output, merges NEW non-null values on top of what's already known
+    (never letting an unmentioned field erase a previously-learned
+    one), writes the merged profile back to memory, and returns it so
+    every downstream field (check_slots, risk scoring, recommend/
+    compare) sees a fully merged profile regardless of which turn
+    each fact was originally mentioned in.
+
+    Loading the existing profile from memory happens EVEN WHEN
+    there's no new customer_message this turn (e.g. a follow-up
+    action like naming two policies to compare) -- only the LLM
+    extraction step is skipped in that case, never the memory read.
+    An earlier version skipped both together, which meant facts
+    learned in prior turns silently disappeared on any turn that
+    wasn't itself a free-text message.
+
     `location_risk` (a LocationRiskReference) runs BEFORE the LLM
     call: if a known city is named, flood_risk_band/city_risk_band/
     residence_cluster are set deterministically from the reference
     table and OVERRIDE whatever the LLM separately produces for those
-    same fields -- a direct exact-match lookup is more reliable than
-    LLM recall for a fact this structured (confirmed necessary in
-    real testing: the LLM omitted flood_risk_band even when a
-    well-known flood-prone city was named explicitly). The LLM
-    extraction still runs for every other field, and still attempts
-    these three as a fallback for cities NOT in the reference table.
+    same fields.
+
+    Deliberately does NOT extract phone/email/exact address at all,
+    and never gender/marital_status/income (excluded from collection
+    entirely, not just from use, matching the earlier fairness
+    decision).
     """
 
     def extraction_handler(
         node: WorkflowNode,
         context: ExecutionContext,
     ) -> dict[str, Any]:
-
-        customer_message = context.get_variable("customer_message")
-
-        if customer_message is None:
-            return {}
 
         session_id = context.get_variable("session_id")
 
@@ -590,13 +634,38 @@ def make_extraction_handler(
             except Exception:
                 existing_profile = {}
 
+        # What we most recently asked the customer for, if anything --
+        # stored INSIDE the profile from the previous turn specifically
+        # so a short/ambiguous reply ("10000", a bare number) can be
+        # correctly anchored to the question it's actually answering.
+        # Without this, "10000" with no other context is genuinely
+        # ambiguous even to a human reading it cold.
+        last_asked_about = existing_profile.pop("_last_asked_about", [])
+
+        customer_message = context.get_variable("customer_message")
+
+        if customer_message is None:
+            existing_profile["is_chitchat_only"] = False
+            return existing_profile
+
         known_facts_text = (
             "\n".join(
                 f"- {key}: {value}"
                 for key, value in existing_profile.items()
-                if value is not None
+                if value is not None and not key.startswith("_")
             )
             or "None yet."
+        )
+
+        last_asked_text = (
+            f"\n\nIMPORTANT: you just asked the customer for: "
+            f"{', '.join(last_asked_about)}. If their new message is "
+            f"short, a bare number, or otherwise ambiguous on its own, "
+            f"it is very likely a direct answer to that specific "
+            f"question -- interpret it in that light rather than "
+            f"leaving it null."
+            if last_asked_about
+            else ""
         )
 
         prompt = (
@@ -606,7 +675,9 @@ def make_extraction_handler(
             "null. Do not guess at fields with no basis in the "
             "message. Set is_chitchat_only to true only if the "
             "ENTIRE message is just a greeting or small talk with no "
-            "insurance-relevant content at all.\n\n"
+            "insurance-relevant content at all, AND does not answer "
+            "a question we just asked."
+            f"{last_asked_text}\n\n"
             f"Facts already known from earlier in this conversation "
             f"(do not contradict these unless the new message clearly "
             f"updates them):\n{known_facts_text}\n\n"
@@ -620,11 +691,11 @@ def make_extraction_handler(
                 response_schema=_EXTRACTION_SCHEMA,
             )
             extracted = response.structured_output or {}
-        except Exception:
+            context.set_metadata("extraction_error", None)
+        except Exception as error:
             extracted = {}
+            context.set_metadata("extraction_error", str(error))
 
-        # Deterministic city lookup OVERRIDES the LLM's guess for
-        # these three fields specifically, when a known city matched.
         if location_risk is not None:
 
             city_match = location_risk.match_city(customer_message)
@@ -654,6 +725,17 @@ def make_extraction_handler(
             if value is not None:
                 merged_profile[key] = value
 
+        # Compute what's STILL missing after this merge, using the
+        # SAME REQUIRED_SLOTS check_slots will use next -- stored so
+        # the NEXT turn's extraction knows what question it's likely
+        # getting an answer to.
+        still_missing = [
+            slot for slot in REQUIRED_SLOTS if merged_profile.get(slot) is None
+        ]
+
+        profile_to_store = dict(merged_profile)
+        profile_to_store["_last_asked_about"] = still_missing
+
         if memory_service is not None:
 
             try:
@@ -661,7 +743,7 @@ def make_extraction_handler(
 
                 memory_service.store(
                     memory_type=MemoryType.SEMANTIC,
-                    content=merged_profile,
+                    content=profile_to_store,
                     collection=f"policy_advisor_profile:{session_id}",
                 )
             except Exception:

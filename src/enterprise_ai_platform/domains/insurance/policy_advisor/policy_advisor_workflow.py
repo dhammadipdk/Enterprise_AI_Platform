@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from typing import Any
 
-REQUIRED_SLOTS = ["vehicle_idv_rs", "vehicle_age_years"]
+REQUIRED_SLOTS = ["vehicle_idv_rs", "vehicle_age_years", "vehicle_segment"]
 
 # Every field the extraction node can populate -- shared with the
 # node's declared `outputs` so nothing extracted is silently dropped
@@ -18,6 +18,7 @@ EXTRACTABLE_PROFILE_FIELDS = [
     # Tier 1 -- hard required
     "vehicle_idv_rs",
     "vehicle_age_years",
+    "vehicle_registration_number",
     # Tier 2 -- inferred from message + world knowledge, never a
     # dedicated question
     "fuel_type",
