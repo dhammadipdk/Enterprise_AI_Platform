@@ -30,6 +30,9 @@ from enterprise_ai_platform.domains.insurance.policy_advisor.risk_scoring_engine
 from enterprise_ai_platform.domains.insurance.policy_advisor.vehicle_info_resolver import (
     VehicleInfoResolver,
 )
+from enterprise_ai_platform.domains.insurance.policy_advisor.vehicle_category import (
+    classify_vehicle_category,
+)   
 
 _SLOT_LABELS = {
     "vehicle_idv_rs": "vehicle's IDV (insured value) in rupees",
@@ -684,6 +687,38 @@ _RISK_LEVEL_NORMALIZE = {
     "very_high": "high", "extreme": "high",
 }
 
+import re
+
+_VEHICLE_SEGMENT_KEYWORDS = {
+    "Bike": ["bike", "motorcycle", "motorbike", "scooter", "scooty", "two-wheeler", "two wheeler", "moped"],
+    "Commercial Vehicle": ["truck", "lorry", "bus", "commercial vehicle", "auto rickshaw", "tempo", "tractor"],
+    "Car": ["car", "sedan", "hatchback", "suv", "muv"],
+}
+
+
+def _detect_vehicle_segment_keyword(message: str) -> str | None:
+    """
+    Deterministic backstop for vehicle_segment -- same principle as
+    LocationRiskReference for cities. Confirmed necessary in real
+    testing: a customer saying "bike hai bataya na abhi hi" (an
+    emotionally frustrated, longer sentence) failed to extract
+    vehicle_segment THREE separate times via the LLM, despite "bike"
+    being explicitly present each time -- it only worked when "bike"
+    was typed as a single isolated word. Runs on the raw message
+    regardless of what the LLM extracted or how it classified
+    chitchat/followup, since those misclassifications shouldn't be
+    able to also swallow an explicit vehicle-type mention.
+    """
+
+    message_lower = message.lower()
+
+    for segment_label, keywords in _VEHICLE_SEGMENT_KEYWORDS.items():
+        for keyword in keywords:
+            if re.search(rf"\b{re.escape(keyword)}\b", message_lower):
+                return segment_label
+
+    return None
+
 
 def make_extraction_handler(
     model_service: ModelService,
@@ -763,11 +798,16 @@ def make_extraction_handler(
             "\n\nThe customer was already shown some policy "
             "recommendation(s) or comparison earlier in this "
             "conversation. Set is_followup_question to true if their "
-            "new message is asking about, clarifying, or requesting "
-            "more explanation of what they were already shown (e.g. "
-            "'explain the difference', 'why is this one better', "
-            "'what does that mean'), rather than giving new "
-            "information or making a new request. If they name two "
+            "new message is about what they were ALREADY shown -- "
+            "asking to clarify it ('explain the difference', 'why is "
+            "this one better', 'what does that mean'), OR asking for "
+            "different/other/more options than what was shown "
+            "('any other options', 'kuch aur dikhao', 'something "
+            "cheaper'). Do NOT set is_asking_about_assistant for "
+            "requests like this -- is_asking_about_assistant is ONLY "
+            "for genuine questions about who/what you are as an "
+            "assistant (e.g. 'who are you', 'are you a bot'), never "
+            "for requests about policy options. If they name two "
             "specific policies to compare, extract those names into "
             "comparison_policy_name_a/comparison_policy_name_b "
             "exactly as the customer phrased them."
@@ -789,11 +829,13 @@ def make_extraction_handler(
             "- is_chitchat_only: true ONLY for pure greeting/small "
             "talk with no question at all (e.g. 'hi', 'thanks', "
             "'ok') and no insurance content.\n"
-            "- is_asking_about_assistant: true if the customer is "
-            "asking WHO or WHAT you are, or what you can help with "
-            "(e.g. 'who are you', 'what can you do', 'are you a "
-            "bot', 'what is this'), regardless of what else is in "
-            "the message.\n"
+            "- is_asking_about_assistant: true ONLY for genuine "
+            "questions about your identity/nature as an assistant "
+            "(e.g. 'who are you', 'are you a bot', 'what is this "
+            "app'). Do NOT use this for requests about policy "
+            "options, alternatives, or anything insurance-related -- "
+            "those are is_followup_question if something was already "
+            "shown, or a normal new request otherwise.\n"
             "- is_followup_question: true if they're asking about, "
             "clarifying, or wanting more explanation of something "
             "ALREADY SHOWN to them earlier in this conversation "
@@ -839,6 +881,14 @@ def make_extraction_handler(
                     extracted["residence_cluster"] = "coastal_flood_prone"
                 elif normalized_theft == "high":
                     extracted["residence_cluster"] = "metro_high_theft"
+                    
+        # Deterministic vehicle_segment backstop -- overrides whatever
+        # the LLM extracted (or failed to extract) for this field
+        # whenever an explicit keyword is present in the raw message.
+        detected_segment = _detect_vehicle_segment_keyword(customer_message)
+
+        if detected_segment is not None:
+            extracted["vehicle_segment"] = detected_segment
 
         if policy_name_resolver is not None:
 
